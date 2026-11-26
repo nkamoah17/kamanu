@@ -1,6 +1,6 @@
 [project]
 name = "kamanu"
-version = "0.1.0"
+version = "0.1.1"
 description = "Checks whether a spending limit on an AI agent holds, and says how sure it is: the most that can be spent, the most that can be wrongly refused, and the shortest trace behind each"
 license = "Apache-2.0"
 license-files = ["LICENSE", "RECORDS-LICENSE"]

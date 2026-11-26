@@ -27,7 +27,7 @@ handshake and answer `initialize` with an error.
 ## Client configurations
 
 Each block below is built from a record: `command` is its runtimeHint, `args` its identifier and then its
-packageArguments. Until kamanu is on PyPI, `uvx` has nothing to fetch; with the wheel installed, the
+packageArguments. kamanu is on PyPI, so `uvx` fetches it on first start; with the wheel installed, the
 same servers start as `kamanu mcp WORD`.
 
 ### Claude Desktop

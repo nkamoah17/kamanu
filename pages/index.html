@@ -82,6 +82,7 @@
   <nav aria-label="Sections">
     <a href="#get">What you get</a>
     <a href="#try">Try it</a>
+    <a href="#agent">For agents</a>
     <a href="#method">How it is measured</a>
     <a href="#verify">Verify it yourself</a>
     <a href="#check">Get a check</a>
@@ -156,7 +157,30 @@ kamanu scan fixtures/dogwood/PReqBasis.dw \
     <p>It prints the ceiling beside the limit, the stranded budget, the six-step trace, and on its last line how many of the engine's constants it had to assume. It exits 1, because one check fails. Run it on your own policy, or read a card issuer's <code>spending_limits</code> the way its documents write them:</p>
 <pre>kamanu lint examples/controls.yaml --frontend issuing --engine reference</pre>
     <p>A daily limit is checked as a sliding 24-hour window, and the answer says what the calendar reading, a reset at midnight UTC, could change: up to twice the amount across one boundary.</p>
-    <p>The same tools run in CI (<a href="https://github.com/nkamoah17/kamanu/blob/main/docs/action.md">the GitHub Action</a>) and inside an agent's own toolbox (<a href="https://github.com/nkamoah17/kamanu/blob/main/docs/mcp.md">three MCP servers</a>: <code>kamanu mcp lint</code>, <code>coach</code> and <code>serve</code>).</p>
+    <p>The same check runs on every pull request with <a href="https://github.com/marketplace/actions/kamanu-check">the GitHub Action</a>: <code>uses: nkamoah17/kamanu@v0.1</code>.</p>
+  </section>
+
+  <section id="agent" class="text">
+    <h2>Add it to your agent</h2>
+    <p>Three MCP servers, listed in the MCP Registry, run from PyPI with <a href="https://docs.astral.sh/uv/">uv</a>. Nothing to clone.</p>
+    <ul>
+      <li><strong>kamanu-lint:</strong> does this spending-limit policy hold? The verdict, the shortest failing trace and a fix.</li>
+      <li><strong>kamanu-coach:</strong> may I make this payment, how much fits now, and when will the full amount fit?</li>
+      <li><strong>kamanu:</strong> verify a policy against an engine, compare engines, explain a verdict.</li>
+    </ul>
+    <p>Claude Code:</p>
+<pre>claude mcp add kamanu-lint -- uvx kamanu mcp lint
+claude mcp add kamanu-coach -- uvx kamanu mcp coach
+claude mcp add kamanu -- uvx kamanu mcp serve</pre>
+    <p>Claude Desktop, Cursor, VS Code or any client with an <code>mcpServers</code> file:</p>
+<pre>{
+  "mcpServers": {
+    "kamanu-lint":  { "command": "uvx", "args": ["kamanu", "mcp", "lint"] },
+    "kamanu-coach": { "command": "uvx", "args": ["kamanu", "mcp", "coach"] },
+    "kamanu":       { "command": "uvx", "args": ["kamanu", "mcp", "serve"] }
+  }
+}</pre>
+    <p class="note">Without uv: <code>pip install kamanu</code>, then use <code>"command": "kamanu"</code> with the same arguments. More in <a href="https://github.com/nkamoah17/kamanu/blob/main/docs/mcp.md">docs/mcp.md</a>.</p>
   </section>
 
   <section id="method" class="text">

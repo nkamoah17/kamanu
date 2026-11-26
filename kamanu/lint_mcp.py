@@ -97,7 +97,7 @@ METHODS = {
     "server/discover": lambda p: {
         "supportedVersions": [VERSION], "protocolVersion": VERSION,
         "capabilities": {"tools": {"listChanged": False}},
-        "serverInfo": {"name": "kamanu-lint", "title": "KAMANU lint for stateful policies", "version": "0.1.0"},
+        "serverInfo": {"name": "kamanu-lint", "title": "KAMANU lint for stateful policies", "version": "0.1.1"},
         "instructions": "Stateless: call lint with the policy's text (or path) and the engine; apply each finding's "
                         "fix and run its re-check command until nothing fails."},
     "tools/list": lambda p: {"tools": json.loads(json.dumps(TOOLS)), "ttlMs": 3_600_000, "cacheScope": "public"},

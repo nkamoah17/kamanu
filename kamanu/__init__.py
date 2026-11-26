@@ -1,2 +1,2 @@
 """KAMANU: a TLA+ semantics of record for stateful authorization."""
-__version__ = "0.1.0"
+__version__ = "0.1.1"

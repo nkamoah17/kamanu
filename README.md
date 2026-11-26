@@ -137,6 +137,41 @@ has seen it and agreed, or after 30 days. See the house rules.
 <!-- mcp-name: io.github.nkamoah17/kamanu-coach -->
 <!-- mcp-name: io.github.nkamoah17/kamanu -->
 
+## Add it to your agent
+
+Three MCP servers, listed in the [MCP Registry](https://registry.modelcontextprotocol.io) as
+`io.github.nkamoah17/kamanu-lint`, `kamanu-coach` and `kamanu`. They run from PyPI with
+[uv](https://docs.astral.sh/uv/); nothing to clone.
+
+| Server | What your agent can ask it |
+| --- | --- |
+| `kamanu-lint` | Does this spending-limit policy hold? The verdict, the shortest failing trace and a fix |
+| `kamanu-coach` | May I make this payment, how much fits now, and when will the full amount fit? |
+| `kamanu` | Verify a policy against an engine, compare engines, explain a verdict, hunt a bundled example |
+
+Claude Code:
+
+```
+claude mcp add kamanu-lint -- uvx kamanu mcp lint
+claude mcp add kamanu-coach -- uvx kamanu mcp coach
+claude mcp add kamanu -- uvx kamanu mcp serve
+```
+
+Claude Desktop, Cursor, VS Code or any client with an `mcpServers` file:
+
+```json
+{
+  "mcpServers": {
+    "kamanu-lint":  { "command": "uvx", "args": ["kamanu", "mcp", "lint"] },
+    "kamanu-coach": { "command": "uvx", "args": ["kamanu", "mcp", "coach"] },
+    "kamanu":       { "command": "uvx", "args": ["kamanu", "mcp", "serve"] }
+  }
+}
+```
+
+Without uv: `pip install kamanu`, then use `"command": "kamanu"` with the same `args`. More in
+[docs/mcp.md](https://github.com/nkamoah17/kamanu/blob/main/docs/mcp.md).
+
 How the pieces fit, what each result means and where things live in the repository:
 [docs/how-it-works.md](https://github.com/nkamoah17/kamanu/blob/main/docs/how-it-works.md). The kernel, the ledger and the five spend-cap designs,
 in prose: [docs/reference.md](https://github.com/nkamoah17/kamanu/blob/main/docs/reference.md).

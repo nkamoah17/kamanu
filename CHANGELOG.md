@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1
+
+- The package description (the README, which PyPI shows) has no prices; getting a check is a Get in touch link.
+- The README and the site show how to add the three MCP servers to an agent.
+- The MCP servers and their registry records report 0.1.1. Nothing else changed: same proofs, same record.
+
 ## 0.1.0 (first public release)
 
 KAMANU was built one task card at a time, each accepted by a locked gate written before its code. One line per accepted card, by the date its gate accepted it. Cards whose subject is a result that is not public yet are left out.

@@ -121,7 +121,7 @@ METHODS = {
     "server/discover": lambda p: {
         "supportedVersions": [VERSION], "protocolVersion": VERSION,
         "capabilities": {"tools": {"listChanged": False}},
-        "serverInfo": {"name": "kamanu-coach", "title": "KAMANU spend-cap coach", "version": "0.1.0"},
+        "serverInfo": {"name": "kamanu-coach", "title": "KAMANU spend-cap coach", "version": "0.1.1"},
         "instructions": "Stateless: send the session log with every call. Ask advise before each paid "
                         "call; on engines that keep denied requests an over-ask costs budget."},
     "tools/list": lambda p: {"tools": json.loads(json.dumps(TOOLS)), "ttlMs": 3_600_000, "cacheScope": "public"},

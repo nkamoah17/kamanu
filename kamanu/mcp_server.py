@@ -365,7 +365,7 @@ def _tools_call(params: dict) -> dict:
 def _discover() -> dict:
     return {"supportedVersions": [VERSION], "protocolVersion": VERSION,
             "capabilities": {"tools": {"listChanged": False}},
-            "serverInfo": {"name": "kamanu", "title": "KAMANU policy verifier", "version": "0.1.0"},
+            "serverInfo": {"name": "kamanu", "title": "KAMANU policy verifier", "version": "0.1.1"},
             "instructions": "Stateless: no initialize, no session. Send params._meta"
                             f"[\"{META_KEY}\"] = \"{VERSION}\" on every request."}
 
