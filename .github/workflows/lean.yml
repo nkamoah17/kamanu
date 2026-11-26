@@ -1,0 +1,44 @@
+name: lean
+# bash verify.sh from a clean checkout, as docs/verify.md describes it for a stranger: the Lean build, the
+# axiom audit, Lean's own checker, the three outside checkers on an export, and the differential tests.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths: ["lean/**", "kamanu/fast/**", "kamanu/mirror.py", "tests/test_lean*.py", "verify.sh", ".github/workflows/lean.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - name: TLC, pinned by SHA-256 (tests/test_lean_kernel.py runs it)
+        run: |
+          mkdir -p tools/vendor
+          URL=$(python -c "import json;print(json.load(open('oracle/toolchain.json'))['tla2tools_url'])")
+          SUM=$(python -c "import json;print(json.load(open('oracle/toolchain.json'))['tla2tools_sha256'])")
+          curl -sSfL -o tools/vendor/tla2tools.jar "$URL"
+          echo "$SUM  tools/vendor/tla2tools.jar" | sha256sum -c -
+      - name: elan
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o elan-init.sh
+          bash elan-init.sh -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: the pinned toolchain
+        run: elan toolchain install "$(cat lean/lean-toolchain)"
+      - name: verify.sh
+        run: |
+          pip install -e . pytest
+          bash verify.sh

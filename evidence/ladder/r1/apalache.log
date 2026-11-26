@@ -1,0 +1,76 @@
+$ apalache check --out-dir=~\AppData\Local\Temp\kamanu-ladder-ap-ryp3wo5b\out --cinit=CInit --init=IndInit --next=IndNext --inv=IndInv --length=1 LadderInd.tla
+# Usage statistics is ON. Thank you!
+# If you have changed your mind, disable the statistics with config --enable-stats=false.
+
+Output directory: ~\AppData\Local\Temp\kamanu-ladder-ap-ryp3wo5b\out\LadderInd.tla\2026-11-12T11-07-53_4046511825043424878
+# APALACHE version: 0.62.3 | build: 3eb15b2                       I@11:07:53.650
+Tuning:                                                           I@11:07:53.665
+PASS #0: SanyParser                                               I@11:07:54.099
+PASS #1: TypeCheckerSnowcat                                       I@11:07:54.654
+ > Running Snowcat .::.                                           I@11:07:54.654
+ > Your types are purrfect!                                       I@11:07:55.498
+ > All expressions are typed                                      I@11:07:55.499
+PASS #2: ConfigurationPass                                        I@11:07:55.505
+  > Set the initialization predicate to IndInit                   I@11:07:55.512
+  > Set the transition predicate to IndNext                       I@11:07:55.513
+  > Set the constant initialization predicate to CInit            I@11:07:55.515
+  > Set an invariant to IndInv                                    I@11:07:55.515
+PASS #3: DesugarerPass                                            I@11:07:55.524
+  > Desugaring...                                                 I@11:07:55.524
+PASS #4: InlinePass                                               I@11:07:55.966
+Leaving only relevant operators: CInit, CInitPrimed, IndInit, IndInitPrimed, IndInv, IndNext I@11:07:55.966
+PASS #5: TemporalPass                                             I@11:07:56.114
+  > Rewriting temporal operators...                               I@11:07:56.114
+  > No temporal property specified, nothing to encode             I@11:07:56.116
+PASS #6: InlinePass                                               I@11:07:56.116
+Leaving only relevant operators: CInit, CInitPrimed, IndInit, IndInitPrimed, IndInv, IndNext I@11:07:56.116
+PASS #7: PrimingPass                                              I@11:07:56.124
+  > Introducing CInitPrimed for CInit'                            I@11:07:56.133
+  > Introducing IndInitPrimed for IndInit'                        I@11:07:56.151
+PASS #8: VCGen                                                    I@11:07:56.151
+  > Producing verification conditions from the invariant IndInv   I@11:07:56.151
+  > VCGen produced 1 verification condition(s)                    I@11:07:56.151
+PASS #9: PreprocessingPass                                        I@11:07:56.168
+  > Before preprocessing: unique renaming                         I@11:07:56.168
+ > Applying standard transformations:                             I@11:07:56.177
+  > PrimePropagation                                              I@11:07:56.178
+  > Desugarer                                                     I@11:07:56.181
+  > UniqueRenamer                                                 I@11:07:56.187
+  > Normalizer                                                    I@11:07:56.191
+  > SetMembershipSimplifier                                       I@11:07:56.204
+  > Keramelizer                                                   I@11:07:56.218
+  > After preprocessing: UniqueRenamer                            I@11:07:56.218
+PASS #10: TransitionFinderPass                                    I@11:07:56.234
+  > Found 1 initializing transitions                              I@11:07:56.344
+  > Found 4 transitions                                           I@11:07:56.366
+  > Found constant initializer CInit                              I@11:07:56.366
+  > Applying unique renaming                                      I@11:07:56.366
+PASS #11: OptimizationPass                                        I@11:07:56.366
+ > Applying optimizations:                                        I@11:07:56.392
+  > ConstSimplifier                                               I@11:07:56.396
+  > ExprOptimizer                                                 I@11:07:56.402
+  > SetMembershipSimplifier                                       I@11:07:56.405
+  > ConstSimplifier                                               I@11:07:56.407
+PASS #12: AnalysisPass                                            I@11:07:56.420
+ > Marking skolemizable existentials and sets to be expanded...   I@11:07:56.423
+  > Skolemization                                                 I@11:07:56.423
+  > Expansion                                                     I@11:07:56.425
+  > Remove unused let-in defs                                     I@11:07:56.426
+ > Running analyzers...                                           I@11:07:56.428
+  > Introduced expression grades                                  I@11:07:56.433
+PASS #13: BoundedChecker                                          I@11:07:56.433
+State 0: Checking 1 state invariants                              I@11:07:56.980
+State 0: state invariant 0 holds.                                 I@11:07:56.987
+Step 0: picking a transition out of 1 transition(s)               I@11:07:56.990
+State 1: Checking 1 state invariants                              I@11:07:57.018
+State 1: state invariant 0 holds.                                 I@11:07:57.018
+State 1: Checking 1 state invariants                              I@11:07:57.037
+State 1: state invariant 0 holds.                                 I@11:07:57.037
+State 1: Checking 1 state invariants                              I@11:07:57.053
+State 1: state invariant 0 holds.                                 I@11:07:57.054
+Step 1: picking a transition out of 4 transition(s)               I@11:07:57.063
+The outcome is: NoError                                           I@11:07:57.081
+Checker reports no error up to computation length 1               I@11:07:57.081
+It took me 0 days  0 hours  0 min  3 sec                          I@11:07:57.082
+Total time: 3.431 sec                                             I@11:07:57.082
+EXITCODE: OK

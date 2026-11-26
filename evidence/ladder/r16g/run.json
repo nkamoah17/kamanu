@@ -1,0 +1,157 @@
+{
+ "about": "R16g: an agent with no model (evidence/ladder/r16g/agent.py) applies each finding's fix edit and runs its re-check command, reading only lint's JSON; every planted case is broken (lint exits 1) and reaches a passing policy in at most 3 rounds.",
+ "cases": [
+  {
+   "name": "cap-request-to-response",
+   "engine": "evidence/ladder/r16g/profiles/none-atomic.json",
+   "options": [],
+   "policy": "// R16g planted cap (cap-request-to-response)\n@id(\"cap_cap_request_to_response\")\npermit (\n    principal,\n    action == Bank::Action::\"Pay\",\n    resource\n)\nwhen temporal { sum_within(a, 24h, Bank::Action::\"Pay\"::response{ input.amount: a }) - sum_within(a, 24h, Bank::Action::\"Pay\"::refund{ input.amount: a }) <= 100 };\n",
+   "rounds": 1,
+   "final": "// R16g planted cap (cap-request-to-response)\n@id(\"cap_cap_request_to_response\")\npermit (\n    principal,\n    action == Bank::Action::\"Pay\",\n    resource\n)\nwhen temporal { sum_within(a, 24h, Bank::Action::\"Pay\"::request{ input.amount: a }) - sum_within(a, 24h, Bank::Action::\"Pay\"::refund{ input.amount: a }) <= 100 };\n",
+   "passing": true,
+   "fixes": [
+    [
+     "kamanu/lint/sound"
+    ]
+   ]
+  },
+  {
+   "name": "cap-drop-refund",
+   "engine": "evidence/ladder/r16g/profiles/deny-atomic.json",
+   "options": [],
+   "policy": "// R16g planted cap (cap-drop-refund)\n@id(\"cap_cap_drop_refund\")\npermit (\n    principal,\n    action == Acme::Action::\"Refund7\",\n    resource\n)\nwhen temporal {\n    100 >= (sum a for (a: Long), (t: Timepoint). where (formerly within 24h (Acme::Action::\"Refund7\"::request{ input.amount: a } && tp(t))))\n};\n",
+   "rounds": 1,
+   "final": "// R16g planted cap (cap-drop-refund)\n@id(\"cap_cap_drop_refund\")\npermit (\n    principal,\n    action == Acme::Action::\"Refund7\",\n    resource\n)\nwhen temporal {\n    100 >= (sum a for (a: Long), (t: Timepoint). where (formerly within 24h (Acme::Action::\"Refund7\"::request{ input.amount: a } && tp(t)))) - (sum a for (a: Long), (t: Timepoint). where (formerly within 24h (Acme::Action::\"Refund7\"::refund{ input.amount: a } && tp(t))))\n};\n",
+   "passing": true,
+   "fixes": [
+    [
+     "kamanu/lint/tight"
+    ]
+   ]
+  },
+  {
+   "name": "cap-re-sign-refund",
+   "engine": "evidence/ladder/r16g/profiles/error-atomic.json",
+   "options": [],
+   "policy": "@id(\"base\")\npermit (principal, action == Bank::Action::\"Pay\", resource);\n\n// R16g planted cap (cap-re-sign-refund)\n@id(\"cap_cap_re_sign_refund\")\nforbid (\n    principal,\n    action == Bank::Action::\"Pay\",\n    resource\n)\nwhen temporal {\n    sum_within(a, 24h, Bank::Action::\"Pay\"::request{ input.amount: a }) + sum_within(a, 24h, Bank::Action::\"Pay\"::refund{ input.amount: a }) > 100\n};\n",
+   "rounds": 1,
+   "final": "@id(\"base\")\npermit (principal, action == Bank::Action::\"Pay\", resource);\n\n// R16g planted cap (cap-re-sign-refund)\n@id(\"cap_cap_re_sign_refund\")\nforbid (\n    principal,\n    action == Bank::Action::\"Pay\",\n    resource\n)\nwhen temporal {\n    sum_within(a, 24h, Bank::Action::\"Pay\"::request{ input.amount: a }) - sum_within(a, 24h, Bank::Action::\"Pay\"::refund{ input.amount: a }) > 100\n};\n",
+   "passing": true,
+   "fixes": [
+    [
+     "kamanu/lint/tight"
+    ]
+   ]
+  },
+  {
+   "name": "cap-drop-refund-forbid",
+   "engine": "evidence/ladder/r16g/profiles/none-atomic.json",
+   "options": [],
+   "policy": "@id(\"base\")\npermit (principal, action == Bank::Action::\"Pay\", resource);\n\n// R16g planted cap (cap-drop-refund-forbid)\n@id(\"cap_cap_drop_refund_forbid\")\nforbid (\n    principal,\n    action == Bank::Action::\"Pay\",\n    resource\n)\nwhen temporal { sum_within(a, 24h, Bank::Action::\"Pay\"::request{ input.amount: a }) > 100 };\n",
+   "rounds": 1,
+   "final": "@id(\"base\")\npermit (principal, action == Bank::Action::\"Pay\", resource);\n\n// R16g planted cap (cap-drop-refund-forbid)\n@id(\"cap_cap_drop_refund_forbid\")\nforbid (\n    principal,\n    action == Bank::Action::\"Pay\",\n    resource\n)\nwhen temporal { sum_within(a, 24h, Bank::Action::\"Pay\"::request{ input.amount: a }) - sum_within(a, 24h, Bank::Action::\"Pay\"::refund{ input.amount: a }) > 100 };\n",
+   "passing": true,
+   "fixes": [
+    [
+     "kamanu/lint/tight"
+    ]
+   ]
+  },
+  {
+   "name": "cap-request-to-response-long",
+   "engine": "evidence/ladder/r16g/profiles/error-atomic.json",
+   "options": [],
+   "policy": "// R16g planted cap (cap-request-to-response-long)\n@id(\"cap_cap_request_to_response_long\")\npermit (\n    principal,\n    action == Acme::Action::\"Refund7\",\n    resource\n)\nwhen temporal { 100 >= (sum a for (a: Long), (t: Timepoint). where (formerly within 24h (Acme::Action::\"Refund7\"::response{ input.amount: a } && tp(t)))) - (sum a for (a: Long), (t: Timepoint). where (formerly within 24h (Acme::Action::\"Refund7\"::refund{ input.amount: a } && tp(t)))) };\n",
+   "rounds": 1,
+   "final": "// R16g planted cap (cap-request-to-response-long)\n@id(\"cap_cap_request_to_response_long\")\npermit (\n    principal,\n    action == Acme::Action::\"Refund7\",\n    resource\n)\nwhen temporal { 100 >= (sum a for (a: Long), (t: Timepoint). where (formerly within 24h (Acme::Action::\"Refund7\"::request{ input.amount: a } && tp(t)))) - (sum a for (a: Long), (t: Timepoint). where (formerly within 24h (Acme::Action::\"Refund7\"::refund{ input.amount: a } && tp(t)))) };\n",
+   "passing": true,
+   "fixes": [
+    [
+     "kamanu/lint/sound"
+    ]
+   ]
+  },
+  {
+   "name": "cap-re-sign-refund-own-line",
+   "engine": "evidence/ladder/r16g/profiles/deny-atomic.json",
+   "options": [],
+   "policy": "// R16g planted cap (cap-re-sign-refund-own-line)\n@id(\"cap_cap_re_sign_refund_own_line\")\npermit (\n    principal,\n    action == Acme::Action::\"Refund7\",\n    resource\n)\nwhen temporal {\n    (sum a for (a: Long), (t: Timepoint). where (formerly within 24h (Acme::Action::\"Refund7\"::request{ input.amount: a } && tp(t)))) + (sum a for (a: Long), (t: Timepoint). where (formerly within 24h (Acme::Action::\"Refund7\"::refund{ input.amount: a } && tp(t)))) <= 100\n};\n",
+   "rounds": 1,
+   "final": "// R16g planted cap (cap-re-sign-refund-own-line)\n@id(\"cap_cap_re_sign_refund_own_line\")\npermit (\n    principal,\n    action == Acme::Action::\"Refund7\",\n    resource\n)\nwhen temporal {\n    (sum a for (a: Long), (t: Timepoint). where (formerly within 24h (Acme::Action::\"Refund7\"::request{ input.amount: a } && tp(t)))) - (sum a for (a: Long), (t: Timepoint). where (formerly within 24h (Acme::Action::\"Refund7\"::refund{ input.amount: a } && tp(t)))) <= 100\n};\n",
+   "passing": true,
+   "fixes": [
+    [
+     "kamanu/lint/tight"
+    ]
+   ]
+  },
+  {
+   "name": "prereq-unless-freeze",
+   "engine": "evidence/ladder/r16g/profiles/request-atomic.json",
+   "options": [
+    "--level",
+    "strict"
+   ],
+   "policy": "// R16g planted prerequisite (prereq-unless-freeze)\n@id(\"prereq_unless_freeze\")\npermit (principal, action == Bank::Action::\"Withdraw\", resource)\nunless temporal {\n    formerly within 1h Bank::Action::\"Freeze\"::request{ input.account: context.input.account }\n};\n",
+   "rounds": 1,
+   "final": "// R16g planted prerequisite (prereq-unless-freeze)\n@id(\"prereq_unless_freeze\")\npermit (principal, action == Bank::Action::\"Withdraw\", resource)\nunless temporal {\n    formerly within 1h Bank::Action::\"Freeze\"::response{ input.account: context.input.account }\n};\n",
+   "passing": true,
+   "fixes": [
+    [
+     "KAM001"
+    ]
+   ]
+  },
+  {
+   "name": "prereq-unless-lock",
+   "engine": "evidence/ladder/r16g/profiles/request-atomic.json",
+   "options": [
+    "--level",
+    "strict"
+   ],
+   "policy": "// R16g planted prerequisite (prereq-unless-lock)\n@id(\"prereq_unless_lock\")\npermit (principal, action == Acme::Action::\"Ship\", resource)\nunless temporal {\n    formerly within 1h Acme::Action::\"Hold\"::request{ input.account: context.input.account }\n};\n",
+   "rounds": 1,
+   "final": "// R16g planted prerequisite (prereq-unless-lock)\n@id(\"prereq_unless_lock\")\npermit (principal, action == Acme::Action::\"Ship\", resource)\nunless temporal {\n    formerly within 1h Acme::Action::\"Hold\"::response{ input.account: context.input.account }\n};\n",
+   "passing": true,
+   "fixes": [
+    [
+     "KAM001"
+    ]
+   ]
+  },
+  {
+   "name": "prereq-count-review",
+   "engine": "evidence/ladder/r16g/profiles/request-atomic.json",
+   "options": [
+    "--level",
+    "strict"
+   ],
+   "policy": "// R16g planted prerequisite (prereq-count-review)\n@id(\"prereq_count_review\")\npermit (principal, action == Drupe::Action::\"Publish\", resource)\nwhen temporal {\n    (count for (t: Timepoint). where (\n        formerly within 24h (Drupe::Action::\"Flag\"::request{ input.account: context.input.account } && tp(t))\n    )) <= 2\n};\n",
+   "rounds": 1,
+   "final": "// R16g planted prerequisite (prereq-count-review)\n@id(\"prereq_count_review\")\npermit (principal, action == Drupe::Action::\"Publish\", resource)\nwhen temporal {\n    (count for (t: Timepoint). where (\n        formerly within 24h (Drupe::Action::\"Flag\"::response{ input.account: context.input.account } && tp(t))\n    )) <= 2\n};\n",
+   "passing": true,
+   "fixes": [
+    [
+     "KAM001"
+    ]
+   ]
+  },
+  {
+   "name": "prereq-count-login",
+   "engine": "evidence/ladder/r16g/profiles/request-atomic.json",
+   "options": [
+    "--level",
+    "strict"
+   ],
+   "policy": "// R16g planted prerequisite (prereq-count-login)\n@id(\"prereq_count_login\")\npermit (principal, action == Drupe::Action::\"Export\", resource)\nwhen temporal {\n    (count for (t: Timepoint). where (\n        formerly within 24h (Drupe::Action::\"Login\"::request{ input.account: context.input.account } && tp(t))\n    )) <= 2\n};\n",
+   "rounds": 1,
+   "final": "// R16g planted prerequisite (prereq-count-login)\n@id(\"prereq_count_login\")\npermit (principal, action == Drupe::Action::\"Export\", resource)\nwhen temporal {\n    (count for (t: Timepoint). where (\n        formerly within 24h (Drupe::Action::\"Login\"::response{ input.account: context.input.account } && tp(t))\n    )) <= 2\n};\n",
+   "passing": true,
+   "fixes": [
+    [
+     "KAM001"
+    ]
+   ]
+  }
+ ]
+}

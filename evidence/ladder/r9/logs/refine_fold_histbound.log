@@ -1,0 +1,69 @@
+$ apalache check --cinit=CRefine --init=ApInit --next=ApNext --inv=ApInv,ApRefStep --length=1 PrFoldApReq.tla
+# Usage statistics is ON. Thank you!
+# If you have changed your mind, disable the statistics with config --enable-stats=false.
+
+Output directory: ~\AppData\Local\Temp\kamanu-r9-7191egob\out\PrFoldApReq.tla\2026-11-12T20-40-41_16718227072424673437
+# APALACHE version: 0.62.3 | build: 3eb15b2                       I@20:40:42.041
+Tuning:                                                           I@20:40:42.075
+PASS #0: SanyParser                                               I@20:40:42.425
+No source location for expression 5301                            W@20:40:43.282
+PASS #1: TypeCheckerSnowcat                                       I@20:40:43.406
+ > Running Snowcat .::.                                           I@20:40:43.407
+ > Your types are purrfect!                                       I@20:40:46.712
+ > All expressions are typed                                      I@20:40:46.714
+PASS #2: ConfigurationPass                                        I@20:40:46.715
+  > Set the initialization predicate to ApInit                    I@20:40:46.731
+  > Set the transition predicate to ApNext                        I@20:40:46.733
+  > Set the constant initialization predicate to CRefine          I@20:40:46.739
+  > Set an invariant to ApInv                                     I@20:40:46.743
+  > Set an invariant to ApRefStep                                 I@20:40:46.743
+PASS #3: DesugarerPass                                            I@20:40:46.766
+  > Desugaring...                                                 I@20:40:46.766
+PASS #4: InlinePass                                               I@20:40:47.259
+Leaving only relevant operators: ApInit, ApInitPrimed, ApInv, ApNext, ApRefStep, CRefine, CRefinePrimed I@20:40:47.261
+PASS #5: TemporalPass                                             I@20:40:47.663
+  > Rewriting temporal operators...                               I@20:40:47.663
+  > No temporal property specified, nothing to encode             I@20:40:47.663
+PASS #6: InlinePass                                               I@20:40:47.663
+Leaving only relevant operators: ApInit, ApInitPrimed, ApInv, ApNext, ApRefStep, CRefine, CRefinePrimed I@20:40:47.663
+PASS #7: PrimingPass                                              I@20:40:47.766
+  > Introducing CRefinePrimed for CRefine'                        I@20:40:47.786
+  > Introducing ApInitPrimed for ApInit'                          I@20:40:47.819
+PASS #8: VCGen                                                    I@20:40:47.830
+  > Producing verification conditions from the invariant ApInv    I@20:40:47.853
+  > VCGen produced 17 verification condition(s)                   I@20:40:47.887
+  > Producing verification conditions from the invariant ApRefStep I@20:40:47.905
+  > VCGen produced 1 verification condition(s)                    I@20:40:47.921
+PASS #9: PreprocessingPass                                        I@20:40:47.926
+  > Before preprocessing: unique renaming                         I@20:40:47.926
+ > Applying standard transformations:                             I@20:40:47.957
+  > PrimePropagation                                              I@20:40:47.962
+  > Desugarer                                                     I@20:40:47.970
+  > UniqueRenamer                                                 I@20:40:48.016
+  > Normalizer                                                    I@20:40:48.189
+  > SetMembershipSimplifier                                       I@20:40:48.265
+  > Keramelizer                                                   I@20:40:48.303
+  > After preprocessing: UniqueRenamer                            I@20:40:48.384
+PASS #10: TransitionFinderPass                                    I@20:40:48.525
+  > Found 1 initializing transitions                              I@20:40:48.722
+  > Found 10 transitions                                          I@20:40:48.816
+  > Found constant initializer CRefine                            I@20:40:48.829
+  > Applying unique renaming                                      I@20:40:48.849
+PASS #11: OptimizationPass                                        I@20:40:48.915
+ > Applying optimizations:                                        I@20:40:48.954
+  > ConstSimplifier                                               I@20:40:48.961
+  > ExprOptimizer                                                 I@20:40:49.118
+  > SetMembershipSimplifier                                       I@20:40:49.202
+  > ConstSimplifier                                               I@20:40:49.213
+PASS #12: AnalysisPass                                            I@20:40:49.316
+ > Marking skolemizable existentials and sets to be expanded...   I@20:40:49.327
+  > Skolemization                                                 I@20:40:49.328
+  > Expansion                                                     I@20:40:49.338
+  > Remove unused let-in defs                                     I@20:40:49.399
+ > Running analyzers...                                           I@20:40:49.445
+  > Introduced expression grades                                  I@20:40:49.477
+PASS #13: BoundedChecker                                          I@20:40:49.477
+PrFoldApReq.tla:91:16-91:20: Input error (see the manual): Expected a constant integer range in [ .. ], found 1..MaxReq. This is a known issue: [https://apalache-mc.org/docs/apalache/known-issues.html] E@20:40:52.566
+It took me 0 days  0 hours  0 min 10 sec                          I@20:40:52.568
+Total time: 10.508 sec                                            I@20:40:52.568
+EXITCODE: ERROR (255)

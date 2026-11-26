@@ -1,0 +1,15 @@
+\* WindowKernel with no window (Window = 0); the clock still ticks once
+Templates <- RT
+MaxReq = 3
+MaxFails = 1
+Reflexive = TRUE
+DenyRecord = "none"
+Atomic = TRUE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = TRUE
+Permit <- PReqBasis
+Scope <- ScopeGlobal
+Cap = 100
+Window = 0
+MaxTime = 1

@@ -1,0 +1,476 @@
+# Rule L5 made total (R3): every .tla under spec/ is attached or labelled.
+#   level 1  the ledger, with the file that holds its check
+#   level 2  the kernel (seeds, ladder modules), with a spec/ladder module that checks it
+#   level 3  a feature, with reduction objects: a TLC refinement both ways, feature off
+#            (python -m kamanu.ladder.reduce; evidence/ladder/r3/reductions.json)
+#   standalone / illustration  a separate model / a demo no product code reads
+modules:
+- module: spec/KamanuKernel.tla
+  level: 2
+  reduction: spec/ladder/LedgerCheck.tla
+- module: spec/KamanuAdversary.tla
+  level: 2
+  reduction: spec/ladder/LedgerCheck.tla
+- module: spec/KamanuPolicies.tla
+  level: 2
+  reduction: spec/ladder/LedgerCheck.tla
+- module: spec/MCSafety.tla
+  level: 2
+  reduction: spec/ladder/LedgerCheck.tla
+- module: spec/KamanuTask.tla
+  level: 2
+  reduction: spec/ladder/LedgerCheck.tla
+- module: spec/MCTask.tla
+  level: 2
+  reduction: spec/ladder/LedgerCheck.tla
+- module: spec/ladder/Ledger.tla
+  level: 1
+  reduction: evidence/ladder/r1/apalache.log
+- module: spec/ladder/LedgerCheck.tla
+  level: 2
+  reduction: spec/ladder/LedgerCheck.tla
+- module: spec/ladder/LedgerDS.tla
+  level: 2
+  reduction: spec/ladder/LedgerDS.tla
+- module: spec/ladder/LedgerU.tla
+  level: 2
+  reduction: spec/ladder/LedgerU.tla
+- module: spec/ladder/Actors.tla
+  level: 2
+  reduction: spec/ladder/Actors.tla
+- module: spec/ladder/Undecided.tla
+  level: 2
+  reduction: spec/ladder/UndecidedCheck.tla
+- module: spec/ladder/UndecidedCheck.tla
+  level: 2
+  reduction: spec/ladder/UndecidedCheck.tla
+- module: spec/ext/Unbounded.tla
+  level: 2
+  reduction: spec/ladder/LedgerCheck.tla
+- module: spec/ext/BudgetKey.tla
+  level: 3
+  reduction:
+    name: BudgetKeyOff
+    spec_module: spec/ext/BudgetKey.tla
+    spec: BudgetSpec
+    target: spec/MCSafety.tla
+    target_spec: Spec
+    feature_off: 'Scope <- ScopeSession (the kernel''s session scope, not ScopeBudget): no ledger is keyed by the budget key'
+- module: spec/ladder/reduce/GoalAgent.tla
+  level: 2
+  reduction: spec/ladder/reduce/GoalAgent.tla
+- module: spec/ladder/reduce/MarkedTask.tla
+  level: 2
+  reduction: spec/ladder/reduce/MarkedTask.tla
+- module: spec/ladder/reduce/ProbeKernels.tla
+  level: 2
+  reduction: spec/ladder/reduce/ProbeKernels.tla
+- module: spec/ext/WindowKernel.tla
+  level: 3
+  reduction:
+    name: WindowKernelOff
+    spec_module: spec/ext/WindowKernel.tla
+    spec: Spec
+    target: spec/MCSafety.tla
+    target_spec: Spec
+    feature_off: 'Window = 0 (no window: the guard sees the whole history)'
+    fixed:
+    - Window
+- module: spec/ext/FalseDenial.tla
+  level: 3
+  reduction:
+    name: FalseDenialOff
+    spec_module: spec/ext/FalseDenial.tla
+    spec: FDSpec
+    target: spec/MCSafety.tla
+    target_spec: Spec
+    feature_off: 'nothing to switch: fd is a ghost that constrains no kernel step'
+- module: spec/ext/DenySet.tla
+  level: 3
+  reduction:
+    name: DenySetOff
+    spec_module: spec/ext/DenySet.tla
+    spec: DSSpec
+    target: spec/ext/FalseDenial.tla
+    target_spec: FDSpec
+    feature_off: DenyMarks = {"request"}, a singleton, with DenyRecord = "request" its element
+    fixed:
+    - DenyMarks
+    - DenyRecord
+- module: spec/ext/Undetermined.tla
+  level: 3
+  reduction:
+  - &id001
+    name: UndeterminedSafetyOff
+    spec_module: spec/ext/UndeterminedSafety.tla
+    spec: USpec
+    target: spec/MCSafety.tla
+    target_spec: Spec
+    feature_off: 'Refuse disabled: the configuration overrides Refuse <- NoRefuse (never enabled)'
+    fixed:
+    - Refuse
+  - &id002
+    name: UndeterminedTaskOff
+    spec_module: spec/ext/UndeterminedTask.tla
+    spec: USpec
+    target: spec/MCTask.tla
+    target_spec: Spec
+    feature_off: 'Refuse disabled: the configuration overrides Refuse <- NoRefuse (never enabled)'
+    fixed:
+    - Refuse
+- module: spec/ext/UndeterminedSafety.tla
+  level: 3
+  reduction: *id001
+- module: spec/ext/UndeterminedTask.tla
+  level: 3
+  reduction: *id002
+- module: spec/ext/Hostile.tla
+  level: 3
+  reduction:
+    name: HostileOff
+    spec_module: spec/ext/Hostile.tla
+    spec: HSpec
+    target: spec/ladder/reduce/MarkedTask.tla
+    target_spec: MSpec
+    feature_off: AdvMax = 0 (no adversary) and HasTimeout = FALSE (Hostile's harness has no timer)
+    fixed:
+    - AdvMax
+    - HasTimeout
+- module: spec/ext/Invalidation.tla
+  level: 3
+  reduction:
+    name: InvalidationOff
+    spec_module: spec/ext/Invalidation.tla
+    spec: Spec
+    target: spec/MCSafety.tla
+    target_spec: Spec
+    feature_off: MaxChanges = 0 (no policy change)
+    fixed:
+    - MaxChanges
+- module: spec/ext/Labels.tla
+  level: 3
+  reduction:
+    name: LabelsOff
+    spec_module: spec/ext/Labels.tla
+    spec: Spec
+    target: spec/KamanuAdversary.tla
+    target_spec: Spec
+    feature_off: HasReconcile = FALSE (Labels has no Reconcile step); its label policy and scope are the kernel's
+      Permit and Scope
+    fixed:
+    - HasReconcile
+- module: spec/ext/Progress.tla
+  level: 3
+  reduction:
+    name: ProgressOff
+    spec_module: spec/ext/Progress.tla
+    spec: PSpec
+    target: spec/MCTask.tla
+    target_spec: Spec
+    feature_off: Fixed = FALSE (the seed's untimed timer; the clock then gates nothing)
+    fixed:
+    - Fixed
+- module: spec/ext/ReconcileR3.tla
+  level: 3
+  reduction:
+    name: ReconcileR3Off
+    spec_module: spec/ext/ReconcileR3.tla
+    spec: Spec
+    target: spec/ladder/reduce/GoalAgent.tla
+    target_spec: AgentSpec
+    feature_off: 'Fixed = FALSE (the rotating schedule: no slot is handed over, an unknown answer moves no kernel
+      variable)'
+    fixed:
+    - Fixed
+- module: spec/ext/ReconcileR3b.tla
+  level: 3
+  reduction:
+    name: ReconcileR3bOff
+    spec_module: spec/ext/ReconcileR3b.tla
+    spec: Spec
+    target: spec/MCSafety.tla
+    target_spec: Spec
+    feature_off: 'RLag = 0 and Agree = 1 (records never lag: every first answer is final and resolves)'
+    fixed:
+    - RLag
+    - Agree
+- module: spec/ext/Window.tla
+  level: 3
+  reduction:
+    name: WindowOff
+    spec_module: spec/ext/Window.tla
+    spec: Spec
+    target: spec/MCSafety.tla
+    target_spec: Spec
+    feature_off: 'Permit is a kernel policy, not WindowPermit: the clock and paidAt then gate no kernel step'
+- module: spec/KamanuProbe.tla
+  level: 3
+  reduction: &id003
+    name: ProbeOff
+    spec_module: spec/MCProbe.tla
+    spec: Spec
+    target: spec/ladder/reduce/ProbeKernels.tla
+    target_spec: PKSpec
+    feature_off: 'nothing to switch: the probe is two engine profiles in lockstep, each a kernel instance'
+- module: spec/MCProbe.tla
+  level: 3
+  reduction: *id003
+- module: spec/ladder/reduce/DenySetOffDown.tla
+  level: 3
+  reduction: spec/ladder/reduce/DenySetOffDown.tla
+- module: spec/ladder/reduce/DenySetOffUp.tla
+  level: 3
+  reduction: spec/ladder/reduce/DenySetOffUp.tla
+- module: spec/ladder/reduce/FalseDenialOffDown.tla
+  level: 3
+  reduction: spec/ladder/reduce/FalseDenialOffDown.tla
+- module: spec/ladder/reduce/FalseDenialOffUp.tla
+  level: 3
+  reduction: spec/ladder/reduce/FalseDenialOffUp.tla
+- module: spec/ladder/reduce/HostileOffDown.tla
+  level: 3
+  reduction: spec/ladder/reduce/HostileOffDown.tla
+- module: spec/ladder/reduce/HostileOffUp.tla
+  level: 3
+  reduction: spec/ladder/reduce/HostileOffUp.tla
+- module: spec/ladder/reduce/BudgetKeyOffDown.tla
+  level: 3
+  reduction: spec/ladder/reduce/BudgetKeyOffDown.tla
+- module: spec/ladder/reduce/BudgetKeyOffUp.tla
+  level: 3
+  reduction: spec/ladder/reduce/BudgetKeyOffUp.tla
+- module: spec/ladder/reduce/InvalidationOffDown.tla
+  level: 3
+  reduction: spec/ladder/reduce/InvalidationOffDown.tla
+- module: spec/ladder/reduce/InvalidationOffUp.tla
+  level: 3
+  reduction: spec/ladder/reduce/InvalidationOffUp.tla
+- module: spec/ladder/reduce/LabelsOffDown.tla
+  level: 3
+  reduction: spec/ladder/reduce/LabelsOffDown.tla
+- module: spec/ladder/reduce/LabelsOffUp.tla
+  level: 3
+  reduction: spec/ladder/reduce/LabelsOffUp.tla
+- module: spec/ladder/reduce/ProbeOffDown.tla
+  level: 3
+  reduction: spec/ladder/reduce/ProbeOffDown.tla
+- module: spec/ladder/reduce/ProbeOffUp.tla
+  level: 3
+  reduction: spec/ladder/reduce/ProbeOffUp.tla
+- module: spec/ladder/reduce/ProgressOffDown.tla
+  level: 3
+  reduction: spec/ladder/reduce/ProgressOffDown.tla
+- module: spec/ladder/reduce/ProgressOffUp.tla
+  level: 3
+  reduction: spec/ladder/reduce/ProgressOffUp.tla
+- module: spec/ladder/reduce/ReconcileR3OffDown.tla
+  level: 3
+  reduction: spec/ladder/reduce/ReconcileR3OffDown.tla
+- module: spec/ladder/reduce/ReconcileR3OffUp.tla
+  level: 3
+  reduction: spec/ladder/reduce/ReconcileR3OffUp.tla
+- module: spec/ladder/reduce/ReconcileR3bOffDown.tla
+  level: 3
+  reduction: spec/ladder/reduce/ReconcileR3bOffDown.tla
+- module: spec/ladder/reduce/ReconcileR3bOffUp.tla
+  level: 3
+  reduction: spec/ladder/reduce/ReconcileR3bOffUp.tla
+- module: spec/ladder/reduce/UndeterminedSafetyOffDown.tla
+  level: 3
+  reduction: spec/ladder/reduce/UndeterminedSafetyOffDown.tla
+- module: spec/ladder/reduce/UndeterminedSafetyOffUp.tla
+  level: 3
+  reduction: spec/ladder/reduce/UndeterminedSafetyOffUp.tla
+- module: spec/ladder/reduce/UndeterminedTaskOffDown.tla
+  level: 3
+  reduction: spec/ladder/reduce/UndeterminedTaskOffDown.tla
+- module: spec/ladder/reduce/UndeterminedTaskOffUp.tla
+  level: 3
+  reduction: spec/ladder/reduce/UndeterminedTaskOffUp.tla
+- module: spec/ladder/reduce/WindowKernelOffDown.tla
+  level: 3
+  reduction: spec/ladder/reduce/WindowKernelOffDown.tla
+- module: spec/ladder/reduce/WindowKernelOffUp.tla
+  level: 3
+  reduction: spec/ladder/reduce/WindowKernelOffUp.tla
+- module: spec/ladder/reduce/WindowOffDown.tla
+  level: 3
+  reduction: spec/ladder/reduce/WindowOffDown.tla
+- module: spec/ladder/reduce/WindowOffUp.tla
+  level: 3
+  reduction: spec/ladder/reduce/WindowOffUp.tla
+# R5: the split modules, each with its fused-halves reduction (kamanu.ladder.split.REDUCTIONS:
+#   <S>Fused, Split = FALSE, against the seed adversary kernel; its files in spec/ladder/split/;
+#   evidence/ladder/r5/reductions.json)
+- module: spec/ladder/split/SucceedSplit.tla
+  level: 3
+  reduction: spec/ladder/split/SucceedSplitFusedDown.tla
+- module: spec/ladder/split/SucceedSplitFusedDown.tla
+  level: 3
+  reduction: spec/ladder/split/SucceedSplitFusedDown.tla
+- module: spec/ladder/split/SucceedSplitFusedUp.tla
+  level: 3
+  reduction: spec/ladder/split/SucceedSplitFusedUp.tla
+- module: spec/ladder/split/ReconcileSplit.tla
+  level: 3
+  reduction: spec/ladder/split/ReconcileSplitFusedDown.tla
+- module: spec/ladder/split/ReconcileSplitFusedDown.tla
+  level: 3
+  reduction: spec/ladder/split/ReconcileSplitFusedDown.tla
+- module: spec/ladder/split/ReconcileSplitFusedUp.tla
+  level: 3
+  reduction: spec/ladder/split/ReconcileSplitFusedUp.tla
+- module: spec/ladder/split/RefusalSplit.tla
+  level: 3
+  reduction: spec/ladder/split/RefusalSplitFusedDown.tla
+- module: spec/ladder/split/RefusalSplitFusedDown.tla
+  level: 3
+  reduction: spec/ladder/split/RefusalSplitFusedDown.tla
+- module: spec/ladder/split/RefusalSplitFusedUp.tla
+  level: 3
+  reduction: spec/ladder/split/RefusalSplitFusedUp.tla
+- module: spec/ext/Storm.tla
+  standalone: 'the retry-storm model (K12, kamanu check''s storm line): its own ages and variables, no kernel module'
+- module: spec/ext/HuntFreeze.tla
+  standalone: 'the hunt''s freeze model (H2): one agent over ages, its own variables, no kernel module'
+- module: spec/demos/Handoff.tla
+  illustration: a two-agent handoff demo over its own variables; no kernel step, read by no gate's product
+- module: spec/demos/Interrupt.tla
+  illustration: an interruption demo over its own variables; no kernel step, read by no gate's product
+- module: spec/demos/Recruit.tla
+  illustration: a recruiting-pipeline demo over its own variables; no kernel step, read by no gate's product
+- module: spec/demos/Wallet.tla
+  illustration: a two-agent wallet demo on the kernel's own variables and steps; read only by demo gates
+# R4: staleness counted in calls. Its reduction to the kernel is the stated mapping from each
+# (Atomic, Lag) profile to (Atomic, OwnWrites, OtherLag), checked by TLC on R1's 40 single-mark
+# cells (kamanu/ladder/staleness.py; evidence/ladder/r4/mapping.json): the Lag-0 profiles map to
+# OwnWrites TRUE, OtherLag 0 exactly (equal view sets). SeqWriter is Staleness with one
+# sequential writer per key (evidence/ladder/r4/seqwriter.json).
+- module: spec/ladder/Staleness.tla
+  level: 3
+  reduction: spec/ladder/Staleness.tla
+- module: spec/ladder/SeqWriter.tla
+  level: 3
+  reduction: spec/ladder/Staleness.tla
+# R9: towards proof. PrKernel is the kernel seed with Apalache type annotations (comments to
+# TLC; listed in evidence/ladder/r9/annotations.json), PrLedger the ledger renamed, PrRefine the
+# candidate invariant and the refinement and tightness obligations (TLC: PrRefine.cfg,
+# PrTight.cfg). PrKernelFold / PrRefineFold are the same in a form Apalache reads; the Pr*Ap
+# modules are the Apalache harnesses (evidence/ladder/r9/run.py, summary.json, blocker.md).
+- module: spec/ladder/proof/PrKernel.tla
+  level: 2
+  reduction: spec/ladder/proof/PrRefine.tla
+- module: spec/ladder/proof/PrLedger.tla
+  level: 2
+  reduction: spec/ladder/proof/PrRefine.tla
+- module: spec/ladder/proof/PrRefine.tla
+  level: 2
+  reduction: spec/ladder/proof/PrRefine.tla
+- module: spec/ladder/proof/PrKernelFold.tla
+  level: 2
+  reduction: spec/ladder/proof/PrRefineFold.tla
+- module: spec/ladder/proof/PrRefineFold.tla
+  level: 2
+  reduction: spec/ladder/proof/PrRefineFold.tla
+- module: spec/ladder/proof/PrRefineAp.tla
+  level: 2
+  reduction: spec/ladder/proof/PrRefine.tla
+- module: spec/ladder/proof/PrFoldAp.tla
+  level: 2
+  reduction: spec/ladder/proof/PrRefineFold.tla
+- module: spec/ladder/proof/PrFoldApReq.tla
+  level: 2
+  reduction: spec/ladder/proof/PrRefineFold.tla
+- module: spec/ladder/proof/PrFoldApBounded.tla
+  level: 2
+  reduction: spec/ladder/proof/PrRefineFold.tla
+# R12: the coach and the reconciling harness as agent moves of R7's fix module. LadderCoach
+# EXTENDS LadderFix (written beside spec/ by kamanu/ladder/fix.py for each agent-cell TLC run;
+# kamanu/ladder/coachmodel.py) and is checked by TLC per agent cell with R7's FSpendOK,
+# FSoundAdmit, FNoFalseRefusal and FNoPaid (evidence/ladder/r12/agent.json).
+- module: spec/ladder/coach/LadderCoach.tla
+  level: 3
+  reduction: spec/ladder/coach/LadderCoach.tla
+# R16c: the ledgers of record for rules without money (kamanu check on a flag or latch policy;
+# kamanu/ledgers/check.py). Each extends WindowKernel with a ghost truth that constrains no kernel
+# step, so each reduces to WindowKernel with a history variable restating truth.
+- module: spec/ledgers/Latch.tla
+  level: 3
+  reduction:
+    name: LatchOff
+    spec_module: spec/ledgers/Latch.tla
+    spec: LSpec
+    target: spec/ext/WindowKernel.tla
+    target_spec: Spec
+    feature_off: 'nothing to switch: truth is a ghost that constrains no kernel step'
+- module: spec/ledgers/Prerequisite.tla
+  level: 3
+  reduction:
+    name: PrerequisiteOff
+    spec_module: spec/ledgers/Prerequisite.tla
+    spec: LSpec
+    target: spec/ext/WindowKernel.tla
+    target_spec: Spec
+    feature_off: 'nothing to switch: truth is a ghost that constrains no kernel step'
+# R16d: the Credit ledger (a register that spans two actions: approvals, tokens, concurrency limits;
+# kamanu.fast.credit is lint's machine for it). It declares no variable (its truth reads the kernel's
+# own eff, st and rq) and its spec bounds the calls in flight, so it reduces to WindowKernel with
+# InFlightMax at the request bound.
+- module: spec/ledgers/Credit.tla
+  level: 3
+  reduction:
+    name: CreditOff
+    spec_module: spec/ledgers/Credit.tla
+    spec: CSpec
+    target: spec/ext/WindowKernel.tla
+    target_spec: Spec
+    feature_off: 'InFlightMax = 3, the request bound MaxReq: no in-flight bound below it; the truth is read, never stored'
+    fixed: [InFlightMax]
+# X4: the card ledger (authorization, capture, reversal, over-capture and force-post as ledger steps;
+# kamanu.fast.card is lint's machine for it). With over-capture and force-post off it is the ledger with
+# holds, CardHolds (level 2, under spec/ladder), with the same variables.
+- module: spec/ledgers/Card.tla
+  level: 3
+  reduction:
+    name: CardOff
+    spec_module: spec/ledgers/Card.tla
+    spec: CardSpec
+    target: spec/ladder/reduce/CardHolds.tla
+    target_spec: HSpec
+    feature_off: 'OverCapture = 0 and ForcePost = 0: no capture above its hold, nothing committed without a hold'
+    fixed: [OverCapture, ForcePost]
+- module: spec/ladder/reduce/CardHolds.tla
+  level: 2
+  reduction: spec/ladder/reduce/CardHolds.tla
+- module: spec/ladder/reduce/CardOffDown.tla
+  level: 3
+  reduction: spec/ladder/reduce/CardOffDown.tla
+- module: spec/ladder/reduce/CardOffUp.tla
+  level: 3
+  reduction: spec/ladder/reduce/CardOffUp.tla
+- module: spec/ladder/reduce/CreditOffDown.tla
+  level: 3
+  reduction: spec/ladder/reduce/CreditOffDown.tla
+- module: spec/ladder/reduce/CreditOffUp.tla
+  level: 3
+  reduction: spec/ladder/reduce/CreditOffUp.tla
+- module: spec/ladder/reduce/LatchOffDown.tla
+  level: 3
+  reduction: spec/ladder/reduce/LatchOffDown.tla
+- module: spec/ladder/reduce/LatchOffUp.tla
+  level: 3
+  reduction: spec/ladder/reduce/LatchOffUp.tla
+- module: spec/ladder/reduce/PrerequisiteOffDown.tla
+  level: 3
+  reduction: spec/ladder/reduce/PrerequisiteOffDown.tla
+- module: spec/ladder/reduce/PrerequisiteOffUp.tla
+  level: 3
+  reduction: spec/ladder/reduce/PrerequisiteOffUp.tla
+- module: spec/ext/Isolation.tla
+  standalone: 'the isolation contract (X5): tenants, sessions, records and a connector''s accesses, its own variables bound and given, no kernel module'
+# X8: limits that are not windows. Each is its own model over its own variables (decisions, payments moved,
+# calls in flight); no kernel module, no kernel step.
+- module: spec/ext/Threshold.tla
+  standalone: 'the per-payment threshold (X8): decisions, payments moved and calls in flight, its own variables, no kernel module'
+- module: spec/ext/Composite.tla
+  standalone: 'the most-restrictive composite of a threshold and a window or lifetime cap (X8): its own variables and clock, no kernel module'

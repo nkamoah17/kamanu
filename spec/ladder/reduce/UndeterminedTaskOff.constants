@@ -1,0 +1,22 @@
+\* Refuse disabled: the configuration replaces Refuse by NoRefuse (never enabled)
+Templates <- TOne
+MaxReq = 3
+MaxFails = 1
+Reflexive = TRUE
+DenyRecord = "none"
+Atomic = TRUE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = TRUE
+Permit <- PRefundOnReconcile
+Scope <- ScopeGlobal
+Cap = 100
+GoalTemplate <- GoalPay
+NeedsApproval = TRUE
+ApproverFair = TRUE
+AgentFair = TRUE
+HasTimeout = TRUE
+MaskDeadlock = FALSE
+RefuseRecord = FALSE
+InFlightGuard = FALSE
+Refuse <- [Undetermined] NoRefuse

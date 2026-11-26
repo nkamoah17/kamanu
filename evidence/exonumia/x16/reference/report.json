@@ -1,0 +1,522 @@
+{
+ "report": "sprint-report-v1",
+ "headline": "The contracted path was decided (no part UNKNOWN); no family of 8 has a finding; the processor was simulated, and nothing here is a statement about a processor's system.",
+ "decided": true,
+ "simulated": true,
+ "handler": "demo.sprint.handlers:Reference",
+ "scope": "demo/sprint/scope.json",
+ "seed": 1,
+ "trials": 99,
+ "parallel": 8,
+ "model": {
+  "limits": [
+   {
+    "id": "cardholder-daily",
+    "interval": "daily",
+    "amount": 2000,
+    "window": "daily: one fixed calendar window, the UTC day (it resets at midnight UTC); the card model checks the bucket of one such window, and the ledger keeps one bucket per window; a sliding window is not what was checked",
+    "profile": "profiles/cardholder-daily.json",
+    "receipt": "receipts/cardholder-daily.json",
+    "answer": {
+     "card": "issuing-documented",
+     "documented": "catalogue/checks/stripe-issuing-spending-controls.json",
+     "face": 2000,
+     "ceiling": 2000,
+     "fineness": "1.000",
+     "sound": {
+      "status": "VACUOUS",
+      "level": "ASSUMED"
+     },
+     "tight": {
+      "status": "holds",
+      "level": "ASSUMED"
+     },
+     "failure": null,
+     "hypotheses": [
+      {
+       "name": "Atomic",
+       "value": false,
+       "status": "assumed",
+       "rests_on": [
+        0,
+        1
+       ]
+      },
+      {
+       "name": "Lag",
+       "value": 1,
+       "status": "assumed",
+       "rests_on": [
+        0,
+        1
+       ]
+      },
+      {
+       "name": "OverCapture",
+       "value": 20,
+       "status": "assumed",
+       "rests_on": [
+        2
+       ]
+      }
+     ],
+     "level": "ASSUMED",
+     "bounds": {
+      "holds": 2,
+      "amounts": [
+       5000,
+       10000
+      ],
+      "partial": true,
+      "reversal": true
+     },
+     "cell": {
+      "Cap": 2000,
+      "Holds": 2,
+      "Amts": [
+       5000,
+       10000
+      ],
+      "Partial": true,
+      "Reversal": true,
+      "OverCapture": 20,
+      "ForcePost": 0,
+      "Lag": 1,
+      "Atomic": false
+     }
+    },
+    "checks": [
+     {
+      "name": "Sound",
+      "status": "VACUOUS",
+      "level": "ASSUMED"
+     },
+     {
+      "name": "Tight",
+      "status": "holds",
+      "level": "ASSUMED"
+     }
+    ],
+    "constants": [
+     {
+      "name": "Atomic",
+      "value": false,
+      "status": "assumed"
+     },
+     {
+      "name": "Lag",
+      "value": 1,
+      "status": "assumed"
+     },
+     {
+      "name": "OverCapture",
+      "value": 20,
+      "status": "assumed"
+     }
+    ],
+    "tight_trace": null
+   },
+   {
+    "id": "card-per-authorization",
+    "interval": "per_authorization",
+    "amount": 350,
+    "window": "per_authorization: no calendar window; the bucket is the authorization itself (its hold and captures)",
+    "profile": "profiles/card-per-authorization.json",
+    "receipt": "receipts/card-per-authorization.json",
+    "answer": {
+     "card": "issuing-documented",
+     "documented": "catalogue/checks/stripe-issuing-spending-controls.json",
+     "face": 350,
+     "ceiling": 350,
+     "fineness": "1.000",
+     "sound": {
+      "status": "VACUOUS",
+      "level": "ASSUMED"
+     },
+     "tight": {
+      "status": "holds",
+      "level": "ASSUMED"
+     },
+     "failure": null,
+     "hypotheses": [
+      {
+       "name": "Atomic",
+       "value": false,
+       "status": "assumed",
+       "rests_on": [
+        0,
+        1
+       ]
+      },
+      {
+       "name": "Lag",
+       "value": 1,
+       "status": "assumed",
+       "rests_on": [
+        0,
+        1
+       ]
+      },
+      {
+       "name": "OverCapture",
+       "value": 20,
+       "status": "assumed",
+       "rests_on": [
+        2
+       ]
+      }
+     ],
+     "level": "ASSUMED",
+     "bounds": {
+      "holds": 2,
+      "amounts": [
+       5000,
+       10000
+      ],
+      "partial": true,
+      "reversal": true
+     },
+     "cell": {
+      "Cap": 350,
+      "Holds": 2,
+      "Amts": [
+       5000,
+       10000
+      ],
+      "Partial": true,
+      "Reversal": true,
+      "OverCapture": 20,
+      "ForcePost": 0,
+      "Lag": 1,
+      "Atomic": false
+     }
+    },
+    "checks": [
+     {
+      "name": "Sound",
+      "status": "VACUOUS",
+      "level": "ASSUMED"
+     },
+     {
+      "name": "Tight",
+      "status": "holds",
+      "level": "ASSUMED"
+     }
+    ],
+    "constants": [
+     {
+      "name": "Atomic",
+      "value": false,
+      "status": "assumed"
+     },
+     {
+      "name": "Lag",
+      "value": 1,
+      "status": "assumed"
+     },
+     {
+      "name": "OverCapture",
+      "value": 20,
+      "status": "assumed"
+     }
+    ],
+    "tight_trace": null
+   },
+   {
+    "id": "cards-monthly",
+    "interval": "monthly",
+    "amount": 20000,
+    "window": "monthly: one fixed calendar window, the UTC calendar month; the card model checks the bucket of one such window, and the ledger keeps one bucket per window; a sliding window is not what was checked",
+    "profile": "profiles/cards-monthly.json",
+    "receipt": "receipts/cards-monthly.json",
+    "answer": {
+     "card": "issuing-documented",
+     "documented": "catalogue/checks/stripe-issuing-spending-controls.json",
+     "face": 20000,
+     "ceiling": 24000,
+     "fineness": ".833",
+     "sound": {
+      "status": "FAILS",
+      "level": "REFUTED"
+     },
+     "tight": {
+      "status": "VACUOUS",
+      "level": "ASSUMED"
+     },
+     "failure": {
+      "property": "Sound",
+      "trace": [
+       {
+        "step": "decide",
+        "hold": 1,
+        "amount": 10000,
+        "outcome": "approve",
+        "held": 0,
+        "spent": 0,
+        "doubt": 0
+       },
+       {
+        "step": "reserve",
+        "hold": 1,
+        "amount": null,
+        "outcome": null,
+        "held": 10000,
+        "spent": 0,
+        "doubt": 0
+       },
+       {
+        "step": "capture",
+        "hold": 1,
+        "amount": 12000,
+        "outcome": null,
+        "held": 0,
+        "spent": 12000,
+        "doubt": 0
+       },
+       {
+        "step": "decide",
+        "hold": 2,
+        "amount": 10000,
+        "outcome": "approve",
+        "held": 0,
+        "spent": 12000,
+        "doubt": 0
+       },
+       {
+        "step": "reserve",
+        "hold": 2,
+        "amount": null,
+        "outcome": null,
+        "held": 10000,
+        "spent": 12000,
+        "doubt": 0
+       }
+      ]
+     },
+     "hypotheses": [
+      {
+       "name": "Atomic",
+       "value": false,
+       "status": "assumed",
+       "rests_on": [
+        0,
+        1
+       ]
+      },
+      {
+       "name": "Lag",
+       "value": 1,
+       "status": "assumed",
+       "rests_on": [
+        0,
+        1
+       ]
+      },
+      {
+       "name": "OverCapture",
+       "value": 20,
+       "status": "assumed",
+       "rests_on": [
+        2
+       ]
+      }
+     ],
+     "level": "ASSUMED",
+     "bounds": {
+      "holds": 2,
+      "amounts": [
+       5000,
+       10000
+      ],
+      "partial": true,
+      "reversal": true
+     },
+     "cell": {
+      "Cap": 20000,
+      "Holds": 2,
+      "Amts": [
+       5000,
+       10000
+      ],
+      "Partial": true,
+      "Reversal": true,
+      "OverCapture": 20,
+      "ForcePost": 0,
+      "Lag": 1,
+      "Atomic": false
+     }
+    },
+    "checks": [
+     {
+      "name": "Sound",
+      "status": "FAILS",
+      "level": "REFUTED"
+     },
+     {
+      "name": "Tight",
+      "status": "VACUOUS",
+      "level": "ASSUMED"
+     }
+    ],
+    "constants": [
+     {
+      "name": "Atomic",
+      "value": false,
+      "status": "assumed"
+     },
+     {
+      "name": "Lag",
+      "value": 1,
+      "status": "assumed"
+     },
+     {
+      "name": "OverCapture",
+      "value": 20,
+      "status": "assumed"
+     }
+    ],
+    "tight_trace": null
+   }
+  ]
+ },
+ "measurement": {
+  "level": "TESTED",
+  "families": [
+   {
+    "family": "single",
+    "name": "single asks below, at and above the limit",
+    "trials": 3,
+    "approvals_unfit": 0,
+    "wrongful_refusals": 0,
+    "order_dependent": 0,
+    "largest_over": 0,
+    "finding": false,
+    "shortest": null,
+    "journal": "journals/single.jsonl",
+    "report": "ledger/single.json",
+    "regression": null,
+    "sentence": "3 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 63.2% of the time or more would be missed with probability at most 5%; a rarer one can still be there.",
+    "level": "TESTED"
+   },
+   {
+    "family": "parallel",
+    "name": "parallel asks",
+    "trials": 99,
+    "approvals_unfit": 0,
+    "wrongful_refusals": 0,
+    "order_dependent": 0,
+    "largest_over": 0,
+    "finding": false,
+    "shortest": null,
+    "journal": "journals/parallel.jsonl",
+    "report": "ledger/parallel.json",
+    "regression": null,
+    "sentence": "99 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 3.0% of the time or more would be missed with probability at most 5%; a rarer one can still be there.",
+    "level": "TESTED"
+   },
+   {
+    "family": "cards",
+    "name": "several cards under one cardholder",
+    "trials": 99,
+    "approvals_unfit": 0,
+    "wrongful_refusals": 0,
+    "order_dependent": 0,
+    "largest_over": 0,
+    "finding": false,
+    "shortest": null,
+    "journal": "journals/cards.jsonl",
+    "report": "ledger/cards.json",
+    "regression": null,
+    "sentence": "99 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 3.0% of the time or more would be missed with probability at most 5%; a rarer one can still be there.",
+    "level": "TESTED"
+   },
+   {
+    "family": "partial_capture",
+    "name": "authorization then partial capture",
+    "trials": 3,
+    "approvals_unfit": 0,
+    "wrongful_refusals": 0,
+    "order_dependent": 0,
+    "largest_over": 0,
+    "finding": false,
+    "shortest": null,
+    "journal": "journals/partial_capture.jsonl",
+    "report": "ledger/partial_capture.json",
+    "regression": null,
+    "sentence": "3 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 63.2% of the time or more would be missed with probability at most 5%; a rarer one can still be there.",
+    "level": "TESTED"
+   },
+   {
+    "family": "over_capture",
+    "name": "capture above the hold, then reversal",
+    "trials": 3,
+    "approvals_unfit": 0,
+    "wrongful_refusals": 0,
+    "order_dependent": 0,
+    "largest_over": 0,
+    "finding": false,
+    "shortest": null,
+    "journal": "journals/over_capture.jsonl",
+    "report": "ledger/over_capture.json",
+    "regression": null,
+    "sentence": "3 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 63.2% of the time or more would be missed with probability at most 5%; a rarer one can still be there.",
+    "level": "TESTED"
+   },
+   {
+    "family": "timeout",
+    "name": "time-out with an ambiguous outcome, then retry",
+    "trials": 99,
+    "approvals_unfit": 0,
+    "wrongful_refusals": 0,
+    "order_dependent": 0,
+    "largest_over": 0,
+    "finding": false,
+    "shortest": null,
+    "journal": "journals/timeout.jsonl",
+    "report": "ledger/timeout.json",
+    "regression": null,
+    "sentence": "99 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 3.0% of the time or more would be missed with probability at most 5%; a rarer one can still be there.",
+    "level": "TESTED"
+   },
+   {
+    "family": "reset",
+    "name": "reset at the interval's boundary",
+    "trials": 3,
+    "approvals_unfit": 0,
+    "wrongful_refusals": 0,
+    "order_dependent": 0,
+    "largest_over": 0,
+    "finding": false,
+    "shortest": null,
+    "journal": "journals/reset.jsonl",
+    "report": "ledger/reset.json",
+    "regression": null,
+    "sentence": "3 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 63.2% of the time or more would be missed with probability at most 5%; a rarer one can still be there.",
+    "level": "TESTED"
+   },
+   {
+    "family": "expiry",
+    "name": "an uncaptured hold that expires, and two limits on one purchase",
+    "trials": 3,
+    "approvals_unfit": 0,
+    "wrongful_refusals": 0,
+    "order_dependent": 0,
+    "largest_over": 0,
+    "finding": false,
+    "shortest": null,
+    "journal": "journals/expiry.jsonl",
+    "report": "ledger/expiry.json",
+    "regression": null,
+    "sentence": "3 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 63.2% of the time or more would be missed with probability at most 5%; a rarer one can still be there.",
+    "level": "TESTED"
+   }
+  ]
+ },
+ "deployment": {
+  "live": null,
+  "fields": [],
+  "statement": "No live configuration was given (--live): nothing connects the tested configuration to a live one."
+ },
+ "cabinet": "evidence/exonumia/x16/reference/cabinet",
+ "consent": false
+}

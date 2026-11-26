@@ -1,0 +1,18 @@
+{
+ "available": {
+  "worst": [
+   2,
+   3
+  ],
+  "measured": {
+   "undetermined": 4,
+   "decisions": 40,
+   "simultaneous": 8,
+   "per_burst_max": 1,
+   "none_at": [
+    2,
+    4
+   ]
+  }
+ }
+}

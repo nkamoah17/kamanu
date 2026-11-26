@@ -1,0 +1,1 @@
+kamanu scan --export: census-v1 as of 2026-11-26 (hold 30 days): 1 types, 2 dies, 0 measured constants, signed; nothing of a private receipt or of a third party's held that day

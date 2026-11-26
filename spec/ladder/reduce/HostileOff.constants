@@ -1,0 +1,21 @@
+\* no adversary (AdvMax = 0) and no timer (HasTimeout = FALSE)
+Templates <- HT
+MaxReq = 3
+MaxFails = 1
+Reflexive = TRUE
+DenyRecord = "request"
+Atomic = TRUE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = TRUE
+Permit <- PRefundOnReconcile
+Scope <- ScopeGlobal
+Cap = 100
+GoalTemplate <- GP
+NeedsApproval = TRUE
+ApproverFair = TRUE
+AgentFair = TRUE
+HasTimeout = FALSE
+MaskDeadlock = FALSE
+Fixed = FALSE
+AdvMax = 0

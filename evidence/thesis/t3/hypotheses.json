@@ -1,0 +1,78 @@
+{
+ "card": "T3",
+ "statement": "lean/Kamanu/ChainSpec.lean",
+ "proof": "lean/Kamanu/Chain.lean",
+ "theorems": [
+  "Kamanu.Chain.kernel_bisim",
+  "Kamanu.Chain.kernel_sound_closed",
+  "Kamanu.Chain.kernel_tight_closed"
+ ],
+ "note": "No theorem depends on the request bound maxReq: AnyStep quantifies over it and every corollary holds for any value. constants lists, per profile constant a hypothesis narrows, the values it leaves; {} when it narrows none (the other hypotheses tie the machine's setting to the profile and harness and leave every value of every constant).",
+ "hypotheses": [
+  {
+   "name": "one_session",
+   "says": "Every request the harness can issue has the same scope key under the profile's Scope, so the scope filter keeps the whole history and the machine's one register is the view (Hyp.one_session).",
+   "constants": {}
+  },
+  {
+   "name": "amounts",
+   "says": "The amounts the machine issues are exactly the amounts of the harness's request templates (Hyp.amounts).",
+   "constants": {}
+  },
+  {
+   "name": "lag_le_one",
+   "says": "The profile's Lag is 0 or 1: a view sees the whole history or all of it but the last event (Hyp.lag_le_one).",
+   "constants": {
+    "Lag": [
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "name": "lag",
+   "says": "The machine's lag flag is set exactly when the profile's Lag is 1 (Hyp.lag).",
+   "constants": {}
+  },
+  {
+   "name": "reflexive",
+   "says": "The machine reads the request's own event exactly when the profile is reflexive (Hyp.reflexive).",
+   "constants": {}
+  },
+  {
+   "name": "atomic",
+   "says": "The machine admits and records in one step exactly when the profile is atomic (Hyp.atomic).",
+   "constants": {}
+  },
+  {
+   "name": "marks",
+   "says": "A refusal appends the profile's DenyRecord event and nothing else, none when it is none, so the machine's refusal marks are that list of at most one kind (Hyp.marks).",
+   "constants": {}
+  },
+  {
+   "name": "clean",
+   "says": "The machine may fail a running call cleanly exactly when the harness allows clean faults (Hyp.clean).",
+   "constants": {}
+  },
+  {
+   "name": "ambiguous",
+   "says": "The machine may fail a running call ambiguously exactly when the harness allows ambiguous faults (Hyp.ambiguous).",
+   "constants": {}
+  },
+  {
+   "name": "failures",
+   "says": "The machine's failure budget is the harness's MaxFails (Hyp.failures).",
+   "constants": {}
+  },
+  {
+   "name": "in_flight",
+   "says": "Each kernel step keeps at most the setting's inFlight requests pending, admitted or running, the bound the machine carries and the kernel lacks (Step).",
+   "constants": {}
+  },
+  {
+   "name": "reconcile",
+   "says": "A machine refund or confirm is matched by a kernel step only when the harness reconciles; every other machine step is matched always (Bisim.back).",
+   "constants": {}
+  }
+ ]
+}

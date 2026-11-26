@@ -1,0 +1,1654 @@
+{
+ "cells": [
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request+error",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request+error",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request+error",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request+error",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request+error",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request+error",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request+error",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request+error",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request+error",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request+error",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request+error",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request+error",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request+error",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request+error",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request+error",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request+error",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request+error",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request+error",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request+error",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request+error",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request+error",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request+error",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request+error",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request+error",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "holds",
+   "NoFalseDenial": "holds",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request+error",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request+error",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request+error",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request+error",
+    "engine": "not atomic",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request+error",
+    "engine": "stale view",
+    "rung": "R0"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request+error",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "NoFalseRefusal": "FAILS",
+   "NoFalseDenial": "FAILS",
+   "agree": true
+  }
+ ]
+}

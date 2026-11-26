@@ -1,0 +1,548 @@
+{
+  "what": "T6: a $500-a-day limit written per session, and the ledger keyed by the budget key",
+  "model": "spec/ext/BudgetKey.tla",
+  "model_sha256": "945af2012c49b999a8251f758ea1493b468754763ad2eaa15e3e3b53007cc401",
+  "commit": "b24ca616f3ecc064d08265a058ff257856b255e4",
+  "commit_note": "the commit the record was made on; the record is committed in the next one",
+  "policy": "demo/budget500/daily_limit.dw",
+  "engine": "reference",
+  "profile": {
+    "Reflexive": true,
+    "DenyRecord": "none",
+    "Atomic": true,
+    "Lag": 0
+  },
+  "bounds": {
+    "MaxReq": 3,
+    "MaxFails": 1,
+    "Cap": 50000,
+    "Faults": [
+      "ambiguous",
+      "clean"
+    ],
+    "HasReconcile": true,
+    "amounts": [
+      30000
+    ]
+  },
+  "levels": {
+    "session": [
+      "BOUNDED_PASS",
+      "REFUTED"
+    ],
+    "budget": [
+      "BOUNDED_PASS"
+    ]
+  },
+  "runs": {
+    "session": {
+      "cell": {
+        "MaxReq": 3,
+        "MaxFails": 1,
+        "Cap": 50000,
+        "Lag": 0,
+        "Faults": [
+          "ambiguous",
+          "clean"
+        ],
+        "HasReconcile": true,
+        "Reflexive": true,
+        "Atomic": true,
+        "DenyRecord": "none",
+        "Permit": "PRefundOnReconcile",
+        "Scope": "session",
+        "amounts": [
+          30000
+        ]
+      },
+      "sessions": {
+        "s1": {
+          "tenant": "acme",
+          "principal": "agent-7",
+          "purpose": "procurement",
+          "window": "2026-11-23"
+        },
+        "s2": {
+          "tenant": "acme",
+          "principal": "agent-7",
+          "purpose": "procurement",
+          "window": "2026-11-23"
+        },
+        "s3": {
+          "tenant": "acme",
+          "principal": "agent-7",
+          "purpose": "procurement",
+          "window": "2026-11-23"
+        }
+      },
+      "check": [
+        {
+          "key": {
+            "tenant": "acme",
+            "principal": "agent-7",
+            "purpose": "procurement",
+            "window": "2026-11-23"
+          },
+          "sessions": [
+            "s1",
+            "s2",
+            "s3"
+          ],
+          "question": "sound",
+          "status": "FAILS",
+          "trace": [
+            {
+              "step": "issue",
+              "slot": 1,
+              "session": "s1",
+              "amount": 30000
+            },
+            {
+              "step": "issue",
+              "slot": 2,
+              "session": "s2",
+              "amount": 30000
+            },
+            {
+              "step": "permit",
+              "slot": 1,
+              "session": "s1",
+              "amount": 30000
+            },
+            {
+              "step": "succeed",
+              "slot": 1,
+              "session": "s1",
+              "amount": 30000
+            },
+            {
+              "step": "permit",
+              "slot": 2,
+              "session": "s2",
+              "amount": 30000
+            },
+            {
+              "step": "succeed",
+              "slot": 2,
+              "session": "s2",
+              "amount": 30000
+            }
+          ],
+          "covers": {
+            "requests": 3,
+            "failures": 1,
+            "faults": [
+              "ambiguous",
+              "clean"
+            ]
+          },
+          "level": "REFUTED",
+          "rests_on": [
+            {
+              "kind": "method",
+              "name": "tlc",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "Reflexive",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "DenyRecord",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "Atomic",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "Lag",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "Scope",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "flag",
+              "name": "HasReconcile",
+              "level": "BOUNDED_PASS"
+            }
+          ]
+        },
+        {
+          "key": {
+            "tenant": "acme",
+            "principal": "agent-7",
+            "purpose": "procurement",
+            "window": "2026-11-23"
+          },
+          "sessions": [
+            "s1",
+            "s2",
+            "s3"
+          ],
+          "question": "tight",
+          "status": "PASS",
+          "trace": null,
+          "covers": {
+            "requests": 3,
+            "failures": 1,
+            "faults": [
+              "ambiguous",
+              "clean"
+            ]
+          },
+          "level": "BOUNDED_PASS",
+          "rests_on": [
+            {
+              "kind": "method",
+              "name": "tlc",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "Reflexive",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "DenyRecord",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "Atomic",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "Lag",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "Scope",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "flag",
+              "name": "HasReconcile",
+              "level": "BOUNDED_PASS"
+            }
+          ]
+        }
+      ],
+      "lint": [
+        {
+          "key": {
+            "tenant": "acme",
+            "principal": "agent-7",
+            "purpose": "procurement",
+            "window": "2026-11-23"
+          },
+          "sessions": [
+            "s1",
+            "s2",
+            "s3"
+          ],
+          "question": "sound",
+          "status": "FAILS",
+          "trace": [
+            {
+              "step": "issue",
+              "slot": 1,
+              "session": "s1",
+              "amount": 30000
+            },
+            {
+              "step": "issue",
+              "slot": 2,
+              "session": "s2",
+              "amount": 30000
+            },
+            {
+              "step": "permit",
+              "slot": 1,
+              "session": "s1",
+              "amount": 30000
+            },
+            {
+              "step": "succeed",
+              "slot": 1,
+              "session": "s1",
+              "amount": 30000
+            },
+            {
+              "step": "permit",
+              "slot": 2,
+              "session": "s2",
+              "amount": 30000
+            },
+            {
+              "step": "succeed",
+              "slot": 2,
+              "session": "s2",
+              "amount": 30000
+            }
+          ],
+          "covers": {
+            "requests": 3,
+            "failures": 1,
+            "faults": [
+              "ambiguous",
+              "clean"
+            ]
+          }
+        },
+        {
+          "key": {
+            "tenant": "acme",
+            "principal": "agent-7",
+            "purpose": "procurement",
+            "window": "2026-11-23"
+          },
+          "sessions": [
+            "s1",
+            "s2",
+            "s3"
+          ],
+          "question": "tight",
+          "status": "holds",
+          "trace": null,
+          "covers": {
+            "requests": 3,
+            "failures": 1,
+            "faults": [
+              "ambiguous",
+              "clean"
+            ]
+          }
+        }
+      ]
+    },
+    "budget": {
+      "cell": {
+        "MaxReq": 3,
+        "MaxFails": 1,
+        "Cap": 50000,
+        "Lag": 0,
+        "Faults": [
+          "ambiguous",
+          "clean"
+        ],
+        "HasReconcile": true,
+        "Reflexive": true,
+        "Atomic": true,
+        "DenyRecord": "none",
+        "Permit": "PRefundOnReconcile",
+        "Scope": "budget",
+        "amounts": [
+          30000
+        ]
+      },
+      "sessions": {
+        "s1": {
+          "tenant": "acme",
+          "principal": "agent-7",
+          "purpose": "procurement",
+          "window": "2026-11-23"
+        },
+        "s2": {
+          "tenant": "acme",
+          "principal": "agent-7",
+          "purpose": "procurement",
+          "window": "2026-11-23"
+        },
+        "s3": {
+          "tenant": "acme",
+          "principal": "agent-7",
+          "purpose": "procurement",
+          "window": "2026-11-23"
+        }
+      },
+      "check": [
+        {
+          "key": {
+            "tenant": "acme",
+            "principal": "agent-7",
+            "purpose": "procurement",
+            "window": "2026-11-23"
+          },
+          "sessions": [
+            "s1",
+            "s2",
+            "s3"
+          ],
+          "question": "sound",
+          "status": "PASS",
+          "trace": null,
+          "covers": {
+            "requests": 3,
+            "failures": 1,
+            "faults": [
+              "ambiguous",
+              "clean"
+            ]
+          },
+          "level": "BOUNDED_PASS",
+          "rests_on": [
+            {
+              "kind": "method",
+              "name": "tlc",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "Reflexive",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "DenyRecord",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "Atomic",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "Lag",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "Scope",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "flag",
+              "name": "HasReconcile",
+              "level": "BOUNDED_PASS"
+            }
+          ]
+        },
+        {
+          "key": {
+            "tenant": "acme",
+            "principal": "agent-7",
+            "purpose": "procurement",
+            "window": "2026-11-23"
+          },
+          "sessions": [
+            "s1",
+            "s2",
+            "s3"
+          ],
+          "question": "tight",
+          "status": "PASS",
+          "trace": null,
+          "covers": {
+            "requests": 3,
+            "failures": 1,
+            "faults": [
+              "ambiguous",
+              "clean"
+            ]
+          },
+          "level": "BOUNDED_PASS",
+          "rests_on": [
+            {
+              "kind": "method",
+              "name": "tlc",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "Reflexive",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "DenyRecord",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "Atomic",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "Lag",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "constant",
+              "name": "Scope",
+              "level": "BOUNDED_PASS"
+            },
+            {
+              "kind": "flag",
+              "name": "HasReconcile",
+              "level": "BOUNDED_PASS"
+            }
+          ]
+        }
+      ],
+      "lint": [
+        {
+          "key": {
+            "tenant": "acme",
+            "principal": "agent-7",
+            "purpose": "procurement",
+            "window": "2026-11-23"
+          },
+          "sessions": [
+            "s1",
+            "s2",
+            "s3"
+          ],
+          "question": "sound",
+          "status": "holds",
+          "trace": null,
+          "covers": {
+            "requests": 3,
+            "failures": 1,
+            "faults": [
+              "ambiguous",
+              "clean"
+            ]
+          }
+        },
+        {
+          "key": {
+            "tenant": "acme",
+            "principal": "agent-7",
+            "purpose": "procurement",
+            "window": "2026-11-23"
+          },
+          "sessions": [
+            "s1",
+            "s2",
+            "s3"
+          ],
+          "question": "tight",
+          "status": "holds",
+          "trace": null,
+          "covers": {
+            "requests": 3,
+            "failures": 1,
+            "faults": [
+              "ambiguous",
+              "clean"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "engine_cannot": "The engine's limit is session-scoped: it sums the events of one session's history, and a caller that opens a new session starts that sum at zero. No policy text in that engine can say \"$500 a day for this tenant, principal and purpose\" across sessions, so it cannot say the budget; the budget is kept by a ledger keyed by (tenant, principal, purpose, day) outside the engine."
+}

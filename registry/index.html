@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>KAMANU hallmark registry</title>
+<style>body{font-family:system-ui,sans-serif;max-width:72rem;margin:2rem auto;padding:0 1rem;color:#1d1d1f}
+table{border-collapse:collapse;width:100%}th,td{border-bottom:1px solid #ddd;padding:.3rem .5rem;text-align:left;vertical-align:top}
+th[data-sort]{cursor:pointer}code,pre{font-family:ui-monospace,monospace;font-size:.85rem}pre{white-space:pre-wrap;word-break:break-all;margin:0}
+.LAPSED{color:#a00;font-weight:bold}.current{color:#060;font-weight:bold}.note{color:#555}</style>
+</head>
+<body>
+<h1>KAMANU hallmark registry</h1>
+<p>Each row is a signed hallmark: a limit's face value (its cap), the ceiling the assay gives for it, its fineness
+(face value over ceiling, a millesimal mark with three decimals, never rounded up), its stranded budget and the proof
+level of its weakest link, shown with the hypotheses (each measured, assumed or proved) and the trace behind them.
+Each page shows the whole record, its mint mark (the hashes), the day it was struck and every re-measurement in its
+Pyx. A hallmark whose re-measurement changed a figure, lowered a level or ran past its valid-through date is shown as
+LAPSED, with the date and the reason; it is never removed.</p>
+<p>A limit is called fine only at fineness 1.000, at its level; below 1.000 it is called debased, by the ceiling less
+the face value, and always beside its trace and its level (rule E1).</p>
+<p>Built on <time data-build-day="2026-11-26">2026-11-26</time> from the records alone. A record of someone else's engine is
+held unless released on the record (rule E5): it is left out until its hold has passed on the day of the build, or
+until the owner releases it on the record; a private record is left out. See <a href="house-rules.html">the house
+rules and the mint's words</a>.</p>
+<p>The registry's public key: <code data-public-key="7fae4269ca9e431336a566f036d10f8cc2e6702c03af12fbccef3264dd926eab" data-fingerprint="ec41f16b3791fa48f9a5c85ee91c07162ca768d7832f1158764edcba163c84b1">7fae4269ca9e431336a566f036d10f8cc2e6702c03af12fbccef3264dd926eab</code><br>
+its fingerprint (SHA-256 of the key's 32 bytes): <code>ec41f16b3791fa48f9a5c85ee91c07162ca768d7832f1158764edcba163c84b1</code></p>
+<p class="note">Each page carries a verifier that checks its record with node alone, with no network:
+<code>node kamanu-verify.cjs PAGE.html KEY</code>, KEY the public key above. Click a column's heading to sort by it
+(fineness included).</p>
+<table id="hallmarks">
+<thead><tr><th data-sort="limit">limit</th><th data-sort="face">face</th><th data-sort="ceiling">ceiling</th><th data-sort="fineness">fineness</th><th data-sort="stranded">stranded</th><th data-sort="level">level</th><th data-sort="date">date</th><th data-sort="status">status</th><th>front: face value, fineness, stranded budget, level</th><th>back: hypotheses and trace</th></tr></thead>
+<tbody>
+<tr data-hallmark="b271f39d07877083a075e1ddf9d27e695af5e63b9495e926681c4c4d4ec6791c"><td data-col="limit" data-key="request 1, threshold 100"><a href="h/b271f39d07877083.html">request 1, threshold 100</a></td><td data-col="face" data-key="100">100</td><td data-col="ceiling" data-key="100">100</td><td data-col="fineness" data-key="1.000">1.000</td><td data-col="stranded" data-key="100">100</td><td data-col="level" data-key="5">REFUTED</td><td data-col="date" data-key="2026-11-26">2026-11-26</td><td data-col="status" data-key="current">current</td><td data-side="obverse"><strong>Obverse</strong>: face value <span>100</span>; fineness <span>1.000</span>; stranded budget <span>100</span>; level <span>REFUTED</span>; <span>fine: fineness 1.000 at level REFUTED</span></td><td data-side="reverse"><strong>Reverse</strong>: hypotheses <span>Reflexive = true: assumed</span>; <span>DenyRecord = none: assumed</span>; <span>Atomic = true: assumed</span>; <span>Lag = 0: assumed</span>; <span>Scope = ScopeGlobal: assumed</span>; <span>in_flight = 2: assumed</span>; <span>failures = 1: assumed</span>. <span>trace (the shortest that fails): R1 Tight, 6 steps: 1. issue 60, 2. issue 60, 3. decide 60 (permit), 4. fail 60 (clean), 5. reconcile 60 (refund), 6. decide 60 (deny)</span></td></tr>
+</tbody>
+</table>
+<script>
+(function () {
+  var table = document.getElementById('hallmarks');
+  if (!table) return;
+  var body = table.tBodies[0];
+  Array.prototype.forEach.call(table.querySelectorAll('th[data-sort]'), function (th) {
+    th.addEventListener('click', function () {
+      var col = th.getAttribute('data-sort');
+      var down = th.getAttribute('data-dir') === 'up';
+      th.setAttribute('data-dir', down ? 'down' : 'up');
+      var rows = Array.prototype.slice.call(body.rows);
+      var key = function (r) { var c = r.querySelector('[data-col="' + col + '"]'); return c ? c.getAttribute('data-key') : ''; };
+      var numeric = rows.every(function (r) { return key(r) !== '' && !isNaN(Number(key(r))); });
+      rows.sort(function (a, b) {
+        var x = key(a), y = key(b);
+        var d = numeric ? Number(x) - Number(y) : (x < y ? -1 : x > y ? 1 : 0);
+        return down ? -d : d;
+      });
+      rows.forEach(function (r) { body.appendChild(r); });
+    });
+  });
+})();
+</script>
+</body>
+</html>

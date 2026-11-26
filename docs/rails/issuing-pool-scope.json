@@ -1,0 +1,28 @@
+{
+ "target": {"adapter": "issuing-pool", "address": "https://api.stripe.com"},
+ "owner": "the repository's owner (their own Stripe account, in test mode: a sandbox)",
+ "basis": {"kind": "own-instance"},
+ "ceilings": {"requests": 40000, "money": 20000000},
+ "expires": "2027-03-31",
+ "concurrency": {"trials": 8},
+ "issuing": {
+  "mode": "test",
+  "max_limit": 10000,
+  "max_amount": 10000,
+  "terms": [
+   {"source": "https://docs.stripe.com/test-mode", "read": "2026-11-24",
+    "quote": "Sandboxes simulate creating real objects without affecting actual transactions or moving real money."},
+   {"source": "https://docs.stripe.com/issuing/testing", "read": "2026-11-24",
+    "quote": "You can only use these cards for testing within your Stripe account and not for external purchases."},
+   {"source": "https://docs.stripe.com/testing", "read": "2026-11-25",
+    "quote": "Don’t use testing environments to load test your integration because you might hit rate limits."},
+   {"source": "https://docs.stripe.com/issuing/for-your-business", "read": "2026-11-25",
+    "quote": "Create 25 cards per week"},
+   {"source": "https://docs.stripe.com/issuing/for-your-business", "read": "2026-11-25",
+    "quote": "Spend 500 USD per card per day"},
+   {"source": "https://docs.stripe.com/issuing/for-your-business", "read": "2026-11-25",
+    "quote": "Spend 5000 USD per week"}
+  ],
+  "measurement": "the run is a measurement, not a load test: at most 5 requests a second in all, on at most 25 cards that already exist, creating none"
+ }
+}

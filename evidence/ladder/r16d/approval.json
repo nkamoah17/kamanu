@@ -1,0 +1,2611 @@
+{
+ "what": "the approval grid: the Credit ledger's approval policy, 2 readings x R1's 12 engine profiles x 1 to 3 calls in flight, lint's product machine beside TLC on spec/ledgers/Credit.tla, each rung's Sound and Tight",
+ "rule": "permit Sell when count(Sell::request{key}) <= count(Approve::<credit>{key}) over 24h, the key bound",
+ "bounds": {
+  "lint": {
+   "in_flight": "the cell's",
+   "failures": 1,
+   "requests": null
+  },
+  "tlc": {
+   "requests": 3,
+   "failures": 1,
+   "in_flight": "the cell's"
+  }
+ },
+ "agree": "72 of 72 cells",
+ "cells": [
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "none",
+   "engine": "atomic",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "none",
+   "engine": "atomic",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "none",
+   "engine": "atomic",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "none",
+   "engine": "not atomic",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "none",
+   "engine": "not atomic",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "none",
+   "engine": "not atomic",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "none",
+   "engine": "stale view",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "none",
+   "engine": "stale view",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "none",
+   "engine": "stale view",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "deny",
+   "engine": "atomic",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "deny",
+   "engine": "atomic",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "deny",
+   "engine": "atomic",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "deny",
+   "engine": "not atomic",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "deny",
+   "engine": "not atomic",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "deny",
+   "engine": "not atomic",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "deny",
+   "engine": "stale view",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "deny",
+   "engine": "stale view",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "deny",
+   "engine": "stale view",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "error",
+   "engine": "atomic",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "error",
+   "engine": "atomic",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "error",
+   "engine": "atomic",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "error",
+   "engine": "not atomic",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "error",
+   "engine": "not atomic",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "error",
+   "engine": "not atomic",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "error",
+   "engine": "stale view",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "error",
+   "engine": "stale view",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "error",
+   "engine": "stale view",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "request",
+   "engine": "atomic",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "request",
+   "engine": "atomic",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "request",
+   "engine": "atomic",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "request",
+   "engine": "not atomic",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "request",
+   "engine": "not atomic",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "request",
+   "engine": "not atomic",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "request",
+   "engine": "stale view",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "holds",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "request",
+   "engine": "stale view",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "response",
+   "debit": "request",
+   "refusal_leaves": "request",
+   "engine": "stale view",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "none",
+   "engine": "atomic",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "none",
+   "engine": "atomic",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "none",
+   "engine": "atomic",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "none",
+   "engine": "not atomic",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "none",
+   "engine": "not atomic",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "none",
+   "engine": "not atomic",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "none",
+   "engine": "stale view",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "none",
+   "engine": "stale view",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "none",
+   "engine": "stale view",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "deny",
+   "engine": "atomic",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "deny",
+   "engine": "atomic",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "deny",
+   "engine": "atomic",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "deny",
+   "engine": "not atomic",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "deny",
+   "engine": "not atomic",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "deny",
+   "engine": "not atomic",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "deny",
+   "engine": "stale view",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "deny",
+   "engine": "stale view",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "deny",
+   "engine": "stale view",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "error",
+   "engine": "atomic",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "error",
+   "engine": "atomic",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "error",
+   "engine": "atomic",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "error",
+   "engine": "not atomic",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "error",
+   "engine": "not atomic",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "error",
+   "engine": "not atomic",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "error",
+   "engine": "stale view",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "holds",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "error",
+   "engine": "stale view",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "error",
+   "engine": "stale view",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "holds"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "request",
+   "engine": "atomic",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "request",
+   "engine": "atomic",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "request",
+   "engine": "atomic",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "request",
+   "engine": "not atomic",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "request",
+   "engine": "not atomic",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "request",
+   "engine": "not atomic",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "request",
+   "engine": "stale view",
+   "in_flight": 1,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "request",
+   "engine": "stale view",
+   "in_flight": 2,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  },
+  {
+   "credit": "request",
+   "debit": "request",
+   "refusal_leaves": "request",
+   "engine": "stale view",
+   "in_flight": 3,
+   "lint": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "tlc": {
+    "R0": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R1": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    },
+    "R2": {
+     "Sound": "FAILS",
+     "Tight": "FAILS"
+    }
+   },
+   "agree": true
+  }
+ ]
+}

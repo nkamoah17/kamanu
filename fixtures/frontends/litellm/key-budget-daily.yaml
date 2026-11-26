@@ -1,0 +1,9 @@
+# LiteLLM virtual key with a daily budget: the body of POST /key/generate written as YAML.
+# Documentation: https://docs.litellm.ai/docs/proxy/virtual_keys
+# and https://docs.litellm.ai/docs/proxy/users (max_budget in dollars; budget_duration "30s", "30m", "30h", "30d").
+# lint reads a window up to Dogwood's 24h default max_window; a longer budget_duration lowers to a lossy window.
+max_budget: 10.0
+budget_duration: "24h"
+key_alias: support-agent
+metadata:
+  team: support

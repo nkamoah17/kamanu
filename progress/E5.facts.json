@@ -1,0 +1,540 @@
+{
+  "joern_version": "4.0.676",
+  "joern_cli_jar": "io.joern.joern-cli-4.0.676.jar",
+  "joern_cli_jar_sha256": "05c2303af1f5d87d34f8fcb6413e43f176c8b8bfac43a811d53aba8192e0c78c",
+  "os": "Windows",
+  "seed": 1795396255,
+  "code_sha256": {
+    "await_has_timeout.sc": "72a4712f47c752fd5a6a805c488904507b157e551e3a97cd403ab47becee5599",
+    "check_act_atomic.sc": "0c84b62906cb4f23175b576ded3fee4285aa573dc7256f6009ad8fb88b6c2f2c",
+    "identity_provenance.sc": "86a1873be3bfeed52a48b7b1f52cf4ef52562c3a3092ca099a1b87849e7176e1",
+    "lib/connector.sc": "7a0eb956f30109a3524d4c6397a7a7771f1ca3b2b471d8988cf01ddba5094bce",
+    "lib/premises.sc": "99941479408d919ecd415127df728b0298ffa0ef221110fea4e2a18d1ec74e46",
+    "release_post_dominates.sc": "92d62bd052f0819ee4f13bbdde7b9df2dbf471d914dfa49ca68c6e887046281e",
+    "retry_bounded.sc": "150ebb4f00a5500b00ae6f594004cc2b41048ff5cac667541f9ac52c3532dd64",
+    "session_key_minted.sc": "ab7071b3ead477da339dcc9ca234859c1f4c22f1affd0cbfc3ea23c7b9e7a7fc",
+    "status_before_retry.sc": "a2939504698ccd30ff047880af8e79d1f7b85fb9528c4a394717c5e84c65bd81",
+    "tenant_sinks.sc": "a0af8ec78bd773f038d2428518179dde9939ce5edfb8d0488639139b5d978686",
+    "joern.py": "011e999ef08bd8e68056b4c017dc5bc75e22f80beac33cca6217186a44366630"
+  },
+  "gate_sha256": "3b4ed48e7a02392f534595eba9c2504b774a7266e15e7087e1a7cf0aa6d65723",
+  "recall": {
+    "session_key_minted": [
+      1,
+      1
+    ],
+    "check_act_atomic": [
+      4,
+      6
+    ],
+    "release_post_dominates": [
+      1,
+      2
+    ],
+    "await_has_timeout": [
+      3,
+      9
+    ],
+    "retry_bounded": [
+      3,
+      7
+    ],
+    "status_before_retry": [
+      0,
+      1
+    ],
+    "all": [
+      12,
+      26
+    ]
+  },
+  "repositories": {
+    "a4_check_then_incrby": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "a4_incrby_reply": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "a4_rmw": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "a4_watch_cas": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "a4_write_only_transaction": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "audit_p1_atomic_remote": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "audit_p2_await_unnamed": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "audit_p3_retry_unnamed": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "audit_p4_session_alias": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "audit_p5_status_unnamed": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "audit_p6_lock_unnamed": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "audit_p7_atomic_thread": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "e1_refund_agent": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "e1_ticket_agent": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [
+        {
+          "file": "ticket_agent/agent.py",
+          "line": 33,
+          "subject": "loop on line 33, bounded",
+          "query_id": "retry_bounded",
+          "joern_version": "4.0.676",
+          "graph_hash": "d358be755fae6223e90cf99b9d8f33730968ff49f3b69a6f182c05c902a4bf1b",
+          "query_sha256": "150ebb4f00a5500b00ae6f594004cc2b41048ff5cac667541f9ac52c3532dd64"
+        }
+      ],
+      "status_before_retry": []
+    },
+    "e4_mandate_agent": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "e4_mandate_agent_extra": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "e4_mandate_agent_missing": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "e4_refund_agent": {
+      "session_key_minted": [],
+      "check_act_atomic": [
+        {
+          "file": "refund_agent.py",
+          "line": 43,
+          "subject": "write of ledger, one atomic operation that answers with the count",
+          "query_id": "check_act_atomic",
+          "joern_version": "4.0.676",
+          "graph_hash": "ff49f1f17d288ac908b9d47730774a9dbcf12928590d03e712d3194dc4ae59f8",
+          "query_sha256": "0c84b62906cb4f23175b576ded3fee4285aa573dc7256f6009ad8fb88b6c2f2c"
+        }
+      ],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "e4_refund_agent_extra": {
+      "session_key_minted": [],
+      "check_act_atomic": [
+        {
+          "file": "refund_agent_extra.py",
+          "line": 46,
+          "subject": "write of ledger, one atomic operation that answers with the count",
+          "query_id": "check_act_atomic",
+          "joern_version": "4.0.676",
+          "graph_hash": "99e3b3f0b33e2dcb980b874d0136b5cd1ccfe4f5468b95a6e4c7ccae89a4a267",
+          "query_sha256": "0c84b62906cb4f23175b576ded3fee4285aa573dc7256f6009ad8fb88b6c2f2c"
+        }
+      ],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "e4_refund_agent_missing": {
+      "session_key_minted": [],
+      "check_act_atomic": [
+        {
+          "file": "refund_agent_missing.py",
+          "line": 41,
+          "subject": "write of ledger, one atomic operation that answers with the count",
+          "query_id": "check_act_atomic",
+          "joern_version": "4.0.676",
+          "graph_hash": "45bb5790be3a0675eb97277423316ff56a17ec75f51807bf083c9453535c21d2",
+          "query_sha256": "0c84b62906cb4f23175b576ded3fee4285aa573dc7256f6009ad8fb88b6c2f2c"
+        }
+      ],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "e4_ticket_agent": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "e4_ticket_agent_extra": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "e4_ticket_agent_missing": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "rotn_approval_buggy": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [
+        {
+          "file": "wire/desk.py",
+          "line": 26,
+          "subject": "loop on line 26, bounded",
+          "query_id": "retry_bounded",
+          "joern_version": "4.0.676",
+          "graph_hash": "0ab94636886aa5508532ec05cc25f78b01d2a5aaf783dddcf651543c3accdddb",
+          "query_sha256": "150ebb4f00a5500b00ae6f594004cc2b41048ff5cac667541f9ac52c3532dd64"
+        }
+      ],
+      "status_before_retry": []
+    },
+    "rotn_approval_fixed": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [
+        {
+          "file": "wire/desk.py",
+          "line": 26,
+          "subject": "loop on line 26, bounded",
+          "query_id": "retry_bounded",
+          "joern_version": "4.0.676",
+          "graph_hash": "20a6262a5d0dc77b420a6bc5249f66fdda6437795b1fc9b41800d137f1f0f1fd",
+          "query_sha256": "150ebb4f00a5500b00ae6f594004cc2b41048ff5cac667541f9ac52c3532dd64"
+        }
+      ],
+      "status_before_retry": []
+    },
+    "rotn_budget_buggy": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "rotn_budget_fixed": {
+      "session_key_minted": [],
+      "check_act_atomic": [
+        {
+          "file": "shared/budget.py",
+          "line": 13,
+          "subject": "write of budget, one atomic operation that answers with the count",
+          "query_id": "check_act_atomic",
+          "joern_version": "4.0.676",
+          "graph_hash": "40e26975374dc59915975e2fd6cc8d4a5406299d33191e106239c957ebb2245c",
+          "query_sha256": "0c84b62906cb4f23175b576ded3fee4285aa573dc7256f6009ad8fb88b6c2f2c"
+        },
+        {
+          "file": "shared/budget.py",
+          "line": 15,
+          "subject": "write of budget, one atomic operation that answers with the count",
+          "query_id": "check_act_atomic",
+          "joern_version": "4.0.676",
+          "graph_hash": "40e26975374dc59915975e2fd6cc8d4a5406299d33191e106239c957ebb2245c",
+          "query_sha256": "0c84b62906cb4f23175b576ded3fee4285aa573dc7256f6009ad8fb88b6c2f2c"
+        }
+      ],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "rotn_deadlock_buggy": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "rotn_deadlock_fixed": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [
+        {
+          "file": "stock/locks.py",
+          "line": 17,
+          "subject": "with stock_lock",
+          "construct": "threading_lock_with",
+          "assumptions": [
+            "The name threading is the standard library's module at run time",
+            "The code run under the lock ends, by returning or by raising",
+            "No thread or process is killed while it holds the lock"
+          ],
+          "query_id": "release_post_dominates",
+          "joern_version": "4.0.676",
+          "graph_hash": "1a3f1a6f857b2f9463f60d72b2f3d04c0a1b5f1f026590ca8b9035d00ce79705",
+          "query_sha256": "92d62bd052f0819ee4f13bbdde7b9df2dbf471d914dfa49ca68c6e887046281e"
+        },
+        {
+          "file": "stock/locks.py",
+          "line": 18,
+          "subject": "with ledger_lock",
+          "construct": "threading_lock_with",
+          "assumptions": [
+            "The name threading is the standard library's module at run time",
+            "The code run under the lock ends, by returning or by raising",
+            "No thread or process is killed while it holds the lock"
+          ],
+          "query_id": "release_post_dominates",
+          "joern_version": "4.0.676",
+          "graph_hash": "1a3f1a6f857b2f9463f60d72b2f3d04c0a1b5f1f026590ca8b9035d00ce79705",
+          "query_sha256": "92d62bd052f0819ee4f13bbdde7b9df2dbf471d914dfa49ca68c6e887046281e"
+        },
+        {
+          "file": "stock/locks.py",
+          "line": 23,
+          "subject": "with stock_lock",
+          "construct": "threading_lock_with",
+          "assumptions": [
+            "The name threading is the standard library's module at run time",
+            "The code run under the lock ends, by returning or by raising",
+            "No thread or process is killed while it holds the lock"
+          ],
+          "query_id": "release_post_dominates",
+          "joern_version": "4.0.676",
+          "graph_hash": "1a3f1a6f857b2f9463f60d72b2f3d04c0a1b5f1f026590ca8b9035d00ce79705",
+          "query_sha256": "92d62bd052f0819ee4f13bbdde7b9df2dbf471d914dfa49ca68c6e887046281e"
+        },
+        {
+          "file": "stock/locks.py",
+          "line": 24,
+          "subject": "with ledger_lock",
+          "construct": "threading_lock_with",
+          "assumptions": [
+            "The name threading is the standard library's module at run time",
+            "The code run under the lock ends, by returning or by raising",
+            "No thread or process is killed while it holds the lock"
+          ],
+          "query_id": "release_post_dominates",
+          "joern_version": "4.0.676",
+          "graph_hash": "1a3f1a6f857b2f9463f60d72b2f3d04c0a1b5f1f026590ca8b9035d00ce79705",
+          "query_sha256": "92d62bd052f0819ee4f13bbdde7b9df2dbf471d914dfa49ca68c6e887046281e"
+        }
+      ],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "rotn_delegation_buggy": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "rotn_delegation_fixed": {
+      "session_key_minted": [
+        {
+          "file": "delegation/grants.py",
+          "line": 15,
+          "subject": "session key session_token minted by secrets.token_urlsafe(24)",
+          "construct": "library_mint_in_local",
+          "assumptions": [
+            "The names secrets and uuid are the standard library's modules at run time",
+            "The caller cannot predict or set what the operating system's random source returns",
+            "Nothing replaces the key between the line that mints it and the engine that counts over it"
+          ],
+          "query_id": "session_key_minted",
+          "joern_version": "4.0.676",
+          "graph_hash": "5c441d379ded31eb4fd1e54cdd2f3fa0bfce200f2abfd63c3aba44952d8246df",
+          "query_sha256": "ab7071b3ead477da339dcc9ca234859c1f4c22f1affd0cbfc3ea23c7b9e7a7fc"
+        }
+      ],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "rotn_livelock_buggy": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [
+        {
+          "file": "handoff/loop.py",
+          "line": 14,
+          "subject": "call agents.turn(task, timeout = TURN_TIMEOUT), with its own timeout",
+          "query_id": "await_has_timeout",
+          "joern_version": "4.0.676",
+          "graph_hash": "8a33406d86e6d9cc303763a6964f25898292f52ec777029433e85025bbfa3aba",
+          "query_sha256": "72a4712f47c752fd5a6a805c488904507b157e551e3a97cd403ab47becee5599"
+        }
+      ],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "rotn_livelock_fixed": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [
+        {
+          "file": "handoff/loop.py",
+          "line": 14,
+          "subject": "call agents.turn(task, timeout = TURN_TIMEOUT), with its own timeout",
+          "query_id": "await_has_timeout",
+          "joern_version": "4.0.676",
+          "graph_hash": "83a35d3960a09e9348b279447e8aef574db9e74437b026d0eb070cbadf5a8d3f",
+          "query_sha256": "72a4712f47c752fd5a6a805c488904507b157e551e3a97cd403ab47becee5599"
+        }
+      ],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "rotn_orchestration_buggy": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [],
+      "retry_bounded": [],
+      "status_before_retry": []
+    },
+    "rotn_orchestration_fixed": {
+      "session_key_minted": [],
+      "check_act_atomic": [],
+      "release_post_dominates": [],
+      "await_has_timeout": [
+        {
+          "file": "orchestration/chain.py",
+          "line": 16,
+          "subject": "await asyncio.wait_for(approver.review(task), timeout = STEP), with a limit on the wait",
+          "construct": "asyncio_wait_for",
+          "assumptions": [
+            "The name asyncio is the standard library's module at run time",
+            "The awaited operation ends when it is cancelled, and does not swallow the cancellation",
+            "No synchronous call blocks the event loop, the one that makes the awaited operation included"
+          ],
+          "query_id": "await_has_timeout",
+          "joern_version": "4.0.676",
+          "graph_hash": "0f276985f683922720d905c8efae97d76f2354b13e43a946f47863800b52ff44",
+          "query_sha256": "72a4712f47c752fd5a6a805c488904507b157e551e3a97cd403ab47becee5599"
+        },
+        {
+          "file": "orchestration/chain.py",
+          "line": 24,
+          "subject": "await asyncio.wait_for(agent_b(approver, task), timeout = STEP), with a limit on the wait",
+          "construct": "asyncio_wait_for",
+          "assumptions": [
+            "The name asyncio is the standard library's module at run time",
+            "The awaited operation ends when it is cancelled, and does not swallow the cancellation",
+            "No synchronous call blocks the event loop, the one that makes the awaited operation included"
+          ],
+          "query_id": "await_has_timeout",
+          "joern_version": "4.0.676",
+          "graph_hash": "0f276985f683922720d905c8efae97d76f2354b13e43a946f47863800b52ff44",
+          "query_sha256": "72a4712f47c752fd5a6a805c488904507b157e551e3a97cd403ab47becee5599"
+        }
+      ],
+      "retry_bounded": [],
+      "status_before_retry": []
+    }
+  }
+}

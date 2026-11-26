@@ -1,0 +1,175 @@
+"""The mint's words (X1d): one table of coin words, each with the one technical thing it means, that the printed
+hallmark, the registry, the Catalogue, the house rules page and the glossary (docs/mint.md) all read.
+
+    TABLE                               [{"word", "means"}], the sixteen coin words in lower case
+    glossary() -> str                   the Markdown glossary written from TABLE (`kamanu assay --glossary OUT`)
+    word(w) -> str                      w, checked to be a word of TABLE (a page never uses a coin word the table lacks)
+    amount(face, ceiling) -> str        by how much a limit is debased: ceiling - face, "unbounded" when the ceiling is
+    is_fine(fineness) -> bool           fineness 1.000, and only then
+    obverse_html(...), reverse_html(...)  the two sides of a hallmark or documented check on a page, whole
+    release_problems(...)               why a release on the record is refused ([] when it is valid)
+    release_line(...)                   the one line a released record's page carries
+
+Nothing here changes a figure or a level: the record (hallmark-v1), its fields and its schema are X1's. A mark is
+the fineness string exactly as X1 writes it (three decimals, never rounded up); this module never formats one.
+"""
+from __future__ import annotations
+
+import datetime
+import html
+import json
+import re
+
+TABLE = [
+    {"word": "face value", "means": "the cap: the most the limit is set to let through, in the policy's own units"},
+    {"word": "assay", "means": "the run that gives the ceiling: the most that can really be spent under the limit "
+                               "(lint's exposure on the scope ledger)"},
+    {"word": "fineness", "means": "face value over ceiling, shown as a millesimal mark with three decimals "
+                                  "(.500, 1.000), never rounded up"},
+    {"word": "fine", "means": "fineness 1.000 at the hallmark's level, and only then"},
+    {"word": "debased", "means": "fineness below 1.000, shown with the amount by which it is: the ceiling less the "
+                                 "face value, in the limit's own units (unbounded when the ceiling is)"},
+    {"word": "stranded budget", "means": "the most free headroom left when a request that would fit is refused "
+                                         "(lint's worst Tight figure)"},
+    {"word": "hallmark", "means": "the signed record of one assay: its figures, levels, hypotheses and hashes"},
+    {"word": "mint mark", "means": "the hashes of the model (the policy and its lint form), the profile and the "
+                                   "Lean sources"},
+    {"word": "struck", "means": "the date of the run that issued the hallmark"},
+    {"word": "obverse", "means": "the face of a hallmark: face value, fineness, stranded budget and level"},
+    {"word": "reverse", "means": "the back of a hallmark: the hypotheses, each proved, measured or assumed, and the "
+                                 "trace"},
+    {"word": "touchstone", "means": "the coach: the product that checks a payment before it is made (does it fit, "
+                                    "the most that fits, and when the full amount will)"},
+    {"word": "countermark", "means": "the connector assessment: the product that checks that no caller reaches "
+                                     "another tenant's money or records through a connector"},
+    {"word": "pyx", "means": "the re-measurement of a hallmark, kept as signed entries beside it"},
+    {"word": "trial of the pyx", "means": "the launch: the hallmarks shown in public with their re-measurement"},
+    {"word": "lapsed", "means": "a hallmark whose re-measurement failed or ran out (past its valid-through date)"},
+]
+MEANS = {e["word"]: e["means"] for e in TABLE}
+
+# What the house rules page says is done (card (3); rule E5 as the card rewrites it).
+HOUSE_RULES = [
+    "The vendor sees a result first: a hallmark that names someone else's engine is sent to its maintainer before "
+    "it is shown here.",
+    "The owner decides when it is shown: by default a vendor's result is held until its hold has passed after the "
+    "vendor received it, and the owner may release it earlier, on the record, naming who, the date and the reason.",
+    "Rule E5: held unless released on the record. A released result's page says so in one line: the date the vendor "
+    "received it, that it was published before the hold was up by the owner's decision, and whether the vendor has "
+    "answered.",
+    "Every figure is computed by the assay and never typed in (rule E2); a hallmark that lapses is shown as lapsed "
+    "and is never removed.",
+]
+
+DAY = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+E = lambda s: html.escape("none" if s is None else str(s), quote=True)  # noqa: E731
+
+
+def word(w: str) -> str:
+    if w not in MEANS:
+        raise KeyError(f"{w!r} is not a coin word of kamanu.assay.mint.TABLE")
+    return w
+
+
+def glossary() -> str:
+    L = ["# The mint's words", "",
+         "Generated by `kamanu assay --glossary docs/mint.md` from the one table in the code "
+         "(`kamanu.assay.mint.TABLE`) that the printed hallmark, the registry, the Catalogue and the house rules page "
+         "read. Each coin word means one exact thing and nothing else; no number or level changes with the words.", ""]
+    for e in TABLE:
+        L.append(f"- **{e['word']}**: {e['means']}")
+    L += ["", "A page shows a hallmark's obverse with its reverse, whole or not at all. A limit is called debased beside "
+              "its trace and its level, never without them (rule E1).", ""]
+    return "\n".join(L)
+
+
+def is_fine(fineness) -> bool:
+    return str(fineness) == "1.000"
+
+
+def amount(face, ceiling) -> str:
+    if ceiling == "unbounded":
+        return "unbounded"
+    return str(int(ceiling) - int(face))
+
+
+def grade_text(face, ceiling, fineness, level) -> str:
+    """The obverse's grade, in words: fine at its level, or debased by its amount."""
+    if is_fine(fineness):
+        return f"fine: fineness 1.000 at level {level}"
+    a = amount(face, ceiling)
+    if a == "unbounded":
+        return f"debased by an unbounded amount (the ceiling is unbounded), at level {level}"
+    return f"debased by {a} (ceiling {ceiling} less face value {face}), at level {level}"
+
+
+# ---------------------------------------------------------------- the two sides on a page
+def obverse_html(face, ceiling, fineness, stranded, level, tag: str = "div") -> str:
+    return (f'<{tag} data-side="obverse"><strong>Obverse</strong>: '
+            f'face value <span>{E(face)}</span>; fineness <span>{E(fineness)}</span>; '
+            f'stranded budget <span>{E(stranded)}</span>; level <span>{E(level)}</span>; '
+            f'<span>{E(grade_text(face, ceiling, fineness, level))}</span></{tag}>')
+
+
+def _step(s) -> str:
+    if not isinstance(s, dict):
+        return E(s)
+    out = f"{E(s.get('step'))} {E(s.get('amount'))}"
+    if s.get("outcome"):
+        out += f" ({E(s['outcome'])})"
+    return out
+
+
+def reverse_html(hyps: list, failure, tag: str = "div") -> str:
+    """hyps [(name, status, value)]; failure None or {"rung", "property", "trace"}."""
+    hs = "; ".join(f"<span>{E(n)} = {E(json.dumps(v, ensure_ascii=False) if not isinstance(v, str) else v)}: "
+                   f"{E(s)}</span>" for n, s, v in hyps)
+    if not isinstance(failure, dict):
+        tr = "trace: none, nothing fails"
+    else:
+        steps = ", ".join(f"{i}. {_step(s)}" for i, s in enumerate(failure.get("trace") or [], 1))
+        tr = (f"trace (the shortest that fails): {E(failure.get('rung'))} {E(failure.get('property'))}, "
+              f"{len(failure.get('trace') or [])} steps: {steps}")
+    return (f'<{tag} data-side="reverse"><strong>Reverse</strong>: hypotheses {hs}. '
+            f'<span>{tr}</span></{tag}>')
+
+
+# ---------------------------------------------------------------- release on the record (card (3))
+RELEASE = "release-v1"
+
+
+def _is_day(x) -> bool:
+    if not (isinstance(x, str) and DAY.match(x)):
+        return False
+    try:
+        datetime.date.fromisoformat(x)
+    except ValueError:
+        return False
+    return True
+
+
+def release_problems(by, date, reason, received, on: datetime.date | None = None) -> list[str]:
+    """Why a release is refused: it lacks the name, the date, the reason or the vendor's received date ([] valid)."""
+    p = []
+    if not (isinstance(by, str) and by.strip()):
+        p.append("the release names no one (by)")
+    if not _is_day(date):
+        p.append("the release has no date")
+    elif on is not None and datetime.date.fromisoformat(date) > on:
+        p.append(f"the release is dated {date}, after {on}")
+    if not (isinstance(reason, str) and reason.strip()):
+        p.append("the release gives no reason")
+    if not _is_day(received):
+        p.append("the vendor's received date is not on the record")
+    return p
+
+
+def release_line(received: str, hold: str, by: str, date: str, reason: str, answered, tag: str = "p") -> str:
+    """The one line: received date, published before the hold was up by the owner's decision, answered or not."""
+    if answered:
+        ans = f"The vendor answered on {E(answered)}."
+    else:
+        ans = "The vendor has not answered yet."
+    return (f'<{tag} data-released="{E(date)}">Released on the record: the vendor received this result on '
+            f'{E(received)}, and it is published before the {E(hold)} were up, by the owner\'s decision '
+            f'({E(by)}, {E(date)}: <q>{E(reason)}</q>). {ans}</{tag}>')

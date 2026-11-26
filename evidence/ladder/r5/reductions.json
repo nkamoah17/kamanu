@@ -1,0 +1,34 @@
+{
+  "reductions": [
+    {
+      "name": "SucceedSplitFused",
+      "split": "SucceedSplit",
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 40207,
+        "up": 40207
+      }
+    },
+    {
+      "name": "ReconcileSplitFused",
+      "split": "ReconcileSplit",
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 40207,
+        "up": 40207
+      }
+    },
+    {
+      "name": "RefusalSplitFused",
+      "split": "RefusalSplit",
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 40207,
+        "up": 40207
+      }
+    }
+  ]
+}

@@ -1,0 +1,4840 @@
+{
+ "engine": {
+  "name": "dogwood",
+  "version": "dogwood 1.1.1",
+  "obtained": {
+   "kind": "binary-sha256",
+   "value": "73ac6d92e0eb177e6ddb56324bfe94501a0f415e6730025db208a5bfd6c4cf8a"
+  }
+ },
+ "date": "2026-11-12T04:51:26Z",
+ "policy": {
+  "text": "// kamanu H4: the request-sum cap at 1m, one action (Bank Pay), cap 100.\n\n@id(\"pay_cap\")\npermit (\n    principal,\n    action == Bank::Action::\"Pay\",\n    resource\n)\nwhen temporal {\n    (sum a for (a: Long), (t: Timepoint). where (\n        formerly within 1m (Bank::Action::\"Pay\"::request{ input.amount: a } && tp(t))\n    )) <= 100\n};\n",
+  "cap": 100,
+  "window_s": 60,
+  "unit": "amount",
+  "shape": "request-sum",
+  "action": "Pay"
+ },
+ "sessions": [
+  {
+   "purpose": "probe",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 151,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 31
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 31
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    }
+   ],
+   "plan": [
+    [
+     151,
+     "settle",
+     31
+    ],
+    [
+     60,
+     "settle",
+     31
+    ],
+    [
+     60,
+     "settle",
+     1
+    ]
+   ]
+  },
+  {
+   "purpose": "probe",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    },
+    {
+     "op": "wait",
+     "seconds": 60
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    }
+   ],
+   "plan": [
+    [
+     60,
+     "settle",
+     60
+    ],
+    [
+     60,
+     "settle",
+     1
+    ]
+   ]
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    },
+    {
+     "op": "wait",
+     "seconds": 9
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 9
+    },
+    {
+     "op": "issue",
+     "amount": 30,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 9
+    }
+   ],
+   "scenario": "over-ask"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    },
+    {
+     "op": "wait",
+     "seconds": 9
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    }
+   ],
+   "scenario": "freeze"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "fail",
+     "call": 0
+    },
+    {
+     "op": "wait",
+     "seconds": 9
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 9
+    },
+    {
+     "op": "issue",
+     "amount": 30,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 9
+    }
+   ],
+   "scenario": "over-ask",
+   "variant": "failed calls"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "fail",
+     "call": 0,
+     "moved": true
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    }
+   ],
+   "scenario": "ambiguous"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "scenario": "parallel"
+  }
+ ],
+ "profile": {
+  "reflexive": {
+   "values": [
+    true
+   ],
+   "sessions": [
+    0
+   ]
+  },
+  "deny_marks": {
+   "values": [
+    [
+     "request"
+    ],
+    [
+     "error",
+     "request"
+    ]
+   ],
+   "sessions": [
+    0
+   ]
+  },
+  "atomic": {
+   "value": "not refuted",
+   "trials": 96,
+   "statement": "atomic: not refuted in 96 trials"
+  },
+  "window_kind": {
+   "value": "sliding",
+   "sessions": [
+    0
+   ]
+  },
+  "own_writes": {
+   "status": "not refuted",
+   "value": true,
+   "trials": 16,
+   "statement": "own_writes: not refuted in 16 trials"
+  },
+  "other_lag": {
+   "status": "not exercised",
+   "value": null,
+   "trials": 0,
+   "statement": "other_lag: not exercised (no sequential call where the answer decides the verdict); the pinned dogwood binary, one trace per writer (Dogwood's host keeps one trace per scope; a second writer of one scope is the same trace, so other_lag has no writer to probe); one host replays its whole trace per decision, so there is no second writer whose writes it could miss (N203)"
+  }
+ },
+ "cells": {
+  "over-ask": {
+   "verdict": "fails",
+   "session": 2,
+   "trace": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    },
+    {
+     "op": "wait",
+     "seconds": 9
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 9
+    },
+    {
+     "op": "issue",
+     "amount": 30,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 9
+    }
+   ],
+   "version": "dogwood 1.1.1",
+   "date": "2026-11-12T04:51:26Z"
+  },
+  "freeze": {
+   "verdict": "fails",
+   "session": 3,
+   "trace": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    },
+    {
+     "op": "wait",
+     "seconds": 9
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    }
+   ],
+   "version": "dogwood 1.1.1",
+   "date": "2026-11-12T04:51:26Z"
+  },
+  "parallel": {
+   "verdict": "passes",
+   "session": 6,
+   "trace": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "version": "dogwood 1.1.1",
+   "date": "2026-11-12T04:51:26Z",
+   "witness": {
+    "exercised": true,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 60,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1
+     },
+     {
+      "op": "issue",
+      "amount": 60,
+      "verdict": "DENY"
+     }
+    ]
+   },
+   "neighbour": {
+    "coordinate": "atomic",
+    "value": false,
+    "profile": {
+     "window_kind": "sliding",
+     "reflexive": true,
+     "deny_marks": [
+      "request"
+     ],
+     "atomic": false
+    },
+    "phase": 0,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 60,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1
+     },
+     {
+      "op": "issue",
+      "amount": 60,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1
+     },
+     {
+      "op": "issue",
+      "amount": 60,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1
+     },
+     {
+      "op": "settle",
+      "call": 0
+     },
+     {
+      "op": "settle",
+      "call": 1
+     },
+     {
+      "op": "settle",
+      "call": 2
+     }
+    ]
+   }
+  },
+  "ambiguous": {
+   "verdict": "passes",
+   "session": 5,
+   "trace": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "fail",
+     "call": 0,
+     "moved": true
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    }
+   ],
+   "version": "dogwood 1.1.1",
+   "date": "2026-11-12T04:51:26Z",
+   "witness": {
+    "exercised": true,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 60,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1
+     },
+     {
+      "op": "fail",
+      "call": 0,
+      "moved": true
+     },
+     {
+      "op": "wait",
+      "seconds": 1
+     },
+     {
+      "op": "issue",
+      "amount": 60,
+      "verdict": "DENY"
+     }
+    ]
+   },
+   "neighbour": {
+    "coordinate": "reflexive",
+    "value": false,
+    "profile": {
+     "window_kind": "sliding",
+     "reflexive": false,
+     "deny_marks": [
+      "request"
+     ],
+     "atomic": true
+    },
+    "phase": 0,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 60,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1
+     },
+     {
+      "op": "fail",
+      "call": 0,
+      "moved": true
+     },
+     {
+      "op": "wait",
+      "seconds": 1
+     },
+     {
+      "op": "issue",
+      "amount": 60,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1
+     },
+     {
+      "op": "settle",
+      "call": 1
+     }
+    ]
+   }
+  }
+ },
+ "probes": [
+  {
+   "session": 0,
+   "refuted": [
+    "bucket",
+    "fixed (False, ('error', 'request'))",
+    "fixed (False, ('error',))",
+    "fixed (False, ('request',))",
+    "fixed (False, ())",
+    "fixed (True, ('error', 'request'))",
+    "fixed (True, ('error',))",
+    "fixed (True, ('request',))",
+    "fixed (True, ())",
+    "forever (False, ('error', 'request'))",
+    "forever (False, ('error',))",
+    "forever (False, ('request',))",
+    "forever (False, ())",
+    "forever (True, ('error',))",
+    "forever (True, ())",
+    "sliding (False, ('error', 'request'))",
+    "sliding (False, ('error',))",
+    "sliding (False, ('request',))",
+    "sliding (False, ())",
+    "sliding (True, ('error',))",
+    "sliding (True, ())"
+   ]
+  },
+  {
+   "session": 1,
+   "refuted": [
+    "forever (True, ('error', 'request'))",
+    "forever (True, ('request',))"
+   ]
+  }
+ ],
+ "remaining": [
+  {
+   "window_kind": "sliding",
+   "reflexive": true,
+   "deny_marks": [
+    "error",
+    "request"
+   ]
+  },
+  {
+   "window_kind": "sliding",
+   "reflexive": true,
+   "deny_marks": [
+    "request"
+   ]
+  }
+ ],
+ "no_claim": [
+  "lag",
+  "scope"
+ ],
+ "adapter": "dogwood",
+ "freeze": {
+  "record": "evidence/freeze/2026-11-12.json",
+  "date": "2026-11-12T04:51:26Z",
+  "rerun": true,
+  "previous_date": "2026-11-10T22:08:28Z"
+ },
+ "single_writer": {
+  "engine": "dogwood 1.1.1",
+  "date": "2026-11-12T22:08:13Z",
+  "seed": 20261112,
+  "how": "the pinned dogwood binary, one trace per writer (Dogwood's host keeps one trace per scope; a second writer of one scope is the same trace, so other_lag has no writer to probe)",
+  "scopes": [
+   "key"
+  ],
+  "trials": [
+   {
+    "mode": "sequential",
+    "scope": "key",
+    "cap": 100,
+    "calls": [
+     {
+      "key": "a",
+      "amount": 34,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 29,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 29,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 8,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 22,
+      "verdict": "deny"
+     },
+     {
+      "key": "a",
+      "amount": 24,
+      "verdict": "deny"
+     }
+    ]
+   },
+   {
+    "mode": "sequential",
+    "scope": "key",
+    "cap": 100,
+    "calls": [
+     {
+      "key": "a",
+      "amount": 45,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 44,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 11,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 10,
+      "verdict": "deny"
+     },
+     {
+      "key": "a",
+      "amount": 16,
+      "verdict": "deny"
+     }
+    ]
+   },
+   {
+    "mode": "sequential",
+    "scope": "key",
+    "cap": 100,
+    "calls": [
+     {
+      "key": "a",
+      "amount": 42,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 32,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 26,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 2,
+      "verdict": "deny"
+     },
+     {
+      "key": "a",
+      "amount": 19,
+      "verdict": "deny"
+     }
+    ]
+   },
+   {
+    "mode": "sequential",
+    "scope": "key",
+    "cap": 100,
+    "calls": [
+     {
+      "key": "a",
+      "amount": 30,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 46,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 24,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 3,
+      "verdict": "deny"
+     },
+     {
+      "key": "a",
+      "amount": 7,
+      "verdict": "deny"
+     }
+    ]
+   },
+   {
+    "mode": "sequential",
+    "scope": "key",
+    "cap": 100,
+    "calls": [
+     {
+      "key": "a",
+      "amount": 30,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 40,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 29,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 1,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 25,
+      "verdict": "deny"
+     },
+     {
+      "key": "a",
+      "amount": 19,
+      "verdict": "deny"
+     }
+    ]
+   },
+   {
+    "mode": "sequential",
+    "scope": "key",
+    "cap": 100,
+    "calls": [
+     {
+      "key": "a",
+      "amount": 44,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 25,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 31,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 11,
+      "verdict": "deny"
+     },
+     {
+      "key": "a",
+      "amount": 4,
+      "verdict": "deny"
+     }
+    ]
+   },
+   {
+    "mode": "sequential",
+    "scope": "key",
+    "cap": 100,
+    "calls": [
+     {
+      "key": "a",
+      "amount": 47,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 47,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 6,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 19,
+      "verdict": "deny"
+     },
+     {
+      "key": "a",
+      "amount": 13,
+      "verdict": "deny"
+     }
+    ]
+   },
+   {
+    "mode": "sequential",
+    "scope": "key",
+    "cap": 100,
+    "calls": [
+     {
+      "key": "a",
+      "amount": 47,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 49,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 4,
+      "verdict": "allow"
+     },
+     {
+      "key": "a",
+      "amount": 6,
+      "verdict": "deny"
+     },
+     {
+      "key": "a",
+      "amount": 5,
+      "verdict": "deny"
+     }
+    ]
+   }
+  ]
+ },
+ "scope": "global",
+ "settings": {}
+}

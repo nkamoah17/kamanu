@@ -1,0 +1,565 @@
+{
+ "what": "the vendor's 93 examples, by reference: read them from a checkout of the repository at the revision; no file here is a copy of one",
+ "repository": "https://github.com/dogwood-policy/dogwood",
+ "revision": "ff158506cfd9c7871385ed3a87d7435505fd24b1",
+ "examples": [
+  {
+   "name": "access_not_revoked_since_grant",
+   "policy": "dogwood-docs/examples/access_not_revoked_since_grant/policy.dw",
+   "schema": "dogwood-docs/examples/access_not_revoked_since_grant/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "alert_exactly_three_transfers",
+   "policy": "dogwood-docs/examples/alert_exactly_three_transfers/policy.dw",
+   "schema": "dogwood-docs/examples/alert_exactly_three_transfers/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "alert_heartbeat_and_login_rate",
+   "policy": "dogwood-docs/examples/alert_heartbeat_and_login_rate/policy.dw",
+   "schema": "dogwood-docs/examples/alert_heartbeat_and_login_rate/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "alert_login_and_big_transfer",
+   "policy": "dogwood-docs/examples/alert_login_and_big_transfer/policy.dw",
+   "schema": "dogwood-docs/examples/alert_login_and_big_transfer/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "alert_login_current_tp",
+   "policy": "dogwood-docs/examples/alert_login_current_tp/policy.dw",
+   "schema": "dogwood-docs/examples/alert_login_current_tp/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "alert_login_in_last_hour",
+   "policy": "dogwood-docs/examples/alert_login_in_last_hour/policy.dw",
+   "schema": "dogwood-docs/examples/alert_login_in_last_hour/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "alert_pending_transfers",
+   "policy": "dogwood-docs/examples/alert_pending_transfers/policy.dw",
+   "schema": "dogwood-docs/examples/alert_pending_transfers/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "alert_same_principal_login_transfer",
+   "policy": "dogwood-docs/examples/alert_same_principal_login_transfer/policy.dw",
+   "schema": "dogwood-docs/examples/alert_same_principal_login_transfer/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "alert_same_user_login_and_transfer",
+   "policy": "dogwood-docs/examples/alert_same_user_login_and_transfer/policy.dw",
+   "schema": "dogwood-docs/examples/alert_same_user_login_and_transfer/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "alert_some_login",
+   "policy": "dogwood-docs/examples/alert_some_login/policy.dw",
+   "schema": "dogwood-docs/examples/alert_some_login/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "alert_total_transfer_over_200",
+   "policy": "dogwood-docs/examples/alert_total_transfer_over_200/policy.dw",
+   "schema": "dogwood-docs/examples/alert_total_transfer_over_200/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "allow_anything",
+   "policy": "dogwood-docs/examples/allow_anything/policy.dw",
+   "schema": "dogwood-docs/examples/allow_anything/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "approve_has_output_guard",
+   "policy": "dogwood-docs/examples/approve_has_output_guard/policy.dw",
+   "schema": "dogwood-docs/examples/approve_has_output_guard/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "call_cedar_macro_as_argument",
+   "policy": "dogwood-docs/examples/call_cedar_macro_as_argument/policy.dw",
+   "schema": "dogwood-docs/examples/call_cedar_macro_as_argument/schema.cedarschema",
+   "macros": "dogwood-docs/examples/call_cedar_macro_as_argument/macros.dw"
+  },
+  {
+   "name": "call_cedar_macro_is_small",
+   "policy": "dogwood-docs/examples/call_cedar_macro_is_small/policy.dw",
+   "schema": "dogwood-docs/examples/call_cedar_macro_is_small/schema.cedarschema",
+   "macros": "dogwood-docs/examples/call_cedar_macro_is_small/macros.dw"
+  },
+  {
+   "name": "call_cedar_macro_with_temporal_leaf",
+   "policy": "dogwood-docs/examples/call_cedar_macro_with_temporal_leaf/policy.dw",
+   "schema": "dogwood-docs/examples/call_cedar_macro_with_temporal_leaf/schema.cedarschema",
+   "macros": "dogwood-docs/examples/call_cedar_macro_with_temporal_leaf/macros.dw"
+  },
+  {
+   "name": "call_cedar_macros_composed",
+   "policy": "dogwood-docs/examples/call_cedar_macros_composed/policy.dw",
+   "schema": "dogwood-docs/examples/call_cedar_macros_composed/schema.cedarschema",
+   "macros": "dogwood-docs/examples/call_cedar_macros_composed/macros.dw"
+  },
+  {
+   "name": "call_temporal_aggregation_macro_count",
+   "policy": "dogwood-docs/examples/call_temporal_aggregation_macro_count/policy.dw",
+   "schema": "dogwood-docs/examples/call_temporal_aggregation_macro_count/schema.cedarschema",
+   "macros": "dogwood-docs/examples/call_temporal_aggregation_macro_count/macros.dw"
+  },
+  {
+   "name": "call_temporal_condition_macro_once",
+   "policy": "dogwood-docs/examples/call_temporal_condition_macro_once/policy.dw",
+   "schema": "dogwood-docs/examples/call_temporal_condition_macro_once/schema.cedarschema",
+   "macros": "dogwood-docs/examples/call_temporal_condition_macro_once/macros.dw"
+  },
+  {
+   "name": "call_temporal_condition_macros_composed",
+   "policy": "dogwood-docs/examples/call_temporal_condition_macros_composed/policy.dw",
+   "schema": "dogwood-docs/examples/call_temporal_condition_macros_composed/schema.cedarschema",
+   "macros": "dogwood-docs/examples/call_temporal_condition_macros_composed/macros.dw"
+  },
+  {
+   "name": "cap_open_agent_prs_windowed",
+   "policy": "dogwood-docs/examples/cap_open_agent_prs_windowed/policy.dw",
+   "schema": "dogwood-docs/examples/cap_open_agent_prs_windowed/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "cedar_eligible_not_blocked",
+   "policy": "dogwood-docs/examples/cedar_eligible_not_blocked/policy.dw",
+   "schema": "dogwood-docs/examples/cedar_eligible_not_blocked/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "cedar_is_small_threshold",
+   "policy": "dogwood-docs/examples/cedar_is_small_threshold/policy.dw",
+   "schema": "dogwood-docs/examples/cedar_is_small_threshold/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "cedar_macro_plus_temporal_leaf",
+   "policy": "dogwood-docs/examples/cedar_macro_plus_temporal_leaf/policy.dw",
+   "schema": "dogwood-docs/examples/cedar_macro_plus_temporal_leaf/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "cedar_semver_gt",
+   "policy": "dogwood-docs/examples/cedar_semver_gt/policy.dw",
+   "schema": "dogwood-docs/examples/cedar_semver_gt/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "cedar_starts_with_f_like",
+   "policy": "dogwood-docs/examples/cedar_starts_with_f_like/policy.dw",
+   "schema": "dogwood-docs/examples/cedar_starts_with_f_like/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "cedar_within_cap_if_else",
+   "policy": "dogwood-docs/examples/cedar_within_cap_if_else/policy.dw",
+   "schema": "dogwood-docs/examples/cedar_within_cap_if_else/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "cond_is_oauth_in_team",
+   "policy": "dogwood-docs/examples/cond_is_oauth_in_team/policy.dw",
+   "schema": "dogwood-docs/examples/cond_is_oauth_in_team/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "deny_overrides_sell_not_amzn",
+   "policy": "dogwood-docs/examples/deny_overrides_sell_not_amzn/policy.dw",
+   "schema": "dogwood-docs/examples/deny_overrides_sell_not_amzn/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "desk_governance",
+   "policy": "dogwood-docs/examples/desk_governance/policy.dw",
+   "schema": "dogwood-docs/examples/desk_governance/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "forbid_large_except_amzn",
+   "policy": "dogwood-docs/examples/forbid_large_except_amzn/policy.dw",
+   "schema": "dogwood-docs/examples/forbid_large_except_amzn/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "forbid_read_transfers_over_1000",
+   "policy": "dogwood-docs/examples/forbid_read_transfers_over_1000/policy.dw",
+   "schema": "dogwood-docs/examples/forbid_read_transfers_over_1000/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "get_amzn_stock_info",
+   "policy": "dogwood-docs/examples/get_amzn_stock_info/policy.dw",
+   "schema": "dogwood-docs/examples/get_amzn_stock_info/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "heartbeat_scope_alias",
+   "policy": "dogwood-docs/examples/heartbeat_scope_alias/policy.dw",
+   "schema": "dogwood-docs/examples/heartbeat_scope_alias/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "login_attempt_custom_kind",
+   "policy": "dogwood-docs/examples/login_attempt_custom_kind/policy.dw",
+   "schema": "dogwood-docs/examples/login_attempt_custom_kind/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "macro_library_once_is_small",
+   "policy": "dogwood-docs/examples/macro_library_once_is_small/policy.dw",
+   "schema": "dogwood-docs/examples/macro_library_once_is_small/schema.cedarschema",
+   "macros": "dogwood-docs/examples/macro_library_once_is_small/macros.dw"
+  },
+  {
+   "name": "max_window_raised",
+   "policy": "dogwood-docs/examples/max_window_raised/policy.dw",
+   "schema": "dogwood-docs/examples/max_window_raised/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "permit_read_anyone",
+   "policy": "dogwood-docs/examples/permit_read_anyone/policy.dw",
+   "schema": "dogwood-docs/examples/permit_read_anyone/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "principal_is_oauth",
+   "policy": "dogwood-docs/examples/principal_is_oauth/policy.dw",
+   "schema": "dogwood-docs/examples/principal_is_oauth/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "provider_allowed_or_short",
+   "policy": "dogwood-docs/examples/provider_allowed_or_short/policy.dw",
+   "schema": "dogwood-docs/examples/provider_allowed_or_short/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "provider_digitcount_forbid",
+   "policy": "dogwood-docs/examples/provider_digitcount_forbid/policy.dw",
+   "schema": "dogwood-docs/examples/provider_digitcount_forbid/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "provider_digitcount_operator_ge",
+   "policy": "dogwood-docs/examples/provider_digitcount_operator_ge/policy.dw",
+   "schema": "dogwood-docs/examples/provider_digitcount_operator_ge/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "provider_enum_severity_forbid",
+   "policy": "dogwood-docs/examples/provider_enum_severity_forbid/policy.dw",
+   "schema": "dogwood-docs/examples/provider_enum_severity_forbid/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "provider_enum_two_namespaces",
+   "policy": "dogwood-docs/examples/provider_enum_two_namespaces/policy.dw",
+   "schema": "dogwood-docs/examples/provider_enum_two_namespaces/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "provider_filter_set_index_decimal",
+   "policy": "dogwood-docs/examples/provider_filter_set_index_decimal/policy.dw",
+   "schema": "dogwood-docs/examples/provider_filter_set_index_decimal/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "provider_int_arithmetic_trusted",
+   "policy": "dogwood-docs/examples/provider_int_arithmetic_trusted/policy.dw",
+   "schema": "dogwood-docs/examples/provider_int_arithmetic_trusted/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "provider_matches_and_not_blocked",
+   "policy": "dogwood-docs/examples/provider_matches_and_not_blocked/policy.dw",
+   "schema": "dogwood-docs/examples/provider_matches_and_not_blocked/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "provider_principal_id_allowlist",
+   "policy": "dogwood-docs/examples/provider_principal_id_allowlist/policy.dw",
+   "schema": "dogwood-docs/examples/provider_principal_id_allowlist/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "provider_regex_analyze_fields",
+   "policy": "dogwood-docs/examples/provider_regex_analyze_fields/policy.dw",
+   "schema": "dogwood-docs/examples/provider_regex_analyze_fields/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "provider_regex_matches_uppercase",
+   "policy": "dogwood-docs/examples/provider_regex_matches_uppercase/policy.dw",
+   "schema": "dogwood-docs/examples/provider_regex_matches_uppercase/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "provider_risk_decimal_method",
+   "policy": "dogwood-docs/examples/provider_risk_decimal_method/policy.dw",
+   "schema": "dogwood-docs/examples/provider_risk_decimal_method/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "read_after_login",
+   "policy": "dogwood-docs/examples/read_after_login/policy.dw",
+   "schema": "dogwood-docs/examples/read_after_login/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "read_after_login_success",
+   "policy": "dogwood-docs/examples/read_after_login_success/policy.dw",
+   "schema": "dogwood-docs/examples/read_after_login_success/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "read_heartbeat_since_login_30s",
+   "policy": "dogwood-docs/examples/read_heartbeat_since_login_30s/policy.dw",
+   "schema": "dogwood-docs/examples/read_heartbeat_since_login_30s/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "read_login_not_logout",
+   "policy": "dogwood-docs/examples/read_login_not_logout/policy.dw",
+   "schema": "dogwood-docs/examples/read_login_not_logout/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "read_prev_compute_open_session",
+   "policy": "dogwood-docs/examples/read_prev_compute_open_session/policy.dw",
+   "schema": "dogwood-docs/examples/read_prev_compute_open_session/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "read_prev_login",
+   "policy": "dogwood-docs/examples/read_prev_login/policy.dw",
+   "schema": "dogwood-docs/examples/read_prev_login/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "read_prev_login_success",
+   "policy": "dogwood-docs/examples/read_prev_login_success/policy.dw",
+   "schema": "dogwood-docs/examples/read_prev_login_success/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "read_since_login",
+   "policy": "dogwood-docs/examples/read_since_login/policy.dw",
+   "schema": "dogwood-docs/examples/read_since_login/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "refund_budget_settled_plus_current",
+   "policy": "dogwood-docs/examples/refund_budget_settled_plus_current/policy.dw",
+   "schema": "dogwood-docs/examples/refund_budget_settled_plus_current/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_after_2024_datetime",
+   "policy": "dogwood-docs/examples/sell_after_2024_datetime/policy.dw",
+   "schema": "dogwood-docs/examples/sell_after_2024_datetime/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_after_approval_valid_ticker",
+   "policy": "dogwood-docs/examples/sell_after_approval_valid_ticker/policy.dw",
+   "schema": "dogwood-docs/examples/sell_after_approval_valid_ticker/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_comparison_chain",
+   "policy": "dogwood-docs/examples/sell_comparison_chain/policy.dw",
+   "schema": "dogwood-docs/examples/sell_comparison_chain/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_datetime_window",
+   "policy": "dogwood-docs/examples/sell_datetime_window/policy.dw",
+   "schema": "dogwood-docs/examples/sell_datetime_window/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_like_a_prefix",
+   "policy": "dogwood-docs/examples/sell_like_a_prefix/policy.dw",
+   "schema": "dogwood-docs/examples/sell_like_a_prefix/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_logical_grouping",
+   "policy": "dogwood-docs/examples/sell_logical_grouping/policy.dw",
+   "schema": "dogwood-docs/examples/sell_logical_grouping/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_nested_if_threshold",
+   "policy": "dogwood-docs/examples/sell_nested_if_threshold/policy.dw",
+   "schema": "dogwood-docs/examples/sell_nested_if_threshold/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_nonzero_proceeds_decimal",
+   "policy": "dogwood-docs/examples/sell_nonzero_proceeds_decimal/policy.dw",
+   "schema": "dogwood-docs/examples/sell_nonzero_proceeds_decimal/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_not_blocked_string",
+   "policy": "dogwood-docs/examples/sell_not_blocked_string/policy.dw",
+   "schema": "dogwood-docs/examples/sell_not_blocked_string/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_not_test_tickers_like",
+   "policy": "dogwood-docs/examples/sell_not_test_tickers_like/policy.dw",
+   "schema": "dogwood-docs/examples/sell_not_test_tickers_like/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_or_approve_action_in",
+   "policy": "dogwood-docs/examples/sell_or_approve_action_in/policy.dw",
+   "schema": "dogwood-docs/examples/sell_or_approve_action_in/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_shares_eq_scope",
+   "policy": "dogwood-docs/examples/sell_shares_eq_scope/policy.dw",
+   "schema": "dogwood-docs/examples/sell_shares_eq_scope/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_shares_temporal_subexpr",
+   "policy": "dogwood-docs/examples/sell_shares_temporal_subexpr/policy.dw",
+   "schema": "dogwood-docs/examples/sell_shares_temporal_subexpr/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_small_only",
+   "policy": "dogwood-docs/examples/sell_small_only/policy.dw",
+   "schema": "dogwood-docs/examples/sell_small_only/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_small_proceeds_decimal_method",
+   "policy": "dogwood-docs/examples/sell_small_proceeds_decimal_method/policy.dw",
+   "schema": "dogwood-docs/examples/sell_small_proceeds_decimal_method/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_threshold_by_stock",
+   "policy": "dogwood-docs/examples/sell_threshold_by_stock/policy.dw",
+   "schema": "dogwood-docs/examples/sell_threshold_by_stock/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_two_when_small_amzn",
+   "policy": "dogwood-docs/examples/sell_two_when_small_amzn/policy.dw",
+   "schema": "dogwood-docs/examples/sell_two_when_small_amzn/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_unless_huge",
+   "policy": "dogwood-docs/examples/sell_unless_huge/policy.dw",
+   "schema": "dogwood-docs/examples/sell_unless_huge/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_when_under_100",
+   "policy": "dogwood-docs/examples/sell_when_under_100/policy.dw",
+   "schema": "dogwood-docs/examples/sell_when_under_100/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_when_unless_mix",
+   "policy": "dogwood-docs/examples/sell_when_unless_mix/policy.dw",
+   "schema": "dogwood-docs/examples/sell_when_unless_mix/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "sell_zero_proceeds_if_has",
+   "policy": "dogwood-docs/examples/sell_zero_proceeds_if_has/policy.dw",
+   "schema": "dogwood-docs/examples/sell_zero_proceeds_if_has/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "simplest_permit",
+   "policy": "dogwood-docs/examples/simplest_permit/policy.dw",
+   "schema": "dogwood-docs/examples/simplest_permit/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "submit_after_approval_injection",
+   "policy": "dogwood-docs/examples/submit_after_approval_injection/policy.dw",
+   "schema": "dogwood-docs/examples/submit_after_approval_injection/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "temporal_count_formerly_login",
+   "policy": "dogwood-docs/examples/temporal_count_formerly_login/policy.dw",
+   "schema": "dogwood-docs/examples/temporal_count_formerly_login/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "temporal_login_then_read",
+   "policy": "dogwood-docs/examples/temporal_login_then_read/policy.dw",
+   "schema": "dogwood-docs/examples/temporal_login_then_read/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "temporal_once_read_recent",
+   "policy": "dogwood-docs/examples/temporal_once_read_recent/policy.dw",
+   "schema": "dogwood-docs/examples/temporal_once_read_recent/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "temporal_sum_formerly_transfer",
+   "policy": "dogwood-docs/examples/temporal_sum_formerly_transfer/policy.dw",
+   "schema": "dogwood-docs/examples/temporal_sum_formerly_transfer/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "touchless_invoice_within_tolerance",
+   "policy": "dogwood-docs/examples/touchless_invoice_within_tolerance/policy.dw",
+   "schema": "dogwood-docs/examples/touchless_invoice_within_tolerance/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "touchless_share_capped",
+   "policy": "dogwood-docs/examples/touchless_share_capped/policy.dw",
+   "schema": "dogwood-docs/examples/touchless_share_capped/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "traders_is_in_group_scope",
+   "policy": "dogwood-docs/examples/traders_is_in_group_scope/policy.dw",
+   "schema": "dogwood-docs/examples/traders_is_in_group_scope/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "transfer_prev_nested_conj",
+   "policy": "dogwood-docs/examples/transfer_prev_nested_conj/policy.dw",
+   "schema": "dogwood-docs/examples/transfer_prev_nested_conj/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "write_after_read",
+   "policy": "dogwood-docs/examples/write_after_read/policy.dw",
+   "schema": "dogwood-docs/examples/write_after_read/schema.cedarschema",
+   "macros": null
+  },
+  {
+   "name": "write_after_read_formerly",
+   "policy": "dogwood-docs/examples/write_after_read_formerly/policy.dw",
+   "schema": "dogwood-docs/examples/write_after_read_formerly/schema.cedarschema",
+   "macros": null
+  }
+ ]
+}

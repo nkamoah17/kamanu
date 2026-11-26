@@ -1,0 +1,32 @@
+{
+ "wheel": {
+  "kamanu/data": [
+   "kamanu/data/__init__.py",
+   "kamanu/data/__main__.py",
+   "kamanu/data/ladder/r17/lint_table.json",
+   "kamanu/data/ladder/r4b/report.json",
+   "kamanu/data/ladder/r6b/calibration.json"
+  ]
+ },
+ "matrix": {
+  "before": {
+   "commit": "4dc5d32",
+   "same": false,
+   "only_source": [
+    "calibration.html"
+   ],
+   "only_installed": [],
+   "differ": [
+    "index.html",
+    "matrix.json"
+   ]
+  },
+  "after": {
+   "commit": "4dc5d32 + R13c",
+   "same": true,
+   "only_source": [],
+   "only_installed": [],
+   "differ": []
+  }
+ }
+}

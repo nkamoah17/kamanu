@@ -1,0 +1,14 @@
+\* fused: Split = FALSE, the two halves of Decide's deny branch are one step (the grid's bounds, a not atomic engine)
+Templates <- RT
+MaxReq = 3
+MaxFails = 1
+Reflexive = TRUE
+DenyRecord = "request"
+Atomic = FALSE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = TRUE
+Permit <- PReqBasis
+Scope <- ScopeGlobal
+Cap = 100
+Split = FALSE

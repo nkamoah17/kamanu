@@ -1,0 +1,17 @@
+\* the provider's records never lag: RLag = 0, Agree = 1
+Templates <- RT
+MaxReq = 3
+MaxFails = 1
+Reflexive = TRUE
+DenyRecord = "none"
+Atomic = TRUE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = TRUE
+Permit <- PReqBasis
+Scope <- ScopeGlobal
+Cap = 100
+Fixed = TRUE
+RLag = 0
+Agree = 1
+FixKind = "agree"

@@ -1,0 +1,3 @@
+src/lint_table.jsonl -text
+src/table_gen.rs -text
+src/levels_gen.rs -text

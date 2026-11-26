@@ -1,0 +1,16 @@
+\* A cap of 100, three parallel payments of 60, two failures, a provider one query stale.
+Templates <- TOne
+Permit <- PRefundOnReconcile
+Scope <- ScopeGlobal
+MaxReq = 3
+MaxFails = 2
+Reflexive = TRUE
+DenyRecord = "none"
+Atomic = TRUE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = TRUE
+Cap = 100
+RLag = 1
+Agree = 2
+FixKind = "agree"

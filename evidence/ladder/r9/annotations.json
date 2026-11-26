@@ -1,0 +1,247 @@
+[
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 12,
+  "kind": "typeAlias",
+  "annotation": "req = { tool: Str, amt: Int, key: Str }",
+  "annotates": "PrKernelTypeAliases"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 13,
+  "kind": "typeAlias",
+  "annotation": "ev = { kind: Str, id: Int, tool: Str, amt: Int, key: Str }",
+  "annotates": "PrKernelTypeAliases"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 17,
+  "kind": "type",
+  "annotation": "Set($req)",
+  "annotates": "Templates"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 19,
+  "kind": "type",
+  "annotation": "Int",
+  "annotates": "MaxReq"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 21,
+  "kind": "type",
+  "annotation": "Int",
+  "annotates": "MaxFails"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 23,
+  "kind": "type",
+  "annotation": "Bool",
+  "annotates": "Reflexive"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 25,
+  "kind": "type",
+  "annotation": "Str",
+  "annotates": "DenyRecord"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 27,
+  "kind": "type",
+  "annotation": "Bool",
+  "annotates": "Atomic"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 29,
+  "kind": "type",
+  "annotation": "Int",
+  "annotates": "Lag"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 31,
+  "kind": "type",
+  "annotation": "Set(Str)",
+  "annotates": "Faults"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 33,
+  "kind": "type",
+  "annotation": "Bool",
+  "annotates": "HasReconcile"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 37,
+  "kind": "type",
+  "annotation": "(Seq($ev), $req) => Bool",
+  "annotates": "Permit"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 39,
+  "kind": "type",
+  "annotation": "({ key: Str, a }) => Str",
+  "annotates": "Scope"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 43,
+  "kind": "type",
+  "annotation": "Seq($ev)",
+  "annotates": "hist"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 45,
+  "kind": "type",
+  "annotation": "Int -> Str",
+  "annotates": "st"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 47,
+  "kind": "type",
+  "annotation": "Int -> $req",
+  "annotates": "rq"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 49,
+  "kind": "type",
+  "annotation": "Int",
+  "annotates": "n"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 51,
+  "kind": "type",
+  "annotation": "Set(Int)",
+  "annotates": "eff"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 53,
+  "kind": "type",
+  "annotation": "Int",
+  "annotates": "fails"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 55,
+  "kind": "type",
+  "annotation": "Set(Int)",
+  "annotates": "rec"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 58,
+  "kind": "type",
+  "annotation": "<<Seq($ev), Int -> Str, Int -> $req, Int, Set(Int), Int, Set(Int)>>",
+  "annotates": "kvars"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 64,
+  "kind": "type",
+  "annotation": "$req",
+  "annotates": "NoReq"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 67,
+  "kind": "type",
+  "annotation": "(Str, Int) => $ev",
+  "annotates": "Ev"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 72,
+  "kind": "type",
+  "annotation": "(Seq($ev), Str) => Int",
+  "annotates": "SumKind"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 78,
+  "kind": "type",
+  "annotation": "Set(Int) => Int",
+  "annotates": "SumIds"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 83,
+  "kind": "type",
+  "annotation": "(Seq($ev), $req) => Seq($ev)",
+  "annotates": "InScope"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 88,
+  "kind": "type",
+  "annotation": "(Int, Int) => Seq($ev)",
+  "annotates": "View"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 116,
+  "kind": "type",
+  "annotation": "$req => Bool",
+  "annotates": "Issue"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 125,
+  "kind": "type",
+  "annotation": "Int => Bool",
+  "annotates": "Decide"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 140,
+  "kind": "type",
+  "annotation": "Int => Bool",
+  "annotates": "Record"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 148,
+  "kind": "type",
+  "annotation": "Int => Bool",
+  "annotates": "Succeed"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 156,
+  "kind": "type",
+  "annotation": "Int => Bool",
+  "annotates": "FailClean"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 166,
+  "kind": "type",
+  "annotation": "Int => Bool",
+  "annotates": "FailAmbiguous"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 177,
+  "kind": "type",
+  "annotation": "Int => Bool",
+  "annotates": "Settle"
+ },
+ {
+  "file": "spec/ladder/proof/PrKernel.tla",
+  "line": 181,
+  "kind": "type",
+  "annotation": "Int => Bool",
+  "annotates": "Reconcile"
+ }
+]

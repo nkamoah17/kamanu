@@ -1,0 +1,278 @@
+{
+ "captures_after_expiry": [],
+ "declines_not_modelled": {
+  "by_reason": {},
+  "count": 0
+ },
+ "first": {
+  "approval_unfit": {
+   "bucket": "cardholder-daily|ich_over_capture_2|2026-02-20",
+   "event": "over_capture/2/a3:outcome",
+   "limit": "cardholder-daily",
+   "trail": [
+    {
+     "amount": 250,
+     "held_after": 0,
+     "held_before": 0,
+     "id": "over_capture/2/x5",
+     "kind": "capture",
+     "spent_after": 250,
+     "spent_before": 0
+    },
+    {
+     "amount": 350,
+     "held_after": 0,
+     "held_before": 0,
+     "id": "over_capture/2/x4",
+     "kind": "capture",
+     "spent_after": 600,
+     "spent_before": 250
+    },
+    {
+     "amount": 350,
+     "held_after": 0,
+     "held_before": 0,
+     "id": "over_capture/2/x3",
+     "kind": "capture",
+     "spent_after": 950,
+     "spent_before": 600
+    },
+    {
+     "amount": 350,
+     "held_after": 0,
+     "held_before": 0,
+     "id": "over_capture/2/x2",
+     "kind": "capture",
+     "spent_after": 1300,
+     "spent_before": 950
+    },
+    {
+     "amount": 350,
+     "held_after": 0,
+     "held_before": 0,
+     "id": "over_capture/2/x1",
+     "kind": "capture",
+     "spent_after": 1650,
+     "spent_before": 1300
+    },
+    {
+     "amount": 116,
+     "held_after": 116,
+     "held_before": 0,
+     "id": "over_capture/2/a1:outcome",
+     "kind": "outcome",
+     "spent_after": 1650,
+     "spent_before": 1650
+    },
+    {
+     "amount": 136,
+     "held_after": 0,
+     "held_before": 116,
+     "id": "over_capture/2/a1:capture@1771550412",
+     "kind": "capture",
+     "spent_after": 1786,
+     "spent_before": 1650
+    },
+    {
+     "amount": 115,
+     "held_after": 115,
+     "held_before": 0,
+     "id": "over_capture/2/a2:outcome",
+     "kind": "outcome",
+     "spent_after": 1786,
+     "spent_before": 1786
+    },
+    {
+     "amount": null,
+     "held_after": 0,
+     "held_before": 115,
+     "id": "over_capture/2/a2:reverse@1771550415",
+     "kind": "reverse",
+     "spent_after": 1786,
+     "spent_before": 1786
+    },
+    {
+     "amount": 228,
+     "held_after": 228,
+     "held_before": 0,
+     "id": "over_capture/2/a3:outcome",
+     "kind": "outcome",
+     "spent_after": 1786,
+     "spent_before": 1786
+    }
+   ]
+  },
+  "no_hold": null,
+  "over_capture": null,
+  "wrongful_refusal": null
+ },
+ "handler": {
+  "agree": 8,
+  "answers": 9,
+  "approved_unfit": 1,
+  "declined_fit": 0,
+  "max_delay_ms": 1
+ },
+ "journal": {
+  "duplicates": 0,
+  "events": 48,
+  "first_t": 1771549177,
+  "last_hash": "0259e233f53360bcfa2b222b25f8fb0d926ba8784a455b59332be0b7d73a9efe",
+  "last_t": 1771550427,
+  "level": "TESTED",
+  "lines": 48,
+  "out_of_order": 21
+ },
+ "limits": [
+  {
+   "amount": 2000,
+   "categories": null,
+   "id": "cardholder-daily",
+   "interval": "daily",
+   "most_over": {
+    "bucket": "cardholder-daily|ich_over_capture_2|2026-02-20",
+    "event": "over_capture/2/a3:outcome",
+    "from_approvals": 14,
+    "from_no_hold": 0,
+    "from_over_capture": 0,
+    "total": 14
+   },
+   "scope": "cardholder",
+   "wrongly_refused": {
+    "count": 0,
+    "largest": 0
+   }
+  },
+  {
+   "amount": 350,
+   "categories": null,
+   "id": "card-per-authorization",
+   "interval": "per_authorization",
+   "most_over": {
+    "bucket": null,
+    "event": null,
+    "from_approvals": 0,
+    "from_no_hold": 0,
+    "from_over_capture": 0,
+    "total": 0
+   },
+   "scope": "card",
+   "wrongly_refused": {
+    "count": 0,
+    "largest": 0
+   }
+  },
+  {
+   "amount": 20000,
+   "categories": null,
+   "id": "cards-monthly",
+   "interval": "monthly",
+   "most_over": {
+    "bucket": null,
+    "event": null,
+    "from_approvals": 0,
+    "from_no_hold": 0,
+    "from_over_capture": 0,
+    "total": 0
+   },
+   "scope": "cardholder",
+   "wrongly_refused": {
+    "count": 0,
+    "largest": 0
+   }
+  }
+ ],
+ "orders": {
+  "approvals": {
+   "agree": 8,
+   "judged": 9,
+   "order_dependent": {
+    "count": 0,
+    "first": null,
+    "largest": 0
+   },
+   "unfit": {
+    "count": 1,
+    "largest": 228
+   }
+  },
+  "declines": {
+   "agree": 0,
+   "fitted": {
+    "count": 0,
+    "largest": 0
+   },
+   "judged": 0,
+   "order_dependent": {
+    "count": 0,
+    "first": null,
+    "largest": 0
+   }
+  },
+  "handler": {
+   "agree": 8,
+   "answers": 9,
+   "approved_unfit": 1,
+   "declined_fit": 0,
+   "order_dependent": 0
+  },
+  "level": "TESTED",
+  "unenumerated": 0,
+  "verdict": {
+   "order_dependent_approvals": 0,
+   "order_dependent_declines": 0,
+   "overspend_from_approvals": "found",
+   "wrongful_refusal": "none"
+  }
+ },
+ "overdue": [],
+ "profile": {
+  "constants": {
+   "expiry_days": {
+    "status": "assumed",
+    "value": 7
+   },
+   "force_post": {
+    "status": "assumed",
+    "value": 0
+   },
+   "over_capture": {
+    "status": "assumed",
+    "value": 20
+   },
+   "refund_restores": {
+    "status": "assumed",
+    "value": false
+   }
+  },
+  "currency": "usd"
+ },
+ "refunds": {
+  "amount": 0,
+  "count": 0,
+  "restores": false
+ },
+ "sole_writer": {
+  "assumes": "the report is about the events this ledger saw",
+  "authorizations": []
+ },
+ "statements": [
+  "no Lean theorem names the ledger with more than one bucket (the multi-bucket proof is a later card)",
+  "one bucket is the budget key cell of X3",
+  "A handler that enforces on a real wire is not built"
+ ],
+ "timeouts": {
+  "approved": 0,
+  "count": 0,
+  "declined": 0
+ },
+ "unmodelled": [],
+ "verdict": {
+  "overspend_from_approvals": "found",
+  "wrongful_refusal": "none"
+ },
+ "wrongly_refused": {
+  "count": 0,
+  "largest": 0
+ }
+}

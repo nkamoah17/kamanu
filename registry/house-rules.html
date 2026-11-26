@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>KAMANU registry: house rules</title>
+<style>body{font-family:system-ui,sans-serif;max-width:72rem;margin:2rem auto;padding:0 1rem;color:#1d1d1f}
+table{border-collapse:collapse;width:100%}th,td{border-bottom:1px solid #ddd;padding:.3rem .5rem;text-align:left;vertical-align:top}
+th[data-sort]{cursor:pointer}code,pre{font-family:ui-monospace,monospace;font-size:.85rem}pre{white-space:pre-wrap;word-break:break-all;margin:0}
+.LAPSED{color:#a00;font-weight:bold}.current{color:#060;font-weight:bold}.note{color:#555}</style>
+</head>
+<body>
+<p><a href="index.html">KAMANU hallmark registry</a></p>
+<h1>House rules</h1>
+<p>What is done, as of the build on <time>2026-11-26</time>:</p>
+<ul>
+<li>The vendor sees a result first: a hallmark that names someone else&#x27;s engine is sent to its maintainer before it is shown here.</li>
+<li>The owner decides when it is shown: by default a vendor&#x27;s result is held until its hold has passed after the vendor received it, and the owner may release it earlier, on the record, naming who, the date and the reason.</li>
+<li>Rule E5: held unless released on the record. A released result&#x27;s page says so in one line: the date the vendor received it, that it was published before the hold was up by the owner&#x27;s decision, and whether the vendor has answered.</li>
+<li>Every figure is computed by the assay and never typed in (rule E2); a hallmark that lapses is shown as lapsed and is never removed.</li>
+</ul>
+<p>The hold for this build is 30 days after the vendor received the result.</p>
+<h2>The mint's words</h2>
+<p>Each word below means one exact thing, and the registry, the Catalogue and the printed hallmark use it for that
+alone (generated from kamanu.assay.mint.TABLE; the same list is docs/mint.md).</p>
+<dl>
+<div data-word="face value"><dt>face value</dt><dd>the cap: the most the limit is set to let through, in the policy&#x27;s own units</dd></div>
+<div data-word="assay"><dt>assay</dt><dd>the run that gives the ceiling: the most that can really be spent under the limit (lint&#x27;s exposure on the scope ledger)</dd></div>
+<div data-word="fineness"><dt>fineness</dt><dd>face value over ceiling, shown as a millesimal mark with three decimals (.500, 1.000), never rounded up</dd></div>
+<div data-word="fine"><dt>fine</dt><dd>fineness 1.000 at the hallmark&#x27;s level, and only then</dd></div>
+<div data-word="debased"><dt>debased</dt><dd>fineness below 1.000, shown with the amount by which it is: the ceiling less the face value, in the limit&#x27;s own units (unbounded when the ceiling is)</dd></div>
+<div data-word="stranded budget"><dt>stranded budget</dt><dd>the most free headroom left when a request that would fit is refused (lint&#x27;s worst Tight figure)</dd></div>
+<div data-word="hallmark"><dt>hallmark</dt><dd>the signed record of one assay: its figures, levels, hypotheses and hashes</dd></div>
+<div data-word="mint mark"><dt>mint mark</dt><dd>the hashes of the model (the policy and its lint form), the profile and the Lean sources</dd></div>
+<div data-word="struck"><dt>struck</dt><dd>the date of the run that issued the hallmark</dd></div>
+<div data-word="obverse"><dt>obverse</dt><dd>the face of a hallmark: face value, fineness, stranded budget and level</dd></div>
+<div data-word="reverse"><dt>reverse</dt><dd>the back of a hallmark: the hypotheses, each proved, measured or assumed, and the trace</dd></div>
+<div data-word="touchstone"><dt>touchstone</dt><dd>the coach: the product that checks a payment before it is made (does it fit, the most that fits, and when the full amount will)</dd></div>
+<div data-word="countermark"><dt>countermark</dt><dd>the connector assessment: the product that checks that no caller reaches another tenant&#x27;s money or records through a connector</dd></div>
+<div data-word="pyx"><dt>pyx</dt><dd>the re-measurement of a hallmark, kept as signed entries beside it</dd></div>
+<div data-word="trial of the pyx"><dt>trial of the pyx</dt><dd>the launch: the hallmarks shown in public with their re-measurement</dd></div>
+<div data-word="lapsed"><dt>lapsed</dt><dd>a hallmark whose re-measurement failed or ran out (past its valid-through date)</dd></div>
+</dl>
+</body>
+</html>

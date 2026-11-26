@@ -1,0 +1,6 @@
+tools/vendor/*.jar
+__pycache__/
+*.pyc
+out/
+.pytest_cache/
+progress/attempts/

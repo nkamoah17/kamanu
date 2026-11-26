@@ -1,0 +1,82 @@
+{
+ "machine": "the Linux CI image kamanu-ci:py312-jdk21 (Docker on the reference machine, 32 logical CPUs, repository copied into the container)",
+ "os": "Linux",
+ "commit": "2fa26f0",
+ "table_sha256": "c63e8684fb5546706314a3a0f064f092096fa9d6a1d041e80b44ac5f5a916488",
+ "tool": "hyperfine 2.0.0",
+ "equality": true,
+ "policy": "benchmark/lint/policies/cap.dw",
+ "profile": "benchmark/lint/profiles/none-not-atomic.json",
+ "binary": {
+  "path": "kamanu-lint",
+  "version": "kamanu-lint 0.1.0 table c63e8684fb5546706314a3a0f064f092096fa9d6a1d041e80b44ac5f5a916488"
+ },
+ "rows": [
+  {
+   "name": "an empty process",
+   "command": "/usr/bin/true",
+   "runs": 50,
+   "median_ms": 0.268,
+   "min_ms": 0.244,
+   "max_ms": 0.348,
+   "mean_ms": 0.27,
+   "bar": "the floor: an empty process (S2)",
+   "red": false
+  },
+  {
+   "name": "the vendor's check-parse",
+   "command": "/work/tools-bin/dogwood check-parse benchmark/lint/policies/cap.dw",
+   "runs": 50,
+   "median_ms": 1.132,
+   "min_ms": 1.072,
+   "max_ms": 1.186,
+   "mean_ms": 1.131,
+   "bar": "S2 exemplar: cold median within 1.5 times an empty process",
+   "red": true
+  },
+  {
+   "name": "the vendor's validate",
+   "command": "/work/tools-bin/dogwood validate --policy-schema kamanu/examples/dogwood/schema.cedarschema benchmark/lint/policies/cap.dw",
+   "runs": 50,
+   "median_ms": 1.116,
+   "min_ms": 1.016,
+   "max_ms": 1.21,
+   "mean_ms": 1.123,
+   "bar": "S2 exemplar: cold median within 1.5 times an empty process",
+   "red": true
+  },
+  {
+   "name": "kamanu check --quick",
+   "command": "/usr/local/bin/python -m kamanu.hunt.cli check benchmark/lint/policies/cap.dw --engine benchmark/lint/profiles/none-not-atomic.json --quick --no-record",
+   "runs": 10,
+   "median_ms": 90.357,
+   "min_ms": 65.826,
+   "max_ms": 93.878,
+   "mean_ms": 86.536,
+   "bar": "S2 exemplar: cold median within 1.5 times an empty process",
+   "red": true
+  },
+  {
+   "name": "the Python kamanu lint",
+   "command": "/usr/local/bin/python -m kamanu.hunt.cli lint benchmark/lint/policies/cap.dw --engine benchmark/lint/profiles/none-not-atomic.json",
+   "runs": 50,
+   "median_ms": 50.131,
+   "min_ms": 46.238,
+   "max_ms": 55.414,
+   "mean_ms": 50.292,
+   "bar": "S2 exemplar: cold median within 1.5 times an empty process",
+   "red": true
+  },
+  {
+   "name": "the binary kamanu-lint",
+   "command": "/work/tools-bin/kamanu-lint benchmark/lint/policies/cap.dw --engine benchmark/lint/profiles/none-not-atomic.json",
+   "runs": 50,
+   "median_ms": 0.345,
+   "min_ms": 0.324,
+   "max_ms": 0.684,
+   "mean_ms": 0.363,
+   "bar": "S2 exemplar: cold median within 1.5 times an empty process",
+   "red": false
+  }
+ ]
+}

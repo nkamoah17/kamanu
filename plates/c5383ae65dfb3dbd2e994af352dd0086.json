@@ -1,0 +1,102 @@
+{
+ "die": "c5383ae65dfb3dbd2e994af352dd0086",
+ "expects": {
+  "checks": [
+   {
+    "die": "c2e5faf30406c33132101b681aeadc80",
+    "level": "MODEL_PROVEN",
+    "name": "Sound",
+    "status": "holds",
+    "trace": null
+   },
+   {
+    "die": "c5383ae65dfb3dbd2e994af352dd0086",
+    "level": "REFUTED",
+    "name": "Tight",
+    "status": "FAILS",
+    "trace": [
+     {
+      "amount": 60,
+      "count": 0,
+      "doubt": 0,
+      "held": 0,
+      "outcome": null,
+      "spent": 0,
+      "step": "issue"
+     },
+     {
+      "amount": 60,
+      "count": 0,
+      "doubt": 0,
+      "held": 0,
+      "outcome": "deny",
+      "spent": 0,
+      "step": "decide"
+     }
+    ]
+   }
+  ],
+  "figures": {
+   "ceiling": 100,
+   "face": 100,
+   "fineness": "1.000",
+   "stranded": 100
+  },
+  "hypotheses": [
+   {
+    "name": "Reflexive",
+    "status": "assumed",
+    "value": true
+   },
+   {
+    "name": "DenyRecord",
+    "status": "assumed",
+    "value": "none"
+   },
+   {
+    "name": "Atomic",
+    "status": "assumed",
+    "value": true
+   },
+   {
+    "name": "Lag",
+    "status": "assumed",
+    "value": 0
+   },
+   {
+    "name": "Scope",
+    "status": "assumed",
+    "value": "ScopeGlobal"
+   },
+   {
+    "name": "in_flight",
+    "status": "assumed",
+    "value": 2
+   },
+   {
+    "name": "failures",
+    "status": "assumed",
+    "value": 1
+   }
+  ],
+  "level": "REFUTED"
+ },
+ "inputs": [
+  {
+   "path": "fixtures/dogwood/PReqBasisNR.dw",
+   "sha256": "b72a55b88fe4e9a40fe7407ff85d4dcadf7b501faf1be1b0ddb8ec10be83ba7a"
+  }
+ ],
+ "receipt": 3,
+ "replay": {
+  "amounts": null,
+  "cap": null,
+  "engine": "reference",
+  "failures": 1,
+  "in_flight": 2,
+  "kind": "policy",
+  "name": "PReqBasisNR.dw",
+  "policy": "// kernel: PReqBasisNR\n// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/examples/refund_budget_settled_plus_current/README.md (a same-kind sum already includes the in-flight amount, so the added term double-counts)\n// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/guide/04-temporal-expressions.md#arithmetic-in-comparison-operands\n// Deliberately the double-counting form that README warns about: this is the\n// kernel's non-reflexive author running on a reflexive engine.\n// Needs a dogwood build with --features experimental-arithmetic.\n\n@id(\"pay_cap\")\npermit (\n    principal,\n    action == Kamanu::Action::\"Pay\",\n    resource\n)\nwhen temporal {\n    (sum a for (a: Long), (t: Timepoint). where (\n        formerly within 24h (Kamanu::Action::\"Pay\"::request{ input.amount: a } && tp(t))\n    )) + context.input.amount <= 100\n};\n"
+ },
+ "type": "44ee5807eb600496a9ad342c569dff94"
+}

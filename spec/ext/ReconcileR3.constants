@@ -1,0 +1,15 @@
+\* A cap of 100, three parallel payments, two failures, and a budget of three unknowns.
+Templates <- ReconcileTemplates
+Permit <- PRefundOnReconcile
+Scope <- ScopeGlobal
+MaxReq = 3
+MaxFails = 2
+Reflexive = TRUE
+DenyRecord = "none"
+Atomic = TRUE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = TRUE
+Cap = 100
+MaxUnknowns = 3
+AgentFair = TRUE

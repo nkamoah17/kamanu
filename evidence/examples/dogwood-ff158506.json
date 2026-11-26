@@ -1,0 +1,800 @@
+{
+ "bundles": [
+  {
+   "name": "access_not_revoked_since_grant",
+   "class": "counting-other"
+  },
+  {
+   "name": "alert_exactly_three_transfers",
+   "class": "counting-other"
+  },
+  {
+   "name": "alert_heartbeat_and_login_rate",
+   "class": "counting-other"
+  },
+  {
+   "name": "alert_login_and_big_transfer",
+   "class": "counting-other"
+  },
+  {
+   "name": "alert_login_current_tp",
+   "class": "counting-other"
+  },
+  {
+   "name": "alert_login_in_last_hour",
+   "class": "counting-other"
+  },
+  {
+   "name": "alert_pending_transfers",
+   "class": "counting-other"
+  },
+  {
+   "name": "alert_same_principal_login_transfer",
+   "class": "counting-other"
+  },
+  {
+   "name": "alert_same_user_login_and_transfer",
+   "class": "counting-other"
+  },
+  {
+   "name": "alert_some_login",
+   "class": "counting-other"
+  },
+  {
+   "name": "alert_total_transfer_over_200",
+   "class": "counting-other"
+  },
+  {
+   "name": "allow_anything",
+   "class": "non-temporal"
+  },
+  {
+   "name": "approve_has_output_guard",
+   "class": "non-temporal"
+  },
+  {
+   "name": "call_cedar_macro_as_argument",
+   "class": "non-temporal"
+  },
+  {
+   "name": "call_cedar_macro_is_small",
+   "class": "non-temporal"
+  },
+  {
+   "name": "call_cedar_macro_with_temporal_leaf",
+   "class": "counting-other"
+  },
+  {
+   "name": "call_cedar_macros_composed",
+   "class": "non-temporal"
+  },
+  {
+   "name": "call_temporal_aggregation_macro_count",
+   "class": "counting-other"
+  },
+  {
+   "name": "call_temporal_condition_macro_once",
+   "class": "counting-other"
+  },
+  {
+   "name": "call_temporal_condition_macros_composed",
+   "class": "counting-other"
+  },
+  {
+   "name": "cap_open_agent_prs_windowed",
+   "class": "counting-other"
+  },
+  {
+   "name": "cedar_eligible_not_blocked",
+   "class": "non-temporal"
+  },
+  {
+   "name": "cedar_is_small_threshold",
+   "class": "non-temporal"
+  },
+  {
+   "name": "cedar_macro_plus_temporal_leaf",
+   "class": "counting-other"
+  },
+  {
+   "name": "cedar_semver_gt",
+   "class": "non-temporal"
+  },
+  {
+   "name": "cedar_starts_with_f_like",
+   "class": "non-temporal"
+  },
+  {
+   "name": "cedar_within_cap_if_else",
+   "class": "non-temporal"
+  },
+  {
+   "name": "cond_is_oauth_in_team",
+   "class": "non-temporal"
+  },
+  {
+   "name": "deny_overrides_sell_not_amzn",
+   "class": "non-temporal"
+  },
+  {
+   "name": "desk_governance",
+   "class": "counting-other"
+  },
+  {
+   "name": "forbid_large_except_amzn",
+   "class": "non-temporal"
+  },
+  {
+   "name": "forbid_read_transfers_over_1000",
+   "class": "counting-other"
+  },
+  {
+   "name": "get_amzn_stock_info",
+   "class": "non-temporal"
+  },
+  {
+   "name": "heartbeat_scope_alias",
+   "class": "counting-other"
+  },
+  {
+   "name": "login_attempt_custom_kind",
+   "class": "counting-other"
+  },
+  {
+   "name": "macro_library_once_is_small",
+   "class": "counting-other"
+  },
+  {
+   "name": "max_window_raised",
+   "class": "counting-other"
+  },
+  {
+   "name": "permit_read_anyone",
+   "class": "non-temporal"
+  },
+  {
+   "name": "principal_is_oauth",
+   "class": "non-temporal"
+  },
+  {
+   "name": "provider_allowed_or_short",
+   "class": "non-temporal"
+  },
+  {
+   "name": "provider_digitcount_forbid",
+   "class": "non-temporal"
+  },
+  {
+   "name": "provider_digitcount_operator_ge",
+   "class": "non-temporal"
+  },
+  {
+   "name": "provider_enum_severity_forbid",
+   "class": "non-temporal"
+  },
+  {
+   "name": "provider_enum_two_namespaces",
+   "class": "non-temporal"
+  },
+  {
+   "name": "provider_filter_set_index_decimal",
+   "class": "non-temporal"
+  },
+  {
+   "name": "provider_int_arithmetic_trusted",
+   "class": "non-temporal"
+  },
+  {
+   "name": "provider_matches_and_not_blocked",
+   "class": "non-temporal"
+  },
+  {
+   "name": "provider_principal_id_allowlist",
+   "class": "non-temporal"
+  },
+  {
+   "name": "provider_regex_analyze_fields",
+   "class": "non-temporal"
+  },
+  {
+   "name": "provider_regex_matches_uppercase",
+   "class": "non-temporal"
+  },
+  {
+   "name": "provider_risk_decimal_method",
+   "class": "non-temporal"
+  },
+  {
+   "name": "read_after_login",
+   "class": "counting-other"
+  },
+  {
+   "name": "read_after_login_success",
+   "class": "counting-other"
+  },
+  {
+   "name": "read_heartbeat_since_login_30s",
+   "class": "counting-other"
+  },
+  {
+   "name": "read_login_not_logout",
+   "class": "counting-other"
+  },
+  {
+   "name": "read_prev_compute_open_session",
+   "class": "counting-other"
+  },
+  {
+   "name": "read_prev_login",
+   "class": "counting-other"
+  },
+  {
+   "name": "read_prev_login_success",
+   "class": "counting-other"
+  },
+  {
+   "name": "read_since_login",
+   "class": "counting-other"
+  },
+  {
+   "name": "refund_budget_settled_plus_current",
+   "class": "cap-shaped"
+  },
+  {
+   "name": "sell_after_2024_datetime",
+   "class": "non-temporal"
+  },
+  {
+   "name": "sell_after_approval_valid_ticker",
+   "class": "counting-other"
+  },
+  {
+   "name": "sell_comparison_chain",
+   "class": "non-temporal"
+  },
+  {
+   "name": "sell_datetime_window",
+   "class": "non-temporal"
+  },
+  {
+   "name": "sell_like_a_prefix",
+   "class": "non-temporal"
+  },
+  {
+   "name": "sell_logical_grouping",
+   "class": "non-temporal"
+  },
+  {
+   "name": "sell_nested_if_threshold",
+   "class": "non-temporal"
+  },
+  {
+   "name": "sell_nonzero_proceeds_decimal",
+   "class": "non-temporal"
+  },
+  {
+   "name": "sell_not_blocked_string",
+   "class": "non-temporal"
+  },
+  {
+   "name": "sell_not_test_tickers_like",
+   "class": "non-temporal"
+  },
+  {
+   "name": "sell_or_approve_action_in",
+   "class": "non-temporal"
+  },
+  {
+   "name": "sell_shares_eq_scope",
+   "class": "non-temporal"
+  },
+  {
+   "name": "sell_shares_temporal_subexpr",
+   "class": "counting-other"
+  },
+  {
+   "name": "sell_small_only",
+   "class": "non-temporal"
+  },
+  {
+   "name": "sell_small_proceeds_decimal_method",
+   "class": "non-temporal"
+  },
+  {
+   "name": "sell_threshold_by_stock",
+   "class": "non-temporal"
+  },
+  {
+   "name": "sell_two_when_small_amzn",
+   "class": "non-temporal"
+  },
+  {
+   "name": "sell_unless_huge",
+   "class": "non-temporal"
+  },
+  {
+   "name": "sell_when_under_100",
+   "class": "non-temporal"
+  },
+  {
+   "name": "sell_when_unless_mix",
+   "class": "non-temporal"
+  },
+  {
+   "name": "sell_zero_proceeds_if_has",
+   "class": "non-temporal"
+  },
+  {
+   "name": "simplest_permit",
+   "class": "non-temporal"
+  },
+  {
+   "name": "submit_after_approval_injection",
+   "class": "counting-other"
+  },
+  {
+   "name": "temporal_count_formerly_login",
+   "class": "counting-other"
+  },
+  {
+   "name": "temporal_login_then_read",
+   "class": "counting-other"
+  },
+  {
+   "name": "temporal_once_read_recent",
+   "class": "counting-other"
+  },
+  {
+   "name": "temporal_sum_formerly_transfer",
+   "class": "counting-other"
+  },
+  {
+   "name": "touchless_invoice_within_tolerance",
+   "class": "counting-other"
+  },
+  {
+   "name": "touchless_share_capped",
+   "class": "counting-other"
+  },
+  {
+   "name": "traders_is_in_group_scope",
+   "class": "non-temporal"
+  },
+  {
+   "name": "transfer_prev_nested_conj",
+   "class": "counting-other"
+  },
+  {
+   "name": "write_after_read",
+   "class": "counting-other"
+  },
+  {
+   "name": "write_after_read_formerly",
+   "class": "counting-other"
+  }
+ ],
+ "denominator": 1,
+ "table": [
+  {
+   "bundle": "refund_budget_settled_plus_current",
+   "action": "Refund",
+   "shape": "settled-plus-current",
+   "cap": 100,
+   "window_s": 86400,
+   "tests": {
+    "over-ask": {
+     "verdict": "passes",
+     "sessions": [
+      [
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "ALLOW"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "settle",
+        "call": 0
+       },
+       {
+        "op": "wait",
+        "seconds": 9
+       },
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "DENY"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "wait",
+        "seconds": 9
+       },
+       {
+        "op": "issue",
+        "amount": 30,
+        "verdict": "ALLOW"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "settle",
+        "call": 2
+       },
+       {
+        "op": "wait",
+        "seconds": 9
+       }
+      ]
+     ]
+    },
+    "freeze": {
+     "verdict": "passes",
+     "sessions": [
+      [
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "ALLOW"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "settle",
+        "call": 0
+       },
+       {
+        "op": "wait",
+        "seconds": 9
+       },
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "DENY"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "wait",
+        "seconds": 43199
+       },
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "DENY"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "wait",
+        "seconds": 43199
+       },
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "ALLOW"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "settle",
+        "call": 3
+       },
+       {
+        "op": "wait",
+        "seconds": 43199
+       },
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "DENY"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "wait",
+        "seconds": 43199
+       },
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "DENY"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "wait",
+        "seconds": 43199
+       },
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "ALLOW"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "settle",
+        "call": 6
+       },
+       {
+        "op": "wait",
+        "seconds": 43199
+       },
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "DENY"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "wait",
+        "seconds": 43199
+       },
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "DENY"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "wait",
+        "seconds": 43199
+       },
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "ALLOW"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "settle",
+        "call": 9
+       },
+       {
+        "op": "wait",
+        "seconds": 43199
+       },
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "DENY"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "wait",
+        "seconds": 43199
+       },
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "DENY"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "wait",
+        "seconds": 43199
+       },
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "ALLOW"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "settle",
+        "call": 12
+       },
+       {
+        "op": "wait",
+        "seconds": 43199
+       }
+      ]
+     ]
+    },
+    "parallel": {
+     "verdict": "fails",
+     "sessions": [
+      [
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "ALLOW"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "ALLOW"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "ALLOW"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "settle",
+        "call": 0
+       },
+       {
+        "op": "settle",
+        "call": 1
+       },
+       {
+        "op": "settle",
+        "call": 2
+       }
+      ]
+     ],
+     "trace": [
+      {
+       "op": "issue",
+       "amount": 60,
+       "verdict": "ALLOW"
+      },
+      {
+       "op": "wait",
+       "seconds": 1
+      },
+      {
+       "op": "issue",
+       "amount": 60,
+       "verdict": "ALLOW"
+      },
+      {
+       "op": "wait",
+       "seconds": 1
+      },
+      {
+       "op": "issue",
+       "amount": 60,
+       "verdict": "ALLOW"
+      },
+      {
+       "op": "wait",
+       "seconds": 1
+      },
+      {
+       "op": "settle",
+       "call": 0
+      },
+      {
+       "op": "settle",
+       "call": 1
+      },
+      {
+       "op": "settle",
+       "call": 2
+      }
+     ]
+    },
+    "ambiguous": {
+     "verdict": "fails",
+     "sessions": [
+      [
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "ALLOW"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "fail",
+        "call": 0,
+        "moved": true
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "issue",
+        "amount": 60,
+        "verdict": "ALLOW"
+       },
+       {
+        "op": "wait",
+        "seconds": 1
+       },
+       {
+        "op": "settle",
+        "call": 1
+       }
+      ]
+     ],
+     "trace": [
+      {
+       "op": "issue",
+       "amount": 60,
+       "verdict": "ALLOW"
+      },
+      {
+       "op": "wait",
+       "seconds": 1
+      },
+      {
+       "op": "fail",
+       "call": 0,
+       "moved": true
+      },
+      {
+       "op": "wait",
+       "seconds": 1
+      },
+      {
+       "op": "issue",
+       "amount": 60,
+       "verdict": "ALLOW"
+      },
+      {
+       "op": "wait",
+       "seconds": 1
+      },
+      {
+       "op": "settle",
+       "call": 1
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "rev": "ff158506cfd9c7871385ed3a87d7435505fd24b1",
+ "binary_sha256": "73ac6d92e0eb177e6ddb56324bfe94501a0f415e6730025db208a5bfd6c4cf8a",
+ "binary_version": "dogwood 1.1.1",
+ "date": "2026-11-10"
+}

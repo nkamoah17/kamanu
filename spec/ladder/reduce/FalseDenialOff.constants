@@ -1,0 +1,13 @@
+\* FalseDenial: nothing to switch off, fd is a ghost
+Templates <- RT
+MaxReq = 3
+MaxFails = 1
+Reflexive = TRUE
+DenyRecord = "none"
+Atomic = TRUE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = TRUE
+Permit <- PReqBasis
+Scope <- ScopeGlobal
+Cap = 100

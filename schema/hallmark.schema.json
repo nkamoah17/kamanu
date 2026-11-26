@@ -1,0 +1,114 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://kamanu.dev/schema/hallmark-v1.json",
+ "title": "hallmark-v1: one limit assayed (kamanu assay, X1)",
+ "description": "A limit's face value, its assayed ceiling, fineness and stranded budget, with the levels and hypotheses they rest on, the hashes of what was assayed, and an Ed25519 signature over a SHA-256 digest of every other top-level field. The package ships a copy (kamanu/assay/hallmark.schema.json) that the installed verify reads; tests/test_assay.py holds the two equal.",
+ "type": "object",
+ "required": ["hallmark", "date", "limit", "engine", "bounds", "face", "ceiling", "fineness", "stranded", "sound",
+              "tight", "verdicts", "failure", "hypotheses", "hashes", "commit", "version", "third_party", "notified",
+              "held", "signature"],
+ "properties": {
+  "hallmark": {"const": "hallmark-v1"},
+  "date": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}"},
+  "limit": {
+   "type": "object",
+   "required": ["policy", "form"],
+   "properties": {"policy": {"type": "string", "minLength": 1}, "form": {"type": "object"}}
+  },
+  "engine": {"type": "object", "required": ["profile"], "properties": {"profile": {"type": "object"}}},
+  "bounds": {
+   "type": "object",
+   "required": ["in_flight", "failures", "amounts"],
+   "properties": {
+    "in_flight": {"type": "integer", "minimum": 1},
+    "failures": {"type": "integer", "minimum": 0},
+    "amounts": {"type": "array", "items": {"type": "integer", "minimum": 0}}
+   }
+  },
+  "face": {"type": "integer", "minimum": 0},
+  "ceiling": {"anyOf": [{"type": "integer", "minimum": 0}, {"const": "unbounded"}]},
+  "fineness": {"type": "string", "pattern": "^[01]?\\.\\d{3}$"},
+  "stranded": {"type": "integer", "minimum": 0},
+  "sound": {"$ref": "#/$defs/summary"},
+  "tight": {"$ref": "#/$defs/summary"},
+  "verdicts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/verdict"}},
+  "failure": {
+   "anyOf": [
+    {"type": "null"},
+    {"type": "object", "required": ["rung", "property", "trace"],
+     "properties": {"rung": {"type": "string"}, "property": {"enum": ["Sound", "Tight"]},
+                    "trace": {"type": "array", "minItems": 1}}}
+   ]
+  },
+  "hypotheses": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/hypothesis"}},
+  "hashes": {
+   "type": "object",
+   "required": ["policy", "form", "profile", "lean"],
+   "properties": {
+    "policy": {"$ref": "#/$defs/sha256"},
+    "form": {"$ref": "#/$defs/sha256"},
+    "profile": {"$ref": "#/$defs/sha256"},
+    "lean": {"anyOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]}
+   }
+  },
+  "commit": {"anyOf": [{"type": "string", "pattern": "^[0-9a-f]{7,40}$"}, {"type": "null"}]},
+  "version": {"type": "string", "minLength": 1},
+  "third_party": {"type": "boolean"},
+  "notified": {"anyOf": [{"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"}, {"type": "null"}]},
+  "held": {"type": "boolean"},
+  "signature": {
+   "type": "object",
+   "required": ["alg", "key", "digests", "sig"],
+   "properties": {
+    "alg": {"const": "Ed25519"},
+    "key": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "digests": {"type": "object", "additionalProperties": {"$ref": "#/$defs/sha256"}},
+    "sig": {"type": "string", "pattern": "^[0-9a-f]{128}$"}
+   }
+  }
+ },
+ "$defs": {
+  "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+  "level": {"enum": ["MODEL_PROVEN", "EXHAUSTIVE_FINITE_PASS", "BOUNDED_PASS", "TESTED", "ASSUMED", "REFUTED",
+                     "UNKNOWN"]},
+  "link": {
+   "type": "object",
+   "required": ["kind", "name", "level"],
+   "properties": {"kind": {"type": "string"}, "name": {"type": "string"}, "level": {"$ref": "#/$defs/level"}}
+  },
+  "summary": {
+   "type": "object",
+   "required": ["status", "level", "rests_on"],
+   "properties": {
+    "status": {"enum": ["FAILS", "holds", "VACUOUS"]},
+    "level": {"$ref": "#/$defs/level"},
+    "rests_on": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/link"}}
+   }
+  },
+  "verdict": {
+   "type": "object",
+   "required": ["rung", "property", "status", "level", "rests_on", "trace", "witness", "neighbour"],
+   "properties": {
+    "rung": {"type": "string"},
+    "property": {"enum": ["Sound", "Tight"]},
+    "status": {"enum": ["FAILS", "holds", "VACUOUS"]},
+    "level": {"$ref": "#/$defs/level"},
+    "rests_on": {"type": "array", "items": {"$ref": "#/$defs/link"}}
+   }
+  },
+  "hypothesis": {
+   "type": "object",
+   "required": ["name", "value", "status"],
+   "properties": {
+    "name": {"type": "string", "minLength": 1},
+    "status": {"enum": ["proved", "measured", "assumed"]}
+   },
+   "anyOf": [
+    {"properties": {"status": {"enum": ["proved", "assumed"]}}},
+    {"required": ["trials", "date"],
+     "properties": {"status": {"const": "measured"}, "trials": {"type": "integer", "minimum": 1},
+                    "date": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}"}}}
+   ]
+  }
+ }
+}

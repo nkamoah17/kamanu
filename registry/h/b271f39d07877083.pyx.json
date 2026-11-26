@@ -1,0 +1,42 @@
+{
+ "pyx": "pyx-v1",
+ "hallmark": "b271f39d07877083a075e1ddf9d27e695af5e63b9495e926681c4c4d4ec6791c",
+ "entries": [
+  {
+   "hallmark": "b271f39d07877083a075e1ddf9d27e695af5e63b9495e926681c4c4d4ec6791c",
+   "seq": 0,
+   "date": "2026-11-26",
+   "measured_on": {
+    "policy": "40724ae7e2d40730ddf2412add4ab54cb65e38063a4568794d0699861de66f1b",
+    "profile": "9c493a22d77603dfe6e775df87ccc04021455e68f7875e504900c6e9acfc666e",
+    "engine": "kamanu 0.1.0 at 6964c92c9a91"
+   },
+   "valid_through": "2027-02-24",
+   "status": "current",
+   "reason": null,
+   "numbers": {
+    "face": 100,
+    "ceiling": 100,
+    "fineness": "1.000",
+    "stranded": 100,
+    "sound": "MODEL_PROVEN",
+    "tight": "REFUTED"
+   },
+   "signature": {
+    "alg": "Ed25519",
+    "key": "7fae4269ca9e431336a566f036d10f8cc2e6702c03af12fbccef3264dd926eab",
+    "digests": {
+     "hallmark": "88df7b4d52a22d10f527afd61ec5d0960d8753a9855a510c00fd223dcb1438f9",
+     "seq": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+     "date": "3499899299887758c821185c1130b43595cf63c729475469168ddbce5ec709a7",
+     "measured_on": "07936239436bf635658902909301a1b73c9dd278a5e549e959b1f42cb387949a",
+     "valid_through": "fabf907ccfa3d1454f06489fa40426bf95dc2f2f9480d147195cc2f6773b04ed",
+     "status": "694df57a7909d9f9edbd3acb4ccfce5fbee156fab749383121f17fef16bbab57",
+     "reason": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+     "numbers": "1e4ad47f461b282e09fbe5afcf132739f5cdc027b693ed6c448b60f058b42f35"
+    },
+    "sig": "40524c0739afa4ef83c056720543d3949356e3d04a668d5ee6a081ee76eef5e6b8b140ed71bb81882a78a1ebb3518650e41a0d520e3904655b12653b4da4e308"
+   }
+  }
+ ]
+}

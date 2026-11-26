@@ -1,0 +1,932 @@
+{
+ "plates": [
+  {
+   "die": "07369000802f3a7cc81a667dcaa63f37",
+   "expects": {
+    "checks": [
+     {
+      "die": "3b998a5c068f404db58f1aff338953f8",
+      "level": "MODEL_PROVEN",
+      "name": "Sound",
+      "status": "holds",
+      "trace": null
+     },
+     {
+      "die": "07369000802f3a7cc81a667dcaa63f37",
+      "level": "REFUTED",
+      "name": "Tight",
+      "status": "FAILS",
+      "trace": [
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 0,
+        "outcome": null,
+        "spent": 0,
+        "step": "issue"
+       },
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 0,
+        "outcome": null,
+        "spent": 0,
+        "step": "issue"
+       },
+       {
+        "amount": 60,
+        "count": 60,
+        "doubt": 0,
+        "held": 60,
+        "outcome": "permit",
+        "spent": 0,
+        "step": "decide"
+       },
+       {
+        "amount": 60,
+        "count": 60,
+        "doubt": 60,
+        "held": 0,
+        "outcome": "clean",
+        "spent": 0,
+        "step": "fail"
+       },
+       {
+        "amount": 60,
+        "count": 60,
+        "doubt": 0,
+        "held": 0,
+        "outcome": "refund",
+        "spent": 0,
+        "step": "reconcile"
+       },
+       {
+        "amount": 60,
+        "count": 60,
+        "doubt": 0,
+        "held": 0,
+        "outcome": "deny",
+        "spent": 0,
+        "step": "decide"
+       }
+      ]
+     }
+    ],
+    "figures": {
+     "ceiling": 100,
+     "face": 100,
+     "fineness": "1.000",
+     "stranded": 100
+    },
+    "level": "REFUTED"
+   },
+   "inputs": [
+    {
+     "path": "fixtures/dogwood/PReqBasis.dw",
+     "sha256": "40724ae7e2d40730ddf2412add4ab54cb65e38063a4568794d0699861de66f1b"
+    }
+   ],
+   "plate": "07369000802f3a7cc81a667dcaa63f37.json",
+   "type": "461b93ce5a7decc9a1e0f12094f9a07e"
+  },
+  {
+   "die": "1d90528d3775bd8e604b38117a3969b2",
+   "expects": {
+    "checks": [
+     {
+      "die": "2eab48362d5d3a5babb6bae54cc20d3f",
+      "level": "REFUTED",
+      "name": "Sound",
+      "status": "FAILS",
+      "trace": [
+       {
+        "amount": 10000,
+        "doubt": 0,
+        "held": 0,
+        "hold": 1,
+        "outcome": "approve",
+        "spent": 0,
+        "step": "decide"
+       },
+       {
+        "amount": null,
+        "doubt": 0,
+        "held": 10000,
+        "hold": 1,
+        "outcome": null,
+        "spent": 0,
+        "step": "reserve"
+       },
+       {
+        "amount": 12000,
+        "doubt": 0,
+        "held": 0,
+        "hold": 1,
+        "outcome": null,
+        "spent": 12000,
+        "step": "capture"
+       }
+      ]
+     },
+     {
+      "die": "1d90528d3775bd8e604b38117a3969b2",
+      "level": "REFUTED",
+      "name": "Tight",
+      "status": "FAILS",
+      "trace": [
+       {
+        "amount": 5000,
+        "doubt": 0,
+        "held": 0,
+        "hold": 1,
+        "outcome": "approve",
+        "spent": 0,
+        "step": "decide"
+       },
+       {
+        "amount": null,
+        "doubt": 0,
+        "held": 5000,
+        "hold": 1,
+        "outcome": null,
+        "spent": 0,
+        "step": "reserve"
+       },
+       {
+        "amount": 5000,
+        "doubt": 0,
+        "held": 0,
+        "hold": 1,
+        "outcome": null,
+        "spent": 0,
+        "step": "reversal"
+       },
+       {
+        "amount": 10000,
+        "doubt": 0,
+        "held": 0,
+        "hold": 2,
+        "outcome": "refuse",
+        "spent": 0,
+        "step": "decide"
+       }
+      ]
+     }
+    ],
+    "figures": {
+     "ceiling": 24000,
+     "face": 10000,
+     "fineness": ".416"
+    },
+    "level": "ASSUMED"
+   },
+   "inputs": [
+    {
+     "path": "evidence/exonumia/x4/issuing-documented.json",
+     "sha256": "1680f13cb391c1020d43e2600a4304a0d216e0285d334488ebac2ec4c94b5a21"
+    }
+   ],
+   "plate": "1d90528d3775bd8e604b38117a3969b2.json",
+   "type": "3a1a5208ef37ff0ec7ed902ae5799c6d"
+  },
+  {
+   "die": "2eab48362d5d3a5babb6bae54cc20d3f",
+   "expects": {
+    "checks": [
+     {
+      "die": "2eab48362d5d3a5babb6bae54cc20d3f",
+      "level": "REFUTED",
+      "name": "Sound",
+      "status": "FAILS",
+      "trace": [
+       {
+        "amount": 10000,
+        "doubt": 0,
+        "held": 0,
+        "hold": 1,
+        "outcome": "approve",
+        "spent": 0,
+        "step": "decide"
+       },
+       {
+        "amount": null,
+        "doubt": 0,
+        "held": 10000,
+        "hold": 1,
+        "outcome": null,
+        "spent": 0,
+        "step": "reserve"
+       },
+       {
+        "amount": 12000,
+        "doubt": 0,
+        "held": 0,
+        "hold": 1,
+        "outcome": null,
+        "spent": 12000,
+        "step": "capture"
+       }
+      ]
+     },
+     {
+      "die": "1d90528d3775bd8e604b38117a3969b2",
+      "level": "REFUTED",
+      "name": "Tight",
+      "status": "FAILS",
+      "trace": [
+       {
+        "amount": 5000,
+        "doubt": 0,
+        "held": 0,
+        "hold": 1,
+        "outcome": "approve",
+        "spent": 0,
+        "step": "decide"
+       },
+       {
+        "amount": null,
+        "doubt": 0,
+        "held": 5000,
+        "hold": 1,
+        "outcome": null,
+        "spent": 0,
+        "step": "reserve"
+       },
+       {
+        "amount": 5000,
+        "doubt": 0,
+        "held": 0,
+        "hold": 1,
+        "outcome": null,
+        "spent": 0,
+        "step": "reversal"
+       },
+       {
+        "amount": 10000,
+        "doubt": 0,
+        "held": 0,
+        "hold": 2,
+        "outcome": "refuse",
+        "spent": 0,
+        "step": "decide"
+       }
+      ]
+     }
+    ],
+    "figures": {
+     "ceiling": 24000,
+     "face": 10000,
+     "fineness": ".416"
+    },
+    "level": "ASSUMED"
+   },
+   "inputs": [
+    {
+     "path": "evidence/exonumia/x4/issuing-documented.json",
+     "sha256": "1680f13cb391c1020d43e2600a4304a0d216e0285d334488ebac2ec4c94b5a21"
+    }
+   ],
+   "plate": "2eab48362d5d3a5babb6bae54cc20d3f.json",
+   "type": "3a1a5208ef37ff0ec7ed902ae5799c6d"
+  },
+  {
+   "die": "3b47b190e2971301bb01cda8517e1c38",
+   "expects": {
+    "checks": [
+     {
+      "die": "3b47b190e2971301bb01cda8517e1c38",
+      "level": "MODEL_PROVEN",
+      "name": "Sound",
+      "status": "holds",
+      "trace": null
+     },
+     {
+      "die": "7ce3c87236da47cf4bd4d6ae53207b41",
+      "level": "MODEL_PROVEN",
+      "name": "Tight",
+      "status": "holds",
+      "trace": null
+     }
+    ],
+    "figures": {
+     "ceiling": 100,
+     "face": 100,
+     "fineness": "1.000",
+     "stranded": 0
+    },
+    "level": "MODEL_PROVEN"
+   },
+   "inputs": [
+    {
+     "path": "fixtures/dogwood/PRefundOnReconcile.dw",
+     "sha256": "19ba12412942f252f7e13acddcb721bf1b766b8db044ca0c73ae1efb6728030c"
+    }
+   ],
+   "plate": "3b47b190e2971301bb01cda8517e1c38.json",
+   "type": "4ec5c729d5e5d4d53358045f31d4192f"
+  },
+  {
+   "die": "3b998a5c068f404db58f1aff338953f8",
+   "expects": {
+    "checks": [
+     {
+      "die": "3b998a5c068f404db58f1aff338953f8",
+      "level": "MODEL_PROVEN",
+      "name": "Sound",
+      "status": "holds",
+      "trace": null
+     },
+     {
+      "die": "07369000802f3a7cc81a667dcaa63f37",
+      "level": "REFUTED",
+      "name": "Tight",
+      "status": "FAILS",
+      "trace": [
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 0,
+        "outcome": null,
+        "spent": 0,
+        "step": "issue"
+       },
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 0,
+        "outcome": null,
+        "spent": 0,
+        "step": "issue"
+       },
+       {
+        "amount": 60,
+        "count": 60,
+        "doubt": 0,
+        "held": 60,
+        "outcome": "permit",
+        "spent": 0,
+        "step": "decide"
+       },
+       {
+        "amount": 60,
+        "count": 60,
+        "doubt": 60,
+        "held": 0,
+        "outcome": "clean",
+        "spent": 0,
+        "step": "fail"
+       },
+       {
+        "amount": 60,
+        "count": 60,
+        "doubt": 0,
+        "held": 0,
+        "outcome": "refund",
+        "spent": 0,
+        "step": "reconcile"
+       },
+       {
+        "amount": 60,
+        "count": 60,
+        "doubt": 0,
+        "held": 0,
+        "outcome": "deny",
+        "spent": 0,
+        "step": "decide"
+       }
+      ]
+     }
+    ],
+    "figures": {
+     "ceiling": 100,
+     "face": 100,
+     "fineness": "1.000",
+     "stranded": 100
+    },
+    "level": "REFUTED"
+   },
+   "inputs": [
+    {
+     "path": "fixtures/dogwood/PReqBasis.dw",
+     "sha256": "40724ae7e2d40730ddf2412add4ab54cb65e38063a4568794d0699861de66f1b"
+    }
+   ],
+   "plate": "3b998a5c068f404db58f1aff338953f8.json",
+   "type": "461b93ce5a7decc9a1e0f12094f9a07e"
+  },
+  {
+   "die": "5592e0ea054380f189b224ee231679eb",
+   "expects": {
+    "checks": [
+     {
+      "die": "5592e0ea054380f189b224ee231679eb",
+      "level": "REFUTED",
+      "name": "Sound",
+      "status": "FAILS",
+      "trace": [
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 0,
+        "outcome": null,
+        "spent": 0,
+        "step": "issue"
+       },
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 0,
+        "outcome": null,
+        "spent": 0,
+        "step": "issue"
+       },
+       {
+        "amount": 60,
+        "count": 60,
+        "doubt": 0,
+        "held": 60,
+        "outcome": "permit",
+        "spent": 0,
+        "step": "decide"
+       },
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 0,
+        "outcome": "ambiguous",
+        "spent": 60,
+        "step": "fail"
+       },
+       {
+        "amount": 60,
+        "count": 60,
+        "doubt": 0,
+        "held": 60,
+        "outcome": "permit",
+        "spent": 60,
+        "step": "decide"
+       },
+       {
+        "amount": 60,
+        "count": 60,
+        "doubt": 0,
+        "held": 0,
+        "outcome": null,
+        "spent": 120,
+        "step": "succeed"
+       }
+      ]
+     },
+     {
+      "die": "8ade713492a258483c1db8db45818614",
+      "level": "MODEL_PROVEN",
+      "name": "Tight",
+      "status": "holds",
+      "trace": null
+     }
+    ],
+    "figures": {
+     "ceiling": 150,
+     "face": 100,
+     "fineness": ".666",
+     "stranded": 0
+    },
+    "level": "REFUTED"
+   },
+   "inputs": [
+    {
+     "path": "fixtures/dogwood/PRefundOnError.dw",
+     "sha256": "0db1301918541d3a189546479826ae5c921bc4d650073ad282352cc6db86c85b"
+    }
+   ],
+   "plate": "5592e0ea054380f189b224ee231679eb.json",
+   "type": "b46fa84938e005015771d657c5817dde"
+  },
+  {
+   "die": "7197bb01bbfe62adcec897724ca527cc",
+   "expects": {
+    "checks": [
+     {
+      "die": "adbcc15bb4627d1ce7c78199034579bf",
+      "level": "REFUTED",
+      "name": "Sound",
+      "status": "FAILS",
+      "trace": [
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 0,
+        "outcome": null,
+        "spent": 0,
+        "step": "issue"
+       },
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 0,
+        "outcome": null,
+        "spent": 0,
+        "step": "issue"
+       },
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 60,
+        "outcome": "permit",
+        "spent": 0,
+        "step": "decide"
+       },
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 120,
+        "outcome": "permit",
+        "spent": 0,
+        "step": "decide"
+       },
+       {
+        "amount": 60,
+        "count": 60,
+        "doubt": 0,
+        "held": 60,
+        "outcome": null,
+        "spent": 60,
+        "step": "succeed"
+       },
+       {
+        "amount": 60,
+        "count": 120,
+        "doubt": 0,
+        "held": 0,
+        "outcome": null,
+        "spent": 120,
+        "step": "succeed"
+       }
+      ]
+     },
+     {
+      "die": "7197bb01bbfe62adcec897724ca527cc",
+      "level": "MODEL_PROVEN",
+      "name": "Tight",
+      "status": "holds",
+      "trace": null
+     }
+    ],
+    "figures": {
+     "ceiling": 210,
+     "face": 100,
+     "fineness": ".476",
+     "stranded": 0
+    },
+    "level": "REFUTED"
+   },
+   "inputs": [
+    {
+     "path": "fixtures/dogwood/PRespBasis.dw",
+     "sha256": "45d1a21033a76836e950f5dee7e9d2db3491e822c2487e48e291e0ace238cb45"
+    }
+   ],
+   "plate": "7197bb01bbfe62adcec897724ca527cc.json",
+   "type": "b3651355d4cac47f052f1f8eeedc1ad4"
+  },
+  {
+   "die": "7ce3c87236da47cf4bd4d6ae53207b41",
+   "expects": {
+    "checks": [
+     {
+      "die": "3b47b190e2971301bb01cda8517e1c38",
+      "level": "MODEL_PROVEN",
+      "name": "Sound",
+      "status": "holds",
+      "trace": null
+     },
+     {
+      "die": "7ce3c87236da47cf4bd4d6ae53207b41",
+      "level": "MODEL_PROVEN",
+      "name": "Tight",
+      "status": "holds",
+      "trace": null
+     }
+    ],
+    "figures": {
+     "ceiling": 100,
+     "face": 100,
+     "fineness": "1.000",
+     "stranded": 0
+    },
+    "level": "MODEL_PROVEN"
+   },
+   "inputs": [
+    {
+     "path": "fixtures/dogwood/PRefundOnReconcile.dw",
+     "sha256": "19ba12412942f252f7e13acddcb721bf1b766b8db044ca0c73ae1efb6728030c"
+    }
+   ],
+   "plate": "7ce3c87236da47cf4bd4d6ae53207b41.json",
+   "type": "4ec5c729d5e5d4d53358045f31d4192f"
+  },
+  {
+   "die": "8ade713492a258483c1db8db45818614",
+   "expects": {
+    "checks": [
+     {
+      "die": "5592e0ea054380f189b224ee231679eb",
+      "level": "REFUTED",
+      "name": "Sound",
+      "status": "FAILS",
+      "trace": [
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 0,
+        "outcome": null,
+        "spent": 0,
+        "step": "issue"
+       },
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 0,
+        "outcome": null,
+        "spent": 0,
+        "step": "issue"
+       },
+       {
+        "amount": 60,
+        "count": 60,
+        "doubt": 0,
+        "held": 60,
+        "outcome": "permit",
+        "spent": 0,
+        "step": "decide"
+       },
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 0,
+        "outcome": "ambiguous",
+        "spent": 60,
+        "step": "fail"
+       },
+       {
+        "amount": 60,
+        "count": 60,
+        "doubt": 0,
+        "held": 60,
+        "outcome": "permit",
+        "spent": 60,
+        "step": "decide"
+       },
+       {
+        "amount": 60,
+        "count": 60,
+        "doubt": 0,
+        "held": 0,
+        "outcome": null,
+        "spent": 120,
+        "step": "succeed"
+       }
+      ]
+     },
+     {
+      "die": "8ade713492a258483c1db8db45818614",
+      "level": "MODEL_PROVEN",
+      "name": "Tight",
+      "status": "holds",
+      "trace": null
+     }
+    ],
+    "figures": {
+     "ceiling": 150,
+     "face": 100,
+     "fineness": ".666",
+     "stranded": 0
+    },
+    "level": "REFUTED"
+   },
+   "inputs": [
+    {
+     "path": "fixtures/dogwood/PRefundOnError.dw",
+     "sha256": "0db1301918541d3a189546479826ae5c921bc4d650073ad282352cc6db86c85b"
+    }
+   ],
+   "plate": "8ade713492a258483c1db8db45818614.json",
+   "type": "b46fa84938e005015771d657c5817dde"
+  },
+  {
+   "die": "adbcc15bb4627d1ce7c78199034579bf",
+   "expects": {
+    "checks": [
+     {
+      "die": "adbcc15bb4627d1ce7c78199034579bf",
+      "level": "REFUTED",
+      "name": "Sound",
+      "status": "FAILS",
+      "trace": [
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 0,
+        "outcome": null,
+        "spent": 0,
+        "step": "issue"
+       },
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 0,
+        "outcome": null,
+        "spent": 0,
+        "step": "issue"
+       },
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 60,
+        "outcome": "permit",
+        "spent": 0,
+        "step": "decide"
+       },
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 120,
+        "outcome": "permit",
+        "spent": 0,
+        "step": "decide"
+       },
+       {
+        "amount": 60,
+        "count": 60,
+        "doubt": 0,
+        "held": 60,
+        "outcome": null,
+        "spent": 60,
+        "step": "succeed"
+       },
+       {
+        "amount": 60,
+        "count": 120,
+        "doubt": 0,
+        "held": 0,
+        "outcome": null,
+        "spent": 120,
+        "step": "succeed"
+       }
+      ]
+     },
+     {
+      "die": "7197bb01bbfe62adcec897724ca527cc",
+      "level": "MODEL_PROVEN",
+      "name": "Tight",
+      "status": "holds",
+      "trace": null
+     }
+    ],
+    "figures": {
+     "ceiling": 210,
+     "face": 100,
+     "fineness": ".476",
+     "stranded": 0
+    },
+    "level": "REFUTED"
+   },
+   "inputs": [
+    {
+     "path": "fixtures/dogwood/PRespBasis.dw",
+     "sha256": "45d1a21033a76836e950f5dee7e9d2db3491e822c2487e48e291e0ace238cb45"
+    }
+   ],
+   "plate": "adbcc15bb4627d1ce7c78199034579bf.json",
+   "type": "b3651355d4cac47f052f1f8eeedc1ad4"
+  },
+  {
+   "die": "c2e5faf30406c33132101b681aeadc80",
+   "expects": {
+    "checks": [
+     {
+      "die": "c2e5faf30406c33132101b681aeadc80",
+      "level": "MODEL_PROVEN",
+      "name": "Sound",
+      "status": "holds",
+      "trace": null
+     },
+     {
+      "die": "c5383ae65dfb3dbd2e994af352dd0086",
+      "level": "REFUTED",
+      "name": "Tight",
+      "status": "FAILS",
+      "trace": [
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 0,
+        "outcome": null,
+        "spent": 0,
+        "step": "issue"
+       },
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 0,
+        "outcome": "deny",
+        "spent": 0,
+        "step": "decide"
+       }
+      ]
+     }
+    ],
+    "figures": {
+     "ceiling": 100,
+     "face": 100,
+     "fineness": "1.000",
+     "stranded": 100
+    },
+    "level": "REFUTED"
+   },
+   "inputs": [
+    {
+     "path": "fixtures/dogwood/PReqBasisNR.dw",
+     "sha256": "b72a55b88fe4e9a40fe7407ff85d4dcadf7b501faf1be1b0ddb8ec10be83ba7a"
+    }
+   ],
+   "plate": "c2e5faf30406c33132101b681aeadc80.json",
+   "type": "44ee5807eb600496a9ad342c569dff94"
+  },
+  {
+   "die": "c5383ae65dfb3dbd2e994af352dd0086",
+   "expects": {
+    "checks": [
+     {
+      "die": "c2e5faf30406c33132101b681aeadc80",
+      "level": "MODEL_PROVEN",
+      "name": "Sound",
+      "status": "holds",
+      "trace": null
+     },
+     {
+      "die": "c5383ae65dfb3dbd2e994af352dd0086",
+      "level": "REFUTED",
+      "name": "Tight",
+      "status": "FAILS",
+      "trace": [
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 0,
+        "outcome": null,
+        "spent": 0,
+        "step": "issue"
+       },
+       {
+        "amount": 60,
+        "count": 0,
+        "doubt": 0,
+        "held": 0,
+        "outcome": "deny",
+        "spent": 0,
+        "step": "decide"
+       }
+      ]
+     }
+    ],
+    "figures": {
+     "ceiling": 100,
+     "face": 100,
+     "fineness": "1.000",
+     "stranded": 100
+    },
+    "level": "REFUTED"
+   },
+   "inputs": [
+    {
+     "path": "fixtures/dogwood/PReqBasisNR.dw",
+     "sha256": "b72a55b88fe4e9a40fe7407ff85d4dcadf7b501faf1be1b0ddb8ec10be83ba7a"
+    }
+   ],
+   "plate": "c5383ae65dfb3dbd2e994af352dd0086.json",
+   "type": "44ee5807eb600496a9ad342c569dff94"
+  }
+ ]
+}

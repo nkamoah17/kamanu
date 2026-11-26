@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KAMANU fact",
+  "description": "What one query found on one line of one code property graph. Extra fields are allowed: a query may add to a fact, never take from it.",
+  "type": "object",
+  "required": ["file", "line", "query_id", "subject", "joern_version", "graph_hash"],
+  "properties": {
+    "file": {
+      "description": "Source file relative to the repository root, with forward slashes on every OS.",
+      "type": "string",
+      "minLength": 1,
+      "not": {"pattern": "^/|^[A-Za-z]:|\\\\|(^|/)\\.\\.(/|$)"}
+    },
+    "line": {
+      "description": "1-based line in that file, Joern's own LINE_NUMBER.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "query_id": {
+      "description": "The query that found it: 'calls', or a query script's file name without its extension.",
+      "type": "string",
+      "minLength": 1
+    },
+    "subject": {
+      "description": "What was found. For the query 'calls', the callee's last identifier.",
+      "type": "string",
+      "minLength": 1
+    },
+    "joern_version": {
+      "description": "The version of the Joern that ran, read from the installation.",
+      "type": "string",
+      "minLength": 1
+    },
+    "graph_hash": {
+      "description": "SHA-256 of the graph's content, without its absolute root and independent of node ids.",
+      "type": "string",
+      "minLength": 64,
+      "maxLength": 64,
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "construct": {
+      "description": "Optional. The construct of the query's manifest the witness is of. A fact without one is a pattern's match and no more.",
+      "type": "string",
+      "minLength": 1
+    },
+    "assumptions": {
+      "description": "Optional. The assumptions under which a match of the construct implies the premise, each written out.",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "record": {
+      "description": "Optional. The record of the run or live probe that showed it: a path, relative, with forward slashes.",
+      "type": "string",
+      "minLength": 1,
+      "not": {"pattern": "^/|^[A-Za-z]:|\\\\|(^|/)\\.\\.(/|$)"}
+    }
+  }
+}

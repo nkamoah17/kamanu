@@ -1,0 +1,23 @@
+// T6 demo: a $500-a-day limit, written per session as the vendor's docs write it.
+// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/examples/cap_open_agent_prs_windowed/README.md (aggregate minus aggregate)
+// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/guide/04-temporal-expressions.md#arithmetic-in-comparison-operands
+// Money in cents: 50000 is $500. Requests within 24h, minus what reconciliation refunded,
+// stay at or under $500. The engine evaluates the window over the session's own history,
+// so this is a limit per session: a caller that opens another session starts at zero.
+// refund is a history-only kind declared in fixtures/dogwood/events.dwschema.
+// Needs a dogwood build with --features experimental-arithmetic.
+
+@id("daily_limit")
+permit (
+    principal,
+    action == Kamanu::Action::"Pay",
+    resource
+)
+when temporal {
+    (sum a for (a: Long), (t: Timepoint). where (
+        formerly within 24h (Kamanu::Action::"Pay"::request{ input.amount: a } && tp(t))
+    ))
+    - (sum a for (a: Long), (t: Timepoint). where (
+        formerly within 24h (Kamanu::Action::"Pay"::refund{ input.amount: a } && tp(t))
+    )) <= 50000
+};

@@ -1,0 +1,76 @@
+{
+ "card": "card-v1",
+ "name": "issuing-documented",
+ "documented": "catalogue/checks/stripe-issuing-spending-controls.json",
+ "limit": {
+  "face": 20000,
+  "unit": "USD cents (the card's smallest currency unit)",
+  "name": "a cardholder's spending_limits entry, interval daily"
+ },
+ "quotes": [
+  {
+   "text": "Spending aggregation is done on a best-effort basis.",
+   "url": "https://docs.stripe.com/issuing/controls/spending-controls",
+   "opened": "2026-11-23",
+   "checked": true
+  },
+  {
+   "text": "You might notice a delay of up to 30 seconds between spend occurrence and spend aggregation.",
+   "url": "https://docs.stripe.com/issuing/controls/spending-controls",
+   "opened": "2026-11-23",
+   "checked": true
+  },
+  {
+   "text": "Additional tips and fees can be posted at a later time, causing a spending limit to be exceeded.",
+   "url": "https://docs.stripe.com/issuing/controls/spending-controls",
+   "opened": "2026-11-23",
+   "checked": true
+  },
+  {
+   "text": "Spending limit rules limit the total amount of spending for categories over intervals of time.",
+   "url": "https://docs.stripe.com/issuing/controls/spending-controls",
+   "opened": "2026-11-23",
+   "checked": true
+  }
+ ],
+ "cell": {
+  "Atomic": {
+   "value": false,
+   "status": "ASSUMED",
+   "rests_on": [
+    0,
+    1
+   ]
+  },
+  "Lag": {
+   "value": 1,
+   "status": "ASSUMED",
+   "rests_on": [
+    0,
+    1
+   ]
+  },
+  "OverCapture": {
+   "value": 20,
+   "status": "ASSUMED",
+   "rests_on": [
+    2
+   ]
+  }
+ },
+ "bounds": {
+  "holds": 2,
+  "amounts": [
+   5000,
+   10000
+  ],
+  "partial": true,
+  "reversal": true
+ },
+ "reads_as": [
+  "Aggregation on a best-effort basis, up to 30 seconds behind the spend (quotes 0 and 1): Lag 1 and Atomic false, the record's values.",
+  "Tips and fees posted later, taking spend past the limit (quote 2): over-capture on. The documents give no figure; 20 percent of the hold is assumed.",
+  "The limit counts the total spending over its interval (quote 3): the face is the record's daily limit, 10000 minor units; the daily interval is a calendar period the card ledger does not tell apart from a sliding one.",
+  "Force-posts (a capture with no authorization) are not in the documents quoted, so the profile leaves them off; a profile that measures them adds ForcePost."
+ ]
+}

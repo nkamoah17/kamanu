@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KAMANU: what is your agent's spending limit really worth?</title>
+<link rel="icon" href="data:,">
+<meta name="description" content="KAMANU measures the limits placed on AI agents' spending, proves what can be proved, and says which is which.">
+<style>
+  :root {
+    --paper: #EEF3EC;      /* ledger paper */
+    --column: #DFE9E0;     /* tinted ledger column */
+    --rule: #9DB8A6;       /* ledger rule */
+    --ink: #16261F;        /* green-black ink */
+    --quiet: #4A5F54;      /* second ink */
+    --red: #A3322B;        /* red ink, used only for a failing line */
+    --measure: 40rem;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 112.5%; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    line-height: 1.55;
+  }
+  a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+  a:focus-visible, summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .page { max-width: 54rem; margin: 0 auto; padding: 0 1.5rem 5rem; }
+  .text { max-width: var(--measure); }
+
+  header.top { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; align-items: baseline;
+    justify-content: space-between; padding: 1.75rem 0 1rem; border-bottom: 2px solid var(--ink); }
+  .name { font-size: 1.15rem; font-weight: 700; letter-spacing: 0.14em; text-decoration: none; }
+  nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; font-size: 0.9rem; }
+
+  h1 { font-size: clamp(2.1rem, 6vw, 3.6rem); line-height: 1.06; font-weight: 400;
+    letter-spacing: -0.015em; margin: 4rem 0 1.25rem; max-width: 17ch; }
+  .lede { font-size: 1.2rem; max-width: 34rem; margin: 0 0 3rem; }
+  h2 { font-size: 1.5rem; font-weight: 400; line-height: 1.2; margin: 4.5rem 0 1rem;
+    padding-top: 1rem; border-top: 1px solid var(--rule); }
+  h3 { font-size: 1.1rem; font-weight: 700; margin: 2rem 0 0.5rem; }
+  p, ul, ol { margin: 0 0 1rem; }
+  ul, ol { padding-left: 1.2rem; }
+  li { margin-bottom: 0.4rem; }
+
+  /* The record: ruled like a ledger, because it is rows of figures. */
+  .record { border: 2px solid var(--ink); background: #F6F9F4; }
+  .record caption, .record .foot { text-align: left; padding: 0.7rem 1rem; font-size: 0.9rem; color: var(--quiet); }
+  .record caption { caption-side: top; border-bottom: 1px solid var(--rule); color: var(--ink); }
+  table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums lining-nums; }
+  th, td { text-align: left; vertical-align: top; padding: 0.55rem 1rem; border-bottom: 1px solid var(--rule); }
+  th { font-weight: 400; color: var(--quiet); font-size: 0.9rem; }
+  td.n, th.n { text-align: right; width: 5.5rem; background: var(--column); }
+  .figures td:first-child { width: 15rem; }
+  .figures td.big { font-size: 1.6rem; line-height: 1.1; text-align: right; width: 6rem; background: var(--column); }
+  .fail, .fail td { color: var(--red); }
+  .wide { overflow-x: auto; }
+  .levels td:first-child { white-space: nowrap; font-size: 0.9rem; letter-spacing: 0.03em; }
+
+  pre { background: var(--ink); color: var(--paper); padding: 1rem 1.2rem; overflow-x: auto;
+    font: 0.85rem/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace; margin: 0 0 1rem; }
+  code { font: 0.88em ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  .note { font-size: 0.9rem; color: var(--quiet); }
+
+  .offer td:nth-child(2) { white-space: nowrap; }
+  .ask { display: inline-block; margin-top: 0.5rem; padding: 0.7rem 1.1rem; background: var(--ink);
+    color: var(--paper); text-decoration: none; }
+  .ask:hover { background: #24382F; }
+  footer { margin-top: 5rem; padding-top: 1rem; border-top: 2px solid var(--ink); font-size: 0.9rem; color: var(--quiet); }
+  @media (max-width: 36rem) {
+    html { font-size: 100%; }
+    th, td { padding: 0.5rem 0.6rem; }
+    .figures td:first-child { width: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="top">
+  <a class="name" href="#top">KAMANU</a>
+  <nav aria-label="Sections">
+    <a href="#get">What you get</a>
+    <a href="#try">Try it</a>
+    <a href="#method">How it is measured</a>
+    <a href="#verify">Verify it yourself</a>
+    <a href="#check">Get a check</a>
+    <a href="record/">Record</a>
+  </nav>
+</header>
+
+<main id="top">
+  <h1>What is your agent's spending limit really worth?</h1>
+  <p class="lede">KAMANU measures the limit, proves what can be proved, and says which is which. Below is a real result, on our own best design. It passes one test and fails another.</p>
+
+  <div class="record wide">
+    <table class="figures">
+      <caption>Record: a cap of 100 on the engine our proof covers. Two payments may be in flight; one call may fail.</caption>
+      <tbody>
+        <tr><td>The limit</td><td class="big">100</td><td></td></tr>
+        <tr><td>The most that can be spent</td><td class="big">100</td><td>Proved (MODEL_PROVEN), for any number of requests. The cap cannot be overspent.</td></tr>
+        <tr class="fail"><td>The most that can be stranded</td><td class="big">100</td><td>Counterexample (REFUTED), six steps. A payment that fits can be refused.</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr><th>Step</th><th>What happens</th><th class="n">Held</th><th class="n">Spent</th><th class="n">In doubt</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>The agent asks to pay 60</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
+        <tr><td>2</td><td>The agent asks to pay another 60</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
+        <tr><td>3</td><td>The first payment is allowed</td><td class="n">60</td><td class="n">0</td><td class="n">0</td></tr>
+        <tr><td>4</td><td>The first call fails</td><td class="n">0</td><td class="n">0</td><td class="n">60</td></tr>
+        <tr><td>5</td><td>The provider confirms nothing was paid</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
+        <tr class="fail"><td>6</td><td>The second payment is refused, with nothing held, spent or in doubt</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
+      </tbody>
+    </table>
+    <p class="foot">Struck on 26 November 2026 with <code>kamanu assay</code>, KAMANU 0.1.0. The engine's constants are stated by its profile, not measured, and the record says so. Signed with Ed25519. <a href="record/h/b271f39d07877083.html">Check this record yourself</a>.</p>
+  </div>
+
+  <section id="get" class="text">
+    <h2>What you get</h2>
+    <ul>
+      <li>The most that can really be spent under your limit, next to the limit.</li>
+      <li>The most budget that can be stranded when a payment that fits is refused.</li>
+      <li>The shortest sequence of events that produces each number, which your engineers can replay.</li>
+      <li>A fix, and the reason it holds. For the designs in our kernel, that reason is a machine-checked proof.</li>
+      <li>A signed record that says how each part was established, and can be checked again later, without us.</li>
+    </ul>
+    <p>Every claim carries one of seven levels, and a result is only as strong as its weakest link.</p>
+  </section>
+
+  <div class="wide">
+    <table class="levels">
+      <thead><tr><th>Level</th><th>What it says</th></tr></thead>
+      <tbody>
+        <tr><td>MODEL_PROVEN</td><td>Every step from the kernel to the checked machine is proved in Lean.</td></tr>
+        <tr><td>EXHAUSTIVE_FINITE_PASS</td><td>Every reachable state was visited. One link is tested, not proved.</td></tr>
+        <tr><td>BOUNDED_PASS</td><td>It passed within stated bounds, and says nothing beyond them.</td></tr>
+        <tr><td>TESTED</td><td>A live run or a replay passed.</td></tr>
+        <tr><td>ASSUMED</td><td>It passed, and something it rests on is a default or a reading of documents.</td></tr>
+        <tr class="fail"><td>REFUTED</td><td>A counterexample stands.</td></tr>
+        <tr><td>UNKNOWN</td><td>Not decided.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <section id="try" class="text">
+    <h2>Try it in a minute</h2>
+    <p>The record above, computed on your own machine. Python 3.11 or later; nothing is uploaded, and nothing here needs an account.</p>
+<pre>git clone https://github.com/nkamoah17/kamanu.git kamanu-src
+cd kamanu-src
+pip install .
+kamanu scan fixtures/dogwood/PReqBasis.dw \
+    --engine demo/assay/proved-cell.json --cap 100</pre>
+    <p>It prints the ceiling beside the limit, the stranded budget, the six-step trace, and on its last line how many of the engine's constants it had to assume. It exits 1, because one check fails. Run it on your own policy, or read a card issuer's <code>spending_limits</code> the way its documents write them:</p>
+<pre>kamanu lint examples/controls.yaml --frontend issuing --engine reference</pre>
+    <p>A daily limit is checked as a sliding 24-hour window, and the answer says what the calendar reading, a reset at midnight UTC, could change: up to twice the amount across one boundary.</p>
+    <p>The same tools run in CI (<a href="https://github.com/nkamoah17/kamanu/blob/main/docs/action.md">the GitHub Action</a>) and inside an agent's own toolbox (<a href="https://github.com/nkamoah17/kamanu/blob/main/docs/mcp.md">three MCP servers</a>: <code>kamanu mcp lint</code>, <code>coach</code> and <code>serve</code>).</p>
+  </section>
+
+  <section id="method" class="text">
+    <h2>How a limit is measured</h2>
+    <p>We run a fixed battery on one authorization path, in your sandbox or test mode. Each test runs 99 times. That catches a race that happens 3 times in 100 or more, 95 times out of 100. A rarer race can still be there, and the report says so.</p>
+    <ul>
+      <li><strong>Single asks</strong> at, below and above the limit.</li>
+      <li><strong>Parallel asks,</strong> at several spacings, and several cards under one agent or cardholder.</li>
+      <li><strong>Authorization, partial capture and reversal,</strong> including captures above the hold.</li>
+      <li><strong>Ambiguous failure.</strong> A time-out and a retry, where the provider fails after the money has moved, or before, or does not answer.</li>
+      <li><strong>Reset, expiry and overlapping limits.</strong> What happens at the edge of each window.</li>
+    </ul>
+    <p>The report keeps three parts apart. <em>Model:</em> what can happen under the stated assumptions. <em>Measurement:</em> what happened in the tested environment, with trial counts. <em>Deployment:</em> what connects the tested configuration to the live one.</p>
+    <p>Three payment rails were measured this way on test networks on 24 and 25 November 2026, and each limit held in every test. Each is named here when its owner has seen the result and agreed.</p>
+  </section>
+
+  <section id="verify" class="text">
+    <h2>Verify it yourself</h2>
+    <p>You do not have to take our word for the proofs. Clone the repository and run one script.</p>
+<pre>git clone https://github.com/nkamoah17/kamanu.git kamanu-src
+cd kamanu-src
+bash verify.sh</pre>
+    <p>It builds the Lean proofs from clean, rejects any gap and any axiom beyond Lean's three standard ones, replays them with Lean's own checker, and has three outside checkers read an export. The theorems are <a href="https://github.com/nkamoah17/kamanu/blob/main/docs/proofs.md">listed in plain words</a>.</p>
+    <p>And the record, offline, with the package or with node alone:</p>
+<pre>kamanu assay --verify registry/h/b271f39d07877083.json \
+    --key registry/registry.pub --recompute
+node registry/kamanu-verify.cjs registry/h/b271f39d07877083.html \
+    "$(cat registry/registry.pub)"</pre>
+    <p class="note">The registry's public key is <code>7fae4269ca9e431336a566f036d10f8cc2e6702c03af12fbccef3264dd926eab</code>. A record signed with any other key is not one of ours. Anyone can sign a record of their own with the same software and their own key; only this key says KAMANU struck it.</p>
+  </section>
+
+  <section id="check">
+    <h2>Get a check</h2>
+    <div class="wide">
+      <table class="offer">
+        <thead><tr><th>Step</th><th>Price</th><th>What you receive</th></tr></thead>
+        <tbody>
+          <tr><td>Scan</td><td>Free</td><td>Run <code>kamanu scan</code> on your own limits. The model's answer, a receipt in a directory on your disk, and the list of engine constants it had to assume. Nothing leaves your machine.</td></tr>
+          <tr><td>Documented check</td><td>Free</td><td>One page on your limit, built only from your public documents: the limit as they state it, what the model predicts, every constant marked ASSUMED. Sent to you privately, with a week to correct facts.</td></tr>
+          <tr><td>Authorization Assurance Sprint</td><td>9,500 USD<br>4,500 USD founding</td><td>The battery above on one programme, one limit configuration, one authorization path and one sandbox, in three working days: what your path let through that did not fit, what it refused that did, the shortest trace and a regression test for each, and a signed receipt per limit that your bank partner or enterprise buyer can check without us. A one-hour readout. If it passes, the result is yours to publish.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="text">
+      <p>Three founding programmes get the sprint for 4,500 USD, in exchange for a reference, named or anonymised as they choose. Half at signing, half on delivery. If the result on the contracted path comes back UNKNOWN, the fee is refunded in full. We never ask for production credentials or live funds.</p>
+      <p>To ask for a documented check or a sprint, send a link to the page that describes your limit, the processor or engine underneath it, and whether you have a sandbox.</p>
+      <a class="ask" href="mailto:jerenyame@gmail.com?subject=KAMANU%20check&amp;body=Page%20that%20describes%20the%20limit%3A%0AProcessor%20or%20engine%20underneath%3A%0ASandbox%20available%3A%0ADocumented%20check%20or%20sprint%3A">Ask for a check</a>
+    </div>
+  </section>
+
+  <section class="text">
+    <h2>What this is not</h2>
+    <ul>
+      <li>It is not a certificate. We do not use the words "certified" or "safe".</li>
+      <li>It is not runtime enforcement. KAMANU never holds or moves money.</li>
+      <li>It is not a statement about your system unless it was measured there. A proof is about a model, and it reaches a real system only through the hypotheses printed beside it.</li>
+    </ul>
+  </section>
+
+  <section class="text">
+    <h2>House rules</h2>
+    <ul>
+      <li>The owner of a system sees a result about it first, and has 30 days before anything is public.</li>
+      <li>A fee never changes a verdict or its timing.</li>
+      <li>Every public number carries its level and its hypotheses.</li>
+      <li>We test only in our own accounts and sandboxes, or with written permission.</li>
+      <li>Passes are published as readily as failures.</li>
+    </ul>
+    <p>To report a problem with a proof, a record or the tools: <a href="https://github.com/nkamoah17/kamanu/blob/main/SECURITY.md">security and disclosure</a>.</p>
+  </section>
+</main>
+
+<footer>
+  <p>KAMANU is run by Kenneth Amoah Nyame. Write to <a href="mailto:jerenyame@gmail.com">jerenyame@gmail.com</a>. Code on <a href="https://github.com/nkamoah17/kamanu">GitHub</a> under Apache 2.0; records under CDLA-Permissive-2.0.</p>
+  <p>This page loads nothing from other sites and runs no scripts.</p>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,3686 @@
+{
+ "same_as_without_refuse": {
+  "record_caused": [
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "global"
+   }
+  ],
+  "line": "Sound and Tight under the pending guard are R1's verdicts without Refuse on every comparison cell except 51, all with RefuseRecord TRUE: there only Tight FAILS, because the record puts the refused request in a request sum (the policy's count then exceeds held + spent + doubt), not because of the refusal."
+ },
+ "guards": {
+  "disagree": [
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "not atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R0",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": false,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "stale view",
+    "rung": "R2",
+    "refuse_record": true,
+    "scope": "global",
+    "fields": [
+     "LoneRefusal"
+    ]
+   }
+  ],
+  "line": "The pending guard (measured live) and K6's in-flight guard disagree on 240 comparison cells."
+ },
+ "theorem": {
+  "named": [
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": false,
+    "guard": "pending",
+    "scope": "session"
+   },
+   {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R2",
+    "refuse_record": true,
+    "guard": "pending",
+    "scope": "session"
+   }
+  ],
+  "overspend_across": 54,
+  "line": "Serialized decisions per scope (the atomic engine), the pending guard, the parallel adversary on two sessions: Sound per scope (ScopeSound) on 54 of 80 cells, named here.",
+  "across": "Across scopes nothing is promised: 54 of the 54 named cells overspend in total (RealSpendOK FAILS), as live four sessions admitted 240 under cap 100. A session-scoped cap is a per-session cap."
+ },
+ "available": {
+  "line": "Available: with the pending or the in-flight guard an honest sequential agent always gets a decision (21 of 21 liveness cells, weak fairness on the honest harness's actors only, none on Refuse or any adversary); under the parallel adversary the worst behaviour at bounds answers 2 of 3 decisions undetermined, beside the measured 4 of 40 at 8 simultaneous decisions per session (at most 1 per burst; none at 2, 4): the model's price is an upper bound. With the guard removed Available FAILS on 21 cells.",
+  "fairness": [
+   {
+    "actor": "engine",
+    "step": "Decide",
+    "kind": "WF"
+   },
+   {
+    "actor": "engine",
+    "step": "Record",
+    "kind": "WF"
+   },
+   {
+    "actor": "tool",
+    "step": "Settle",
+    "kind": "WF"
+   },
+   {
+    "actor": "harness",
+    "step": "Reconcile",
+    "kind": "WF"
+   },
+   {
+    "actor": "harness",
+    "step": "Timeout",
+    "kind": "WF"
+   },
+   {
+    "actor": "agent",
+    "step": "Work",
+    "kind": "WF"
+   },
+   {
+    "actor": "agent",
+    "step": "Ask",
+    "kind": "WF"
+   },
+   {
+    "actor": "approver",
+    "step": "Approve",
+    "kind": "WF"
+   }
+  ],
+  "worst": [
+   2,
+   3
+  ],
+  "measured": {
+   "undetermined": 4,
+   "decisions": 40,
+   "simultaneous": 8,
+   "per_burst_max": 1,
+   "none_at": [
+    2,
+    4
+   ]
+  },
+  "guard_removed": [
+   "A/agent-lazy/timeout=F",
+   "A/agent-lazy/timeout=T",
+   "A/approver-fair=F/timeout=F",
+   "A/approver-fair=F/timeout=T",
+   "A/approver-fair=T/timeout=F",
+   "A/approver-fair=T/timeout=T",
+   "L/refund-err/R0",
+   "L/refund-err/R1",
+   "L/refund-err/R2",
+   "L/refund-rec/R0",
+   "L/refund-rec/R1",
+   "L/refund-rec/R2",
+   "L/req-nr/R0",
+   "L/req-nr/R1",
+   "L/req-nr/R2",
+   "L/req/R0",
+   "L/req/R1",
+   "L/req/R2",
+   "L/resp/R0",
+   "L/resp/R1",
+   "L/resp/R2"
+  ]
+ }
+}

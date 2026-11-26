@@ -1,0 +1,111 @@
+{
+ "run": "2026-11-12",
+ "live": true,
+ "predictions": {
+  "a": {
+   "verdict": "refuted",
+   "trials": [
+    "e1-0-k2-one-session",
+    "e1-1-k2-one-session",
+    "e1-10-k8-one-session",
+    "e1-11-k8-one-session",
+    "e1-12-k8-one-session",
+    "e1-13-k8-one-session",
+    "e1-14-k8-one-session",
+    "e1-2-k2-one-session",
+    "e1-3-k2-one-session",
+    "e1-4-k2-one-session",
+    "e1-5-k4-one-session",
+    "e1-6-k4-one-session",
+    "e1-7-k4-one-session",
+    "e1-8-k4-one-session",
+    "e1-9-k4-one-session",
+    "e3-0-one-session",
+    "e3-1-one-session",
+    "e3-2-one-session",
+    "e3-3-one-session",
+    "e3-4-one-session",
+    "e5-0-one-session",
+    "e5-2-one-session",
+    "e5-4-one-session"
+   ],
+   "refuted_by": {
+    "session": "e1-s0",
+    "call": 0
+   }
+  },
+  "b": {
+   "verdict": "confirmed",
+   "trials": [
+    "e2-0-k2-k-sessions",
+    "e2-1-k2-k-sessions",
+    "e2-10-k8-k-sessions",
+    "e2-11-k8-k-sessions",
+    "e2-12-k8-k-sessions",
+    "e2-13-k8-k-sessions",
+    "e2-14-k8-k-sessions",
+    "e2-2-k2-k-sessions",
+    "e2-3-k2-k-sessions",
+    "e2-4-k2-k-sessions",
+    "e2-5-k4-k-sessions",
+    "e2-6-k4-k-sessions",
+    "e2-7-k4-k-sessions",
+    "e2-8-k4-k-sessions",
+    "e2-9-k4-k-sessions",
+    "e3x-0-k-sessions",
+    "e3x-1-k-sessions",
+    "e3x-2-k-sessions",
+    "e3x-3-k-sessions",
+    "e3x-4-k-sessions",
+    "e5-1-k-sessions",
+    "e5-3-k-sessions",
+    "e5-5-k-sessions"
+   ],
+   "refuted_by": null
+  },
+  "c": {
+   "verdict": "confirmed",
+   "trials": [
+    "e4-0",
+    "e4-1",
+    "e4-2"
+   ],
+   "refuted_by": null
+  },
+  "d": {
+   "verdict": "confirmed",
+   "trials": [
+    "e5-0-one-session",
+    "e5-2-one-session",
+    "e5-4-one-session"
+   ],
+   "refuted_by": null,
+   "across": "overspent",
+   "across_trials": [
+    "e5-1-k-sessions",
+    "e5-3-k-sessions",
+    "e5-5-k-sessions"
+   ]
+  }
+ },
+ "conclusion": "neither",
+ "serialized": "per session",
+ "residue": [
+  {
+   "session": "e1-s10",
+   "call": 3
+  },
+  {
+   "session": "e1-s12",
+   "call": 7
+  },
+  {
+   "session": "e1-s13",
+   "call": 6
+  },
+  {
+   "session": "e1-s14",
+   "call": 5
+  }
+ ]
+}

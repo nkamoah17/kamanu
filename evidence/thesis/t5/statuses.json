@@ -1,0 +1,128 @@
+{
+  "session_key_minted": {
+    "statuses": [
+      "pattern",
+      "established",
+      "assumed",
+      "unknown"
+    ],
+    "why": {
+      "pattern": "A minting call shows where a key is made, not that it stays: a key held on an object can be replaced through setattr or a mapping (fixtures/premises/session_key_minted/planted), and a mint of too few bytes or of another module's function is a mint in name only.",
+      "established": "The value is a library mint of at least 16 random bytes, assigned as written to a local of the function, which setattr cannot reach, with the library's module not rebound, patched or shadowed in the repository.",
+      "assumed": "The query writes no fact when it finds no site, or one site it cannot prove, so map has nothing to read and keeps the pessimistic default.",
+      "unknown": "Joern can be missing, crash or refuse a partial graph (kamanu.evidence.joern.JoernError): the query then has no answer, and the caller says so in map's unknown argument."
+    },
+    "constructs": {
+      "library_mint_in_local": [
+        "The names secrets and uuid are the standard library's modules at run time",
+        "The caller cannot predict or set what the operating system's random source returns",
+        "Nothing replaces the key between the line that mints it and the engine that counts over it"
+      ]
+    }
+  },
+  "check_act_atomic": {
+    "statuses": [
+      "pattern",
+      "established",
+      "assumed",
+      "unknown"
+    ],
+    "why": {
+      "pattern": "A call named incr, add, decr or incrby is one operation only if the object makes it one: in fixtures/premises/check_act_atomic/planted it reads and writes a file two worker processes share.",
+      "established": "The counter is a module-level name bound once, to a redis-py client, and the write is incr, incrby, decr or decrby; the module is not rebound, patched or shadowed in the repository.",
+      "assumed": "The query writes no fact when it finds no site, or one site it cannot prove, so map has nothing to read and keeps the pessimistic default.",
+      "unknown": "Joern can be missing, crash or refuse a partial graph (kamanu.evidence.joern.JoernError): the query then has no answer, and the caller says so in map's unknown argument."
+    },
+    "constructs": {
+      "redis_increment": [
+        "Redis runs one command at a time",
+        "The name redis is the redis-py client at run time, and the server it reaches keeps every increment it has answered",
+        "Every process counts the same budget under the same key of that server",
+        "The check that admits a spend tests the answer of its own increment"
+      ]
+    }
+  },
+  "release_post_dominates": {
+    "statuses": [
+      "pattern",
+      "established",
+      "assumed",
+      "unknown"
+    ],
+    "why": {
+      "pattern": "A with on a name that says lock, or an acquire before a try with a release, releases only if the object's own exit does: in fixtures/premises/release_post_dominates/planted it does not when the tool raises.",
+      "established": "The lock is a module-level name bound once, to threading.Lock(), and is taken by a with statement; the module is not rebound, patched or shadowed in the repository.",
+      "assumed": "The query writes no fact when it finds no site, or one site it cannot prove, so map has nothing to read and keeps the pessimistic default.",
+      "unknown": "Joern can be missing, crash or refuse a partial graph (kamanu.evidence.joern.JoernError): the query then has no answer, and the caller says so in map's unknown argument."
+    },
+    "constructs": {
+      "threading_lock_with": [
+        "The name threading is the standard library's module at run time",
+        "The code run under the lock ends, by returning or by raising",
+        "No thread or process is killed while it holds the lock"
+      ]
+    }
+  },
+  "await_has_timeout": {
+    "statuses": [
+      "pattern",
+      "established",
+      "assumed",
+      "unknown"
+    ],
+    "why": {
+      "pattern": "A timeout= argument is a limit only if the callee keeps it: in fixtures/premises/await_has_timeout/planted it is never read. A limit that is a constant another module can set is a pattern too.",
+      "established": "The wait is asyncio.wait_for itself, with a finite number, written there or in a module constant nothing else in the repository assigns; the module is not rebound, patched or shadowed.",
+      "assumed": "The query writes no fact when it finds no site, or one site it cannot prove, so map has nothing to read and keeps the pessimistic default.",
+      "unknown": "Joern can be missing, crash or refuse a partial graph (kamanu.evidence.joern.JoernError): the query then has no answer, and the caller says so in map's unknown argument."
+    },
+    "constructs": {
+      "asyncio_wait_for": [
+        "The name asyncio is the standard library's module at run time",
+        "The awaited operation ends when it is cancelled, and does not swallow the cancellation",
+        "No synchronous call blocks the event loop, the one that makes the awaited operation included"
+      ]
+    }
+  },
+  "retry_bounded": {
+    "statuses": [
+      "pattern",
+      "established",
+      "assumed",
+      "unknown"
+    ],
+    "why": {
+      "pattern": "A while under a module constant is bounded only while the constant is: in fixtures/premises/retry_bounded/planted another module raises it on each failure.",
+      "established": "The loop is a for over the builtin range of numbers written in its header, every loop nested in it is one too, and nothing in the file rebinds range.",
+      "assumed": "The query writes no fact when it finds no site, or one site it cannot prove, so map has nothing to read and keeps the pessimistic default.",
+      "unknown": "Joern can be missing, crash or refuse a partial graph (kamanu.evidence.joern.JoernError): the query then has no answer, and the caller says so in map's unknown argument."
+    },
+    "constructs": {
+      "range_of_numbers": [
+        "The name range is Python's builtin at run time",
+        "No call in the loop's body starts the function that holds the loop again"
+      ]
+    }
+  },
+  "status_before_retry": {
+    "statuses": [
+      "pattern",
+      "established",
+      "assumed",
+      "unknown"
+    ],
+    "why": {
+      "pattern": "A call with status in its name decides nothing if it asks the wrong place: in fixtures/premises/status_before_retry/planted it asks a journal the lost charge never reached.",
+      "established": "The try makes one call, and the handler asks that call's own receiver about that call's own first argument, neither of them set in the try or the handler.",
+      "assumed": "The query writes no fact when it finds no site, or one site it cannot prove, so map has nothing to read and keeps the pessimistic default.",
+      "unknown": "Joern can be missing, crash or refuse a partial graph (kamanu.evidence.joern.JoernError): the query then has no answer, and the caller says so in map's unknown argument."
+    },
+    "constructs": {
+      "status_of_the_same_call": [
+        "The service's status answer includes every call it had accepted when it was asked",
+        "The service does not accept a call after it has answered that the call was not made",
+        "The state the handler tests for is the one the service gives a call it accepted"
+      ]
+    }
+  }
+}

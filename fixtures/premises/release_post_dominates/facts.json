@@ -1,0 +1,30 @@
+{
+  "planted": [
+    {
+      "file": "holds.py",
+      "line": 28,
+      "subject": "with order_lock",
+      "query_id": "release_post_dominates",
+      "joern_version": "4.0.676",
+      "graph_hash": "ac0b955d06b0cddb9e2748ca282427aa13133a595dba75db5cf71aff78b127a9",
+      "query_sha256": "92d62bd052f0819ee4f13bbdde7b9df2dbf471d914dfa49ca68c6e887046281e"
+    }
+  ],
+  "established": [
+    {
+      "file": "holds.py",
+      "line": 11,
+      "subject": "with order_lock",
+      "construct": "threading_lock_with",
+      "assumptions": [
+        "The name threading is the standard library's module at run time",
+        "The code run under the lock ends, by returning or by raising",
+        "No thread or process is killed while it holds the lock"
+      ],
+      "query_id": "release_post_dominates",
+      "joern_version": "4.0.676",
+      "graph_hash": "5d6880f935f590ea0da30d13df4e570e09ba67832edb9dbf34b84d14098900ea",
+      "query_sha256": "92d62bd052f0819ee4f13bbdde7b9df2dbf471d914dfa49ca68c6e887046281e"
+    }
+  ]
+}

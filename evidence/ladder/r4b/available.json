@@ -1,0 +1,2965 @@
+{
+ "cells": [
+  {
+   "cell": "A/agent-lazy/timeout=F",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "A/agent-lazy/timeout=F",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "A/agent-lazy/timeout=F",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "A/agent-lazy/timeout=T",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "A/agent-lazy/timeout=T",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "A/agent-lazy/timeout=T",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "A/approver-fair=F/timeout=F",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "A/approver-fair=F/timeout=F",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "A/approver-fair=F/timeout=F",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "A/approver-fair=F/timeout=T",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "A/approver-fair=F/timeout=T",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "A/approver-fair=F/timeout=T",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "A/approver-fair=T/timeout=F",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "A/approver-fair=T/timeout=F",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "A/approver-fair=T/timeout=F",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "A/approver-fair=T/timeout=T",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "A/approver-fair=T/timeout=T",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "A/approver-fair=T/timeout=T",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/refund-err/R0",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/refund-err/R0",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/refund-err/R0",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/refund-err/R1",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/refund-err/R1",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/refund-err/R1",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/refund-err/R2",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/refund-err/R2",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/refund-err/R2",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/refund-rec/R0",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/refund-rec/R0",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/refund-rec/R0",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/refund-rec/R1",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/refund-rec/R1",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/refund-rec/R1",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/refund-rec/R2",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/refund-rec/R2",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/refund-rec/R2",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/req-nr/R0",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/req-nr/R0",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/req-nr/R0",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/req-nr/R1",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/req-nr/R1",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/req-nr/R1",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/req-nr/R2",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/req-nr/R2",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/req-nr/R2",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/req/R0",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/req/R0",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/req/R0",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/req/R1",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/req/R1",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/req/R1",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/req/R2",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/req/R2",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/req/R2",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/resp/R0",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/resp/R0",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/resp/R0",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/resp/R1",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/resp/R1",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/resp/R1",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/resp/R2",
+   "guard": "pending",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/resp/R2",
+   "guard": "in-flight",
+   "Available": "holds",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  },
+  {
+   "cell": "L/resp/R2",
+   "guard": "none",
+   "Available": "FAILS",
+   "fairness": [
+    {
+     "actor": "engine",
+     "step": "Decide",
+     "kind": "WF"
+    },
+    {
+     "actor": "engine",
+     "step": "Record",
+     "kind": "WF"
+    },
+    {
+     "actor": "tool",
+     "step": "Settle",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Reconcile",
+     "kind": "WF"
+    },
+    {
+     "actor": "harness",
+     "step": "Timeout",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Work",
+     "kind": "WF"
+    },
+    {
+     "actor": "agent",
+     "step": "Ask",
+     "kind": "WF"
+    },
+    {
+     "actor": "approver",
+     "step": "Approve",
+     "kind": "WF"
+    }
+   ]
+  }
+ ]
+}

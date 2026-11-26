@@ -1,0 +1,84 @@
+name: test
+# The whole test suite on GitHub's hosted runners. A public repository must never run on a self-hosted
+# runner: a pull request from a fork would run its code on that machine.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: TLC and Apalache, pinned by SHA-256
+        run: |
+          mkdir -p tools/vendor
+          URL=$(python -c "import json;print(json.load(open('oracle/toolchain.json'))['tla2tools_url'])")
+          SUM=$(python -c "import json;print(json.load(open('oracle/toolchain.json'))['tla2tools_sha256'])")
+          curl -sSfL -o tools/vendor/tla2tools.jar "$URL"
+          echo "$SUM  tools/vendor/tla2tools.jar" | sha256sum -c -
+          V=$(python -c "import json;print(json.load(open('tools/vendor/apalache.json'))['version'])")
+          A=$(python -c "import json;print(json.load(open('tools/vendor/apalache.json'))['jar_sha256'])")
+          curl -sSfL -o apalache.tgz "https://github.com/apalache-mc/apalache/releases/download/v$V/apalache.tgz"
+          tar -xzf apalache.tgz apalache/lib/apalache.jar
+          mv apalache/lib/apalache.jar tools/vendor/apalache.jar
+          echo "$A  tools/vendor/apalache.jar" | sha256sum -c -
+      - name: install
+        run: pip install -e . pytest
+      - name: tests
+        run: python -m pytest -q -p no:cacheprovider tests
+
+  wheel:
+    # The wheel as a stranger gets it: built from this tree, installed in a clean venv, run outside it.
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: build
+        run: |
+          pip install build twine
+          python -m build
+          twine check --strict dist/*
+      - name: install in a clean venv and run the quickstart
+        run: |
+          python -m venv /tmp/v
+          /tmp/v/bin/pip install dist/*.whl
+          cd /tmp
+          /tmp/v/bin/kamanu --version
+          /tmp/v/bin/kamanu hunt --example dogwood
+          for r in "$GITHUB_WORKSPACE"/registry/h/*.json; do
+            case "$r" in *.pyx.json) continue ;; esac
+            /tmp/v/bin/kamanu assay --verify "$r" --key "$GITHUB_WORKSPACE/registry/registry.pub" --recompute
+          done
+          set +e
+          KAMANU_CABINET=/tmp/cab /tmp/v/bin/kamanu scan "$GITHUB_WORKSPACE/fixtures/dogwood/PReqBasis.dw" --engine "$GITHUB_WORKSPACE/demo/assay/proved-cell.json" --cap 100 --label budget
+          rc=$?
+          set -e
+          test "$rc" = 1   # Tight fails on the proved cell: the README says so
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/

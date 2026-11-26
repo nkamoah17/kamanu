@@ -1,0 +1,20 @@
+{
+  "tlc_runs": 4686,
+  "distinct_states": 7427003,
+  "flips": {
+    "SucceedSplit": 0,
+    "ReconcileSplit": 18,
+    "RefusalSplit": 0
+  },
+  "kept": [
+    "ReconcileSplit"
+  ],
+  "null": {
+    "SucceedSplit": 300,
+    "RefusalSplit": 300
+  },
+  "disagreements": [],
+  "vacuous": 0,
+  "not_exercised": 12,
+  "seconds": 1808
+}

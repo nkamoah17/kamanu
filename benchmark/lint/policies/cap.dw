@@ -1,0 +1,9 @@
+// the benchmark's policy: a sum over a day of Pay requests, less refunds, at most 2470
+permit (
+    principal,
+    action == Kamanu::Action::"Pay",
+    resource
+)
+when temporal {
+sum_within(a, 24h, Kamanu::Action::"Pay"::request{ input.amount: a }) - sum_within(a, 24h, Kamanu::Action::"Pay"::refund{ input.amount: a }) <= 2470
+};

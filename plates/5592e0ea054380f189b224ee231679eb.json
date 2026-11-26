@@ -1,0 +1,138 @@
+{
+ "die": "5592e0ea054380f189b224ee231679eb",
+ "expects": {
+  "checks": [
+   {
+    "die": "5592e0ea054380f189b224ee231679eb",
+    "level": "REFUTED",
+    "name": "Sound",
+    "status": "FAILS",
+    "trace": [
+     {
+      "amount": 60,
+      "count": 0,
+      "doubt": 0,
+      "held": 0,
+      "outcome": null,
+      "spent": 0,
+      "step": "issue"
+     },
+     {
+      "amount": 60,
+      "count": 0,
+      "doubt": 0,
+      "held": 0,
+      "outcome": null,
+      "spent": 0,
+      "step": "issue"
+     },
+     {
+      "amount": 60,
+      "count": 60,
+      "doubt": 0,
+      "held": 60,
+      "outcome": "permit",
+      "spent": 0,
+      "step": "decide"
+     },
+     {
+      "amount": 60,
+      "count": 0,
+      "doubt": 0,
+      "held": 0,
+      "outcome": "ambiguous",
+      "spent": 60,
+      "step": "fail"
+     },
+     {
+      "amount": 60,
+      "count": 60,
+      "doubt": 0,
+      "held": 60,
+      "outcome": "permit",
+      "spent": 60,
+      "step": "decide"
+     },
+     {
+      "amount": 60,
+      "count": 60,
+      "doubt": 0,
+      "held": 0,
+      "outcome": null,
+      "spent": 120,
+      "step": "succeed"
+     }
+    ]
+   },
+   {
+    "die": "8ade713492a258483c1db8db45818614",
+    "level": "MODEL_PROVEN",
+    "name": "Tight",
+    "status": "holds",
+    "trace": null
+   }
+  ],
+  "figures": {
+   "ceiling": 150,
+   "face": 100,
+   "fineness": ".666",
+   "stranded": 0
+  },
+  "hypotheses": [
+   {
+    "name": "Reflexive",
+    "status": "assumed",
+    "value": true
+   },
+   {
+    "name": "DenyRecord",
+    "status": "assumed",
+    "value": "none"
+   },
+   {
+    "name": "Atomic",
+    "status": "assumed",
+    "value": true
+   },
+   {
+    "name": "Lag",
+    "status": "assumed",
+    "value": 0
+   },
+   {
+    "name": "Scope",
+    "status": "assumed",
+    "value": "ScopeGlobal"
+   },
+   {
+    "name": "in_flight",
+    "status": "assumed",
+    "value": 2
+   },
+   {
+    "name": "failures",
+    "status": "assumed",
+    "value": 1
+   }
+  ],
+  "level": "REFUTED"
+ },
+ "inputs": [
+  {
+   "path": "fixtures/dogwood/PRefundOnError.dw",
+   "sha256": "0db1301918541d3a189546479826ae5c921bc4d650073ad282352cc6db86c85b"
+  }
+ ],
+ "receipt": 0,
+ "replay": {
+  "amounts": null,
+  "cap": null,
+  "engine": "reference",
+  "failures": 1,
+  "in_flight": 2,
+  "kind": "policy",
+  "name": "PRefundOnError.dw",
+  "policy": "// kernel: PRefundOnError\n// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/examples/cap_open_agent_prs_windowed/README.md (aggregate minus aggregate)\n// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/guide/03-event-schema.md#the-default-event-schema-request--response--error (error events carry input fields)\n// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/guide/04-temporal-expressions.md#arithmetic-in-comparison-operands\n// Needs a dogwood build with --features experimental-arithmetic.\n\n@id(\"pay_cap\")\npermit (\n    principal,\n    action == Kamanu::Action::\"Pay\",\n    resource\n)\nwhen temporal {\n    (sum a for (a: Long), (t: Timepoint). where (\n        formerly within 24h (Kamanu::Action::\"Pay\"::request{ input.amount: a } && tp(t))\n    ))\n    - (sum a for (a: Long), (t: Timepoint). where (\n        formerly within 24h (Kamanu::Action::\"Pay\"::error{ input.amount: a } && tp(t))\n    )) <= 100\n};\n"
+ },
+ "type": "b46fa84938e005015771d657c5817dde"
+}

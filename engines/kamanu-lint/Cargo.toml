@@ -1,0 +1,23 @@
+[package]
+name = "kamanu-lint"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "KAMANU R17b: the native kamanu lint - a hand-written parser checked against the vendor's, R17's verdict table compiled in, one static binary."
+license = "Apache-2.0"
+
+[[bin]]
+name = "kamanu-lint"
+path = "src/main.rs"
+
+[dependencies]
+# The vendor's parser, the cross-check (never an inside reading of a file it rejects), at the rev
+# engines/dogwood-local-harness/Cargo.lock pins for the vendor's crates.
+dogwood-syntax = { git = "https://github.com/dogwood-policy/dogwood", rev = "4ec5e2c01b44ff3882a231ae5d315b330b38fa25" }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true

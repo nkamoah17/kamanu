@@ -1,0 +1,9 @@
+# Spending controls as a card issuer's documents write them: amounts in minor units.
+#   kamanu lint examples/controls.yaml --frontend issuing --engine reference
+# Each limit becomes one threshold. A daily limit is checked as a sliding 24-hour window, and the answer says
+# what the calendar reading (a reset at midnight UTC) could change. See docs/cardhold.md.
+spending_limits:
+  - amount: 50000
+    interval: daily
+  - amount: 10000
+    interval: per_authorization

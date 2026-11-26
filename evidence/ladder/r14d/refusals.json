@@ -1,0 +1,203 @@
+{
+ "card": "R14d",
+ "date": "2026-11-14",
+ "scope_refused_exit": 6,
+ "how": "python evidence/ladder/r14d/refusals.py (its docstring says what is counted)",
+ "runs": [
+  {
+   "entry": "hunt()",
+   "case": "missing",
+   "exit": null,
+   "requests": 0,
+   "sessions": 0,
+   "reason": "missing",
+   "message": "scope refused (missing): no scope file was given; a hunt needs one that names its target (--scope FILE, or scope=PATH)"
+  },
+  {
+   "entry": "hunt()",
+   "case": "expired",
+   "exit": null,
+   "requests": 0,
+   "sessions": 0,
+   "reason": "expired",
+   "message": "scope refused (expired): <work>\\scope-1.json: the scope expired on 2026-11-11"
+  },
+  {
+   "entry": "hunt()",
+   "case": "target",
+   "exit": null,
+   "requests": 0,
+   "sessions": 0,
+   "reason": "target",
+   "message": "scope refused (target): the scope names adapter stand-in, address http://127.0.0.1:20000-other; this hunt would reach adapter stand-in, address http://127.0.0.1:20000"
+  },
+  {
+   "entry": "hunt()",
+   "case": "invalid",
+   "exit": null,
+   "requests": 0,
+   "sessions": 0,
+   "reason": "invalid",
+   "message": "scope refused (invalid): <work>\\scope-3.json: owner is missing or blank: say who owns the target"
+  },
+  {
+   "entry": "hunt_row()",
+   "case": "missing",
+   "exit": null,
+   "requests": 0,
+   "sessions": 0,
+   "reason": "missing",
+   "message": "scope refused (missing): no scope file was given; a hunt needs one that names its target (--scope FILE, or scope=PATH)"
+  },
+  {
+   "entry": "hunt_row()",
+   "case": "expired",
+   "exit": null,
+   "requests": 0,
+   "sessions": 0,
+   "reason": "expired",
+   "message": "scope refused (expired): <work>\\scope-5.json: the scope expired on 2026-11-11"
+  },
+  {
+   "entry": "hunt_row()",
+   "case": "target",
+   "exit": null,
+   "requests": 0,
+   "sessions": 0,
+   "reason": "target",
+   "message": "scope refused (target): the scope names adapter stand-in, address http://127.0.0.1:20000-other; this hunt would reach adapter stand-in, address http://127.0.0.1:20000"
+  },
+  {
+   "entry": "hunt_row()",
+   "case": "invalid",
+   "exit": null,
+   "requests": 0,
+   "sessions": 0,
+   "reason": "invalid",
+   "message": "scope refused (invalid): <work>\\scope-7.json: owner is missing or blank: say who owns the target"
+  },
+  {
+   "entry": "kamanu hunt",
+   "case": "missing",
+   "exit": 6,
+   "requests": 0,
+   "row_written": false,
+   "message": "kamanu hunt: scope refused (missing): no scope file was given; a hunt needs one that names its target (--scope FILE, or scope=PATH); nothing was sent"
+  },
+  {
+   "entry": "kamanu hunt",
+   "case": "expired",
+   "exit": 6,
+   "requests": 0,
+   "row_written": false,
+   "message": "kamanu hunt: scope refused (expired): <work>\\scope-9.json: the scope expired on 2026-11-11; nothing was sent"
+  },
+  {
+   "entry": "kamanu hunt",
+   "case": "target",
+   "exit": 6,
+   "requests": 0,
+   "row_written": false,
+   "message": "kamanu hunt: scope refused (target): the scope names adapter dogwood, binary <work>\\kamanu_hunt\\dogwood.cmd-other; this hunt would reach adapter dogwood, binary <work>\\kamanu_hunt\\dogwood.cmd; nothing was sent"
+  },
+  {
+   "entry": "kamanu hunt",
+   "case": "invalid",
+   "exit": 6,
+   "requests": 0,
+   "row_written": false,
+   "message": "kamanu hunt: scope refused (invalid): <work>\\scope-11.json: owner is missing or blank: say who owns the target; nothing was sent"
+  },
+  {
+   "entry": "python -m kamanu.hunt --row",
+   "case": "missing",
+   "exit": 6,
+   "requests": 0,
+   "row_written": false,
+   "message": "kamanu hunt: scope refused (missing): no scope file was given; a hunt needs one that names its target (--scope FILE, or scope=PATH); nothing was sent"
+  },
+  {
+   "entry": "python -m kamanu.hunt --row",
+   "case": "expired",
+   "exit": 6,
+   "requests": 0,
+   "row_written": false,
+   "message": "kamanu hunt: scope refused (expired): <work>\\scope-13.json: the scope expired on 2026-11-11; nothing was sent"
+  },
+  {
+   "entry": "python -m kamanu.hunt --row",
+   "case": "target",
+   "exit": 6,
+   "requests": 0,
+   "row_written": false,
+   "message": "kamanu hunt: scope refused (target): the scope names adapter dogwood, binary <work>\\python_-m_kamanu.hunt_--row\\dogwood.cmd-other; this hunt would reach adapter dogwood, binary <work>\\python_-m_kamanu.hunt_--row\\dogwood.cmd; nothing was sent"
+  },
+  {
+   "entry": "python -m kamanu.hunt --row",
+   "case": "invalid",
+   "exit": 6,
+   "requests": 0,
+   "row_written": false,
+   "message": "kamanu hunt: scope refused (invalid): <work>\\scope-15.json: owner is missing or blank: say who owns the target; nothing was sent"
+  },
+  {
+   "entry": "mcp hunt",
+   "case": "missing",
+   "exit": null,
+   "requests": 0,
+   "isError": true,
+   "message": "kamanu hunt exits 6: kamanu hunt: scope refused (missing): no scope file was given; a hunt needs one that names its target (--scope FILE, or scope=PATH); nothing was sent"
+  },
+  {
+   "entry": "mcp hunt",
+   "case": "expired",
+   "exit": null,
+   "requests": 0,
+   "isError": true,
+   "message": "kamanu hunt exits 6: kamanu hunt: scope refused (expired): <work>\\scope-17.json: the scope expired on 2026-11-11; nothing was sent"
+  },
+  {
+   "entry": "mcp hunt",
+   "case": "target",
+   "exit": null,
+   "requests": 0,
+   "isError": true,
+   "message": "kamanu hunt exits 6: kamanu hunt: scope refused (target): the scope names adapter dogwood, binary <work>\\mcp\\dogwood.cmd-other; this hunt would reach adapter dogwood, binary <work>\\mcp\\dogwood.cmd; nothing was sent"
+  },
+  {
+   "entry": "mcp hunt",
+   "case": "invalid",
+   "exit": null,
+   "requests": 0,
+   "isError": true,
+   "message": "kamanu hunt exits 6: kamanu hunt: scope refused (invalid): <work>\\scope-19.json: owner is missing or blank: say who owns the target; nothing was sent"
+  }
+ ],
+ "admitted": [
+  {
+   "entry": "hunt()",
+   "requests": 231,
+   "sessions": 60
+  },
+  {
+   "entry": "hunt_row()",
+   "requests": 231,
+   "sessions": 60
+  },
+  {
+   "entry": "kamanu hunt",
+   "exit": 3,
+   "starts": 1
+  },
+  {
+   "entry": "python -m kamanu.hunt --row",
+   "exit": 3,
+   "starts": 1
+  },
+  {
+   "entry": "mcp hunt",
+   "isError": true,
+   "starts": 1
+  }
+ ]
+}

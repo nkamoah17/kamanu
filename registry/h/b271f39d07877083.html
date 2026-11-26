@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>KAMANU hallmark b271f39d07877083</title>
+<style>body{font-family:system-ui,sans-serif;max-width:72rem;margin:2rem auto;padding:0 1rem;color:#1d1d1f}
+table{border-collapse:collapse;width:100%}th,td{border-bottom:1px solid #ddd;padding:.3rem .5rem;text-align:left;vertical-align:top}
+th[data-sort]{cursor:pointer}code,pre{font-family:ui-monospace,monospace;font-size:.85rem}pre{white-space:pre-wrap;word-break:break-all;margin:0}
+.LAPSED{color:#a00;font-weight:bold}.current{color:#060;font-weight:bold}.note{color:#555}</style>
+</head>
+<body>
+<p><a href="../index.html">KAMANU hallmark registry</a> (<a href="../house-rules.html">house rules and the
+mint's words</a>)</p>
+<h1>Hallmark b271f39d07877083</h1>
+<p>id (SHA-256 of the whole record): <code>b271f39d07877083a075e1ddf9d27e695af5e63b9495e926681c4c4d4ec6791c</code>; kamanu version 0.1.0;
+limit: request 1, threshold 100.</p>
+<p>Struck <time>2026-11-26</time> (the date of the run that issued it).</p>
+<p>Status on 2026-11-26: <span class="current" data-status="current">current</span>, valid through 2027-02-24.</p>
+<h2>As issued on 2026-11-26, re-measured as below</h2>
+<section data-side="obverse"><strong>Obverse</strong>: face value <span>100</span>; fineness <span>1.000</span>; stranded budget <span>100</span>; level <span>REFUTED</span>; <span>fine: fineness 1.000 at level REFUTED</span></section>
+<section data-side="reverse"><strong>Reverse</strong>: hypotheses <span>Reflexive = true: assumed</span>; <span>DenyRecord = none: assumed</span>; <span>Atomic = true: assumed</span>; <span>Lag = 0: assumed</span>; <span>Scope = ScopeGlobal: assumed</span>; <span>in_flight = 2: assumed</span>; <span>failures = 1: assumed</span>. <span>trace (the shortest that fails): R1 Tight, 6 steps: 1. issue 60, 2. issue 60, 3. decide 60 (permit), 4. fail 60 (clean), 5. reconcile 60 (refund), 6. decide 60 (deny)</span></section>
+<table><tr><th>ceiling</th><td>100 (the assay: the most that can really be spent)</td></tr><tr><th>Sound</th><td>holds, level MODEL_PROVEN</td></tr><tr><th>Tight</th><td>FAILS, level REFUTED</td></tr><tr><th>level</th><td>REFUTED (the weaker of Sound's and Tight's)</td></tr></table>
+<h2>Hypotheses</h2>
+<p class="note">The figures hold of the model under these; each is measured (trials and date), assumed or proved.</p>
+<table><tr><th>name</th><th>value</th><th>status</th><th>trials</th><th>date</th></tr><tr><td>Reflexive</td><td>true</td><td>assumed</td><td></td><td></td></tr><tr><td>DenyRecord</td><td>&quot;none&quot;</td><td>assumed</td><td></td><td></td></tr><tr><td>Atomic</td><td>true</td><td>assumed</td><td></td><td></td></tr><tr><td>Lag</td><td>0</td><td>assumed</td><td></td><td></td></tr><tr><td>Scope</td><td>&quot;ScopeGlobal&quot;</td><td>assumed</td><td></td><td></td></tr><tr><td>in_flight</td><td>2</td><td>assumed</td><td></td><td></td></tr><tr><td>failures</td><td>1</td><td>assumed</td><td></td><td></td></tr></table>
+<section>
+<h2>Mint mark</h2>
+<p class="note">The hashes of the model (the policy and its lint form), the profile and the Lean sources.</p>
+<table><tr><th>policy</th><td><code>40724ae7e2d40730ddf2412add4ab54cb65e38063a4568794d0699861de66f1b</code></td></tr><tr><th>form</th><td><code>b9e57aa70b4bf1bafaee28b53c1edcd9eaa18e1ba6acd443945b5db948acb70a</code></td></tr><tr><th>profile</th><td><code>9c493a22d77603dfe6e775df87ccc04021455e68f7875e504900c6e9acfc666e</code></td></tr><tr><th>lean</th><td><code>494d5ee4bcd0b68f7952714755434abef25e24fc98ce05b6d5a75873f0ed63e4</code></td></tr></table>
+</section>
+<h2>Pyx: the re-measurements</h2>
+<table><tr><th>seq</th><th>date</th><th>valid_through</th><th>status</th><th>reason</th><th>measured_on</th><th>numbers</th></tr><tr><td>0</td><td>2026-11-26</td><td>2027-02-24</td><td>current</td><td></td><td><pre>{
+ &quot;policy&quot;: &quot;40724ae7e2d40730ddf2412add4ab54cb65e38063a4568794d0699861de66f1b&quot;,
+ &quot;profile&quot;: &quot;9c493a22d77603dfe6e775df87ccc04021455e68f7875e504900c6e9acfc666e&quot;,
+ &quot;engine&quot;: &quot;kamanu 0.1.0 at 6964c92c9a91&quot;
+}</pre></td><td><pre>{
+ &quot;face&quot;: 100,
+ &quot;ceiling&quot;: 100,
+ &quot;fineness&quot;: &quot;1.000&quot;,
+ &quot;stranded&quot;: 100,
+ &quot;sound&quot;: &quot;MODEL_PROVEN&quot;,
+ &quot;tight&quot;: &quot;REFUTED&quot;
+}</pre></td></tr></table>
+<h2>Check it yourself</h2>
+<p>With node and no network: save this page and <a data-verifier href="../kamanu-verify.cjs">kamanu-verify.cjs</a>,
+then run <code>node kamanu-verify.cjs b271f39d07877083.html KEY</code>, KEY the public key on the registry's index. It checks
+the record's signature and every entry, and names the field that does not match.</p>
+<p>With the wheel: save <a data-record href="b271f39d07877083.json">b271f39d07877083.json</a> (the record) and the key as registry.pub,
+then run <code>kamanu assay --verify b271f39d07877083.json --key registry.pub --recompute</code>.</p>
+<h2>The whole record</h2>
+<table><tr><th>hallmark</th><td><pre>hallmark-v1</pre></td></tr><tr><th>date</th><td><pre>2026-11-26</pre></td></tr><tr><th>limit</th><td><pre>{
+ &quot;policy&quot;: &quot;// kernel: PReqBasis\n// source: https://aws.amazon.com/blogs/opensource/introducing-dogwood-runtime-verification-for-ai-agents/ (section \&quot;Summing: stay under a running total\&quot;)\n// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/guide/04-temporal-expressions.md#evaluation-semantics (windows are closed and reflexive)\n// The blog&#x27;s rule with Pay for Transfer, 24h for 1h and 100 for 5000. The blog gives\n// the forbid; the base permit is what deny-by-default requires.\n\n@id(\&quot;pay_base\&quot;)\npermit (\n    principal,\n    action == Kamanu::Action::\&quot;Pay\&quot;,\n    resource\n);\n\n@id(\&quot;pay_cap\&quot;)\nforbid (\n    principal,\n    action == Kamanu::Action::\&quot;Pay\&quot;,\n    resource\n)\nwhen temporal {\n    sum_within(a, 24h, Kamanu::Action::\&quot;Pay\&quot;::request{ input.amount: a }) &gt; 100\n};\n&quot;,
+ &quot;form&quot;: {
+  &quot;coefficients&quot;: {
+   &quot;request&quot;: 1,
+   &quot;deny&quot;: 0,
+   &quot;response&quot;: 0,
+   &quot;error&quot;: 0,
+   &quot;refund&quot;: 0,
+   &quot;confirm&quot;: 0
+  },
+  &quot;current&quot;: 0,
+  &quot;cap&quot;: 100,
+  &quot;window&quot;: null,
+  &quot;line&quot;: 21
+ }
+}</pre></td></tr><tr><th>engine</th><td><pre>{
+ &quot;profile&quot;: {
+  &quot;id&quot;: &quot;proved-cell&quot;,
+  &quot;constants&quot;: {
+   &quot;Reflexive&quot;: {
+    &quot;value&quot;: true,
+    &quot;source&quot;: &quot;R9&#x27;s hypotheses (evidence/levels/links.json, links.R9.hypotheses.cell)&quot;,
+    &quot;confidence&quot;: &quot;high&quot;
+   },
+   &quot;DenyRecord&quot;: {
+    &quot;value&quot;: &quot;none&quot;,
+    &quot;source&quot;: &quot;R9&#x27;s hypotheses (evidence/levels/links.json, links.R9.hypotheses.cell)&quot;,
+    &quot;confidence&quot;: &quot;high&quot;
+   },
+   &quot;Atomic&quot;: {
+    &quot;value&quot;: true,
+    &quot;source&quot;: &quot;R9&#x27;s hypotheses (evidence/levels/links.json, links.R9.hypotheses.cell)&quot;,
+    &quot;confidence&quot;: &quot;high&quot;
+   },
+   &quot;Lag&quot;: {
+    &quot;value&quot;: 0,
+    &quot;source&quot;: &quot;R9&#x27;s hypotheses (evidence/levels/links.json, links.R9.hypotheses.lag)&quot;,
+    &quot;confidence&quot;: &quot;high&quot;
+   },
+   &quot;Scope&quot;: {
+    &quot;value&quot;: &quot;ScopeGlobal&quot;,
+    &quot;source&quot;: &quot;R9&#x27;s hypotheses (evidence/levels/links.json, links.R9.hypotheses.cell)&quot;,
+    &quot;confidence&quot;: &quot;high&quot;
+   }
+  }
+ }
+}</pre></td></tr><tr><th>bounds</th><td><pre>{
+ &quot;in_flight&quot;: 2,
+ &quot;failures&quot;: 1,
+ &quot;amounts&quot;: [
+  60,
+  30
+ ]
+}</pre></td></tr><tr><th>face</th><td><pre>100</pre></td></tr><tr><th>ceiling</th><td><pre>100</pre></td></tr><tr><th>fineness</th><td><pre>1.000</pre></td></tr><tr><th>stranded</th><td><pre>100</pre></td></tr><tr><th>sound</th><td><pre>{
+ &quot;status&quot;: &quot;holds&quot;,
+ &quot;level&quot;: &quot;MODEL_PROVEN&quot;,
+ &quot;rests_on&quot;: [
+  {
+   &quot;kind&quot;: &quot;method&quot;,
+   &quot;name&quot;: &quot;lint&quot;,
+   &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+  },
+  {
+   &quot;kind&quot;: &quot;constant&quot;,
+   &quot;name&quot;: &quot;Reflexive&quot;,
+   &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+  },
+  {
+   &quot;kind&quot;: &quot;constant&quot;,
+   &quot;name&quot;: &quot;DenyRecord&quot;,
+   &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+  },
+  {
+   &quot;kind&quot;: &quot;constant&quot;,
+   &quot;name&quot;: &quot;Atomic&quot;,
+   &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+  },
+  {
+   &quot;kind&quot;: &quot;constant&quot;,
+   &quot;name&quot;: &quot;Lag&quot;,
+   &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+  },
+  {
+   &quot;kind&quot;: &quot;constant&quot;,
+   &quot;name&quot;: &quot;Scope&quot;,
+   &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+  },
+  {
+   &quot;kind&quot;: &quot;link&quot;,
+   &quot;name&quot;: &quot;R13&quot;,
+   &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+  },
+  {
+   &quot;kind&quot;: &quot;link&quot;,
+   &quot;name&quot;: &quot;R14&quot;,
+   &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+  }
+ ]
+}</pre></td></tr><tr><th>tight</th><td><pre>{
+ &quot;status&quot;: &quot;FAILS&quot;,
+ &quot;level&quot;: &quot;REFUTED&quot;,
+ &quot;rests_on&quot;: [
+  {
+   &quot;kind&quot;: &quot;method&quot;,
+   &quot;name&quot;: &quot;lint&quot;,
+   &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+  },
+  {
+   &quot;kind&quot;: &quot;constant&quot;,
+   &quot;name&quot;: &quot;Reflexive&quot;,
+   &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+  },
+  {
+   &quot;kind&quot;: &quot;constant&quot;,
+   &quot;name&quot;: &quot;DenyRecord&quot;,
+   &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+  },
+  {
+   &quot;kind&quot;: &quot;constant&quot;,
+   &quot;name&quot;: &quot;Atomic&quot;,
+   &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+  },
+  {
+   &quot;kind&quot;: &quot;constant&quot;,
+   &quot;name&quot;: &quot;Lag&quot;,
+   &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+  },
+  {
+   &quot;kind&quot;: &quot;constant&quot;,
+   &quot;name&quot;: &quot;Scope&quot;,
+   &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+  },
+  {
+   &quot;kind&quot;: &quot;link&quot;,
+   &quot;name&quot;: &quot;R13&quot;,
+   &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+  },
+  {
+   &quot;kind&quot;: &quot;link&quot;,
+   &quot;name&quot;: &quot;R14&quot;,
+   &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+  }
+ ]
+}</pre></td></tr><tr><th>verdicts</th><td><pre>[
+ {
+  &quot;rung&quot;: &quot;R0&quot;,
+  &quot;property&quot;: &quot;Sound&quot;,
+  &quot;ledger&quot;: &quot;scope&quot;,
+  &quot;status&quot;: &quot;holds&quot;,
+  &quot;level&quot;: &quot;MODEL_PROVEN&quot;,
+  &quot;rests_on&quot;: [
+   {
+    &quot;kind&quot;: &quot;method&quot;,
+    &quot;name&quot;: &quot;lint&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Reflexive&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;DenyRecord&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Atomic&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Lag&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Scope&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;link&quot;,
+    &quot;name&quot;: &quot;R13&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;link&quot;,
+    &quot;name&quot;: &quot;R14&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   }
+  ],
+  &quot;trace&quot;: null,
+  &quot;witness&quot;: [
+   {
+    &quot;step&quot;: &quot;issue&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: null,
+    &quot;count&quot;: 0,
+    &quot;held&quot;: 0,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;issue&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: null,
+    &quot;count&quot;: 0,
+    &quot;held&quot;: 0,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;decide&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: &quot;permit&quot;,
+    &quot;count&quot;: 60,
+    &quot;held&quot;: 60,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;decide&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: &quot;deny&quot;,
+    &quot;count&quot;: 60,
+    &quot;held&quot;: 60,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   }
+  ],
+  &quot;neighbour&quot;: {
+   &quot;coordinate&quot;: &quot;Atomic&quot;,
+   &quot;value&quot;: false,
+   &quot;status&quot;: &quot;FAILS&quot;
+  }
+ },
+ {
+  &quot;rung&quot;: &quot;R0&quot;,
+  &quot;property&quot;: &quot;Tight&quot;,
+  &quot;ledger&quot;: &quot;scope&quot;,
+  &quot;status&quot;: &quot;holds&quot;,
+  &quot;level&quot;: &quot;MODEL_PROVEN&quot;,
+  &quot;rests_on&quot;: [
+   {
+    &quot;kind&quot;: &quot;method&quot;,
+    &quot;name&quot;: &quot;lint&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Reflexive&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;DenyRecord&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Atomic&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Lag&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Scope&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;link&quot;,
+    &quot;name&quot;: &quot;R13&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;link&quot;,
+    &quot;name&quot;: &quot;R14&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   }
+  ],
+  &quot;trace&quot;: null,
+  &quot;witness&quot;: [
+   {
+    &quot;step&quot;: &quot;issue&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: null,
+    &quot;count&quot;: 0,
+    &quot;held&quot;: 0,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;issue&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: null,
+    &quot;count&quot;: 0,
+    &quot;held&quot;: 0,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;decide&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: &quot;permit&quot;,
+    &quot;count&quot;: 60,
+    &quot;held&quot;: 60,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;decide&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: &quot;deny&quot;,
+    &quot;count&quot;: 60,
+    &quot;held&quot;: 60,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   }
+  ],
+  &quot;neighbour&quot;: {
+   &quot;coordinate&quot;: &quot;DenyRecord&quot;,
+   &quot;value&quot;: &quot;request&quot;,
+   &quot;status&quot;: &quot;FAILS&quot;
+  }
+ },
+ {
+  &quot;rung&quot;: &quot;R1&quot;,
+  &quot;property&quot;: &quot;Sound&quot;,
+  &quot;ledger&quot;: &quot;scope&quot;,
+  &quot;status&quot;: &quot;holds&quot;,
+  &quot;level&quot;: &quot;MODEL_PROVEN&quot;,
+  &quot;rests_on&quot;: [
+   {
+    &quot;kind&quot;: &quot;method&quot;,
+    &quot;name&quot;: &quot;lint&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Reflexive&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;DenyRecord&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Atomic&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Lag&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Scope&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;link&quot;,
+    &quot;name&quot;: &quot;R13&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;link&quot;,
+    &quot;name&quot;: &quot;R14&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   }
+  ],
+  &quot;trace&quot;: null,
+  &quot;witness&quot;: [
+   {
+    &quot;step&quot;: &quot;issue&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: null,
+    &quot;count&quot;: 0,
+    &quot;held&quot;: 0,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;issue&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: null,
+    &quot;count&quot;: 0,
+    &quot;held&quot;: 0,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;decide&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: &quot;permit&quot;,
+    &quot;count&quot;: 60,
+    &quot;held&quot;: 60,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;decide&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: &quot;deny&quot;,
+    &quot;count&quot;: 60,
+    &quot;held&quot;: 60,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   }
+  ],
+  &quot;neighbour&quot;: {
+   &quot;coordinate&quot;: &quot;Atomic&quot;,
+   &quot;value&quot;: false,
+   &quot;status&quot;: &quot;FAILS&quot;
+  }
+ },
+ {
+  &quot;rung&quot;: &quot;R1&quot;,
+  &quot;property&quot;: &quot;Tight&quot;,
+  &quot;ledger&quot;: &quot;scope&quot;,
+  &quot;status&quot;: &quot;FAILS&quot;,
+  &quot;level&quot;: &quot;REFUTED&quot;,
+  &quot;rests_on&quot;: [
+   {
+    &quot;kind&quot;: &quot;method&quot;,
+    &quot;name&quot;: &quot;lint&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Reflexive&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;DenyRecord&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Atomic&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Lag&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Scope&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;link&quot;,
+    &quot;name&quot;: &quot;R13&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;link&quot;,
+    &quot;name&quot;: &quot;R14&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   }
+  ],
+  &quot;trace&quot;: [
+   {
+    &quot;step&quot;: &quot;issue&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: null,
+    &quot;count&quot;: 0,
+    &quot;held&quot;: 0,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;issue&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: null,
+    &quot;count&quot;: 0,
+    &quot;held&quot;: 0,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;decide&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: &quot;permit&quot;,
+    &quot;count&quot;: 60,
+    &quot;held&quot;: 60,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;fail&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: &quot;clean&quot;,
+    &quot;count&quot;: 60,
+    &quot;held&quot;: 0,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 60
+   },
+   {
+    &quot;step&quot;: &quot;reconcile&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: &quot;refund&quot;,
+    &quot;count&quot;: 60,
+    &quot;held&quot;: 0,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;decide&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: &quot;deny&quot;,
+    &quot;count&quot;: 60,
+    &quot;held&quot;: 0,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   }
+  ],
+  &quot;witness&quot;: null,
+  &quot;neighbour&quot;: null
+ },
+ {
+  &quot;rung&quot;: &quot;R2&quot;,
+  &quot;property&quot;: &quot;Sound&quot;,
+  &quot;ledger&quot;: &quot;scope&quot;,
+  &quot;status&quot;: &quot;holds&quot;,
+  &quot;level&quot;: &quot;MODEL_PROVEN&quot;,
+  &quot;rests_on&quot;: [
+   {
+    &quot;kind&quot;: &quot;method&quot;,
+    &quot;name&quot;: &quot;lint&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Reflexive&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;DenyRecord&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Atomic&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Lag&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Scope&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;link&quot;,
+    &quot;name&quot;: &quot;R13&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;link&quot;,
+    &quot;name&quot;: &quot;R14&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   }
+  ],
+  &quot;trace&quot;: null,
+  &quot;witness&quot;: [
+   {
+    &quot;step&quot;: &quot;issue&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: null,
+    &quot;count&quot;: 0,
+    &quot;held&quot;: 0,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;issue&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: null,
+    &quot;count&quot;: 0,
+    &quot;held&quot;: 0,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;decide&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: &quot;permit&quot;,
+    &quot;count&quot;: 60,
+    &quot;held&quot;: 60,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;decide&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: &quot;deny&quot;,
+    &quot;count&quot;: 60,
+    &quot;held&quot;: 60,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   }
+  ],
+  &quot;neighbour&quot;: {
+   &quot;coordinate&quot;: &quot;Atomic&quot;,
+   &quot;value&quot;: false,
+   &quot;status&quot;: &quot;FAILS&quot;
+  }
+ },
+ {
+  &quot;rung&quot;: &quot;R2&quot;,
+  &quot;property&quot;: &quot;Tight&quot;,
+  &quot;ledger&quot;: &quot;scope&quot;,
+  &quot;status&quot;: &quot;FAILS&quot;,
+  &quot;level&quot;: &quot;REFUTED&quot;,
+  &quot;rests_on&quot;: [
+   {
+    &quot;kind&quot;: &quot;method&quot;,
+    &quot;name&quot;: &quot;lint&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Reflexive&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;DenyRecord&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Atomic&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Lag&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;constant&quot;,
+    &quot;name&quot;: &quot;Scope&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;link&quot;,
+    &quot;name&quot;: &quot;R13&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   },
+   {
+    &quot;kind&quot;: &quot;link&quot;,
+    &quot;name&quot;: &quot;R14&quot;,
+    &quot;level&quot;: &quot;MODEL_PROVEN&quot;
+   }
+  ],
+  &quot;trace&quot;: [
+   {
+    &quot;step&quot;: &quot;issue&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: null,
+    &quot;count&quot;: 0,
+    &quot;held&quot;: 0,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;issue&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: null,
+    &quot;count&quot;: 0,
+    &quot;held&quot;: 0,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;decide&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: &quot;permit&quot;,
+    &quot;count&quot;: 60,
+    &quot;held&quot;: 60,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;fail&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: &quot;clean&quot;,
+    &quot;count&quot;: 60,
+    &quot;held&quot;: 0,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 60
+   },
+   {
+    &quot;step&quot;: &quot;reconcile&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: &quot;refund&quot;,
+    &quot;count&quot;: 60,
+    &quot;held&quot;: 0,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   },
+   {
+    &quot;step&quot;: &quot;decide&quot;,
+    &quot;amount&quot;: 60,
+    &quot;outcome&quot;: &quot;deny&quot;,
+    &quot;count&quot;: 60,
+    &quot;held&quot;: 0,
+    &quot;spent&quot;: 0,
+    &quot;doubt&quot;: 0
+   }
+  ],
+  &quot;witness&quot;: null,
+  &quot;neighbour&quot;: null
+ }
+]</pre></td></tr><tr><th>failure</th><td><pre>{
+ &quot;rung&quot;: &quot;R1&quot;,
+ &quot;property&quot;: &quot;Tight&quot;,
+ &quot;trace&quot;: [
+  {
+   &quot;step&quot;: &quot;issue&quot;,
+   &quot;amount&quot;: 60,
+   &quot;outcome&quot;: null,
+   &quot;count&quot;: 0,
+   &quot;held&quot;: 0,
+   &quot;spent&quot;: 0,
+   &quot;doubt&quot;: 0
+  },
+  {
+   &quot;step&quot;: &quot;issue&quot;,
+   &quot;amount&quot;: 60,
+   &quot;outcome&quot;: null,
+   &quot;count&quot;: 0,
+   &quot;held&quot;: 0,
+   &quot;spent&quot;: 0,
+   &quot;doubt&quot;: 0
+  },
+  {
+   &quot;step&quot;: &quot;decide&quot;,
+   &quot;amount&quot;: 60,
+   &quot;outcome&quot;: &quot;permit&quot;,
+   &quot;count&quot;: 60,
+   &quot;held&quot;: 60,
+   &quot;spent&quot;: 0,
+   &quot;doubt&quot;: 0
+  },
+  {
+   &quot;step&quot;: &quot;fail&quot;,
+   &quot;amount&quot;: 60,
+   &quot;outcome&quot;: &quot;clean&quot;,
+   &quot;count&quot;: 60,
+   &quot;held&quot;: 0,
+   &quot;spent&quot;: 0,
+   &quot;doubt&quot;: 60
+  },
+  {
+   &quot;step&quot;: &quot;reconcile&quot;,
+   &quot;amount&quot;: 60,
+   &quot;outcome&quot;: &quot;refund&quot;,
+   &quot;count&quot;: 60,
+   &quot;held&quot;: 0,
+   &quot;spent&quot;: 0,
+   &quot;doubt&quot;: 0
+  },
+  {
+   &quot;step&quot;: &quot;decide&quot;,
+   &quot;amount&quot;: 60,
+   &quot;outcome&quot;: &quot;deny&quot;,
+   &quot;count&quot;: 60,
+   &quot;held&quot;: 0,
+   &quot;spent&quot;: 0,
+   &quot;doubt&quot;: 0
+  }
+ ]
+}</pre></td></tr><tr><th>hypotheses</th><td><pre>[
+ {
+  &quot;name&quot;: &quot;Reflexive&quot;,
+  &quot;value&quot;: true,
+  &quot;status&quot;: &quot;assumed&quot;
+ },
+ {
+  &quot;name&quot;: &quot;DenyRecord&quot;,
+  &quot;value&quot;: &quot;none&quot;,
+  &quot;status&quot;: &quot;assumed&quot;
+ },
+ {
+  &quot;name&quot;: &quot;Atomic&quot;,
+  &quot;value&quot;: true,
+  &quot;status&quot;: &quot;assumed&quot;
+ },
+ {
+  &quot;name&quot;: &quot;Lag&quot;,
+  &quot;value&quot;: 0,
+  &quot;status&quot;: &quot;assumed&quot;
+ },
+ {
+  &quot;name&quot;: &quot;Scope&quot;,
+  &quot;value&quot;: &quot;ScopeGlobal&quot;,
+  &quot;status&quot;: &quot;assumed&quot;
+ },
+ {
+  &quot;name&quot;: &quot;in_flight&quot;,
+  &quot;value&quot;: 2,
+  &quot;status&quot;: &quot;assumed&quot;
+ },
+ {
+  &quot;name&quot;: &quot;failures&quot;,
+  &quot;value&quot;: 1,
+  &quot;status&quot;: &quot;assumed&quot;
+ }
+]</pre></td></tr><tr><th>hashes</th><td><pre>{
+ &quot;policy&quot;: &quot;40724ae7e2d40730ddf2412add4ab54cb65e38063a4568794d0699861de66f1b&quot;,
+ &quot;form&quot;: &quot;b9e57aa70b4bf1bafaee28b53c1edcd9eaa18e1ba6acd443945b5db948acb70a&quot;,
+ &quot;profile&quot;: &quot;9c493a22d77603dfe6e775df87ccc04021455e68f7875e504900c6e9acfc666e&quot;,
+ &quot;lean&quot;: &quot;494d5ee4bcd0b68f7952714755434abef25e24fc98ce05b6d5a75873f0ed63e4&quot;
+}</pre></td></tr><tr><th>commit</th><td><pre>6964c92c9a91653434c926c475a3009ae17b40bf</pre></td></tr><tr><th>version</th><td><pre>0.1.0</pre></td></tr><tr><th>third_party</th><td><pre>false</pre></td></tr><tr><th>notified</th><td><pre>null</pre></td></tr><tr><th>held</th><td><pre>false</pre></td></tr><tr><th>signature</th><td><pre>{
+ &quot;alg&quot;: &quot;Ed25519&quot;,
+ &quot;key&quot;: &quot;7fae4269ca9e431336a566f036d10f8cc2e6702c03af12fbccef3264dd926eab&quot;,
+ &quot;digests&quot;: {
+  &quot;hallmark&quot;: &quot;2d8ee0ef17ae521bc9e86b6922c7fbd9732a972797593ab9924856a4fc67761c&quot;,
+  &quot;date&quot;: &quot;3499899299887758c821185c1130b43595cf63c729475469168ddbce5ec709a7&quot;,
+  &quot;limit&quot;: &quot;6c00c41a7adbda8526f50e416140c846ed68e32277de0524917b7822db0d3950&quot;,
+  &quot;engine&quot;: &quot;4c02b9a7f9dc97f271ec254145551657afeb18ee02ad29a6df48d14c8bd1fd21&quot;,
+  &quot;bounds&quot;: &quot;c203809de6ae58e922ecdaaa2c34991d35db519ffd94c466dcb4488da6de2c64&quot;,
+  &quot;face&quot;: &quot;ad57366865126e55649ecb23ae1d48887544976efea46a48eb5d85a6eeb4d306&quot;,
+  &quot;ceiling&quot;: &quot;ad57366865126e55649ecb23ae1d48887544976efea46a48eb5d85a6eeb4d306&quot;,
+  &quot;fineness&quot;: &quot;4378aa74fc85d114dcad4fdd844486abce348fbb974c0b800a5e013868e20251&quot;,
+  &quot;stranded&quot;: &quot;ad57366865126e55649ecb23ae1d48887544976efea46a48eb5d85a6eeb4d306&quot;,
+  &quot;sound&quot;: &quot;29737dd5dd621239b8107552d0b57d3dcb83304306db43d154ac691c70acb14a&quot;,
+  &quot;tight&quot;: &quot;3379c5bf4b6ff2498ebcb3fde350e02a316e4bd7b9f1abbbf2f527aeb5c21024&quot;,
+  &quot;verdicts&quot;: &quot;ec174889d1db70dde63ac6710cb15d9cfc1476bc2d966e738b6e0abfbac3b67d&quot;,
+  &quot;failure&quot;: &quot;a0b02e4b70f1e9137b6f4505b30da8f1ebf5bd5170d1ac182baa1de7fe80f7c0&quot;,
+  &quot;hypotheses&quot;: &quot;3b6bc6c5f3e0aa407fda84e68d62421b79b8e203602a84cd253dea156e8fe138&quot;,
+  &quot;hashes&quot;: &quot;378ed96e70689a6291ac0cd04e92a11a215bf397efbe9dd690e42887e99f6520&quot;,
+  &quot;commit&quot;: &quot;2a818261c8f7b590ada451e3dbf9c959df4d87f3ae91843260eb13feec95fefa&quot;,
+  &quot;version&quot;: &quot;8e633b4f41f99d4c388915bc852f2143cf4e9f5eaad70c76a81d4f4aa629eec1&quot;,
+  &quot;third_party&quot;: &quot;fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa&quot;,
+  &quot;notified&quot;: &quot;74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b&quot;,
+  &quot;held&quot;: &quot;fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa&quot;
+ },
+ &quot;sig&quot;: &quot;94b532241986880289629cadc660c79f41c085398809588c7ca214181cd3444b1328f58edf69b1939fe8067feec200dde0fc10351b2ccef8d47c2c2139ff4000&quot;
+}</pre></td></tr></table>
+<script type="application/json" id="kamanu-hallmark">{
+ "record": {
+  "hallmark": "hallmark-v1",
+  "date": "2026-11-26",
+  "limit": {
+   "policy": "// kernel: PReqBasis\n// source: https://aws.amazon.com/blogs/opensource/introducing-dogwood-runtime-verification-for-ai-agents/ (section \"Summing: stay under a running total\")\n// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/guide/04-temporal-expressions.md#evaluation-semantics (windows are closed and reflexive)\n// The blog's rule with Pay for Transfer, 24h for 1h and 100 for 5000. The blog gives\n// the forbid; the base permit is what deny-by-default requires.\n\n@id(\"pay_base\")\npermit (\n    principal,\n    action == Kamanu::Action::\"Pay\",\n    resource\n);\n\n@id(\"pay_cap\")\nforbid (\n    principal,\n    action == Kamanu::Action::\"Pay\",\n    resource\n)\nwhen temporal {\n    sum_within(a, 24h, Kamanu::Action::\"Pay\"::request{ input.amount: a }) > 100\n};\n",
+   "form": {
+    "coefficients": {
+     "request": 1,
+     "deny": 0,
+     "response": 0,
+     "error": 0,
+     "refund": 0,
+     "confirm": 0
+    },
+    "current": 0,
+    "cap": 100,
+    "window": null,
+    "line": 21
+   }
+  },
+  "engine": {
+   "profile": {
+    "id": "proved-cell",
+    "constants": {
+     "Reflexive": {
+      "value": true,
+      "source": "R9's hypotheses (evidence/levels/links.json, links.R9.hypotheses.cell)",
+      "confidence": "high"
+     },
+     "DenyRecord": {
+      "value": "none",
+      "source": "R9's hypotheses (evidence/levels/links.json, links.R9.hypotheses.cell)",
+      "confidence": "high"
+     },
+     "Atomic": {
+      "value": true,
+      "source": "R9's hypotheses (evidence/levels/links.json, links.R9.hypotheses.cell)",
+      "confidence": "high"
+     },
+     "Lag": {
+      "value": 0,
+      "source": "R9's hypotheses (evidence/levels/links.json, links.R9.hypotheses.lag)",
+      "confidence": "high"
+     },
+     "Scope": {
+      "value": "ScopeGlobal",
+      "source": "R9's hypotheses (evidence/levels/links.json, links.R9.hypotheses.cell)",
+      "confidence": "high"
+     }
+    }
+   }
+  },
+  "bounds": {
+   "in_flight": 2,
+   "failures": 1,
+   "amounts": [
+    60,
+    30
+   ]
+  },
+  "face": 100,
+  "ceiling": 100,
+  "fineness": "1.000",
+  "stranded": 100,
+  "sound": {
+   "status": "holds",
+   "level": "MODEL_PROVEN",
+   "rests_on": [
+    {
+     "kind": "method",
+     "name": "lint",
+     "level": "MODEL_PROVEN"
+    },
+    {
+     "kind": "constant",
+     "name": "Reflexive",
+     "level": "MODEL_PROVEN"
+    },
+    {
+     "kind": "constant",
+     "name": "DenyRecord",
+     "level": "MODEL_PROVEN"
+    },
+    {
+     "kind": "constant",
+     "name": "Atomic",
+     "level": "MODEL_PROVEN"
+    },
+    {
+     "kind": "constant",
+     "name": "Lag",
+     "level": "MODEL_PROVEN"
+    },
+    {
+     "kind": "constant",
+     "name": "Scope",
+     "level": "MODEL_PROVEN"
+    },
+    {
+     "kind": "link",
+     "name": "R13",
+     "level": "MODEL_PROVEN"
+    },
+    {
+     "kind": "link",
+     "name": "R14",
+     "level": "MODEL_PROVEN"
+    }
+   ]
+  },
+  "tight": {
+   "status": "FAILS",
+   "level": "REFUTED",
+   "rests_on": [
+    {
+     "kind": "method",
+     "name": "lint",
+     "level": "MODEL_PROVEN"
+    },
+    {
+     "kind": "constant",
+     "name": "Reflexive",
+     "level": "MODEL_PROVEN"
+    },
+    {
+     "kind": "constant",
+     "name": "DenyRecord",
+     "level": "MODEL_PROVEN"
+    },
+    {
+     "kind": "constant",
+     "name": "Atomic",
+     "level": "MODEL_PROVEN"
+    },
+    {
+     "kind": "constant",
+     "name": "Lag",
+     "level": "MODEL_PROVEN"
+    },
+    {
+     "kind": "constant",
+     "name": "Scope",
+     "level": "MODEL_PROVEN"
+    },
+    {
+     "kind": "link",
+     "name": "R13",
+     "level": "MODEL_PROVEN"
+    },
+    {
+     "kind": "link",
+     "name": "R14",
+     "level": "MODEL_PROVEN"
+    }
+   ]
+  },
+  "verdicts": [
+   {
+    "rung": "R0",
+    "property": "Sound",
+    "ledger": "scope",
+    "status": "holds",
+    "level": "MODEL_PROVEN",
+    "rests_on": [
+     {
+      "kind": "method",
+      "name": "lint",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Reflexive",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "DenyRecord",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Atomic",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Lag",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Scope",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "link",
+      "name": "R13",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "link",
+      "name": "R14",
+      "level": "MODEL_PROVEN"
+     }
+    ],
+    "trace": null,
+    "witness": [
+     {
+      "step": "issue",
+      "amount": 60,
+      "outcome": null,
+      "count": 0,
+      "held": 0,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "issue",
+      "amount": 60,
+      "outcome": null,
+      "count": 0,
+      "held": 0,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "decide",
+      "amount": 60,
+      "outcome": "permit",
+      "count": 60,
+      "held": 60,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "decide",
+      "amount": 60,
+      "outcome": "deny",
+      "count": 60,
+      "held": 60,
+      "spent": 0,
+      "doubt": 0
+     }
+    ],
+    "neighbour": {
+     "coordinate": "Atomic",
+     "value": false,
+     "status": "FAILS"
+    }
+   },
+   {
+    "rung": "R0",
+    "property": "Tight",
+    "ledger": "scope",
+    "status": "holds",
+    "level": "MODEL_PROVEN",
+    "rests_on": [
+     {
+      "kind": "method",
+      "name": "lint",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Reflexive",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "DenyRecord",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Atomic",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Lag",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Scope",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "link",
+      "name": "R13",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "link",
+      "name": "R14",
+      "level": "MODEL_PROVEN"
+     }
+    ],
+    "trace": null,
+    "witness": [
+     {
+      "step": "issue",
+      "amount": 60,
+      "outcome": null,
+      "count": 0,
+      "held": 0,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "issue",
+      "amount": 60,
+      "outcome": null,
+      "count": 0,
+      "held": 0,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "decide",
+      "amount": 60,
+      "outcome": "permit",
+      "count": 60,
+      "held": 60,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "decide",
+      "amount": 60,
+      "outcome": "deny",
+      "count": 60,
+      "held": 60,
+      "spent": 0,
+      "doubt": 0
+     }
+    ],
+    "neighbour": {
+     "coordinate": "DenyRecord",
+     "value": "request",
+     "status": "FAILS"
+    }
+   },
+   {
+    "rung": "R1",
+    "property": "Sound",
+    "ledger": "scope",
+    "status": "holds",
+    "level": "MODEL_PROVEN",
+    "rests_on": [
+     {
+      "kind": "method",
+      "name": "lint",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Reflexive",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "DenyRecord",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Atomic",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Lag",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Scope",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "link",
+      "name": "R13",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "link",
+      "name": "R14",
+      "level": "MODEL_PROVEN"
+     }
+    ],
+    "trace": null,
+    "witness": [
+     {
+      "step": "issue",
+      "amount": 60,
+      "outcome": null,
+      "count": 0,
+      "held": 0,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "issue",
+      "amount": 60,
+      "outcome": null,
+      "count": 0,
+      "held": 0,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "decide",
+      "amount": 60,
+      "outcome": "permit",
+      "count": 60,
+      "held": 60,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "decide",
+      "amount": 60,
+      "outcome": "deny",
+      "count": 60,
+      "held": 60,
+      "spent": 0,
+      "doubt": 0
+     }
+    ],
+    "neighbour": {
+     "coordinate": "Atomic",
+     "value": false,
+     "status": "FAILS"
+    }
+   },
+   {
+    "rung": "R1",
+    "property": "Tight",
+    "ledger": "scope",
+    "status": "FAILS",
+    "level": "REFUTED",
+    "rests_on": [
+     {
+      "kind": "method",
+      "name": "lint",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Reflexive",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "DenyRecord",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Atomic",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Lag",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Scope",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "link",
+      "name": "R13",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "link",
+      "name": "R14",
+      "level": "MODEL_PROVEN"
+     }
+    ],
+    "trace": [
+     {
+      "step": "issue",
+      "amount": 60,
+      "outcome": null,
+      "count": 0,
+      "held": 0,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "issue",
+      "amount": 60,
+      "outcome": null,
+      "count": 0,
+      "held": 0,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "decide",
+      "amount": 60,
+      "outcome": "permit",
+      "count": 60,
+      "held": 60,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "fail",
+      "amount": 60,
+      "outcome": "clean",
+      "count": 60,
+      "held": 0,
+      "spent": 0,
+      "doubt": 60
+     },
+     {
+      "step": "reconcile",
+      "amount": 60,
+      "outcome": "refund",
+      "count": 60,
+      "held": 0,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "decide",
+      "amount": 60,
+      "outcome": "deny",
+      "count": 60,
+      "held": 0,
+      "spent": 0,
+      "doubt": 0
+     }
+    ],
+    "witness": null,
+    "neighbour": null
+   },
+   {
+    "rung": "R2",
+    "property": "Sound",
+    "ledger": "scope",
+    "status": "holds",
+    "level": "MODEL_PROVEN",
+    "rests_on": [
+     {
+      "kind": "method",
+      "name": "lint",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Reflexive",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "DenyRecord",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Atomic",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Lag",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Scope",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "link",
+      "name": "R13",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "link",
+      "name": "R14",
+      "level": "MODEL_PROVEN"
+     }
+    ],
+    "trace": null,
+    "witness": [
+     {
+      "step": "issue",
+      "amount": 60,
+      "outcome": null,
+      "count": 0,
+      "held": 0,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "issue",
+      "amount": 60,
+      "outcome": null,
+      "count": 0,
+      "held": 0,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "decide",
+      "amount": 60,
+      "outcome": "permit",
+      "count": 60,
+      "held": 60,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "decide",
+      "amount": 60,
+      "outcome": "deny",
+      "count": 60,
+      "held": 60,
+      "spent": 0,
+      "doubt": 0
+     }
+    ],
+    "neighbour": {
+     "coordinate": "Atomic",
+     "value": false,
+     "status": "FAILS"
+    }
+   },
+   {
+    "rung": "R2",
+    "property": "Tight",
+    "ledger": "scope",
+    "status": "FAILS",
+    "level": "REFUTED",
+    "rests_on": [
+     {
+      "kind": "method",
+      "name": "lint",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Reflexive",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "DenyRecord",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Atomic",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Lag",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "constant",
+      "name": "Scope",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "link",
+      "name": "R13",
+      "level": "MODEL_PROVEN"
+     },
+     {
+      "kind": "link",
+      "name": "R14",
+      "level": "MODEL_PROVEN"
+     }
+    ],
+    "trace": [
+     {
+      "step": "issue",
+      "amount": 60,
+      "outcome": null,
+      "count": 0,
+      "held": 0,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "issue",
+      "amount": 60,
+      "outcome": null,
+      "count": 0,
+      "held": 0,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "decide",
+      "amount": 60,
+      "outcome": "permit",
+      "count": 60,
+      "held": 60,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "fail",
+      "amount": 60,
+      "outcome": "clean",
+      "count": 60,
+      "held": 0,
+      "spent": 0,
+      "doubt": 60
+     },
+     {
+      "step": "reconcile",
+      "amount": 60,
+      "outcome": "refund",
+      "count": 60,
+      "held": 0,
+      "spent": 0,
+      "doubt": 0
+     },
+     {
+      "step": "decide",
+      "amount": 60,
+      "outcome": "deny",
+      "count": 60,
+      "held": 0,
+      "spent": 0,
+      "doubt": 0
+     }
+    ],
+    "witness": null,
+    "neighbour": null
+   }
+  ],
+  "failure": {
+   "rung": "R1",
+   "property": "Tight",
+   "trace": [
+    {
+     "step": "issue",
+     "amount": 60,
+     "outcome": null,
+     "count": 0,
+     "held": 0,
+     "spent": 0,
+     "doubt": 0
+    },
+    {
+     "step": "issue",
+     "amount": 60,
+     "outcome": null,
+     "count": 0,
+     "held": 0,
+     "spent": 0,
+     "doubt": 0
+    },
+    {
+     "step": "decide",
+     "amount": 60,
+     "outcome": "permit",
+     "count": 60,
+     "held": 60,
+     "spent": 0,
+     "doubt": 0
+    },
+    {
+     "step": "fail",
+     "amount": 60,
+     "outcome": "clean",
+     "count": 60,
+     "held": 0,
+     "spent": 0,
+     "doubt": 60
+    },
+    {
+     "step": "reconcile",
+     "amount": 60,
+     "outcome": "refund",
+     "count": 60,
+     "held": 0,
+     "spent": 0,
+     "doubt": 0
+    },
+    {
+     "step": "decide",
+     "amount": 60,
+     "outcome": "deny",
+     "count": 60,
+     "held": 0,
+     "spent": 0,
+     "doubt": 0
+    }
+   ]
+  },
+  "hypotheses": [
+   {
+    "name": "Reflexive",
+    "value": true,
+    "status": "assumed"
+   },
+   {
+    "name": "DenyRecord",
+    "value": "none",
+    "status": "assumed"
+   },
+   {
+    "name": "Atomic",
+    "value": true,
+    "status": "assumed"
+   },
+   {
+    "name": "Lag",
+    "value": 0,
+    "status": "assumed"
+   },
+   {
+    "name": "Scope",
+    "value": "ScopeGlobal",
+    "status": "assumed"
+   },
+   {
+    "name": "in_flight",
+    "value": 2,
+    "status": "assumed"
+   },
+   {
+    "name": "failures",
+    "value": 1,
+    "status": "assumed"
+   }
+  ],
+  "hashes": {
+   "policy": "40724ae7e2d40730ddf2412add4ab54cb65e38063a4568794d0699861de66f1b",
+   "form": "b9e57aa70b4bf1bafaee28b53c1edcd9eaa18e1ba6acd443945b5db948acb70a",
+   "profile": "9c493a22d77603dfe6e775df87ccc04021455e68f7875e504900c6e9acfc666e",
+   "lean": "494d5ee4bcd0b68f7952714755434abef25e24fc98ce05b6d5a75873f0ed63e4"
+  },
+  "commit": "6964c92c9a91653434c926c475a3009ae17b40bf",
+  "version": "0.1.0",
+  "third_party": false,
+  "notified": null,
+  "held": false,
+  "signature": {
+   "alg": "Ed25519",
+   "key": "7fae4269ca9e431336a566f036d10f8cc2e6702c03af12fbccef3264dd926eab",
+   "digests": {
+    "hallmark": "2d8ee0ef17ae521bc9e86b6922c7fbd9732a972797593ab9924856a4fc67761c",
+    "date": "3499899299887758c821185c1130b43595cf63c729475469168ddbce5ec709a7",
+    "limit": "6c00c41a7adbda8526f50e416140c846ed68e32277de0524917b7822db0d3950",
+    "engine": "4c02b9a7f9dc97f271ec254145551657afeb18ee02ad29a6df48d14c8bd1fd21",
+    "bounds": "c203809de6ae58e922ecdaaa2c34991d35db519ffd94c466dcb4488da6de2c64",
+    "face": "ad57366865126e55649ecb23ae1d48887544976efea46a48eb5d85a6eeb4d306",
+    "ceiling": "ad57366865126e55649ecb23ae1d48887544976efea46a48eb5d85a6eeb4d306",
+    "fineness": "4378aa74fc85d114dcad4fdd844486abce348fbb974c0b800a5e013868e20251",
+    "stranded": "ad57366865126e55649ecb23ae1d48887544976efea46a48eb5d85a6eeb4d306",
+    "sound": "29737dd5dd621239b8107552d0b57d3dcb83304306db43d154ac691c70acb14a",
+    "tight": "3379c5bf4b6ff2498ebcb3fde350e02a316e4bd7b9f1abbbf2f527aeb5c21024",
+    "verdicts": "ec174889d1db70dde63ac6710cb15d9cfc1476bc2d966e738b6e0abfbac3b67d",
+    "failure": "a0b02e4b70f1e9137b6f4505b30da8f1ebf5bd5170d1ac182baa1de7fe80f7c0",
+    "hypotheses": "3b6bc6c5f3e0aa407fda84e68d62421b79b8e203602a84cd253dea156e8fe138",
+    "hashes": "378ed96e70689a6291ac0cd04e92a11a215bf397efbe9dd690e42887e99f6520",
+    "commit": "2a818261c8f7b590ada451e3dbf9c959df4d87f3ae91843260eb13feec95fefa",
+    "version": "8e633b4f41f99d4c388915bc852f2143cf4e9f5eaad70c76a81d4f4aa629eec1",
+    "third_party": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+    "notified": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "held": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+   },
+   "sig": "94b532241986880289629cadc660c79f41c085398809588c7ca214181cd3444b1328f58edf69b1939fe8067feec200dde0fc10351b2ccef8d47c2c2139ff4000"
+  }
+ },
+ "pyx": [
+  {
+   "hallmark": "b271f39d07877083a075e1ddf9d27e695af5e63b9495e926681c4c4d4ec6791c",
+   "seq": 0,
+   "date": "2026-11-26",
+   "measured_on": {
+    "policy": "40724ae7e2d40730ddf2412add4ab54cb65e38063a4568794d0699861de66f1b",
+    "profile": "9c493a22d77603dfe6e775df87ccc04021455e68f7875e504900c6e9acfc666e",
+    "engine": "kamanu 0.1.0 at 6964c92c9a91"
+   },
+   "valid_through": "2027-02-24",
+   "status": "current",
+   "reason": null,
+   "numbers": {
+    "face": 100,
+    "ceiling": 100,
+    "fineness": "1.000",
+    "stranded": 100,
+    "sound": "MODEL_PROVEN",
+    "tight": "REFUTED"
+   },
+   "signature": {
+    "alg": "Ed25519",
+    "key": "7fae4269ca9e431336a566f036d10f8cc2e6702c03af12fbccef3264dd926eab",
+    "digests": {
+     "hallmark": "88df7b4d52a22d10f527afd61ec5d0960d8753a9855a510c00fd223dcb1438f9",
+     "seq": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+     "date": "3499899299887758c821185c1130b43595cf63c729475469168ddbce5ec709a7",
+     "measured_on": "07936239436bf635658902909301a1b73c9dd278a5e549e959b1f42cb387949a",
+     "valid_through": "fabf907ccfa3d1454f06489fa40426bf95dc2f2f9480d147195cc2f6773b04ed",
+     "status": "694df57a7909d9f9edbd3acb4ccfce5fbee156fab749383121f17fef16bbab57",
+     "reason": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+     "numbers": "1e4ad47f461b282e09fbe5afcf132739f5cdc027b693ed6c448b60f058b42f35"
+    },
+    "sig": "40524c0739afa4ef83c056720543d3949356e3d04a668d5ee6a081ee76eef5e6b8b140ed71bb81882a78a1ebb3518650e41a0d520e3904655b12653b4da4e308"
+   }
+  }
+ ]
+}</script>
+</body>
+</html>

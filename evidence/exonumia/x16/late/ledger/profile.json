@@ -1,0 +1,22 @@
+{
+ "ledger": "shadow-v1",
+ "currency": "usd",
+ "constants": {
+  "refund_restores": {
+   "value": false,
+   "status": "assumed"
+  },
+  "expiry_days": {
+   "value": 7,
+   "status": "assumed"
+  },
+  "over_capture": {
+   "value": 20,
+   "status": "assumed"
+  },
+  "force_post": {
+   "value": 0,
+   "status": "assumed"
+  }
+ }
+}

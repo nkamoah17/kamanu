@@ -1,0 +1,2986 @@
+{
+ "run": "2026-11-12",
+ "date": "2026-11-12T06:00:52.613365Z",
+ "live": true,
+ "region": "us-east-1",
+ "driver": "r4c.py (the owner's R4c driver, outside git), converted by kamanu.ladder.single_writer_probe.record_from_raw",
+ "policies": {
+  "cap-1m": {
+   "shape": "request-sum",
+   "cap": 1000000,
+   "window_s": 60,
+   "source": "progress/ladder/evidence/r4c-2026-11-12/README.md: cap 1,000,000 for e1, 'the same' for e2; e3, e3x and e4 state no cap and are taken as unchanged (amounts of 1, at most 8 per session, so any cap of 8 or more reads the same)"
+  },
+  "cap-100": {
+   "shape": "request-sum",
+   "cap": 100,
+   "window_s": 60,
+   "source": "progress/ladder/evidence/r4c-2026-11-12/e5.json 'cap': 100; window cleared by waiting before each trial"
+  }
+ },
+ "sessions": [
+  {
+   "id": "e1-s0",
+   "session_id": "f87022ae-51cb-481b-869b-b4bcbf089fd3",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:00:52.613904Z",
+     "received": "2026-11-12T06:00:53.936616Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-f80688bce4b0\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:00:52.613365Z",
+     "received": "2026-11-12T06:00:53.882882Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-b111a71cd1bd\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e1-s1",
+   "session_id": "1ca99b19-9c40-4e0f-89b8-c78e3de5e905",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:00:54.939700Z",
+     "received": "2026-11-12T06:00:56.166508Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-280df213cd77\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:00:54.939700Z",
+     "received": "2026-11-12T06:00:56.226924Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-1803c8657bfd\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e1-s2",
+   "session_id": "b77fc599-d10d-4d1f-b9d0-bcd4a2e0d0b4",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:00:57.228809Z",
+     "received": "2026-11-12T06:00:58.533290Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-4f0331a6d7a1\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:00:57.228809Z",
+     "received": "2026-11-12T06:00:58.557149Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-86b6846c6369\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e1-s3",
+   "session_id": "a4cf5245-8042-4b52-bc02-846b3b4f9485",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:00:59.560030Z",
+     "received": "2026-11-12T06:01:00.898603Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-2fda23bd3233\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:00:59.560030Z",
+     "received": "2026-11-12T06:01:00.898603Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-5c850a1585ee\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e1-s4",
+   "session_id": "cbed813e-c38c-405c-86ce-cfedc5d71697",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:01.915746Z",
+     "received": "2026-11-12T06:01:03.160604Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-a5f71c5a2890\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:01.915746Z",
+     "received": "2026-11-12T06:01:03.176610Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-0a5831723dca\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e1-s5",
+   "session_id": "4cf633e0-1f7e-47aa-b950-847363d8644a",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:04.178778Z",
+     "received": "2026-11-12T06:01:05.545050Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-dca5e0f44fcb\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:04.178778Z",
+     "received": "2026-11-12T06:01:05.474782Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-26519cac40a5\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:04.178778Z",
+     "received": "2026-11-12T06:01:05.454716Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-06569fdbdd08\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:04.178778Z",
+     "received": "2026-11-12T06:01:05.507036Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-ce2762c039f3\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e1-s6",
+   "session_id": "c2bf1b1d-3da8-4261-96e9-956e1cedcf20",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:06.547533Z",
+     "received": "2026-11-12T06:01:07.847716Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-f756c0cc76af\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:06.547533Z",
+     "received": "2026-11-12T06:01:07.846186Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-8b57e0101b7f\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:06.548544Z",
+     "received": "2026-11-12T06:01:07.863196Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-ff86726e5be7\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:06.547533Z",
+     "received": "2026-11-12T06:01:07.896977Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-695fed082958\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e1-s7",
+   "session_id": "152e5b1d-f3c2-457c-ab6e-38a5123a9dbc",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:08.905282Z",
+     "received": "2026-11-12T06:01:10.200535Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-384fa42fd34f\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:08.905785Z",
+     "received": "2026-11-12T06:01:10.247620Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-a46cea1b0dae\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:08.905785Z",
+     "received": "2026-11-12T06:01:10.186030Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-0fa8241a5c88\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:08.905282Z",
+     "received": "2026-11-12T06:01:10.243147Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-f41d6c81fae1\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e1-s8",
+   "session_id": "03c85c53-7799-4821-bdb7-347b159250a2",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:11.250373Z",
+     "received": "2026-11-12T06:01:12.571525Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-85124497acdf\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:11.250373Z",
+     "received": "2026-11-12T06:01:12.579003Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-81032022a332\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:11.250373Z",
+     "received": "2026-11-12T06:01:12.653416Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-6977a743f1ff\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:11.250373Z",
+     "received": "2026-11-12T06:01:12.639398Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-7ed7a7e7e75e\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e1-s9",
+   "session_id": "9800384a-3e7e-4fbd-bf24-def3ba0d9d65",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:13.656650Z",
+     "received": "2026-11-12T06:01:14.873066Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-5cb60d2a2978\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:13.656650Z",
+     "received": "2026-11-12T06:01:14.955160Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-cb2f650ec08f\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:13.657730Z",
+     "received": "2026-11-12T06:01:14.928246Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-f7205645bf24\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:13.656650Z",
+     "received": "2026-11-12T06:01:14.950786Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-90261688baa9\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e1-s10",
+   "session_id": "dbb0d028-28e0-42de-b72b-584dd529b053",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:15.958249Z",
+     "received": "2026-11-12T06:01:17.388878Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-3afccf89df72\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:15.958249Z",
+     "received": "2026-11-12T06:01:17.369856Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-a7e12d0aeb85\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:15.958249Z",
+     "received": "2026-11-12T06:01:17.406034Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-4b5369194cbf\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:15.958249Z",
+     "received": "2026-11-12T06:01:17.435460Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"error\":{\"code\":-32005,\"message\":\"Could not determine authorization for this action because multiple actions ran simultaneously in the same session, and authorization depends on session state. Try again later.\"}}",
+     "verdict_by_driver": "UNDET"
+    },
+    {
+     "sent": "2026-11-12T06:01:15.958249Z",
+     "received": "2026-11-12T06:01:17.339689Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-272caad672d8\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:15.958249Z",
+     "received": "2026-11-12T06:01:17.424216Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":5,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-3e1a6af5794a\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:15.958249Z",
+     "received": "2026-11-12T06:01:17.468121Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":6,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-f098c1601d11\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:15.958249Z",
+     "received": "2026-11-12T06:01:17.407568Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":7,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-4cb792e97187\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e1-s11",
+   "session_id": "4ae9eda9-dab3-4f31-b55d-465e7a4408a8",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:18.472233Z",
+     "received": "2026-11-12T06:01:19.842733Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-7f7cb2264248\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:18.472233Z",
+     "received": "2026-11-12T06:01:19.904400Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-22ee4414f750\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:18.472233Z",
+     "received": "2026-11-12T06:01:19.784742Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-20d6f3b6d24b\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:18.472233Z",
+     "received": "2026-11-12T06:01:19.952546Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-983952f7fe05\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:18.474238Z",
+     "received": "2026-11-12T06:01:19.903820Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-bf091348eb08\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:18.472233Z",
+     "received": "2026-11-12T06:01:19.845748Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":5,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-980c83336d61\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:18.472233Z",
+     "received": "2026-11-12T06:01:19.885621Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":6,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-4fff1fa830ad\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:18.472233Z",
+     "received": "2026-11-12T06:01:19.825299Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":7,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-8576af570733\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e1-s12",
+   "session_id": "557dfc8f-e8f6-4a77-9fe1-0784288213d8",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:20.956157Z",
+     "received": "2026-11-12T06:01:22.404122Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-5f95907fcfdb\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:20.956157Z",
+     "received": "2026-11-12T06:01:22.407356Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-82fda9726f4f\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:20.956157Z",
+     "received": "2026-11-12T06:01:22.466750Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-132ae7a0c942\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:20.956157Z",
+     "received": "2026-11-12T06:01:22.547105Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-a89837146753\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:20.956157Z",
+     "received": "2026-11-12T06:01:22.485677Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-3518d13b99f1\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:20.956157Z",
+     "received": "2026-11-12T06:01:22.343276Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":5,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-f825ab521c67\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:20.956157Z",
+     "received": "2026-11-12T06:01:22.431344Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":6,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-702009c6accc\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:20.956157Z",
+     "received": "2026-11-12T06:01:22.451467Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":7,\"error\":{\"code\":-32005,\"message\":\"Could not determine authorization for this action because multiple actions ran simultaneously in the same session, and authorization depends on session state. Try again later.\"}}",
+     "verdict_by_driver": "UNDET"
+    }
+   ]
+  },
+  {
+   "id": "e1-s13",
+   "session_id": "2473f845-0081-4526-adf1-f3b7e42853cb",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:23.553082Z",
+     "received": "2026-11-12T06:01:25.253852Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-dff32860c641\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:23.553082Z",
+     "received": "2026-11-12T06:01:24.987842Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-0fce22045f72\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:23.553082Z",
+     "received": "2026-11-12T06:01:24.935919Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-e40df871aa55\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:23.553082Z",
+     "received": "2026-11-12T06:01:24.940166Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-f304e78c4bf1\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:23.553082Z",
+     "received": "2026-11-12T06:01:25.022161Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-d22ab32bb9c6\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:23.553082Z",
+     "received": "2026-11-12T06:01:24.971408Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":5,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-2188833b1634\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:23.553082Z",
+     "received": "2026-11-12T06:01:25.041884Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":6,\"error\":{\"code\":-32005,\"message\":\"Could not determine authorization for this action because multiple actions ran simultaneously in the same session, and authorization depends on session state. Try again later.\"}}",
+     "verdict_by_driver": "UNDET"
+    },
+    {
+     "sent": "2026-11-12T06:01:23.553082Z",
+     "received": "2026-11-12T06:01:24.918039Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":7,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-91931af9a1a2\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e1-s14",
+   "session_id": "e12a0ab4-61bd-43ba-8ccc-adfd8d3d6e3f",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:26.258792Z",
+     "received": "2026-11-12T06:01:27.699838Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-da1645cafa19\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:26.258792Z",
+     "received": "2026-11-12T06:01:27.649419Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-82ee4cd710b2\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:26.259190Z",
+     "received": "2026-11-12T06:01:27.809270Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-8df0190e3fa2\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:26.259190Z",
+     "received": "2026-11-12T06:01:27.615854Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-12e890632ca1\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:26.259190Z",
+     "received": "2026-11-12T06:01:27.699838Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-362a7a15c9d9\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:26.259190Z",
+     "received": "2026-11-12T06:01:27.681032Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":5,\"error\":{\"code\":-32005,\"message\":\"Could not determine authorization for this action because multiple actions ran simultaneously in the same session, and authorization depends on session state. Try again later.\"}}",
+     "verdict_by_driver": "UNDET"
+    },
+    {
+     "sent": "2026-11-12T06:01:26.259190Z",
+     "received": "2026-11-12T06:01:27.636767Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":6,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-6415849385d3\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:01:26.257782Z",
+     "received": "2026-11-12T06:01:27.633246Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":7,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-b565a798d806\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s15",
+   "session_id": "28e718de-2b04-4793-9d42-1cb5ce058b94",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:30.676431Z",
+     "received": "2026-11-12T06:01:31.845343Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-ca8cd3cb3763\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s16",
+   "session_id": "d053500e-2bb0-4761-a8e2-dcc91ad58277",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:30.676431Z",
+     "received": "2026-11-12T06:01:31.869465Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-c37eb8505285\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s17",
+   "session_id": "16eeb06e-3dfd-4bd4-a798-786135508c62",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:32.871844Z",
+     "received": "2026-11-12T06:01:35.028056Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-8eee26e3e293\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s18",
+   "session_id": "3faa82c9-4540-4a36-a708-6adba7507cc3",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:32.871844Z",
+     "received": "2026-11-12T06:01:34.060532Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-dd6ee03debd3\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s19",
+   "session_id": "89e44af2-15ce-439b-b361-cf294b8d7358",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:36.029977Z",
+     "received": "2026-11-12T06:01:37.349036Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-4e48c35e1a13\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s20",
+   "session_id": "39bd60e1-d36f-4b29-91a5-6f3f313a365e",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:36.029977Z",
+     "received": "2026-11-12T06:01:37.285552Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-8f5b8707ab48\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s21",
+   "session_id": "e7383b7c-a38c-45e7-a18c-f71293e45c20",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:38.353442Z",
+     "received": "2026-11-12T06:01:39.576457Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-40d2f0196c32\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s22",
+   "session_id": "14550fd2-2374-4a10-94a6-2eb4eb354063",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:38.353442Z",
+     "received": "2026-11-12T06:01:39.608777Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-910e6332f5d7\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s23",
+   "session_id": "485df7fa-60f1-450b-a16f-4ff80be7bb19",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:40.619359Z",
+     "received": "2026-11-12T06:01:42.390626Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-33112a0d4d9d\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s24",
+   "session_id": "b2a1ba86-0d0d-4333-8629-962623b2a201",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:40.619359Z",
+     "received": "2026-11-12T06:01:43.197708Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-72117c92bd62\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s25",
+   "session_id": "cac20a5c-0a52-438c-9afa-7cfa4d1da811",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:44.200350Z",
+     "received": "2026-11-12T06:01:46.059534Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-2b9056317c93\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s26",
+   "session_id": "eb0dd07d-3f8f-41a0-b9b1-fb51da2be704",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:44.200350Z",
+     "received": "2026-11-12T06:01:46.080993Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-880b5bdbdf6f\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s27",
+   "session_id": "81be414b-a07e-4a0d-a7fd-5550268f1023",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:44.200350Z",
+     "received": "2026-11-12T06:01:46.032332Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-a7af979b3a3b\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s28",
+   "session_id": "552e1617-58bd-464a-820f-64447718a7dd",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:44.200350Z",
+     "received": "2026-11-12T06:01:46.111726Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-5a34942f35d3\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s29",
+   "session_id": "67d13080-992d-47d3-8d37-9edb948a0cdf",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:47.114140Z",
+     "received": "2026-11-12T06:01:48.409947Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-48cafaf094c8\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s30",
+   "session_id": "18b0d940-2029-4a5d-a1e6-6248d7d6b1bc",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:47.114140Z",
+     "received": "2026-11-12T06:01:48.557384Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-a0fe18e49c39\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s31",
+   "session_id": "74c369ca-0eab-4459-95a4-887c79ed95dc",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:47.114140Z",
+     "received": "2026-11-12T06:01:48.429600Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-85da1081b24c\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s32",
+   "session_id": "2de96df6-c32b-4038-8789-b1073990a660",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:47.114140Z",
+     "received": "2026-11-12T06:01:48.409947Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-d86d21115c53\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s33",
+   "session_id": "6c5bf357-1442-4f39-9d4d-d94488aac20e",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:49.568418Z",
+     "received": "2026-11-12T06:01:50.828512Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-2abc22e11a18\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s34",
+   "session_id": "83dbf5d9-a36b-45dc-a5a6-3986def00498",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:49.568935Z",
+     "received": "2026-11-12T06:01:50.807240Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-9065e2a910bc\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s35",
+   "session_id": "154af6ac-a1dd-4442-8049-4243f3c92f6f",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:49.568935Z",
+     "received": "2026-11-12T06:01:50.876159Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-1ad525fd4d9e\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s36",
+   "session_id": "99a72db6-d4ce-42c1-b87e-df6e349b5f74",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:49.568418Z",
+     "received": "2026-11-12T06:01:50.799568Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-4139a275bf3d\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s37",
+   "session_id": "77221d64-e33c-4649-aef2-9614a14c5888",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:51.882250Z",
+     "received": "2026-11-12T06:01:53.258312Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-ba1e45387cc0\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s38",
+   "session_id": "62189540-1344-40db-826c-842e3d4102c5",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:51.882250Z",
+     "received": "2026-11-12T06:01:53.288219Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-7ebdfd428ac1\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s39",
+   "session_id": "7062bc39-5054-40b9-a389-53cd3d0cce2a",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:51.882250Z",
+     "received": "2026-11-12T06:01:53.225742Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-19febae3d496\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s40",
+   "session_id": "7b51d0b1-663f-477a-ad9f-308505a75aa8",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:51.882250Z",
+     "received": "2026-11-12T06:01:53.273963Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-5bde621ee090\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s41",
+   "session_id": "43463dd2-86e4-40f0-a663-57d684b2ff19",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:54.291777Z",
+     "received": "2026-11-12T06:01:55.651075Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-70e85aee93d9\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s42",
+   "session_id": "99762a28-c1e2-42f4-83fa-7cfeaca1a715",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:54.293783Z",
+     "received": "2026-11-12T06:01:55.651075Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-eb6af71b51ce\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s43",
+   "session_id": "889979dd-7ca0-4e0c-95bc-ab8303827ee7",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:54.293783Z",
+     "received": "2026-11-12T06:01:55.635831Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-23729a636a01\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s44",
+   "session_id": "29304ca6-9372-4b61-b915-835dc4f29079",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:54.291777Z",
+     "received": "2026-11-12T06:01:55.631793Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-e99f2a70a515\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s45",
+   "session_id": "db5942ad-fff4-46ca-9433-a44e6856b536",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:56.654272Z",
+     "received": "2026-11-12T06:01:58.119078Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-04b356f4dca6\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s46",
+   "session_id": "aae9f149-0da2-4d8e-a3a6-1d6f88e936f6",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:56.654272Z",
+     "received": "2026-11-12T06:01:58.077825Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-cecaa10591d7\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s47",
+   "session_id": "5c706445-fcad-4c36-a3ff-6ad93814fd7d",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:56.654272Z",
+     "received": "2026-11-12T06:01:58.123968Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-1a4d46e4caef\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s48",
+   "session_id": "3b03d7e7-fb41-4604-b8e0-71068c88a7bb",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:56.654272Z",
+     "received": "2026-11-12T06:01:58.201450Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-f1be5b5f63c3\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s49",
+   "session_id": "8bda57e4-a5df-44e8-89e8-ac7b21aa02ba",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:56.654272Z",
+     "received": "2026-11-12T06:01:58.199884Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-0a69194217f4\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s50",
+   "session_id": "e0695c9c-4c30-4694-bddc-34038b922558",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:56.654272Z",
+     "received": "2026-11-12T06:01:58.124967Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":5,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-ea068a316aad\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s51",
+   "session_id": "4d793c8b-a421-4f34-b691-110c7a0a4ef4",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:56.654272Z",
+     "received": "2026-11-12T06:01:58.090409Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":6,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-91a6b15ee86e\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s52",
+   "session_id": "8305d11f-5197-4bbb-975c-150092fa7204",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:56.654272Z",
+     "received": "2026-11-12T06:01:58.156814Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":7,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-69473a841f2b\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s53",
+   "session_id": "ec9067d6-a6f7-446e-acf7-75ed6c0d8525",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:59.205399Z",
+     "received": "2026-11-12T06:02:00.629789Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-ab0f9999ab6b\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s54",
+   "session_id": "d5d991ca-b3af-4597-9751-e1c3aa1067f0",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:59.206586Z",
+     "received": "2026-11-12T06:02:00.626679Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-033123dfeb78\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s55",
+   "session_id": "2c6ea8b6-7314-4389-8cf7-1d981b6b6608",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:59.206586Z",
+     "received": "2026-11-12T06:02:00.601103Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-054b14a7fb71\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s56",
+   "session_id": "675ada6a-dcb8-4c0e-8bc6-ca1b09757bb9",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:59.206586Z",
+     "received": "2026-11-12T06:02:00.629789Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-90d08fff52c0\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s57",
+   "session_id": "55858942-8dcf-4f8a-ae83-a1c7705b0959",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:59.207088Z",
+     "received": "2026-11-12T06:02:00.602797Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-5a9dde3da69d\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s58",
+   "session_id": "86465fa8-79e7-43d6-b696-42530c4cdd1e",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:59.206586Z",
+     "received": "2026-11-12T06:02:00.603946Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":5,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-5acab88b3871\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s59",
+   "session_id": "8b217ec0-a98f-4288-a014-3e3581f980a6",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:59.207088Z",
+     "received": "2026-11-12T06:02:00.583728Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":6,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-ac14bb66f833\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s60",
+   "session_id": "837ee1d3-6f2f-41ba-b3a9-0ee3b9150f50",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:01:59.205399Z",
+     "received": "2026-11-12T06:02:00.577151Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":7,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-1d80ee17aab4\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s61",
+   "session_id": "3d9f183d-ccd9-465e-a080-6b83d16a34f1",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:01.640306Z",
+     "received": "2026-11-12T06:02:02.992334Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-377e5ed0f79a\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s62",
+   "session_id": "092df0dc-1019-4d66-b732-b34c025c01f0",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:01.640306Z",
+     "received": "2026-11-12T06:02:03.082179Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-437866bcb4a0\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s63",
+   "session_id": "4f1548a4-20ca-400e-91e0-82109db74c22",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:01.640306Z",
+     "received": "2026-11-12T06:02:02.981271Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-09333015f155\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s64",
+   "session_id": "5b31490d-7db2-4356-b29d-71427d270641",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:01.640306Z",
+     "received": "2026-11-12T06:02:03.008086Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-0e7dd7871393\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s65",
+   "session_id": "030432c0-b9c3-446a-a83d-b8f7145567c6",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:01.640306Z",
+     "received": "2026-11-12T06:02:03.072524Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-709cbea9d1aa\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s66",
+   "session_id": "453198a5-24a8-48b7-b858-6f137d18ed64",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:01.641307Z",
+     "received": "2026-11-12T06:02:02.955497Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":5,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-9051624a1ce9\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s67",
+   "session_id": "1cd3177e-d864-4b3d-8169-a226dced8e38",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:01.641307Z",
+     "received": "2026-11-12T06:02:03.032134Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":6,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-dbc9b7b3e5ac\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s68",
+   "session_id": "05fec76f-bb84-40d7-8790-11fed58f7780",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:01.639302Z",
+     "received": "2026-11-12T06:02:02.919840Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":7,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-7a08d266287b\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s69",
+   "session_id": "de384ea7-7857-4974-9aba-396a3c74f0b2",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:04.090453Z",
+     "received": "2026-11-12T06:02:05.433738Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-754027ba9e86\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s70",
+   "session_id": "c6b04d33-cbd5-4074-a78b-c10c94c9d01d",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:04.090453Z",
+     "received": "2026-11-12T06:02:05.519620Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-ea4250e58ffe\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s71",
+   "session_id": "eae20a37-7fd2-4405-9053-83b423c5b52c",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:04.090453Z",
+     "received": "2026-11-12T06:02:05.564951Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-726e912c0afa\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s72",
+   "session_id": "4b47a6f0-b221-4a21-aa67-88ed2f63c294",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:04.090453Z",
+     "received": "2026-11-12T06:02:05.602144Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-8c3dd87c32af\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s73",
+   "session_id": "ba14394f-1549-4c4e-9e86-b36051904ea5",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:04.090453Z",
+     "received": "2026-11-12T06:02:05.551845Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-3405f04e309d\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s74",
+   "session_id": "7f39b099-4d62-4942-a47c-6f67927f9f3e",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:04.090453Z",
+     "received": "2026-11-12T06:02:05.526117Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":5,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-bf957baf2486\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s75",
+   "session_id": "b84f8d62-78a1-425f-b02c-f742131f537f",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:04.091453Z",
+     "received": "2026-11-12T06:02:05.475686Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":6,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-2723fd0def7a\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s76",
+   "session_id": "c2f71c4c-3f7a-4265-bd98-60c9f7311e77",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:04.089450Z",
+     "received": "2026-11-12T06:02:05.529822Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":7,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-7bce4c43b607\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s77",
+   "session_id": "3388f2c7-b7a2-46b8-a1ef-7c7bc65a8d5e",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:06.605471Z",
+     "received": "2026-11-12T06:02:08.022997Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-c7ca132c848a\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s78",
+   "session_id": "c1587cbd-1ed7-415c-8769-4cf4f17319af",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:06.605471Z",
+     "received": "2026-11-12T06:02:08.020996Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-7a951d20745e\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s79",
+   "session_id": "94c203c7-b120-4295-b840-f2f2b6f33f1a",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:06.605471Z",
+     "received": "2026-11-12T06:02:08.022997Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-5829829e2b08\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s80",
+   "session_id": "2cc7d8fc-2891-47b4-bc52-1542855b7bb2",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:06.605471Z",
+     "received": "2026-11-12T06:02:07.976412Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-3d79c10513eb\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s81",
+   "session_id": "0be84939-424a-45a4-aba8-b3505349cc08",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:06.605471Z",
+     "received": "2026-11-12T06:02:07.976412Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-4363edd9804f\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s82",
+   "session_id": "ccb20f85-b221-43da-af2d-20a81dd1e2aa",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:06.605471Z",
+     "received": "2026-11-12T06:02:08.022997Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":5,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-216527dde77f\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s83",
+   "session_id": "77993dbe-06d2-4974-a817-4623857cfdf6",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:06.605471Z",
+     "received": "2026-11-12T06:02:08.020996Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":6,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-0e6606b08a9d\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e2-s84",
+   "session_id": "99644ea5-56ed-42db-a3b2-e6e3cf97ab4a",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:06.605471Z",
+     "received": "2026-11-12T06:02:07.943451Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":7,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-e2bb289fb035\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e3-s85",
+   "session_id": "9ebe3159-496c-451e-aba7-473667aba677",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": null,
+     "held_at": "2026-11-12T06:02:16.107810Z",
+     "received": "2026-11-12T06:02:17.713294Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-299e3384a260\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"5ca69c57a1ac41aa8dab0f7c985c3cf5\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:02:16.107810Z",
+     "received": "2026-11-12T06:02:17.308474Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-643a477a17a5\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e3-s86",
+   "session_id": "5333b308-68ed-4844-8a9e-36ea4d24891a",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": null,
+     "held_at": "2026-11-12T06:02:21.158511Z",
+     "received": "2026-11-12T06:02:22.164846Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-dce379801e94\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"1f4a79aee105492fb94e5f198076a715\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:02:21.158511Z",
+     "received": "2026-11-12T06:02:21.794628Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-cb4ce0aff2d6\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e3-s87",
+   "session_id": "bb8ee1cb-5ada-4d67-81e4-7b3e73013821",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": null,
+     "held_at": "2026-11-12T06:02:25.522490Z",
+     "received": "2026-11-12T06:02:26.505858Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-f0244a7cb0a5\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"3f9728e336164f469d304b46e123a5e8\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:02:25.522490Z",
+     "received": "2026-11-12T06:02:26.098252Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-17fa45131a5b\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e3-s88",
+   "session_id": "1917d8de-175b-4f72-8dc5-ae2bbcf39e28",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": null,
+     "held_at": "2026-11-12T06:02:29.742124Z",
+     "received": "2026-11-12T06:02:30.549812Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-729480d97d27\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"1a6181acac114563b97346b749754463\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:02:29.742124Z",
+     "received": "2026-11-12T06:02:30.176375Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-d51f96751187\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e3-s89",
+   "session_id": "a5fd5f53-46f1-47ad-b0bb-6925810ea02a",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": null,
+     "held_at": "2026-11-12T06:02:33.790292Z",
+     "received": "2026-11-12T06:02:34.726920Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-7f132ee284b0\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"2bb9ed1d246642aebc1f582c8368844b\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:02:33.790292Z",
+     "received": "2026-11-12T06:02:34.393566Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-092a3945c2f2\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e3x-s90",
+   "session_id": "f4f086b6-35ec-4f3b-af5d-e6245353bd16",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": null,
+     "held_at": "2026-11-12T06:02:43.510056Z",
+     "received": "2026-11-12T06:02:45.205032Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-e868f58b4aa3\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"75e539c955684aa7934160c6c5ec9418\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e3x-s91",
+   "session_id": "045dfe0e-3c3d-44bb-98fe-56b77c375484",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:43.510056Z",
+     "received": "2026-11-12T06:02:44.770401Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-9dc811e6db5d\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e3x-s92",
+   "session_id": "eda5853f-6a7f-45b1-aa74-3ee08754a38c",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": null,
+     "held_at": "2026-11-12T06:02:48.409100Z",
+     "received": "2026-11-12T06:02:49.427138Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-79428dcfa2c5\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"612bc680f1a64d74b19fb19a07667dbc\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e3x-s93",
+   "session_id": "0756f097-86c5-4210-99b7-143b761be18a",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:48.409100Z",
+     "received": "2026-11-12T06:02:49.038830Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-b4ff39bedaaf\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e3x-s94",
+   "session_id": "80028126-c63e-4840-b822-20cfbbc21aa5",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": null,
+     "held_at": "2026-11-12T06:02:52.792514Z",
+     "received": "2026-11-12T06:02:53.549852Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-a3f0bf29060c\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"bd5a060f71a54c558743986bb76a9f60\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e3x-s95",
+   "session_id": "53b0e36b-14a8-47a4-86aa-a38212b2de60",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:52.792514Z",
+     "received": "2026-11-12T06:02:53.210012Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-4beff45171df\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e3x-s96",
+   "session_id": "77766525-4bc4-44f7-8a66-da6e22dab928",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": null,
+     "held_at": "2026-11-12T06:02:56.823457Z",
+     "received": "2026-11-12T06:02:57.660078Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-33f199744bb9\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"e6563cc00a1045189165e48e2778cf76\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e3x-s97",
+   "session_id": "303d82fe-cad4-46a4-904b-9b082ae1431c",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:02:56.823457Z",
+     "received": "2026-11-12T06:02:57.352610Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-549dbcea9c05\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e3x-s98",
+   "session_id": "9212f4a3-2538-4fa0-ad77-8a2ff1cce41c",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": null,
+     "held_at": "2026-11-12T06:03:00.946918Z",
+     "received": "2026-11-12T06:03:01.870752Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-065ee3a79759\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"c97e5e3285084e21aa8ea12def3354d9\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e3x-s99",
+   "session_id": "8a2f802d-d16c-42c7-a012-2ac6be0e2f6d",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:03:00.946918Z",
+     "received": "2026-11-12T06:03:01.529341Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-61af01ba0160\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e4-s100",
+   "session_id": "1186ca96-ff13-4534-823e-890d2d2bf58c",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:03:04.347644Z",
+     "received": "2026-11-12T06:03:05.342004Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-e6e7191e0bbf\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:05.342004Z",
+     "received": "2026-11-12T06:03:05.798324Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-ca8da134876a\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:05.798324Z",
+     "received": "2026-11-12T06:03:06.290201Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-4c1a556d716c\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:06.290201Z",
+     "received": "2026-11-12T06:03:06.795701Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-dba333d61679\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:06.795701Z",
+     "received": "2026-11-12T06:03:07.261823Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-93eb0a474bfc\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:07.261823Z",
+     "received": "2026-11-12T06:03:07.711132Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":5,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-36646c0d8cc9\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:07.711132Z",
+     "received": "2026-11-12T06:03:08.142218Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":6,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-814d8e773b86\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:08.142218Z",
+     "received": "2026-11-12T06:03:08.617346Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":7,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-5e7834bcccbd\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e4-s101",
+   "session_id": "233d2e43-1d08-4769-aec2-e5641792b0ad",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:03:08.618375Z",
+     "received": "2026-11-12T06:03:09.010296Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-970ef07c4af6\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:09.010296Z",
+     "received": "2026-11-12T06:03:09.485620Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-1bc5629eac91\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:09.485620Z",
+     "received": "2026-11-12T06:03:09.936736Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-10629b65fcd5\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:09.936736Z",
+     "received": "2026-11-12T06:03:10.362797Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-fec1b6487090\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:10.362797Z",
+     "received": "2026-11-12T06:03:10.758655Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-2ee2bae3d240\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:10.758655Z",
+     "received": "2026-11-12T06:03:11.233658Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":5,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-d011d804d28e\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:11.233658Z",
+     "received": "2026-11-12T06:03:11.711791Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":6,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-ae09043b4942\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:11.711791Z",
+     "received": "2026-11-12T06:03:12.128247Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":7,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-ef6daf60f626\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e4-s102",
+   "session_id": "bb9cc19c-202c-455d-a980-84bbf23d371c",
+   "policy": "cap-1m",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:03:12.128247Z",
+     "received": "2026-11-12T06:03:12.538985Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-aec3ce3a255e\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:12.538985Z",
+     "received": "2026-11-12T06:03:13.014076Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-1216f2327461\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:13.014076Z",
+     "received": "2026-11-12T06:03:13.493936Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-9ba946fedd8c\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:13.493936Z",
+     "received": "2026-11-12T06:03:13.910323Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-5a700f2762a2\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:13.910323Z",
+     "received": "2026-11-12T06:03:14.443828Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-7eff8d427029\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:14.443828Z",
+     "received": "2026-11-12T06:03:14.909093Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":5,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-dbdc527f694d\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:14.909093Z",
+     "received": "2026-11-12T06:03:15.300219Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":6,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-70693fc4915b\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:03:15.300219Z",
+     "received": "2026-11-12T06:03:15.705865Z",
+     "amount": 1,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":7,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-dffae58c6725\\\",\\\"amount\\\":1,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e5-s103",
+   "session_id": "fd415fee-37e4-485e-ac25-b033d5d0d0b7",
+   "policy": "cap-100",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:04:57.179956Z",
+     "received": "2026-11-12T06:04:58.614052Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-ec4ab57cbca4\\\",\\\"amount\\\":60,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:04:57.179956Z",
+     "received": "2026-11-12T06:04:58.658281Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32002,\"message\":\"Tool Execution Denied: Tool call not allowed due to policy enforcement [No policy applies to the request (denied by default).]\"}}",
+     "verdict_by_driver": "DENY"
+    },
+    {
+     "sent": "2026-11-12T06:04:57.179956Z",
+     "received": "2026-11-12T06:04:58.780842Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32002,\"message\":\"Tool Execution Denied: Tool call not allowed due to policy enforcement [No policy applies to the request (denied by default).]\"}}",
+     "verdict_by_driver": "DENY"
+    },
+    {
+     "sent": "2026-11-12T06:04:57.179956Z",
+     "received": "2026-11-12T06:04:58.675758Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"error\":{\"code\":-32002,\"message\":\"Tool Execution Denied: Tool call not allowed due to policy enforcement [No policy applies to the request (denied by default).]\"}}",
+     "verdict_by_driver": "DENY"
+    }
+   ]
+  },
+  {
+   "id": "e5-s104",
+   "session_id": "78e7c890-0088-4d15-8a10-72600adc9de0",
+   "policy": "cap-100",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:06:03.783270Z",
+     "received": "2026-11-12T06:06:05.043094Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-94bbd70fcda8\\\",\\\"amount\\\":60,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e5-s105",
+   "session_id": "c6f139e6-f6f2-4cdf-9f68-dc732399810c",
+   "policy": "cap-100",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:06:03.784274Z",
+     "received": "2026-11-12T06:06:05.083210Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-f445c564a2e6\\\",\\\"amount\\\":60,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e5-s106",
+   "session_id": "aeb2c437-cb02-4e82-b36a-12e5fb6729cb",
+   "policy": "cap-100",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:06:03.784274Z",
+     "received": "2026-11-12T06:06:05.363344Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-f9b5ae3600fd\\\",\\\"amount\\\":60,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e5-s107",
+   "session_id": "e15a3e0e-60b5-488d-ad56-1f4ec2cab44a",
+   "policy": "cap-100",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:06:03.783270Z",
+     "received": "2026-11-12T06:06:05.101706Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-c2550c22a86c\\\",\\\"amount\\\":60,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e5-s108",
+   "session_id": "c2018223-2437-46c3-a4bc-04f295b0c4b1",
+   "policy": "cap-100",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:07:10.373534Z",
+     "received": "2026-11-12T06:07:11.757164Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-dad59aa43a8d\\\",\\\"amount\\\":60,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:07:10.373534Z",
+     "received": "2026-11-12T06:07:11.818417Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32002,\"message\":\"Tool Execution Denied: Tool call not allowed due to policy enforcement [No policy applies to the request (denied by default).]\"}}",
+     "verdict_by_driver": "DENY"
+    },
+    {
+     "sent": "2026-11-12T06:07:10.373534Z",
+     "received": "2026-11-12T06:07:11.880102Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32002,\"message\":\"Tool Execution Denied: Tool call not allowed due to policy enforcement [No policy applies to the request (denied by default).]\"}}",
+     "verdict_by_driver": "DENY"
+    },
+    {
+     "sent": "2026-11-12T06:07:10.373534Z",
+     "received": "2026-11-12T06:07:11.803814Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"error\":{\"code\":-32002,\"message\":\"Tool Execution Denied: Tool call not allowed due to policy enforcement [No policy applies to the request (denied by default).]\"}}",
+     "verdict_by_driver": "DENY"
+    }
+   ]
+  },
+  {
+   "id": "e5-s109",
+   "session_id": "86bf5a08-7983-44ca-ae50-db3d646321d2",
+   "policy": "cap-100",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:08:16.884326Z",
+     "received": "2026-11-12T06:08:18.507858Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-4c7694539036\\\",\\\"amount\\\":60,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e5-s110",
+   "session_id": "b529cfee-9cfd-40c1-b1c5-61b488903b11",
+   "policy": "cap-100",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:08:16.884326Z",
+     "received": "2026-11-12T06:08:18.481044Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-3d66eb699ace\\\",\\\"amount\\\":60,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e5-s111",
+   "session_id": "bf2227aa-6a8c-4a03-9d45-41ea9139ede2",
+   "policy": "cap-100",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:08:16.884326Z",
+     "received": "2026-11-12T06:08:18.514847Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-9f31a65dd36a\\\",\\\"amount\\\":60,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e5-s112",
+   "session_id": "3751c450-c95e-43b0-9939-2302452c8381",
+   "policy": "cap-100",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:08:16.884326Z",
+     "received": "2026-11-12T06:08:18.461387Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-ddcd0028e686\\\",\\\"amount\\\":60,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e5-s113",
+   "session_id": "827587af-3aec-4df3-ac06-a0b6cac04b91",
+   "policy": "cap-100",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:09:23.518416Z",
+     "received": "2026-11-12T06:09:24.892166Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-f5c8bc5e8b02\\\",\\\"amount\\\":60,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    },
+    {
+     "sent": "2026-11-12T06:09:23.518938Z",
+     "received": "2026-11-12T06:09:24.849156Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32002,\"message\":\"Tool Execution Denied: Tool call not allowed due to policy enforcement [No policy applies to the request (denied by default).]\"}}",
+     "verdict_by_driver": "DENY"
+    },
+    {
+     "sent": "2026-11-12T06:09:23.518938Z",
+     "received": "2026-11-12T06:09:24.977678Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32002,\"message\":\"Tool Execution Denied: Tool call not allowed due to policy enforcement [No policy applies to the request (denied by default).]\"}}",
+     "verdict_by_driver": "DENY"
+    },
+    {
+     "sent": "2026-11-12T06:09:23.518416Z",
+     "received": "2026-11-12T06:09:24.861447Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"error\":{\"code\":-32002,\"message\":\"Tool Execution Denied: Tool call not allowed due to policy enforcement [No policy applies to the request (denied by default).]\"}}",
+     "verdict_by_driver": "DENY"
+    }
+   ]
+  },
+  {
+   "id": "e5-s114",
+   "session_id": "e33569bd-f508-455c-9232-b64dba11f944",
+   "policy": "cap-100",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:10:29.980599Z",
+     "received": "2026-11-12T06:10:31.181115Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-4531dcbb20d6\\\",\\\"amount\\\":60,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e5-s115",
+   "session_id": "73303f22-cf6d-45ce-a32c-cbd7ca455258",
+   "policy": "cap-100",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:10:29.980599Z",
+     "received": "2026-11-12T06:10:31.183675Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-ed91ec71bbbb\\\",\\\"amount\\\":60,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e5-s116",
+   "session_id": "82afe7bc-1be0-45ba-b991-0d25fd8ffc82",
+   "policy": "cap-100",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:10:29.980599Z",
+     "received": "2026-11-12T06:10:31.274435Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-c13cfa4f05f7\\\",\\\"amount\\\":60,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  },
+  {
+   "id": "e5-s117",
+   "session_id": "dfe56579-ec8a-4175-b530-b7108b22bea9",
+   "policy": "cap-100",
+   "calls": [
+    {
+     "sent": "2026-11-12T06:10:29.980599Z",
+     "received": "2026-11-12T06:10:31.274435Z",
+     "amount": 60,
+     "status": 200,
+     "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"isError\":false,\"content\":[{\"type\":\"text\",\"text\":\"{\\\"txId\\\":\\\"h9-2f9ef930cd34\\\",\\\"amount\\\":60,\\\"status\\\":\\\"SETTLED\\\",\\\"call_id\\\":\\\"\\\"}\"}]}}",
+     "verdict_by_driver": "ALLOW"
+    }
+   ]
+  }
+ ],
+ "trials": [
+  {
+   "id": "e1-0-k2-one-session",
+   "sessions": [
+    "e1-s0"
+   ],
+   "exp": "e1",
+   "raw_trial": 0
+  },
+  {
+   "id": "e1-1-k2-one-session",
+   "sessions": [
+    "e1-s1"
+   ],
+   "exp": "e1",
+   "raw_trial": 1
+  },
+  {
+   "id": "e1-2-k2-one-session",
+   "sessions": [
+    "e1-s2"
+   ],
+   "exp": "e1",
+   "raw_trial": 2
+  },
+  {
+   "id": "e1-3-k2-one-session",
+   "sessions": [
+    "e1-s3"
+   ],
+   "exp": "e1",
+   "raw_trial": 3
+  },
+  {
+   "id": "e1-4-k2-one-session",
+   "sessions": [
+    "e1-s4"
+   ],
+   "exp": "e1",
+   "raw_trial": 4
+  },
+  {
+   "id": "e1-5-k4-one-session",
+   "sessions": [
+    "e1-s5"
+   ],
+   "exp": "e1",
+   "raw_trial": 0
+  },
+  {
+   "id": "e1-6-k4-one-session",
+   "sessions": [
+    "e1-s6"
+   ],
+   "exp": "e1",
+   "raw_trial": 1
+  },
+  {
+   "id": "e1-7-k4-one-session",
+   "sessions": [
+    "e1-s7"
+   ],
+   "exp": "e1",
+   "raw_trial": 2
+  },
+  {
+   "id": "e1-8-k4-one-session",
+   "sessions": [
+    "e1-s8"
+   ],
+   "exp": "e1",
+   "raw_trial": 3
+  },
+  {
+   "id": "e1-9-k4-one-session",
+   "sessions": [
+    "e1-s9"
+   ],
+   "exp": "e1",
+   "raw_trial": 4
+  },
+  {
+   "id": "e1-10-k8-one-session",
+   "sessions": [
+    "e1-s10"
+   ],
+   "exp": "e1",
+   "raw_trial": 0
+  },
+  {
+   "id": "e1-11-k8-one-session",
+   "sessions": [
+    "e1-s11"
+   ],
+   "exp": "e1",
+   "raw_trial": 1
+  },
+  {
+   "id": "e1-12-k8-one-session",
+   "sessions": [
+    "e1-s12"
+   ],
+   "exp": "e1",
+   "raw_trial": 2
+  },
+  {
+   "id": "e1-13-k8-one-session",
+   "sessions": [
+    "e1-s13"
+   ],
+   "exp": "e1",
+   "raw_trial": 3
+  },
+  {
+   "id": "e1-14-k8-one-session",
+   "sessions": [
+    "e1-s14"
+   ],
+   "exp": "e1",
+   "raw_trial": 4
+  },
+  {
+   "id": "e2-0-k2-k-sessions",
+   "sessions": [
+    "e2-s15",
+    "e2-s16"
+   ],
+   "exp": "e2",
+   "raw_trial": 0
+  },
+  {
+   "id": "e2-1-k2-k-sessions",
+   "sessions": [
+    "e2-s17",
+    "e2-s18"
+   ],
+   "exp": "e2",
+   "raw_trial": 1
+  },
+  {
+   "id": "e2-2-k2-k-sessions",
+   "sessions": [
+    "e2-s19",
+    "e2-s20"
+   ],
+   "exp": "e2",
+   "raw_trial": 2
+  },
+  {
+   "id": "e2-3-k2-k-sessions",
+   "sessions": [
+    "e2-s21",
+    "e2-s22"
+   ],
+   "exp": "e2",
+   "raw_trial": 3
+  },
+  {
+   "id": "e2-4-k2-k-sessions",
+   "sessions": [
+    "e2-s23",
+    "e2-s24"
+   ],
+   "exp": "e2",
+   "raw_trial": 4
+  },
+  {
+   "id": "e2-5-k4-k-sessions",
+   "sessions": [
+    "e2-s25",
+    "e2-s26",
+    "e2-s27",
+    "e2-s28"
+   ],
+   "exp": "e2",
+   "raw_trial": 0
+  },
+  {
+   "id": "e2-6-k4-k-sessions",
+   "sessions": [
+    "e2-s29",
+    "e2-s30",
+    "e2-s31",
+    "e2-s32"
+   ],
+   "exp": "e2",
+   "raw_trial": 1
+  },
+  {
+   "id": "e2-7-k4-k-sessions",
+   "sessions": [
+    "e2-s33",
+    "e2-s34",
+    "e2-s35",
+    "e2-s36"
+   ],
+   "exp": "e2",
+   "raw_trial": 2
+  },
+  {
+   "id": "e2-8-k4-k-sessions",
+   "sessions": [
+    "e2-s37",
+    "e2-s38",
+    "e2-s39",
+    "e2-s40"
+   ],
+   "exp": "e2",
+   "raw_trial": 3
+  },
+  {
+   "id": "e2-9-k4-k-sessions",
+   "sessions": [
+    "e2-s41",
+    "e2-s42",
+    "e2-s43",
+    "e2-s44"
+   ],
+   "exp": "e2",
+   "raw_trial": 4
+  },
+  {
+   "id": "e2-10-k8-k-sessions",
+   "sessions": [
+    "e2-s45",
+    "e2-s46",
+    "e2-s47",
+    "e2-s48",
+    "e2-s49",
+    "e2-s50",
+    "e2-s51",
+    "e2-s52"
+   ],
+   "exp": "e2",
+   "raw_trial": 0
+  },
+  {
+   "id": "e2-11-k8-k-sessions",
+   "sessions": [
+    "e2-s53",
+    "e2-s54",
+    "e2-s55",
+    "e2-s56",
+    "e2-s57",
+    "e2-s58",
+    "e2-s59",
+    "e2-s60"
+   ],
+   "exp": "e2",
+   "raw_trial": 1
+  },
+  {
+   "id": "e2-12-k8-k-sessions",
+   "sessions": [
+    "e2-s61",
+    "e2-s62",
+    "e2-s63",
+    "e2-s64",
+    "e2-s65",
+    "e2-s66",
+    "e2-s67",
+    "e2-s68"
+   ],
+   "exp": "e2",
+   "raw_trial": 2
+  },
+  {
+   "id": "e2-13-k8-k-sessions",
+   "sessions": [
+    "e2-s69",
+    "e2-s70",
+    "e2-s71",
+    "e2-s72",
+    "e2-s73",
+    "e2-s74",
+    "e2-s75",
+    "e2-s76"
+   ],
+   "exp": "e2",
+   "raw_trial": 3
+  },
+  {
+   "id": "e2-14-k8-k-sessions",
+   "sessions": [
+    "e2-s77",
+    "e2-s78",
+    "e2-s79",
+    "e2-s80",
+    "e2-s81",
+    "e2-s82",
+    "e2-s83",
+    "e2-s84"
+   ],
+   "exp": "e2",
+   "raw_trial": 4
+  },
+  {
+   "id": "e3-0-one-session",
+   "sessions": [
+    "e3-s85"
+   ],
+   "exp": "e3",
+   "raw_trial": 0
+  },
+  {
+   "id": "e3-1-one-session",
+   "sessions": [
+    "e3-s86"
+   ],
+   "exp": "e3",
+   "raw_trial": 1
+  },
+  {
+   "id": "e3-2-one-session",
+   "sessions": [
+    "e3-s87"
+   ],
+   "exp": "e3",
+   "raw_trial": 2
+  },
+  {
+   "id": "e3-3-one-session",
+   "sessions": [
+    "e3-s88"
+   ],
+   "exp": "e3",
+   "raw_trial": 3
+  },
+  {
+   "id": "e3-4-one-session",
+   "sessions": [
+    "e3-s89"
+   ],
+   "exp": "e3",
+   "raw_trial": 4
+  },
+  {
+   "id": "e3x-0-k-sessions",
+   "sessions": [
+    "e3x-s90",
+    "e3x-s91"
+   ],
+   "exp": "e3x",
+   "raw_trial": 0
+  },
+  {
+   "id": "e3x-1-k-sessions",
+   "sessions": [
+    "e3x-s92",
+    "e3x-s93"
+   ],
+   "exp": "e3x",
+   "raw_trial": 1
+  },
+  {
+   "id": "e3x-2-k-sessions",
+   "sessions": [
+    "e3x-s94",
+    "e3x-s95"
+   ],
+   "exp": "e3x",
+   "raw_trial": 2
+  },
+  {
+   "id": "e3x-3-k-sessions",
+   "sessions": [
+    "e3x-s96",
+    "e3x-s97"
+   ],
+   "exp": "e3x",
+   "raw_trial": 3
+  },
+  {
+   "id": "e3x-4-k-sessions",
+   "sessions": [
+    "e3x-s98",
+    "e3x-s99"
+   ],
+   "exp": "e3x",
+   "raw_trial": 4
+  },
+  {
+   "id": "e4-0",
+   "sessions": [
+    "e4-s100"
+   ],
+   "exp": "e4",
+   "raw_trial": 0
+  },
+  {
+   "id": "e4-1",
+   "sessions": [
+    "e4-s101"
+   ],
+   "exp": "e4",
+   "raw_trial": 1
+  },
+  {
+   "id": "e4-2",
+   "sessions": [
+    "e4-s102"
+   ],
+   "exp": "e4",
+   "raw_trial": 2
+  },
+  {
+   "id": "e5-0-one-session",
+   "sessions": [
+    "e5-s103"
+   ],
+   "exp": "e5",
+   "raw_trial": 0
+  },
+  {
+   "id": "e5-1-k-sessions",
+   "sessions": [
+    "e5-s104",
+    "e5-s105",
+    "e5-s106",
+    "e5-s107"
+   ],
+   "exp": "e5",
+   "raw_trial": 0
+  },
+  {
+   "id": "e5-2-one-session",
+   "sessions": [
+    "e5-s108"
+   ],
+   "exp": "e5",
+   "raw_trial": 1
+  },
+  {
+   "id": "e5-3-k-sessions",
+   "sessions": [
+    "e5-s109",
+    "e5-s110",
+    "e5-s111",
+    "e5-s112"
+   ],
+   "exp": "e5",
+   "raw_trial": 1
+  },
+  {
+   "id": "e5-4-one-session",
+   "sessions": [
+    "e5-s113"
+   ],
+   "exp": "e5",
+   "raw_trial": 2
+  },
+  {
+   "id": "e5-5-k-sessions",
+   "sessions": [
+    "e5-s114",
+    "e5-s115",
+    "e5-s116",
+    "e5-s117"
+   ],
+   "exp": "e5",
+   "raw_trial": 2
+  }
+ ]
+}

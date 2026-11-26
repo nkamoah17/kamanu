@@ -1,0 +1,297 @@
+{
+ "apalache": "0.62.3",
+ "jar_sha256": "bca3f4935953e22c5bc30b2bff3326193021aa5df35d07373e947827a21ffb1f",
+ "refinement": {
+  "outcome": "proved",
+  "by": "lean",
+  "theorems": [
+   "Kamanu.ri_init",
+   "Kamanu.ri_step",
+   "Kamanu.refines_ledger",
+   "Kamanu.real_spend_ok",
+   "Kamanu.within_cap",
+   "Kamanu.sound_admit",
+   "Kamanu.view_sound"
+  ],
+  "hypotheses": [
+   "Atomic TRUE: the decision and its record are one step",
+   "Lag 0: the view is the whole recorded history",
+   "Reflexive TRUE: the view includes the request being decided",
+   "DenyRecord \"none\": a refusal records nothing",
+   "ScopeGlobal: one scope for every request"
+  ],
+  "lean_sha256": "494d5ee4bcd0b68f7952714755434abef25e24fc98ce05b6d5a75873f0ed63e4",
+  "earlier_attempt": {
+   "by": "apalache",
+   "outcome": "blocked",
+   "blocker": "blocker.md",
+   "unbounded_runs": [
+    "refine_direct",
+    "refine_fold",
+    "refine_fold_histbound"
+   ],
+   "bounded_runs": {
+    "refine_bounded_r1_h4": "NoError",
+    "refine_bounded_r2_h8": "NoError",
+    "refine_bounded_r3_h12": "NoError"
+   }
+  }
+ },
+ "tightness": {
+  "outcome": "proved",
+  "by": "lean",
+  "theorems": [
+   "Kamanu.view_tight",
+   "Kamanu.no_false_refusal",
+   "Kamanu.Neighbours.refusal_reachable"
+  ],
+  "hypotheses": [
+   "Atomic TRUE: the decision and its record are one step",
+   "Lag 0: the view is the whole recorded history",
+   "Reflexive TRUE: the view includes the request being decided",
+   "DenyRecord \"none\": a refusal records nothing",
+   "ScopeGlobal: one scope for every request",
+   "HasReconcile FALSE: no reconciliation"
+  ],
+  "lean_sha256": "494d5ee4bcd0b68f7952714755434abef25e24fc98ce05b6d5a75873f0ed63e4",
+  "earlier_attempt": {
+   "by": "apalache",
+   "outcome": "blocked",
+   "blocker": "blocker.md",
+   "unbounded_runs": [
+    "tight_direct",
+    "tight_fold",
+    "tight_fold_histbound"
+   ],
+   "bounded_runs": {
+    "tight_bounded_r1_h4": "NoError",
+    "tight_bounded_r2_h8": "NoError",
+    "tight_bounded_r3_h12": "NoError"
+   }
+  }
+ },
+ "runs": [
+  {
+   "name": "refine_direct",
+   "direction": "refinement",
+   "kind": "unbounded",
+   "harness": "PrRefineAp",
+   "cinit": "CRefine",
+   "invariants": [
+    "ApInv",
+    "ApRefStep"
+   ],
+   "bounds": null,
+   "log": "logs/refine_direct.log",
+   "exit": 255,
+   "outcome": "Blocked",
+   "error": "PrRefineAp.tla:72:1-72:90: unexpected expression: RECURSIVE K!SumKind(_,_). Apalache does not support recursive operators.",
+   "seconds": 7.6
+  },
+  {
+   "name": "refine_fold",
+   "direction": "refinement",
+   "kind": "unbounded",
+   "harness": "PrFoldAp",
+   "cinit": "CRefine",
+   "invariants": [
+    "ApInv",
+    "ApRefStep"
+   ],
+   "bounds": null,
+   "log": "logs/refine_fold.log",
+   "exit": 75,
+   "outcome": "Blocked",
+   "error": "PrFoldAp.tla:86:17-86:90: unsupported expression: Seq(_) produces an infinite set of unbounded sequences. See: https://apalache-mc.org/docs/apalache/known-issues.html#using-seqs",
+   "seconds": 8.0
+  },
+  {
+   "name": "refine_fold_histbound",
+   "direction": "refinement",
+   "kind": "unbounded",
+   "harness": "PrFoldApReq",
+   "cinit": "CRefine",
+   "invariants": [
+    "ApInv",
+    "ApRefStep"
+   ],
+   "bounds": null,
+   "log": "logs/refine_fold_histbound.log",
+   "exit": 255,
+   "outcome": "Blocked",
+   "error": "PrFoldApReq.tla:91:16-91:20: Input error (see the manual): Expected a constant integer range in [ .. ], found 1..MaxReq. This is a known issue: [https://apalache-mc.org/docs/apalache/known-issues.html]",
+   "seconds": 12.0
+  },
+  {
+   "name": "tight_direct",
+   "direction": "tightness",
+   "kind": "unbounded",
+   "harness": "PrRefineAp",
+   "cinit": "CTight",
+   "invariants": [
+    "ApTightInv",
+    "ApNoFalseRefusal"
+   ],
+   "bounds": null,
+   "log": "logs/tight_direct.log",
+   "exit": 255,
+   "outcome": "Blocked",
+   "error": "PrRefineAp.tla:72:1-72:90: unexpected expression: RECURSIVE K!SumKind(_,_). Apalache does not support recursive operators.",
+   "seconds": 4.7
+  },
+  {
+   "name": "tight_fold",
+   "direction": "tightness",
+   "kind": "unbounded",
+   "harness": "PrFoldAp",
+   "cinit": "CTight",
+   "invariants": [
+    "ApTightInv",
+    "ApNoFalseRefusal"
+   ],
+   "bounds": null,
+   "log": "logs/tight_fold.log",
+   "exit": 75,
+   "outcome": "Blocked",
+   "error": "PrFoldAp.tla:86:17-86:90: unsupported expression: Seq(_) produces an infinite set of unbounded sequences. See: https://apalache-mc.org/docs/apalache/known-issues.html#using-seqs",
+   "seconds": 8.2
+  },
+  {
+   "name": "tight_fold_histbound",
+   "direction": "tightness",
+   "kind": "unbounded",
+   "harness": "PrFoldApReq",
+   "cinit": "CTight",
+   "invariants": [
+    "ApTightInv",
+    "ApNoFalseRefusal"
+   ],
+   "bounds": null,
+   "log": "logs/tight_fold_histbound.log",
+   "exit": 255,
+   "outcome": "Blocked",
+   "error": "PrFoldApReq.tla:91:16-91:20: Input error (see the manual): Expected a constant integer range in [ .. ], found 1..MaxReq. This is a known issue: [https://apalache-mc.org/docs/apalache/known-issues.html]",
+   "seconds": 8.8
+  },
+  {
+   "name": "refine_bounded_r1_h4",
+   "direction": "refinement",
+   "kind": "bounded",
+   "harness": "PrFoldApBounded",
+   "cinit": "CRefine",
+   "invariants": [
+    "ApInv",
+    "ApRefStep"
+   ],
+   "bounds": {
+    "MaxReq": 1,
+    "HistLen": 4
+   },
+   "log": "logs/refine_bounded_r1_h4.log",
+   "exit": 0,
+   "outcome": "NoError",
+   "error": "",
+   "seconds": 16.3
+  },
+  {
+   "name": "refine_bounded_r2_h8",
+   "direction": "refinement",
+   "kind": "bounded",
+   "harness": "PrFoldApBounded",
+   "cinit": "CRefine",
+   "invariants": [
+    "ApInv",
+    "ApRefStep"
+   ],
+   "bounds": {
+    "MaxReq": 2,
+    "HistLen": 8
+   },
+   "log": "logs/refine_bounded_r2_h8.log",
+   "exit": 0,
+   "outcome": "NoError",
+   "error": "",
+   "seconds": 64.9
+  },
+  {
+   "name": "refine_bounded_r3_h12",
+   "direction": "refinement",
+   "kind": "bounded",
+   "harness": "PrFoldApBounded",
+   "cinit": "CRefine",
+   "invariants": [
+    "ApInv",
+    "ApRefStep"
+   ],
+   "bounds": {
+    "MaxReq": 3,
+    "HistLen": 12
+   },
+   "log": "logs/refine_bounded_r3_h12.log",
+   "exit": 0,
+   "outcome": "NoError",
+   "error": "",
+   "seconds": 289.0
+  },
+  {
+   "name": "tight_bounded_r1_h4",
+   "direction": "tightness",
+   "kind": "bounded",
+   "harness": "PrFoldApBounded",
+   "cinit": "CTight",
+   "invariants": [
+    "ApTightInv",
+    "ApNoFalseRefusal"
+   ],
+   "bounds": {
+    "MaxReq": 1,
+    "HistLen": 4
+   },
+   "log": "logs/tight_bounded_r1_h4.log",
+   "exit": 0,
+   "outcome": "NoError",
+   "error": "",
+   "seconds": 7.6
+  },
+  {
+   "name": "tight_bounded_r2_h8",
+   "direction": "tightness",
+   "kind": "bounded",
+   "harness": "PrFoldApBounded",
+   "cinit": "CTight",
+   "invariants": [
+    "ApTightInv",
+    "ApNoFalseRefusal"
+   ],
+   "bounds": {
+    "MaxReq": 2,
+    "HistLen": 8
+   },
+   "log": "logs/tight_bounded_r2_h8.log",
+   "exit": 0,
+   "outcome": "NoError",
+   "error": "",
+   "seconds": 12.2
+  },
+  {
+   "name": "tight_bounded_r3_h12",
+   "direction": "tightness",
+   "kind": "bounded",
+   "harness": "PrFoldApBounded",
+   "cinit": "CTight",
+   "invariants": [
+    "ApTightInv",
+    "ApNoFalseRefusal"
+   ],
+   "bounds": {
+    "MaxReq": 3,
+    "HistLen": 12
+   },
+   "log": "logs/tight_bounded_r3_h12.log",
+   "exit": 0,
+   "outcome": "NoError",
+   "error": "",
+   "seconds": 31.4
+  }
+ ]
+}

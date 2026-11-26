@@ -1,0 +1,1017 @@
+{
+  "a4_check_then_incrby": {
+    "source": "gate A4 fixtures/redis/check_then_incrby.py, verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: check_then_incrby.py:10 client.incrby(key, amount)"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: check_then_incrby.py:7 spent = int(client.get(key) or 0)"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "a4_incrby_reply": {
+    "source": "gate A4 fixtures/redis/incrby_reply.py, verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "holds",
+        "why": "every site holds when run (2): incrby_reply.py:6; incrby_reply.py:8"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: incrby_reply.py:6 total = client.incrby(key, amount)"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "a4_rmw": {
+    "source": "gate A4 fixtures/redis/rmw.py, verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: rmw.py:9 client.set(key, spent + amount)"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: rmw.py:6 spent = int(client.get(key) or 0)"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "a4_watch_cas": {
+    "source": "gate A4 fixtures/redis/watch_cas.py, verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "holds",
+        "why": "every site holds when run (1): watch_cas.py:17"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: watch_cas.py:8 with client.pipeline() as pipe:"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: watch_cas.py:9 while True:"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: watch_cas.py:20 except redis.WatchError:"
+      }
+    }
+  },
+  "a4_write_only_transaction": {
+    "source": "gate A4 fixtures/redis/write_only_transaction.py, verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: write_only_transaction.py:11 pipe.set(key, spent + amount)"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: write_only_transaction.py:7 spent = int(client.get(key) or 0)"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "audit_p1_atomic_remote": {
+    "source": "probe repository of the 2026-11-08 audit (progress/disputes/E-kit.md), verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: limiter.py:6 budget.set(key, spent + amount)"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: limiter.py:3 spent = budget.get(key) or 0"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "audit_p2_await_unnamed": {
+    "source": "probe repository of the 2026-11-08 audit (progress/disputes/E-kit.md), verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: agent.py:7 return await http.post(url)          # a tool in all but name, no timeout: can hang forever"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "audit_p3_retry_unnamed": {
+    "source": "probe repository of the 2026-11-08 audit (progress/disputes/E-kit.md), verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: agent.py:4 return tools.call(k)"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: agent.py:9 while True:                           # unbounded retry around a payment call not named tool"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: agent.py:5 except Exception:"
+      }
+    }
+  },
+  "audit_p4_session_alias": {
+    "source": "probe repository of the 2026-11-08 audit (progress/disputes/E-kit.md), verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: server.py:8 sid = request.headers[\"X-Session\"]    # the key actually used comes from the caller"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: server.py:9 ledger.charge(sid, 1)"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "audit_p5_status_unnamed": {
+    "source": "probe repository of the 2026-11-08 audit (progress/disputes/E-kit.md), verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: agent.py:3 tools.charge(k)"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: agent.py:4 except Exception:"
+      }
+    }
+  },
+  "audit_p6_lock_unnamed": {
+    "source": "probe repository of the 2026-11-08 audit (progress/disputes/E-kit.md), verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: agent.py:10 guard.acquire()                       # never released on an exception"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: agent.py:11 tools.call(1)"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "audit_p7_atomic_thread": {
+    "source": "probe repository of the 2026-11-08 audit (progress/disputes/E-kit.md), verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: limiter.py:9 spend[key] = cur + amount"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "e1_refund_agent": {
+    "source": "gate E1 fixtures/harness/refund_agent/, verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: refunds/loop.py:28 await ledger.add(refund.order, refund.amount, receipt)"
+      },
+      "release_post_dominates": {
+        "label": "holds",
+        "why": "every site holds when run (1): refunds/loop.py:21"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: refunds/loop.py:27 receipt = await gateway.pay(refund.order, refund.amount)"
+      },
+      "retry_bounded": {
+        "label": "holds",
+        "why": "every site holds when run (1): refunds/loop.py:33"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: refunds/loop.py:36 except TimeoutError:"
+      }
+    }
+  },
+  "e1_ticket_agent": {
+    "source": "gate E1 fixtures/harness/ticket_agent/, verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: ticket_agent/tools.py:15 session.store.put(ticket,"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: ticket_agent/agent.py:18 reply = model.complete(history)"
+      },
+      "retry_bounded": {
+        "label": "holds",
+        "why": "every site holds when run (1): ticket_agent/agent.py:33"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: ticket_agent/agent.py:39 except KeyError as missing:"
+      }
+    }
+  },
+  "e4_mandate_agent": {
+    "source": "gate E4 fixtures/mandate_agent.py, verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: mandate_agent.py:25 msg = bus.poll(step)"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: mandate_agent.py:24 while step not in DONE:"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "e4_mandate_agent_extra": {
+    "source": "gate E4 fixtures/mandate_agent_extra.py, verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: mandate_agent_extra.py:26 msg = bus.poll(step)"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: mandate_agent_extra.py:25 while step not in DONE:"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "e4_mandate_agent_missing": {
+    "source": "gate E4 fixtures/mandate_agent_missing.py, verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: mandate_agent_missing.py:24 msg = bus.poll(step)"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: mandate_agent_missing.py:23 while step not in DONE:"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "e4_refund_agent": {
+    "source": "gate E4 fixtures/refund_agent.py, verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "holds",
+        "why": "every site holds when run (1): refund_agent.py:43"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: refund_agent.py:22 await source.ask_approver(refund)"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: refund_agent.py:19 while state not in (\"done\", \"closed\"):"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "e4_refund_agent_extra": {
+    "source": "gate E4 fixtures/refund_agent_extra.py, verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "holds",
+        "why": "every site holds when run (1): refund_agent_extra.py:46"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: refund_agent_extra.py:22 await source.ask_approver(refund)"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: refund_agent_extra.py:19 while state not in (\"done\", \"closed\"):"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "e4_refund_agent_missing": {
+    "source": "gate E4 fixtures/refund_agent_missing.py, verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "holds",
+        "why": "every site holds when run (1): refund_agent_missing.py:41"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: refund_agent_missing.py:22 await source.ask_approver(refund)"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: refund_agent_missing.py:19 while state not in (\"done\", \"closed\"):"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "e4_ticket_agent": {
+    "source": "gate E4 fixtures/ticket_agent.py, verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: ticket_agent.py:20 signal = inbox.next(phase)"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: ticket_agent.py:19 while phase != \"finished\":"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "e4_ticket_agent_extra": {
+    "source": "gate E4 fixtures/ticket_agent_extra.py, verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: ticket_agent_extra.py:20 signal = inbox.next(phase)"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: ticket_agent_extra.py:19 while phase != \"finished\":"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "e4_ticket_agent_missing": {
+    "source": "gate E4 fixtures/ticket_agent_missing.py, verbatim",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: ticket_agent_missing.py:20 signal = inbox.next(phase)"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: ticket_agent_missing.py:19 while phase != \"finished\":"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "rotn_approval_buggy": {
+    "source": "rotn-research rotn_research/approval.py at bda0ca4, sub-model 'approval' (NoUnapprovedIrreversible), the buggy twin, written as a Python harness for this gate; the twins differ only in status_before_retry",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "holds",
+        "why": "every site holds when run (4): wire/desk.py:21; wire/desk.py:28; wire/flow.py:11; wire/flow.py:13"
+      },
+      "retry_bounded": {
+        "label": "holds",
+        "why": "every site holds when run (1): wire/desk.py:26"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: wire/desk.py:29 except (TimeoutError, ConnectionError):"
+      }
+    }
+  },
+  "rotn_approval_fixed": {
+    "source": "rotn-research rotn_research/approval.py at bda0ca4, sub-model 'approval' (NoUnapprovedIrreversible), the fixed twin, written as a Python harness for this gate; the twins differ only in status_before_retry",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "holds",
+        "why": "every site holds when run (5): wire/desk.py:21; wire/desk.py:28; wire/desk.py:30; wire/flow.py:11; wire/flow.py:13"
+      },
+      "retry_bounded": {
+        "label": "holds",
+        "why": "every site holds when run (1): wire/desk.py:26"
+      },
+      "status_before_retry": {
+        "label": "holds",
+        "why": "every site holds when run (1): wire/desk.py:29"
+      }
+    }
+  },
+  "rotn_budget_buggy": {
+    "source": "rotn-research rotn_research/approval.py at bda0ca4, sub-model 'budget' (no runaway budget across agents), the buggy twin, written as a Python harness for this gate; the twins differ only in check_act_atomic",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: shared/budget.py:16 budget.set(agent, spent + amount)"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: shared/budget.py:13 spent = int(budget.get(agent) or 0)"
+      },
+      "retry_bounded": {
+        "label": "holds",
+        "why": "every site holds when run (1): shared/agents.py:15"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "rotn_budget_fixed": {
+    "source": "rotn-research rotn_research/approval.py at bda0ca4, sub-model 'budget' (no runaway budget across agents), the fixed twin, written as a Python harness for this gate; the twins differ only in check_act_atomic",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "holds",
+        "why": "every site holds when run (2): shared/budget.py:13; shared/budget.py:15"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: shared/budget.py:13 total = budget.incrby(SHARED, amount)"
+      },
+      "retry_bounded": {
+        "label": "holds",
+        "why": "every site holds when run (1): shared/agents.py:15"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "rotn_deadlock_buggy": {
+    "source": "rotn-research rotn_research/approval.py at bda0ca4, sub-model 'deadlock' (TaskEndsOrEscalates, no stuck state), the buggy twin, written as a Python harness for this gate; the twins differ only in release_post_dominates",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: stock/locks.py:18 with ledger_lock:"
+      },
+      "await_has_timeout": {
+        "label": "holds",
+        "why": "every site holds when run (2): stock/locks.py:19; stock/locks.py:25"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "rotn_deadlock_fixed": {
+    "source": "rotn-research rotn_research/approval.py at bda0ca4, sub-model 'deadlock' (TaskEndsOrEscalates, no stuck state), the fixed twin, written as a Python harness for this gate; the twins differ only in release_post_dominates",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "holds",
+        "why": "every site holds when run (4): stock/locks.py:17; stock/locks.py:18; stock/locks.py:23; stock/locks.py:24"
+      },
+      "await_has_timeout": {
+        "label": "holds",
+        "why": "every site holds when run (2): stock/locks.py:19; stock/locks.py:25"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "rotn_delegation_buggy": {
+    "source": "rotn-research rotn_research/approval.py at bda0ca4, sub-model 'delegation' (no privilege escalation through delegation), the buggy twin, written as a Python harness for this gate; the twins differ only in session_key_minted",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: delegation/grants.py:16 session_token = request.headers.get(\"X-Session-Token\") or secrets.token_urlsafe(24)"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "holds",
+        "why": "every site holds when run (1): delegation/worker.py:14"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "rotn_delegation_fixed": {
+    "source": "rotn-research rotn_research/approval.py at bda0ca4, sub-model 'delegation' (no privilege escalation through delegation), the fixed twin, written as a Python harness for this gate; the twins differ only in session_key_minted",
+    "premises": {
+      "session_key_minted": {
+        "label": "holds",
+        "why": "every site holds when run (1): delegation/grants.py:15"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "holds",
+        "why": "every site holds when run (1): delegation/worker.py:14"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "rotn_livelock_buggy": {
+    "source": "rotn-research rotn_research/approval.py at bda0ca4, sub-model 'livelock' (TaskEndsOrEscalates), the buggy twin, written as a Python harness for this gate; the twins differ only in retry_bounded",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "holds",
+        "why": "every site holds when run (1): handoff/loop.py:14"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: handoff/loop.py:13 while True:"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "rotn_livelock_fixed": {
+    "source": "rotn-research rotn_research/approval.py at bda0ca4, sub-model 'livelock' (TaskEndsOrEscalates), the fixed twin, written as a Python harness for this gate; the twins differ only in retry_bounded",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "holds",
+        "why": "every site holds when run (1): handoff/loop.py:14"
+      },
+      "retry_bounded": {
+        "label": "holds",
+        "why": "every site holds when run (1): handoff/loop.py:13"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "rotn_orchestration_buggy": {
+    "source": "rotn-research rotn_research/approval.py at bda0ca4, sub-model 'orchestration' (no deadlock, TaskEndsOrEscalates), the buggy twin, written as a Python harness for this gate; the twins differ only in await_has_timeout",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "fails",
+        "why": "a bad site, reached by a run that fails: orchestration/chain.py:12 granted = await approver.review(task)"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  },
+  "rotn_orchestration_fixed": {
+    "source": "rotn-research rotn_research/approval.py at bda0ca4, sub-model 'orchestration' (no deadlock, TaskEndsOrEscalates), the fixed twin, written as a Python harness for this gate; the twins differ only in await_has_timeout",
+    "premises": {
+      "session_key_minted": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "check_act_atomic": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "release_post_dominates": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "await_has_timeout": {
+        "label": "holds",
+        "why": "every site holds when run (2): orchestration/chain.py:16; orchestration/chain.py:24"
+      },
+      "retry_bounded": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      },
+      "status_before_retry": {
+        "label": "fails",
+        "why": "no site of this premise in the repository, and absence is never evidence"
+      }
+    }
+  }
+}

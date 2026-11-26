@@ -1,0 +1,15 @@
+{
+ "x10": {
+  "over-ask": 213.6,
+  "freeze": 704.4,
+  "parallel": 171.8,
+  "ambiguous": 1402.7
+ },
+ "x8_run3": {
+  "over-ask": 233.1,
+  "freeze": 3780.7,
+  "parallel": 463.5,
+  "ambiguous": 6536.3
+ },
+ "how": "each test's seconds: the span of its pieces in the run's journal (latest end less earliest start, on the port's clock); x10 from evidence/exonumia/x10/run/evidence/rails/x402/2026-11-25/run.journal.jsonl, x8_run3 from evidence/rails/x402/2026-11-25/run.journal.jsonl"
+}

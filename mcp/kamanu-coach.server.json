@@ -1,0 +1,32 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.nkamoah17/kamanu-coach",
+  "title": "Kamanu coach",
+  "description": "Tells an agent how much it may spend now under a card's spending limit, and when it may spend more",
+  "repository": {
+    "url": "https://github.com/nkamoah17/kamanu",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "kamanu",
+      "version": "0.1.0",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "type": "positional",
+          "value": "coach"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+\* The refund-after-reconcile design at R2, a timer, and two idle ticks before it may fire.
+Templates <- TOne
+Permit <- PRefundOnReconcile
+Scope <- ScopeGlobal
+MaxReq = 3
+MaxFails = 1
+Reflexive = TRUE
+DenyRecord = "none"
+Atomic = TRUE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = TRUE
+Cap = 100
+GoalTemplate <- GoalPay
+NeedsApproval = FALSE
+ApproverFair = TRUE
+AgentFair = TRUE
+HasTimeout = TRUE
+MaskDeadlock = FALSE
+Deadline = 2

@@ -1,0 +1,13 @@
+{
+ "sprint": "sprint-v1",
+ "currency": "usd",
+ "spending_limits": [
+  {"id": "cardholder-daily", "on": "cardholder", "amount": 2000, "interval": "daily"},
+  {"id": "card-per-authorization", "on": "card", "amount": 350, "interval": "per_authorization"}
+ ],
+ "cap": {"id": "cards-monthly", "amount": 20000, "interval": "monthly"},
+ "profile": "evidence/exonumia/x4/issuing-documented.json",
+ "consent": false,
+ "parallel": 8,
+ "signing_secret": "whsec_demo_sprint_not_a_real_signing_secret"
+}

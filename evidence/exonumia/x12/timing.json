@@ -1,0 +1,46 @@
+{
+ "simulator": "acceptance/X2b/sim.py",
+ "recommended": 32,
+ "runs": {
+  "1": {
+   "stages": {
+    "hunt": 426.337,
+    "over-ask": 3.355,
+    "parallel": 2.64,
+    "over-capture": 1.677,
+    "force-capture": 1.677,
+    "reset": 2366.666
+   },
+   "total": 2802.352,
+   "pieces": 1114
+  },
+  "16": {
+   "stages": {
+    "hunt": 198.345,
+    "over-ask": 0.237,
+    "parallel": 0.187,
+    "over-capture": 0.119,
+    "force-capture": 0.119,
+    "reset": 155.346
+   },
+   "total": 354.352,
+   "pieces": 1168
+  },
+  "32": {
+   "stages": {
+    "hunt": 198.341,
+    "over-ask": 0.136,
+    "parallel": 0.107,
+    "over-capture": 0.068,
+    "force-capture": 0.068,
+    "reset": 83.634
+   },
+   "total": 282.352,
+   "pieces": 1184
+  }
+ },
+ "bounds": {
+  "longest_wait_hours": 24.0,
+  "first_midnight": "2026-12-18T00:00:00Z"
+ }
+}

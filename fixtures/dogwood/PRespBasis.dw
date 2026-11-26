@@ -1,0 +1,18 @@
+// kernel: PRespBasis
+// source: https://aws.amazon.com/blogs/opensource/introducing-dogwood-runtime-verification-for-ai-agents/ (section "Rate limiting requests vs. responses")
+// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/examples/refund_budget_settled_plus_current/README.md (settled sum plus current request)
+// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/guide/04-temporal-expressions.md#arithmetic-in-comparison-operands
+// A response sum does not see the request being decided, so its amount is added.
+// Needs a dogwood build with --features experimental-arithmetic.
+
+@id("pay_cap")
+permit (
+    principal,
+    action == Kamanu::Action::"Pay",
+    resource
+)
+when temporal {
+    (sum a for (a: Long), (t: Timepoint). where (
+        formerly within 24h (Kamanu::Action::"Pay"::response{ input.amount: a } && tp(t))
+    )) + context.input.amount <= 100
+};

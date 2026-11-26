@@ -1,0 +1,138 @@
+{
+ "die": "3b998a5c068f404db58f1aff338953f8",
+ "expects": {
+  "checks": [
+   {
+    "die": "3b998a5c068f404db58f1aff338953f8",
+    "level": "MODEL_PROVEN",
+    "name": "Sound",
+    "status": "holds",
+    "trace": null
+   },
+   {
+    "die": "07369000802f3a7cc81a667dcaa63f37",
+    "level": "REFUTED",
+    "name": "Tight",
+    "status": "FAILS",
+    "trace": [
+     {
+      "amount": 60,
+      "count": 0,
+      "doubt": 0,
+      "held": 0,
+      "outcome": null,
+      "spent": 0,
+      "step": "issue"
+     },
+     {
+      "amount": 60,
+      "count": 0,
+      "doubt": 0,
+      "held": 0,
+      "outcome": null,
+      "spent": 0,
+      "step": "issue"
+     },
+     {
+      "amount": 60,
+      "count": 60,
+      "doubt": 0,
+      "held": 60,
+      "outcome": "permit",
+      "spent": 0,
+      "step": "decide"
+     },
+     {
+      "amount": 60,
+      "count": 60,
+      "doubt": 60,
+      "held": 0,
+      "outcome": "clean",
+      "spent": 0,
+      "step": "fail"
+     },
+     {
+      "amount": 60,
+      "count": 60,
+      "doubt": 0,
+      "held": 0,
+      "outcome": "refund",
+      "spent": 0,
+      "step": "reconcile"
+     },
+     {
+      "amount": 60,
+      "count": 60,
+      "doubt": 0,
+      "held": 0,
+      "outcome": "deny",
+      "spent": 0,
+      "step": "decide"
+     }
+    ]
+   }
+  ],
+  "figures": {
+   "ceiling": 100,
+   "face": 100,
+   "fineness": "1.000",
+   "stranded": 100
+  },
+  "hypotheses": [
+   {
+    "name": "Reflexive",
+    "status": "assumed",
+    "value": true
+   },
+   {
+    "name": "DenyRecord",
+    "status": "assumed",
+    "value": "none"
+   },
+   {
+    "name": "Atomic",
+    "status": "assumed",
+    "value": true
+   },
+   {
+    "name": "Lag",
+    "status": "assumed",
+    "value": 0
+   },
+   {
+    "name": "Scope",
+    "status": "assumed",
+    "value": "ScopeGlobal"
+   },
+   {
+    "name": "in_flight",
+    "status": "assumed",
+    "value": 2
+   },
+   {
+    "name": "failures",
+    "status": "assumed",
+    "value": 1
+   }
+  ],
+  "level": "REFUTED"
+ },
+ "inputs": [
+  {
+   "path": "fixtures/dogwood/PReqBasis.dw",
+   "sha256": "40724ae7e2d40730ddf2412add4ab54cb65e38063a4568794d0699861de66f1b"
+  }
+ ],
+ "receipt": 2,
+ "replay": {
+  "amounts": null,
+  "cap": null,
+  "engine": "reference",
+  "failures": 1,
+  "in_flight": 2,
+  "kind": "policy",
+  "name": "PReqBasis.dw",
+  "policy": "// kernel: PReqBasis\n// source: https://aws.amazon.com/blogs/opensource/introducing-dogwood-runtime-verification-for-ai-agents/ (section \"Summing: stay under a running total\")\n// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/guide/04-temporal-expressions.md#evaluation-semantics (windows are closed and reflexive)\n// The blog's rule with Pay for Transfer, 24h for 1h and 100 for 5000. The blog gives\n// the forbid; the base permit is what deny-by-default requires.\n\n@id(\"pay_base\")\npermit (\n    principal,\n    action == Kamanu::Action::\"Pay\",\n    resource\n);\n\n@id(\"pay_cap\")\nforbid (\n    principal,\n    action == Kamanu::Action::\"Pay\",\n    resource\n)\nwhen temporal {\n    sum_within(a, 24h, Kamanu::Action::\"Pay\"::request{ input.amount: a }) > 100\n};\n"
+ },
+ "type": "461b93ce5a7decc9a1e0f12094f9a07e"
+}

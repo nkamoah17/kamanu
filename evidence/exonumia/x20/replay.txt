@@ -1,0 +1,14 @@
+plate 07369000802f3a7cc81a667dcaa63f37: gives its answer again
+plate 1d90528d3775bd8e604b38117a3969b2: gives its answer again
+plate 2eab48362d5d3a5babb6bae54cc20d3f: gives its answer again
+plate 3b47b190e2971301bb01cda8517e1c38: gives its answer again
+plate 3b998a5c068f404db58f1aff338953f8: gives its answer again
+plate 5592e0ea054380f189b224ee231679eb: gives its answer again
+plate 7197bb01bbfe62adcec897724ca527cc: gives its answer again
+plate 7ce3c87236da47cf4bd4d6ae53207b41: gives its answer again
+plate 8ade713492a258483c1db8db45818614: gives its answer again
+plate adbcc15bb4627d1ce7c78199034579bf: gives its answer again
+plate c2e5faf30406c33132101b681aeadc80: gives its answer again
+plate c5383ae65dfb3dbd2e994af352dd0086: gives its answer again
+kamanu scan --replay --plates plates: 12 plates, 0 that no longer give their answer, 0 refused
+exit 0

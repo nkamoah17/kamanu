@@ -1,0 +1,36 @@
+{
+  "id": "dogwood-1.1.1",
+  "engine": "Dogwood v1.1.1 (ff158506cfd9c7871385ed3a87d7435505fd24b1)",
+  "constants": {
+    "Reflexive": {
+      "value": true,
+      "source": "docs: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/guide/04-temporal-expressions.md#evaluation-semantics",
+      "confidence": "high",
+      "quote": "A condition is evaluated at a single **decision timepoint `i`** against the trace history `0..=i` — everything up to and including `i`.",
+      "basis": "The request being decided is the event at timepoint i, so it is in its own history. A1's replay of the reference binary agrees on every decision of reflexive views."
+    },
+    "DenyRecord": {
+      "value": "request",
+      "source": "docs: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/guide/04-temporal-expressions.md#evaluation-semantics",
+      "confidence": "high",
+      "quote": "A successfully recorded `request` remains in history even if subsequent evaluation denies it or fails closed on an error, so it records an attempt. The verdict is returned separately and is not appended to history.",
+      "basis": "A denied request leaves its own request event in history and nothing marks it denied, which is the kernel's DenyRecord = \"request\". Gate A5 replays a history in which the binary itself denies a request and checks that the next decision counts it."
+    },
+    "Scope": {
+      "value": "ScopeSession",
+      "keys": "server",
+      "source": "docs: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/guide/04-temporal-expressions.md#evaluation-semantics",
+      "confidence": "medium",
+      "quote": "**The default event schema declares such a pin**, on `callerPrincipal`, so the key-local reading is the one that applies unless you replace it.",
+      "basis": "Under the default schema every condition reads only the caller principal's slice of the trace. The principal comes from the request scope, not from a field the model chooses, so the key is server-side. Medium: a deployment may replace the schema."
+    },
+    "Window": {
+      "value": "24h",
+      "kernel": "not expressible: kernel views have no timestamps, so the A1 adapter reads within 24h as the whole view and marks narrower windows lossy (K10 adds the dimension)",
+      "source": "docs: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/guide/04-temporal-expressions.md#the-past-operators-and-their-windows",
+      "confidence": "high",
+      "quote": "How far back a window may look is bounded by the event schema's `max_window` — **24h by default**, adjustable with a `max_window = <interval>` directive at the top of the event schema",
+      "basis": "Every temporal operator carries a mandatory window, closed at both ends, capped at max_window. A denied request therefore counts for as long as the policy's window, up to 24h by default."
+    }
+  }
+}

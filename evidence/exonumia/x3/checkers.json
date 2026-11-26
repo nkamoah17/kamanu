@@ -1,0 +1,35 @@
+{
+ "date": "2026-11-24",
+ "platform": "Windows 11 Home 10.0.26340 x86_64, Git Bash (MINGW64_NT-10.0-26340 3.4.9-be826601.x86_64 x86_64), 32 hardware threads",
+ "strict": true,
+ "lean_sha256": "494d5ee4bcd0b68f7952714755434abef25e24fc98ce05b6d5a75873f0ed63e4",
+ "command": "KAMANU_CHECKERS_RECORD=<file> bash lean/check.sh --strict .",
+ "toolchain": "leanprover/lean4:v4.36.0 (every tool from its bin/, pinned in lean/tools.lock)",
+ "export": {
+  "tool": "leanexport",
+  "version": "3.1.0",
+  "declarations": 61129,
+  "seconds": 16.6
+ },
+ "checkers": {
+  "con-leche": {
+   "version": "v4.36.0",
+   "verdict": "accepted",
+   "declarations": 61124,
+   "seconds": 15.8
+  },
+  "con-ron": {
+   "version": "v4.36.0",
+   "verdict": "accepted",
+   "declarations": 61124,
+   "seconds": 22.6
+  },
+  "nanoda": {
+   "version": "0.4.17",
+   "verdict": "accepted",
+   "declarations": 62797,
+   "seconds": 41.3
+  }
+ },
+ "note": "each count is the one the checker prints: con-leche and con-ron count the records of the file they accepted, nanoda the declarations it checked (inductive blocks expanded), leanexport the declaration records it wrote"
+}

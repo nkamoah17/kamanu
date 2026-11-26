@@ -1,0 +1,88 @@
+{
+ "receipt": "receipt-v1",
+ "seq": 0,
+ "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+ "date": "2026-11-26",
+ "observed": "2026-11-26",
+ "kind": "card",
+ "subject": {
+  "sha256": "89f523e65a2ff2445d9a9ca33c3cac454e6805681110ef076a153688684ddaf6",
+  "label": null,
+  "third_party": false,
+  "notified": null,
+  "private": false
+ },
+ "engine": {
+  "name": "issuing-documented"
+ },
+ "type": "3a1a5208ef37ff0ec7ed902ae5799c6d",
+ "figures": {
+  "face": 2000,
+  "ceiling": 2000,
+  "fineness": "1.000"
+ },
+ "checks": [
+  {
+   "name": "Sound",
+   "status": "VACUOUS",
+   "level": "ASSUMED",
+   "trace": null,
+   "die": "387348c4c5457ee2fc9433ad99d27afe"
+  },
+  {
+   "name": "Tight",
+   "status": "holds",
+   "level": "ASSUMED",
+   "trace": null,
+   "die": "9b485bbae5907ecb895ebea1256c07c1"
+  }
+ ],
+ "level": "ASSUMED",
+ "hypotheses": [
+  {
+   "name": "Atomic",
+   "value": false,
+   "status": "assumed",
+   "rests_on": [
+    0,
+    1
+   ]
+  },
+  {
+   "name": "Lag",
+   "value": 1,
+   "status": "assumed",
+   "rests_on": [
+    0,
+    1
+   ]
+  },
+  {
+   "name": "OverCapture",
+   "value": 20,
+   "status": "assumed",
+   "rests_on": [
+    2
+   ]
+  }
+ ],
+ "bounds": {
+  "holds": 2,
+  "amounts": [
+   5000,
+   10000
+  ],
+  "partial": true,
+  "reversal": true
+ },
+ "caveats": [],
+ "failure": null,
+ "replay": {
+  "kind": "card",
+  "profile": "{\r\n \"card\": \"card-v1\",\r\n \"name\": \"issuing-documented\",\r\n \"documented\": \"catalogue/checks/stripe-issuing-spending-controls.json\",\r\n \"limit\": {\r\n  \"face\": 2000,\r\n  \"unit\": \"USD cents (the card's smallest currency unit)\",\r\n  \"name\": \"a cardholder's spending_limits entry, interval daily\"\r\n },\r\n \"quotes\": [\r\n  {\r\n   \"text\": \"Spending aggregation is done on a best-effort basis.\",\r\n   \"url\": \"https://docs.stripe.com/issuing/controls/spending-controls\",\r\n   \"opened\": \"2026-11-23\",\r\n   \"checked\": true\r\n  },\r\n  {\r\n   \"text\": \"You might notice a delay of up to 30 seconds between spend occurrence and spend aggregation.\",\r\n   \"url\": \"https://docs.stripe.com/issuing/controls/spending-controls\",\r\n   \"opened\": \"2026-11-23\",\r\n   \"checked\": true\r\n  },\r\n  {\r\n   \"text\": \"Additional tips and fees can be posted at a later time, causing a spending limit to be exceeded.\",\r\n   \"url\": \"https://docs.stripe.com/issuing/controls/spending-controls\",\r\n   \"opened\": \"2026-11-23\",\r\n   \"checked\": true\r\n  },\r\n  {\r\n   \"text\": \"Spending limit rules limit the total amount of spending for categories over intervals of time.\",\r\n   \"url\": \"https://docs.stripe.com/issuing/controls/spending-controls\",\r\n   \"opened\": \"2026-11-23\",\r\n   \"checked\": true\r\n  }\r\n ],\r\n \"cell\": {\r\n  \"Atomic\": {\r\n   \"value\": false,\r\n   \"status\": \"ASSUMED\",\r\n   \"rests_on\": [\r\n    0,\r\n    1\r\n   ]\r\n  },\r\n  \"Lag\": {\r\n   \"value\": 1,\r\n   \"status\": \"ASSUMED\",\r\n   \"rests_on\": [\r\n    0,\r\n    1\r\n   ]\r\n  },\r\n  \"OverCapture\": {\r\n   \"value\": 20,\r\n   \"status\": \"ASSUMED\",\r\n   \"rests_on\": [\r\n    2\r\n   ]\r\n  }\r\n },\r\n \"bounds\": {\r\n  \"holds\": 2,\r\n  \"amounts\": [\r\n   5000,\r\n   10000\r\n  ],\r\n  \"partial\": true,\r\n  \"reversal\": true\r\n },\r\n \"reads_as\": [\r\n  \"Aggregation on a best-effort basis, up to 30 seconds behind the spend (quotes 0 and 1): Lag 1 and Atomic false, the record's values.\",\r\n  \"Tips and fees posted later, taking spend past the limit (quote 2): over-capture on. The documents give no figure; 20 percent of the hold is assumed.\",\r\n  \"The limit counts the total spending over its interval (quote 3): the face is the record's daily limit, 10000 minor units; the daily interval is a calendar period the card ledger does not tell apart from a sliding one.\",\r\n  \"Force-posts (a capture with no authorization) are not in the documents quoted, so the profile leaves them off; a profile that measures them adds ForcePost.\"\r\n ]\r\n}\r\n"
+ },
+ "kamanu": {
+  "version": "0.1.0",
+  "commit": "11f778ccbbb4a4e98f27d22bd12ffe4f8a13cc77"
+ }
+}

@@ -1,0 +1,25 @@
+\* Credit (R16d): InFlightMax = MaxReq switches the in-flight bound off; the truth reads the kernel's own variables
+\* RT: four of the ledger's templates (the guarded call of k1, an admitted and a refused credit of k1, a credit of k2)
+Templates <- RT
+Permit <- LPermit
+Scope <- ScopeGlobal
+MaxReq = 3
+MaxFails = 1
+Reflexive = TRUE
+DenyRecord = "none"
+Atomic = TRUE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = FALSE
+Cap = 100
+Window = 0
+MaxTime = 0
+Guarded = "sell"
+CreditTool = "approve"
+CreditKind = "response"
+DebitKind = "request"
+Bound = TRUE
+Base = 0
+Slack = 0
+Returns = FALSE
+InFlightMax = 3

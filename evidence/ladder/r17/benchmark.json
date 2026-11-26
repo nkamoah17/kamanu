@@ -1,0 +1,57 @@
+{
+ "machine": "Windows 11 (AMD64), 32 CPUs, Python 3.12.10",
+ "commit": "ed07940fc8eaa5130eeca724d8be30f798e29663",
+ "tree": "HEAD with the R17 commit's uncommitted changes to kamanu/ (measured before that commit)",
+ "checksum_ms": 3.082,
+ "warmup": 40,
+ "profile": "none-not-atomic",
+ "sources": [
+  "table"
+ ],
+ "table": {
+  "path": "kamanu/data/ladder/r17/lint_table.json",
+  "sha256": "c63e8684fb5546706314a3a0f064f092096fa9d6a1d041e80b44ac5f5a916488"
+ },
+ "rows": [
+  {
+   "name": "hit (table, first sight of each shape)",
+   "runs": 146,
+   "median_us": 42.9,
+   "p95_us": 53.5,
+   "p99_us": 70.9,
+   "worst_us": 1375.5,
+   "s8": true,
+   "passes_p99": 0.023
+  },
+  {
+   "name": "hit rendered (table, the object read in full)",
+   "runs": 146,
+   "median_us": 456.8,
+   "p95_us": 1131.0,
+   "p99_us": 1949.5,
+   "worst_us": 6000.9,
+   "s8": true,
+   "passes_p99": 0.6325
+  },
+  {
+   "name": "repeat (table, a skeleton seen before)",
+   "runs": 146,
+   "median_us": 42.6,
+   "p95_us": 95.2,
+   "p99_us": 193.9,
+   "worst_us": 367.4,
+   "s8": true,
+   "passes_p99": 0.0629
+  },
+  {
+   "name": "miss (the machine, table=False)",
+   "runs": 146,
+   "median_us": 13415.8,
+   "p95_us": 45111.3,
+   "p99_us": 55270.0,
+   "worst_us": 61612.8,
+   "s8": true,
+   "passes_p99": 17.9332
+  }
+ ]
+}

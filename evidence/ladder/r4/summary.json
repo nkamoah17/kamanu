@@ -1,0 +1,76 @@
+{
+ "tlc_runs": 4544,
+ "distinct_states": 79631870,
+ "seconds": 25,
+ "mapping": [
+  {
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "carries": true,
+   "differ": 0
+  },
+  {
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "carries": true,
+   "differ": 0
+  },
+  {
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "carries": false,
+   "differ": 3
+  },
+  {
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "carries": false,
+   "differ": 3
+  }
+ ],
+ "disagreements": 6,
+ "robustness": {
+  "old_changed": 27,
+  "new_changed": 0
+ },
+ "seqwriter": {
+  "safe": 16,
+  "cells": 32,
+  "safe_exactly_when_own_writes": true
+ },
+ "vacuous": [],
+ "not_exercised": [],
+ "migration": {
+  "mapped": 0,
+  "re-hunted": 7,
+  "withdrawn": 2
+ }
+}

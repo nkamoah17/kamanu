@@ -1,0 +1,33 @@
+{
+  "about": "The register machine's step, described once (X7). kamanu.fast.gen writes kamanu/fast/step_gen.py (the Python lint runs) and lean/Kamanu/StepGen.lean (Kamanu.Gen, each definition proved equal to its pinned Kamanu.Fast namesake) from this file; docs/drift-guard.md says what each key means.",
+  "statuses": {"P": "p", "A": "a", "R": "r", "FC": "c", "FM": "m"},
+  "issue": {"to": "P"},
+  "moves": [
+    {"label": "permit", "from": "P", "to": "R", "record": ["request"], "when": ["permit", "atomic"],
+     "fails": 0, "spend": false, "py": ["decide", "permit"]},
+    {"label": "permit", "from": "P", "to": "A", "record": [], "when": ["permit", "!atomic"],
+     "fails": 0, "spend": false, "py": ["decide", "permit"]},
+    {"label": "deny", "from": "P", "to": null, "record": ["marks"], "when": ["deny"],
+     "fails": 0, "spend": false, "py": ["decide", "deny"], "flag": "deny"},
+    {"label": "record", "from": "A", "to": "R", "record": ["request"], "when": [],
+     "fails": 0, "spend": false, "py": ["record", null]},
+    {"label": "succeed", "from": "R", "to": null, "record": ["response"], "when": [],
+     "fails": 0, "spend": true, "py": ["succeed", null]},
+    {"label": "failClean", "from": "R", "to": "FC", "record": ["error"], "when": ["budget", "clean"],
+     "fails": 1, "spend": false, "py": ["fail", "clean"]},
+    {"label": "failAmbiguous", "from": "R", "to": "FM", "record": ["error"], "when": ["budget", "ambiguous"],
+     "fails": 1, "spend": true, "py": ["fail", "ambiguous"]},
+    {"label": "refund", "from": "FC", "to": null, "record": ["refund"], "when": [],
+     "fails": 0, "spend": false, "py": ["reconcile", "refund"]},
+    {"label": "confirm", "from": "FM", "to": null, "record": ["confirm"], "when": [],
+     "fails": 0, "spend": false, "py": ["reconcile", "confirm"]}
+  ],
+  "clip": {
+    "hi": {"offset": 1},
+    "lo": {"offset": 0},
+    "fall": {"P": ["zero"], "A": ["neg_min", "adm"], "R": ["neg_min", "run"],
+             "FC": ["pos_neg", "refund"], "FM": ["pos_neg", "confirm"]},
+    "rise": {"P": ["max", "adm"], "A": ["max", "adm"], "R": ["max", "run"],
+             "FC": ["pos", "refund"], "FM": ["pos", "confirm"]}
+  }
+}

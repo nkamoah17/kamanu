@@ -1,0 +1,22 @@
+{
+ "target": {"adapter": "issuing", "address": "https://api.stripe.com"},
+ "owner": "the repository's owner (their own Stripe account, in test mode: a sandbox)",
+ "basis": {"kind": "own-instance"},
+ "ceilings": {"requests": 40000, "money": 10000000},
+ "expires": "2027-03-31",
+ "issuing": {
+  "mode": "test",
+  "max_limit": 10000,
+  "max_amount": 10000,
+  "terms": [
+   {"source": "https://docs.stripe.com/test-mode", "read": "2026-11-24",
+    "quote": "Sandboxes simulate creating real objects without affecting actual transactions or moving real money."},
+   {"source": "https://docs.stripe.com/test-mode", "read": "2026-11-24",
+    "quote": "Sandboxes don’t move funds through real banks or card networks."},
+   {"source": "https://docs.stripe.com/issuing/testing", "read": "2026-11-24",
+    "quote": "You can issue cards and simulate purchases using your own Stripe integration in a sandbox environment."},
+   {"source": "https://docs.stripe.com/issuing/testing", "read": "2026-11-24",
+    "quote": "You can only use these cards for testing within your Stripe account and not for external purchases."}
+  ]
+ }
+}

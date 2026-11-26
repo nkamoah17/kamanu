@@ -1,0 +1,22 @@
+\* Latch (R16c): nothing to switch off, truth is a ghost that constrains no kernel step
+\* RT: four of the ledger's templates (the guarded read of k1, a grant and a revoke of k1, a grant of k2)
+Templates <- RT
+Permit <- LPermit
+Scope <- ScopeGlobal
+MaxReq = 3
+MaxFails = 1
+Reflexive = TRUE
+DenyRecord = "none"
+Atomic = TRUE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = FALSE
+Cap = 100
+Window = 1
+MaxTime = 1
+Guarded = "read"
+Grant = "grant"
+Revoke = "revoke"
+GrantKind = "response"
+RevokeKind = "response"
+Bound = TRUE

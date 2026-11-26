@@ -1,0 +1,69 @@
+$ apalache check --cinit=CTight --init=ApInit --next=ApNext --inv=ApTightInv,ApNoFalseRefusal --length=1 PrFoldApReq.tla
+# Usage statistics is ON. Thank you!
+# If you have changed your mind, disable the statistics with config --enable-stats=false.
+
+Output directory: ~\AppData\Local\Temp\kamanu-r9-ls75wkd7\out\PrFoldApReq.tla\2026-11-12T20-41-07_4114157679935370934
+# APALACHE version: 0.62.3 | build: 3eb15b2                       I@20:41:07.263
+Tuning:                                                           I@20:41:07.289
+PASS #0: SanyParser                                               I@20:41:07.794
+No source location for expression 5301                            W@20:41:09.135
+PASS #1: TypeCheckerSnowcat                                       I@20:41:09.255
+ > Running Snowcat .::.                                           I@20:41:09.255
+ > Your types are purrfect!                                       I@20:41:11.851
+ > All expressions are typed                                      I@20:41:11.852
+PASS #2: ConfigurationPass                                        I@20:41:11.853
+  > Set the initialization predicate to ApInit                    I@20:41:11.865
+  > Set the transition predicate to ApNext                        I@20:41:11.867
+  > Set the constant initialization predicate to CTight           I@20:41:11.869
+  > Set an invariant to ApTightInv                                I@20:41:11.869
+  > Set an invariant to ApNoFalseRefusal                          I@20:41:11.869
+PASS #3: DesugarerPass                                            I@20:41:11.888
+  > Desugaring...                                                 I@20:41:11.891
+PASS #4: InlinePass                                               I@20:41:12.523
+Leaving only relevant operators: ApInit, ApInitPrimed, ApNext, ApNoFalseRefusal, ApTightInv, CTight, CTightPrimed I@20:41:12.524
+PASS #5: TemporalPass                                             I@20:41:12.795
+  > Rewriting temporal operators...                               I@20:41:12.795
+  > No temporal property specified, nothing to encode             I@20:41:12.795
+PASS #6: InlinePass                                               I@20:41:12.795
+Leaving only relevant operators: ApInit, ApInitPrimed, ApNext, ApNoFalseRefusal, ApTightInv, CTight, CTightPrimed I@20:41:12.796
+PASS #7: PrimingPass                                              I@20:41:12.812
+  > Introducing CTightPrimed for CTight'                          I@20:41:12.821
+  > Introducing ApInitPrimed for ApInit'                          I@20:41:12.837
+PASS #8: VCGen                                                    I@20:41:12.840
+  > Producing verification conditions from the invariant ApTightInv I@20:41:12.841
+  > VCGen produced 18 verification condition(s)                   I@20:41:12.857
+  > Producing verification conditions from the invariant ApNoFalseRefusal I@20:41:12.865
+  > VCGen produced 1 verification condition(s)                    I@20:41:12.870
+PASS #9: PreprocessingPass                                        I@20:41:12.877
+  > Before preprocessing: unique renaming                         I@20:41:12.877
+ > Applying standard transformations:                             I@20:41:12.891
+  > PrimePropagation                                              I@20:41:12.892
+  > Desugarer                                                     I@20:41:12.901
+  > UniqueRenamer                                                 I@20:41:12.909
+  > Normalizer                                                    I@20:41:12.942
+  > SetMembershipSimplifier                                       I@20:41:12.981
+  > Keramelizer                                                   I@20:41:13.002
+  > After preprocessing: UniqueRenamer                            I@20:41:13.033
+PASS #10: TransitionFinderPass                                    I@20:41:13.092
+  > Found 1 initializing transitions                              I@20:41:13.238
+  > Found 10 transitions                                          I@20:41:13.259
+  > Found constant initializer CTight                             I@20:41:13.261
+  > Applying unique renaming                                      I@20:41:13.264
+PASS #11: OptimizationPass                                        I@20:41:13.296
+ > Applying optimizations:                                        I@20:41:13.314
+  > ConstSimplifier                                               I@20:41:13.315
+  > ExprOptimizer                                                 I@20:41:13.337
+  > SetMembershipSimplifier                                       I@20:41:13.362
+  > ConstSimplifier                                               I@20:41:13.368
+PASS #12: AnalysisPass                                            I@20:41:13.402
+ > Marking skolemizable existentials and sets to be expanded...   I@20:41:13.420
+  > Skolemization                                                 I@20:41:13.423
+  > Expansion                                                     I@20:41:13.425
+  > Remove unused let-in defs                                     I@20:41:13.436
+ > Running analyzers...                                           I@20:41:13.456
+  > Introduced expression grades                                  I@20:41:13.464
+PASS #13: BoundedChecker                                          I@20:41:13.464
+PrFoldApReq.tla:91:16-91:20: Input error (see the manual): Expected a constant integer range in [ .. ], found 1..MaxReq. This is a known issue: [https://apalache-mc.org/docs/apalache/known-issues.html] E@20:41:14.376
+It took me 0 days  0 hours  0 min  7 sec                          I@20:41:14.377
+Total time: 7.102 sec                                             I@20:41:14.378
+EXITCODE: ERROR (255)

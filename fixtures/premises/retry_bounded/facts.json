@@ -1,0 +1,29 @@
+{
+  "planted": [
+    {
+      "file": "retries.py",
+      "line": 14,
+      "subject": "loop on line 14, bounded",
+      "query_id": "retry_bounded",
+      "joern_version": "4.0.676",
+      "graph_hash": "9f3287de0789aa5ae468d0039706a407dc7bb8ffecad627d9846556da10df3c8",
+      "query_sha256": "150ebb4f00a5500b00ae6f594004cc2b41048ff5cac667541f9ac52c3532dd64"
+    }
+  ],
+  "established": [
+    {
+      "file": "retries.py",
+      "line": 8,
+      "subject": "loop on line 8, bounded",
+      "construct": "range_of_numbers",
+      "assumptions": [
+        "The name range is Python's builtin at run time",
+        "No call in the loop's body starts the function that holds the loop again"
+      ],
+      "query_id": "retry_bounded",
+      "joern_version": "4.0.676",
+      "graph_hash": "3026ee753811686c8d35f4eff544e9d0984e9703b8b624b10044b7d0e02cb9d6",
+      "query_sha256": "150ebb4f00a5500b00ae6f594004cc2b41048ff5cac667541f9ac52c3532dd64"
+    }
+  ]
+}

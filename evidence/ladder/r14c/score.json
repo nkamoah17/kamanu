@@ -1,0 +1,2266 @@
+{
+ "engine": "progress/ladder/proving/kit/mock_engine.py",
+ "adapter": "progress/ladder/proving/harness/tests/hunt/pg_mock.py",
+ "race_rate": 0.1,
+ "miss": 0.01,
+ "hunters": {
+  "hunt": {
+   "vocabulary": {
+    "hunts": 480,
+    "exact": 474,
+    "misses": [
+     {
+      "engine": {
+       "refusal": "none",
+       "atomic": false,
+       "p_race": 0.02,
+       "lag": 0,
+       "seed": 8
+      },
+      "why": "results ['profile', 'no profile fits']",
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [],
+          "lag": 1
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error"
+          ],
+          "lag": 1
+         }
+        ],
+        "atomic": {
+         "value": "refuted",
+         "sessions": [
+          19
+         ],
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 106
+       },
+       "requests-minus-errors": {
+        "result": "no profile fits",
+        "candidates": [],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": 55,
+         "dimension": "unknown"
+        },
+        "requests": 243
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "none",
+       "atomic": false,
+       "p_race": 0.02,
+       "lag": 1,
+       "seed": 8
+      },
+      "why": "results ['profile', 'no profile fits']",
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [],
+          "lag": 1
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error"
+          ],
+          "lag": 1
+         }
+        ],
+        "atomic": {
+         "value": "refuted",
+         "sessions": [
+          19
+         ],
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 106
+       },
+       "requests-minus-errors": {
+        "result": "no profile fits",
+        "candidates": [],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": 55,
+         "dimension": "unknown"
+        },
+        "requests": 246
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "error",
+       "atomic": false,
+       "p_race": 0.02,
+       "lag": 0,
+       "seed": 8
+      },
+      "why": "results ['profile', 'no profile fits']",
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [],
+          "lag": 1
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error"
+          ],
+          "lag": 1
+         }
+        ],
+        "atomic": {
+         "value": "refuted",
+         "sessions": [
+          19
+         ],
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 106
+       },
+       "requests-minus-errors": {
+        "result": "no profile fits",
+        "candidates": [],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": 55,
+         "dimension": "unknown"
+        },
+        "requests": 244
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "error",
+       "atomic": false,
+       "p_race": 0.02,
+       "lag": 1,
+       "seed": 8
+      },
+      "why": "results ['profile', 'no profile fits']",
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [],
+          "lag": 1
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error"
+          ],
+          "lag": 1
+         }
+        ],
+        "atomic": {
+         "value": "refuted",
+         "sessions": [
+          19
+         ],
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 106
+       },
+       "requests-minus-errors": {
+        "result": "no profile fits",
+        "candidates": [],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": 57,
+         "dimension": "unknown"
+        },
+        "requests": 257
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "atomic": false,
+       "p_race": 0.02,
+       "lag": 0,
+       "seed": 8
+      },
+      "why": "results ['profile', 'no profile fits']",
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "refuted",
+         "sessions": [
+          18
+         ],
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 101
+       },
+       "requests-minus-errors": {
+        "result": "no profile fits",
+        "candidates": [],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": 53,
+         "dimension": "unknown"
+        },
+        "requests": 229
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "atomic": false,
+       "p_race": 0.02,
+       "lag": 1,
+       "seed": 8
+      },
+      "why": "results ['profile', 'no profile fits']",
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 1
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 1
+         }
+        ],
+        "atomic": {
+         "value": "refuted",
+         "sessions": [
+          19
+         ],
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 106
+       },
+       "requests-minus-errors": {
+        "result": "no profile fits",
+        "candidates": [],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": 56,
+         "dimension": "unknown"
+        },
+        "requests": 242
+       }
+      }
+     }
+    ],
+    "lag_1": {
+     "hunts": 240,
+     "exact": 237
+    },
+    "by_race_rate": {
+     "0.0": {
+      "hunts": 120,
+      "refuted": 0,
+      "exact": 120
+     },
+     "0.5": {
+      "hunts": 120,
+      "refuted": 120,
+      "exact": 120
+     },
+     "0.1": {
+      "hunts": 120,
+      "refuted": 120,
+      "exact": 120
+     },
+     "0.02": {
+      "hunts": 120,
+      "refuted": 96,
+      "exact": 114
+     }
+    }
+   },
+   "outside": {
+    "engines": 60,
+    "flagged": 50,
+    "missed": [
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 0
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 56
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 1
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 56
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 2
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 56
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 3
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 56
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 4
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 56
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 5
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 56
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 6
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 56
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 7
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 56
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 8
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 56
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 9
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 56
+       }
+      }
+     }
+    ],
+    "by_quirk": {
+     "strict compare (refusal none)": {
+      "engines": 10,
+      "flagged": 10,
+      "dimensions": {
+       "threshold": 20
+      }
+     },
+     "strict compare (refusal request)": {
+      "engines": 10,
+      "flagged": 10,
+      "dimensions": {
+       "threshold": 20
+      }
+     },
+     "double count (refusal none)": {
+      "engines": 10,
+      "flagged": 10,
+      "dimensions": {
+       "double-count": 10,
+       "unknown": 10
+      }
+     },
+     "double count (refusal request)": {
+      "engines": 10,
+      "flagged": 10,
+      "dimensions": {
+       "double-count": 10,
+       "unknown": 10
+      }
+     },
+     "refusals expire (refusal request)": {
+      "engines": 10,
+      "flagged": 0,
+      "dimensions": {}
+     },
+     "lag 2 (refusal none)": {
+      "engines": 10,
+      "flagged": 10,
+      "dimensions": {
+       "lag": 20
+      }
+     }
+    }
+   },
+   "requests": {
+    "median": 311.5,
+    "of": "atomic vocabulary engines, both policies together",
+    "median_all": 240.0,
+    "median_one_policy": 156.0,
+    "most": 403,
+    "kit_baseline": 370
+   }
+  },
+  "row": {
+   "vocabulary": {
+    "hunts": 480,
+    "exact": 474,
+    "misses": [
+     {
+      "engine": {
+       "refusal": "none",
+       "atomic": false,
+       "p_race": 0.02,
+       "lag": 0,
+       "seed": 8
+      },
+      "why": "results ['profile', 'no profile fits']",
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [],
+          "lag": 1
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error"
+          ],
+          "lag": 1
+         }
+        ],
+        "atomic": {
+         "value": "refuted",
+         "sessions": [
+          21
+         ],
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 111
+       },
+       "requests-minus-errors": {
+        "result": "no profile fits",
+        "candidates": [],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": 58,
+         "dimension": "unknown"
+        },
+        "requests": 250
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "none",
+       "atomic": false,
+       "p_race": 0.02,
+       "lag": 1,
+       "seed": 8
+      },
+      "why": "results ['profile', 'no profile fits']",
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [],
+          "lag": 1
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error"
+          ],
+          "lag": 1
+         }
+        ],
+        "atomic": {
+         "value": "refuted",
+         "sessions": [
+          22
+         ],
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 113
+       },
+       "requests-minus-errors": {
+        "result": "no profile fits",
+        "candidates": [],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": 57,
+         "dimension": "unknown"
+        },
+        "requests": 251
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "error",
+       "atomic": false,
+       "p_race": 0.02,
+       "lag": 0,
+       "seed": 8
+      },
+      "why": "results ['profile', 'no profile fits']",
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [],
+          "lag": 1
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error"
+          ],
+          "lag": 1
+         }
+        ],
+        "atomic": {
+         "value": "refuted",
+         "sessions": [
+          21
+         ],
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 111
+       },
+       "requests-minus-errors": {
+        "result": "no profile fits",
+        "candidates": [],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": 58,
+         "dimension": "unknown"
+        },
+        "requests": 251
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "error",
+       "atomic": false,
+       "p_race": 0.02,
+       "lag": 1,
+       "seed": 8
+      },
+      "why": "results ['profile', 'no profile fits']",
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [],
+          "lag": 1
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error"
+          ],
+          "lag": 1
+         }
+        ],
+        "atomic": {
+         "value": "refuted",
+         "sessions": [
+          22
+         ],
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 113
+       },
+       "requests-minus-errors": {
+        "result": "no profile fits",
+        "candidates": [],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": 59,
+         "dimension": "unknown"
+        },
+        "requests": 262
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "atomic": false,
+       "p_race": 0.02,
+       "lag": 0,
+       "seed": 8
+      },
+      "why": "results ['profile', 'no profile fits']",
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "refuted",
+         "sessions": [
+          19
+         ],
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 104
+       },
+       "requests-minus-errors": {
+        "result": "no profile fits",
+        "candidates": [],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": 55,
+         "dimension": "unknown"
+        },
+        "requests": 234
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "atomic": false,
+       "p_race": 0.02,
+       "lag": 1,
+       "seed": 8
+      },
+      "why": "results ['profile', 'no profile fits']",
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 1
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 1
+         }
+        ],
+        "atomic": {
+         "value": "refuted",
+         "sessions": [
+          22
+         ],
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 113
+       },
+       "requests-minus-errors": {
+        "result": "no profile fits",
+        "candidates": [],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": 58,
+         "dimension": "unknown"
+        },
+        "requests": 247
+       }
+      }
+     }
+    ],
+    "lag_1": {
+     "hunts": 240,
+     "exact": 237
+    },
+    "by_race_rate": {
+     "0.0": {
+      "hunts": 120,
+      "refuted": 0,
+      "exact": 120
+     },
+     "0.5": {
+      "hunts": 120,
+      "refuted": 120,
+      "exact": 120
+     },
+     "0.1": {
+      "hunts": 120,
+      "refuted": 120,
+      "exact": 120
+     },
+     "0.02": {
+      "hunts": 120,
+      "refuted": 96,
+      "exact": 114
+     }
+    }
+   },
+   "outside": {
+    "engines": 60,
+    "flagged": 50,
+    "missed": [
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 0
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 58
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 1
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 58
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 2
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 58
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 3
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 58
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 4
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 58
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 5
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 58
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 6
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 58
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 7
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 58
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 8
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 58
+       }
+      }
+     },
+     {
+      "engine": {
+       "refusal": "request",
+       "quirk": "refusals expire",
+       "seed": 9
+      },
+      "said": {
+       "request-sum": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "error",
+           "request"
+          ],
+          "lag": 0
+         },
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 231
+       },
+       "requests-minus-errors": {
+        "result": "profile",
+        "candidates": [
+         {
+          "reflexive": true,
+          "deny_marks": [
+           "request"
+          ],
+          "lag": 0
+         }
+        ],
+        "atomic": {
+         "value": "not refuted",
+         "trials": 44,
+         "race_rate": 0.1,
+         "miss": 0.01,
+         "carried": true
+        },
+        "replay": {
+         "session": null,
+         "dimension": null
+        },
+        "requests": 58
+       }
+      }
+     }
+    ],
+    "by_quirk": {
+     "strict compare (refusal none)": {
+      "engines": 10,
+      "flagged": 10,
+      "dimensions": {
+       "threshold": 20
+      }
+     },
+     "strict compare (refusal request)": {
+      "engines": 10,
+      "flagged": 10,
+      "dimensions": {
+       "threshold": 20
+      }
+     },
+     "double count (refusal none)": {
+      "engines": 10,
+      "flagged": 10,
+      "dimensions": {
+       "double-count": 10,
+       "unknown": 10
+      }
+     },
+     "double count (refusal request)": {
+      "engines": 10,
+      "flagged": 10,
+      "dimensions": {
+       "double-count": 10,
+       "unknown": 10
+      }
+     },
+     "refusals expire (refusal request)": {
+      "engines": 10,
+      "flagged": 0,
+      "dimensions": {}
+     },
+     "lag 2 (refusal none)": {
+      "engines": 10,
+      "flagged": 10,
+      "dimensions": {
+       "lag": 20
+      }
+     }
+    }
+   },
+   "requests": {
+    "median": 323.5,
+    "of": "atomic vocabulary engines, both policies together",
+    "median_all": 252.0,
+    "median_one_policy": 158.5,
+    "most": 415,
+    "kit_baseline": 370
+   }
+  }
+ },
+ "before": "FINDINGS.md item 3: 240 of 480 exact, every miss at lag 1; 0 of 60 flagged (kit baseline: 50)",
+ "command": "python evidence/ladder/r14c/run.py"
+}

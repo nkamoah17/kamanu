@@ -1,0 +1,14 @@
+\* A cap of 100, three payments, and one policy change.
+Templates <- InvalidationTemplates
+Permit <- PReqBasis
+Scope <- ScopeGlobal
+MaxReq = 3
+MaxFails = 1
+Reflexive = TRUE
+DenyRecord = "none"
+Atomic = TRUE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = FALSE
+Cap = 100
+MaxChanges = 1

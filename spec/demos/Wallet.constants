@@ -1,0 +1,15 @@
+\* A cap of 100, two agents with two tries each, and one failure of either kind.
+Templates <- WalletTemplates
+Permit <- WalletPermit
+Scope <- WalletScope
+MaxReq = 6
+MaxFails = 1
+Reflexive = TRUE
+DenyRecord = "none"
+Atomic = TRUE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = TRUE
+Cap = 100
+MaxTries = 2
+AgentFair = TRUE

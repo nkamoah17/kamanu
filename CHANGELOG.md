@@ -1,0 +1,161 @@
+# Changelog
+
+## 0.1.0 (first public release)
+
+KAMANU was built one task card at a time, each accepted by a locked gate written before its code. One line per accepted card, by the date its gate accepted it. Cards whose subject is a result that is not public yet are left out.
+
+- C1 2026-11-06: Spec linter for the seven checker rules (L1 to L7)
+- C2 2026-11-06: Python mirror of the kernel, built from README prose only
+- C3 2026-11-06: Deadlock and fair-cycle checker on the mirror's state graph
+- C5 2026-11-06: Spec emitter for product use, with the three fixes (terminal stutter, fairness in Spec, AF liveness)
+- S1 2026-11-06: Repository from the seed kit; pinned TLC jar in tools/vendor/; CI green
+- A1 2026-11-07: Dogwood adapter - parse, compile to Permit, lossiness manifest
+- A3 2026-11-07: Rego subset adapter with bundle lag
+- C6 2026-11-07: Apalache backend for safety at larger bounds
+- C7 2026-11-07: Metamorphic suite over the mirror
+- C8 2026-11-07: Verdict record with assumption ledger
+- D1 2026-11-07: Same spend cap, three engines - the matrix
+- E1 2026-11-07: Joern runner and fact schema with provenance
+- F1 2026-11-07: Probe designer
+- K2 2026-11-07: Window dimension (fixed versus sliding windows)
+- K3 2026-11-07: Invalidation dimension (policy change resets history)
+- K4 2026-11-07: Information-flow labels and exfiltration across sessions
+- K5 2026-11-07: Fault rung R3 (reconciliation can keep answering unknown)
+- MA1 2026-11-07: Second-order recruitment - delegation widens privilege
+- MA2 2026-11-07: Handoff livelock between two agents
+- MA3 2026-11-07: Two agents, one wallet, ambiguous failures
+- MA4 2026-11-07: Mutual INPUT_REQUIRED deadlock between A2A tasks
+- E2 2026-11-08: Six premise queries
+- E3 2026-11-08: Premise-to-constant mapping with pessimistic defaults
+- E4 2026-11-08: Harness state-machine extraction and two-way static-formal agreement
+- E5 2026-11-08: false_proven benchmark, run by CI with Joern
+- E6 2026-11-08: Provenance end to end, facts printed on the verdict
+- E7 2026-11-08: Static-formal cross-check of manifest, config and premises
+- A5 2026-11-09: Dogwood profile record (dogwood-1.1.1) and the denied-request replay
+- C9 2026-11-09: Robust verdicts over unordered profile dimensions (check every value)
+- D2 2026-11-09: The matrix that says what is new - six engine settings and a hostile column
+- E8 2026-11-09: JavaScript and TypeScript front-end (jssrc2cpg), stretch
+- F2 2026-11-09: Profile posterior over discrete candidates, with the certification rule
+- F3 2026-11-09: Continuous parameters (lag, clock skew) with intervals
+- F4 2026-11-09: Runtime forecaster restricted to kernel-legal futures
+- F5 2026-11-09: Model decomposition from graph structure (assume-guarantee)
+- I1 2026-11-09: T0 implied properties
+- I2 2026-11-09: T1 template catalog (eight templates)
+- I3 2026-11-09: Intent by disagreement - LLM extractor plus TLC check
+- I4 2026-11-09: Question generator with discriminating traces
+- K10 2026-11-09: Window as a profile dimension - kernel with a clock, mirror, windowed Dogwood compile
+- K11 2026-11-09: Fault rung R3b - reconciliation that answers from stale records
+- K7 2026-11-09: Progress extension - Succeeds, NoEarlyEscalation and a timer that waits
+- K8 2026-11-09: Hostile co-actor - one denied request bricks the budget, and the fix
+- K9 2026-11-09: Classify a stuck verdict - deadlock or bound-induced livelock
+- P1a 2026-11-09: kamanu check CLI with SARIF and verdict JSON
+- P1b 2026-11-09: Stateless MCP server (2026-07-28) - verify_policy, diff_engines, explain, questions
+- P2a 2026-11-09: kamanu guard - allowed_now, to_proceed, structured refusals
+- P2b 2026-11-09: Forecast hook and trace-validation feedback
+- D3 2026-11-10: A "no" that costs money - the audit 2 demo, driven by the engine
+- D4 2026-11-10: Act 4 - three ways to write a spend cap on the Dogwood reference binary, and the coach against it
+- H1 2026-11-10: kamanu hunt - characterise an engine it was told nothing about (rollout gate G1)
+- H2 2026-11-10: The four tests and the verdict cache - the middle search over profiles, policy shapes and properties
+- H3 2026-11-10: The vendor's own examples - classify every Dogwood example bundle and run the four tests on each cap
+- H4 2026-11-10: The row record, window kind and per-call engines - a row per engine and version, every cell with a trace, a version and a date
+- H5 2026-11-10: Adapter - the Dogwood Local Engine (embedded Rust library, through a small harness)
+- K12 2026-11-10: False denial and the budget that never refills - FalseDenial and Storm
+- K13 2026-11-10: Theory repairs from audit 2 - OnTime, the K8 fix withdrawn under lag, K9's wording
+- K14 2026-11-10: DenyRecord as a set, and the three-way choice it forces
+- K6 2026-11-10: Undetermined decisions (the engine refuses to decide under concurrency)
+- P1c 2026-11-10: kamanu check answers real policies - cap from the policy, resource scope, checks beyond the grid
+- P1d 2026-11-10: kamanu check, second pass - windows get verdicts, the storm, deny marks, the scope key
+- P1e 2026-11-10: kamanu check gets faster - parallel width, one round for K9, a TLC cache, --quick
+- P2c 2026-11-10: The coach - would_permit, max_allowed_now, earliest_time; MCP server and middleware
+- P2d 2026-11-10: Trace validation accepts partial orders (parallel calls)
+- P2e 2026-11-10: Trace validation reads -32005 as K6's refusal
+- H10 2026-11-11: The matrix - one row per engine, one column per test, generated from the row files
+- H11 2026-11-11: One-line install and the five-minute quickstart
+- H12 2026-11-11: The GitHub Action - kamanu check on pull requests, SARIF uploaded
+- H13 2026-11-11: MCP entry points - the hunt and check server and the coach server, installable
+- H14 2026-11-11: The coach as middleware for one agent framework (first in the cut order)
+- H16 2026-11-11: The post's reproduction - the headline number from the post's own instructions in under five minutes
+- H15 2026-11-12: Freeze - re-run every row from clean and pin the numbers
+- H17 2026-11-12: v0.1.0 - the release is exactly the plan's "In" list
+- R1 2026-11-12: The ledger, its mapping from the kernel, the two view invariants and the refinement check
+- R2 2026-11-12: Every pass carries a witness and a failing neighbour; vacuity is detected and reported
+- R2b 2026-11-12: Derive the invariants from the ledger (kamanu invariants), and check them on white-box counters
+- R3 2026-11-12: Each feature module reduces to the kernel with its feature off; every other model is attached or labelled
+- R4 2026-11-12: Replace Lag with "reads its own key's writes" and "staleness about other keys"; the single-writer probe
+- R4b 2026-11-12: K6 as a third verdict that buys safety with availability
+- R5 2026-11-12: Split Succeed, Reconcile and the recorded refusal; keep the splits that flip a verdict
+- R6 2026-11-12: The scorecard - five lines per engine, diagnosed per step
+- R6b 2026-11-12: Calibrate the judge - planted profiles, planted strangers, noise
+- R6c 2026-11-12: AWS emulator spike, and the emulated tool side for calibration
+- R7 2026-11-12: kamanu fix - propose from a grammar, judge both directions, search four places
+- R8 2026-11-12: Traces as stories beside two ledgers; export in the Informal Trace Format
+- R9 2026-11-12: An inductive proof that request-sum on an atomic engine refines the ledger, with no bound on requests
+- R10 2026-11-13: Wire stories, records and the calibration table into check, fix, hunt and the site
+- R11 2026-11-13: Re-hunt the withdrawn rows live, and record the cap's scope and the engine's settings
+- R11b 2026-11-13: Calibrate the judge on count-shaped policies, and explain its silent changes
+- R11c 2026-11-13: Count the steps of a fix trace's story
+- R11d 2026-11-13: Redact private hosts under any top-level domain
+- R12 2026-11-13: Model the coach, so kamanu fix judges agent-side repairs with a counterexample for each failure
+- R12d 2026-11-13: Make kamanu describe every command and every option it accepts
+- R12e 2026-11-13: Show the caller's money in multi-session stories, and mark where it passes the cap
+- R13 2026-11-13: kamanu lint, the fast path - one register machine instead of TLC for one-register policies
+- R13b 2026-11-13: Certify and extend the fast path - money, semantic diff, the reference binary, the shape space
+- R13c 2026-11-13: Ship the evidence the matrix build reads in the package, so the installed kamanu builds the same site
+- R13d 2026-11-13: Tidy the fast path and the packaged evidence - one republish path, one request bound
+- R13f 2026-11-13: Keep R11's summary in step with the fix evidence, so republishing fixes can never leave it behind
+- R13g 2026-11-13: Keep R4's migration record in step with the rows' live re-hunts
+- R8b 2026-11-13: The corpus record - schema, redaction, local-first sharing, licence
+- R14 2026-11-14: No holds on a request bound - lint closes the machine or says it could not
+- R14b 2026-11-14: kamanu fix judges every proposal for any number of requests before it calls it a repair
+- R14c 2026-11-14: The hunt says no profile fits, probes lag before it reads anything else, and states what its atomic claim is worth
+- R15 2026-11-14: kamanu fix takes a policy and gives back a policy - Dogwood text in, Dogwood text out, or nothing to change
+- R14d 2026-11-15: A scope file before the first request - the hunt refuses a target it was not given, and stops at a ceiling
+- R14e 2026-11-15: Republish R6b's calibration table - the hunt changed under it
+- R15b 2026-11-15: Money on every option and an answer inside a frame - exposure and stranded budget, with TLC as the certificate
+- R15c 2026-11-15: The hunt reads time - a de Bruijn conformance trace for windows, and refusals that expire
+- R16 2026-11-15: Step 0 - one intermediate form, the corpus measured on every commit, no verdict without a stated limit, and the rule that needs no machine
+- R16b 2026-11-15: Step 1 - normalize before deciding - macros inlined, negation, and the spellings AWS itself writes
+- R16c 2026-11-15: Step 4, moved up - flags, latches and delays, one representative key, and a ledger of record for rules without money
+- R16d 2026-11-15: Step 3 - k registers, counts, and registers that span two actions - approvals consumed, tokens, concurrency limits
+- R16e 2026-11-15: Step 2 - predicates sort events into kinds - filters on the request's fields and on the principal
+- R16f 2026-11-15: Step 5 - symbolic oracles - tool output and provider answers as inputs lint quantifies over
+- R16h 2026-11-15: A second front-end - gateway token limits and budgets compile to the same form and get the same verdicts
+- R17 2026-11-15: Lint's verdict table - one entry per shape and profile, traces stored as fractions of the cap, and output a tool can trust
+- R17b 2026-11-16: A native kamanu-lint - a hand-written parser checked against the vendor's, the verdict table compiled in, one static binary
+- R17c 2026-11-16: no_limit follows the form - a policy lint could not read in full does not state no limit
+- T1 2026-11-22: Land the Lean proofs - R9 closed for any number of requests, R14's clip a bisimulation
+- T5 2026-11-22: Type the premises - a pattern is not a proof, and Atomic is never TRUE from a pattern alone
+- H4b 2026-11-23: A fixed window that resets while calls are in flight - the hunt reads a non-atomic engine near its window boundary as fixed, not unknown
+- T2 2026-11-23: Print the proof level - every verdict carries how it was established, by the weakest link
+- T3 2026-11-23: Close the chain - prove in Lean that the kernel under a one-threshold policy is bisimilar to the register machine (R13)
+- T4 2026-11-23: Hold the Lean kernel to the others - executable kernel steps run against mirror.py and TLC
+- T6 2026-11-23: A budget is not a session - the cross-session budget key and the $500-a-day demo
+- T6b 2026-11-23: Attach the budget key - spec/ext/BudgetKey.tla gets an ATTACHED.yaml entry that R3's rules accept, with its reduction checked
+- T8 2026-11-23: Prove what was sold - the two-session caller ledger and the Credit ledger in Lean
+- T8b 2026-11-23: Proved only with every needed link - judge does not raise a run whose chain leaves out a link that run rests on
+- T9 2026-11-23: First connector assessment - identity provenance, tenant-sensitive sinks and a cross-tenant harness for one MCP connector
+- X1 2026-11-23: kamanu assay - a limit's face value, its assayed ceiling, fineness and stranded budget as one signed hallmark that verifies from a clean machine
+- X1b 2026-11-23: The hallmark registry - a static public record of every hallmark, current or lapsed, that a stranger checks without us
+- X1c 2026-11-23: The claims and the Catalogue - every sentence said in public is tied to the theorem or record behind it, with its level, its hypotheses and a failing neighbour
+- X3 2026-11-23: The budget-key theorem - real spend within the cap for every key of tenant, principal, purpose and window, any number of agents, checked by the kernel replay and three outside checkers
+- X4 2026-11-23: The card ledger - authorization, capture, reversal, over-capture and force-post as ledger steps, and the Stripe documented check as a model verdict
+- X1d 2026-11-24: The mint's face - the hallmark, registry and Catalogue speak in coin terms that each have one exact meaning, and the owner can release a held result on the record
+- X2a 2026-11-24: A measured rail - an x402 client and facilitator on Base Sepolia, 99 trials per test
+- X2d 2026-11-24: A measured rail - one wallet spending limit on a testnet, 99 trials per test
+- X5 2026-11-24: The isolation contract - typed identifiers, a Lean theorem that the tenant of every query comes from the session and never from an argument, and the T9 harness as one command
+- X7 2026-11-24: A drift guard - the Lean and Python register machines generated from one description, so a change to the semantics cannot reach one and miss the other
+- X9 2026-11-24: Checkpointed live runs - a rail's live run survives a power cut or a dropped connection by resuming at the trial it lost, and says so on the record
+- X10 2026-11-25: Concurrent rail trials - a live run's independent trials run side by side, so a run that mostly waits on clocks takes under an hour instead of three and a half
+- X11 2026-11-25: The reference ledger in shadow mode - beside a card program's real-time authorization handler it reserves on authorization, commits on capture, releases on reversal or expiry, and reports where the handler overspent or wrongly refused
+- X12 2026-11-25: The Issuing run made fast and cut-proof - hunt sessions on separate cards run side by side, every answered request is journaled, and a power or network cut costs one request, not the run
+- X14 2026-11-25: The Issuing rail on a pool of cards - Stripe's spending controls measured in test mode on cards that already exist, each trial on a card shown empty first, because the sandbox issues 25 cards a week
+- X8 2026-11-25: Limits that are not windows - a per-payment threshold and the most-restrictive composite, so the hunt can name x402's limit and a card's stacked limits instead of answering "no profile fits"
+- X8b 2026-11-25: The x402 row hunted again - x402's limit named as a per-payment threshold from a new live run, its four cells verdicts instead of "untested"
+- X15 2026-11-26: The cabinet - every scan leaves a chained receipt, and the next scan is told what the receipts before it add up to, with no verdict, figure or level ever changed by them
+- X16 2026-11-26: The Authorization Assurance Sprint as one command, dry-run on ourselves - the offer's battery played against a handler beside the shadow ledger, the three-part report (Model, Measurement, Deployment), a signed receipt per limit, and every receipt recomputed from a clean checkout
+- X18 2026-11-26: The launch freeze as one command - from a clean clone, README's quickstart and docs/scan.md's recipe run unedited in under a minute each, every claim resolves, the registry and Catalogue are rebuilt for the day, and the proof kit's three runs are saved with the date
+- X19 2026-11-26: kamanu scan in the GitHub Action - each changed policy scanned on the pull request, the cabinet carried from run to run and verified before it is kept as a build artefact
+- X20 2026-11-26: The open known-answer suite - the trial plates of KAMANU's own designs, committed, each made by a scan and never typed, replayed by the tests on every change
+- X21 2026-11-26: The offer as one source - the launch page, the one-page offer and the engagement letter (a draft for counsel) built from the owner's offer file, the example computed, the founding slots counted, no figure typed
+- X22 2026-11-26: The three MCP servers ready to list - `kamanu mcp lint|coach|serve` starts each from the one package, three server.json records for the official MCP Registry, and the owner's listing steps, each record tested by starting the server it names from a built wheel
+- X23 2026-11-26: The launch freeze gives its clone the pinned Apalache jar - the one proof test that re-runs Apalache runs in the freeze as it does in the checkout, and an apalache step says whether the jar was there

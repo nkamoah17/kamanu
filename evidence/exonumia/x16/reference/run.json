@@ -1,0 +1,66 @@
+{
+ "handler": "demo.sprint.handlers:Reference",
+ "scope": "demo/sprint/scope.json",
+ "seed": 1,
+ "trials": 99,
+ "parallel": 8,
+ "steps": [
+  {
+   "step": "scope",
+   "seconds": 0.005
+  },
+  {
+   "step": "battery: single asks below, at and above the limit",
+   "seconds": 0.038
+  },
+  {
+   "step": "battery: parallel asks",
+   "seconds": 4.348
+  },
+  {
+   "step": "battery: several cards under one cardholder",
+   "seconds": 4.096
+  },
+  {
+   "step": "battery: authorization then partial capture",
+   "seconds": 0.048
+  },
+  {
+   "step": "battery: capture above the hold, then reversal",
+   "seconds": 0.057
+  },
+  {
+   "step": "battery: time-out with an ambiguous outcome, then retry",
+   "seconds": 5.579
+  },
+  {
+   "step": "battery: reset at the interval's boundary",
+   "seconds": 0.053
+  },
+  {
+   "step": "battery: an uncaptured hold that expires, and two limits on one purchase",
+   "seconds": 0.103
+  },
+  {
+   "step": "ledger reports",
+   "seconds": 4.468
+  },
+  {
+   "step": "findings and regressions",
+   "seconds": 0.0
+  },
+  {
+   "step": "model: kamanu scan --card, a receipt per limit",
+   "seconds": 1.0
+  },
+  {
+   "step": "cabinet: kamanu scan --ingest of the ledger reports",
+   "seconds": 0.152
+  },
+  {
+   "step": "report",
+   "seconds": 0.004
+  }
+ ],
+ "total": 19.952
+}

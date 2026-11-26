@@ -1,0 +1,22 @@
+$ apalache check --cinit=CRefine --init=ApInit --next=ApNext --inv=ApInv,ApRefStep --length=1 PrRefineAp.tla
+# Usage statistics is ON. Thank you!
+# If you have changed your mind, disable the statistics with config --enable-stats=false.
+
+Output directory: ~\AppData\Local\Temp\kamanu-r9-3as91cn7\out\PrRefineAp.tla\2026-11-12T20-40-26_8063856227734956249
+# APALACHE version: 0.62.3 | build: 3eb15b2                       I@20:40:26.348
+Tuning:                                                           I@20:40:26.426
+PASS #0: SanyParser                                               I@20:40:27.188
+WORKAROUND #130: labelling operator K!SumKind as recursive, though SANY did not tell us so. W@20:40:28.433
+WORKAROUND #130: labelling operator K!SumIds as recursive, though SANY did not tell us so. W@20:40:28.465
+No source location for expression 5270                            W@20:40:28.519
+PASS #1: TypeCheckerSnowcat                                       I@20:40:28.714
+ > Running Snowcat .::.                                           I@20:40:28.714
+ > Your types are purrfect!                                       I@20:40:32.248
+ > All expressions are typed                                      I@20:40:32.248
+PASS #2: ConfigurationPass                                        I@20:40:32.257
+PrRefineAp.tla:72:1-72:90: unexpected expression: RECURSIVE K!SumKind(_,_). Apalache does not support recursive operators. E@20:40:32.388
+PrRefineAp.tla:72:1-72:90: unexpected expression: RECURSIVE K!SumIds(_). Apalache does not support recursive operators. E@20:40:32.442
+Unexpected expressions in the specification (see the error messages) E@20:40:32.444
+It took me 0 days  0 hours  0 min  6 sec                          I@20:40:32.446
+Total time: 6.52 sec                                              I@20:40:32.446
+EXITCODE: ERROR (255)

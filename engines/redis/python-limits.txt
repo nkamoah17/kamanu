@@ -1,0 +1,4 @@
+# The pinned limits package and its Redis client, for kamanu/hunt/adapters/redis_python_limits.py.
+# The live run of gate H8 pip-installs exactly these.
+limits==5.8.0
+redis==8.1.0

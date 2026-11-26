@@ -1,0 +1,14 @@
+\* a singleton set of marks is the kernel's single mark
+Templates <- RT
+MaxReq = 3
+MaxFails = 1
+Reflexive = TRUE
+DenyRecord = "request"
+Atomic = TRUE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = TRUE
+Permit <- PReqBasis
+Scope <- ScopeGlobal
+Cap = 100
+DenyMarks = {"request"}

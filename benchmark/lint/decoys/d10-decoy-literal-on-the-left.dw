@@ -1,0 +1,4 @@
+permit (principal, action == Drupe::Action::"Refund", resource)
+when temporal {
+  100 >= (sum a for (a: Long), (t: Timepoint). where (formerly within 24h (Drupe::Action::"Refund"::request{ input.amount: a } && tp(t))))
+};

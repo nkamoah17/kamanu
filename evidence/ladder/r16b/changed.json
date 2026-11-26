@@ -1,0 +1,1249 @@
+{
+ "what": "the vendor's examples whose status or reason for being outside changed with R16b (normalize before deciding: macros inlined, negation, the vendor's spellings, the amount a tool returns); before: R16's corpus table, after: `python -m kamanu.fast.corpus DIR` today",
+ "examples": [
+  {
+   "example": "access_not_revoked_since_grant",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.user)",
+     "pattern field bound to the request (input.resource)",
+     "events of another action (Grant)",
+     "pattern field bound to the request (input.user)",
+     "pattern field bound to the request (input.resource)",
+     "events of another action (Revoke)",
+     "since"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "alert_exactly_three_transfers",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "events of another action (Transfer)",
+     "equality on an aggregate",
+     "count"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "alert_heartbeat_and_login_rate",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.server)",
+     "events of another action (Heartbeat)",
+     "formerly",
+     "pattern field bound to the request (input.server)",
+     "events of another action (Login)",
+     "exists"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "alert_login_and_big_transfer",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern variable on input.user",
+     "events of another action (Login)",
+     "pattern variable on input.user",
+     "events of another action (Transfer)",
+     "exists"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "alert_login_current_tp",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.server)",
+     "events of another action (Login)",
+     "exists"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "alert_login_in_last_hour",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.server)",
+     "events of another action (Login)",
+     "exists"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "alert_pending_transfers",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "events of another action (Transfer)",
+     "events of another action (Transfer)",
+     "several aggregates in one comparison",
+     "count",
+     "count"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "alert_same_principal_login_transfer",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern variable on callerPrincipal",
+     "events of another action (Login)",
+     "pattern variable on callerPrincipal",
+     "events of another action (Transfer)",
+     "exists"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "alert_same_user_login_and_transfer",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern variable on input.user",
+     "events of another action (Login)",
+     "pattern variable on input.user",
+     "events of another action (Transfer)",
+     "exists"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "alert_some_login",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern variable on input.user",
+     "pattern field bound to the request (input.server)",
+     "events of another action (Login)",
+     "exists"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "alert_total_transfer_over_200",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "events of another action (Transfer)",
+     "exists"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "call_cedar_macro_as_argument",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "macro call semverGT"
+    ]
+   },
+   "after": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (if)"
+    ]
+   }
+  },
+  {
+   "example": "call_cedar_macro_is_small",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "macro call is_small"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "call_cedar_macro_with_temporal_leaf",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "macro call level_ok",
+     "pattern field bound to the request (input.server)",
+     "events of another action (Login)",
+     "formerly"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "call_cedar_macros_composed",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "macro call is_eligible",
+     "macro call is_not_blocked"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "call_temporal_aggregation_macro_count",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.server)",
+     "events of another action (Login)",
+     "exists"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "call_temporal_condition_macro_once",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.user)",
+     "pattern field bound to the request (input.document)",
+     "events of another action (Read)",
+     "macro call once"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "call_temporal_condition_macros_composed",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "macro call recently_logged_in",
+     "macro call recently_read"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "cap_open_agent_prs_windowed",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "events of another action (CompleteReview)",
+     "several aggregates in one comparison",
+     "count",
+     "count"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "cedar_eligible_not_blocked",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "macro definition (def)",
+     "macro definition (def)",
+     "macro call is_eligible",
+     "macro call is_not_blocked"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "cedar_is_small_threshold",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "macro definition (def)",
+     "macro call is_small"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "cedar_macro_plus_temporal_leaf",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "macro definition (def)",
+     "macro call level_ok",
+     "pattern field bound to the request (input.server)",
+     "events of another action (Login)",
+     "formerly"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "cedar_semver_gt",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "macro definition (def)",
+     "macro definition (def)",
+     "macro call semverGT"
+    ]
+   },
+   "after": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (if)"
+    ]
+   }
+  },
+  {
+   "example": "cedar_starts_with_f_like",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "macro definition (def)",
+     "macro call starts_with_f"
+    ]
+   },
+   "after": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (like) on input.stock"
+    ]
+   }
+  },
+  {
+   "example": "cedar_within_cap_if_else",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "macro definition (def)",
+     "macro call within_cap"
+    ]
+   },
+   "after": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (if) on input.stock, input.shares"
+    ]
+   }
+  },
+  {
+   "example": "cond_is_oauth_in_team",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (in)"
+    ]
+   },
+   "after": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (in) on principal"
+    ]
+   }
+  },
+  {
+   "example": "deny_overrides_sell_not_amzn",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "comparison on context.input.stock"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "desk_governance",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "principal constraint",
+     "pattern field bound to the request (input.user)",
+     "output field output.result",
+     "events of another action (Login)",
+     "pattern field bound to the request (input.user)",
+     "events of another action (Logout)",
+     "since",
+     "pattern field bound to the request (input.user)",
+     "pattern field bound to the request (input.stock)",
+     "output field output.approved",
+     "events of another action (ApproveSale)",
+     "formerly",
+     "pattern field bound to the request (input.user)",
+     "exists",
+     "information provider Text::Scan",
+     "comparison on context.input.stock",
+     "principal constraint",
+     "pattern field bound to the request (input.user)",
+     "events of another action (Login)",
+     "pattern field bound to the request (input.user)",
+     "pattern field bound to the request (input.stock)",
+     "events of another action (SellShares)",
+     "since"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "forbid_large_except_amzn",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "comparison on context.input.shares",
+     "comparison on context.input.stock"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "forbid_read_transfers_over_1000",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.user)",
+     "output field output.amount",
+     "events of another action (Transfer)",
+     "exists"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "get_amzn_stock_info",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "comparison on context.input.stock"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "heartbeat_scope_alias",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.server)",
+     "pattern variable on callerPrincipal",
+     "pattern variable on callerResource",
+     "events of another action (Heartbeat)",
+     "formerly"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "login_attempt_custom_kind",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "custom event kind attempt",
+     "pattern field bound to the request (input.user)",
+     "pattern variable on actor",
+     "events of another action (Login)",
+     "formerly"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "macro_library_once_is_small",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "macro call is_small",
+     "pattern field bound to the request (input.stock)",
+     "events of another action (ApproveSale)",
+     "macro call once"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "max_window_raised",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.user)",
+     "events of another action (Login)",
+     "formerly"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "principal_is_oauth",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "principal constraint"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "provider_allowed_or_short",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "information provider Lists::Allowed",
+     "information provider Strings::Length"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "provider_digitcount_forbid",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "information provider Strings::DigitCount"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "provider_digitcount_operator_ge",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "information provider Strings::DigitCount"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "provider_enum_severity_forbid",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (in)"
+    ]
+   },
+   "after": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (in) on Vendor::ThreatScan(context.input.document).severity, input.document"
+    ]
+   }
+  },
+  {
+   "example": "provider_enum_two_namespaces",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (in)"
+    ]
+   },
+   "after": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (in) on Vendor::ThreatScan(context.input.document).severity, input.document"
+    ]
+   }
+  },
+  {
+   "example": "provider_filter_set_index_decimal",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (lessThan)"
+    ]
+   },
+   "after": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (lessThan) on input.document"
+    ]
+   }
+  },
+  {
+   "example": "provider_int_arithmetic_trusted",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "comparison on context.input.trusted",
+     "information provider Strings::DigitCount"
+    ]
+   },
+   "after": {
+    "status": "outside",
+    "stopped_by": [
+     "comparison on input.trusted",
+     "information provider Strings::DigitCount"
+    ]
+   }
+  },
+  {
+   "example": "provider_matches_and_not_blocked",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "information provider Strings::Matches",
+     "information provider Lists::Blocked"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "provider_regex_analyze_fields",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "information provider Regex::Analyze",
+     "information provider Regex::Analyze",
+     "information provider Regex::Analyze"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "provider_regex_matches_uppercase",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "information provider Strings::Matches"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "provider_risk_decimal_method",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (lessThan)"
+    ]
+   },
+   "after": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (lessThan) on Content::Risk(context.input.document).severityScore, input.document"
+    ]
+   }
+  },
+  {
+   "example": "read_after_login",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.user)",
+     "events of another action (Login)",
+     "formerly"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "read_after_login_success",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.user)",
+     "output field output.result",
+     "events of another action (Login)",
+     "formerly"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "read_heartbeat_since_login_30s",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.user)",
+     "events of another action (Login)",
+     "pattern field bound to the request (input.user)",
+     "events of another action (Heartbeat)",
+     "since"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "read_login_not_logout",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.user)",
+     "events of another action (Login)",
+     "formerly",
+     "pattern field bound to the request (input.user)",
+     "events of another action (Logout)",
+     "event pattern at the current point"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "read_prev_compute_open_session",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.user)",
+     "events of another action (Compute)",
+     "previous",
+     "pattern field bound to the request (input.user)",
+     "events of another action (Login)",
+     "pattern field bound to the request (input.user)",
+     "events of another action (Logout)",
+     "since"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "read_prev_login",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.user)",
+     "events of another action (Login)",
+     "previous"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "read_prev_login_success",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.user)",
+     "output field output.result",
+     "events of another action (Login)",
+     "previous"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "read_since_login",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.user)",
+     "events of another action (Login)",
+     "pattern field bound to the request (input.user)",
+     "events of another action (Login)",
+     "since"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "refund_budget_settled_plus_current",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "output field output.amount"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "sell_after_approval_valid_ticker",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.stock)",
+     "events of another action (ApproveSale)",
+     "formerly",
+     "information provider Strings::Matches",
+     "unreadable"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "sell_comparison_chain",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "comparison on context.input.shares",
+     "comparison on context.input.shares",
+     "comparison on context.input.shares"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "sell_like_a_prefix",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (like)"
+    ]
+   },
+   "after": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (like) on input.stock"
+    ]
+   }
+  },
+  {
+   "example": "sell_logical_grouping",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "comparison on context.input.shares",
+     "comparison on context.input.stock",
+     "comparison on context.input.stock"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "sell_not_blocked_string",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "comparison on context.input.stock"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "sell_not_test_tickers_like",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (like)"
+    ]
+   },
+   "after": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (like) on input.stock"
+    ]
+   }
+  },
+  {
+   "example": "sell_or_approve_action_in",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "rules for ApproveSale, SellShares"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "sell_shares_temporal_subexpr",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "comparison on context.input.shares",
+     "formerly"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "sell_small_only",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "comparison on context.input.shares"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "sell_threshold_by_stock",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (if)"
+    ]
+   },
+   "after": {
+    "status": "outside",
+    "stopped_by": [
+     "predicate (if) on input.stock, input.shares"
+    ]
+   }
+  },
+  {
+   "example": "sell_two_when_small_amzn",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "comparison on context.input.shares",
+     "comparison on context.input.stock"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "sell_unless_huge",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "comparison on context.input.shares"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "sell_when_under_100",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "comparison on context.input.shares"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "sell_when_unless_mix",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "comparison on context.input.shares",
+     "comparison on context.input.stock"
+    ]
+   },
+   "after": {
+    "status": "no limit",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "submit_after_approval_injection",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "macro definition (def)",
+     "pattern field bound to the request (input.user)",
+     "events of another action (Approve)",
+     "macro call approved_recently"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "temporal_count_formerly_login",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "macro definition (def)",
+     "pattern field bound to the request (input.server)",
+     "events of another action (Login)",
+     "exists"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "temporal_login_then_read",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "macro definition (def)",
+     "macro definition (def)",
+     "macro call recently_logged_in",
+     "macro call recently_read"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "temporal_once_read_recent",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "macro definition (def)",
+     "pattern field bound to the request (input.user)",
+     "pattern field bound to the request (input.document)",
+     "macro call once"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "temporal_sum_formerly_transfer",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "macro definition (def)",
+     "events of another action (Transfer)",
+     "exists"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "touchless_invoice_within_tolerance",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.po_id)",
+     "events of another action (CreatePurchaseOrder)",
+     "exists"
+    ]
+   },
+   "after": {
+    "status": "outside",
+    "stopped_by": [
+     "bound arithmetic"
+    ]
+   }
+  },
+  {
+   "example": "touchless_share_capped",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "events of another action (Decide)",
+     "several aggregates in one comparison",
+     "count",
+     "count"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "transfer_prev_nested_conj",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.user)",
+     "events of another action (Login)",
+     "pattern filter input.server",
+     "events of another action (Login)",
+     "previous over a formula"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "write_after_read",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.stock)",
+     "events of another action (ApproveSale)",
+     "formerly"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  },
+  {
+   "example": "write_after_read_formerly",
+   "before": {
+    "status": "outside",
+    "stopped_by": [
+     "pattern field bound to the request (input.user)",
+     "pattern field bound to the request (input.document)",
+     "events of another action (Read)",
+     "formerly"
+    ]
+   },
+   "after": {
+    "status": "inside",
+    "stopped_by": []
+   }
+  }
+ ]
+}

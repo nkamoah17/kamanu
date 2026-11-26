@@ -1,0 +1,33 @@
+{
+  "sessions": {
+    "s1": {
+      "tenant": "acme",
+      "principal": "agent-7",
+      "purpose": "procurement",
+      "window": "2026-11-23"
+    },
+    "s2": {
+      "tenant": "acme",
+      "principal": "agent-7",
+      "purpose": "procurement",
+      "window": "2026-11-23"
+    },
+    "s3": {
+      "tenant": "acme",
+      "principal": "agent-7",
+      "purpose": "procurement",
+      "window": "2026-11-23"
+    }
+  },
+  "scope": "session",
+  "requests": 3,
+  "failures": 1,
+  "faults": [
+    "ambiguous",
+    "clean"
+  ],
+  "reconcile": true,
+  "amounts": [
+    30000
+  ]
+}

@@ -1,0 +1,9 @@
+# LiteLLM virtual key: the body of POST /key/generate written as YAML.
+# Documentation: https://docs.litellm.ai/docs/proxy/virtual_keys (max_budget, budget_duration, key_alias, metadata)
+# and https://docs.litellm.ai/docs/proxy/users (a key's budget in dollars, reset every budget_duration).
+# The budget H7's live row ran (profiles/rows/litellm-key-budget.json: max_budget_cents 360, budget_duration 1m).
+key_alias: h7-key-budget
+max_budget: 3.60          # dollars
+budget_duration: 1m
+metadata:
+  purpose: kamanu H7 live row

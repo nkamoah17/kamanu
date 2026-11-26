@@ -1,0 +1,164 @@
+{
+ "cases": [
+  {
+   "case": "timer",
+   "verdict": "VACUOUS",
+   "runs": [
+    {
+     "policy": "refuses everything",
+     "HasTimeout": true,
+     "property": "TaskEndsOrEscalates",
+     "witness": "Goal",
+     "verdict": "VACUOUS",
+     "satisfiable": false
+    }
+   ]
+  },
+  {
+   "case": "over-ask per call",
+   "verdict": "VACUOUS",
+   "runs": [
+    {
+     "engine": "per call: every request costs 1",
+     "cap": 2,
+     "property": "OverAskRefused",
+     "witness": "OverAskDecided",
+     "verdict": "VACUOUS",
+     "satisfiable": false
+    }
+   ]
+  },
+  {
+   "case": "e14 two writers",
+   "verdict": "VACUOUS",
+   "runs": [
+    {
+     "policy": "PReqBasis",
+     "atomic": true,
+     "lag": 0,
+     "amount": 60,
+     "cap": 100,
+     "property": "PerKeyOK",
+     "witness": "Spent2",
+     "verdict": "VACUOUS",
+     "satisfiable": false
+    },
+    {
+     "policy": "PReqBasis",
+     "atomic": true,
+     "lag": 1,
+     "amount": 60,
+     "cap": 100,
+     "property": "PerKeyOK",
+     "witness": "Spent2",
+     "verdict": "VACUOUS",
+     "satisfiable": false
+    },
+    {
+     "policy": "PReqBasis",
+     "atomic": false,
+     "lag": 0,
+     "amount": 60,
+     "cap": 100,
+     "property": "PerKeyOK",
+     "witness": "Spent2",
+     "verdict": "VACUOUS",
+     "satisfiable": false
+    },
+    {
+     "policy": "PReqBasis",
+     "atomic": false,
+     "lag": 1,
+     "amount": 60,
+     "cap": 100,
+     "property": "PerKeyOK",
+     "witness": "Spent2",
+     "verdict": "VACUOUS",
+     "satisfiable": false
+    },
+    {
+     "policy": "PRefundOnReconcile",
+     "atomic": true,
+     "lag": 0,
+     "amount": 60,
+     "cap": 100,
+     "property": "PerKeyOK",
+     "witness": "Spent2",
+     "verdict": "VACUOUS",
+     "satisfiable": false
+    },
+    {
+     "policy": "PRefundOnReconcile",
+     "atomic": true,
+     "lag": 1,
+     "amount": 60,
+     "cap": 100,
+     "property": "PerKeyOK",
+     "witness": "Spent2",
+     "verdict": "VACUOUS",
+     "satisfiable": false
+    },
+    {
+     "policy": "PRefundOnReconcile",
+     "atomic": false,
+     "lag": 0,
+     "amount": 60,
+     "cap": 100,
+     "property": "PerKeyOK",
+     "witness": "Spent2",
+     "verdict": "VACUOUS",
+     "satisfiable": false
+    },
+    {
+     "policy": "PRefundOnReconcile",
+     "atomic": false,
+     "lag": 1,
+     "amount": 60,
+     "cap": 100,
+     "property": "PerKeyOK",
+     "witness": "Spent2",
+     "verdict": "VACUOUS",
+     "satisfiable": false
+    }
+   ]
+  },
+  {
+   "case": "deny-all sound",
+   "verdict": "VACUOUS",
+   "runs": [
+    {
+     "policy": "refuses everything",
+     "check": "RealSpendOK",
+     "property": "RealSpendOK",
+     "witness": "WPaid",
+     "verdict": "VACUOUS",
+     "satisfiable": false
+    },
+    {
+     "policy": "refuses everything",
+     "check": "SoundAdmit",
+     "property": "SoundAdmit",
+     "witness": "WPaid",
+     "verdict": "VACUOUS",
+     "satisfiable": false
+    },
+    {
+     "policy": "refuses everything",
+     "check": "ViewSound",
+     "property": "ViewSound",
+     "witness": "WPaid",
+     "verdict": "VACUOUS",
+     "satisfiable": false
+    },
+    {
+     "policy": "refuses everything",
+     "check": "RefinesLedger",
+     "property": "RefinesLedger",
+     "witness": "WPaid",
+     "verdict": "VACUOUS",
+     "satisfiable": false
+    }
+   ]
+  }
+ ]
+}

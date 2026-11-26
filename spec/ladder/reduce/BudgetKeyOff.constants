@@ -1,0 +1,19 @@
+\* the budget key off: Scope is the kernel's session scope (ScopeSession), not ScopeBudget.
+\* Two sessions share one budget key; each asks 60 against a cap of 100, so the key decides.
+Templates <- BT
+MaxReq = 3
+MaxFails = 1
+Reflexive = TRUE
+DenyRecord = "none"
+Atomic = TRUE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = TRUE
+Permit <- PReqBasis
+Scope <- ScopeSession
+Cap = 100
+Sessions = {"s1", "s2"}
+Tenants = {"acme"}
+Principals = {"agent-7"}
+Purposes = {"procurement"}
+Windows = {"2026-11-23"}

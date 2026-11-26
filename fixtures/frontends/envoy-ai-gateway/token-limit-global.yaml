@@ -1,0 +1,31 @@
+# Envoy AI Gateway usage-based rate limiting: a BackendTrafficPolicy whose cost is the response's token count.
+# Documentation: https://aigateway.envoyproxy.io/docs/capabilities/traffic/usage-based-ratelimiting
+# (the request costs nothing, cost.request number 0; the response costs llm_total_token from the
+# io.envoy.ai_gateway metadata) and https://gateway.envoyproxy.io/docs/api/extension_types/ (RateLimitRule:
+# clientSelectors is optional; without it the rule's one counter is shared by every client).
+apiVersion: gateway.envoyproxy.io/v1alpha1
+kind: BackendTrafficPolicy
+metadata:
+  name: token-limit-policy
+  namespace: default
+spec:
+  targetRefs:
+    - name: envoy-ai-gateway-basic
+      kind: Gateway
+      group: gateway.networking.k8s.io
+  rateLimit:
+    type: Global
+    global:
+      rules:
+        - limit:
+            requests: 1000 # 1000 total tokens per hour
+            unit: Hour
+          cost:
+            request:
+              from: Number
+              number: 0 # Set to 0 so only token usage counts
+            response:
+              from: Metadata
+              metadata:
+                namespace: io.envoy.ai_gateway
+                key: llm_total_token # Uses total tokens from the responses

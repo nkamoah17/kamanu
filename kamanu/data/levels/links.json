@@ -1,0 +1,245 @@
+{
+ "links": {
+  "R9": {
+   "claim": "the kernel cell of the request-sum policy refines the ledger and is tight on it (tight without reconciliation)",
+   "status": "proved",
+   "hypotheses": {
+    "sessions": 1,
+    "lag": [
+     0,
+     0
+    ],
+    "cell": {
+     "Atomic": [
+      true
+     ],
+     "Reflexive": [
+      true
+     ],
+     "DenyRecord": [
+      "none"
+     ],
+     "Scope": [
+      "ScopeGlobal"
+     ]
+    }
+   },
+   "theorems": [
+    "Kamanu.ri_init",
+    "Kamanu.ri_step",
+    "Kamanu.refines_ledger",
+    "Kamanu.real_spend_ok",
+    "Kamanu.within_cap",
+    "Kamanu.sound_admit",
+    "Kamanu.view_sound",
+    "Kamanu.view_tight",
+    "Kamanu.no_false_refusal",
+    "Kamanu.Neighbours.refusal_reachable"
+   ],
+   "lean_sha256": "494d5ee4bcd0b68f7952714755434abef25e24fc98ce05b6d5a75873f0ed63e4",
+   "covers": "the kernel cell of the request-sum policy (Atomic, Lag 0, Reflexive, DenyRecord none, ScopeGlobal) against the ledger; no lint verdict reads it",
+   "verdicts": {
+    "sessions": []
+   }
+  },
+  "R13": {
+   "claim": "the kernel under a one-threshold policy and the register machine are bisimilar, label by label, agreeing on held, real spend, doubt and every decision (a spend cap on one register, one session, Lag 0 or 1)",
+   "status": "proved",
+   "hypotheses": {
+    "sessions": 1,
+    "lag": [
+     0,
+     1
+    ],
+    "cell": {}
+   },
+   "theorems": [
+    "Kamanu.Chain.kernel_bisim",
+    "Kamanu.Chain.kernel_sound_closed",
+    "Kamanu.Chain.kernel_tight_closed",
+    "Kamanu.Chain.forth_rel",
+    "Kamanu.Chain.back_rel",
+    "Kamanu.Chain.permit_iff",
+    "Kamanu.Chain.deny_iff",
+    "Kamanu.Chain.run_reach"
+   ],
+   "statement": "lean/Kamanu/ChainSpec.lean",
+   "hypotheses_listed": "evidence/thesis/t3/hypotheses.json",
+   "covers": "a closed holds or VACUOUS of lint on a spend cap over one register: on one session (the scope ledger, with R14) and on each session of the caller's two (with two_sessions), refusals that write at most one event; not the Latch, Prerequisite, Credit or exposure ledgers, a cap that reads the tool's answer, or a per-call limit (kamanu.fast.level.run_of gives those no run)",
+   "lean_sha256": "494d5ee4bcd0b68f7952714755434abef25e24fc98ce05b6d5a75873f0ed63e4",
+   "verdicts": {
+    "sessions": [
+     1,
+     2
+    ],
+    "each_session": true
+   }
+  },
+  "R14": {
+   "claim": "the register machine and its clipped quotient, the machine lint explores, are bisimilar",
+   "status": "proved",
+   "hypotheses": {
+    "sessions": 1,
+    "lag": [
+     0,
+     1
+    ],
+    "cell": {}
+   },
+   "theorems": [
+    "Kamanu.Fast.sound_closed",
+    "Kamanu.Fast.tight_closed",
+    "Kamanu.Fast.overspend_iff",
+    "Kamanu.Fast.falseRefusal_iff",
+    "Kamanu.Fast.normBisim",
+    "Kamanu.Fast.rel_forth",
+    "Kamanu.Fast.rel_back",
+    "Kamanu.Fast.rel_norm"
+   ],
+   "lean_sha256": "494d5ee4bcd0b68f7952714755434abef25e24fc98ce05b6d5a75873f0ed63e4",
+   "covers": "the same verdicts as R13: lint's explored (clipped) machine against the register machine, one register",
+   "verdicts": {
+    "sessions": [
+     1
+    ]
+   }
+  },
+  "two_sessions": {
+   "claim": "two sessions of one caller, each R14's register machine, sharing the failures, the last event and one ledger, are bisimilar to the two-session machine lint explores (each session clipped, the caller's spend kept up to the cap, the sessions in the order the symmetry reduction prefers), so a closed exploration settles Sound and Tight of the caller's ledger in any number of steps",
+   "status": "proved",
+   "hypotheses": {
+    "sessions": 2,
+    "lag": [
+     0,
+     1
+    ],
+    "cell": {}
+   },
+   "theorems": [
+    "Kamanu.Two.two_bisim",
+    "Kamanu.Two.sound_closed2",
+    "Kamanu.Two.tight_closed2",
+    "Kamanu.Two.mem_tnext",
+    "Kamanu.Two.trel_forth",
+    "Kamanu.Two.trel_back",
+    "Kamanu.Two.trel_norm2"
+   ],
+   "statement": "lean/Kamanu/TwoSpec.lean",
+   "tested": "tests/test_lean_two.py (Kamanu.Two.tnext against kamanu/fast/machine.py's successors and session swap; counts in evidence/thesis/t8/two.json)",
+   "verdicts": {
+    "sessions": [
+     2
+    ]
+   },
+   "covers": "a closed holds or VACUOUS of lint on the caller's ledger of a spend cap over one register (two sessions, Lag 0 or 1), together with R13 read of each session; lint prints no caller Tight verdict, so tight_closed2 raises nothing today",
+   "lean_sha256": "494d5ee4bcd0b68f7952714755434abef25e24fc98ce05b6d5a75873f0ed63e4"
+  },
+  "credit": {
+   "claim": "the Credit ledger (spec/ledgers/Credit.tla) and the machine kamanu/fast/credit.py explores (without its band) are bisimilar label by label at Lag 0 or 1, the machine's readings being the ledger's truth of the key; and on its cell one approval sells once: no reachable state of the ledger uses more than was credited",
+   "status": "proved",
+   "hypotheses": {
+    "sessions": 1,
+    "lag": [
+     0,
+     1
+    ],
+    "cell": {}
+   },
+   "theorems": [
+    "Kamanu.Credit.credit_bisim",
+    "Kamanu.Credit.one_sale",
+    "Kamanu.Credit.mem_cnext",
+    "Kamanu.Credit.crel_forth",
+    "Kamanu.Credit.crel_back",
+    "Kamanu.Credit.inv_reach"
+   ],
+   "statement": "lean/Kamanu/CreditSpec.lean",
+   "tested": "tests/test_lean_credit.py (Kamanu.Credit.cnext against the steps kamanu.fast.credit.explore takes; counts in evidence/thesis/t8/credit.json)",
+   "verdicts": {
+    "sessions": [],
+    "ledger": "Credit"
+   },
+   "covers": "a closed holds or VACUOUS of lint on the Credit ledger (Lag 0 or 1; one_sale on its cell: credit from the other action's response, debit from the guarded request, Atomic, Lag 0, the rule counting the request it decides). Raised at lint: kamanu.fast.level.run_of gives a Credit verdict the run {\"ledger\": \"Credit\", \"sessions\": 1, \"lag\", \"cell\"}, which this link alone stands for (kamanu.levels.ledger_chain); Latch and Prerequisite have no link of their own and keep their level",
+   "lean_sha256": "494d5ee4bcd0b68f7952714755434abef25e24fc98ce05b6d5a75873f0ed63e4"
+  },
+  "budget_key": {
+   "claim": "in the cell (atomic, Lag 0, reflexive, refusals unrecorded) whose scope is the budget key of tenant, principal, purpose and window, with a cap per key, every key's real spend, and its held plus real spend, stay within that key's cap in every reachable state, for any number of requests, sessions, agents, keys, failures and amounts; with reconciliation off a request is refused only when its own key's held, spent and doubt plus its amount exceed its cap",
+   "status": "proved",
+   "hypotheses": {
+    "lag": [
+     0,
+     0
+    ],
+    "cell": {
+     "Atomic": [
+      true
+     ],
+     "Reflexive": [
+      true
+     ],
+     "DenyRecord": [
+      "none"
+     ],
+     "Scope": [
+      "ScopeBudget"
+     ]
+    }
+   },
+   "theorems": [
+    "Kamanu.Budget.budget_spend_ok",
+    "Kamanu.Budget.budget_within_cap",
+    "Kamanu.Budget.budget_no_false_refusal",
+    "Kamanu.Budget.binv_reach"
+   ],
+   "statement": "lean/Kamanu/BudgetSpec.lean",
+   "neighbours": [
+    "Kamanu.Budget.session_scope_overspends",
+    "Kamanu.Budget.windowless_refuses_a_fit",
+    "Kamanu.Budget.agents_one_budget"
+   ],
+   "policy": "the request-basis policy (SumKind(view, request) <= the cap of the request's own key); links.json's hypotheses have no word for the policy, as R9's have none",
+   "verdicts": {
+    "sessions": [],
+    "ledger": "Budget"
+   },
+   "covers": "a verdict of kamanu check --budget or of lint's key set (kamanu.fast.budget) on one budget key across its sessions: kamanu.fast.level.budget_run gives it the run {\"ledger\": \"Budget\", \"sessions\", \"lag\", \"cell\"}, Scope budget read as ScopeBudget",
+   "lean_sha256": "494d5ee4bcd0b68f7952714755434abef25e24fc98ce05b6d5a75873f0ed63e4"
+  },
+  "budget_key_machine": {
+   "claim": "the Lean budget key's cell (Kamanu.Budget.bnext, proved to list exactly its steps by mem_bnext) and the machine kamanu/fast/budget.py's KeySet explores list the same successors on drawn cells",
+   "status": "tested",
+   "why": "tested, not proved: tests/test_lean_budget.py compares Kamanu.Budget.bnext with KeySet.successors on drawn cells (counts in evidence/exonumia/x3/budget.json); nothing proves KeySet is the Lean cell",
+   "hypotheses": {},
+   "tested": "tests/test_lean_budget.py (Kamanu.Budget.bnext against kamanu/fast/budget.py's KeySet.successors; counts in evidence/exonumia/x3/budget.json)",
+   "verdicts": {
+    "sessions": [],
+    "ledger": "Budget"
+   },
+   "covers": "the link from the Lean key model to the machine lint explores: a lint verdict on a budget key rests on it, so it is never raised past it"
+  },
+  "isolation": {
+   "claim": "in the isolation model, for a connector whose every data access is scoped by its session's tenant (ScopedBySession), every record given to a session is owned by or shared with the tenant that session was bound to at authentication, for any directory, store, number of calls, sessions and arguments the adversary chooses; a session is bound once, to a principal's tenant, and by nothing later",
+   "status": "proved",
+   "hypotheses": {
+    "contract": "ScopedBySession"
+   },
+   "theorems": [
+    "Kamanu.Iso.isolation",
+    "Kamanu.Iso.session_bound",
+    "Kamanu.Iso.session_binding"
+   ],
+   "statement": "lean/Kamanu/IsolationSpec.lean",
+   "neighbours": [
+    "Kamanu.Iso.argument_leaks",
+    "Kamanu.Iso.unscoped_leaks",
+    "Kamanu.Iso.export_leaks"
+   ],
+   "verdicts": {
+    "sessions": [],
+    "ledger": "Isolation"
+   },
+   "covers": "the contract link of an assessment of `kamanu connector assess` (kamanu.connector.weigh): about the model only; a connector meets the contract only as far as T9's queries establish its accesses and its harness observes its answers",
+   "lean_sha256": "494d5ee4bcd0b68f7952714755434abef25e24fc98ce05b6d5a75873f0ed63e4"
+  }
+ }
+}

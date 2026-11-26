@@ -1,0 +1,11 @@
+{
+  "record_schema": "record-v1",
+  "license": "CDLA-Permissive-2.0",
+  "schema_file": "schemas/record-v1.json",
+  "module": "kamanu/ladder/record.py",
+  "local_default": "records are written to $KAMANU_RECORDS_DIR or ~/.kamanu/records and never uploaded by hunt or check",
+  "share": "kamanu share RECORD.json: hold for third-party engines (KAMANU_SHARE_HOLD_DAYS, default 30, from the maintainer-notified date), redaction, full preview, yes on stdin, one POST to $KAMANU_SHARE_URL",
+  "redacted_kinds": ["ARN", "ACCOUNT", "GATEWAY", "SESSION", "KEY", "SECRET", "TOKEN", "HOST", "IP", "USER"],
+  "records_committed": 0,
+  "note": "no record is committed here: the records hunt and check write locally come from the bundled reference adapter (live false) and never land under evidence/"
+}

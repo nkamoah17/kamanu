@@ -1,0 +1,32 @@
+{
+ "stale": {
+  "commit": "2f2fcd4fc8096a9e52dbceb3a17d7b82b8824504",
+  "note": "R11's summary at this commit gave both Dogwood rows fix.after no-repair while its fixes.json (republished by R12, fa576c0) gave repair"
+ },
+ "rows": [
+  {
+   "path": "profiles/rows/dogwood-1.1.1.json",
+   "before": {
+    "before": "no-repair",
+    "after": "no-repair"
+   },
+   "after": {
+    "before": "no-repair",
+    "after": "repair"
+   },
+   "fixes": "repair"
+  },
+  {
+   "path": "profiles/rows/dogwood-local-engine.json",
+   "before": {
+    "before": "no-repair",
+    "after": "no-repair"
+   },
+   "after": {
+    "before": "no-repair",
+    "after": "repair"
+   },
+   "fixes": "repair"
+  }
+ ]
+}

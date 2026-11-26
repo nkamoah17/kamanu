@@ -1,0 +1,5974 @@
+{
+ "mapping": [
+  {
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "carries": true
+  },
+  {
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "carries": true
+  },
+  {
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "carries": false
+  },
+  {
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "carries": false
+  }
+ ],
+ "cells": [
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 0
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "holds",
+    "SoundAdmit": "holds",
+    "ViewSound": "holds",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "holds"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 0
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "holds",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": false,
+   "trace": "State 1: <Initial predicate>\n/\\ fails = 0\n/\\ n = 0\n/\\ rec = {}\n/\\ rq = << [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"none\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 2: <Issue line 90, col 5 to line 94, col 42 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 1\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 3: <Issue line 90, col 5 to line 94, col 42 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 4: <Decide line 98, col 5 to line 109, col 43 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<[tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1]>>\n/\\ st = <<\"running\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 5: <FailClean line 126, col 5 to line 132, col 36 of module KamanuKernel>\n/\\ fails = 1\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 1] >>\n/\\ st = <<\"failed\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 6: <Reconcile line 148, col 5 to line 153, col 42 of module KamanuKernel>\n/\\ fails = 1\n/\\ n = 2\n/\\ rec = {1}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"refund\", id |-> 1] >>\n/\\ st = <<\"failed\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 7: <Decide line 98, col 5 to line 109, col 43 of module KamanuKernel>\n/\\ fails = 1\n/\\ n = 2\n/\\ rec = {1}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"refund\", id |-> 1] >>\n/\\ st = <<\"failed\", \"denied\", \"none\">>\n/\\ eff = {}",
+   "reason": "NoFalseRefusal, ViewTight fail under old Lag and hold under the new parameters: a stale prefix counted in events can cut a call in half (keep its request, drop the refund that follows it), which a view that drops whole completed calls never does"
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "holds",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": false,
+   "trace": "State 1: <Initial predicate>\n/\\ fails = 0\n/\\ n = 0\n/\\ rec = {}\n/\\ rq = << [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"none\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 2: <Issue line 90, col 5 to line 94, col 42 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 1\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 3: <Issue line 90, col 5 to line 94, col 42 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 4: <Decide line 98, col 5 to line 109, col 43 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<[tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1]>>\n/\\ st = <<\"running\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 5: <FailClean line 126, col 5 to line 132, col 36 of module KamanuKernel>\n/\\ fails = 1\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 1] >>\n/\\ st = <<\"failed\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 6: <Reconcile line 148, col 5 to line 153, col 42 of module KamanuKernel>\n/\\ fails = 1\n/\\ n = 2\n/\\ rec = {1}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"refund\", id |-> 1] >>\n/\\ st = <<\"failed\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 7: <Decide line 98, col 5 to line 109, col 43 of module KamanuKernel>\n/\\ fails = 1\n/\\ n = 2\n/\\ rec = {1}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"refund\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"deny\", id |-> 2] >>\n/\\ st = <<\"failed\", \"denied\", \"none\">>\n/\\ eff = {}",
+   "reason": "NoFalseRefusal, ViewTight fail under old Lag and hold under the new parameters: a stale prefix counted in events can cut a call in half (keep its request, drop the refund that follows it), which a view that drops whole completed calls never does"
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "holds",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": false,
+   "trace": "State 1: <Initial predicate>\n/\\ fails = 0\n/\\ n = 0\n/\\ rec = {}\n/\\ rq = << [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"none\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 2: <Issue line 90, col 5 to line 94, col 42 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 1\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 3: <Issue line 90, col 5 to line 94, col 42 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 4: <Decide line 98, col 5 to line 109, col 43 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<[tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1]>>\n/\\ st = <<\"running\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 5: <FailClean line 126, col 5 to line 132, col 36 of module KamanuKernel>\n/\\ fails = 1\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 1] >>\n/\\ st = <<\"failed\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 6: <Reconcile line 148, col 5 to line 153, col 42 of module KamanuKernel>\n/\\ fails = 1\n/\\ n = 2\n/\\ rec = {1}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"refund\", id |-> 1] >>\n/\\ st = <<\"failed\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 7: <Decide line 98, col 5 to line 109, col 43 of module KamanuKernel>\n/\\ fails = 1\n/\\ n = 2\n/\\ rec = {1}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"refund\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 2] >>\n/\\ st = <<\"failed\", \"denied\", \"none\">>\n/\\ eff = {}",
+   "reason": "NoFalseRefusal, ViewTight fail under old Lag and hold under the new parameters: a stale prefix counted in events can cut a call in half (keep its request, drop the refund that follows it), which a view that drops whole completed calls never does"
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": true,
+    "lag": 1
+   },
+   "new": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PReqBasisNR",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "none",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "holds",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": false,
+   "trace": "State 1: <Initial predicate>\n/\\ fails = 0\n/\\ n = 0\n/\\ rec = {}\n/\\ rq = << [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"none\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 2: <Issue line 90, col 5 to line 94, col 42 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 1\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 3: <Issue line 90, col 5 to line 94, col 42 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 4: <Decide line 98, col 5 to line 109, col 43 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"admitted\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 5: <Record line 112, col 5 to line 115, col 43 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<[tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1]>>\n/\\ st = <<\"running\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 6: <FailClean line 126, col 5 to line 132, col 36 of module KamanuKernel>\n/\\ fails = 1\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 1] >>\n/\\ st = <<\"failed\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 7: <Reconcile line 148, col 5 to line 153, col 42 of module KamanuKernel>\n/\\ fails = 1\n/\\ n = 2\n/\\ rec = {1}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"refund\", id |-> 1] >>\n/\\ st = <<\"failed\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 8: <Decide line 98, col 5 to line 109, col 43 of module KamanuKernel>\n/\\ fails = 1\n/\\ n = 2\n/\\ rec = {1}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"refund\", id |-> 1] >>\n/\\ st = <<\"failed\", \"denied\", \"none\">>\n/\\ eff = {}",
+   "reason": "NoFalseRefusal, ViewTight fail under old Lag and hold under the new parameters: a stale prefix counted in events can cut a call in half (keep its request, drop the refund that follows it), which a view that drops whole completed calls never does"
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "deny",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "holds",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": false,
+   "trace": "State 1: <Initial predicate>\n/\\ fails = 0\n/\\ n = 0\n/\\ rec = {}\n/\\ rq = << [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"none\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 2: <Issue line 90, col 5 to line 94, col 42 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 1\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 3: <Issue line 90, col 5 to line 94, col 42 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 4: <Decide line 98, col 5 to line 109, col 43 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"admitted\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 5: <Record line 112, col 5 to line 115, col 43 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<[tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1]>>\n/\\ st = <<\"running\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 6: <FailClean line 126, col 5 to line 132, col 36 of module KamanuKernel>\n/\\ fails = 1\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 1] >>\n/\\ st = <<\"failed\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 7: <Reconcile line 148, col 5 to line 153, col 42 of module KamanuKernel>\n/\\ fails = 1\n/\\ n = 2\n/\\ rec = {1}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"refund\", id |-> 1] >>\n/\\ st = <<\"failed\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 8: <Decide line 98, col 5 to line 109, col 43 of module KamanuKernel>\n/\\ fails = 1\n/\\ n = 2\n/\\ rec = {1}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"refund\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"deny\", id |-> 2] >>\n/\\ st = <<\"failed\", \"denied\", \"none\">>\n/\\ eff = {}",
+   "reason": "NoFalseRefusal, ViewTight fail under old Lag and hold under the new parameters: a stale prefix counted in events can cut a call in half (keep its request, drop the refund that follows it), which a view that drops whole completed calls never does"
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "error",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "holds",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "holds",
+    "Tight": "holds",
+    "ViewTight": "holds",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": false,
+   "trace": "State 1: <Initial predicate>\n/\\ fails = 0\n/\\ n = 0\n/\\ rec = {}\n/\\ rq = << [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"none\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 2: <Issue line 90, col 5 to line 94, col 42 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 1\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 3: <Issue line 90, col 5 to line 94, col 42 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 4: <Decide line 98, col 5 to line 109, col 43 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"admitted\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 5: <Record line 112, col 5 to line 115, col 43 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<[tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1]>>\n/\\ st = <<\"running\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 6: <FailClean line 126, col 5 to line 132, col 36 of module KamanuKernel>\n/\\ fails = 1\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 1] >>\n/\\ st = <<\"failed\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 7: <Reconcile line 148, col 5 to line 153, col 42 of module KamanuKernel>\n/\\ fails = 1\n/\\ n = 2\n/\\ rec = {1}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"refund\", id |-> 1] >>\n/\\ st = <<\"failed\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 8: <Decide line 98, col 5 to line 109, col 43 of module KamanuKernel>\n/\\ fails = 1\n/\\ n = 2\n/\\ rec = {1}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"refund\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"error\", id |-> 2] >>\n/\\ st = <<\"failed\", \"denied\", \"none\">>\n/\\ eff = {}",
+   "reason": "NoFalseRefusal, ViewTight fail under old Lag and hold under the new parameters: a stale prefix counted in events can cut a call in half (keep its request, drop the refund that follows it), which a view that drops whole completed calls never does"
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "rung": "R0"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnReconcile",
+    "refusal_leaves": "request",
+    "rung": "R2"
+   },
+   "old": {
+    "atomic": false,
+    "lag": 1
+   },
+   "new": {
+    "atomic": false,
+    "own_writes": false,
+    "other_lag": 1
+   },
+   "old_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "new_verdicts": {
+    "RealSpendOK": "FAILS",
+    "SoundAdmit": "FAILS",
+    "ViewSound": "FAILS",
+    "NoFalseRefusal": "FAILS",
+    "Tight": "FAILS",
+    "ViewTight": "FAILS",
+    "RefinesLedger": "FAILS"
+   },
+   "agree": true,
+   "trace": null,
+   "reason": null
+  }
+ ]
+}

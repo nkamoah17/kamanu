@@ -1,0 +1,207 @@
+{
+ "what": "R13b: the fast-path document's claims re-measured on the current kernel",
+ "exposure": {
+  "cap": 100,
+  "amounts": [
+   60,
+   30
+  ],
+  "race": {
+   "profile": "not atomic, DenyRecord none",
+   "rung": "R0",
+   "by_in_flight": [
+    {
+     "in_flight": 2,
+     "over": 50,
+     "spent": 150,
+     "steps": 16,
+     "fitted": {
+      "formula": "(c-1) x A",
+      "value": 60,
+      "note": "fitted to c = 2 to 4 in the fast-path document; not proved, not a bound"
+     }
+    },
+    {
+     "in_flight": 3,
+     "over": 110,
+     "spent": 210,
+     "steps": 20,
+     "fitted": {
+      "formula": "(c-1) x A",
+      "value": 120,
+      "note": "fitted to c = 2 to 4 in the fast-path document; not proved, not a bound"
+     }
+    },
+    {
+     "in_flight": 4,
+     "over": 170,
+     "spent": 270,
+     "steps": 24,
+     "fitted": {
+      "formula": "(c-1) x A",
+      "value": 180,
+      "note": "fitted to c = 2 to 4 in the fast-path document; not proved, not a bound"
+     }
+    }
+   ]
+  },
+  "refund_on_error": {
+   "rung": "R2",
+   "failures": 1,
+   "over": 50,
+   "spent": 150,
+   "steps": 10,
+   "fitted": {
+    "formula": "f x A",
+    "value": 60,
+    "note": "fitted in the fast-path document; not proved, not a bound"
+   },
+   "R0": "holds",
+   "R1": "holds",
+   "profile": "atomic, DenyRecord none",
+   "in_flight": 2
+  },
+  "unbounded": {
+   "over": "unbounded",
+   "repeat": {
+    "from": 2,
+    "to": 5
+   },
+   "steps": 5,
+   "policy": "errors plus the current amount",
+   "profile": "atomic"
+  },
+  "caller": {
+   "profile": "ScopeSession, keys not the server's, atomic, DenyRecord none",
+   "in_flight": 2,
+   "rung": "R0",
+   "per_sessions": [
+    {
+     "sessions": 2,
+     "over": 80,
+     "spent": 180
+    },
+    {
+     "sessions": 3,
+     "over": 170,
+     "spent": 270
+    }
+   ]
+  },
+  "fitted": "the closed forms (c-1) x A and f x A are fitted, not proved: only 'over' is measured"
+ },
+ "diff": [
+  {
+   "pair": "requests against its forbid rewrite",
+   "same": true,
+   "rungs": {
+    "R0": "same",
+    "R1": "same",
+    "R2": "same"
+   },
+   "engine": "reference"
+  },
+  {
+   "pair": "requests against requests minus denials",
+   "same": true,
+   "rungs": {
+    "R0": "same",
+    "R1": "same",
+    "R2": "same"
+   },
+   "engine": "atomic, DenyRecord none"
+  },
+  {
+   "pair": "requests against requests minus denials",
+   "same": false,
+   "rungs": {
+    "R0": "differ after 6 steps: policy deny, other permit",
+    "R1": "differ after 6 steps: policy deny, other permit",
+    "R2": "differ after 6 steps: policy deny, other permit"
+   },
+   "engine": "atomic, DenyRecord deny"
+  },
+  {
+   "pair": "PRefundOnReconcile against requests minus refunds and confirms",
+   "same": false,
+   "rungs": {
+    "R0": "same",
+    "R1": "same",
+    "R2": "differ after 6 steps: policy deny, other permit"
+   },
+   "engine": "reference"
+  }
+ ],
+ "conformance": {
+  "binary": "dogwood 1.1.1",
+  "tests": 375,
+  "decisions": 958,
+  "disagreements": 0,
+  "controls": {
+   "wrong_shape": 43,
+   "wrong_profile": 5
+  },
+  "refused": 0,
+  "cover": "a transition cover of each policy's machine: the shortest schedule to every reachable state, then every decision open there, at most 3 requests, 2 calls in flight and 1 failure, clean and ambiguous failures (R2). A transition cover is not a completeness claim: it exercises every transition of the machine once, not every behaviour of the binary."
+ },
+ "examples": {
+  "inside": 43,
+  "outside": 58,
+  "split": {
+   "holds": 35,
+   "FAILS": 19,
+   "VACUOUS": 0
+  },
+  "source": "DOGWOOD_SRC/dogwood-docs/examples (ff15850)"
+ },
+ "shapes": {
+  "machines": {
+   "none / atomic": 80,
+   "none / not atomic": 80,
+   "none / stale view": 80,
+   "deny / atomic": 80,
+   "deny / not atomic": 80,
+   "deny / stale view": 80,
+   "error / atomic": 80,
+   "error / not atomic": 80,
+   "error / stale view": 80,
+   "request / atomic": 80,
+   "request / not atomic": 80,
+   "request / stale view": 80,
+   "request+error / atomic": 80,
+   "request+error / not atomic": 80,
+   "request+error / stale view": 80,
+   "caller: keys 2, ScopeSession, ledger caller (request / atomic)": 80
+  },
+  "clean": {
+   "none / atomic": [
+    132
+   ],
+   "none / not atomic": [],
+   "none / stale view": [],
+   "deny / atomic": [
+    132
+   ],
+   "deny / not atomic": [],
+   "deny / stale view": [],
+   "error / atomic": [
+    132
+   ],
+   "error / not atomic": [],
+   "error / stale view": [],
+   "request / atomic": [],
+   "request / not atomic": [],
+   "request / stale view": [],
+   "request+error / atomic": [],
+   "request+error / not atomic": [],
+   "request+error / stale view": [],
+   "caller: keys 2, ScopeSession, ledger caller (request / atomic)": []
+  },
+  "bounds": {
+   "in_flight": 3,
+   "failures": 1,
+   "requests": 5
+  },
+  "machines_within_requests": 5
+ }
+}

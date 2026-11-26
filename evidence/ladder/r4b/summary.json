@@ -1,0 +1,26 @@
+{
+ "cells": 560,
+ "tlc_runs": 3983,
+ "distinct_states": 16766756,
+ "verdicts": {
+  "Sound": {
+   "holds": 108,
+   "FAILS": 452
+  },
+  "Tight": {
+   "holds": 232,
+   "FAILS": 328
+  },
+  "ScopeSound": {
+   "holds": 162,
+   "FAILS": 398
+  },
+  "RealSpendOK": {
+   "holds": 108,
+   "FAILS": 452
+  }
+ },
+ "disagreements": 240,
+ "vacuous": [],
+ "not_exercised": []
+}

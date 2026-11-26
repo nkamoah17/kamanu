@@ -1,0 +1,1708 @@
+{
+ "about": "R8: TLC traces as stories beside two ledgers, each with its ITF export (python -m kamanu.ladder.story --evidence)",
+ "stories": [
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "bounds": {
+    "cap": 100,
+    "amounts": [
+     30,
+     60
+    ],
+    "max_req": 3
+   },
+   "property": "paid-admission (witness)",
+   "trace": "State 1: <Initial predicate>\n/\\ fails = 0\n/\\ n = 0\n/\\ rec = {}\n/\\ rq = << [amt |-> 0, tool |-> \"none\", key |-> \"none\"],\n   [amt |-> 0, tool |-> \"none\", key |-> \"none\"],\n   [amt |-> 0, tool |-> \"none\", key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"none\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 2: <Issue line 90, col 5 to line 94, col 42 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 1\n/\\ rec = {}\n/\\ rq = << [amt |-> 30, tool |-> \"pay\", key |-> \"s1\"],\n   [amt |-> 0, tool |-> \"none\", key |-> \"none\"],\n   [amt |-> 0, tool |-> \"none\", key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 3: <Decide line 98, col 5 to line 109, col 43 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 1\n/\\ rec = {}\n/\\ rq = << [amt |-> 30, tool |-> \"pay\", key |-> \"s1\"],\n   [amt |-> 0, tool |-> \"none\", key |-> \"none\"],\n   [amt |-> 0, tool |-> \"none\", key |-> \"none\"] >>\n/\\ hist = <<[amt |-> 30, tool |-> \"pay\", key |-> \"s1\", kind |-> \"request\", id |-> 1]>>\n/\\ st = <<\"running\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 4: <Succeed line 119, col 5 to line 123, col 38 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 1\n/\\ rec = {}\n/\\ rq = << [amt |-> 30, tool |-> \"pay\", key |-> \"s1\"],\n   [amt |-> 0, tool |-> \"none\", key |-> \"none\"],\n   [amt |-> 0, tool |-> \"none\", key |-> \"none\"] >>\n/\\ hist = << [amt |-> 30, tool |-> \"pay\", key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [amt |-> 30, tool |-> \"pay\", key |-> \"s1\", kind |-> \"response\", id |-> 1] >>\n/\\ st = <<\"done\", \"none\", \"none\">>\n/\\ eff = {1}",
+   "itf": {
+    "#meta": {
+     "format": "ITF",
+     "format-description": "https://apalache-mc.org/docs/adr/015adr-trace.html",
+     "source": "TLC trace text, exported by kamanu.ladder.itf"
+    },
+    "vars": [
+     "fails",
+     "n",
+     "rec",
+     "rq",
+     "hist",
+     "st",
+     "eff"
+    ],
+    "states": [
+     {
+      "#meta": {
+       "index": 0
+      },
+      "fails": 0,
+      "n": 0,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "amt": 0,
+        "tool": "none",
+        "key": "none"
+       },
+       {
+        "amt": 0,
+        "tool": "none",
+        "key": "none"
+       },
+       {
+        "amt": 0,
+        "tool": "none",
+        "key": "none"
+       }
+      ],
+      "hist": [],
+      "st": [
+       "none",
+       "none",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 1
+      },
+      "fails": 0,
+      "n": 1,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "amt": 30,
+        "tool": "pay",
+        "key": "s1"
+       },
+       {
+        "amt": 0,
+        "tool": "none",
+        "key": "none"
+       },
+       {
+        "amt": 0,
+        "tool": "none",
+        "key": "none"
+       }
+      ],
+      "hist": [],
+      "st": [
+       "pending",
+       "none",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 2
+      },
+      "fails": 0,
+      "n": 1,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "amt": 30,
+        "tool": "pay",
+        "key": "s1"
+       },
+       {
+        "amt": 0,
+        "tool": "none",
+        "key": "none"
+       },
+       {
+        "amt": 0,
+        "tool": "none",
+        "key": "none"
+       }
+      ],
+      "hist": [
+       {
+        "amt": 30,
+        "tool": "pay",
+        "key": "s1",
+        "kind": "request",
+        "id": 1
+       }
+      ],
+      "st": [
+       "running",
+       "none",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 3
+      },
+      "fails": 0,
+      "n": 1,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "amt": 30,
+        "tool": "pay",
+        "key": "s1"
+       },
+       {
+        "amt": 0,
+        "tool": "none",
+        "key": "none"
+       },
+       {
+        "amt": 0,
+        "tool": "none",
+        "key": "none"
+       }
+      ],
+      "hist": [
+       {
+        "amt": 30,
+        "tool": "pay",
+        "key": "s1",
+        "kind": "request",
+        "id": 1
+       },
+       {
+        "amt": 30,
+        "tool": "pay",
+        "key": "s1",
+        "kind": "response",
+        "id": 1
+       }
+      ],
+      "st": [
+       "done",
+       "none",
+       "none"
+      ],
+      "eff": {
+       "#set": [
+        1
+       ]
+      }
+     }
+    ]
+   },
+   "story": {
+    "steps": [
+     {
+      "state": 2,
+      "actor": "harness",
+      "line": "the agent asks to pay 30 (call 1)",
+      "counted": [
+       0
+      ],
+      "held": 0,
+      "spent": 0,
+      "doubt": 0,
+      "parted": false
+     },
+     {
+      "state": 3,
+      "actor": "engine",
+      "line": "the engine lets call 1 for 30 through and writes it in its history",
+      "counted": [
+       30
+      ],
+      "held": 30,
+      "spent": 0,
+      "doubt": 0,
+      "parted": false
+     },
+     {
+      "state": 4,
+      "actor": "tool",
+      "line": "the tool runs call 1 for 30 and the money moves",
+      "counted": [
+       30
+      ],
+      "held": 0,
+      "spent": 30,
+      "doubt": 0,
+      "parted": false
+     }
+    ],
+    "parted_at": null,
+    "text": "the story (PReqBasis, refusal leaves none, atomic engine, rung R0): what the engine counted beside held + spent + doubt\nthe two ledgers never part\n  2. [harness] the agent asks to pay 30 (call 1)  | counted 0 | held 0, spent 0, doubt 0\n  3. [engine] the engine lets call 1 for 30 through and writes it in its history  | counted 30 | held 30, spent 0, doubt 0\n  4. [tool] the tool runs call 1 for 30 and the money moves  | counted 30 | held 0, spent 30, doubt 0\n"
+   }
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "not atomic",
+    "rung": "R0"
+   },
+   "bounds": {
+    "cap": 100,
+    "amounts": [
+     30,
+     60
+    ],
+    "max_req": 3
+   },
+   "property": "RealSpendOK",
+   "trace": "State 1: <Initial predicate>\n/\\ fails = 0\n/\\ n = 0\n/\\ rec = {}\n/\\ rq = << [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"none\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 2: <Issue line 90, col 5 to line 94, col 42 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 1\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 3: <Issue line 90, col 5 to line 94, col 42 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 4: <Decide line 98, col 5 to line 109, col 43 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"admitted\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 5: <Decide line 98, col 5 to line 109, col 43 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"admitted\", \"admitted\", \"none\">>\n/\\ eff = {}\n\nState 6: <Record line 112, col 5 to line 115, col 43 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<[tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1]>>\n/\\ st = <<\"running\", \"admitted\", \"none\">>\n/\\ eff = {}\n\nState 7: <Succeed line 119, col 5 to line 123, col 38 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"response\", id |-> 1] >>\n/\\ st = <<\"done\", \"admitted\", \"none\">>\n/\\ eff = {1}\n\nState 8: <Record line 112, col 5 to line 115, col 43 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"response\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 2] >>\n/\\ st = <<\"done\", \"running\", \"none\">>\n/\\ eff = {1}\n\nState 9: <Succeed line 119, col 5 to line 123, col 38 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"response\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 2],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"response\", id |-> 2] >>\n/\\ st = <<\"done\", \"done\", \"none\">>\n/\\ eff = {1, 2}",
+   "itf": {
+    "#meta": {
+     "format": "ITF",
+     "format-description": "https://apalache-mc.org/docs/adr/015adr-trace.html",
+     "source": "TLC trace text, exported by kamanu.ladder.itf"
+    },
+    "vars": [
+     "fails",
+     "n",
+     "rec",
+     "rq",
+     "hist",
+     "st",
+     "eff"
+    ],
+    "states": [
+     {
+      "#meta": {
+       "index": 0
+      },
+      "fails": 0,
+      "n": 0,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [],
+      "st": [
+       "none",
+       "none",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 1
+      },
+      "fails": 0,
+      "n": 1,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [],
+      "st": [
+       "pending",
+       "none",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 2
+      },
+      "fails": 0,
+      "n": 2,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [],
+      "st": [
+       "pending",
+       "pending",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 3
+      },
+      "fails": 0,
+      "n": 2,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [],
+      "st": [
+       "admitted",
+       "pending",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 4
+      },
+      "fails": 0,
+      "n": 2,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [],
+      "st": [
+       "admitted",
+       "admitted",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 5
+      },
+      "fails": 0,
+      "n": 2,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1",
+        "kind": "request",
+        "id": 1
+       }
+      ],
+      "st": [
+       "running",
+       "admitted",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 6
+      },
+      "fails": 0,
+      "n": 2,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1",
+        "kind": "request",
+        "id": 1
+       },
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1",
+        "kind": "response",
+        "id": 1
+       }
+      ],
+      "st": [
+       "done",
+       "admitted",
+       "none"
+      ],
+      "eff": {
+       "#set": [
+        1
+       ]
+      }
+     },
+     {
+      "#meta": {
+       "index": 7
+      },
+      "fails": 0,
+      "n": 2,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1",
+        "kind": "request",
+        "id": 1
+       },
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1",
+        "kind": "response",
+        "id": 1
+       },
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1",
+        "kind": "request",
+        "id": 2
+       }
+      ],
+      "st": [
+       "done",
+       "running",
+       "none"
+      ],
+      "eff": {
+       "#set": [
+        1
+       ]
+      }
+     },
+     {
+      "#meta": {
+       "index": 8
+      },
+      "fails": 0,
+      "n": 2,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1",
+        "kind": "request",
+        "id": 1
+       },
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1",
+        "kind": "response",
+        "id": 1
+       },
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1",
+        "kind": "request",
+        "id": 2
+       },
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1",
+        "kind": "response",
+        "id": 2
+       }
+      ],
+      "st": [
+       "done",
+       "done",
+       "none"
+      ],
+      "eff": {
+       "#set": [
+        1,
+        2
+       ]
+      }
+     }
+    ]
+   },
+   "story": {
+    "steps": [
+     {
+      "state": 2,
+      "actor": "harness",
+      "line": "the agent asks to pay 60 (call 1)",
+      "counted": [
+       0
+      ],
+      "held": 0,
+      "spent": 0,
+      "doubt": 0,
+      "parted": false
+     },
+     {
+      "state": 3,
+      "actor": "harness",
+      "line": "the agent asks to pay 60 (call 2)",
+      "counted": [
+       0
+      ],
+      "held": 0,
+      "spent": 0,
+      "doubt": 0,
+      "parted": false
+     },
+     {
+      "state": 4,
+      "actor": "engine",
+      "line": "the engine lets call 1 for 60 through, not yet written in its history",
+      "counted": [
+       0
+      ],
+      "held": 60,
+      "spent": 0,
+      "doubt": 0,
+      "parted": true
+     },
+     {
+      "state": 5,
+      "actor": "engine",
+      "line": "the engine lets call 2 for 60 through, not yet written in its history",
+      "counted": [
+       0
+      ],
+      "held": 120,
+      "spent": 0,
+      "doubt": 0,
+      "parted": false
+     },
+     {
+      "state": 6,
+      "actor": "engine",
+      "line": "the engine writes call 1 for 60 into its history, after letting it through",
+      "counted": [
+       60
+      ],
+      "held": 120,
+      "spent": 0,
+      "doubt": 0,
+      "parted": false
+     },
+     {
+      "state": 7,
+      "actor": "tool",
+      "line": "the tool runs call 1 for 60 and the money moves",
+      "counted": [
+       60
+      ],
+      "held": 60,
+      "spent": 60,
+      "doubt": 0,
+      "parted": false
+     },
+     {
+      "state": 8,
+      "actor": "engine",
+      "line": "the engine writes call 2 for 60 into its history, after letting it through",
+      "counted": [
+       120
+      ],
+      "held": 60,
+      "spent": 60,
+      "doubt": 0,
+      "parted": false
+     },
+     {
+      "state": 9,
+      "actor": "tool",
+      "line": "the tool runs call 2 for 60 and the money moves",
+      "counted": [
+       120
+      ],
+      "held": 0,
+      "spent": 120,
+      "doubt": 0,
+      "parted": false
+     }
+    ],
+    "parted_at": 4,
+    "text": "the story (PReqBasis, refusal leaves none, not atomic engine, rung R0): what the engine counted beside held + spent + doubt\nthe two ledgers part at state 4\n  2. [harness] the agent asks to pay 60 (call 1)  | counted 0 | held 0, spent 0, doubt 0\n  3. [harness] the agent asks to pay 60 (call 2)  | counted 0 | held 0, spent 0, doubt 0\n  4. [engine] the engine lets call 1 for 60 through, not yet written in its history  | counted 0 | held 60, spent 0, doubt 0   <- the invariant broke here: the two ledgers part\n  5. [engine] the engine lets call 2 for 60 through, not yet written in its history  | counted 0 | held 120, spent 0, doubt 0\n  6. [engine] the engine writes call 1 for 60 into its history, after letting it through  | counted 60 | held 120, spent 0, doubt 0\n  7. [tool] the tool runs call 1 for 60 and the money moves  | counted 60 | held 60, spent 60, doubt 0\n  8. [engine] the engine writes call 2 for 60 into its history, after letting it through  | counted 120 | held 60, spent 60, doubt 0\n  9. [tool] the tool runs call 2 for 60 and the money moves  | counted 120 | held 0, spent 120, doubt 0\n"
+   }
+  },
+  {
+   "cell": {
+    "policy": "PRespBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "bounds": {
+    "cap": 100,
+    "amounts": [
+     30,
+     60
+    ],
+    "max_req": 3
+   },
+   "property": "ViewSound",
+   "trace": "State 1: <Initial predicate>\n/\\ fails = 0\n/\\ n = 0\n/\\ rec = {}\n/\\ rq = << [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"none\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 2: <Issue line 90, col 5 to line 94, col 42 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 1\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 30, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 3: <Decide line 98, col 5 to line 109, col 43 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 1\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 30, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<[tool |-> \"pay\", amt |-> 30, key |-> \"s1\", kind |-> \"request\", id |-> 1]>>\n/\\ st = <<\"running\", \"none\", \"none\">>\n/\\ eff = {}",
+   "itf": {
+    "#meta": {
+     "format": "ITF",
+     "format-description": "https://apalache-mc.org/docs/adr/015adr-trace.html",
+     "source": "TLC trace text, exported by kamanu.ladder.itf"
+    },
+    "vars": [
+     "fails",
+     "n",
+     "rec",
+     "rq",
+     "hist",
+     "st",
+     "eff"
+    ],
+    "states": [
+     {
+      "#meta": {
+       "index": 0
+      },
+      "fails": 0,
+      "n": 0,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [],
+      "st": [
+       "none",
+       "none",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 1
+      },
+      "fails": 0,
+      "n": 1,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "pay",
+        "amt": 30,
+        "key": "s1"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [],
+      "st": [
+       "pending",
+       "none",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 2
+      },
+      "fails": 0,
+      "n": 1,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "pay",
+        "amt": 30,
+        "key": "s1"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [
+       {
+        "tool": "pay",
+        "amt": 30,
+        "key": "s1",
+        "kind": "request",
+        "id": 1
+       }
+      ],
+      "st": [
+       "running",
+       "none",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     }
+    ]
+   },
+   "story": {
+    "steps": [
+     {
+      "state": 2,
+      "actor": "harness",
+      "line": "the agent asks to pay 30 (call 1)",
+      "counted": [
+       0
+      ],
+      "held": 0,
+      "spent": 0,
+      "doubt": 0,
+      "parted": false
+     },
+     {
+      "state": 3,
+      "actor": "engine",
+      "line": "the engine lets call 1 for 30 through and writes it in its history",
+      "counted": [
+       0
+      ],
+      "held": 30,
+      "spent": 0,
+      "doubt": 0,
+      "parted": true
+     }
+    ],
+    "parted_at": 3,
+    "text": "the story (PRespBasis, refusal leaves none, atomic engine, rung R0): what the engine counted beside held + spent + doubt\nthe two ledgers part at state 3\n  2. [harness] the agent asks to pay 30 (call 1)  | counted 0 | held 0, spent 0, doubt 0\n  3. [engine] the engine lets call 1 for 30 through and writes it in its history  | counted 0 | held 30, spent 0, doubt 0   <- the invariant broke here: the two ledgers part\n"
+   }
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "request",
+    "engine": "atomic",
+    "rung": "R0"
+   },
+   "bounds": {
+    "cap": 100,
+    "amounts": [
+     30,
+     60
+    ],
+    "max_req": 3
+   },
+   "property": "ViewTight",
+   "trace": "State 1: <Initial predicate>\n/\\ fails = 0\n/\\ n = 0\n/\\ rec = {}\n/\\ rq = << [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"none\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 2: <Issue line 90, col 5 to line 94, col 42 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 1\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 3: <Issue line 90, col 5 to line 94, col 42 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 4: <Decide line 98, col 5 to line 109, col 43 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<[tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1]>>\n/\\ st = <<\"running\", \"pending\", \"none\">>\n/\\ eff = {}\n\nState 5: <Decide line 98, col 5 to line 109, col 43 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 2\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 60, key |-> \"s1\", kind |-> \"request\", id |-> 2] >>\n/\\ st = <<\"running\", \"denied\", \"none\">>\n/\\ eff = {}",
+   "itf": {
+    "#meta": {
+     "format": "ITF",
+     "format-description": "https://apalache-mc.org/docs/adr/015adr-trace.html",
+     "source": "TLC trace text, exported by kamanu.ladder.itf"
+    },
+    "vars": [
+     "fails",
+     "n",
+     "rec",
+     "rq",
+     "hist",
+     "st",
+     "eff"
+    ],
+    "states": [
+     {
+      "#meta": {
+       "index": 0
+      },
+      "fails": 0,
+      "n": 0,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [],
+      "st": [
+       "none",
+       "none",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 1
+      },
+      "fails": 0,
+      "n": 1,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [],
+      "st": [
+       "pending",
+       "none",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 2
+      },
+      "fails": 0,
+      "n": 2,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [],
+      "st": [
+       "pending",
+       "pending",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 3
+      },
+      "fails": 0,
+      "n": 2,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1",
+        "kind": "request",
+        "id": 1
+       }
+      ],
+      "st": [
+       "running",
+       "pending",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 4
+      },
+      "fails": 0,
+      "n": 2,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1",
+        "kind": "request",
+        "id": 1
+       },
+       {
+        "tool": "pay",
+        "amt": 60,
+        "key": "s1",
+        "kind": "request",
+        "id": 2
+       }
+      ],
+      "st": [
+       "running",
+       "denied",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     }
+    ]
+   },
+   "story": {
+    "steps": [
+     {
+      "state": 2,
+      "actor": "harness",
+      "line": "the agent asks to pay 60 (call 1)",
+      "counted": [
+       0
+      ],
+      "held": 0,
+      "spent": 0,
+      "doubt": 0,
+      "parted": false
+     },
+     {
+      "state": 3,
+      "actor": "harness",
+      "line": "the agent asks to pay 60 (call 2)",
+      "counted": [
+       0
+      ],
+      "held": 0,
+      "spent": 0,
+      "doubt": 0,
+      "parted": false
+     },
+     {
+      "state": 4,
+      "actor": "engine",
+      "line": "the engine lets call 1 for 60 through and writes it in its history",
+      "counted": [
+       60
+      ],
+      "held": 60,
+      "spent": 0,
+      "doubt": 0,
+      "parted": false
+     },
+     {
+      "state": 5,
+      "actor": "engine",
+      "line": "the engine turns down call 2 for 60",
+      "counted": [
+       120
+      ],
+      "held": 60,
+      "spent": 0,
+      "doubt": 0,
+      "parted": true
+     }
+    ],
+    "parted_at": 5,
+    "text": "the story (PReqBasis, refusal leaves request, atomic engine, rung R0): what the engine counted beside held + spent + doubt\nthe two ledgers part at state 5\n  2. [harness] the agent asks to pay 60 (call 1)  | counted 0 | held 0, spent 0, doubt 0\n  3. [harness] the agent asks to pay 60 (call 2)  | counted 0 | held 0, spent 0, doubt 0\n  4. [engine] the engine lets call 1 for 60 through and writes it in its history  | counted 60 | held 60, spent 0, doubt 0\n  5. [engine] the engine turns down call 2 for 60  | counted 120 | held 60, spent 0, doubt 0   <- the invariant broke here: the two ledgers part\n"
+   }
+  },
+  {
+   "cell": {
+    "policy": "PReqBasis",
+    "refusal_leaves": "none",
+    "engine": "atomic",
+    "rung": "R2"
+   },
+   "bounds": {
+    "cap": 100,
+    "amounts": [
+     30,
+     60
+    ],
+    "max_req": 3
+   },
+   "property": "R8NoDoubt (Doubt = 0)",
+   "trace": "State 1: <Initial predicate>\n/\\ fails = 0\n/\\ n = 0\n/\\ rec = {}\n/\\ rq = << [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"none\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 2: <Issue line 90, col 5 to line 94, col 42 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 1\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 30, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 3: <Decide line 98, col 5 to line 109, col 43 of module KamanuKernel>\n/\\ fails = 0\n/\\ n = 1\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 30, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<[tool |-> \"pay\", amt |-> 30, key |-> \"s1\", kind |-> \"request\", id |-> 1]>>\n/\\ st = <<\"running\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 4: <FailClean line 126, col 5 to line 132, col 36 of module KamanuKernel>\n/\\ fails = 1\n/\\ n = 1\n/\\ rec = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 30, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = << [tool |-> \"pay\", amt |-> 30, key |-> \"s1\", kind |-> \"request\", id |-> 1],\n   [tool |-> \"pay\", amt |-> 30, key |-> \"s1\", kind |-> \"error\", id |-> 1] >>\n/\\ st = <<\"failed\", \"none\", \"none\">>\n/\\ eff = {}",
+   "itf": {
+    "#meta": {
+     "format": "ITF",
+     "format-description": "https://apalache-mc.org/docs/adr/015adr-trace.html",
+     "source": "TLC trace text, exported by kamanu.ladder.itf"
+    },
+    "vars": [
+     "fails",
+     "n",
+     "rec",
+     "rq",
+     "hist",
+     "st",
+     "eff"
+    ],
+    "states": [
+     {
+      "#meta": {
+       "index": 0
+      },
+      "fails": 0,
+      "n": 0,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [],
+      "st": [
+       "none",
+       "none",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 1
+      },
+      "fails": 0,
+      "n": 1,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "pay",
+        "amt": 30,
+        "key": "s1"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [],
+      "st": [
+       "pending",
+       "none",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 2
+      },
+      "fails": 0,
+      "n": 1,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "pay",
+        "amt": 30,
+        "key": "s1"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [
+       {
+        "tool": "pay",
+        "amt": 30,
+        "key": "s1",
+        "kind": "request",
+        "id": 1
+       }
+      ],
+      "st": [
+       "running",
+       "none",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 3
+      },
+      "fails": 1,
+      "n": 1,
+      "rec": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "pay",
+        "amt": 30,
+        "key": "s1"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [
+       {
+        "tool": "pay",
+        "amt": 30,
+        "key": "s1",
+        "kind": "request",
+        "id": 1
+       },
+       {
+        "tool": "pay",
+        "amt": 30,
+        "key": "s1",
+        "kind": "error",
+        "id": 1
+       }
+      ],
+      "st": [
+       "failed",
+       "none",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     }
+    ]
+   },
+   "story": {
+    "steps": [
+     {
+      "state": 2,
+      "actor": "harness",
+      "line": "the agent asks to pay 30 (call 1)",
+      "counted": [
+       0
+      ],
+      "held": 0,
+      "spent": 0,
+      "doubt": 0,
+      "parted": false
+     },
+     {
+      "state": 3,
+      "actor": "engine",
+      "line": "the engine lets call 1 for 30 through and writes it in its history",
+      "counted": [
+       30
+      ],
+      "held": 30,
+      "spent": 0,
+      "doubt": 0,
+      "parted": false
+     },
+     {
+      "state": 4,
+      "actor": "tool",
+      "line": "the tool fails on call 1 for 30 and no money moves",
+      "counted": [
+       30
+      ],
+      "held": 0,
+      "spent": 0,
+      "doubt": 30,
+      "parted": false
+     }
+    ],
+    "parted_at": null,
+    "text": "the story (PReqBasis, refusal leaves none, atomic engine, rung R2): what the engine counted beside held + spent + doubt\nthe two ledgers never part\n  2. [harness] the agent asks to pay 30 (call 1)  | counted 0 | held 0, spent 0, doubt 0\n  3. [engine] the engine lets call 1 for 30 through and writes it in its history  | counted 30 | held 30, spent 0, doubt 0\n  4. [tool] the tool fails on call 1 for 30 and no money moves  | counted 30 | held 0, spent 0, doubt 30\n"
+   }
+  },
+  {
+   "cell": {
+    "policy": "PRefundOnError",
+    "refusal_leaves": "request+error",
+    "engine": "stale view",
+    "rung": "R2"
+   },
+   "bounds": {
+    "cap": 100,
+    "amounts": [
+     30,
+     60
+    ],
+    "max_req": 3
+   },
+   "property": "ViewSound",
+   "trace": "State 1: <Initial predicate>\n/\\ fails = 0\n/\\ n = 0\n/\\ rec = {}\n/\\ fd = {}\n/\\ rq = << [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"none\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 2: <DSNext line 60, col 11 to line 60, col 65 of module DenySet>\n/\\ fails = 0\n/\\ n = 1\n/\\ rec = {}\n/\\ fd = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 30, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<>>\n/\\ st = <<\"pending\", \"none\", \"none\">>\n/\\ eff = {}\n\nState 3: <DSNext line 60, col 11 to line 60, col 65 of module DenySet>\n/\\ fails = 0\n/\\ n = 1\n/\\ rec = {}\n/\\ fd = {}\n/\\ rq = << [tool |-> \"pay\", amt |-> 30, key |-> \"s1\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"],\n   [tool |-> \"none\", amt |-> 0, key |-> \"none\"] >>\n/\\ hist = <<[tool |-> \"pay\", amt |-> 30, key |-> \"s1\", kind |-> \"request\", id |-> 1]>>\n/\\ st = <<\"running\", \"none\", \"none\">>\n/\\ eff = {}",
+   "itf": {
+    "#meta": {
+     "format": "ITF",
+     "format-description": "https://apalache-mc.org/docs/adr/015adr-trace.html",
+     "source": "TLC trace text, exported by kamanu.ladder.itf"
+    },
+    "vars": [
+     "fails",
+     "n",
+     "rec",
+     "fd",
+     "rq",
+     "hist",
+     "st",
+     "eff"
+    ],
+    "states": [
+     {
+      "#meta": {
+       "index": 0
+      },
+      "fails": 0,
+      "n": 0,
+      "rec": {
+       "#set": []
+      },
+      "fd": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [],
+      "st": [
+       "none",
+       "none",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 1
+      },
+      "fails": 0,
+      "n": 1,
+      "rec": {
+       "#set": []
+      },
+      "fd": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "pay",
+        "amt": 30,
+        "key": "s1"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [],
+      "st": [
+       "pending",
+       "none",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     },
+     {
+      "#meta": {
+       "index": 2
+      },
+      "fails": 0,
+      "n": 1,
+      "rec": {
+       "#set": []
+      },
+      "fd": {
+       "#set": []
+      },
+      "rq": [
+       {
+        "tool": "pay",
+        "amt": 30,
+        "key": "s1"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       },
+       {
+        "tool": "none",
+        "amt": 0,
+        "key": "none"
+       }
+      ],
+      "hist": [
+       {
+        "tool": "pay",
+        "amt": 30,
+        "key": "s1",
+        "kind": "request",
+        "id": 1
+       }
+      ],
+      "st": [
+       "running",
+       "none",
+       "none"
+      ],
+      "eff": {
+       "#set": []
+      }
+     }
+    ]
+   },
+   "story": {
+    "steps": [
+     {
+      "state": 2,
+      "actor": "harness",
+      "line": "the agent asks to pay 30 (call 1)",
+      "counted": [
+       0
+      ],
+      "held": 0,
+      "spent": 0,
+      "doubt": 0,
+      "parted": false
+     },
+     {
+      "state": 3,
+      "actor": "engine",
+      "line": "the engine lets call 1 for 30 through and writes it in its history",
+      "counted": [
+       0,
+       30
+      ],
+      "held": 30,
+      "spent": 0,
+      "doubt": 0,
+      "parted": true
+     }
+    ],
+    "parted_at": 3,
+    "text": "the story (PRefundOnError, refusal leaves request+error, stale view engine, rung R2): what the engine counted beside held + spent + doubt\nthe two ledgers part at state 3\n  2. [harness] the agent asks to pay 30 (call 1)  | counted 0 | held 0, spent 0, doubt 0\n  3. [engine] the engine lets call 1 for 30 through and writes it in its history  | counted 0, 30 | held 30, spent 0, doubt 0   <- the invariant broke here: the two ledgers part\n"
+   }
+  }
+ ]
+}

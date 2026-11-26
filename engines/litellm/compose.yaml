@@ -1,0 +1,29 @@
+# The LiteLLM proxy and the Postgres it keeps spend in, for the H7 adapter.
+# The gate (or whoever runs the hunt) sets LITELLM_IMAGE (the official image, pinned by digest),
+# POSTGRES_IMAGE (optional; the tag below otherwise) and LITELLM_CONFIG (the configuration file
+# the adapter launched: engines/litellm/config.yaml with the mock upstream's port).
+# Spend-write and budget-reset settings stay at the image's defaults: no environment sets them.
+services:
+  litellm:
+    image: ${LITELLM_IMAGE}
+    command: ["--config", "/app/config.yaml", "--port", "4000"]
+    volumes:
+      - ${LITELLM_CONFIG}:/app/config.yaml:ro
+    ports:
+      - "4000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: ${POSTGRES_IMAGE:-postgres:16}
+    environment:
+      POSTGRES_USER: litellm
+      POSTGRES_PASSWORD: litellm
+      POSTGRES_DB: litellm
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U litellm -d litellm"]
+      interval: 2s
+      timeout: 5s
+      retries: 60

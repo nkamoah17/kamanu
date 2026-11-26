@@ -1,0 +1,52 @@
+$ apalache check --cinit=CRefine --init=ApInit --next=ApNext --inv=ApInv,ApRefStep --length=1 PrFoldAp.tla
+# Usage statistics is ON. Thank you!
+# If you have changed your mind, disable the statistics with config --enable-stats=false.
+
+Output directory: ~\AppData\Local\Temp\kamanu-r9-k57ehhne\out\PrFoldAp.tla\2026-11-12T20-40-34_13748412537426860043
+# APALACHE version: 0.62.3 | build: 3eb15b2                       I@20:40:34.461
+Tuning:                                                           I@20:40:34.551
+PASS #0: SanyParser                                               I@20:40:35.284
+No source location for expression 5300                            W@20:40:36.657
+PASS #1: TypeCheckerSnowcat                                       I@20:40:36.829
+ > Running Snowcat .::.                                           I@20:40:36.829
+ > Your types are purrfect!                                       I@20:40:39.014
+ > All expressions are typed                                      I@20:40:39.014
+PASS #2: ConfigurationPass                                        I@20:40:39.015
+  > Set the initialization predicate to ApInit                    I@20:40:39.020
+  > Set the transition predicate to ApNext                        I@20:40:39.021
+  > Set the constant initialization predicate to CRefine          I@20:40:39.022
+  > Set an invariant to ApInv                                     I@20:40:39.022
+  > Set an invariant to ApRefStep                                 I@20:40:39.022
+PASS #3: DesugarerPass                                            I@20:40:39.031
+  > Desugaring...                                                 I@20:40:39.031
+PASS #4: InlinePass                                               I@20:40:39.548
+Leaving only relevant operators: ApInit, ApInitPrimed, ApInv, ApNext, ApRefStep, CRefine, CRefinePrimed I@20:40:39.549
+PASS #5: TemporalPass                                             I@20:40:39.806
+  > Rewriting temporal operators...                               I@20:40:39.806
+  > No temporal property specified, nothing to encode             I@20:40:39.806
+PASS #6: InlinePass                                               I@20:40:39.806
+Leaving only relevant operators: ApInit, ApInitPrimed, ApInv, ApNext, ApRefStep, CRefine, CRefinePrimed I@20:40:39.806
+PASS #7: PrimingPass                                              I@20:40:39.838
+  > Introducing CRefinePrimed for CRefine'                        I@20:40:39.854
+  > Introducing ApInitPrimed for ApInit'                          I@20:40:39.893
+PASS #8: VCGen                                                    I@20:40:39.899
+  > Producing verification conditions from the invariant ApInv    I@20:40:39.902
+  > VCGen produced 17 verification condition(s)                   I@20:40:39.927
+  > Producing verification conditions from the invariant ApRefStep I@20:40:39.934
+  > VCGen produced 1 verification condition(s)                    I@20:40:39.939
+PASS #9: PreprocessingPass                                        I@20:40:39.946
+  > Before preprocessing: unique renaming                         I@20:40:39.946
+ > Applying standard transformations:                             I@20:40:39.971
+  > PrimePropagation                                              I@20:40:39.972
+  > Desugarer                                                     I@20:40:39.980
+  > UniqueRenamer                                                 I@20:40:39.993
+  > Normalizer                                                    I@20:40:40.045
+  > SetMembershipSimplifier                                       I@20:40:40.076
+  > Keramelizer                                                   I@20:40:40.110
+  > After preprocessing: UniqueRenamer                            I@20:40:40.146
+PrFoldAp.tla:86:17-86:90: unsupported expression: Seq(_) produces an infinite set of unbounded sequences. See: https://apalache-mc.org/docs/apalache/known-issues.html#using-seqs E@20:40:40.307
+PrFoldAp.tla:86:17-86:90: unsupported expression: Seq(_) produces an infinite set of unbounded sequences. See: https://apalache-mc.org/docs/apalache/known-issues.html#using-seqs E@20:40:40.341
+Checker has found an error                                        I@20:40:40.560
+It took me 0 days  0 hours  0 min  6 sec                          I@20:40:40.561
+Total time: 6.47 sec                                              I@20:40:40.561
+EXITCODE: ERROR (75)

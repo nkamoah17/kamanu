@@ -1,0 +1,52 @@
+$ apalache check --cinit=CTight --init=ApInit --next=ApNext --inv=ApTightInv,ApNoFalseRefusal --length=1 PrFoldAp.tla
+# Usage statistics is ON. Thank you!
+# If you have changed your mind, disable the statistics with config --enable-stats=false.
+
+Output directory: ~\AppData\Local\Temp\kamanu-r9-gnn3uv2e\out\PrFoldAp.tla\2026-11-12T20-40-58_15070485325588693717
+# APALACHE version: 0.62.3 | build: 3eb15b2                       I@20:40:58.892
+Tuning:                                                           I@20:40:58.911
+PASS #0: SanyParser                                               I@20:40:59.432
+No source location for expression 5300                            W@20:41:01.078
+PASS #1: TypeCheckerSnowcat                                       I@20:41:01.302
+ > Running Snowcat .::.                                           I@20:41:01.302
+ > Your types are purrfect!                                       I@20:41:03.905
+ > All expressions are typed                                      I@20:41:03.906
+PASS #2: ConfigurationPass                                        I@20:41:03.907
+  > Set the initialization predicate to ApInit                    I@20:41:03.918
+  > Set the transition predicate to ApNext                        I@20:41:03.920
+  > Set the constant initialization predicate to CTight           I@20:41:03.921
+  > Set an invariant to ApTightInv                                I@20:41:03.922
+  > Set an invariant to ApNoFalseRefusal                          I@20:41:03.923
+PASS #3: DesugarerPass                                            I@20:41:03.945
+  > Desugaring...                                                 I@20:41:03.945
+PASS #4: InlinePass                                               I@20:41:04.571
+Leaving only relevant operators: ApInit, ApInitPrimed, ApNext, ApNoFalseRefusal, ApTightInv, CTight, CTightPrimed I@20:41:04.575
+PASS #5: TemporalPass                                             I@20:41:04.848
+  > Rewriting temporal operators...                               I@20:41:04.848
+  > No temporal property specified, nothing to encode             I@20:41:04.848
+PASS #6: InlinePass                                               I@20:41:04.848
+Leaving only relevant operators: ApInit, ApInitPrimed, ApNext, ApNoFalseRefusal, ApTightInv, CTight, CTightPrimed I@20:41:04.848
+PASS #7: PrimingPass                                              I@20:41:04.886
+  > Introducing CTightPrimed for CTight'                          I@20:41:04.893
+  > Introducing ApInitPrimed for ApInit'                          I@20:41:04.912
+PASS #8: VCGen                                                    I@20:41:04.916
+  > Producing verification conditions from the invariant ApTightInv I@20:41:04.918
+  > VCGen produced 18 verification condition(s)                   I@20:41:04.932
+  > Producing verification conditions from the invariant ApNoFalseRefusal I@20:41:04.947
+  > VCGen produced 1 verification condition(s)                    I@20:41:04.948
+PASS #9: PreprocessingPass                                        I@20:41:04.950
+  > Before preprocessing: unique renaming                         I@20:41:04.950
+ > Applying standard transformations:                             I@20:41:04.963
+  > PrimePropagation                                              I@20:41:04.964
+  > Desugarer                                                     I@20:41:04.971
+  > UniqueRenamer                                                 I@20:41:04.979
+  > Normalizer                                                    I@20:41:05.019
+  > SetMembershipSimplifier                                       I@20:41:05.042
+  > Keramelizer                                                   I@20:41:05.064
+  > After preprocessing: UniqueRenamer                            I@20:41:05.101
+PrFoldAp.tla:86:17-86:90: unsupported expression: Seq(_) produces an infinite set of unbounded sequences. See: https://apalache-mc.org/docs/apalache/known-issues.html#using-seqs E@20:41:05.268
+PrFoldAp.tla:86:17-86:90: unsupported expression: Seq(_) produces an infinite set of unbounded sequences. See: https://apalache-mc.org/docs/apalache/known-issues.html#using-seqs E@20:41:05.298
+Checker has found an error                                        I@20:41:05.423
+It took me 0 days  0 hours  0 min  6 sec                          I@20:41:05.423
+Total time: 6.522 sec                                             I@20:41:05.423
+EXITCODE: ERROR (75)

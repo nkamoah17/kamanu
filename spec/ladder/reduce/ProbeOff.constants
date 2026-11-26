@@ -1,0 +1,7 @@
+\* the probe has no feature to switch: two profiles in lockstep, here DenyLogged and GlobalScope
+L = 5
+Amt = 1
+Sessions = {"s1", "s2"}
+ProfA <- DenyLogged
+ProfB <- GlobalScope
+Permit <- Lockout

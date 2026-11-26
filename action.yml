@@ -1,0 +1,154 @@
+name: kamanu check
+description: >
+  Runs `kamanu check` on the .dw policies a pull request changes, against the engine profile
+  you name, and uploads the findings to GitHub code scanning as SARIF. The job fails with
+  check's exit code when a changed policy can overspend its cap. With scan 'true' it also runs
+  `kamanu scan` on each changed policy into a cabinet carried from run to run, verifies the
+  chain and keeps it as the artifact kamanu-cabinet.
+branding:
+  icon: shield
+  color: green
+
+inputs:
+  engine:
+    description: >
+      The engine profile to check against: a profile JSON's path in your repository, or a
+      built-in profile name such as `reference`.
+    required: true
+  setup-python:
+    description: Set up Python 3.12 with actions/setup-python first ('true' or 'false').
+    required: false
+    default: 'true'
+  category:
+    description: The code scanning category of the upload.
+    required: false
+    default: kamanu
+  upload:
+    description: Upload the SARIF with github/codeql-action/upload-sarif ('true' or 'false').
+    required: false
+    default: 'true'
+  scan:
+    description: >
+      After check, run `kamanu scan` on each changed policy into a cabinet carried from run to run
+      with actions/cache, verify its chain with `kamanu scan --verify`, and keep it as the artifact
+      kamanu-cabinet ('true' or 'false').
+    required: false
+    default: 'false'
+  scan-fails:
+    description: >
+      Fail the job with the largest scan exit when it is not 0 ('true' or 'false'). With 'false'
+      the job's result stays check's (a chain that does not check still fails it).
+    required: false
+    default: 'false'
+  cabinet-key:
+    description: The stem of the cabinet's cache key (the run id is added; restore-keys match the stem).
+    required: false
+    default: kamanu-cabinet
+
+outputs:
+  exit-code:
+    description: The exit code kamanu check gave (the largest over the changed policies; 0 when none changed).
+    value: ${{ steps.check.outputs.exit-code }}
+  sarif:
+    description: The path of the merged SARIF file.
+    value: ${{ steps.check.outputs.sarif }}
+  policies:
+    description: The .dw files checked, one per line.
+    value: ${{ steps.check.outputs.policies }}
+  scan-exit-code:
+    description: The largest exit kamanu scan gave over the changed policies (empty when scan is 'false').
+    value: ${{ steps.scan.outputs.exit-code }}
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Python
+      if: inputs.setup-python == 'true'
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Install kamanu
+      shell: bash
+      run: python "$GITHUB_ACTION_PATH/action/install.py"
+
+    - name: kamanu check on the changed policies
+      id: check
+      shell: bash
+      env:
+        KAMANU_ENGINE: ${{ inputs.engine }}
+      run: python "$GITHUB_ACTION_PATH/action/check.py"
+
+    - name: kamanu lint on the changed policies
+      id: lint
+      shell: bash
+      env:
+        KAMANU_ENGINE: ${{ inputs.engine }}
+      run: python "$GITHUB_ACTION_PATH/action/lint.py"
+
+    - name: Upload SARIF
+      if: always() && inputs.upload == 'true' && steps.check.outputs.sarif != ''
+      uses: github/codeql-action/upload-sarif@v3
+      with:
+        sarif_file: ${{ steps.check.outputs.sarif }}
+        category: ${{ inputs.category }}
+
+    - name: Restore the kamanu cabinet
+      id: cabinet
+      if: always() && inputs.scan == 'true'
+      uses: actions/cache/restore@v4
+      with:
+        path: ${{ runner.temp }}/kamanu-cabinet
+        key: ${{ inputs.cabinet-key }}-${{ github.run_id }}-${{ github.run_attempt }}
+        restore-keys: |
+          ${{ inputs.cabinet-key }}-
+
+    - name: kamanu scan on the changed policies
+      id: scan
+      if: always() && inputs.scan == 'true'
+      shell: bash
+      env:
+        KAMANU_ENGINE: ${{ inputs.engine }}
+        KAMANU_CABINET: ${{ runner.temp }}/kamanu-cabinet
+      run: python "$GITHUB_ACTION_PATH/action/scan.py"
+
+    - name: kamanu scan --verify on the cabinet
+      id: verify
+      if: always() && inputs.scan == 'true' && steps.scan.outcome == 'success'
+      shell: bash
+      env:
+        KAMANU_CABINET: ${{ runner.temp }}/kamanu-cabinet
+      run: python "$GITHUB_ACTION_PATH/action/verify.py"
+
+    - name: Keep the cabinet as an artifact
+      if: always() && inputs.scan == 'true' && steps.verify.outcome == 'success' && steps.verify.outputs.chain == 'true'
+      uses: actions/upload-artifact@v4
+      with:
+        name: kamanu-cabinet
+        path: ${{ runner.temp }}/kamanu-cabinet
+        if-no-files-found: error
+
+    - name: Save the cabinet to the cache
+      if: always() && inputs.scan == 'true' && steps.verify.outcome == 'success' && steps.verify.outputs.chain == 'true'
+      uses: actions/cache/save@v4
+      with:
+        path: ${{ runner.temp }}/kamanu-cabinet
+        key: ${{ steps.cabinet.outputs.cache-primary-key }}
+
+    - name: Fail with kamanu scan's exit code (scan-fails)
+      if: always() && inputs.scan == 'true' && inputs.scan-fails == 'true' && steps.scan.outputs.exit-code != '' && steps.scan.outputs.exit-code != '0'
+      shell: bash
+      env:
+        KAMANU_SCAN_EXIT: ${{ steps.scan.outputs.exit-code }}
+      run: |
+        echo "kamanu scan exited $KAMANU_SCAN_EXIT on a changed policy and scan-fails is 'true'"
+        exit "$KAMANU_SCAN_EXIT"
+
+    - name: Fail with kamanu check's exit code
+      if: always() && steps.check.outputs.exit-code != '' && steps.check.outputs.exit-code != '0'
+      shell: bash
+      env:
+        KAMANU_EXIT: ${{ steps.check.outputs.exit-code }}
+      run: |
+        echo "kamanu check exited $KAMANU_EXIT on a changed policy; see the code scanning results"
+        exit "$KAMANU_EXIT"

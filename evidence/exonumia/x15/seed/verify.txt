@@ -1,0 +1,2 @@
+chain checks: 18 receipts, each line canonical, in order, carrying the hash of the line before; 0 signed, 18 unsigned
+head seq 17 09375458aef366edfb1c9d870e9f4060d4ae3d8dc6b4d35a60777a1b45c2f1b9

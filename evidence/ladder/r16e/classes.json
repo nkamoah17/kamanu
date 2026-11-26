@@ -1,0 +1,712 @@
+{
+ "examples": [
+  {
+   "example": "alert_login_and_big_transfer",
+   "kinds": {
+    "predicates": [
+     {
+      "id": "p1",
+      "action": "Transfer",
+      "kind": "request",
+      "field": "input.amount",
+      "op": ">",
+      "value": 100,
+      "line": 16
+     }
+    ],
+    "classes": [
+     {
+      "id": "c1",
+      "action": "Transfer",
+      "kind": "request",
+      "literals": {
+       "p1": true
+      },
+      "witness": {
+       "input.amount": 101
+      }
+     },
+     {
+      "id": "c2",
+      "action": "Transfer",
+      "kind": "request",
+      "literals": {
+       "p1": false
+      },
+      "witness": {
+       "input.amount": 99
+      }
+     }
+    ],
+    "budget": 64
+   }
+  },
+  {
+   "example": "call_cedar_macro_with_temporal_leaf",
+   "kinds": {
+    "predicates": [
+     {
+      "id": "p1",
+      "action": "Alert",
+      "kind": "request",
+      "field": "input.level",
+      "op": ">=",
+      "value": 2,
+      "line": 8
+     }
+    ],
+    "classes": [
+     {
+      "id": "c1",
+      "action": "Alert",
+      "kind": "request",
+      "literals": {
+       "p1": true
+      },
+      "witness": {
+       "input.level": 2
+      }
+     },
+     {
+      "id": "c2",
+      "action": "Alert",
+      "kind": "request",
+      "literals": {
+       "p1": false
+      },
+      "witness": {
+       "input.level": 1
+      }
+     }
+    ],
+    "budget": 64
+   }
+  },
+  {
+   "example": "cedar_macro_plus_temporal_leaf",
+   "kinds": {
+    "predicates": [
+     {
+      "id": "p1",
+      "action": "Alert",
+      "kind": "request",
+      "field": "input.level",
+      "op": ">=",
+      "value": 2,
+      "line": 14
+     }
+    ],
+    "classes": [
+     {
+      "id": "c1",
+      "action": "Alert",
+      "kind": "request",
+      "literals": {
+       "p1": true
+      },
+      "witness": {
+       "input.level": 2
+      }
+     },
+     {
+      "id": "c2",
+      "action": "Alert",
+      "kind": "request",
+      "literals": {
+       "p1": false
+      },
+      "witness": {
+       "input.level": 1
+      }
+     }
+    ],
+    "budget": 64
+   }
+  },
+  {
+   "example": "desk_governance",
+   "kinds": {
+    "predicates": [
+     {
+      "id": "p1",
+      "action": "SellShares",
+      "kind": "request",
+      "field": "type(principal)",
+      "op": "==",
+      "value": "Desk::OAuthUser",
+      "line": 7
+     },
+     {
+      "id": "p2",
+      "action": "Login",
+      "kind": "response",
+      "field": "output.result",
+      "op": "==",
+      "value": true,
+      "line": 11,
+      "oracle": "o1"
+     },
+     {
+      "id": "p3",
+      "action": "ApproveSale",
+      "kind": "response",
+      "field": "output.approved",
+      "op": "==",
+      "value": true,
+      "line": 17,
+      "oracle": "o2"
+     },
+     {
+      "id": "p4",
+      "action": "SellShares",
+      "kind": "request",
+      "field": "Text::Scan(context.input.notes).flagged",
+      "op": "==",
+      "value": true,
+      "line": 33,
+      "oracle": "o3"
+     },
+     {
+      "id": "p5",
+      "action": "SellShares",
+      "kind": "request",
+      "field": "input.stock",
+      "op": "==",
+      "value": "AMZN",
+      "line": 38
+     },
+     {
+      "id": "p6",
+      "action": "ApproveSale",
+      "kind": "request",
+      "field": "type(principal)",
+      "op": "==",
+      "value": "Desk::IamEntity",
+      "line": 43
+     }
+    ],
+    "classes": [
+     {
+      "id": "c1",
+      "action": "ApproveSale",
+      "kind": "request",
+      "literals": {
+       "p6": true
+      },
+      "witness": {
+       "type(principal)": "Desk::IamEntity"
+      }
+     },
+     {
+      "id": "c2",
+      "action": "ApproveSale",
+      "kind": "request",
+      "literals": {
+       "p6": false
+      },
+      "witness": {
+       "type(principal)": "other"
+      }
+     },
+     {
+      "id": "c3",
+      "action": "ApproveSale",
+      "kind": "response",
+      "literals": {
+       "p3": true
+      },
+      "witness": {
+       "output.approved": true
+      }
+     },
+     {
+      "id": "c4",
+      "action": "ApproveSale",
+      "kind": "response",
+      "literals": {
+       "p3": false
+      },
+      "witness": {
+       "output.approved": false
+      }
+     },
+     {
+      "id": "c5",
+      "action": "Login",
+      "kind": "response",
+      "literals": {
+       "p2": true
+      },
+      "witness": {
+       "output.result": true
+      }
+     },
+     {
+      "id": "c6",
+      "action": "Login",
+      "kind": "response",
+      "literals": {
+       "p2": false
+      },
+      "witness": {
+       "output.result": false
+      }
+     },
+     {
+      "id": "c7",
+      "action": "SellShares",
+      "kind": "request",
+      "literals": {
+       "p1": true,
+       "p4": true,
+       "p5": true
+      },
+      "witness": {
+       "type(principal)": "Desk::OAuthUser",
+       "Text::Scan(context.input.notes).flagged": true,
+       "input.stock": "AMZN"
+      }
+     },
+     {
+      "id": "c8",
+      "action": "SellShares",
+      "kind": "request",
+      "literals": {
+       "p1": true,
+       "p4": true,
+       "p5": false
+      },
+      "witness": {
+       "type(principal)": "Desk::OAuthUser",
+       "Text::Scan(context.input.notes).flagged": true,
+       "input.stock": "other"
+      }
+     },
+     {
+      "id": "c9",
+      "action": "SellShares",
+      "kind": "request",
+      "literals": {
+       "p1": true,
+       "p4": false,
+       "p5": true
+      },
+      "witness": {
+       "type(principal)": "Desk::OAuthUser",
+       "Text::Scan(context.input.notes).flagged": false,
+       "input.stock": "AMZN"
+      }
+     },
+     {
+      "id": "c10",
+      "action": "SellShares",
+      "kind": "request",
+      "literals": {
+       "p1": true,
+       "p4": false,
+       "p5": false
+      },
+      "witness": {
+       "type(principal)": "Desk::OAuthUser",
+       "Text::Scan(context.input.notes).flagged": false,
+       "input.stock": "other"
+      }
+     },
+     {
+      "id": "c11",
+      "action": "SellShares",
+      "kind": "request",
+      "literals": {
+       "p1": false,
+       "p4": true,
+       "p5": true
+      },
+      "witness": {
+       "type(principal)": "other",
+       "Text::Scan(context.input.notes).flagged": true,
+       "input.stock": "AMZN"
+      }
+     },
+     {
+      "id": "c12",
+      "action": "SellShares",
+      "kind": "request",
+      "literals": {
+       "p1": false,
+       "p4": true,
+       "p5": false
+      },
+      "witness": {
+       "type(principal)": "other",
+       "Text::Scan(context.input.notes).flagged": true,
+       "input.stock": "other"
+      }
+     },
+     {
+      "id": "c13",
+      "action": "SellShares",
+      "kind": "request",
+      "literals": {
+       "p1": false,
+       "p4": false,
+       "p5": true
+      },
+      "witness": {
+       "type(principal)": "other",
+       "Text::Scan(context.input.notes).flagged": false,
+       "input.stock": "AMZN"
+      }
+     },
+     {
+      "id": "c14",
+      "action": "SellShares",
+      "kind": "request",
+      "literals": {
+       "p1": false,
+       "p4": false,
+       "p5": false
+      },
+      "witness": {
+       "type(principal)": "other",
+       "Text::Scan(context.input.notes).flagged": false,
+       "input.stock": "other"
+      }
+     }
+    ],
+    "budget": 64
+   }
+  },
+  {
+   "example": "forbid_read_transfers_over_1000",
+   "kinds": {
+    "predicates": [
+     {
+      "id": "p1",
+      "action": "Transfer",
+      "kind": "response",
+      "field": "output.amount",
+      "op": ">",
+      "value": 0,
+      "line": 17,
+      "oracle": "o1"
+     }
+    ],
+    "classes": [
+     {
+      "id": "c1",
+      "action": "Transfer",
+      "kind": "response",
+      "literals": {
+       "p1": true
+      },
+      "witness": {
+       "output.amount": 1
+      }
+     },
+     {
+      "id": "c2",
+      "action": "Transfer",
+      "kind": "response",
+      "literals": {
+       "p1": false
+      },
+      "witness": {
+       "output.amount": -1
+      }
+     }
+    ],
+    "budget": 64
+   }
+  },
+  {
+   "example": "macro_library_once_is_small",
+   "kinds": {
+    "predicates": [
+     {
+      "id": "p1",
+      "action": "SellShares",
+      "kind": "request",
+      "field": "input.shares",
+      "op": "<",
+      "value": 100,
+      "line": 11
+     }
+    ],
+    "classes": [
+     {
+      "id": "c1",
+      "action": "SellShares",
+      "kind": "request",
+      "literals": {
+       "p1": true
+      },
+      "witness": {
+       "input.shares": 99
+      }
+     },
+     {
+      "id": "c2",
+      "action": "SellShares",
+      "kind": "request",
+      "literals": {
+       "p1": false
+      },
+      "witness": {
+       "input.shares": 100
+      }
+     }
+    ],
+    "budget": 64
+   }
+  },
+  {
+   "example": "read_after_login_success",
+   "kinds": {
+    "predicates": [
+     {
+      "id": "p1",
+      "action": "Login",
+      "kind": "response",
+      "field": "output.result",
+      "op": "==",
+      "value": true,
+      "line": 13,
+      "oracle": "o1"
+     }
+    ],
+    "classes": [
+     {
+      "id": "c1",
+      "action": "Login",
+      "kind": "response",
+      "literals": {
+       "p1": true
+      },
+      "witness": {
+       "output.result": true
+      }
+     },
+     {
+      "id": "c2",
+      "action": "Login",
+      "kind": "response",
+      "literals": {
+       "p1": false
+      },
+      "witness": {
+       "output.result": false
+      }
+     }
+    ],
+    "budget": 64
+   }
+  },
+  {
+   "example": "read_prev_login_success",
+   "kinds": {
+    "predicates": [
+     {
+      "id": "p1",
+      "action": "Login",
+      "kind": "response",
+      "field": "output.result",
+      "op": "==",
+      "value": true,
+      "line": 12,
+      "oracle": "o1"
+     }
+    ],
+    "classes": [
+     {
+      "id": "c1",
+      "action": "Login",
+      "kind": "response",
+      "literals": {
+       "p1": true
+      },
+      "witness": {
+       "output.result": true
+      }
+     },
+     {
+      "id": "c2",
+      "action": "Login",
+      "kind": "response",
+      "literals": {
+       "p1": false
+      },
+      "witness": {
+       "output.result": false
+      }
+     }
+    ],
+    "budget": 64
+   }
+  },
+  {
+   "example": "sell_after_approval_valid_ticker",
+   "kinds": {
+    "predicates": [
+     {
+      "id": "p1",
+      "action": "SellShares",
+      "kind": "request",
+      "field": "Strings::Matches(context.input.stock, \"^[A-Z]+$\").matched",
+      "op": "==",
+      "value": true,
+      "line": 11,
+      "oracle": "o1"
+     }
+    ],
+    "classes": [
+     {
+      "id": "c1",
+      "action": "SellShares",
+      "kind": "request",
+      "literals": {
+       "p1": true
+      },
+      "witness": {
+       "Strings::Matches(context.input.stock, \"^[A-Z]+$\").matched": true
+      }
+     },
+     {
+      "id": "c2",
+      "action": "SellShares",
+      "kind": "request",
+      "literals": {
+       "p1": false
+      },
+      "witness": {
+       "Strings::Matches(context.input.stock, \"^[A-Z]+$\").matched": false
+      }
+     }
+    ],
+    "budget": 64
+   }
+  },
+  {
+   "example": "sell_shares_temporal_subexpr",
+   "kinds": {
+    "predicates": [
+     {
+      "id": "p1",
+      "action": "SellShares",
+      "kind": "request",
+      "field": "input.shares",
+      "op": ">",
+      "value": 5,
+      "line": 5
+     }
+    ],
+    "classes": [
+     {
+      "id": "c1",
+      "action": "SellShares",
+      "kind": "request",
+      "literals": {
+       "p1": true
+      },
+      "witness": {
+       "input.shares": 6
+      }
+     },
+     {
+      "id": "c2",
+      "action": "SellShares",
+      "kind": "request",
+      "literals": {
+       "p1": false
+      },
+      "witness": {
+       "input.shares": 4
+      }
+     }
+    ],
+    "budget": 64
+   }
+  },
+  {
+   "example": "submit_after_approval_injection",
+   "kinds": {
+    "predicates": [
+     {
+      "id": "p1",
+      "action": "Approve",
+      "kind": "request",
+      "field": "input.status",
+      "op": "==",
+      "value": "approved",
+      "line": 18
+     }
+    ],
+    "classes": [
+     {
+      "id": "c1",
+      "action": "Approve",
+      "kind": "request",
+      "literals": {
+       "p1": true
+      },
+      "witness": {
+       "input.status": "approved"
+      }
+     },
+     {
+      "id": "c2",
+      "action": "Approve",
+      "kind": "request",
+      "literals": {
+       "p1": false
+      },
+      "witness": {
+       "input.status": "other"
+      }
+     }
+    ],
+    "budget": 64
+   }
+  },
+  {
+   "example": "transfer_prev_nested_conj",
+   "kinds": {
+    "predicates": [
+     {
+      "id": "p1",
+      "action": "Login",
+      "kind": "request",
+      "field": "input.server",
+      "op": "==",
+      "value": "s1",
+      "line": 13
+     }
+    ],
+    "classes": [
+     {
+      "id": "c1",
+      "action": "Login",
+      "kind": "request",
+      "literals": {
+       "p1": true
+      },
+      "witness": {
+       "input.server": "s1"
+      }
+     },
+     {
+      "id": "c2",
+      "action": "Login",
+      "kind": "request",
+      "literals": {
+       "p1": false
+      },
+      "witness": {
+       "input.server": "other"
+      }
+     }
+    ],
+    "budget": 64
+   }
+  }
+ ]
+}

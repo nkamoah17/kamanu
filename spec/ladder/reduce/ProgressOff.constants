@@ -1,0 +1,21 @@
+\* the seed's untimed timer: Fixed = FALSE
+Templates <- TOne
+MaxReq = 3
+MaxFails = 1
+Reflexive = TRUE
+DenyRecord = "none"
+Atomic = TRUE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = TRUE
+Permit <- PRefundOnReconcile
+Scope <- ScopeGlobal
+Cap = 100
+GoalTemplate <- GoalPay
+NeedsApproval = TRUE
+ApproverFair = FALSE
+AgentFair = TRUE
+HasTimeout = TRUE
+MaskDeadlock = FALSE
+Fixed = FALSE
+Deadline = 2

@@ -1,0 +1,12 @@
+\* Two requests, three sessions, two principals, and one failure of either kind.
+Templates <- LabelTemplates
+Permit <- LabelPermit
+Scope <- LabelScope
+MaxReq = 2
+MaxFails = 1
+Reflexive = TRUE
+DenyRecord = "none"
+Atomic = TRUE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = FALSE

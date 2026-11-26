@@ -1,0 +1,35 @@
+{
+ "id": "r15-none-atomic",
+ "constants": {
+  "Reflexive": {
+   "value": true,
+   "source": "kamanu.ladder.fix (R15 seeded case)",
+   "confidence": "high",
+   "basis": "Stated for the seeded case."
+  },
+  "DenyRecord": {
+   "value": "none",
+   "source": "kamanu.ladder.fix (R15 seeded case)",
+   "confidence": "high",
+   "basis": "Stated for the seeded case."
+  },
+  "Atomic": {
+   "value": true,
+   "source": "kamanu.ladder.fix (R15 seeded case)",
+   "confidence": "high",
+   "basis": "Stated for the seeded case."
+  },
+  "Lag": {
+   "value": 0,
+   "source": "kamanu.ladder.fix (R15 seeded case)",
+   "confidence": "high",
+   "basis": "Stated for the seeded case."
+  },
+  "Scope": {
+   "value": "ScopeGlobal",
+   "source": "kamanu.ladder.fix (R15 seeded case)",
+   "confidence": "high",
+   "basis": "Stated for the seeded case."
+  }
+ }
+}

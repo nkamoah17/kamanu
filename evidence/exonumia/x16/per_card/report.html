@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>sprint-report-v1: demo.sprint.handlers:PerCard</title>
+<style>
+/* no page size is fixed: the margins and the 180 mm column fit both A4 (210 mm) and letter (216 mm) paper */
+@page { margin: 14mm; }
+@media print {
+  body { font-size: 9.5pt; max-width: none; margin: 0; }
+  section { break-before: page; }
+  section:first-of-type { break-before: avoid; }
+  pre { white-space: pre-wrap; word-break: break-all; }
+}
+body { font-family: Georgia, "Times New Roman", serif; max-width: 180mm; margin: 2em auto; line-height: 1.35;
+       color: #111; }
+h1 { font-size: 1.25em; border-bottom: 2px solid #111; padding-bottom: .3em; }
+h2 { font-size: 1.15em; margin-top: 1.6em; padding: .2em .4em; background: #eee; border-left: 6px solid #333; }
+h3 { font-size: 1em; margin: 1.1em 0 .3em; }
+section { border: 1px solid #bbb; padding: 0 1em 1em; margin: 1.5em 0; }
+p { margin: .25em 0; }
+pre { font-size: 8pt; background: #f7f7f7; padding: .5em; overflow-x: auto; white-space: pre-wrap;
+      word-break: break-all; }
+</style>
+</head>
+<body>
+<h1>The contracted path was decided (no part UNKNOWN); 2 of 8 families have a finding; the processor was simulated, and nothing here is a statement about a processor&#x27;s system.</h1>
+<p>handler demo.sprint.handlers:PerCard; scope demo/sprint/scope.json; seed 1; trials 99 in each family with a race; 8 asks at once</p>
+<p>The three parts below are kept apart: a figure of one part is not printed in another.</p>
+<section id="model">
+<h2>Model</h2>
+<p>What the model answers for the scope&#x27;s card profile, once per limit (kamanu scan --card on profiles/&lt;id&gt;.json, the limit&#x27;s amount as the face). A check&#x27;s level is the model&#x27;s own.</p>
+<h3>limit cardholder-daily (daily, amount 2000)</h3>
+<p>cardholder-daily: face 2000, ceiling 2000, fineness 1.000; level ASSUMED</p>
+<p>Sound: VACUOUS, level ASSUMED</p>
+<p>Tight: holds, level ASSUMED</p>
+<p>constant Atomic = false (assumed)</p>
+<p>constant Lag = 1 (assumed)</p>
+<p>constant OverCapture = 20 (assumed)</p>
+<p>window: daily: one fixed calendar window, the UTC day (it resets at midnight UTC); the card model checks the bucket of one such window, and the ledger keeps one bucket per window; a sliding window is not what was checked</p>
+<p>profile profiles/cardholder-daily.json; receipt receipts/cardholder-daily.json</p>
+<p>Tight&#x27;s trace: none (Tight does not fail)</p>
+<h3>limit card-per-authorization (per_authorization, amount 350)</h3>
+<p>card-per-authorization: face 350, ceiling 350, fineness 1.000; level ASSUMED</p>
+<p>Sound: VACUOUS, level ASSUMED</p>
+<p>Tight: holds, level ASSUMED</p>
+<p>constant Atomic = false (assumed)</p>
+<p>constant Lag = 1 (assumed)</p>
+<p>constant OverCapture = 20 (assumed)</p>
+<p>window: per_authorization: no calendar window; the bucket is the authorization itself (its hold and captures)</p>
+<p>profile profiles/card-per-authorization.json; receipt receipts/card-per-authorization.json</p>
+<p>Tight&#x27;s trace: none (Tight does not fail)</p>
+<h3>limit cards-monthly (monthly, amount 20000)</h3>
+<p>cards-monthly: face 20000, ceiling 24000, fineness .833; level ASSUMED</p>
+<p>Sound: FAILS, level REFUTED</p>
+<p>Tight: VACUOUS, level ASSUMED</p>
+<p>constant Atomic = false (assumed)</p>
+<p>constant Lag = 1 (assumed)</p>
+<p>constant OverCapture = 20 (assumed)</p>
+<p>window: monthly: one fixed calendar window, the UTC calendar month; the card model checks the bucket of one such window, and the ledger keeps one bucket per window; a sliding window is not what was checked</p>
+<p>profile profiles/cards-monthly.json; receipt receipts/cards-monthly.json</p>
+<p>Tight&#x27;s trace: none (Tight does not fail)</p>
+</section>
+<section id="measurement">
+<h2>Measurement</h2>
+<p>Every count below is a count of this run&#x27;s journals, level TESTED: the battery played against the handler on a simulated processor, read by python -m exonumia.ledger report --json --orders (seed 1, 8 asks at once in the parallel family; TESTED).</p>
+<h3>single asks below, at and above the limit</h3>
+<p>trials: 3 (TESTED)</p>
+<p>approvals that did not fit: 0 (TESTED)</p>
+<p>wrongful refusals: 0 (TESTED)</p>
+<p>order-dependent decisions: 0 (TESTED; never a finding)</p>
+<p>largest amount over a limit: 0 (TESTED)</p>
+<p>finding: none, TESTED on this run</p>
+<p>3 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 63.2% of the time or more would be missed with probability at most 5%; a rarer one can still be there.</p>
+<p>journal journals/single.jsonl; ledger report ledger/single.json</p>
+<h3>parallel asks</h3>
+<p>trials: 99 (TESTED)</p>
+<p>approvals that did not fit: 0 (TESTED)</p>
+<p>wrongful refusals: 0 (TESTED)</p>
+<p>order-dependent decisions: 0 (TESTED; never a finding)</p>
+<p>largest amount over a limit: 0 (TESTED)</p>
+<p>finding: none, TESTED on this run</p>
+<p>99 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 3.0% of the time or more would be missed with probability at most 5%; a rarer one can still be there.</p>
+<p>journal journals/parallel.jsonl; ledger report ledger/parallel.json</p>
+<h3>several cards under one cardholder</h3>
+<p>trials: 99 (TESTED)</p>
+<p>approvals that did not fit: 99 (TESTED)</p>
+<p>wrongful refusals: 0 (TESTED)</p>
+<p>order-dependent decisions: 0 (TESTED; never a finding)</p>
+<p>largest amount over a limit: 81 (TESTED)</p>
+<p>finding: yes, TESTED on this run</p>
+<p>journal journals/cards.jsonl; ledger report ledger/cards.json</p>
+<p>the shortest trace of the finding (18 journal lines, TESTED):</p>
+<pre>
+{&quot;event&quot;:{&quot;amount&quot;:350,&quot;auth&quot;:&quot;cards/0/a1&quot;,&quot;card&quot;:&quot;ic_cards_0_1&quot;,&quot;cardholder&quot;:&quot;ich_cards_0&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;id&quot;:&quot;cards/0/a1:request&quot;,&quot;kind&quot;:&quot;request&quot;,&quot;t&quot;:1771894805},&quot;prev&quot;:&quot;0000000000000000000000000000000000000000000000000000000000000000&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:338,&quot;auth&quot;:&quot;cards/0/a2&quot;,&quot;card&quot;:&quot;ic_cards_0_2&quot;,&quot;cardholder&quot;:&quot;ich_cards_0&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;id&quot;:&quot;cards/0/a2:request&quot;,&quot;kind&quot;:&quot;request&quot;,&quot;t&quot;:1771894805},&quot;prev&quot;:&quot;094f23a39d10b67a614166f58d93aaf5408dabd4261fb57f7ecab537a76bd89d&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:340,&quot;auth&quot;:&quot;cards/0/a3&quot;,&quot;card&quot;:&quot;ic_cards_0_3&quot;,&quot;cardholder&quot;:&quot;ich_cards_0&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;id&quot;:&quot;cards/0/a3:request&quot;,&quot;kind&quot;:&quot;request&quot;,&quot;t&quot;:1771894805},&quot;prev&quot;:&quot;2144a59640023ac236def43cc0fc5d290bfac508c0e3a8f14950de29f22889b5&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:336,&quot;auth&quot;:&quot;cards/0/a4&quot;,&quot;card&quot;:&quot;ic_cards_0_4&quot;,&quot;cardholder&quot;:&quot;ich_cards_0&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;id&quot;:&quot;cards/0/a4:request&quot;,&quot;kind&quot;:&quot;request&quot;,&quot;t&quot;:1771894805},&quot;prev&quot;:&quot;ed06b4360442728897a76a68a4ef1dadeb6c29e2281bfb4916a5689a61d060dd&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:334,&quot;auth&quot;:&quot;cards/0/a5&quot;,&quot;card&quot;:&quot;ic_cards_0_5&quot;,&quot;cardholder&quot;:&quot;ich_cards_0&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;id&quot;:&quot;cards/0/a5:request&quot;,&quot;kind&quot;:&quot;request&quot;,&quot;t&quot;:1771894805},&quot;prev&quot;:&quot;54ca6784e0aa532576283fc21e81603bb23e309eb879c9b9d7547f9020bc24fa&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:347,&quot;auth&quot;:&quot;cards/0/a6&quot;,&quot;card&quot;:&quot;ic_cards_0_6&quot;,&quot;cardholder&quot;:&quot;ich_cards_0&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;id&quot;:&quot;cards/0/a6:request&quot;,&quot;kind&quot;:&quot;request&quot;,&quot;t&quot;:1771894805},&quot;prev&quot;:&quot;7c5c72b6800490d11cc8961eb4028cf51adcc4612f00782cba2536976c251c61&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;answered_ms&quot;:1771894805001,&quot;approved&quot;:true,&quot;auth&quot;:&quot;cards/0/a6&quot;,&quot;id&quot;:&quot;tee:cards/0/a6:request&quot;,&quot;kind&quot;:&quot;answer&quot;,&quot;t&quot;:1771894805},&quot;prev&quot;:&quot;ebcab709637d4cb53b4be62c28a32acaada7693c59f60fb4e33bc962a77b7cd5&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;answered_ms&quot;:1771894805002,&quot;approved&quot;:true,&quot;auth&quot;:&quot;cards/0/a1&quot;,&quot;id&quot;:&quot;tee:cards/0/a1:request&quot;,&quot;kind&quot;:&quot;answer&quot;,&quot;t&quot;:1771894805},&quot;prev&quot;:&quot;0f550df2363e9f152ce2aeb2551255c9fc6cf5ae4005345c0d6047059379f285&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;answered_ms&quot;:1771894805003,&quot;approved&quot;:true,&quot;auth&quot;:&quot;cards/0/a2&quot;,&quot;id&quot;:&quot;tee:cards/0/a2:request&quot;,&quot;kind&quot;:&quot;answer&quot;,&quot;t&quot;:1771894805},&quot;prev&quot;:&quot;08a5192fb531b1976f5ca51a4d658a4382990c3958a707c2fe019ca986121842&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;answered_ms&quot;:1771894805004,&quot;approved&quot;:true,&quot;auth&quot;:&quot;cards/0/a4&quot;,&quot;id&quot;:&quot;tee:cards/0/a4:request&quot;,&quot;kind&quot;:&quot;answer&quot;,&quot;t&quot;:1771894805},&quot;prev&quot;:&quot;58483477d950bc6ea7ca7e29b6cf4f8418f3b305f496fd3ace7cbbe4b799981c&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;answered_ms&quot;:1771894805005,&quot;approved&quot;:true,&quot;auth&quot;:&quot;cards/0/a3&quot;,&quot;id&quot;:&quot;tee:cards/0/a3:request&quot;,&quot;kind&quot;:&quot;answer&quot;,&quot;t&quot;:1771894805},&quot;prev&quot;:&quot;ca44022a89e80a1247dde9ef66c021c380073ed8f59b1e99603ac4b66315d0b4&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;answered_ms&quot;:1771894805006,&quot;approved&quot;:true,&quot;auth&quot;:&quot;cards/0/a5&quot;,&quot;id&quot;:&quot;tee:cards/0/a5:request&quot;,&quot;kind&quot;:&quot;answer&quot;,&quot;t&quot;:1771894805},&quot;prev&quot;:&quot;8b840559a50e71a04ffbc1bfdc8a5b48a2cf7fb7c574c0ef58a8231fa9376989&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:347,&quot;approved&quot;:true,&quot;auth&quot;:&quot;cards/0/a6&quot;,&quot;card&quot;:&quot;ic_cards_0_6&quot;,&quot;cardholder&quot;:&quot;ich_cards_0&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;id&quot;:&quot;cards/0/a6:outcome&quot;,&quot;kind&quot;:&quot;outcome&quot;,&quot;reason&quot;:&quot;webhook_approved&quot;,&quot;t&quot;:1771894805},&quot;prev&quot;:&quot;800daeea9ddd80998f8979ce1214011444f0838a6aa98d350534703802e49ebf&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:350,&quot;approved&quot;:true,&quot;auth&quot;:&quot;cards/0/a1&quot;,&quot;card&quot;:&quot;ic_cards_0_1&quot;,&quot;cardholder&quot;:&quot;ich_cards_0&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;id&quot;:&quot;cards/0/a1:outcome&quot;,&quot;kind&quot;:&quot;outcome&quot;,&quot;reason&quot;:&quot;webhook_approved&quot;,&quot;t&quot;:1771894805},&quot;prev&quot;:&quot;d1d6270de75b4409f49532753e258b6e28eabe1559d8fa9f68946568a0ab9435&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:338,&quot;approved&quot;:true,&quot;auth&quot;:&quot;cards/0/a2&quot;,&quot;card&quot;:&quot;ic_cards_0_2&quot;,&quot;cardholder&quot;:&quot;ich_cards_0&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;id&quot;:&quot;cards/0/a2:outcome&quot;,&quot;kind&quot;:&quot;outcome&quot;,&quot;reason&quot;:&quot;webhook_approved&quot;,&quot;t&quot;:1771894805},&quot;prev&quot;:&quot;7d2b3b38d60a134d315de3383b283e8c9f168617aa89247300be5bf5a91a363b&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:336,&quot;approved&quot;:true,&quot;auth&quot;:&quot;cards/0/a4&quot;,&quot;card&quot;:&quot;ic_cards_0_4&quot;,&quot;cardholder&quot;:&quot;ich_cards_0&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;id&quot;:&quot;cards/0/a4:outcome&quot;,&quot;kind&quot;:&quot;outcome&quot;,&quot;reason&quot;:&quot;webhook_approved&quot;,&quot;t&quot;:1771894805},&quot;prev&quot;:&quot;d98e2d95014b23475e5a9dc03eff95e042279e639774fcf944910527f1be1e0f&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:340,&quot;approved&quot;:true,&quot;auth&quot;:&quot;cards/0/a3&quot;,&quot;card&quot;:&quot;ic_cards_0_3&quot;,&quot;cardholder&quot;:&quot;ich_cards_0&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;id&quot;:&quot;cards/0/a3:outcome&quot;,&quot;kind&quot;:&quot;outcome&quot;,&quot;reason&quot;:&quot;webhook_approved&quot;,&quot;t&quot;:1771894805},&quot;prev&quot;:&quot;8362108c63e88ebc377b524b557fdd8a32d1c58aa164fddeb83516330a3e6774&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:334,&quot;approved&quot;:true,&quot;auth&quot;:&quot;cards/0/a5&quot;,&quot;card&quot;:&quot;ic_cards_0_5&quot;,&quot;cardholder&quot;:&quot;ich_cards_0&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;id&quot;:&quot;cards/0/a5:outcome&quot;,&quot;kind&quot;:&quot;outcome&quot;,&quot;reason&quot;:&quot;webhook_approved&quot;,&quot;t&quot;:1771894805},&quot;prev&quot;:&quot;0917b43814e981c8ad0bea6929d58f23bf50b65034478b1cde0840d47082d86a&quot;,&quot;received&quot;:&quot;accepted&quot;}
+</pre>
+<p>regression test regressions/test_cards.py (it fails while the finding stands)</p>
+<h3>authorization then partial capture</h3>
+<p>trials: 3 (TESTED)</p>
+<p>approvals that did not fit: 0 (TESTED)</p>
+<p>wrongful refusals: 0 (TESTED)</p>
+<p>order-dependent decisions: 0 (TESTED; never a finding)</p>
+<p>largest amount over a limit: 0 (TESTED)</p>
+<p>finding: none, TESTED on this run</p>
+<p>3 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 63.2% of the time or more would be missed with probability at most 5%; a rarer one can still be there.</p>
+<p>journal journals/partial_capture.jsonl; ledger report ledger/partial_capture.json</p>
+<h3>capture above the hold, then reversal</h3>
+<p>trials: 3 (TESTED)</p>
+<p>approvals that did not fit: 0 (TESTED)</p>
+<p>wrongful refusals: 0 (TESTED)</p>
+<p>order-dependent decisions: 0 (TESTED; never a finding)</p>
+<p>largest amount over a limit: 0 (TESTED)</p>
+<p>finding: none, TESTED on this run</p>
+<p>3 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 63.2% of the time or more would be missed with probability at most 5%; a rarer one can still be there.</p>
+<p>journal journals/over_capture.jsonl; ledger report ledger/over_capture.json</p>
+<h3>time-out with an ambiguous outcome, then retry</h3>
+<p>trials: 99 (TESTED)</p>
+<p>approvals that did not fit: 0 (TESTED)</p>
+<p>wrongful refusals: 0 (TESTED)</p>
+<p>order-dependent decisions: 0 (TESTED; never a finding)</p>
+<p>largest amount over a limit: 0 (TESTED)</p>
+<p>finding: none, TESTED on this run</p>
+<p>99 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 3.0% of the time or more would be missed with probability at most 5%; a rarer one can still be there.</p>
+<p>journal journals/timeout.jsonl; ledger report ledger/timeout.json</p>
+<h3>reset at the interval&#x27;s boundary</h3>
+<p>trials: 3 (TESTED)</p>
+<p>approvals that did not fit: 0 (TESTED)</p>
+<p>wrongful refusals: 0 (TESTED)</p>
+<p>order-dependent decisions: 0 (TESTED; never a finding)</p>
+<p>largest amount over a limit: 0 (TESTED)</p>
+<p>finding: none, TESTED on this run</p>
+<p>3 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 63.2% of the time or more would be missed with probability at most 5%; a rarer one can still be there.</p>
+<p>journal journals/reset.jsonl; ledger report ledger/reset.json</p>
+<h3>an uncaptured hold that expires, and two limits on one purchase</h3>
+<p>trials: 3 (TESTED)</p>
+<p>approvals that did not fit: 1 (TESTED)</p>
+<p>wrongful refusals: 0 (TESTED)</p>
+<p>order-dependent decisions: 0 (TESTED; never a finding)</p>
+<p>largest amount over a limit: 17 (TESTED)</p>
+<p>finding: yes, TESTED on this run</p>
+<p>journal journals/expiry.jsonl; ledger report ledger/expiry.json</p>
+<p>the shortest trace of the finding (16 journal lines, TESTED):</p>
+<pre>
+{&quot;event&quot;:{&quot;amount&quot;:350,&quot;auth&quot;:null,&quot;card&quot;:&quot;ic_expiry_2_1&quot;,&quot;cardholder&quot;:&quot;ich_expiry_2&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;final&quot;:true,&quot;id&quot;:&quot;expiry/2/x1&quot;,&quot;kind&quot;:&quot;capture&quot;,&quot;t&quot;:1786238382},&quot;prev&quot;:&quot;91cf18b483be3995a81c68a440f5ff49b9e9b95f9c67993f9cfb3d2c56bac1aa&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:350,&quot;auth&quot;:null,&quot;card&quot;:&quot;ic_expiry_2_1&quot;,&quot;cardholder&quot;:&quot;ich_expiry_2&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;final&quot;:true,&quot;id&quot;:&quot;expiry/2/x2&quot;,&quot;kind&quot;:&quot;capture&quot;,&quot;t&quot;:1786238381},&quot;prev&quot;:&quot;f7891a41072e1ec6d12cf70c92fc57f9f7644088f0cf946dffbc5b8616c24511&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:350,&quot;auth&quot;:null,&quot;card&quot;:&quot;ic_expiry_2_1&quot;,&quot;cardholder&quot;:&quot;ich_expiry_2&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;final&quot;:true,&quot;id&quot;:&quot;expiry/2/x3&quot;,&quot;kind&quot;:&quot;capture&quot;,&quot;t&quot;:1786238380},&quot;prev&quot;:&quot;3a7630de76512e6af45bedea992e2223e2e8e47bc9425f143394f76497bbadf3&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:350,&quot;auth&quot;:null,&quot;card&quot;:&quot;ic_expiry_2_1&quot;,&quot;cardholder&quot;:&quot;ich_expiry_2&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;final&quot;:true,&quot;id&quot;:&quot;expiry/2/x4&quot;,&quot;kind&quot;:&quot;capture&quot;,&quot;t&quot;:1786238379},&quot;prev&quot;:&quot;cbf6a03a8663e16f9198583e4d0e1d2da21613d9be430d12541999f33b065d54&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:250,&quot;auth&quot;:null,&quot;card&quot;:&quot;ic_expiry_2_1&quot;,&quot;cardholder&quot;:&quot;ich_expiry_2&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;final&quot;:true,&quot;id&quot;:&quot;expiry/2/x5&quot;,&quot;kind&quot;:&quot;capture&quot;,&quot;t&quot;:1786238378},&quot;prev&quot;:&quot;734c275623d76239d8af634ac8f0e3065aa4355225bb2205971c19cb8185f609&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:213,&quot;auth&quot;:&quot;expiry/2/a1&quot;,&quot;card&quot;:&quot;ic_expiry_2_1&quot;,&quot;cardholder&quot;:&quot;ich_expiry_2&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;id&quot;:&quot;expiry/2/a1:request&quot;,&quot;kind&quot;:&quot;request&quot;,&quot;t&quot;:1786238403},&quot;prev&quot;:&quot;9eb21e628f4e9435abf360402f925802bc810b2a729ae43815955117b787bfa5&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;answered_ms&quot;:1786238403001,&quot;approved&quot;:true,&quot;auth&quot;:&quot;expiry/2/a1&quot;,&quot;id&quot;:&quot;tee:expiry/2/a1:request&quot;,&quot;kind&quot;:&quot;answer&quot;,&quot;t&quot;:1786238403},&quot;prev&quot;:&quot;c5587f5f4156f622896cda611e4f046a7ee7e6cb180dc8729599b6156449d15c&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:213,&quot;approved&quot;:true,&quot;auth&quot;:&quot;expiry/2/a1&quot;,&quot;card&quot;:&quot;ic_expiry_2_1&quot;,&quot;cardholder&quot;:&quot;ich_expiry_2&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;id&quot;:&quot;expiry/2/a1:outcome&quot;,&quot;kind&quot;:&quot;outcome&quot;,&quot;reason&quot;:&quot;webhook_approved&quot;,&quot;t&quot;:1786238403},&quot;prev&quot;:&quot;73a7b5db483ea925dc6755237ad4181f16a515f6ae447d82223afae2c5bee352&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:25,&quot;auth&quot;:&quot;expiry/2/a2&quot;,&quot;card&quot;:&quot;ic_expiry_2_2&quot;,&quot;cardholder&quot;:&quot;ich_expiry_2&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;id&quot;:&quot;expiry/2/a2:request&quot;,&quot;kind&quot;:&quot;request&quot;,&quot;t&quot;:1786238408},&quot;prev&quot;:&quot;23c5383e17356ae6e0e6e15109cc0a443b01482160c76ed9765cf15c72fba5ea&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;answered_ms&quot;:1786238408001,&quot;approved&quot;:true,&quot;auth&quot;:&quot;expiry/2/a2&quot;,&quot;id&quot;:&quot;tee:expiry/2/a2:request&quot;,&quot;kind&quot;:&quot;answer&quot;,&quot;t&quot;:1786238408},&quot;prev&quot;:&quot;4e864fd29fc38f68df38575ba05b157eb2807ca7de281fd1ee8bf60569ce3fab&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:25,&quot;approved&quot;:true,&quot;auth&quot;:&quot;expiry/2/a2&quot;,&quot;card&quot;:&quot;ic_expiry_2_2&quot;,&quot;cardholder&quot;:&quot;ich_expiry_2&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;id&quot;:&quot;expiry/2/a2:outcome&quot;,&quot;kind&quot;:&quot;outcome&quot;,&quot;reason&quot;:&quot;webhook_approved&quot;,&quot;t&quot;:1786238408},&quot;prev&quot;:&quot;b5b23a308a235c5d38fb10a19ac1c4ba4842c6ff0d45ff7e09d17fded28cea61&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:25,&quot;auth&quot;:&quot;expiry/2/a2&quot;,&quot;card&quot;:&quot;ic_expiry_2_2&quot;,&quot;cardholder&quot;:&quot;ich_expiry_2&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;final&quot;:true,&quot;id&quot;:&quot;expiry/2/a2:capture@1786238409&quot;,&quot;kind&quot;:&quot;capture&quot;,&quot;t&quot;:1786238409},&quot;prev&quot;:&quot;94484ccef4b5d261e06b162d074a2ee6e649b935f4dac03bf099f5c8c8d6e134&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;auth&quot;:&quot;expiry/2/a1&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;id&quot;:&quot;expiry/2/a1:expire@1786238703&quot;,&quot;kind&quot;:&quot;expire&quot;,&quot;t&quot;:1786238703},&quot;prev&quot;:&quot;d1d05631427136b32eb15c9d4aa117dc6d02a8c9162ee5b378a45cac078dfcc3&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:342,&quot;auth&quot;:&quot;expiry/2/a3&quot;,&quot;card&quot;:&quot;ic_expiry_2_1&quot;,&quot;cardholder&quot;:&quot;ich_expiry_2&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;id&quot;:&quot;expiry/2/a3:request&quot;,&quot;kind&quot;:&quot;request&quot;,&quot;t&quot;:1786238713},&quot;prev&quot;:&quot;c248e3370815685f51f49e3da5ac87d748398a80378d30f104652afb680331b6&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;answered_ms&quot;:1786238713001,&quot;approved&quot;:true,&quot;auth&quot;:&quot;expiry/2/a3&quot;,&quot;id&quot;:&quot;tee:expiry/2/a3:request&quot;,&quot;kind&quot;:&quot;answer&quot;,&quot;t&quot;:1786238713},&quot;prev&quot;:&quot;e5af32eb8b0ddb3b2fa35c7f3bd861667ac4b0b538e771dbf8951c70024a6beb&quot;,&quot;received&quot;:&quot;accepted&quot;}
+{&quot;event&quot;:{&quot;amount&quot;:342,&quot;approved&quot;:true,&quot;auth&quot;:&quot;expiry/2/a3&quot;,&quot;card&quot;:&quot;ic_expiry_2_1&quot;,&quot;cardholder&quot;:&quot;ich_expiry_2&quot;,&quot;category&quot;:&quot;5734&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;id&quot;:&quot;expiry/2/a3:outcome&quot;,&quot;kind&quot;:&quot;outcome&quot;,&quot;reason&quot;:&quot;webhook_approved&quot;,&quot;t&quot;:1786238713},&quot;prev&quot;:&quot;37e4a002871a31b3cc68f3bf3ff975378e1e5a85624114c6297019690ad1ac56&quot;,&quot;received&quot;:&quot;accepted&quot;}
+</pre>
+<p>regression test regressions/test_expiry.py (it fails while the finding stands)</p>
+</section>
+<section id="deployment">
+<h2>Deployment</h2>
+<p>No live configuration was given (--live): nothing connects the tested configuration to a live one.</p>
+</section>
+</body>
+</html>

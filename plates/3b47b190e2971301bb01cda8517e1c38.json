@@ -1,0 +1,83 @@
+{
+ "die": "3b47b190e2971301bb01cda8517e1c38",
+ "expects": {
+  "checks": [
+   {
+    "die": "3b47b190e2971301bb01cda8517e1c38",
+    "level": "MODEL_PROVEN",
+    "name": "Sound",
+    "status": "holds",
+    "trace": null
+   },
+   {
+    "die": "7ce3c87236da47cf4bd4d6ae53207b41",
+    "level": "MODEL_PROVEN",
+    "name": "Tight",
+    "status": "holds",
+    "trace": null
+   }
+  ],
+  "figures": {
+   "ceiling": 100,
+   "face": 100,
+   "fineness": "1.000",
+   "stranded": 0
+  },
+  "hypotheses": [
+   {
+    "name": "Reflexive",
+    "status": "assumed",
+    "value": true
+   },
+   {
+    "name": "DenyRecord",
+    "status": "assumed",
+    "value": "none"
+   },
+   {
+    "name": "Atomic",
+    "status": "assumed",
+    "value": true
+   },
+   {
+    "name": "Lag",
+    "status": "assumed",
+    "value": 0
+   },
+   {
+    "name": "Scope",
+    "status": "assumed",
+    "value": "ScopeGlobal"
+   },
+   {
+    "name": "in_flight",
+    "status": "assumed",
+    "value": 2
+   },
+   {
+    "name": "failures",
+    "status": "assumed",
+    "value": 1
+   }
+  ],
+  "level": "MODEL_PROVEN"
+ },
+ "inputs": [
+  {
+   "path": "fixtures/dogwood/PRefundOnReconcile.dw",
+   "sha256": "19ba12412942f252f7e13acddcb721bf1b766b8db044ca0c73ae1efb6728030c"
+  }
+ ],
+ "receipt": 1,
+ "replay": {
+  "amounts": null,
+  "cap": null,
+  "engine": "reference",
+  "failures": 1,
+  "in_flight": 2,
+  "kind": "policy",
+  "name": "PRefundOnReconcile.dw",
+  "policy": "// kernel: PRefundOnReconcile\n// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/examples/cap_open_agent_prs_windowed/README.md (aggregate minus aggregate)\n// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/examples/login_attempt_custom_kind/README.md (author-defined event kinds)\n// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/guide/04-temporal-expressions.md#arithmetic-in-comparison-operands\n// refund is a history-only kind declared in events.dwschema.\n// Needs a dogwood build with --features experimental-arithmetic.\n\n@id(\"pay_cap\")\npermit (\n    principal,\n    action == Kamanu::Action::\"Pay\",\n    resource\n)\nwhen temporal {\n    (sum a for (a: Long), (t: Timepoint). where (\n        formerly within 24h (Kamanu::Action::\"Pay\"::request{ input.amount: a } && tp(t))\n    ))\n    - (sum a for (a: Long), (t: Timepoint). where (\n        formerly within 24h (Kamanu::Action::\"Pay\"::refund{ input.amount: a } && tp(t))\n    )) <= 100\n};\n"
+ },
+ "type": "4ec5c729d5e5d4d53358045f31d4192f"
+}

@@ -1,0 +1,31 @@
+# Kong Gateway OSS, DB-less: the configuration the H6 adapter launches
+# (kamanu/hunt/adapters/kong.py). One service (the adapter's mock upstream on this host,
+# reached from the container as host.docker.internal), one route, the free rate-limiting
+# plugin with config.minute = N, policy local, limit_by ip.
+#
+# At launch the adapter changes two fields only: config.minute (the hunt's cap) and the
+# service's port (where its mock upstream listens). Each session runs on a fresh Kong, so
+# every caller is the same address and that is fine.
+#
+# retries: 0      one request per issue: Kong must never resend a call to the upstream.
+# read_timeout    a call the hunt holds open stays open (Kong's default is 60 s, after which
+#                 it would answer 504 on its own).
+_format_version: "3.0"
+services:
+  - name: hunt-upstream
+    protocol: http
+    host: host.docker.internal
+    port: 8080
+    retries: 0
+    read_timeout: 600000
+    routes:
+      - name: hunt
+        protocols: [http]
+        paths: [/hunt]
+        methods: [GET]
+    plugins:
+      - name: rate-limiting
+        config:
+          minute: 5
+          policy: local
+          limit_by: ip

@@ -1,0 +1,194 @@
+{
+ "seed": 30068146197001,
+ "seconds": 31.8,
+ "mirror": {
+  "states": 108361,
+  "configs": 1979,
+  "constants": {
+   "Reflexive": {
+    "TRUE": 50486,
+    "FALSE": 57875
+   },
+   "DenyRecord": {
+    "deny": 25739,
+    "none": 27161,
+    "error": 28205,
+    "request": 27256
+   },
+   "Atomic": {
+    "TRUE": 44339,
+    "FALSE": 64022
+   },
+   "Lag": {
+    "0": 33454,
+    "1": 36711,
+    "2": 38196
+   },
+   "Scope": {
+    "ScopeGlobal": 56094,
+    "ScopeSession": 52267
+   },
+   "HasReconcile": {
+    "TRUE": 55666,
+    "FALSE": 52695
+   },
+   "Faults": {
+    "both": 27433,
+    "none": 25325,
+    "clean": 27310,
+    "ambiguous": 28293
+   },
+   "MaxFails": {
+    "0": 36080,
+    "1": 34975,
+    "2": 37306
+   },
+   "Permit": {
+    "PReqBasis": 21754,
+    "PRespBasis": 21760,
+    "PReqBasisNR": 18718,
+    "PRefundOnError": 23827,
+    "PRefundOnReconcile": 22302
+   },
+   "MaxReq": {
+    "1": 4298,
+    "2": 17441,
+    "3": 34951,
+    "4": 51671
+   },
+   "Cap": {
+    "0": 10948,
+    "1": 4412,
+    "2": 4257,
+    "3": 4075,
+    "4": 1175,
+    "5": 1570,
+    "6": 2372,
+    "7": 680,
+    "8": 423,
+    "9": 995,
+    "19": 1415,
+    "20": 5176,
+    "29": 481,
+    "30": 2898,
+    "39": 1632,
+    "40": 3517,
+    "59": 6250,
+    "60": 13964,
+    "89": 961,
+    "90": 2571,
+    "99": 998,
+    "100": 2881,
+    "119": 4567,
+    "120": 12846,
+    "149": 186,
+    "150": 926,
+    "159": 745,
+    "160": 1672,
+    "179": 2936,
+    "180": 4578,
+    "199": 847,
+    "200": 1566,
+    "219": 99,
+    "220": 696,
+    "259": 167,
+    "260": 918,
+    "299": 754,
+    "300": 1207
+   },
+   "Templates": {
+    "1": 29085,
+    "2": 37282,
+    "3": 41994
+   }
+  }
+ },
+ "tlc": {
+  "states": 13394,
+  "configs": 16,
+  "constants": {
+   "Reflexive": {
+    "TRUE": 2087,
+    "FALSE": 11307
+   },
+   "DenyRecord": {
+    "deny": 5441,
+    "none": 4329,
+    "error": 928,
+    "request": 2696
+   },
+   "Atomic": {
+    "TRUE": 6614,
+    "FALSE": 6780
+   },
+   "Lag": {
+    "0": 6044,
+    "1": 7231,
+    "2": 119
+   },
+   "Scope": {
+    "ScopeGlobal": 5972,
+    "ScopeSession": 7422
+   },
+   "HasReconcile": {
+    "TRUE": 10116,
+    "FALSE": 3278
+   },
+   "Faults": {
+    "both": 10607,
+    "none": 938,
+    "clean": 227,
+    "ambiguous": 1622
+   },
+   "MaxFails": {
+    "0": 715,
+    "1": 12287,
+    "2": 392
+   },
+   "Permit": {
+    "PReqBasis": 5220,
+    "PRespBasis": 1936,
+    "PReqBasisNR": 4527,
+    "PRefundOnError": 965,
+    "PRefundOnReconcile": 746
+   },
+   "MaxReq": {
+    "2": 1484,
+    "3": 11910
+   },
+   "Cap": {
+    "0": 4575,
+    "1": 156,
+    "3": 294,
+    "6": 875,
+    "29": 24,
+    "30": 5025,
+    "60": 500,
+    "120": 1440,
+    "199": 392,
+    "200": 113
+   },
+   "Templates": {
+    "1": 11941,
+    "2": 1453
+   }
+  }
+ },
+ "mapping": {
+  "hist.kind": "Event.kind, the constructor of Kind with the same name",
+  "hist.id": "Event.id; Lean counts slots from 0, so id = Event.id + 1",
+  "hist.amt": "Event.amt, the same number",
+  "hist.key": "Event.key; sN is the number N. ScopeSession is the identity on it, ScopeGlobal the constant 0",
+  "st": "Slot.st of slot i - 1; 'none' is a slot that is not in KState.slots",
+  "rq.amt": "Slot.rq.amt of slot i - 1; NoReq is a slot that is not in KState.slots",
+  "rq.key": "Slot.rq.key of slot i - 1, numbered as hist.key",
+  "n": "KState.slots.length",
+  "eff": "the set of i whose slot i - 1 has Slot.eff",
+  "fails": "KState.fails, the same number",
+  "rec": "the set of i whose slot i - 1 has Slot.recd"
+ },
+ "not_carried": {
+  "hist.tool": "Event has no tool: no step, scope or policy of the kernel reads it, so events differing in it alone are one",
+  "rq.tool": "Req has no tool: no step, scope or policy of the kernel reads it, so templates differing in it alone are one"
+ }
+}

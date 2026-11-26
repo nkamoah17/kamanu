@@ -1,0 +1,13 @@
+# spec/ext/BudgetKey.constants: the constants BudgetKey.tla adds to the kernel's (T6).
+# One line each: NAME  KIND  MEANING
+Sessions    set of strings   the session identifiers a request may carry (what the engine's session scope counts)
+Tenants     set of strings   tenant identifiers; a budget key's tenant is one of these and nothing else
+Principals  set of strings   principal identifiers (the caller acting for the tenant)
+Purposes    set of strings   purpose identifiers (what the money is for)
+Windows     set of strings   whole days, written YYYY-MM-DD; a budget key's window is one day
+# Kernel constants a model sets as well (KamanuKernel, KamanuPolicies):
+#   Templates  set of [tool, amt, key |-> [session, budget]], amt in cents
+#   Permit     one of PRespBasis, PReqBasis, PReqBasisNR, PRefundOnError, PRefundOnReconcile
+#   Scope      ScopeSessionOnly (the engine's session-scoped limit) or ScopeBudget (a ledger keyed by the budget key)
+#   Cap        cents (50000 is $500)
+#   MaxReq, MaxFails, Reflexive, DenyRecord, Atomic, Lag, Faults, HasReconcile as in the kernel

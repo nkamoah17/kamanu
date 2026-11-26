@@ -1,0 +1,17 @@
+$ kamanu scan --ingest registry   (exit 0)
+skipped registry/h/07d33b44ebc93ec2.pyx.json: not a hallmark-v1 record, a hunt or rail row, or a reference-ledger report
+skipped registry/h/624ba435e74d7312.pyx.json: not a hallmark-v1 record, a hunt or rail row, or a reference-ledger report
+skipped registry/h/f313715e2adef082.pyx.json: not a hallmark-v1 record, a hunt or rail row, or a reference-ledger report
+kamanu scan --ingest: deposited 0 receipts; 3 already held in the cabinet unchanged; 3 files skipped
+
+$ kamanu scan --ingest rails/rows   (exit 0)
+kamanu scan --ingest: deposited 0 receipts; 4 already held in the cabinet unchanged; 0 files skipped
+
+$ kamanu scan --ingest profiles/rows   (exit 0)
+kamanu scan --ingest: deposited 0 receipts; 7 already held in the cabinet unchanged; 0 files skipped
+
+$ kamanu scan --ingest evidence/exonumia/x11/shadowledger.json   (exit 0)
+kamanu scan --ingest: deposited 0 receipts; 4 already held in the cabinet unchanged; 0 files skipped
+
+$ kamanu scan --ingest evidence/exonumia/x13/shadowledger.json   (exit 0)
+kamanu scan --ingest: deposited 0 receipts; 4 already held in the cabinet unchanged; 0 files skipped

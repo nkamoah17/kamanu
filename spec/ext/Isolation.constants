@@ -1,0 +1,13 @@
+# spec/ext/Isolation.constants: the constants of Isolation.tla (X5). A standalone model: no kernel constant.
+# One line each: NAME  KIND  MEANING
+Tenants     set of strings                 tenant identifiers
+Principals  set of strings                 principal identifiers
+Home        [Principals -> Tenants]        the directory: each principal's tenant
+Records     set of strings                 record identifiers
+Owner       [Records -> Tenants]           each record's owning tenant
+Shared      [Records -> SUBSET Tenants]    the tenants each record is shared with
+Tools       set of strings                 the connector's tools
+Access      [Tools -> SUBSET provenance]   each tool's data accesses; a provenance is [kind |-> k, tenant |-> x],
+                                           k "session", "argument", "none" or "constant", x a tenant for
+                                           "constant" and "" otherwise
+Sessions    set of strings                 session identifiers

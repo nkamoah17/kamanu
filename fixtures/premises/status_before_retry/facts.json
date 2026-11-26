@@ -1,0 +1,30 @@
+{
+  "planted": [
+    {
+      "file": "payments.py",
+      "line": 29,
+      "subject": "status journal.status(order) decides the retry or refund",
+      "query_id": "status_before_retry",
+      "joern_version": "4.0.676",
+      "graph_hash": "aede8726a4a1d5d18745a5963d2c349f5abd6085de9574bf280c1e8d4a9d3d3b",
+      "query_sha256": "a2939504698ccd30ff047880af8e79d1f7b85fb9528c4a394717c5e84c65bd81"
+    }
+  ],
+  "established": [
+    {
+      "file": "payments.py",
+      "line": 11,
+      "subject": "status gateway.status(order) decides the retry or refund",
+      "construct": "status_of_the_same_call",
+      "assumptions": [
+        "The service's status answer includes every call it had accepted when it was asked",
+        "The service does not accept a call after it has answered that the call was not made",
+        "The state the handler tests for is the one the service gives a call it accepted"
+      ],
+      "query_id": "status_before_retry",
+      "joern_version": "4.0.676",
+      "graph_hash": "6d8dd9d778cba497086492476d427c8a6a357365fa27b6d3d4f284ef888badcc",
+      "query_sha256": "a2939504698ccd30ff047880af8e79d1f7b85fb9528c4a394717c5e84c65bd81"
+    }
+  ]
+}

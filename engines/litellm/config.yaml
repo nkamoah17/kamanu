@@ -1,0 +1,32 @@
+# LiteLLM proxy configuration for the H7 adapter (kamanu/hunt/adapters/litellm.py).
+#
+# One model: the adapter's mock upstream on this host (reached from the container as
+# host.docker.internal), speaking the OpenAI chat API. At launch the adapter changes one field
+# only: the api_base's port (where its mock upstream listens).
+#
+# Price: input tokens are free and one output token costs one cent, so a call of amount a
+# (max_tokens a) that the mock answers with a usage of a completion tokens costs exactly a cents.
+#
+# max_retries / num_retries 0: one upstream request per issue; LiteLLM must never resend a call.
+# timeout: a call the hunt holds open stays open.
+# Spend writes and budget resets stay at the image's defaults (nothing here sets them); the
+# virtual key's max_budget and budget_duration are the only limit.
+model_list:
+  - model_name: kamanu-mock
+    litellm_params:
+      model: openai/kamanu-mock
+      api_base: http://host.docker.internal:8080/v1
+      api_key: sk-kamanu-mock-upstream
+      input_cost_per_token: 0
+      output_cost_per_token: 0.01
+      max_retries: 0
+      timeout: 7200
+    model_info:
+      mode: chat
+litellm_settings:
+  num_retries: 0
+  request_timeout: 7200
+  drop_params: false
+general_settings:
+  master_key: sk-kamanu-h7-master
+  database_url: postgresql://litellm:litellm@db:5432/litellm

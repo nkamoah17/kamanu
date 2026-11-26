@@ -1,0 +1,39 @@
+{
+  "tla_version": "1.7.4",
+  "tla2tools_url": "https://github.com/tlaplus/tlaplus/releases/download/v1.7.4/tla2tools.jar",
+  "tla2tools_sha256": "936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88",
+  "java_min": 11,
+  "python_min": "3.10",
+  "joern": {
+    "version": "4.0.676",
+    "linux-x86_64": {
+      "url": "https://github.com/joernio/joern/releases/download/v4.0.676/joern-cli-linux-x86_64.zip",
+      "sha512": "4d21ccd845530a611db8c37cc5b7900b85986d6810c33b9e4db0f4dc62419b628b8099b04aec9b30616dd2c2c781ff61689c34aca8a2748feb96a9e979a4454f"
+    },
+    "windows-x86_64": {
+      "url": "https://github.com/joernio/joern/releases/download/v4.0.676/joern-cli-windows-x86_64.zip",
+      "sha512": "66015a1b4c92bd3409813d93324fec37e184676508f1354aa6dc45bdb9caf033d5e4b5564ea5d486548cb6094f1f47dfe3d86068b3362206e52c820265da45dd"
+    }
+  },
+  "live_engines": {
+    "dogwood": {
+      "version": "dogwood 1.1.1",
+      "git": "https://github.com/dogwood-policy/dogwood",
+      "rev": "ff158506cfd9c7871385ed3a87d7435505fd24b1",
+      "crate": "dogwood-cli",
+      "features": "experimental-arithmetic"
+    },
+    "opa": {
+      "version": "1.22.2",
+      "linux-x86_64": {
+        "url": "https://github.com/open-policy-agent/opa/releases/download/v1.22.2/opa_linux_amd64_static",
+        "sha256": "24e344d1fc394cd93dc75666f584cfb97c6981f7255af25f8d2979834317317b"
+      }
+    },
+    "redis": {
+      "version": "8.10.3",
+      "image": "redis:8.10.3@sha256:1f88291b4c57bdf249f02eb085a8669889b2d2954e91d4de5118a5da6b78dd53",
+      "port": 6399
+    }
+  }
+}

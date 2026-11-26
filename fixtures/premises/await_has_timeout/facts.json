@@ -1,0 +1,30 @@
+{
+  "planted": [
+    {
+      "file": "calls.py",
+      "line": 19,
+      "subject": "await ask_tool(order, timeout = PATIENCE), with its own timeout",
+      "query_id": "await_has_timeout",
+      "joern_version": "4.0.676",
+      "graph_hash": "c65af80d64c0a9d6f4d195773c091d8ebad1110b5f155875227215793d18bad6",
+      "query_sha256": "72a4712f47c752fd5a6a805c488904507b157e551e3a97cd403ab47becee5599"
+    }
+  ],
+  "established": [
+    {
+      "file": "calls.py",
+      "line": 18,
+      "subject": "await asyncio.wait_for(ask_tool(order), timeout = PATIENCE), with a limit on the wait",
+      "construct": "asyncio_wait_for",
+      "assumptions": [
+        "The name asyncio is the standard library's module at run time",
+        "The awaited operation ends when it is cancelled, and does not swallow the cancellation",
+        "No synchronous call blocks the event loop, the one that makes the awaited operation included"
+      ],
+      "query_id": "await_has_timeout",
+      "joern_version": "4.0.676",
+      "graph_hash": "fe5b4bea1b1259d76334cd71de8e92e251579b975ca9639df0216cb8ab3a2580",
+      "query_sha256": "72a4712f47c752fd5a6a805c488904507b157e551e3a97cd403ab47becee5599"
+    }
+  ]
+}

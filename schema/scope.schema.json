@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kamanu.dev/schema/scope.schema.json",
+  "title": "A scope file: the target a hunt may reach, who owns it, and how much the hunt may send (kamanu hunt --scope, card R14d)",
+  "description": "Every hunt entry point reads this before its first request and refuses (exit 6, kamanu.hunt.scope.ScopeRefused) without one that covers the adapter's real target. A scope covers a target when the two are equal, string for string. What the schema cannot say (expires is a real calendar date and has not passed, UTC) kamanu.hunt.scope checks. Extra keys are allowed at the top level only.",
+  "type": "object",
+  "required": [
+    "target",
+    "owner",
+    "basis",
+    "ceilings",
+    "expires"
+  ],
+  "properties": {
+    "target": {
+      "description": "what the adapter will reach: the adapter's name and exactly one of an address, a binary path or a gateway id",
+      "type": "object",
+      "required": [
+        "adapter"
+      ],
+      "properties": {
+        "adapter": {
+          "$ref": "#/$defs/text",
+          "description": "the adapter's name, as its engine declares it (dogwood, dogwood-local, kong, litellm, redis-sliding-log, python-limits, agentcore)"
+        },
+        "address": {
+          "$ref": "#/$defs/text",
+          "description": "a network address, as the adapter is given it"
+        },
+        "binary": {
+          "$ref": "#/$defs/text",
+          "description": "a binary's path, as the adapter is given it (dogwood: the path DOGWOOD_BIN names)"
+        },
+        "gateway": {
+          "$ref": "#/$defs/text",
+          "description": "a gateway id"
+        }
+      },
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "required": [
+            "address"
+          ]
+        },
+        {
+          "required": [
+            "binary"
+          ]
+        },
+        {
+          "required": [
+            "gateway"
+          ]
+        }
+      ]
+    },
+    "owner": {
+      "$ref": "#/$defs/text",
+      "description": "who owns the target"
+    },
+    "basis": {
+      "description": "why the hunt may reach the target: it is the owner's own instance, or the owner published a statement that puts it in scope",
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "oneOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "own-instance"
+            }
+          }
+        },
+        {
+          "required": [
+            "url"
+          ],
+          "properties": {
+            "kind": {
+              "const": "published-statement"
+            },
+            "url": {
+              "type": "string",
+              "pattern": "^https?://\\S+$",
+              "description": "where the statement is published"
+            }
+          }
+        }
+      ]
+    },
+    "ceilings": {
+      "description": "the most the hunt may send; the hunt counts both and stops before the request that would pass either",
+      "type": "object",
+      "required": [
+        "requests",
+        "money"
+      ],
+      "properties": {
+        "requests": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "the most requests (one issue() each)"
+        },
+        "money": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "the most money, in the engine's unit: the sum of the amounts the requests ask for, whatever the engine answers"
+        }
+      }
+    },
+    "expires": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "the last day (UTC) the scope holds, YYYY-MM-DD"
+    }
+  },
+  "$defs": {
+    "text": {
+      "type": "string",
+      "pattern": "\\S"
+    }
+  }
+}

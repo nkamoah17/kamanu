@@ -1,0 +1,28 @@
+# source: https://github.com/open-policy-agent/opa/blob/v1.22.2/docs/docs/configuration.md#bundles (polling fields and their defaults)
+# source: https://github.com/open-policy-agent/opa/blob/v1.22.2/v1/download/download.go#L243-L246 (each wait is drawn from min_delay_seconds to max_delay_seconds)
+# source: https://github.com/open-policy-agent/opa/blob/v1.22.2/docs/docs/external-data/index.md#updates-2 (total maximum lag is replication lag plus pull lag)
+# The event log travels in bundle "spend". Bundle "policies" polls faster and holds no
+# log, and decision_logs has delay fields of its own: neither sets the Lag.
+services:
+  ledger:
+    url: https://bundles.example
+
+bundles:
+  policies:
+    service: ledger
+    resource: bundles/policies.tar.gz
+    polling:
+      min_delay_seconds: 5
+      max_delay_seconds: 10
+  spend:
+    service: ledger
+    resource: bundles/spend.tar.gz
+    polling:
+      min_delay_seconds: 60
+      max_delay_seconds: 120
+
+decision_logs:
+  service: ledger
+  reporting:
+    min_delay_seconds: 300
+    max_delay_seconds: 600

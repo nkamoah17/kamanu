@@ -1,0 +1,791 @@
+{
+ "engine": "dogwood",
+ "row": "profiles/rows/dogwood-1.1.1.json",
+ "policy": {
+  "text": "// kamanu H4: the request-sum cap at 1m, one action (Bank Pay), cap 100.\n\n@id(\"pay_cap\")\npermit (\n    principal,\n    action == Bank::Action::\"Pay\",\n    resource\n)\nwhen temporal {\n    (sum a for (a: Long), (t: Timepoint). where (\n        formerly within 1m (Bank::Action::\"Pay\"::request{ input.amount: a } && tp(t))\n    )) <= 100\n};\n",
+  "cap": 100,
+  "window_s": 60,
+  "unit": "amount",
+  "shape": "request-sum",
+  "action": "Pay"
+ },
+ "counter": "quota count",
+ "how": "dogwood 1.1.1: the policy's sum read after every op as the least cap K at which the policy allows a 0-amount probe request at the session clock (bisection on dogwood replay); the probe is never part of the session",
+ "cells": {
+  "over-ask": {
+   "verdict": "fails",
+   "session": 2,
+   "trace": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    },
+    {
+     "op": "wait",
+     "seconds": 9
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 9
+    },
+    {
+     "op": "issue",
+     "amount": 30,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 9
+    }
+   ],
+   "version": "dogwood 1.1.1",
+   "date": "2026-11-12T04:51:26Z"
+  },
+  "freeze": {
+   "verdict": "fails",
+   "session": 3,
+   "trace": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    },
+    {
+     "op": "wait",
+     "seconds": 9
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "wait",
+     "seconds": 29
+    }
+   ],
+   "version": "dogwood 1.1.1",
+   "date": "2026-11-12T04:51:26Z"
+  },
+  "parallel": {
+   "verdict": "passes",
+   "session": 6,
+   "trace": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "settle",
+     "call": 0
+    }
+   ],
+   "version": "dogwood 1.1.1",
+   "date": "2026-11-12T04:51:26Z"
+  },
+  "ambiguous": {
+   "verdict": "passes",
+   "session": 5,
+   "trace": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "fail",
+     "call": 0,
+     "moved": true
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY"
+    },
+    {
+     "op": "wait",
+     "seconds": 1
+    }
+   ],
+   "version": "dogwood 1.1.1",
+   "date": "2026-11-12T04:51:26Z"
+  }
+ },
+ "sessions": [
+  {
+   "purpose": "probe",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW",
+     "counter": 60
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 60
+    },
+    {
+     "op": "settle",
+     "call": 0,
+     "counter": 60
+    },
+    {
+     "op": "wait",
+     "seconds": 60,
+     "counter": 0
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW",
+     "counter": 60
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 60
+    },
+    {
+     "op": "settle",
+     "call": 1,
+     "counter": 60
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 60
+    }
+   ]
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW",
+     "counter": 60
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 60
+    },
+    {
+     "op": "settle",
+     "call": 0,
+     "counter": 60
+    },
+    {
+     "op": "wait",
+     "seconds": 9,
+     "counter": 60
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY",
+     "counter": 120
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 120
+    },
+    {
+     "op": "wait",
+     "seconds": 9,
+     "counter": 120
+    },
+    {
+     "op": "issue",
+     "amount": 30,
+     "verdict": "DENY",
+     "counter": 150
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 150
+    },
+    {
+     "op": "wait",
+     "seconds": 9,
+     "counter": 150
+    }
+   ]
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW",
+     "counter": 60
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 60
+    },
+    {
+     "op": "settle",
+     "call": 0,
+     "counter": 60
+    },
+    {
+     "op": "wait",
+     "seconds": 9,
+     "counter": 60
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY",
+     "counter": 120
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 120
+    },
+    {
+     "op": "wait",
+     "seconds": 29,
+     "counter": 120
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY",
+     "counter": 180
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 180
+    },
+    {
+     "op": "wait",
+     "seconds": 29,
+     "counter": 120
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY",
+     "counter": 180
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 120
+    },
+    {
+     "op": "wait",
+     "seconds": 29,
+     "counter": 120
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY",
+     "counter": 180
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 120
+    },
+    {
+     "op": "wait",
+     "seconds": 29,
+     "counter": 120
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY",
+     "counter": 180
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 120
+    },
+    {
+     "op": "wait",
+     "seconds": 29,
+     "counter": 120
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY",
+     "counter": 180
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 120
+    },
+    {
+     "op": "wait",
+     "seconds": 29,
+     "counter": 120
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY",
+     "counter": 180
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 120
+    },
+    {
+     "op": "wait",
+     "seconds": 29,
+     "counter": 120
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY",
+     "counter": 180
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 120
+    },
+    {
+     "op": "wait",
+     "seconds": 29,
+     "counter": 120
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY",
+     "counter": 180
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 120
+    },
+    {
+     "op": "wait",
+     "seconds": 29,
+     "counter": 120
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY",
+     "counter": 180
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 120
+    },
+    {
+     "op": "wait",
+     "seconds": 29,
+     "counter": 120
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY",
+     "counter": 180
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 120
+    },
+    {
+     "op": "wait",
+     "seconds": 29,
+     "counter": 120
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY",
+     "counter": 180
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 120
+    },
+    {
+     "op": "wait",
+     "seconds": 29,
+     "counter": 120
+    }
+   ]
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW",
+     "counter": 60
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 60
+    },
+    {
+     "op": "fail",
+     "call": 0,
+     "counter": 60
+    },
+    {
+     "op": "wait",
+     "seconds": 9,
+     "counter": 60
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY",
+     "counter": 120
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 120
+    },
+    {
+     "op": "wait",
+     "seconds": 9,
+     "counter": 120
+    },
+    {
+     "op": "issue",
+     "amount": 30,
+     "verdict": "DENY",
+     "counter": 150
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 150
+    },
+    {
+     "op": "wait",
+     "seconds": 9,
+     "counter": 150
+    }
+   ]
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW",
+     "counter": 60
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 60
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY",
+     "counter": 120
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 120
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY",
+     "counter": 180
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 180
+    },
+    {
+     "op": "settle",
+     "call": 0,
+     "counter": 180
+    }
+   ]
+  },
+  {
+   "purpose": "confirm",
+   "ops": [
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "ALLOW",
+     "counter": 60
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 60
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY",
+     "counter": 120
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 120
+    },
+    {
+     "op": "issue",
+     "amount": 60,
+     "verdict": "DENY",
+     "counter": 180
+    },
+    {
+     "op": "wait",
+     "seconds": 1,
+     "counter": 180
+    },
+    {
+     "op": "settle",
+     "call": 0,
+     "counter": 180
+    }
+   ]
+  }
+ ]
+}

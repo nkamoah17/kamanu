@@ -1,0 +1,37 @@
+# Envoy AI Gateway usage-based rate limiting, the documentation's per-tenant, per-model rule.
+# Documentation: https://aigateway.envoyproxy.io/docs/capabilities/traffic/usage-based-ratelimiting
+# The envoy-ai-gateway front-end declines this file: clientSelectors (a counter per distinct x-tenant-id)
+# is a key it does not read, so `kamanu lint --frontend envoy-ai-gateway` says outside, naming it.
+apiVersion: gateway.envoyproxy.io/v1alpha1
+kind: BackendTrafficPolicy
+metadata:
+  name: model-specific-token-limit-policy
+  namespace: default
+spec:
+  targetRefs:
+    - name: envoy-ai-gateway-basic
+      kind: Gateway
+      group: gateway.networking.k8s.io
+  rateLimit:
+    type: Global
+    global:
+      rules:
+        - clientSelectors:
+            - headers:
+                - name: x-tenant-id
+                  type: Distinct
+                - name: x-ai-eg-model
+                  type: Exact
+                  value: gpt-4
+          limit:
+            requests: 1000 # 1000 total tokens per hour
+            unit: Hour
+          cost:
+            request:
+              from: Number
+              number: 0 # Set to 0 so only token usage counts
+            response:
+              from: Metadata
+              metadata:
+                namespace: io.envoy.ai_gateway
+                key: llm_total_token # Uses total tokens from the responses

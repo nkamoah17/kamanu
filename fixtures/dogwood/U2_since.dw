@@ -1,0 +1,22 @@
+// unsupported: since with a short window: kernel views have no timestamps
+// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/guide/04-temporal-expressions.md#since--held-continuously-since-an-anchor
+// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/guide/04-temporal-expressions.md#evaluation-semantics (the negated-left since idiom in access_not_revoked_since_grant)
+
+@id("pay_base")
+permit (
+    principal,
+    action == Kamanu::Action::"Pay",
+    resource
+);
+
+@id("unsupported")
+forbid (
+    principal,
+    action == Kamanu::Action::"Pay",
+    resource
+)
+unless temporal {
+    !Kamanu::Action::"Pay"::error{}
+    since within 15m
+    Kamanu::Action::"Pay"::response{}
+};

@@ -1,0 +1,6 @@
+{
+ "path": "kamanu/data/ladder/r17/lint_table.json",
+ "sha256": "c63e8684fb5546706314a3a0f064f092096fa9d6a1d041e80b44ac5f5a916488",
+ "published": "evidence/ladder/r17/lint_table.json",
+ "built_by": "python -m kamanu.fast.table --build"
+}

@@ -1,0 +1,13 @@
+\* Labels has no reconcile step: HasReconcile = FALSE; the label policy is the kernel's Permit
+Templates <- LT
+MaxReq = 3
+MaxFails = 1
+Reflexive = TRUE
+DenyRecord = "none"
+Atomic = TRUE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = FALSE
+Permit <- LP
+Scope <- LS
+Fixed = TRUE

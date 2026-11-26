@@ -1,0 +1,12 @@
+{
+  "target":   {"adapter": "wallet", "address": "eip155:84532:0xf85210b21cc50302f477ba56686d2019dc9b67ad"},
+  "owner":    "Coinbase, the publisher and deployer of SpendPermissionManager (github.com/coinbase/spend-permissions); the run spends only the owner's own testnet USDC, from the owner's own Coinbase Smart Wallet to the owner's own key",
+  "basis":    {"kind": "published-statement", "url": "https://github.com/coinbase/spend-permissions"},
+  "ceilings": {"requests": 20000, "money": 1000000},
+  "expires":  "2026-12-31",
+  "wallet":   {"chain_id": 84532,
+               "contracts": ["0xf85210b21cc50302f477ba56686d2019dc9b67ad"],
+               "max_amount": 2000,
+               "max_allowance": 1000},
+  "note":     "card X2d. Amounts are testnet USDC minor units (6 decimals). ceilings.money caps the sum of every spend the adapter signs, refused ones included (1 USDC); each limit's allowance is at most 1000 (0.001 USDC) and each spend at most 2000. The spends move from the owner's smart wallet to the owner's key, so nothing leaves the owner."
+}

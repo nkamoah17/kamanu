@@ -1,0 +1,8 @@
+# The outside proof checkers lean/check.sh runs, pinned. One line per tool:
+#   tool  version  binary-name  sha256 of the Windows x86_64 binary measured here  where it comes from
+# con-leche and con-ron report no version of their own: they are pinned by the Lean toolchain release
+# that ships them (v4.36.0) and by the binary's hash. lean/install-tools.sh reads this file.
+leanexport  3.1.0    leanexport  9e5cbe27d714a7c16dc3e35881a6a66c871ec4339c1bb15f640f8998aa0ddcc5  lean4export 3.1.0 (export format 3.1.0), shipped in the Lean 4.36.0 toolchain's bin/; source https://github.com/leanprover/lean4export
+con-leche   v4.36.0  con-leche   5dc6d10f2608e217464b92fbcf823dbff3fc82f80f2610654da5d0b5f58e8538  the build shipped in the Lean 4.36.0 toolchain's bin/ (no --version)
+con-ron     v4.36.0  con-ron     d9cfda21442da3b5151da9387cecf7ab64ff6a82cede8f6689a36ab92d204f74  the build shipped in the Lean 4.36.0 toolchain's bin/ (no --version)
+nanoda      0.4.17   nanoda_bin  a76bed8bc1091842ea7f85996464687ca3945edc6f8194237bf6963503d2d31b  nanoda_bin 0.4.17, shipped in the Lean 4.36.0 toolchain's bin/; source https://github.com/ammkrn/nanoda_lib

@@ -1,0 +1,15 @@
+\* A window of three ticks, a horizon of two windows, and three payments.
+Templates <- WindowTemplates
+Permit <- WindowPermit
+Scope <- ScopeGlobal
+MaxReq = 3
+MaxFails = 1
+Reflexive = TRUE
+DenyRecord = "none"
+Atomic = TRUE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = FALSE
+Cap = 60
+WindowLen = 3
+MaxTime = 6

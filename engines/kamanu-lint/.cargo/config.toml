@@ -1,0 +1,10 @@
+# One static binary (R17b): the C runtime linked in where a plain `cargo build --release --locked` allows it.
+# On Windows (MSVC) that is crt-static. On Linux, crt-static on the host target refuses the proc macro the
+# vendor's parser is built with (pest_derive), so a host build there links glibc dynamically; the release
+# workflow builds x86_64-unknown-linux-musl (static by default), and `--target x86_64-unknown-linux-gnu`
+# with this flag in RUSTFLAGS gives a static-pie binary.
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]
+
+[target.aarch64-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]

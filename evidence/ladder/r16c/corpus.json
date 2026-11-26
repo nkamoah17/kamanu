@@ -1,0 +1,8055 @@
+{
+ "corpus": {
+  "policies": 93,
+  "history": 44,
+  "engine": "reference",
+  "status": {
+   "inside": 43,
+   "no limit": 27,
+   "outside": 23
+  },
+  "never_planned": 3
+ },
+ "rows": [
+  {
+   "example": "access_not_revoked_since_grant",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "latch",
+      "guards": [
+       "Access"
+      ],
+      "window": 3600,
+      "line": 14,
+      "drivers": [
+       {
+        "action": "Grant",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user",
+         "input.resource": "context . input . resource"
+        },
+        "filters": [],
+        "line": 15
+       },
+       {
+        "action": "Revoke",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": null,
+        "role": "reset",
+        "bindings": {
+         "input.user": "context . input . user",
+         "input.resource": "context . input . resource"
+        },
+        "filters": [],
+        "line": 13
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Access"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 14
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "alert_exactly_three_transfers",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "register",
+      "guards": [
+       "Alert"
+      ],
+      "window": 3600,
+      "line": 12,
+      "drivers": [
+       {
+        "action": "Transfer",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": 1,
+        "role": "count",
+        "bindings": {},
+        "filters": [],
+        "line": 12
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Alert"
+      ],
+      "expr": {
+       "op": "and",
+       "args": [
+        {
+         "op": "<=",
+         "terms": [
+          {
+           "element": "e1",
+           "weight": 1
+          }
+         ],
+         "current": 0,
+         "bound": 3,
+         "line": 13
+        },
+        {
+         "op": "<=",
+         "terms": [
+          {
+           "element": "e1",
+           "weight": -1
+          }
+         ],
+         "current": 0,
+         "bound": -3,
+         "line": 13
+        }
+       ]
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "alert_heartbeat_and_login_rate",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "Alert"
+      ],
+      "window": 3600,
+      "line": 11,
+      "drivers": [
+       {
+        "action": "Heartbeat",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.server": "context . input . server"
+        },
+        "filters": [],
+        "line": 11
+       }
+      ]
+     },
+     {
+      "id": "e2",
+      "type": "register",
+      "guards": [
+       "Alert"
+      ],
+      "window": 0,
+      "line": 14,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": 1,
+        "role": "count",
+        "bindings": {
+         "input.server": "context . input . server"
+        },
+        "filters": [],
+        "line": 14
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Alert"
+      ],
+      "expr": {
+       "op": "and",
+       "args": [
+        {
+         "op": "holds",
+         "element": "e1",
+         "line": 11
+        },
+        {
+         "op": "<=",
+         "terms": [
+          {
+           "element": "e2",
+           "weight": -1
+          }
+         ],
+         "current": 0,
+         "bound": -3,
+         "line": 15
+        }
+       ]
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "alert_login_and_big_transfer",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "Alert"
+      ],
+      "window": 3600,
+      "line": 12,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "v1"
+        },
+        "filters": [],
+        "line": 13,
+        "window": 3600
+       },
+       {
+        "action": "Transfer",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "v1"
+        },
+        "filters": [
+         {
+          "field": "input.amount",
+          "op": ">",
+          "value": 100
+         }
+        ],
+        "line": 15,
+        "window": 3600,
+        "classes": [
+         "c1"
+        ]
+       }
+      ],
+      "join": [
+       "v1"
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Alert"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 12
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "Transfer",
+       "kind": "request",
+       "field": "input.amount",
+       "op": ">",
+       "value": 100,
+       "line": 16
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "Transfer",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "input.amount": 101
+       }
+      },
+      {
+       "id": "c2",
+       "action": "Transfer",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "input.amount": 99
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "alert_login_current_tp",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "register",
+      "guards": [
+       "Alert"
+      ],
+      "window": 0,
+      "line": 14,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": 1,
+        "role": "count",
+        "bindings": {
+         "input.server": "context . input . server"
+        },
+        "filters": [],
+        "line": 14
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Alert"
+      ],
+      "expr": {
+       "op": "<=",
+       "terms": [
+        {
+         "element": "e1",
+         "weight": -1
+        }
+       ],
+       "current": 0,
+       "bound": -1,
+       "line": 15
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "alert_login_in_last_hour",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "register",
+      "guards": [
+       "Alert"
+      ],
+      "window": 3600,
+      "line": 14,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": 1,
+        "role": "count",
+        "bindings": {
+         "input.server": "context . input . server"
+        },
+        "filters": [],
+        "line": 14
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Alert"
+      ],
+      "expr": {
+       "op": "<=",
+       "terms": [
+        {
+         "element": "e1",
+         "weight": -1
+        }
+       ],
+       "current": 0,
+       "bound": -1,
+       "line": 15
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "alert_pending_transfers",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "register",
+      "guards": [
+       "Alert"
+      ],
+      "window": 3600,
+      "line": 16,
+      "drivers": [
+       {
+        "action": "Transfer",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": 1,
+        "role": "count",
+        "bindings": {},
+        "filters": [],
+        "line": 16
+       },
+       {
+        "action": "Transfer",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": -1,
+        "amount": 1,
+        "role": "count",
+        "bindings": {},
+        "filters": [],
+        "line": 13
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Alert"
+      ],
+      "expr": {
+       "op": "<=",
+       "terms": [
+        {
+         "element": "e1",
+         "weight": -1
+        }
+       ],
+       "current": 0,
+       "bound": -1,
+       "line": 15
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "alert_same_principal_login_transfer",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "Alert"
+      ],
+      "window": 3600,
+      "line": 13,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "callerPrincipal": "v1"
+        },
+        "filters": [],
+        "line": 14,
+        "window": 3600
+       },
+       {
+        "action": "Transfer",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "callerPrincipal": "v1"
+        },
+        "filters": [],
+        "line": 15,
+        "window": 3600
+       }
+      ],
+      "join": [
+       "v1"
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Alert"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 13
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "alert_same_user_login_and_transfer",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "Alert"
+      ],
+      "window": 3600,
+      "line": 12,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "v1"
+        },
+        "filters": [],
+        "line": 13,
+        "window": 3600
+       },
+       {
+        "action": "Transfer",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "v1"
+        },
+        "filters": [],
+        "line": 14,
+        "window": 3600
+       }
+      ],
+      "join": [
+       "v1"
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Alert"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 12
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "alert_some_login",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "Alert"
+      ],
+      "window": 3600,
+      "line": 12,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.server": "context . input . server"
+        },
+        "filters": [],
+        "line": 12
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Alert"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 12
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "alert_total_transfer_over_200",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "register",
+      "guards": [
+       "Alert"
+      ],
+      "window": 0,
+      "line": 12,
+      "drivers": [
+       {
+        "action": "Transfer",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": "input.amount",
+        "role": "count",
+        "bindings": {
+         "input.amount": "v1"
+        },
+        "filters": [],
+        "line": 12
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Alert"
+      ],
+      "expr": {
+       "op": "<=",
+       "terms": [
+        {
+         "element": "e1",
+         "weight": -1
+        }
+       ],
+       "current": 0,
+       "bound": -201,
+       "line": 13
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "allow_anything",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": null,
+      "expr": {
+       "op": "true"
+      }
+     }
+    ],
+    "outside": [],
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "approve_has_output_guard",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "ApproveSale"
+      ],
+      "expr": {
+       "op": "and",
+       "args": [
+        {
+         "op": "outside",
+         "construct": "predicate (has)",
+         "line": 6
+        },
+        {
+         "op": "outside",
+         "construct": "comparison on context.output.approved",
+         "line": 6
+        }
+       ]
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "predicate (has)",
+      "line": 6,
+      "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal",
+      "step": 2
+     },
+     {
+      "construct": "comparison on context.output.approved",
+      "line": 6,
+      "reason": "a predicate on the request's own fields",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "predicate (has)",
+     "line": 6,
+     "step": 2,
+     "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal"
+    },
+    {
+     "construct": "comparison on context.output.approved",
+     "line": 6,
+     "step": 2,
+     "reason": "a predicate on the request's own fields"
+    }
+   ]
+  },
+  {
+   "example": "call_cedar_macro_as_argument",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "GetStockInfo"
+      ],
+      "expr": {
+       "op": "outside",
+       "construct": "predicate (if)",
+       "line": 7
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "predicate (if)",
+      "line": 7,
+      "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "predicate (if)",
+     "line": 7,
+     "step": 2,
+     "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal"
+    }
+   ]
+  },
+  {
+   "example": "call_cedar_macro_is_small",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "true",
+       "line": 6
+      }
+     },
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 6
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.shares",
+       "op": "<",
+       "value": 100,
+       "line": 6
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "input.shares": 99
+       }
+      },
+      {
+       "id": "c2",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "input.shares": 100
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "call_cedar_macro_with_temporal_leaf",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "Alert"
+      ],
+      "window": 3600,
+      "line": 10,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.server": "context . input . server"
+        },
+        "filters": [],
+        "line": 10
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Alert"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 10
+      }
+     },
+     {
+      "actions": [
+       "Alert"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 8
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "Alert",
+       "kind": "request",
+       "field": "input.level",
+       "op": ">=",
+       "value": 2,
+       "line": 8
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "Alert",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "input.level": 2
+       }
+      },
+      {
+       "id": "c2",
+       "action": "Alert",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "input.level": 1
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "call_cedar_macros_composed",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c1",
+       "c3",
+       "c4"
+      ],
+      "expr": {
+       "op": "true",
+       "line": 7
+      }
+     },
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c2",
+       "c5",
+       "c6"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 8
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.shares",
+       "op": "<",
+       "value": 100,
+       "line": 7
+      },
+      {
+       "id": "p2",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.stock",
+       "op": "==",
+       "value": "FOO",
+       "line": 7
+      },
+      {
+       "id": "p3",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.stock",
+       "op": "==",
+       "value": "BLOCKED",
+       "line": 8
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": true,
+        "p3": false
+       },
+       "witness": {
+        "input.shares": 99,
+        "input.stock": "FOO"
+       }
+      },
+      {
+       "id": "c2",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": false,
+        "p3": true
+       },
+       "witness": {
+        "input.shares": 99,
+        "input.stock": "BLOCKED"
+       }
+      },
+      {
+       "id": "c3",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": false,
+        "p3": false
+       },
+       "witness": {
+        "input.shares": 99,
+        "input.stock": "other"
+       }
+      },
+      {
+       "id": "c4",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": true,
+        "p3": false
+       },
+       "witness": {
+        "input.shares": 100,
+        "input.stock": "FOO"
+       }
+      },
+      {
+       "id": "c5",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": false,
+        "p3": true
+       },
+       "witness": {
+        "input.shares": 100,
+        "input.stock": "BLOCKED"
+       }
+      },
+      {
+       "id": "c6",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": false,
+        "p3": false
+       },
+       "witness": {
+        "input.shares": 100,
+        "input.stock": "other"
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "call_temporal_aggregation_macro_count",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "register",
+      "guards": [
+       "Alert"
+      ],
+      "window": 3600,
+      "line": 9,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": 1,
+        "role": "count",
+        "bindings": {
+         "input.server": "context . input . server"
+        },
+        "filters": [],
+        "line": 9
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Alert"
+      ],
+      "expr": {
+       "op": "<=",
+       "terms": [
+        {
+         "element": "e1",
+         "weight": -1
+        }
+       ],
+       "current": 0,
+       "bound": -1,
+       "line": 12
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "call_temporal_condition_macro_once",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "Write"
+      ],
+      "window": 3600,
+      "line": 8,
+      "drivers": [
+       {
+        "action": "Read",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user",
+         "input.document": "context . input . document"
+        },
+        "filters": [],
+        "line": 8
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Write"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 8
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "call_temporal_condition_macros_composed",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "Write"
+      ],
+      "window": 3600,
+      "line": 7,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [],
+        "line": 7
+       }
+      ]
+     },
+     {
+      "id": "e2",
+      "type": "flag",
+      "guards": [
+       "Write"
+      ],
+      "window": 3600,
+      "line": 8,
+      "drivers": [
+       {
+        "action": "Read",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user",
+         "input.document": "context . input . document"
+        },
+        "filters": [],
+        "line": 8
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Write"
+      ],
+      "expr": {
+       "op": "and",
+       "args": [
+        {
+         "op": "holds",
+         "element": "e1",
+         "line": 7
+        },
+        {
+         "op": "holds",
+         "element": "e2",
+         "line": 8
+        }
+       ]
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 2,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "cap_open_agent_prs_windowed",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "register",
+      "guards": [
+       "OpenPullRequest"
+      ],
+      "window": 86400,
+      "line": 26,
+      "drivers": [
+       {
+        "action": "CompleteReview",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": 1,
+        "role": "count",
+        "bindings": {},
+        "filters": [],
+        "line": 26
+       },
+       {
+        "action": "OpenPullRequest",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": -1,
+        "amount": 1,
+        "role": "count",
+        "bindings": {},
+        "filters": [],
+        "line": 23
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "OpenPullRequest"
+      ],
+      "expr": {
+       "op": "<=",
+       "terms": [
+        {
+         "element": "e1",
+         "weight": -1
+        }
+       ],
+       "current": 0,
+       "bound": 2,
+       "line": 27
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "cedar_eligible_not_blocked",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c1",
+       "c3",
+       "c4"
+      ],
+      "expr": {
+       "op": "true",
+       "line": 14
+      }
+     },
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c2",
+       "c5",
+       "c6"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 15
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.shares",
+       "op": "<",
+       "value": 100,
+       "line": 14
+      },
+      {
+       "id": "p2",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.stock",
+       "op": "==",
+       "value": "FOO",
+       "line": 14
+      },
+      {
+       "id": "p3",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.stock",
+       "op": "==",
+       "value": "BLOCKED",
+       "line": 15
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": true,
+        "p3": false
+       },
+       "witness": {
+        "input.shares": 99,
+        "input.stock": "FOO"
+       }
+      },
+      {
+       "id": "c2",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": false,
+        "p3": true
+       },
+       "witness": {
+        "input.shares": 99,
+        "input.stock": "BLOCKED"
+       }
+      },
+      {
+       "id": "c3",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": false,
+        "p3": false
+       },
+       "witness": {
+        "input.shares": 99,
+        "input.stock": "other"
+       }
+      },
+      {
+       "id": "c4",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": true,
+        "p3": false
+       },
+       "witness": {
+        "input.shares": 100,
+        "input.stock": "FOO"
+       }
+      },
+      {
+       "id": "c5",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": false,
+        "p3": true
+       },
+       "witness": {
+        "input.shares": 100,
+        "input.stock": "BLOCKED"
+       }
+      },
+      {
+       "id": "c6",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": false,
+        "p3": false
+       },
+       "witness": {
+        "input.shares": 100,
+        "input.stock": "other"
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "cedar_is_small_threshold",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "true",
+       "line": 12
+      }
+     },
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 12
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.shares",
+       "op": "<",
+       "value": 100,
+       "line": 12
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "input.shares": 99
+       }
+      },
+      {
+       "id": "c2",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "input.shares": 100
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "cedar_macro_plus_temporal_leaf",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "Alert"
+      ],
+      "window": 3600,
+      "line": 16,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.server": "context . input . server"
+        },
+        "filters": [],
+        "line": 16
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Alert"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 16
+      }
+     },
+     {
+      "actions": [
+       "Alert"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 14
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "Alert",
+       "kind": "request",
+       "field": "input.level",
+       "op": ">=",
+       "value": 2,
+       "line": 14
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "Alert",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "input.level": 2
+       }
+      },
+      {
+       "id": "c2",
+       "action": "Alert",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "input.level": 1
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "cedar_semver_gt",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": null,
+      "expr": {
+       "op": "outside",
+       "construct": "predicate (if)",
+       "line": 15
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "predicate (if)",
+      "line": 15,
+      "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "predicate (if)",
+     "line": 15,
+     "step": 2,
+     "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal"
+    }
+   ]
+  },
+  {
+   "example": "cedar_starts_with_f_like",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "GetStockInfo"
+      ],
+      "expr": {
+       "op": "outside",
+       "construct": "predicate (like) on input.stock",
+       "line": 12
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "predicate (like) on input.stock",
+      "line": 12,
+      "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "predicate (like) on input.stock",
+     "line": 12,
+     "step": 2,
+     "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal"
+    }
+   ]
+  },
+  {
+   "example": "cedar_within_cap_if_else",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "expr": {
+       "op": "outside",
+       "construct": "predicate (if) on input.stock, input.shares",
+       "line": 14
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "predicate (if) on input.stock, input.shares",
+      "line": 14,
+      "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "predicate (if) on input.stock, input.shares",
+     "line": 14,
+     "step": 2,
+     "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal"
+    }
+   ]
+  },
+  {
+   "example": "cond_is_oauth_in_team",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "GetStockInfo"
+      ],
+      "expr": {
+       "op": "outside",
+       "construct": "predicate (in) on principal",
+       "line": 5
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "predicate (in) on principal",
+      "line": 5,
+      "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "predicate (in) on principal",
+     "line": 5,
+     "step": 2,
+     "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal"
+    }
+   ]
+  },
+  {
+   "example": "deny_overrides_sell_not_amzn",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 8
+      }
+     },
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "true"
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.stock",
+       "op": "==",
+       "value": "AMZN",
+       "line": 8
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "input.stock": "AMZN"
+       }
+      },
+      {
+       "id": "c2",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "input.stock": "other"
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "desk_governance",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "latch",
+      "guards": [
+       "SellShares"
+      ],
+      "window": 28800,
+      "line": 10,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [
+         {
+          "field": "output.result",
+          "op": "==",
+          "value": true
+         }
+        ],
+        "line": 11,
+        "classes": [
+         "c5"
+        ]
+       },
+       {
+        "action": "Logout",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "reset",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [],
+        "line": 9
+       }
+      ]
+     },
+     {
+      "id": "e2",
+      "type": "flag",
+      "guards": [
+       "SellShares"
+      ],
+      "window": 3600,
+      "line": 14,
+      "drivers": [
+       {
+        "action": "ApproveSale",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user",
+         "input.stock": "context . input . stock"
+        },
+        "filters": [
+         {
+          "field": "output.approved",
+          "op": "==",
+          "value": true
+         }
+        ],
+        "line": 14,
+        "classes": [
+         "c3"
+        ]
+       }
+      ]
+     },
+     {
+      "id": "e3",
+      "type": "register",
+      "guards": [
+       "SellShares"
+      ],
+      "window": 3600,
+      "line": 23,
+      "drivers": [
+       {
+        "action": "SellShares",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": 1,
+        "role": "count",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [],
+        "line": 23,
+        "classes": [
+         "c7",
+         "c8",
+         "c9",
+         "c10",
+         "c11",
+         "c12",
+         "c13",
+         "c14"
+        ]
+       }
+      ]
+     },
+     {
+      "id": "e4",
+      "type": "latch",
+      "guards": [
+       "ApproveSale"
+      ],
+      "window": 3600,
+      "line": 46,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [],
+        "line": 47,
+        "classes": [
+         "c5",
+         "c6"
+        ]
+       },
+       {
+        "action": "SellShares",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "reset",
+        "bindings": {
+         "input.user": "context . input . user",
+         "input.stock": "context . input . stock"
+        },
+        "filters": [],
+        "line": 45,
+        "classes": [
+         "c7",
+         "c8",
+         "c9",
+         "c10",
+         "c11",
+         "c12",
+         "c13",
+         "c14"
+        ]
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "ApproveSale"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e4",
+       "line": 46
+      }
+     },
+     {
+      "actions": [
+       "ApproveSale"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 43
+      }
+     },
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c7",
+       "c8",
+       "c9",
+       "c11",
+       "c12",
+       "c13",
+       "c14"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 33
+      }
+     },
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c10"
+      ],
+      "expr": {
+       "op": "and",
+       "args": [
+        {
+         "op": "holds",
+         "element": "e1",
+         "line": 10
+        },
+        {
+         "op": "holds",
+         "element": "e2",
+         "line": 14
+        },
+        {
+         "op": "<=",
+         "terms": [
+          {
+           "element": "e3",
+           "weight": 1
+          }
+         ],
+         "current": 0,
+         "bound": 3,
+         "line": 25
+        }
+       ]
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "type(principal)",
+       "op": "==",
+       "value": "Desk::OAuthUser",
+       "line": 7
+      },
+      {
+       "id": "p2",
+       "action": "Login",
+       "kind": "response",
+       "field": "output.result",
+       "op": "==",
+       "value": true,
+       "line": 11,
+       "oracle": "o1"
+      },
+      {
+       "id": "p3",
+       "action": "ApproveSale",
+       "kind": "response",
+       "field": "output.approved",
+       "op": "==",
+       "value": true,
+       "line": 17,
+       "oracle": "o2"
+      },
+      {
+       "id": "p4",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "Text::Scan(context.input.notes).flagged",
+       "op": "==",
+       "value": true,
+       "line": 33,
+       "oracle": "o3"
+      },
+      {
+       "id": "p5",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.stock",
+       "op": "==",
+       "value": "AMZN",
+       "line": 38
+      },
+      {
+       "id": "p6",
+       "action": "ApproveSale",
+       "kind": "request",
+       "field": "type(principal)",
+       "op": "==",
+       "value": "Desk::IamEntity",
+       "line": 43
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "ApproveSale",
+       "kind": "request",
+       "literals": {
+        "p6": true
+       },
+       "witness": {
+        "type(principal)": "Desk::IamEntity"
+       }
+      },
+      {
+       "id": "c2",
+       "action": "ApproveSale",
+       "kind": "request",
+       "literals": {
+        "p6": false
+       },
+       "witness": {
+        "type(principal)": "other"
+       }
+      },
+      {
+       "id": "c3",
+       "action": "ApproveSale",
+       "kind": "response",
+       "literals": {
+        "p3": true
+       },
+       "witness": {
+        "output.approved": true
+       }
+      },
+      {
+       "id": "c4",
+       "action": "ApproveSale",
+       "kind": "response",
+       "literals": {
+        "p3": false
+       },
+       "witness": {
+        "output.approved": false
+       }
+      },
+      {
+       "id": "c5",
+       "action": "Login",
+       "kind": "response",
+       "literals": {
+        "p2": true
+       },
+       "witness": {
+        "output.result": true
+       }
+      },
+      {
+       "id": "c6",
+       "action": "Login",
+       "kind": "response",
+       "literals": {
+        "p2": false
+       },
+       "witness": {
+        "output.result": false
+       }
+      },
+      {
+       "id": "c7",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p4": true,
+        "p5": true
+       },
+       "witness": {
+        "type(principal)": "Desk::OAuthUser",
+        "Text::Scan(context.input.notes).flagged": true,
+        "input.stock": "AMZN"
+       }
+      },
+      {
+       "id": "c8",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p4": true,
+        "p5": false
+       },
+       "witness": {
+        "type(principal)": "Desk::OAuthUser",
+        "Text::Scan(context.input.notes).flagged": true,
+        "input.stock": "other"
+       }
+      },
+      {
+       "id": "c9",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p4": false,
+        "p5": true
+       },
+       "witness": {
+        "type(principal)": "Desk::OAuthUser",
+        "Text::Scan(context.input.notes).flagged": false,
+        "input.stock": "AMZN"
+       }
+      },
+      {
+       "id": "c10",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p4": false,
+        "p5": false
+       },
+       "witness": {
+        "type(principal)": "Desk::OAuthUser",
+        "Text::Scan(context.input.notes).flagged": false,
+        "input.stock": "other"
+       }
+      },
+      {
+       "id": "c11",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p4": true,
+        "p5": true
+       },
+       "witness": {
+        "type(principal)": "other",
+        "Text::Scan(context.input.notes).flagged": true,
+        "input.stock": "AMZN"
+       }
+      },
+      {
+       "id": "c12",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p4": true,
+        "p5": false
+       },
+       "witness": {
+        "type(principal)": "other",
+        "Text::Scan(context.input.notes).flagged": true,
+        "input.stock": "other"
+       }
+      },
+      {
+       "id": "c13",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p4": false,
+        "p5": true
+       },
+       "witness": {
+        "type(principal)": "other",
+        "Text::Scan(context.input.notes).flagged": false,
+        "input.stock": "AMZN"
+       }
+      },
+      {
+       "id": "c14",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p4": false,
+        "p5": false
+       },
+       "witness": {
+        "type(principal)": "other",
+        "Text::Scan(context.input.notes).flagged": false,
+        "input.stock": "other"
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [
+     {
+      "id": "o1",
+      "source": "output",
+      "action": "Login",
+      "kind": "response",
+      "field": "output.result",
+      "line": 11
+     },
+     {
+      "id": "o2",
+      "source": "output",
+      "action": "ApproveSale",
+      "kind": "response",
+      "field": "output.approved",
+      "line": 17
+     },
+     {
+      "id": "o3",
+      "source": "provider",
+      "action": "SellShares",
+      "kind": "request",
+      "field": "Text::Scan(context.input.notes).flagged",
+      "line": 33,
+      "provider": "Text::Scan",
+      "args": [
+       "context.input.notes"
+      ],
+      "answer": "flagged"
+     }
+    ],
+    "memory": {
+     "bits": 3,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "forbid_large_except_amzn",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c1",
+       "c2",
+       "c3",
+       "c4"
+      ],
+      "expr": {
+       "op": "false"
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.shares",
+       "op": ">",
+       "value": 100,
+       "line": 4
+      },
+      {
+       "id": "p2",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.stock",
+       "op": "==",
+       "value": "AMZN",
+       "line": 5
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": true
+       },
+       "witness": {
+        "input.shares": 101,
+        "input.stock": "AMZN"
+       }
+      },
+      {
+       "id": "c2",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": false
+       },
+       "witness": {
+        "input.shares": 101,
+        "input.stock": "other"
+       }
+      },
+      {
+       "id": "c3",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": true
+       },
+       "witness": {
+        "input.shares": 99,
+        "input.stock": "AMZN"
+       }
+      },
+      {
+       "id": "c4",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": false
+       },
+       "witness": {
+        "input.shares": 99,
+        "input.stock": "other"
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "forbid_read_transfers_over_1000",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "register",
+      "guards": [
+       "Read"
+      ],
+      "window": 3600,
+      "line": 14,
+      "drivers": [
+       {
+        "action": "Transfer",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": "output.amount",
+        "role": "count",
+        "bindings": {
+         "input.user": "context . input . user",
+         "output.amount": "v1"
+        },
+        "filters": [
+         {
+          "field": "output.amount",
+          "op": ">",
+          "value": 0
+         }
+        ],
+        "line": 16,
+        "classes": [
+         "c1"
+        ]
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "expr": {
+       "op": "and",
+       "args": [
+        {
+         "op": "false"
+        },
+        {
+         "op": "<=",
+         "terms": [
+          {
+           "element": "e1",
+           "weight": 1
+          }
+         ],
+         "current": 0,
+         "bound": 1000,
+         "line": 20
+        }
+       ]
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "Transfer",
+       "kind": "response",
+       "field": "output.amount",
+       "op": ">",
+       "value": 0,
+       "line": 17,
+       "oracle": "o1"
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "Transfer",
+       "kind": "response",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "output.amount": 1
+       }
+      },
+      {
+       "id": "c2",
+       "action": "Transfer",
+       "kind": "response",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "output.amount": -1
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [
+     {
+      "id": "o1",
+      "source": "output",
+      "action": "Transfer",
+      "kind": "response",
+      "field": "output.amount",
+      "line": 17
+     }
+    ],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "get_amzn_stock_info",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "GetStockInfo"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "true",
+       "line": 12
+      }
+     },
+     {
+      "actions": [
+       "GetStockInfo"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 12
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "GetStockInfo",
+       "kind": "request",
+       "field": "input.stock",
+       "op": "==",
+       "value": "AMZN",
+       "line": 12
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "GetStockInfo",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "input.stock": "AMZN"
+       }
+      },
+      {
+       "id": "c2",
+       "action": "GetStockInfo",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "input.stock": "other"
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "heartbeat_scope_alias",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "Alert"
+      ],
+      "window": 3600,
+      "line": 13,
+      "drivers": [
+       {
+        "action": "Heartbeat",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.server": "context . input . server",
+         "callerPrincipal": "principal",
+         "callerResource": "resource"
+        },
+        "filters": [],
+        "line": 13
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Alert"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 13
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "login_attempt_custom_kind",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "Read"
+      ],
+      "window": 3600,
+      "line": 12,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "attempt",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user",
+         "actor": "principal"
+        },
+        "filters": [],
+        "line": 12
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 12
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "macro_library_once_is_small",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "SellShares"
+      ],
+      "window": 3600,
+      "line": 13,
+      "drivers": [
+       {
+        "action": "ApproveSale",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.stock": "context . input . stock"
+        },
+        "filters": [],
+        "line": 13
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 13
+      }
+     },
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 11
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.shares",
+       "op": "<",
+       "value": 100,
+       "line": 11
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "input.shares": 99
+       }
+      },
+      {
+       "id": "c2",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "input.shares": 100
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "max_window_raised",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "Read"
+      ],
+      "window": 604800,
+      "line": 13,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [],
+        "line": 13
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 13
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "permit_read_anyone",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "expr": {
+       "op": "true"
+      }
+     }
+    ],
+    "outside": [],
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "principal_is_oauth",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "GetStockInfo"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "true",
+       "line": 4
+      }
+     },
+     {
+      "actions": [
+       "GetStockInfo"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 4
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "GetStockInfo",
+       "kind": "request",
+       "field": "type(principal)",
+       "op": "==",
+       "value": "Drupe::OAuthUser",
+       "line": 4
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "GetStockInfo",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "type(principal)": "Drupe::OAuthUser"
+       }
+      },
+      {
+       "id": "c2",
+       "action": "GetStockInfo",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "type(principal)": "other"
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "provider_allowed_or_short",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "classes": [
+       "c1",
+       "c2",
+       "c3"
+      ],
+      "expr": {
+       "op": "true",
+       "line": 11
+      }
+     },
+     {
+      "actions": [
+       "Read"
+      ],
+      "classes": [
+       "c4"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 11
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "Read",
+       "kind": "request",
+       "field": "Lists::Allowed(context.input.document).allowed",
+       "op": "==",
+       "value": true,
+       "line": 11,
+       "oracle": "o1"
+      },
+      {
+       "id": "p2",
+       "action": "Read",
+       "kind": "request",
+       "field": "Strings::Length(context.input.document).length",
+       "op": "<",
+       "value": 4,
+       "line": 12,
+       "oracle": "o2"
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": true
+       },
+       "witness": {
+        "Lists::Allowed(context.input.document).allowed": true,
+        "Strings::Length(context.input.document).length": 3
+       }
+      },
+      {
+       "id": "c2",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": false
+       },
+       "witness": {
+        "Lists::Allowed(context.input.document).allowed": true,
+        "Strings::Length(context.input.document).length": 4
+       }
+      },
+      {
+       "id": "c3",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": true
+       },
+       "witness": {
+        "Lists::Allowed(context.input.document).allowed": false,
+        "Strings::Length(context.input.document).length": 3
+       }
+      },
+      {
+       "id": "c4",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": false
+       },
+       "witness": {
+        "Lists::Allowed(context.input.document).allowed": false,
+        "Strings::Length(context.input.document).length": 4
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [
+     {
+      "id": "o1",
+      "source": "provider",
+      "action": "Read",
+      "kind": "request",
+      "field": "Lists::Allowed(context.input.document).allowed",
+      "line": 11,
+      "provider": "Lists::Allowed",
+      "args": [
+       "context.input.document"
+      ],
+      "answer": "allowed"
+     },
+     {
+      "id": "o2",
+      "source": "provider",
+      "action": "Read",
+      "kind": "request",
+      "field": "Strings::Length(context.input.document).length",
+      "line": 12,
+      "provider": "Strings::Length",
+      "args": [
+       "context.input.document"
+      ],
+      "answer": "length"
+     }
+    ],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "provider_digitcount_forbid",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 12
+      }
+     },
+     {
+      "actions": [
+       "Read"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "true"
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "Read",
+       "kind": "request",
+       "field": "Strings::DigitCount(context.input.document).count",
+       "op": ">=",
+       "value": 2,
+       "line": 12,
+       "oracle": "o1"
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "Strings::DigitCount(context.input.document).count": 2
+       }
+      },
+      {
+       "id": "c2",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "Strings::DigitCount(context.input.document).count": 1
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [
+     {
+      "id": "o1",
+      "source": "provider",
+      "action": "Read",
+      "kind": "request",
+      "field": "Strings::DigitCount(context.input.document).count",
+      "line": 12,
+      "provider": "Strings::DigitCount",
+      "args": [
+       "context.input.document"
+      ],
+      "answer": "count"
+     }
+    ],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "provider_digitcount_operator_ge",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "true",
+       "line": 11
+      }
+     },
+     {
+      "actions": [
+       "Read"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 11
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "Read",
+       "kind": "request",
+       "field": "Strings::DigitCount(context.input.document).count",
+       "op": ">=",
+       "value": 2,
+       "line": 11,
+       "oracle": "o1"
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "Strings::DigitCount(context.input.document).count": 2
+       }
+      },
+      {
+       "id": "c2",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "Strings::DigitCount(context.input.document).count": 1
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [
+     {
+      "id": "o1",
+      "source": "provider",
+      "action": "Read",
+      "kind": "request",
+      "field": "Strings::DigitCount(context.input.document).count",
+      "line": 11,
+      "provider": "Strings::DigitCount",
+      "args": [
+       "context.input.document"
+      ],
+      "answer": "count"
+     }
+    ],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "provider_enum_severity_forbid",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "expr": {
+       "op": "and",
+       "args": [
+        {
+         "op": "true"
+        },
+        {
+         "op": "not",
+         "arg": {
+          "op": "outside",
+          "construct": "predicate (in) on Vendor::ThreatScan(context.input.document).severity, input.document",
+          "line": 10
+         }
+        }
+       ]
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "predicate (in) on Vendor::ThreatScan(context.input.document).severity, input.document",
+      "line": 10,
+      "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "predicate (in) on Vendor::ThreatScan(context.input.document).severity, input.document",
+     "line": 10,
+     "step": 2,
+     "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal"
+    }
+   ]
+  },
+  {
+   "example": "provider_enum_two_namespaces",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": null,
+      "expr": {
+       "op": "and",
+       "args": [
+        {
+         "op": "true"
+        },
+        {
+         "op": "not",
+         "arg": {
+          "op": "outside",
+          "construct": "predicate (in) on Vendor::ThreatScan(context.input.document).severity, input.document",
+          "line": 9
+         }
+        }
+       ]
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "predicate (in) on Vendor::ThreatScan(context.input.document).severity, input.document",
+      "line": 9,
+      "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "predicate (in) on Vendor::ThreatScan(context.input.document).severity, input.document",
+     "line": 9,
+     "step": 2,
+     "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal"
+    }
+   ]
+  },
+  {
+   "example": "provider_filter_set_index_decimal",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "expr": {
+       "op": "outside",
+       "construct": "predicate (lessThan) on input.document",
+       "line": 12
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "predicate (lessThan) on input.document",
+      "line": 12,
+      "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "predicate (lessThan) on input.document",
+     "line": 12,
+     "step": 2,
+     "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal"
+    }
+   ]
+  },
+  {
+   "example": "provider_int_arithmetic_trusted",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "expr": {
+       "op": "and",
+       "args": [
+        {
+         "op": "outside",
+         "construct": "comparison on input.trusted",
+         "line": 12
+        },
+        {
+         "op": "outside",
+         "construct": "information provider Strings::DigitCount",
+         "line": 13
+        }
+       ]
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "comparison on input.trusted",
+      "line": 12,
+      "reason": "a comparison of input.trusted with a literal the compile does not compare exactly",
+      "step": 2
+     },
+     {
+      "construct": "information provider Strings::DigitCount",
+      "line": 13,
+      "reason": "a provider's answer the compile does not read (it reads an answer compared with a literal, its arguments the request's own fields or literals)",
+      "step": null
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "comparison on input.trusted",
+     "line": 12,
+     "step": 2,
+     "reason": "a comparison of input.trusted with a literal the compile does not compare exactly"
+    },
+    {
+     "construct": "information provider Strings::DigitCount",
+     "line": 13,
+     "step": null,
+     "reason": "a provider's answer the compile does not read (it reads an answer compared with a literal, its arguments the request's own fields or literals)"
+    }
+   ]
+  },
+  {
+   "example": "provider_matches_and_not_blocked",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "classes": [
+       "c1",
+       "c3",
+       "c4"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 12
+      }
+     },
+     {
+      "actions": [
+       "Read"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "true",
+       "line": 11
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "Read",
+       "kind": "request",
+       "field": "Strings::Matches(context.input.document, \"^[a-z]+$\").matched",
+       "op": "==",
+       "value": true,
+       "line": 11,
+       "oracle": "o1"
+      },
+      {
+       "id": "p2",
+       "action": "Read",
+       "kind": "request",
+       "field": "Lists::Blocked(context.input.document).blocked",
+       "op": "==",
+       "value": true,
+       "line": 12,
+       "oracle": "o2"
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": true
+       },
+       "witness": {
+        "Strings::Matches(context.input.document, \"^[a-z]+$\").matched": true,
+        "Lists::Blocked(context.input.document).blocked": true
+       }
+      },
+      {
+       "id": "c2",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": false
+       },
+       "witness": {
+        "Strings::Matches(context.input.document, \"^[a-z]+$\").matched": true,
+        "Lists::Blocked(context.input.document).blocked": false
+       }
+      },
+      {
+       "id": "c3",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": true
+       },
+       "witness": {
+        "Strings::Matches(context.input.document, \"^[a-z]+$\").matched": false,
+        "Lists::Blocked(context.input.document).blocked": true
+       }
+      },
+      {
+       "id": "c4",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": false
+       },
+       "witness": {
+        "Strings::Matches(context.input.document, \"^[a-z]+$\").matched": false,
+        "Lists::Blocked(context.input.document).blocked": false
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [
+     {
+      "id": "o1",
+      "source": "provider",
+      "action": "Read",
+      "kind": "request",
+      "field": "Strings::Matches(context.input.document, \"^[a-z]+$\").matched",
+      "line": 11,
+      "provider": "Strings::Matches",
+      "args": [
+       "context.input.document",
+       "\"^[a-z]+$\""
+      ],
+      "answer": "matched"
+     },
+     {
+      "id": "o2",
+      "source": "provider",
+      "action": "Read",
+      "kind": "request",
+      "field": "Lists::Blocked(context.input.document).blocked",
+      "line": 12,
+      "provider": "Lists::Blocked",
+      "args": [
+       "context.input.document"
+      ],
+      "answer": "blocked"
+     }
+    ],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "provider_principal_id_allowlist",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "expr": {
+       "op": "outside",
+       "construct": "information provider Access::Allowed",
+       "line": 14
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "information provider Access::Allowed",
+      "line": 14,
+      "reason": "a provider's answer the compile does not read (it reads an answer compared with a literal, its arguments the request's own fields or literals)",
+      "step": null
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "information provider Access::Allowed",
+     "line": 14,
+     "step": null,
+     "reason": "a provider's answer the compile does not read (it reads an answer compared with a literal, its arguments the request's own fields or literals)"
+    }
+   ]
+  },
+  {
+   "example": "provider_regex_analyze_fields",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "true",
+       "line": 12
+      }
+     },
+     {
+      "actions": [
+       "Read"
+      ],
+      "classes": [
+       "c2",
+       "c3",
+       "c4",
+       "c5",
+       "c6",
+       "c7",
+       "c8"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 14
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "Read",
+       "kind": "request",
+       "field": "Regex::Analyze(context.input.document, \"^[A-Z]\").is_match",
+       "op": "==",
+       "value": true,
+       "line": 12,
+       "oracle": "o1"
+      },
+      {
+       "id": "p2",
+       "action": "Read",
+       "kind": "request",
+       "field": "Regex::Analyze(context.input.document, \"[0-9]\").count",
+       "op": ">=",
+       "value": 3,
+       "line": 13,
+       "oracle": "o2"
+      },
+      {
+       "id": "p3",
+       "action": "Read",
+       "kind": "request",
+       "field": "Regex::Analyze(context.input.document, \"[0-9]+\").first_match",
+       "op": "==",
+       "value": "42",
+       "line": 14,
+       "oracle": "o3"
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": true,
+        "p3": true
+       },
+       "witness": {
+        "Regex::Analyze(context.input.document, \"^[A-Z]\").is_match": true,
+        "Regex::Analyze(context.input.document, \"[0-9]\").count": 3,
+        "Regex::Analyze(context.input.document, \"[0-9]+\").first_match": "42"
+       }
+      },
+      {
+       "id": "c2",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": true,
+        "p3": false
+       },
+       "witness": {
+        "Regex::Analyze(context.input.document, \"^[A-Z]\").is_match": true,
+        "Regex::Analyze(context.input.document, \"[0-9]\").count": 3,
+        "Regex::Analyze(context.input.document, \"[0-9]+\").first_match": "other"
+       }
+      },
+      {
+       "id": "c3",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": false,
+        "p3": true
+       },
+       "witness": {
+        "Regex::Analyze(context.input.document, \"^[A-Z]\").is_match": true,
+        "Regex::Analyze(context.input.document, \"[0-9]\").count": 2,
+        "Regex::Analyze(context.input.document, \"[0-9]+\").first_match": "42"
+       }
+      },
+      {
+       "id": "c4",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": false,
+        "p3": false
+       },
+       "witness": {
+        "Regex::Analyze(context.input.document, \"^[A-Z]\").is_match": true,
+        "Regex::Analyze(context.input.document, \"[0-9]\").count": 2,
+        "Regex::Analyze(context.input.document, \"[0-9]+\").first_match": "other"
+       }
+      },
+      {
+       "id": "c5",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": true,
+        "p3": true
+       },
+       "witness": {
+        "Regex::Analyze(context.input.document, \"^[A-Z]\").is_match": false,
+        "Regex::Analyze(context.input.document, \"[0-9]\").count": 3,
+        "Regex::Analyze(context.input.document, \"[0-9]+\").first_match": "42"
+       }
+      },
+      {
+       "id": "c6",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": true,
+        "p3": false
+       },
+       "witness": {
+        "Regex::Analyze(context.input.document, \"^[A-Z]\").is_match": false,
+        "Regex::Analyze(context.input.document, \"[0-9]\").count": 3,
+        "Regex::Analyze(context.input.document, \"[0-9]+\").first_match": "other"
+       }
+      },
+      {
+       "id": "c7",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": false,
+        "p3": true
+       },
+       "witness": {
+        "Regex::Analyze(context.input.document, \"^[A-Z]\").is_match": false,
+        "Regex::Analyze(context.input.document, \"[0-9]\").count": 2,
+        "Regex::Analyze(context.input.document, \"[0-9]+\").first_match": "42"
+       }
+      },
+      {
+       "id": "c8",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": false,
+        "p3": false
+       },
+       "witness": {
+        "Regex::Analyze(context.input.document, \"^[A-Z]\").is_match": false,
+        "Regex::Analyze(context.input.document, \"[0-9]\").count": 2,
+        "Regex::Analyze(context.input.document, \"[0-9]+\").first_match": "other"
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [
+     {
+      "id": "o1",
+      "source": "provider",
+      "action": "Read",
+      "kind": "request",
+      "field": "Regex::Analyze(context.input.document, \"^[A-Z]\").is_match",
+      "line": 12,
+      "provider": "Regex::Analyze",
+      "args": [
+       "context.input.document",
+       "\"^[A-Z]\""
+      ],
+      "answer": "is_match"
+     },
+     {
+      "id": "o2",
+      "source": "provider",
+      "action": "Read",
+      "kind": "request",
+      "field": "Regex::Analyze(context.input.document, \"[0-9]\").count",
+      "line": 13,
+      "provider": "Regex::Analyze",
+      "args": [
+       "context.input.document",
+       "\"[0-9]\""
+      ],
+      "answer": "count"
+     },
+     {
+      "id": "o3",
+      "source": "provider",
+      "action": "Read",
+      "kind": "request",
+      "field": "Regex::Analyze(context.input.document, \"[0-9]+\").first_match",
+      "line": 14,
+      "provider": "Regex::Analyze",
+      "args": [
+       "context.input.document",
+       "\"[0-9]+\""
+      ],
+      "answer": "first_match"
+     }
+    ],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "provider_regex_matches_uppercase",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "true",
+       "line": 13
+      }
+     },
+     {
+      "actions": [
+       "Read"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 13
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "Read",
+       "kind": "request",
+       "field": "Strings::Matches(context.input.document, \"^[A-Z]+$\").matched",
+       "op": "==",
+       "value": true,
+       "line": 13,
+       "oracle": "o1"
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "Strings::Matches(context.input.document, \"^[A-Z]+$\").matched": true
+       }
+      },
+      {
+       "id": "c2",
+       "action": "Read",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "Strings::Matches(context.input.document, \"^[A-Z]+$\").matched": false
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [
+     {
+      "id": "o1",
+      "source": "provider",
+      "action": "Read",
+      "kind": "request",
+      "field": "Strings::Matches(context.input.document, \"^[A-Z]+$\").matched",
+      "line": 13,
+      "provider": "Strings::Matches",
+      "args": [
+       "context.input.document",
+       "\"^[A-Z]+$\""
+      ],
+      "answer": "matched"
+     }
+    ],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "provider_risk_decimal_method",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "expr": {
+       "op": "outside",
+       "construct": "predicate (lessThan) on Content::Risk(context.input.document).severityScore, input.document",
+       "line": 11
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "predicate (lessThan) on Content::Risk(context.input.document).severityScore, input.document",
+      "line": 11,
+      "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "predicate (lessThan) on Content::Risk(context.input.document).severityScore, input.document",
+     "line": 11,
+     "step": 2,
+     "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal"
+    }
+   ]
+  },
+  {
+   "example": "read_after_login",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "Read"
+      ],
+      "window": 3600,
+      "line": 13,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [],
+        "line": 13
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 13
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "read_after_login_success",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "Read"
+      ],
+      "window": 3600,
+      "line": 11,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [
+         {
+          "field": "output.result",
+          "op": "==",
+          "value": true
+         }
+        ],
+        "line": 11,
+        "classes": [
+         "c1"
+        ]
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 11
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "Login",
+       "kind": "response",
+       "field": "output.result",
+       "op": "==",
+       "value": true,
+       "line": 13,
+       "oracle": "o1"
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "Login",
+       "kind": "response",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "output.result": true
+       }
+      },
+      {
+       "id": "c2",
+       "action": "Login",
+       "kind": "response",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "output.result": false
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [
+     {
+      "id": "o1",
+      "source": "output",
+      "action": "Login",
+      "kind": "response",
+      "field": "output.result",
+      "line": 13
+     }
+    ],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "read_heartbeat_since_login_30s",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "latch",
+      "guards": [
+       "Read"
+      ],
+      "window": 30,
+      "line": 12,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [],
+        "line": 13
+       },
+       {
+        "action": "Heartbeat",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "hold",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [],
+        "line": 11
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 12
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "read_login_not_logout",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "Read"
+      ],
+      "window": 3600,
+      "line": 12,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [],
+        "line": 12
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "expr": {
+       "op": "and",
+       "args": [
+        {
+         "op": "holds",
+         "element": "e1",
+         "line": 12
+        },
+        {
+         "op": "true"
+        }
+       ]
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "read_prev_compute_open_session",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "delay",
+      "guards": [
+       "Read"
+      ],
+      "window": 3600,
+      "line": 12,
+      "drivers": [
+       {
+        "action": "Compute",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [],
+        "line": 12
+       }
+      ]
+     },
+     {
+      "id": "e2",
+      "type": "latch",
+      "guards": [
+       "Read"
+      ],
+      "window": 86400,
+      "line": 14,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [],
+        "line": 15
+       },
+       {
+        "action": "Logout",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "reset",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [],
+        "line": 13
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "expr": {
+       "op": "and",
+       "args": [
+        {
+         "op": "holds",
+         "element": "e1",
+         "line": 12
+        },
+        {
+         "op": "holds",
+         "element": "e2",
+         "line": 14
+        }
+       ]
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 2,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "read_prev_login",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "delay",
+      "guards": [
+       "Read"
+      ],
+      "window": 3600,
+      "line": 12,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [],
+        "line": 12
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 12
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "read_prev_login_success",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "delay",
+      "guards": [
+       "Read"
+      ],
+      "window": 3600,
+      "line": 12,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [
+         {
+          "field": "output.result",
+          "op": "==",
+          "value": true
+         }
+        ],
+        "line": 12,
+        "classes": [
+         "c1"
+        ]
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 12
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "Login",
+       "kind": "response",
+       "field": "output.result",
+       "op": "==",
+       "value": true,
+       "line": 12,
+       "oracle": "o1"
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "Login",
+       "kind": "response",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "output.result": true
+       }
+      },
+      {
+       "id": "c2",
+       "action": "Login",
+       "kind": "response",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "output.result": false
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [
+     {
+      "id": "o1",
+      "source": "output",
+      "action": "Login",
+      "kind": "response",
+      "field": "output.result",
+      "line": 12
+     }
+    ],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "read_since_login",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "latch",
+      "guards": [
+       "Read"
+      ],
+      "window": 3600,
+      "line": 13,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [],
+        "line": 14
+       },
+       {
+        "action": "Login",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "hold",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [],
+        "line": 12
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Read"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 13
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "refund_budget_settled_plus_current",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "register",
+      "guards": [
+       "Refund"
+      ],
+      "window": 86400,
+      "line": 20,
+      "drivers": [
+       {
+        "action": "Refund",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": "returned",
+        "role": "count",
+        "bindings": {
+         "output.amount": "amount"
+        },
+        "filters": [],
+        "line": 20
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Refund"
+      ],
+      "expr": {
+       "op": "<=",
+       "terms": [
+        {
+         "element": "e1",
+         "weight": 1
+        }
+       ],
+       "current": 1,
+       "bound": 100,
+       "line": 20
+      }
+     }
+    ],
+    "outside": [],
+    "oracles": [
+     {
+      "id": "o1",
+      "source": "output",
+      "action": "Refund",
+      "kind": "response",
+      "field": "output.amount",
+      "line": 20
+     }
+    ],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "sell_after_2024_datetime",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "expr": {
+       "op": "outside",
+       "construct": "comparison on context.system.now",
+       "line": 4
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "comparison on context.system.now",
+      "line": 4,
+      "reason": "a predicate on the request's own fields",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "comparison on context.system.now",
+     "line": 4,
+     "step": 2,
+     "reason": "a predicate on the request's own fields"
+    }
+   ]
+  },
+  {
+   "example": "sell_after_approval_valid_ticker",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "SellShares"
+      ],
+      "window": 3600,
+      "line": 8,
+      "drivers": [
+       {
+        "action": "ApproveSale",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.stock": "context . input . stock"
+        },
+        "filters": [],
+        "line": 8
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 8
+      }
+     },
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 11
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "Strings::Matches(context.input.stock, \"^[A-Z]+$\").matched",
+       "op": "==",
+       "value": true,
+       "line": 11,
+       "oracle": "o1"
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "Strings::Matches(context.input.stock, \"^[A-Z]+$\").matched": true
+       }
+      },
+      {
+       "id": "c2",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "Strings::Matches(context.input.stock, \"^[A-Z]+$\").matched": false
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [
+     {
+      "id": "o1",
+      "source": "provider",
+      "action": "SellShares",
+      "kind": "request",
+      "field": "Strings::Matches(context.input.stock, \"^[A-Z]+$\").matched",
+      "line": 11,
+      "provider": "Strings::Matches",
+      "args": [
+       "context.input.stock",
+       "\"^[A-Z]+$\""
+      ],
+      "answer": "matched"
+     }
+    ],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "sell_comparison_chain",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "true",
+       "line": 5
+      }
+     },
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c2",
+       "c3",
+       "c4"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 7
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.shares",
+       "op": ">=",
+       "value": 1,
+       "line": 5
+      },
+      {
+       "id": "p2",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.shares",
+       "op": "<=",
+       "value": 1000,
+       "line": 6
+      },
+      {
+       "id": "p3",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.shares",
+       "op": "!=",
+       "value": 777,
+       "line": 7
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": true,
+        "p3": true
+       },
+       "witness": {
+        "input.shares": 1
+       }
+      },
+      {
+       "id": "c2",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": true,
+        "p3": false
+       },
+       "witness": {
+        "input.shares": 777
+       }
+      },
+      {
+       "id": "c3",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": false,
+        "p3": true
+       },
+       "witness": {
+        "input.shares": 1001
+       }
+      },
+      {
+       "id": "c4",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": true,
+        "p3": true
+       },
+       "witness": {
+        "input.shares": 0
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "sell_datetime_window",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "expr": {
+       "op": "and",
+       "args": [
+        {
+         "op": "outside",
+         "construct": "comparison on context.system.now",
+         "line": 5
+        },
+        {
+         "op": "outside",
+         "construct": "comparison on context.system.now",
+         "line": 6
+        }
+       ]
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "comparison on context.system.now",
+      "line": 5,
+      "reason": "a predicate on the request's own fields",
+      "step": 2
+     },
+     {
+      "construct": "comparison on context.system.now",
+      "line": 6,
+      "reason": "a predicate on the request's own fields",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "comparison on context.system.now",
+     "line": 5,
+     "step": 2,
+     "reason": "a predicate on the request's own fields"
+    },
+    {
+     "construct": "comparison on context.system.now",
+     "line": 6,
+     "step": 2,
+     "reason": "a predicate on the request's own fields"
+    }
+   ]
+  },
+  {
+   "example": "sell_like_a_prefix",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "expr": {
+       "op": "outside",
+       "construct": "predicate (like) on input.stock",
+       "line": 4
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "predicate (like) on input.stock",
+      "line": 4,
+      "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "predicate (like) on input.stock",
+     "line": 4,
+     "step": 2,
+     "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal"
+    }
+   ]
+  },
+  {
+   "example": "sell_logical_grouping",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c1",
+       "c3",
+       "c4"
+      ],
+      "expr": {
+       "op": "true",
+       "line": 6
+      }
+     },
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c2",
+       "c5",
+       "c6"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 7
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.shares",
+       "op": "<",
+       "value": 100,
+       "line": 6
+      },
+      {
+       "id": "p2",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.stock",
+       "op": "==",
+       "value": "AMZN",
+       "line": 6
+      },
+      {
+       "id": "p3",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.stock",
+       "op": "==",
+       "value": "BLOCKED",
+       "line": 7
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": true,
+        "p3": false
+       },
+       "witness": {
+        "input.shares": 99,
+        "input.stock": "AMZN"
+       }
+      },
+      {
+       "id": "c2",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": false,
+        "p3": true
+       },
+       "witness": {
+        "input.shares": 99,
+        "input.stock": "BLOCKED"
+       }
+      },
+      {
+       "id": "c3",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": false,
+        "p3": false
+       },
+       "witness": {
+        "input.shares": 99,
+        "input.stock": "other"
+       }
+      },
+      {
+       "id": "c4",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": true,
+        "p3": false
+       },
+       "witness": {
+        "input.shares": 100,
+        "input.stock": "AMZN"
+       }
+      },
+      {
+       "id": "c5",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": false,
+        "p3": true
+       },
+       "witness": {
+        "input.shares": 100,
+        "input.stock": "BLOCKED"
+       }
+      },
+      {
+       "id": "c6",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": false,
+        "p3": false
+       },
+       "witness": {
+        "input.shares": 100,
+        "input.stock": "other"
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "sell_nested_if_threshold",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "expr": {
+       "op": "outside",
+       "construct": "comparison on context.input.shares",
+       "line": 5
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "comparison on context.input.shares",
+      "line": 5,
+      "reason": "a predicate on the request's own fields",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "comparison on context.input.shares",
+     "line": 5,
+     "step": 2,
+     "reason": "a predicate on the request's own fields"
+    }
+   ]
+  },
+  {
+   "example": "sell_nonzero_proceeds_decimal",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "expr": {
+       "op": "and",
+       "args": [
+        {
+         "op": "outside",
+         "construct": "predicate (has)",
+         "line": 4
+        },
+        {
+         "op": "outside",
+         "construct": "comparison on context.output.proceeds",
+         "line": 4
+        }
+       ]
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "predicate (has)",
+      "line": 4,
+      "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal",
+      "step": 2
+     },
+     {
+      "construct": "comparison on context.output.proceeds",
+      "line": 4,
+      "reason": "a predicate on the request's own fields",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "predicate (has)",
+     "line": 4,
+     "step": 2,
+     "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal"
+    },
+    {
+     "construct": "comparison on context.output.proceeds",
+     "line": 4,
+     "step": 2,
+     "reason": "a predicate on the request's own fields"
+    }
+   ]
+  },
+  {
+   "example": "sell_not_blocked_string",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "true",
+       "line": 4
+      }
+     },
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 4
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.stock",
+       "op": "!=",
+       "value": "BLOCKED",
+       "line": 4
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "input.stock": "other"
+       }
+      },
+      {
+       "id": "c2",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "input.stock": "BLOCKED"
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "sell_not_test_tickers_like",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "expr": {
+       "op": "not",
+       "arg": {
+        "op": "outside",
+        "construct": "predicate (like) on input.stock",
+        "line": 4
+       }
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "predicate (like) on input.stock",
+      "line": 4,
+      "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "predicate (like) on input.stock",
+     "line": 4,
+     "step": 2,
+     "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal"
+    }
+   ]
+  },
+  {
+   "example": "sell_or_approve_action_in",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "ApproveSale",
+       "SellShares"
+      ],
+      "expr": {
+       "op": "true"
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "sell_shares_eq_scope",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "expr": {
+       "op": "true"
+      }
+     }
+    ],
+    "outside": [],
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "sell_shares_temporal_subexpr",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "SellShares"
+      ],
+      "window": 3600,
+      "line": 5,
+      "drivers": [
+       {
+        "action": "SellShares",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {},
+        "filters": [],
+        "line": 5,
+        "classes": [
+         "c1",
+         "c2"
+        ]
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 5
+      }
+     },
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 5
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.shares",
+       "op": ">",
+       "value": 5,
+       "line": 5
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "input.shares": 6
+       }
+      },
+      {
+       "id": "c2",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "input.shares": 4
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "sell_small_only",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "true",
+       "line": 9
+      }
+     },
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 9
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.shares",
+       "op": "<=",
+       "value": 50,
+       "line": 9
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "input.shares": 49
+       }
+      },
+      {
+       "id": "c2",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "input.shares": 51
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "sell_small_proceeds_decimal_method",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "expr": {
+       "op": "and",
+       "args": [
+        {
+         "op": "outside",
+         "construct": "predicate (has)",
+         "line": 5
+        },
+        {
+         "op": "outside",
+         "construct": "predicate (lessThan)",
+         "line": 5
+        }
+       ]
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "predicate (has)",
+      "line": 5,
+      "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal",
+      "step": 2
+     },
+     {
+      "construct": "predicate (lessThan)",
+      "line": 5,
+      "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "predicate (has)",
+     "line": 5,
+     "step": 2,
+     "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal"
+    },
+    {
+     "construct": "predicate (lessThan)",
+     "line": 5,
+     "step": 2,
+     "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal"
+    }
+   ]
+  },
+  {
+   "example": "sell_threshold_by_stock",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "expr": {
+       "op": "outside",
+       "construct": "predicate (if) on input.stock, input.shares",
+       "line": 6
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "predicate (if) on input.stock, input.shares",
+      "line": 6,
+      "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "predicate (if) on input.stock, input.shares",
+     "line": 6,
+     "step": 2,
+     "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal"
+    }
+   ]
+  },
+  {
+   "example": "sell_two_when_small_amzn",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "true",
+       "line": 4
+      }
+     },
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c2",
+       "c3",
+       "c4"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 5
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.shares",
+       "op": "<",
+       "value": 100,
+       "line": 4
+      },
+      {
+       "id": "p2",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.stock",
+       "op": "==",
+       "value": "AMZN",
+       "line": 5
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": true
+       },
+       "witness": {
+        "input.shares": 99,
+        "input.stock": "AMZN"
+       }
+      },
+      {
+       "id": "c2",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": false
+       },
+       "witness": {
+        "input.shares": 99,
+        "input.stock": "other"
+       }
+      },
+      {
+       "id": "c3",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": true
+       },
+       "witness": {
+        "input.shares": 100,
+        "input.stock": "AMZN"
+       }
+      },
+      {
+       "id": "c4",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": false
+       },
+       "witness": {
+        "input.shares": 100,
+        "input.stock": "other"
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "sell_unless_huge",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 6
+      }
+     },
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "true",
+       "line": 6
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.shares",
+       "op": ">",
+       "value": 10000,
+       "line": 6
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "input.shares": 10001
+       }
+      },
+      {
+       "id": "c2",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "input.shares": 9999
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "sell_when_under_100",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c1"
+      ],
+      "expr": {
+       "op": "true",
+       "line": 5
+      }
+     },
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 5
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.shares",
+       "op": "<",
+       "value": 100,
+       "line": 5
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "input.shares": 99
+       }
+      },
+      {
+       "id": "c2",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "input.shares": 100
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "sell_when_unless_mix",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c1",
+       "c3",
+       "c4"
+      ],
+      "expr": {
+       "op": "false",
+       "line": 5
+      }
+     },
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "classes": [
+       "c2"
+      ],
+      "expr": {
+       "op": "true",
+       "line": 4
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.shares",
+       "op": "<=",
+       "value": 1000,
+       "line": 4
+      },
+      {
+       "id": "p2",
+       "action": "SellShares",
+       "kind": "request",
+       "field": "input.stock",
+       "op": "==",
+       "value": "BLOCKED",
+       "line": 5
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": true
+       },
+       "witness": {
+        "input.shares": 999,
+        "input.stock": "BLOCKED"
+       }
+      },
+      {
+       "id": "c2",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": true,
+        "p2": false
+       },
+       "witness": {
+        "input.shares": 999,
+        "input.stock": "other"
+       }
+      },
+      {
+       "id": "c3",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": true
+       },
+       "witness": {
+        "input.shares": 1001,
+        "input.stock": "BLOCKED"
+       }
+      },
+      {
+       "id": "c4",
+       "action": "SellShares",
+       "kind": "request",
+       "literals": {
+        "p1": false,
+        "p2": false
+       },
+       "witness": {
+        "input.shares": 1001,
+        "input.stock": "other"
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "sell_zero_proceeds_if_has",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "expr": {
+       "op": "outside",
+       "construct": "predicate (if)",
+       "line": 6
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "predicate (if)",
+      "line": 6,
+      "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "predicate (if)",
+     "line": 6,
+     "step": 2,
+     "reason": "a predicate the compile does not decide exactly: it decides comparisons of one field with a literal"
+    }
+   ]
+  },
+  {
+   "example": "simplest_permit",
+   "history": false,
+   "status": "no limit",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "GetStockInfo"
+      ],
+      "expr": {
+       "op": "true"
+      }
+     }
+    ],
+    "outside": [],
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "submit_after_approval_injection",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "Submit"
+      ],
+      "window": 3600,
+      "line": 18,
+      "drivers": [
+       {
+        "action": "Approve",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [
+         {
+          "field": "input.status",
+          "op": "==",
+          "value": "approved"
+         }
+        ],
+        "line": 18,
+        "classes": [
+         "c1"
+        ]
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Submit"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 18
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "Approve",
+       "kind": "request",
+       "field": "input.status",
+       "op": "==",
+       "value": "approved",
+       "line": 18
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "Approve",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "input.status": "approved"
+       }
+      },
+      {
+       "id": "c2",
+       "action": "Approve",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "input.status": "other"
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "temporal_count_formerly_login",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "register",
+      "guards": [
+       "Alert"
+      ],
+      "window": 3600,
+      "line": 17,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": 1,
+        "role": "count",
+        "bindings": {
+         "input.server": "context . input . server"
+        },
+        "filters": [],
+        "line": 17
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Alert"
+      ],
+      "expr": {
+       "op": "<=",
+       "terms": [
+        {
+         "element": "e1",
+         "weight": -1
+        }
+       ],
+       "current": 0,
+       "bound": -1,
+       "line": 20
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "temporal_login_then_read",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "Write"
+      ],
+      "window": 3600,
+      "line": 18,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [],
+        "line": 18
+       }
+      ]
+     },
+     {
+      "id": "e2",
+      "type": "flag",
+      "guards": [
+       "Write"
+      ],
+      "window": 3600,
+      "line": 19,
+      "drivers": [
+       {
+        "action": "Read",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user",
+         "input.document": "context . input . document"
+        },
+        "filters": [],
+        "line": 19
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Write"
+      ],
+      "expr": {
+       "op": "and",
+       "args": [
+        {
+         "op": "holds",
+         "element": "e1",
+         "line": 18
+        },
+        {
+         "op": "holds",
+         "element": "e2",
+         "line": 19
+        }
+       ]
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 2,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "temporal_once_read_recent",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "Read",
+       "Write"
+      ],
+      "window": 3600,
+      "line": 9,
+      "drivers": [
+       {
+        "action": "Read",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user",
+         "input.document": "context . input . document"
+        },
+        "filters": [],
+        "line": 9
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Read",
+       "Write"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 9
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "temporal_sum_formerly_transfer",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "register",
+      "guards": [
+       "Alert"
+      ],
+      "window": 3600,
+      "line": 16,
+      "drivers": [
+       {
+        "action": "Transfer",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": "input.amount",
+        "role": "count",
+        "bindings": {
+         "input.amount": "v1"
+        },
+        "filters": [],
+        "line": 16
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Alert"
+      ],
+      "expr": {
+       "op": "<=",
+       "terms": [
+        {
+         "element": "e1",
+         "weight": -1
+        }
+       ],
+       "current": 0,
+       "bound": -101,
+       "line": 19
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "touchless_invoice_within_tolerance",
+   "history": true,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "PayInvoice"
+      ],
+      "expr": {
+       "op": "outside",
+       "construct": "bound arithmetic",
+       "line": 24
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "bound arithmetic",
+      "line": 24,
+      "reason": "arithmetic on a field a pattern binds: the machine would remember a value, not a class (R16c: a policy that orders or does arithmetic on a bound field stays outside)",
+      "step": null
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "bound arithmetic",
+     "line": 24,
+     "step": null,
+     "reason": "arithmetic on a field a pattern binds: the machine would remember a value, not a class (R16c: a policy that orders or does arithmetic on a bound field stays outside)"
+    }
+   ]
+  },
+  {
+   "example": "touchless_share_capped",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "register",
+      "guards": [
+       "TouchlessApprove"
+      ],
+      "window": 86400,
+      "line": 20,
+      "drivers": [
+       {
+        "action": "Decide",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 17,
+        "amount": 1,
+        "role": "count",
+        "bindings": {},
+        "filters": [],
+        "line": 20
+       },
+       {
+        "action": "TouchlessApprove",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": -20,
+        "amount": 1,
+        "role": "count",
+        "bindings": {},
+        "filters": [],
+        "line": 17
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "TouchlessApprove"
+      ],
+      "expr": {
+       "op": "<=",
+       "terms": [
+        {
+         "element": "e1",
+         "weight": -5
+        }
+       ],
+       "current": 0,
+       "bound": 0,
+       "line": 19
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "traders_is_in_group_scope",
+   "history": false,
+   "status": "outside",
+   "form": {
+    "version": 1,
+    "elements": [],
+    "decisions": [
+     {
+      "actions": [
+       "GetStockInfo"
+      ],
+      "expr": {
+       "op": "true"
+      }
+     }
+    ],
+    "outside": [
+     {
+      "construct": "principal constraint",
+      "line": 5,
+      "reason": "a principal constraint the compile does not decide exactly (it decides principal == an entity)",
+      "step": 2
+     }
+    ],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 0,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": [
+    {
+     "construct": "principal constraint",
+     "line": 5,
+     "step": 2,
+     "reason": "a principal constraint the compile does not decide exactly (it decides principal == an entity)"
+    }
+   ]
+  },
+  {
+   "example": "transfer_prev_nested_conj",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "delay",
+      "guards": [
+       "Transfer"
+      ],
+      "window": 7200,
+      "line": 11,
+      "drivers": [
+       {
+        "action": "Login",
+        "kind": "request",
+        "meaning": "admitted",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user"
+        },
+        "filters": [
+         {
+          "field": "input.server",
+          "op": "==",
+          "value": "s1"
+         }
+        ],
+        "line": 12,
+        "classes": [
+         "c1"
+        ]
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Transfer"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 11
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [
+      {
+       "id": "p1",
+       "action": "Login",
+       "kind": "request",
+       "field": "input.server",
+       "op": "==",
+       "value": "s1",
+       "line": 13
+      }
+     ],
+     "classes": [
+      {
+       "id": "c1",
+       "action": "Login",
+       "kind": "request",
+       "literals": {
+        "p1": true
+       },
+       "witness": {
+        "input.server": "s1"
+       }
+      },
+      {
+       "id": "c2",
+       "action": "Login",
+       "kind": "request",
+       "literals": {
+        "p1": false
+       },
+       "witness": {
+        "input.server": "other"
+       }
+      }
+     ],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "write_after_read",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "SellShares"
+      ],
+      "window": 3600,
+      "line": 15,
+      "drivers": [
+       {
+        "action": "ApproveSale",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.stock": "context . input . stock"
+        },
+        "filters": [],
+        "line": 15
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "SellShares"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 15
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  },
+  {
+   "example": "write_after_read_formerly",
+   "history": true,
+   "status": "inside",
+   "form": {
+    "version": 1,
+    "elements": [
+     {
+      "id": "e1",
+      "type": "flag",
+      "guards": [
+       "Write"
+      ],
+      "window": 3600,
+      "line": 12,
+      "drivers": [
+       {
+        "action": "Read",
+        "kind": "response",
+        "meaning": "completed",
+        "weight": 1,
+        "amount": null,
+        "role": "set",
+        "bindings": {
+         "input.user": "context . input . user",
+         "input.document": "context . input . document"
+        },
+        "filters": [],
+        "line": 12
+       }
+      ]
+     }
+    ],
+    "decisions": [
+     {
+      "actions": [
+       "Write"
+      ],
+      "expr": {
+       "op": "holds",
+       "element": "e1",
+       "line": 12
+      }
+     }
+    ],
+    "outside": [],
+    "kinds": {
+     "predicates": [],
+     "classes": [],
+     "budget": 64
+    },
+    "oracles": [],
+    "memory": {
+     "bits": 1,
+     "budget": 8
+    },
+    "decision_kind": "request",
+    "pin": "callerPrincipal"
+   },
+   "stopped_by": []
+  }
+ ],
+ "steps": [
+  {
+   "step": 1,
+   "name": "normalize: macros inlined, negation, the vendor's spellings",
+   "alone": 0,
+   "in_order": 0
+  },
+  {
+   "step": 2,
+   "name": "predicates on the request's own fields and the principal",
+   "alone": 20,
+   "in_order": 20
+  },
+  {
+   "step": 3,
+   "name": "k registers: several aggregates, windows, equalities and ranges",
+   "alone": 0,
+   "in_order": 20
+  },
+  {
+   "step": 4,
+   "name": "flags, latches, delays and one representative key",
+   "alone": 0,
+   "in_order": 20
+  },
+  {
+   "step": 5,
+   "name": "symbolic oracles: providers, tool output, custom kinds",
+   "alone": 0,
+   "in_order": 20
+  }
+ ]
+}

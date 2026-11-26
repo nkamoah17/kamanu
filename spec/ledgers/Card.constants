@@ -1,0 +1,11 @@
+\* The card ledger (X4): one TLC line per constant Card.tla declares. The gate and the evidence grid replace
+\* the cell's lines (Cap, Holds, Amts, Partial, Reversal, OverCapture, ForcePost, Lag, Atomic) on every run.
+Cap = 4
+Amts = {2, 4}
+Holds = 2
+Partial = TRUE
+Reversal = TRUE
+Lag = 0
+Atomic = TRUE
+OverCapture = 0
+ForcePost = 0

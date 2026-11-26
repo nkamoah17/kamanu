@@ -1,0 +1,35 @@
+$ kamanu scan --ingest registry   (exit 1)
+receipt 0: hallmark, type 82c26a6924bbb08038fa96c6b34956db, observed 2026-11-24: Sound FAILS, Tight holds
+receipt 1: hallmark, type 44320b5082ea81c3a963fac2fb935af0, observed 2026-11-24: Sound FAILS, Tight holds
+receipt 2: hallmark, type 461b93ce5a7decc9a1e0f12094f9a07e, observed 2026-11-23: Sound holds, Tight FAILS
+skipped registry/h/07d33b44ebc93ec2.pyx.json: not a hallmark-v1 record, a hunt or rail row, or a reference-ledger report
+skipped registry/h/624ba435e74d7312.pyx.json: not a hallmark-v1 record, a hunt or rail row, or a reference-ledger report
+skipped registry/h/f313715e2adef082.pyx.json: not a hallmark-v1 record, a hunt or rail row, or a reference-ledger report
+kamanu scan --ingest: deposited 3 receipts; 0 already held in the cabinet unchanged; 3 files skipped
+
+$ kamanu scan --ingest rails/rows   (exit 0)
+receipt 3: row, type a915e12a546f76975dc93422cd3ed577, observed 2026-11-26: over-ask untested, freeze untested, parallel untested, ambiguous untested
+receipt 4: row, type 7662b3ff39e32886bf9013b48646eeda, observed 2026-11-24: over-ask untested, freeze untested, parallel untested, ambiguous untested, rail over-ask holds, rail freeze holds, rail parallel holds, rail ambiguous holds, rail expiry holds
+receipt 5: row, type a51f07b859b44c009b5c386e754149cb, observed 2026-11-24: over-ask holds, freeze holds, parallel holds, ambiguous holds, rail parallel-same-block holds, rail parallel-neighbouring holds, rail ambiguous-revert holds, rail ambiguous-drop holds
+receipt 6: row, type 7662b3ff39e32886bf9013b48646eeda, observed 2026-11-25: over-ask holds, freeze holds, parallel holds, ambiguous holds, rail over-ask holds, rail freeze holds, rail parallel holds, rail ambiguous holds
+kamanu scan --ingest: deposited 4 receipts; 0 already held in the cabinet unchanged; 0 files skipped
+
+$ kamanu scan --ingest profiles/rows   (exit 1)
+receipt 7: row, type 85d69da6ea77b0bbbe8c17a1efcb33d5, observed 2026-11-11: over-ask untested, freeze untested, parallel untested, ambiguous untested
+receipt 8: row, type 9710342d13d9c7b94edfb0583233ece3, observed 2026-11-12: over-ask FAILS, freeze FAILS, parallel holds, ambiguous holds
+receipt 9: row, type 9710342d13d9c7b94edfb0583233ece3, observed 2026-11-10: over-ask untested, freeze untested, parallel untested, ambiguous untested
+receipt 10: row, type dc19ed786fbc5b47ac5e1781518aed3a, observed 2026-11-11: over-ask untested, freeze untested, parallel untested, ambiguous untested
+receipt 11: row, type 27974198f291130faa51891d504cf9b9, observed 2026-11-11: over-ask untested, freeze untested, parallel untested, ambiguous untested
+receipt 12: row, type 3b34141e507ac90b8a1931794f742701, observed 2026-11-12: over-ask FAILS, freeze holds, parallel holds, ambiguous holds
+receipt 13: row, type 3b34141e507ac90b8a1931794f742701, observed 2026-11-12: over-ask FAILS, freeze holds, parallel holds, ambiguous holds
+kamanu scan --ingest: deposited 7 receipts; 0 already held in the cabinet unchanged; 0 files skipped
+
+$ kamanu scan --ingest evidence/exonumia/x11/shadowledger.json   (exit 1)
+receipt 14: report, type 429c3fbdbc98f451df852d2801dcac5c, observed 2026-11-30: overspend_from_approvals FAILS, wrongful_refusal holds
+receipt 15: report, type 429c3fbdbc98f451df852d2801dcac5c, observed 2026-11-30: overspend_from_approvals holds, wrongful_refusal FAILS
+receipt 16: report, type 429c3fbdbc98f451df852d2801dcac5c, observed 2026-11-30: overspend_from_approvals FAILS, wrongful_refusal holds
+receipt 17: report, type 429c3fbdbc98f451df852d2801dcac5c, observed 2026-11-30: overspend_from_approvals holds, wrongful_refusal holds
+kamanu scan --ingest: deposited 4 receipts; 0 already held in the cabinet unchanged; 0 files skipped
+
+$ kamanu scan --ingest evidence/exonumia/x13/shadowledger.json   (exit 0)
+kamanu scan --ingest: deposited 0 receipts; 4 already held in the cabinet unchanged; 0 files skipped

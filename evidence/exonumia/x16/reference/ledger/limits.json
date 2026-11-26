@@ -1,0 +1,22 @@
+{
+ "spending_limits": [
+  {
+   "id": "cardholder-daily",
+   "scope": "cardholder",
+   "amount": 2000,
+   "interval": "daily"
+  },
+  {
+   "id": "card-per-authorization",
+   "scope": "card",
+   "amount": 350,
+   "interval": "per_authorization"
+  },
+  {
+   "id": "cards-monthly",
+   "scope": "cardholder",
+   "amount": 20000,
+   "interval": "monthly"
+  }
+ ]
+}

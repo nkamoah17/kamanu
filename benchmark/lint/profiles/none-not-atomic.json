@@ -1,0 +1,35 @@
+{
+ "id": "benchmark-none-not-atomic",
+ "constants": {
+  "Reflexive": {
+   "value": true,
+   "source": "kamanu.fast.table",
+   "confidence": "high",
+   "basis": "Stated for the verdict table's built profile."
+  },
+  "DenyRecord": {
+   "value": "none",
+   "source": "kamanu.fast.table",
+   "confidence": "high",
+   "basis": "Stated for the verdict table's built profile."
+  },
+  "Atomic": {
+   "value": false,
+   "source": "kamanu.fast.table",
+   "confidence": "high",
+   "basis": "Stated for the verdict table's built profile."
+  },
+  "Lag": {
+   "value": 0,
+   "source": "kamanu.fast.table",
+   "confidence": "high",
+   "basis": "Stated for the verdict table's built profile."
+  },
+  "Scope": {
+   "value": "ScopeGlobal",
+   "source": "kamanu.fast.table",
+   "confidence": "high",
+   "basis": "Stated for the verdict table's built profile."
+  }
+ }
+}

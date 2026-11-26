@@ -1,0 +1,82 @@
+{
+ "machine": "the reference machine: Windows 11 Home, 32 logical CPUs",
+ "os": "Windows",
+ "commit": "2fa26f0",
+ "table_sha256": "c63e8684fb5546706314a3a0f064f092096fa9d6a1d041e80b44ac5f5a916488",
+ "tool": "hyperfine 2.0.0",
+ "equality": true,
+ "policy": "benchmark/lint/policies/cap.dw",
+ "profile": "benchmark/lint/profiles/none-not-atomic.json",
+ "binary": {
+  "path": "kamanu-lint.exe",
+  "version": "kamanu-lint 0.1.0 table c63e8684fb5546706314a3a0f064f092096fa9d6a1d041e80b44ac5f5a916488"
+ },
+ "rows": [
+  {
+   "name": "an empty process",
+   "command": "cmd /c exit",
+   "runs": 50,
+   "median_ms": 14.343,
+   "min_ms": 6.985,
+   "max_ms": 25.162,
+   "mean_ms": 14.48,
+   "bar": "the floor: an empty process (S2)",
+   "red": false
+  },
+  {
+   "name": "the vendor's check-parse",
+   "command": "~/.cargo/bin/dogwood.exe check-parse benchmark/lint/policies/cap.dw",
+   "runs": 50,
+   "median_ms": 12.333,
+   "min_ms": 8.702,
+   "max_ms": 35.012,
+   "mean_ms": 13.731,
+   "bar": "S2 exemplar: cold median within 1.5 times an empty process",
+   "red": false
+  },
+  {
+   "name": "the vendor's validate",
+   "command": "~/.cargo/bin/dogwood.exe validate --policy-schema kamanu/examples/dogwood/schema.cedarschema benchmark/lint/policies/cap.dw",
+   "runs": 50,
+   "median_ms": 17.956,
+   "min_ms": 14.3,
+   "max_ms": 38.897,
+   "mean_ms": 19.349,
+   "bar": "S2 exemplar: cold median within 1.5 times an empty process",
+   "red": false
+  },
+  {
+   "name": "kamanu check --quick",
+   "command": "~/AppData/Local/Programs/Python/Python312/python.exe -m kamanu.hunt.cli check benchmark/lint/policies/cap.dw --engine benchmark/lint/profiles/none-not-atomic.json --quick --no-record",
+   "runs": 10,
+   "median_ms": 254.321,
+   "min_ms": 129.471,
+   "max_ms": 534.4,
+   "mean_ms": 264.161,
+   "bar": "S2 exemplar: cold median within 1.5 times an empty process",
+   "red": true
+  },
+  {
+   "name": "the Python kamanu lint",
+   "command": "~/AppData/Local/Programs/Python/Python312/python.exe -m kamanu.hunt.cli lint benchmark/lint/policies/cap.dw --engine benchmark/lint/profiles/none-not-atomic.json",
+   "runs": 50,
+   "median_ms": 241.083,
+   "min_ms": 137.414,
+   "max_ms": 526.741,
+   "mean_ms": 258.463,
+   "bar": "S2 exemplar: cold median within 1.5 times an empty process",
+   "red": true
+  },
+  {
+   "name": "the binary kamanu-lint",
+   "command": "C:/tmp/r17d/wintarget/release/kamanu-lint.exe benchmark/lint/policies/cap.dw --engine benchmark/lint/profiles/none-not-atomic.json",
+   "runs": 50,
+   "median_ms": 8.731,
+   "min_ms": 6.727,
+   "max_ms": 21.752,
+   "mean_ms": 9.643,
+   "bar": "S2 exemplar: cold median within 1.5 times an empty process",
+   "red": false
+  }
+ ]
+}

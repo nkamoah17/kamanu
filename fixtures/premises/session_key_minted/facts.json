@@ -1,0 +1,30 @@
+{
+  "planted": [
+    {
+      "file": "sessions.py",
+      "line": 15,
+      "subject": "session key session_key minted by secrets.token_urlsafe(32)",
+      "query_id": "session_key_minted",
+      "joern_version": "4.0.676",
+      "graph_hash": "50974a3f24dfaaa6594cfcc53b86ba4c229d83a87dc9c8411ed46f5a7f655cf0",
+      "query_sha256": "ab7071b3ead477da339dcc9ca234859c1f4c22f1affd0cbfc3ea23c7b9e7a7fc"
+    }
+  ],
+  "established": [
+    {
+      "file": "sessions.py",
+      "line": 10,
+      "subject": "session key session_key minted by secrets.token_urlsafe(32)",
+      "construct": "library_mint_in_local",
+      "assumptions": [
+        "The names secrets and uuid are the standard library's modules at run time",
+        "The caller cannot predict or set what the operating system's random source returns",
+        "Nothing replaces the key between the line that mints it and the engine that counts over it"
+      ],
+      "query_id": "session_key_minted",
+      "joern_version": "4.0.676",
+      "graph_hash": "8562c1ba03122e62328c52ab91cea12018296331b9c5e35fea6e07802be511b6",
+      "query_sha256": "ab7071b3ead477da339dcc9ca234859c1f4c22f1affd0cbfc3ea23c7b9e7a7fc"
+    }
+  ]
+}

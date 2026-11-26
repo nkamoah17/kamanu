@@ -1,0 +1,2244 @@
+{
+ "about": "R14e: the calibration table R11b published (old, git 40b0bb5, before R14c and R14d) against the republished one (new, evidence/ladder/r6b/calibration.json). Reported classes are read with each table's own classes; 'reported_class' is listed when the class or the set of reported profiles differs.",
+ "old": {
+  "rev": "40b0bb5",
+  "confusion": {
+   "0": [
+    {
+     "true": 0,
+     "reported": 0,
+     "count": 4
+    },
+    {
+     "true": 1,
+     "reported": 1,
+     "count": 4
+    },
+    {
+     "true": 2,
+     "reported": 2,
+     "count": 4
+    },
+    {
+     "true": 3,
+     "reported": 3,
+     "count": 4
+    },
+    {
+     "true": 4,
+     "reported": 4,
+     "count": 4
+    },
+    {
+     "true": 5,
+     "reported": 5,
+     "count": 4
+    },
+    {
+     "true": 6,
+     "reported": 6,
+     "count": 8
+    }
+   ],
+   "1": [
+    {
+     "true": 7,
+     "reported": 7,
+     "count": 4
+    },
+    {
+     "true": 8,
+     "reported": 8,
+     "count": 4
+    },
+    {
+     "true": 9,
+     "reported": 9,
+     "count": 4
+    },
+    {
+     "true": 10,
+     "reported": 10,
+     "count": 4
+    },
+    {
+     "true": 11,
+     "reported": 11,
+     "count": 8
+    },
+    {
+     "true": 12,
+     "reported": 12,
+     "count": 8
+    }
+   ],
+   "2": [
+    {
+     "true": 13,
+     "reported": 13,
+     "count": 4
+    },
+    {
+     "true": 14,
+     "reported": 14,
+     "count": 2
+    },
+    {
+     "true": 15,
+     "reported": 15,
+     "count": 2
+    },
+    {
+     "true": 16,
+     "reported": 16,
+     "count": 4
+    },
+    {
+     "true": 17,
+     "reported": 17,
+     "count": 2
+    },
+    {
+     "true": 18,
+     "reported": 18,
+     "count": 2
+    },
+    {
+     "true": 19,
+     "reported": 19,
+     "count": 6
+    },
+    {
+     "true": 20,
+     "reported": 20,
+     "count": 2
+    },
+    {
+     "true": 21,
+     "reported": 21,
+     "count": 6
+    },
+    {
+     "true": 22,
+     "reported": 22,
+     "count": 2
+    }
+   ]
+  },
+  "planted": 96,
+  "strangers": 6,
+  "noise": 64,
+  "noise_runs": 384,
+  "right": 96
+ },
+ "new": {
+  "confusion": {
+   "0": [
+    {
+     "true": 0,
+     "reported": 0,
+     "count": 4
+    },
+    {
+     "true": 1,
+     "reported": 1,
+     "count": 4
+    },
+    {
+     "true": 2,
+     "reported": 2,
+     "count": 4
+    },
+    {
+     "true": 3,
+     "reported": 3,
+     "count": 4
+    },
+    {
+     "true": 4,
+     "reported": 4,
+     "count": 4
+    },
+    {
+     "true": 5,
+     "reported": 5,
+     "count": 4
+    },
+    {
+     "true": 6,
+     "reported": 6,
+     "count": 8
+    }
+   ],
+   "1": [
+    {
+     "true": 7,
+     "reported": 7,
+     "count": 4
+    },
+    {
+     "true": 8,
+     "reported": 8,
+     "count": 4
+    },
+    {
+     "true": 9,
+     "reported": 9,
+     "count": 4
+    },
+    {
+     "true": 10,
+     "reported": 10,
+     "count": 4
+    },
+    {
+     "true": 11,
+     "reported": 11,
+     "count": 8
+    },
+    {
+     "true": 12,
+     "reported": 12,
+     "count": 8
+    }
+   ],
+   "2": [
+    {
+     "true": 13,
+     "reported": 13,
+     "count": 4
+    },
+    {
+     "true": 14,
+     "reported": 14,
+     "count": 2
+    },
+    {
+     "true": 15,
+     "reported": 15,
+     "count": 2
+    },
+    {
+     "true": 16,
+     "reported": 16,
+     "count": 4
+    },
+    {
+     "true": 17,
+     "reported": 17,
+     "count": 2
+    },
+    {
+     "true": 18,
+     "reported": 18,
+     "count": 2
+    },
+    {
+     "true": 19,
+     "reported": 19,
+     "count": 6
+    },
+    {
+     "true": 20,
+     "reported": 20,
+     "count": 2
+    },
+    {
+     "true": 21,
+     "reported": 21,
+     "count": 6
+    },
+    {
+     "true": 22,
+     "reported": 22,
+     "count": 2
+    }
+   ]
+  },
+  "planted": 96,
+  "strangers": 6,
+  "noise": 64,
+  "noise_runs": 384,
+  "right": 96
+ },
+ "silent": {
+  "before": [
+   {
+    "profile": "fixed/reflexive/request/non-atomic",
+    "mode": "drop",
+    "p": 1
+   },
+   {
+    "profile": "fixed/reflexive/error/non-atomic",
+    "mode": "drop",
+    "p": 2
+   }
+  ],
+  "after": [
+   {
+    "profile": "fixed/reflexive/no marks/non-atomic",
+    "mode": "drop",
+    "p": 1
+   },
+   {
+    "profile": "fixed/reflexive/error/non-atomic",
+    "mode": "drop",
+    "p": 2
+   },
+   {
+    "profile": "fixed/non-reflexive/no marks/non-atomic",
+    "mode": "drop",
+    "p": 1
+   },
+   {
+    "profile": "fixed/non-reflexive/no marks/non-atomic",
+    "mode": "delay",
+    "p": 1
+   }
+  ],
+  "new": [
+   {
+    "profile": "fixed/reflexive/no marks/non-atomic",
+    "mode": "drop",
+    "p": 1,
+    "trace": "evidence/ladder/r11b/fixed-refl-none-nonatomic-drop-p1.json",
+    "reason": "At p=1% the noise dropped 4 responses in 4 of the run's 295 sessions (session 14: the fail of call 0; session 99: the fail of call 3; session 128: the settle of call 1; and 1 more session). An engine hears that a call ended only from its response; with the response dropped this non-atomic engine never closes the call, so it records the call's request late, at a later admission, or never, while the caller's log shows the call settled or failed. The run reports 2 profiles where the noiseless run reported 2. Every profile it reports is still in the true profile's class, the true profile among them, and no session is left unexplained (residual 0, nothing 'not refuted'), so the run has nothing to announce: the change narrows the report, it does not mislead it.",
+    "old_row": {
+     "smallest": 2,
+     "change": "profile",
+     "announced": true
+    },
+    "old_run_at_p": {
+     "residual": 0,
+     "not_refuted": [],
+     "changed": null
+    },
+    "announced_before_r14c": true,
+    "announced_before_r14c_at_this_p": false
+   },
+   {
+    "profile": "fixed/non-reflexive/no marks/non-atomic",
+    "mode": "drop",
+    "p": 1,
+    "trace": "evidence/ladder/r11b/fixed-nonrefl-none-nonatomic-drop-p1.json",
+    "reason": "At p=1% the noise dropped 4 responses in 4 of the run's 299 sessions (session 8: the settle of call 1; session 74: the fail of call 3; session 106: the fail of call 1; and 1 more session). An engine hears that a call ended only from its response; with the response dropped this non-atomic engine never closes the call, so it records the call's request late, at a later admission, or never, while the caller's log shows the call settled or failed. Session 21 lost no response, yet it is explained by none of fixed/non-reflexive/no marks/atomic, fixed/non-reflexive/request/atomic, fixed/non-reflexive/error/atomic, fixed/non-reflexive/error+request/atomic, and its verdicts differ from the noiseless run's session 21: the engine draws its recording schedule from one stream for all its sessions, and the calls left open by the lost responses took extra draws from it, so every later session got another draw of the same non-atomic schedule; in session 21 (4 calls) that draw recorded a call after its admission, which no atomic profile does. The noise did not invent this behaviour: the engine is non-atomic, and the noise moved where it shows. The run reports 4 profiles where the noiseless run reported 8. Every profile it reports is still in the true profile's class, the true profile among them, and no session is left unexplained (residual 0, nothing 'not refuted'), so the run has nothing to announce: the change narrows the report, it does not mislead it.",
+    "old_row": {
+     "smallest": 20,
+     "change": "profile",
+     "announced": true
+    },
+    "old_run_at_p": {
+     "residual": 0,
+     "not_refuted": [
+      "atomic"
+     ],
+     "changed": null
+    },
+    "announced_before_r14c": true,
+    "announced_before_r14c_at_this_p": false
+   },
+   {
+    "profile": "fixed/non-reflexive/no marks/non-atomic",
+    "mode": "delay",
+    "p": 1,
+    "trace": "evidence/ladder/r11b/fixed-nonrefl-none-nonatomic-delay-p1.json",
+    "reason": "At p=1% the noise delayed 5 s 4 responses in 4 of the run's 299 sessions (session 3: the settle of call 2; session 10: the fail of call 0; session 74: the fail of call 3; and 1 more session). A delayed response reaches the engine 5 s after the caller sent it, so for 5 s the engine still has the call in flight while the caller's log shows it closed. Session 21 lost no response, yet it is explained by none of fixed/non-reflexive/no marks/atomic, fixed/non-reflexive/request/atomic, fixed/non-reflexive/error/atomic, fixed/non-reflexive/error+request/atomic, and its verdicts differ from the noiseless run's session 21: the engine draws its recording schedule from one stream for all its sessions, and the calls left open by the lost responses took extra draws from it, so every later session got another draw of the same non-atomic schedule; in session 21 (4 calls) that draw recorded a call after its admission, which no atomic profile does. The noise did not invent this behaviour: the engine is non-atomic, and the noise moved where it shows. The run reports 4 profiles where the noiseless run reported 8. Every profile it reports is still in the true profile's class, the true profile among them, and no session is left unexplained (residual 0, nothing 'not refuted'), so the run has nothing to announce: the change narrows the report, it does not mislead it.",
+    "old_row": {
+     "smallest": 5,
+     "change": "profile",
+     "announced": true
+    },
+    "old_run_at_p": {
+     "residual": 0,
+     "not_refuted": [
+      "atomic"
+     ],
+     "changed": null
+    },
+    "announced_before_r14c": true,
+    "announced_before_r14c_at_this_p": false
+   }
+  ],
+  "gone": [
+   {
+    "profile": "fixed/reflexive/request/non-atomic",
+    "mode": "drop",
+    "p": 1,
+    "now": {
+     "smallest": 10,
+     "change": "both",
+     "announced": true
+    },
+    "entry": "fixed"
+   }
+  ]
+ },
+ "differences": [
+  {
+   "kind": "planted",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/error+request/non-atomic",
+   "seed": 6266031,
+   "reported_class": {
+    "old": 6,
+    "new": 6,
+    "old_profiles": 8,
+    "new_profiles": 4
+   }
+  },
+  {
+   "kind": "planted",
+   "policy": 1,
+   "profile": "fixed/reflexive/error+request/non-atomic",
+   "seed": 6266123,
+   "reported_class": {
+    "old": 11,
+    "new": 11,
+    "old_profiles": 8,
+    "new_profiles": 4
+   }
+  },
+  {
+   "kind": "planted",
+   "policy": 1,
+   "profile": "fixed/non-reflexive/no marks/non-atomic",
+   "seed": 6266125,
+   "reported_class": {
+    "old": 12,
+    "new": 12,
+    "old_profiles": 8,
+    "new_profiles": 4
+   }
+  },
+  {
+   "kind": "planted",
+   "policy": 2,
+   "profile": "fixed/reflexive/request/non-atomic",
+   "seed": 6266219,
+   "reported_class": {
+    "old": 19,
+    "new": 19,
+    "old_profiles": 3,
+    "new_profiles": 1
+   }
+  },
+  {
+   "kind": "planted",
+   "policy": 2,
+   "profile": "fixed/reflexive/error+request/atomic",
+   "seed": 6266222,
+   "reported_class": {
+    "old": 19,
+    "new": 19,
+    "old_profiles": 6,
+    "new_profiles": 4
+   }
+  },
+  {
+   "kind": "planted",
+   "policy": 2,
+   "profile": "fixed/non-reflexive/no marks/atomic",
+   "seed": 6266224,
+   "reported_class": {
+    "old": 21,
+    "new": 21,
+    "old_profiles": 6,
+    "new_profiles": 4
+   }
+  },
+  {
+   "kind": "planted",
+   "policy": 2,
+   "profile": "fixed/non-reflexive/no marks/non-atomic",
+   "seed": 6266225,
+   "reported_class": {
+    "old": 21,
+    "new": 21,
+    "old_profiles": 6,
+    "new_profiles": 3
+   }
+  },
+  {
+   "kind": "planted",
+   "policy": 2,
+   "profile": "fixed/non-reflexive/error+request/atomic",
+   "seed": 6266230,
+   "reported_class": {
+    "old": 21,
+    "new": 21,
+    "old_profiles": 6,
+    "new_profiles": 4
+   }
+  },
+  {
+   "kind": "stranger",
+   "policy": 0,
+   "name": "success-delay",
+   "seed": 43865,
+   "residual": {
+    "old": 13,
+    "new": 14
+   }
+  },
+  {
+   "kind": "stranger",
+   "policy": 0,
+   "name": "miscount",
+   "seed": 43866,
+   "residual": {
+    "old": 12,
+    "new": 8
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/no marks/non-atomic",
+   "mode": "drop",
+   "p": 2,
+   "seed": 81459,
+   "residual": {
+    "old": 1,
+    "new": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/no marks/non-atomic",
+   "mode": "drop",
+   "p": 5,
+   "seed": 81459,
+   "reported_class": {
+    "old": 0,
+    "new": "none",
+    "old_profiles": 2,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/no marks/non-atomic",
+   "mode": "drop",
+   "p": 10,
+   "seed": 81459,
+   "residual": {
+    "old": 0,
+    "new": 3
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/no marks/non-atomic",
+   "mode": "drop",
+   "p": 20,
+   "seed": 81459,
+   "residual": {
+    "old": 3,
+    "new": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/no marks/non-atomic",
+   "mode": "delay",
+   "p": 2,
+   "seed": 81459,
+   "residual": {
+    "old": 1,
+    "new": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/no marks/non-atomic",
+   "mode": "delay",
+   "p": 5,
+   "seed": 81459,
+   "reported_class": {
+    "old": 0,
+    "new": "none",
+    "old_profiles": 2,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/no marks/non-atomic",
+   "mode": "delay",
+   "p": 10,
+   "seed": 81459,
+   "reported_class": {
+    "old": 0,
+    "new": "none",
+    "old_profiles": 2,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 1
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/no marks/non-atomic",
+   "mode": "delay",
+   "p": 20,
+   "seed": 81459,
+   "residual": {
+    "old": 2,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/request/non-atomic",
+   "mode": "drop",
+   "p": 1,
+   "seed": 81461,
+   "reported_class": {
+    "old": "none",
+    "new": 1,
+    "old_profiles": 0,
+    "new_profiles": 2
+   },
+   "residual": {
+    "old": 1,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/request/non-atomic",
+   "mode": "drop",
+   "p": 5,
+   "seed": 81461,
+   "reported_class": {
+    "old": 1,
+    "new": "none",
+    "old_profiles": 2,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 3
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/request/non-atomic",
+   "mode": "drop",
+   "p": 10,
+   "seed": 81461,
+   "residual": {
+    "old": 2,
+    "new": 4
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/request/non-atomic",
+   "mode": "drop",
+   "p": 20,
+   "seed": 81461,
+   "residual": {
+    "old": 11,
+    "new": 10
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/request/non-atomic",
+   "mode": "delay",
+   "p": 5,
+   "seed": 81461,
+   "reported_class": {
+    "old": 1,
+    "new": "none",
+    "old_profiles": 2,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 1
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/request/non-atomic",
+   "mode": "delay",
+   "p": 10,
+   "seed": 81461,
+   "residual": {
+    "old": 2,
+    "new": 3
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/request/non-atomic",
+   "mode": "delay",
+   "p": 20,
+   "seed": 81461,
+   "residual": {
+    "old": 2,
+    "new": 4
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/error/non-atomic",
+   "mode": "drop",
+   "p": 1,
+   "seed": 81463,
+   "reported_class": {
+    "old": "none",
+    "new": 0,
+    "old_profiles": 0,
+    "new_profiles": 2
+   },
+   "residual": {
+    "old": 1,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/error/non-atomic",
+   "mode": "drop",
+   "p": 20,
+   "seed": 81463,
+   "residual": {
+    "old": 2,
+    "new": 4
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/error/non-atomic",
+   "mode": "delay",
+   "p": 5,
+   "seed": 81463,
+   "reported_class": {
+    "old": 0,
+    "new": "none",
+    "old_profiles": 2,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 1
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/error/non-atomic",
+   "mode": "delay",
+   "p": 10,
+   "seed": 81463,
+   "reported_class": {
+    "old": 0,
+    "new": "none",
+    "old_profiles": 2,
+    "new_profiles": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/error+request/non-atomic",
+   "mode": "drop",
+   "p": 1,
+   "seed": 81465,
+   "reported_class": {
+    "old": 1,
+    "new": "none",
+    "old_profiles": 2,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 1
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/error+request/non-atomic",
+   "mode": "drop",
+   "p": 5,
+   "seed": 81465,
+   "residual": {
+    "old": 3,
+    "new": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/error+request/non-atomic",
+   "mode": "drop",
+   "p": 10,
+   "seed": 81465,
+   "residual": {
+    "old": 2,
+    "new": 3
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/error+request/non-atomic",
+   "mode": "delay",
+   "p": 5,
+   "seed": 81465,
+   "reported_class": {
+    "old": "none",
+    "new": 1,
+    "old_profiles": 0,
+    "new_profiles": 2
+   },
+   "residual": {
+    "old": 1,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/error+request/non-atomic",
+   "mode": "delay",
+   "p": 10,
+   "seed": 81465,
+   "residual": {
+    "old": 4,
+    "new": 1
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/reflexive/error+request/non-atomic",
+   "mode": "delay",
+   "p": 20,
+   "seed": 81465,
+   "residual": {
+    "old": 2,
+    "new": 6
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/no marks/non-atomic",
+   "mode": "drop",
+   "p": 10,
+   "seed": 81467,
+   "residual": {
+    "old": 3,
+    "new": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/no marks/non-atomic",
+   "mode": "drop",
+   "p": 20,
+   "seed": 81467,
+   "residual": {
+    "old": 1,
+    "new": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/no marks/non-atomic",
+   "mode": "delay",
+   "p": 1,
+   "seed": 81467,
+   "reported_class": {
+    "old": 2,
+    "new": "none",
+    "old_profiles": 2,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 1
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/no marks/non-atomic",
+   "mode": "delay",
+   "p": 2,
+   "seed": 81467,
+   "reported_class": {
+    "old": "none",
+    "new": 2,
+    "old_profiles": 0,
+    "new_profiles": 2
+   },
+   "residual": {
+    "old": 1,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/no marks/non-atomic",
+   "mode": "delay",
+   "p": 5,
+   "seed": 81467,
+   "reported_class": {
+    "old": 2,
+    "new": "none",
+    "old_profiles": 2,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 1
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/no marks/non-atomic",
+   "mode": "delay",
+   "p": 10,
+   "seed": 81467,
+   "reported_class": {
+    "old": 2,
+    "new": "none",
+    "old_profiles": 2,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/no marks/non-atomic",
+   "mode": "delay",
+   "p": 20,
+   "seed": 81467,
+   "residual": {
+    "old": 4,
+    "new": 3
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/request/non-atomic",
+   "mode": "drop",
+   "p": 1,
+   "seed": 81469,
+   "reported_class": {
+    "old": "none",
+    "new": 3,
+    "old_profiles": 0,
+    "new_profiles": 2
+   },
+   "residual": {
+    "old": 1,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/request/non-atomic",
+   "mode": "drop",
+   "p": 2,
+   "seed": 81469,
+   "residual": {
+    "old": 2,
+    "new": 1
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/request/non-atomic",
+   "mode": "drop",
+   "p": 5,
+   "seed": 81469,
+   "reported_class": {
+    "old": 3,
+    "new": "none",
+    "old_profiles": 2,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/request/non-atomic",
+   "mode": "drop",
+   "p": 10,
+   "seed": 81469,
+   "residual": {
+    "old": 1,
+    "new": 5
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/request/non-atomic",
+   "mode": "drop",
+   "p": 20,
+   "seed": 81469,
+   "residual": {
+    "old": 4,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/request/non-atomic",
+   "mode": "delay",
+   "p": 2,
+   "seed": 81469,
+   "reported_class": {
+    "old": 3,
+    "new": "none",
+    "old_profiles": 2,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/request/non-atomic",
+   "mode": "delay",
+   "p": 20,
+   "seed": 81469,
+   "residual": {
+    "old": 5,
+    "new": 6
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/error/non-atomic",
+   "mode": "drop",
+   "p": 1,
+   "seed": 81471,
+   "reported_class": {
+    "old": 2,
+    "new": "none",
+    "old_profiles": 2,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/error/non-atomic",
+   "mode": "drop",
+   "p": 5,
+   "seed": 81471,
+   "residual": {
+    "old": 3,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/error/non-atomic",
+   "mode": "drop",
+   "p": 10,
+   "seed": 81471,
+   "residual": {
+    "old": 3,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/error/non-atomic",
+   "mode": "drop",
+   "p": 20,
+   "seed": 81471,
+   "residual": {
+    "old": 2,
+    "new": 4
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/error/non-atomic",
+   "mode": "delay",
+   "p": 2,
+   "seed": 81471,
+   "reported_class": {
+    "old": "none",
+    "new": 2,
+    "old_profiles": 0,
+    "new_profiles": 2
+   },
+   "residual": {
+    "old": 1,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/error/non-atomic",
+   "mode": "delay",
+   "p": 5,
+   "seed": 81471,
+   "reported_class": {
+    "old": "none",
+    "new": 2,
+    "old_profiles": 0,
+    "new_profiles": 2
+   },
+   "residual": {
+    "old": 1,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/error/non-atomic",
+   "mode": "delay",
+   "p": 10,
+   "seed": 81471,
+   "residual": {
+    "old": 2,
+    "new": 1
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/error/non-atomic",
+   "mode": "delay",
+   "p": 20,
+   "seed": 81471,
+   "residual": {
+    "old": 1,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/error+request/non-atomic",
+   "mode": "drop",
+   "p": 5,
+   "seed": 81473,
+   "residual": {
+    "old": 3,
+    "new": 4
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/error+request/non-atomic",
+   "mode": "drop",
+   "p": 10,
+   "seed": 81473,
+   "residual": {
+    "old": 5,
+    "new": 4
+   },
+   "not_refuted": {
+    "old": [
+     "atomic"
+    ],
+    "new": []
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/error+request/non-atomic",
+   "mode": "delay",
+   "p": 2,
+   "seed": 81473,
+   "residual": {
+    "old": 3,
+    "new": 1
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/error+request/non-atomic",
+   "mode": "delay",
+   "p": 5,
+   "seed": 81473,
+   "residual": {
+    "old": 1,
+    "new": 3
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "sliding/non-reflexive/error+request/non-atomic",
+   "mode": "delay",
+   "p": 10,
+   "seed": 81473,
+   "residual": {
+    "old": 3,
+    "new": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/no marks/non-atomic",
+   "mode": "drop",
+   "p": 5,
+   "seed": 81475,
+   "reported_class": {
+    "old": 4,
+    "new": 4,
+    "old_profiles": 4,
+    "new_profiles": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/no marks/non-atomic",
+   "mode": "drop",
+   "p": 10,
+   "seed": 81475,
+   "reported_class": {
+    "old": 4,
+    "new": "none",
+    "old_profiles": 4,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/no marks/non-atomic",
+   "mode": "drop",
+   "p": 20,
+   "seed": 81475,
+   "reported_class": {
+    "old": "none",
+    "new": 4,
+    "old_profiles": 0,
+    "new_profiles": 2
+   },
+   "residual": {
+    "old": 1,
+    "new": 0
+   },
+   "not_refuted": {
+    "old": [
+     "atomic"
+    ],
+    "new": []
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/no marks/non-atomic",
+   "mode": "delay",
+   "p": 20,
+   "seed": 81475,
+   "reported_class": {
+    "old": 4,
+    "new": "none",
+    "old_profiles": 2,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 1
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/request/non-atomic",
+   "mode": "drop",
+   "p": 0,
+   "seed": 81477,
+   "reported_class": {
+    "old": 5,
+    "new": 5,
+    "old_profiles": 4,
+    "new_profiles": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/request/non-atomic",
+   "mode": "drop",
+   "p": 10,
+   "seed": 81477,
+   "residual": {
+    "old": 2,
+    "new": 1
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/request/non-atomic",
+   "mode": "drop",
+   "p": 20,
+   "seed": 81477,
+   "reported_class": {
+    "old": 5,
+    "new": "none",
+    "old_profiles": 2,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 1
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/request/non-atomic",
+   "mode": "delay",
+   "p": 0,
+   "seed": 81477,
+   "reported_class": {
+    "old": 5,
+    "new": 5,
+    "old_profiles": 4,
+    "new_profiles": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/request/non-atomic",
+   "mode": "delay",
+   "p": 1,
+   "seed": 81477,
+   "reported_class": {
+    "old": 5,
+    "new": 5,
+    "old_profiles": 4,
+    "new_profiles": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/request/non-atomic",
+   "mode": "delay",
+   "p": 2,
+   "seed": 81477,
+   "reported_class": {
+    "old": "none",
+    "new": 5,
+    "old_profiles": 0,
+    "new_profiles": 2
+   },
+   "residual": {
+    "old": 1,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/request/non-atomic",
+   "mode": "delay",
+   "p": 5,
+   "seed": 81477,
+   "reported_class": {
+    "old": 5,
+    "new": 5,
+    "old_profiles": 4,
+    "new_profiles": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/request/non-atomic",
+   "mode": "delay",
+   "p": 20,
+   "seed": 81477,
+   "reported_class": {
+    "old": 5,
+    "new": "none",
+    "old_profiles": 2,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 1
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/error/non-atomic",
+   "mode": "drop",
+   "p": 5,
+   "seed": 81479,
+   "reported_class": {
+    "old": "none",
+    "new": 4,
+    "old_profiles": 0,
+    "new_profiles": 2
+   },
+   "residual": {
+    "old": 1,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/error/non-atomic",
+   "mode": "delay",
+   "p": 10,
+   "seed": 81479,
+   "reported_class": {
+    "old": "none",
+    "new": 4,
+    "old_profiles": 0,
+    "new_profiles": 4
+   },
+   "residual": {
+    "old": 1,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/error/non-atomic",
+   "mode": "delay",
+   "p": 20,
+   "seed": 81479,
+   "reported_class": {
+    "old": 4,
+    "new": 4,
+    "old_profiles": 4,
+    "new_profiles": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/error+request/non-atomic",
+   "mode": "drop",
+   "p": 0,
+   "seed": 81481,
+   "not_refuted": {
+    "old": [],
+    "new": [
+     "atomic"
+    ]
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/error+request/non-atomic",
+   "mode": "drop",
+   "p": 1,
+   "seed": 81481,
+   "not_refuted": {
+    "old": [],
+    "new": [
+     "atomic"
+    ]
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/error+request/non-atomic",
+   "mode": "drop",
+   "p": 2,
+   "seed": 81481,
+   "not_refuted": {
+    "old": [],
+    "new": [
+     "atomic"
+    ]
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/error+request/non-atomic",
+   "mode": "drop",
+   "p": 5,
+   "seed": 81481,
+   "not_refuted": {
+    "old": [],
+    "new": [
+     "atomic"
+    ]
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/error+request/non-atomic",
+   "mode": "drop",
+   "p": 10,
+   "seed": 81481,
+   "not_refuted": {
+    "old": [],
+    "new": [
+     "atomic"
+    ]
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/error+request/non-atomic",
+   "mode": "drop",
+   "p": 20,
+   "seed": 81481,
+   "not_refuted": {
+    "old": [],
+    "new": [
+     "atomic"
+    ]
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/error+request/non-atomic",
+   "mode": "delay",
+   "p": 0,
+   "seed": 81481,
+   "not_refuted": {
+    "old": [],
+    "new": [
+     "atomic"
+    ]
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/error+request/non-atomic",
+   "mode": "delay",
+   "p": 1,
+   "seed": 81481,
+   "not_refuted": {
+    "old": [],
+    "new": [
+     "atomic"
+    ]
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/error+request/non-atomic",
+   "mode": "delay",
+   "p": 2,
+   "seed": 81481,
+   "not_refuted": {
+    "old": [],
+    "new": [
+     "atomic"
+    ]
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/error+request/non-atomic",
+   "mode": "delay",
+   "p": 5,
+   "seed": 81481,
+   "reported_class": {
+    "old": "none",
+    "new": 5,
+    "old_profiles": 0,
+    "new_profiles": 2
+   },
+   "residual": {
+    "old": 1,
+    "new": 0
+   },
+   "not_refuted": {
+    "old": [],
+    "new": [
+     "atomic"
+    ]
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/error+request/non-atomic",
+   "mode": "delay",
+   "p": 10,
+   "seed": 81481,
+   "not_refuted": {
+    "old": [],
+    "new": [
+     "atomic"
+    ]
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/reflexive/error+request/non-atomic",
+   "mode": "delay",
+   "p": 20,
+   "seed": 81481,
+   "reported_class": {
+    "old": "none",
+    "new": 5,
+    "old_profiles": 0,
+    "new_profiles": 2
+   },
+   "residual": {
+    "old": 2,
+    "new": 0
+   },
+   "not_refuted": {
+    "old": [],
+    "new": [
+     "atomic"
+    ]
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/no marks/non-atomic",
+   "mode": "drop",
+   "p": 0,
+   "seed": 81483,
+   "reported_class": {
+    "old": 6,
+    "new": 6,
+    "old_profiles": 4,
+    "new_profiles": 8
+   },
+   "not_refuted": {
+    "old": [
+     "atomic"
+    ],
+    "new": []
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/no marks/non-atomic",
+   "mode": "drop",
+   "p": 1,
+   "seed": 81483,
+   "not_refuted": {
+    "old": [
+     "atomic"
+    ],
+    "new": []
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/no marks/non-atomic",
+   "mode": "drop",
+   "p": 2,
+   "seed": 81483,
+   "not_refuted": {
+    "old": [
+     "atomic"
+    ],
+    "new": []
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/no marks/non-atomic",
+   "mode": "drop",
+   "p": 5,
+   "seed": 81483,
+   "reported_class": {
+    "old": 6,
+    "new": "none",
+    "old_profiles": 4,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 1
+   },
+   "not_refuted": {
+    "old": [
+     "atomic"
+    ],
+    "new": []
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/no marks/non-atomic",
+   "mode": "drop",
+   "p": 10,
+   "seed": 81483,
+   "reported_class": {
+    "old": 6,
+    "new": "none",
+    "old_profiles": 4,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 2
+   },
+   "not_refuted": {
+    "old": [
+     "atomic"
+    ],
+    "new": []
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/no marks/non-atomic",
+   "mode": "drop",
+   "p": 20,
+   "seed": 81483,
+   "residual": {
+    "old": 1,
+    "new": 4
+   },
+   "not_refuted": {
+    "old": [
+     "atomic"
+    ],
+    "new": []
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/no marks/non-atomic",
+   "mode": "delay",
+   "p": 0,
+   "seed": 81483,
+   "reported_class": {
+    "old": 6,
+    "new": 6,
+    "old_profiles": 4,
+    "new_profiles": 8
+   },
+   "not_refuted": {
+    "old": [
+     "atomic"
+    ],
+    "new": []
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/no marks/non-atomic",
+   "mode": "delay",
+   "p": 1,
+   "seed": 81483,
+   "not_refuted": {
+    "old": [
+     "atomic"
+    ],
+    "new": []
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/no marks/non-atomic",
+   "mode": "delay",
+   "p": 2,
+   "seed": 81483,
+   "reported_class": {
+    "old": 6,
+    "new": 6,
+    "old_profiles": 4,
+    "new_profiles": 8
+   },
+   "not_refuted": {
+    "old": [
+     "atomic"
+    ],
+    "new": []
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/no marks/non-atomic",
+   "mode": "delay",
+   "p": 5,
+   "seed": 81483,
+   "residual": {
+    "old": 1,
+    "new": 2
+   },
+   "not_refuted": {
+    "old": [
+     "atomic"
+    ],
+    "new": []
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/no marks/non-atomic",
+   "mode": "delay",
+   "p": 10,
+   "seed": 81483,
+   "residual": {
+    "old": 2,
+    "new": 1
+   },
+   "not_refuted": {
+    "old": [
+     "atomic"
+    ],
+    "new": []
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/no marks/non-atomic",
+   "mode": "delay",
+   "p": 20,
+   "seed": 81483,
+   "not_refuted": {
+    "old": [
+     "atomic"
+    ],
+    "new": []
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/request/non-atomic",
+   "mode": "drop",
+   "p": 5,
+   "seed": 81485,
+   "reported_class": {
+    "old": 6,
+    "new": 6,
+    "old_profiles": 8,
+    "new_profiles": 4
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/request/non-atomic",
+   "mode": "drop",
+   "p": 10,
+   "seed": 81485,
+   "reported_class": {
+    "old": 6,
+    "new": 6,
+    "old_profiles": 8,
+    "new_profiles": 4
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/request/non-atomic",
+   "mode": "drop",
+   "p": 20,
+   "seed": 81485,
+   "reported_class": {
+    "old": "none",
+    "new": 6,
+    "old_profiles": 0,
+    "new_profiles": 4
+   },
+   "residual": {
+    "old": 2,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/request/non-atomic",
+   "mode": "delay",
+   "p": 5,
+   "seed": 81485,
+   "reported_class": {
+    "old": "none",
+    "new": 6,
+    "old_profiles": 0,
+    "new_profiles": 4
+   },
+   "residual": {
+    "old": 1,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/request/non-atomic",
+   "mode": "delay",
+   "p": 20,
+   "seed": 81485,
+   "reported_class": {
+    "old": "none",
+    "new": 6,
+    "old_profiles": 0,
+    "new_profiles": 4
+   },
+   "residual": {
+    "old": 1,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/error/non-atomic",
+   "mode": "drop",
+   "p": 0,
+   "seed": 81487,
+   "reported_class": {
+    "old": 6,
+    "new": 6,
+    "old_profiles": 8,
+    "new_profiles": 4
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/error/non-atomic",
+   "mode": "drop",
+   "p": 1,
+   "seed": 81487,
+   "reported_class": {
+    "old": "none",
+    "new": 6,
+    "old_profiles": 0,
+    "new_profiles": 4
+   },
+   "residual": {
+    "old": 1,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/error/non-atomic",
+   "mode": "drop",
+   "p": 2,
+   "seed": 81487,
+   "not_refuted": {
+    "old": [
+     "atomic"
+    ],
+    "new": []
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/error/non-atomic",
+   "mode": "drop",
+   "p": 5,
+   "seed": 81487,
+   "reported_class": {
+    "old": 6,
+    "new": 6,
+    "old_profiles": 8,
+    "new_profiles": 4
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/error/non-atomic",
+   "mode": "drop",
+   "p": 10,
+   "seed": 81487,
+   "residual": {
+    "old": 1,
+    "new": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/error/non-atomic",
+   "mode": "drop",
+   "p": 20,
+   "seed": 81487,
+   "residual": {
+    "old": 3,
+    "new": 1
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/error/non-atomic",
+   "mode": "delay",
+   "p": 0,
+   "seed": 81487,
+   "reported_class": {
+    "old": 6,
+    "new": 6,
+    "old_profiles": 8,
+    "new_profiles": 4
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/error/non-atomic",
+   "mode": "delay",
+   "p": 1,
+   "seed": 81487,
+   "reported_class": {
+    "old": 6,
+    "new": 6,
+    "old_profiles": 8,
+    "new_profiles": 4
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/error/non-atomic",
+   "mode": "delay",
+   "p": 2,
+   "seed": 81487,
+   "reported_class": {
+    "old": 6,
+    "new": 6,
+    "old_profiles": 8,
+    "new_profiles": 4
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/error/non-atomic",
+   "mode": "delay",
+   "p": 5,
+   "seed": 81487,
+   "reported_class": {
+    "old": 6,
+    "new": "none",
+    "old_profiles": 8,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 1
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/error/non-atomic",
+   "mode": "delay",
+   "p": 10,
+   "seed": 81487,
+   "reported_class": {
+    "old": 6,
+    "new": "none",
+    "old_profiles": 4,
+    "new_profiles": 0
+   },
+   "residual": {
+    "old": 0,
+    "new": 1
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/error/non-atomic",
+   "mode": "delay",
+   "p": 20,
+   "seed": 81487,
+   "reported_class": {
+    "old": "none",
+    "new": 6,
+    "old_profiles": 0,
+    "new_profiles": 8
+   },
+   "residual": {
+    "old": 1,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/error+request/non-atomic",
+   "mode": "drop",
+   "p": 5,
+   "seed": 81489,
+   "reported_class": {
+    "old": 6,
+    "new": 6,
+    "old_profiles": 8,
+    "new_profiles": 4
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/error+request/non-atomic",
+   "mode": "drop",
+   "p": 10,
+   "seed": 81489,
+   "reported_class": {
+    "old": "none",
+    "new": 6,
+    "old_profiles": 0,
+    "new_profiles": 4
+   },
+   "residual": {
+    "old": 1,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/error+request/non-atomic",
+   "mode": "drop",
+   "p": 20,
+   "seed": 81489,
+   "reported_class": {
+    "old": "none",
+    "new": 6,
+    "old_profiles": 0,
+    "new_profiles": 4
+   },
+   "residual": {
+    "old": 1,
+    "new": 0
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/error+request/non-atomic",
+   "mode": "delay",
+   "p": 10,
+   "seed": 81489,
+   "residual": {
+    "old": 1,
+    "new": 2
+   }
+  },
+  {
+   "kind": "noise",
+   "policy": 0,
+   "profile": "fixed/non-reflexive/error+request/non-atomic",
+   "mode": "delay",
+   "p": 20,
+   "seed": 81489,
+   "residual": {
+    "old": 1,
+    "new": 2
+   }
+  }
+ ],
+ "count_by_kind": {
+  "noise": 113,
+  "planted": 8,
+  "stranger": 2
+ },
+ "why": {
+  "noise": "Under noise R14c's hunt sends other sessions (lag first, the conformance suite), so the dropped or delayed responses land on other calls and the reported profiles and residual move both ways, and R14c also changed how the hunt reaches its atomic claim (its own race trials, none when no window fits, a row that names no profile carries none), so not_refuted ['atomic'] appears or goes even at p=0; R14d meters the same sessions and changes none.",
+  "planted": "R14c changed what the hunt sends before the judge's probes (lag probed first, with a filler event between a refusal and the decision that reads it, then a consistency replay and a conformance suite to depth 4), so a planted trial runs more and other sessions and fewer profiles explain them all: every planted difference is the same reported class with fewer profiles in it (no trial changed class, all 96 stay right); R14d only meters the same sessions (a bundled simulated engine is admitted without a scope), so it changes none.",
+  "stranger": "R14c's hunt sends other sessions to a stranger (lag first, the conformance suite), and a stranger's residual is the number of sessions no best-fitting profile explains, so it moves with what was sent (every stranger still has a residual and no reported profile); R14d's ceilings are never reached by a bundled engine and change nothing here."
+ }
+}

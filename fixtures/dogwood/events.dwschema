@@ -1,0 +1,50 @@
+// DEFAULT_EVENT_SCHEMA from guide/03-event-schema.md, plus history-only kinds for the
+// kernel's refund, confirm and deny events, which have no default-schema spelling.
+decision event <A>::request {
+    ...inputs(A),
+    pin callerPrincipal: principalType(A) = principal,
+    callerResource:    resourceType(A),
+    requestId:         String,
+    sessionId:         String,
+}
+
+event <A>::response {
+    ...inputs(A),
+    ...outputs(A),
+    pin callerPrincipal: principalType(A) = principal,
+    callerResource:    resourceType(A),
+    requestId:         String,
+    sessionId:         String,
+}
+
+event <A>::error {
+    ...inputs(A),
+    pin callerPrincipal: principalType(A) = principal,
+    callerResource:    resourceType(A),
+    requestId:         String,
+    sessionId:         String,
+}
+
+event <A>::refund {
+    ...inputs(A),
+    pin callerPrincipal: principalType(A) = principal,
+    callerResource:    resourceType(A),
+    requestId:         String,
+    sessionId:         String,
+}
+
+event <A>::confirm {
+    ...inputs(A),
+    pin callerPrincipal: principalType(A) = principal,
+    callerResource:    resourceType(A),
+    requestId:         String,
+    sessionId:         String,
+}
+
+event <A>::deny {
+    ...inputs(A),
+    pin callerPrincipal: principalType(A) = principal,
+    callerResource:    resourceType(A),
+    requestId:         String,
+    sessionId:         String,
+}

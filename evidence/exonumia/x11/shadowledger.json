@@ -1,0 +1,3224 @@
+{
+ "handlers": {
+  "late": {
+   "orders": {
+    "approvals": {
+     "agree": 60,
+     "judged": 66,
+     "order_dependent": {
+      "count": 0,
+      "first": null,
+      "largest": 0
+     },
+     "unfit": {
+      "count": 6,
+      "largest": 310
+     }
+    },
+    "declines": {
+     "agree": 41,
+     "fitted": {
+      "count": 0,
+      "largest": 0
+     },
+     "judged": 41,
+     "order_dependent": {
+      "count": 0,
+      "first": null,
+      "largest": 0
+     }
+    },
+    "handler": {
+     "agree": 104,
+     "answers": 110,
+     "approved_unfit": 6,
+     "declined_fit": 0,
+     "order_dependent": 0
+    },
+    "level": "TESTED",
+    "unenumerated": 0,
+    "verdict": {
+     "order_dependent_approvals": 0,
+     "order_dependent_declines": 0,
+     "overspend_from_approvals": "found",
+     "wrongful_refusal": "none"
+    }
+   },
+   "report": {
+    "captures_after_expiry": [],
+    "declines_not_modelled": {
+     "by_reason": {
+      "spending_controls": 3
+     },
+     "count": 3
+    },
+    "first": {
+     "approval_unfit": {
+      "bucket": "cardholder-daily|ich_agent2|2026-11-30",
+      "event": "iauth_0058:rh:0",
+      "limit": "cardholder-daily",
+      "trail": [
+       {
+        "amount": 270,
+        "held_after": 270,
+        "held_before": 0,
+        "id": "iauth_0008:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 240,
+        "held_after": 510,
+        "held_before": 270,
+        "id": "iauth_0009:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 270,
+        "held_after": 780,
+        "held_before": 510,
+        "id": "iauth_0010:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 100,
+        "held_after": 880,
+        "held_before": 780,
+        "id": "iauth_0013:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 140,
+        "held_after": 1020,
+        "held_before": 880,
+        "id": "iauth_0014:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 70,
+        "held_after": 1090,
+        "held_before": 1020,
+        "id": "iauth_0016:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": null,
+        "held_after": 950,
+        "held_before": 1090,
+        "id": "evt_00055",
+        "kind": "reverse",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 110,
+        "held_after": 850,
+        "held_before": 950,
+        "id": "evt_00061",
+        "kind": "capture",
+        "spent_after": 110,
+        "spent_before": 0
+       },
+       {
+        "amount": 270,
+        "held_after": 580,
+        "held_before": 850,
+        "id": "evt_00064",
+        "kind": "capture",
+        "spent_after": 380,
+        "spent_before": 110
+       },
+       {
+        "amount": 320,
+        "held_after": 900,
+        "held_before": 580,
+        "id": "iauth_0019:rh:0",
+        "kind": "outcome",
+        "spent_after": 380,
+        "spent_before": 380
+       },
+       {
+        "amount": 280,
+        "held_after": 1180,
+        "held_before": 900,
+        "id": "iauth_0020:rh:0",
+        "kind": "outcome",
+        "spent_after": 380,
+        "spent_before": 380
+       },
+       {
+        "amount": 77,
+        "held_after": 1110,
+        "held_before": 1180,
+        "id": "evt_00073",
+        "kind": "capture",
+        "spent_after": 457,
+        "spent_before": 380
+       },
+       {
+        "amount": 270,
+        "held_after": 840,
+        "held_before": 1110,
+        "id": "evt_00077",
+        "kind": "capture",
+        "spent_after": 727,
+        "spent_before": 457
+       },
+       {
+        "amount": 180,
+        "held_after": 660,
+        "held_before": 840,
+        "id": "evt_00094",
+        "kind": "capture",
+        "spent_after": 907,
+        "spent_before": 727
+       },
+       {
+        "amount": 0,
+        "held_after": 600,
+        "held_before": 660,
+        "id": "evt_00096",
+        "kind": "capture",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": 290,
+        "held_after": 890,
+        "held_before": 600,
+        "id": "iauth_0025:rh:0",
+        "kind": "outcome",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": 160,
+        "held_after": 1050,
+        "held_before": 890,
+        "id": "iauth_0026:rh:0",
+        "kind": "outcome",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": null,
+        "held_after": 770,
+        "held_before": 1050,
+        "id": "evt_00108",
+        "kind": "reverse",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": 160,
+        "held_after": 930,
+        "held_before": 770,
+        "id": "iauth_0032:rh:0",
+        "kind": "outcome",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": 120,
+        "held_after": 810,
+        "held_before": 930,
+        "id": "evt_00129",
+        "kind": "capture",
+        "spent_after": 1027,
+        "spent_before": 907
+       },
+       {
+        "amount": 0,
+        "held_after": 770,
+        "held_before": 810,
+        "id": "evt_00131",
+        "kind": "capture",
+        "spent_after": 1027,
+        "spent_before": 1027
+       },
+       {
+        "amount": 320,
+        "held_after": 450,
+        "held_before": 770,
+        "id": "evt_00140",
+        "kind": "capture",
+        "spent_after": 1347,
+        "spent_before": 1027
+       },
+       {
+        "amount": null,
+        "held_after": 290,
+        "held_before": 450,
+        "id": "evt_00153",
+        "kind": "reverse",
+        "spent_after": 1347,
+        "spent_before": 1347
+       },
+       {
+        "amount": 290,
+        "held_after": 0,
+        "held_before": 290,
+        "id": "evt_00182",
+        "kind": "capture",
+        "spent_after": 1637,
+        "spent_before": 1347
+       },
+       {
+        "amount": 170,
+        "held_after": 170,
+        "held_before": 0,
+        "id": "iauth_0057:rh:0",
+        "kind": "outcome",
+        "spent_after": 1637,
+        "spent_before": 1637
+       },
+       {
+        "amount": 270,
+        "held_after": 440,
+        "held_before": 170,
+        "id": "iauth_0058:rh:0",
+        "kind": "outcome",
+        "spent_after": 1637,
+        "spent_before": 1637
+       }
+      ]
+     },
+     "no_hold": {
+      "bucket": "cardholder-daily|ich_agent1|2026-11-30",
+      "event": "evt_00471",
+      "limit": "cardholder-daily",
+      "trail": [
+       {
+        "amount": 80,
+        "held_after": 80,
+        "held_before": 0,
+        "id": "iauth_0000:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 160,
+        "held_after": 240,
+        "held_before": 80,
+        "id": "iauth_0002:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 260,
+        "held_after": 500,
+        "held_before": 240,
+        "id": "iauth_0003:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 150,
+        "held_after": 650,
+        "held_before": 500,
+        "id": "iauth_0004:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 120,
+        "held_after": 530,
+        "held_before": 650,
+        "id": "evt_00017",
+        "kind": "capture",
+        "spent_after": 120,
+        "spent_before": 0
+       },
+       {
+        "amount": 0,
+        "held_after": 490,
+        "held_before": 530,
+        "id": "evt_00019",
+        "kind": "capture",
+        "spent_after": 120,
+        "spent_before": 120
+       },
+       {
+        "amount": 150,
+        "held_after": 340,
+        "held_before": 490,
+        "id": "evt_00020",
+        "kind": "capture",
+        "spent_after": 270,
+        "spent_before": 120
+       },
+       {
+        "amount": null,
+        "held_after": 80,
+        "held_before": 340,
+        "id": "evt_00029",
+        "kind": "reverse",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": null,
+        "held_after": 0,
+        "held_before": 80,
+        "id": "evt_00056",
+        "kind": "reverse",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": 180,
+        "held_after": 180,
+        "held_before": 0,
+        "id": "iauth_0038:rh:0",
+        "kind": "outcome",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": 150,
+        "held_after": 330,
+        "held_before": 180,
+        "id": "iauth_0039:rh:0",
+        "kind": "outcome",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": 210,
+        "held_after": 540,
+        "held_before": 330,
+        "id": "iauth_0040:rh:0",
+        "kind": "outcome",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": 80,
+        "held_after": 620,
+        "held_before": 540,
+        "id": "iauth_0041:rh:0",
+        "kind": "outcome",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": 75,
+        "held_after": 545,
+        "held_before": 620,
+        "id": "evt_00188",
+        "kind": "reverse",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": 75,
+        "held_after": 470,
+        "held_before": 545,
+        "id": "evt_00194",
+        "kind": "capture",
+        "spent_after": 345,
+        "spent_before": 270
+       },
+       {
+        "amount": null,
+        "held_after": 260,
+        "held_before": 470,
+        "id": "evt_00199",
+        "kind": "reverse",
+        "spent_after": 345,
+        "spent_before": 345
+       },
+       {
+        "amount": 100,
+        "held_after": 360,
+        "held_before": 260,
+        "id": "iauth_0042:rh:0",
+        "kind": "outcome",
+        "spent_after": 345,
+        "spent_before": 345
+       },
+       {
+        "amount": 120,
+        "held_after": 480,
+        "held_before": 360,
+        "id": "iauth_0043:rh:0",
+        "kind": "outcome",
+        "spent_after": 345,
+        "spent_before": 345
+       },
+       {
+        "amount": 50,
+        "held_after": 430,
+        "held_before": 480,
+        "id": "evt_00229",
+        "kind": "reverse",
+        "spent_after": 345,
+        "spent_before": 345
+       },
+       {
+        "amount": 50,
+        "held_after": 380,
+        "held_before": 430,
+        "id": "evt_00231",
+        "kind": "capture",
+        "spent_after": 395,
+        "spent_before": 345
+       },
+       {
+        "amount": 198,
+        "held_after": 200,
+        "held_before": 380,
+        "id": "evt_00237",
+        "kind": "capture",
+        "spent_after": 593,
+        "spent_before": 395
+       },
+       {
+        "amount": 330,
+        "held_after": 530,
+        "held_before": 200,
+        "id": "iauth_0054:rh:0",
+        "kind": "outcome",
+        "spent_after": 593,
+        "spent_before": 593
+       },
+       {
+        "amount": 80,
+        "held_after": 610,
+        "held_before": 530,
+        "id": "iauth_0055:rh:0",
+        "kind": "outcome",
+        "spent_after": 593,
+        "spent_before": 593
+       },
+       {
+        "amount": 290,
+        "held_after": 900,
+        "held_before": 610,
+        "id": "iauth_0056:rh:0",
+        "kind": "outcome",
+        "spent_after": 593,
+        "spent_before": 593
+       },
+       {
+        "amount": 120,
+        "held_after": 780,
+        "held_before": 900,
+        "id": "evt_00254",
+        "kind": "capture",
+        "spent_after": 713,
+        "spent_before": 593
+       },
+       {
+        "amount": null,
+        "held_after": 700,
+        "held_before": 780,
+        "id": "evt_00257",
+        "kind": "reverse",
+        "spent_after": 713,
+        "spent_before": 713
+       },
+       {
+        "amount": 290,
+        "held_after": 410,
+        "held_before": 700,
+        "id": "evt_00299",
+        "kind": "capture",
+        "spent_after": 1003,
+        "spent_before": 713
+       },
+       {
+        "amount": 80,
+        "held_after": 330,
+        "held_before": 410,
+        "id": "evt_00302",
+        "kind": "capture",
+        "spent_after": 1083,
+        "spent_before": 1003
+       },
+       {
+        "amount": 363,
+        "held_after": 0,
+        "held_before": 330,
+        "id": "evt_00316",
+        "kind": "capture",
+        "spent_after": 1446,
+        "spent_before": 1083
+       },
+       {
+        "amount": 330,
+        "held_after": 330,
+        "held_before": 0,
+        "id": "iauth_0075:rh:0",
+        "kind": "outcome",
+        "spent_after": 1446,
+        "spent_before": 1446
+       },
+       {
+        "amount": 130,
+        "held_after": 460,
+        "held_before": 330,
+        "id": "iauth_0076:rh:0",
+        "kind": "outcome",
+        "spent_after": 1446,
+        "spent_before": 1446
+       },
+       {
+        "amount": 330,
+        "held_after": 130,
+        "held_before": 460,
+        "id": "evt_00389",
+        "kind": "capture",
+        "spent_after": 1776,
+        "spent_before": 1446
+       },
+       {
+        "amount": 98,
+        "held_after": 32,
+        "held_before": 130,
+        "id": "evt_00397",
+        "kind": "capture",
+        "spent_after": 1874,
+        "spent_before": 1776
+       },
+       {
+        "amount": 0,
+        "held_after": 0,
+        "held_before": 32,
+        "id": "evt_00399",
+        "kind": "capture",
+        "spent_after": 1874,
+        "spent_before": 1874
+       },
+       {
+        "amount": 100,
+        "held_after": 100,
+        "held_before": 0,
+        "id": "iauth_0090:rh:0",
+        "kind": "outcome",
+        "spent_after": 1874,
+        "spent_before": 1874
+       },
+       {
+        "amount": 100,
+        "held_after": 0,
+        "held_before": 100,
+        "id": "evt_00444",
+        "kind": "capture",
+        "spent_after": 1974,
+        "spent_before": 1874
+       },
+       {
+        "amount": 90,
+        "held_after": 0,
+        "held_before": 0,
+        "id": "evt_00471",
+        "kind": "capture",
+        "spent_after": 2064,
+        "spent_before": 1974
+       }
+      ]
+     },
+     "over_capture": {
+      "bucket": "cardholder-daily|ich_agent2|2026-11-30",
+      "event": "evt_00294",
+      "limit": "cardholder-daily",
+      "trail": [
+       {
+        "amount": 270,
+        "held_after": 270,
+        "held_before": 0,
+        "id": "iauth_0008:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 240,
+        "held_after": 510,
+        "held_before": 270,
+        "id": "iauth_0009:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 270,
+        "held_after": 780,
+        "held_before": 510,
+        "id": "iauth_0010:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 100,
+        "held_after": 880,
+        "held_before": 780,
+        "id": "iauth_0013:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 140,
+        "held_after": 1020,
+        "held_before": 880,
+        "id": "iauth_0014:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 70,
+        "held_after": 1090,
+        "held_before": 1020,
+        "id": "iauth_0016:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": null,
+        "held_after": 950,
+        "held_before": 1090,
+        "id": "evt_00055",
+        "kind": "reverse",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 110,
+        "held_after": 850,
+        "held_before": 950,
+        "id": "evt_00061",
+        "kind": "capture",
+        "spent_after": 110,
+        "spent_before": 0
+       },
+       {
+        "amount": 270,
+        "held_after": 580,
+        "held_before": 850,
+        "id": "evt_00064",
+        "kind": "capture",
+        "spent_after": 380,
+        "spent_before": 110
+       },
+       {
+        "amount": 320,
+        "held_after": 900,
+        "held_before": 580,
+        "id": "iauth_0019:rh:0",
+        "kind": "outcome",
+        "spent_after": 380,
+        "spent_before": 380
+       },
+       {
+        "amount": 280,
+        "held_after": 1180,
+        "held_before": 900,
+        "id": "iauth_0020:rh:0",
+        "kind": "outcome",
+        "spent_after": 380,
+        "spent_before": 380
+       },
+       {
+        "amount": 77,
+        "held_after": 1110,
+        "held_before": 1180,
+        "id": "evt_00073",
+        "kind": "capture",
+        "spent_after": 457,
+        "spent_before": 380
+       },
+       {
+        "amount": 270,
+        "held_after": 840,
+        "held_before": 1110,
+        "id": "evt_00077",
+        "kind": "capture",
+        "spent_after": 727,
+        "spent_before": 457
+       },
+       {
+        "amount": 180,
+        "held_after": 660,
+        "held_before": 840,
+        "id": "evt_00094",
+        "kind": "capture",
+        "spent_after": 907,
+        "spent_before": 727
+       },
+       {
+        "amount": 0,
+        "held_after": 600,
+        "held_before": 660,
+        "id": "evt_00096",
+        "kind": "capture",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": 290,
+        "held_after": 890,
+        "held_before": 600,
+        "id": "iauth_0025:rh:0",
+        "kind": "outcome",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": 160,
+        "held_after": 1050,
+        "held_before": 890,
+        "id": "iauth_0026:rh:0",
+        "kind": "outcome",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": null,
+        "held_after": 770,
+        "held_before": 1050,
+        "id": "evt_00108",
+        "kind": "reverse",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": 160,
+        "held_after": 930,
+        "held_before": 770,
+        "id": "iauth_0032:rh:0",
+        "kind": "outcome",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": 120,
+        "held_after": 810,
+        "held_before": 930,
+        "id": "evt_00129",
+        "kind": "capture",
+        "spent_after": 1027,
+        "spent_before": 907
+       },
+       {
+        "amount": 0,
+        "held_after": 770,
+        "held_before": 810,
+        "id": "evt_00131",
+        "kind": "capture",
+        "spent_after": 1027,
+        "spent_before": 1027
+       },
+       {
+        "amount": 320,
+        "held_after": 450,
+        "held_before": 770,
+        "id": "evt_00140",
+        "kind": "capture",
+        "spent_after": 1347,
+        "spent_before": 1027
+       },
+       {
+        "amount": null,
+        "held_after": 290,
+        "held_before": 450,
+        "id": "evt_00153",
+        "kind": "reverse",
+        "spent_after": 1347,
+        "spent_before": 1347
+       },
+       {
+        "amount": 290,
+        "held_after": 0,
+        "held_before": 290,
+        "id": "evt_00182",
+        "kind": "capture",
+        "spent_after": 1637,
+        "spent_before": 1347
+       },
+       {
+        "amount": 170,
+        "held_after": 170,
+        "held_before": 0,
+        "id": "iauth_0057:rh:0",
+        "kind": "outcome",
+        "spent_after": 1637,
+        "spent_before": 1637
+       },
+       {
+        "amount": 270,
+        "held_after": 440,
+        "held_before": 170,
+        "id": "iauth_0058:rh:0",
+        "kind": "outcome",
+        "spent_after": 1637,
+        "spent_before": 1637
+       },
+       {
+        "amount": 270,
+        "held_after": 710,
+        "held_before": 440,
+        "id": "iauth_0059:rh:0",
+        "kind": "outcome",
+        "spent_after": 1637,
+        "spent_before": 1637
+       },
+       {
+        "amount": 310,
+        "held_after": 1020,
+        "held_before": 710,
+        "id": "iauth_0060:rh:0",
+        "kind": "outcome",
+        "spent_after": 1637,
+        "spent_before": 1637
+       },
+       {
+        "amount": null,
+        "held_after": 850,
+        "held_before": 1020,
+        "id": "evt_00271",
+        "kind": "reverse",
+        "spent_after": 1637,
+        "spent_before": 1637
+       },
+       {
+        "amount": 310,
+        "held_after": 540,
+        "held_before": 850,
+        "id": "evt_00272",
+        "kind": "capture",
+        "spent_after": 1947,
+        "spent_before": 1637
+       },
+       {
+        "amount": 135,
+        "held_after": 405,
+        "held_before": 540,
+        "id": "evt_00278",
+        "kind": "reverse",
+        "spent_after": 1947,
+        "spent_before": 1947
+       },
+       {
+        "amount": 135,
+        "held_after": 270,
+        "held_before": 405,
+        "id": "evt_00283",
+        "kind": "capture",
+        "spent_after": 2082,
+        "spent_before": 1947
+       },
+       {
+        "amount": 297,
+        "held_after": 0,
+        "held_before": 270,
+        "id": "evt_00294",
+        "kind": "capture",
+        "spent_after": 2379,
+        "spent_before": 2082
+       }
+      ]
+     },
+     "wrongful_refusal": null
+    },
+    "handler": {
+     "agree": 109,
+     "answers": 110,
+     "approved_unfit": 1,
+     "declined_fit": 0,
+     "max_delay_ms": 2699
+    },
+    "journal": {
+     "duplicates": 107,
+     "events": 459,
+     "first_t": 1796026940,
+     "last_hash": "1de5ce96c9712e0454e3626e0eb4046891821f25c07e20293b58a070d5c8e386",
+     "last_t": 1796060214,
+     "level": "TESTED",
+     "lines": 566,
+     "out_of_order": 162
+    },
+    "limits": [
+     {
+      "amount": 2000,
+      "categories": null,
+      "id": "cardholder-daily",
+      "interval": "daily",
+      "most_over": {
+       "bucket": "cardholder-daily|ich_agent2|2026-11-30",
+       "event": "iauth_0060:rh:0",
+       "from_approvals": 657,
+       "from_no_hold": 0,
+       "from_over_capture": 0,
+       "total": 657
+      },
+      "scope": "cardholder",
+      "wrongly_refused": {
+       "count": 0,
+       "largest": 0
+      }
+     },
+     {
+      "amount": 350,
+      "categories": null,
+      "id": "card-per-authorization",
+      "interval": "per_authorization",
+      "most_over": {
+       "bucket": "card-per-authorization|ic_agent1_card1|auth:iauth_0054",
+       "event": "evt_00316",
+       "from_approvals": 0,
+       "from_no_hold": 0,
+       "from_over_capture": 13,
+       "total": 13
+      },
+      "scope": "card",
+      "wrongly_refused": {
+       "count": 0,
+       "largest": 0
+      }
+     },
+     {
+      "amount": 20000,
+      "categories": null,
+      "id": "program-monthly",
+      "interval": "monthly",
+      "most_over": {
+       "bucket": null,
+       "event": null,
+       "from_approvals": 0,
+       "from_no_hold": 0,
+       "from_over_capture": 0,
+       "total": 0
+      },
+      "scope": "program",
+      "wrongly_refused": {
+       "count": 0,
+       "largest": 0
+      }
+     }
+    ],
+    "overdue": [],
+    "profile": {
+     "constants": {
+      "expiry_days": {
+       "status": "assumed",
+       "value": 7
+      },
+      "expiry_days.lodging": {
+       "status": "assumed",
+       "value": 31
+      },
+      "force_post": {
+       "status": "assumed",
+       "value": 100
+      },
+      "over_capture": {
+       "status": "assumed",
+       "value": 10
+      },
+      "refund_restores": {
+       "status": "assumed",
+       "value": false
+      }
+     },
+     "currency": "usd"
+    },
+    "refunds": {
+     "amount": 200,
+     "count": 4,
+     "restores": false
+    },
+    "sole_writer": {
+     "assumes": "the report is about the events this ledger saw",
+     "authorizations": []
+    },
+    "statements": [
+     "no Lean theorem names the ledger with more than one bucket (the multi-bucket proof is a later card)",
+     "one bucket is the budget key cell of X3",
+     "A handler that enforces on a real wire is not built"
+    ],
+    "timeouts": {
+     "approved": 0,
+     "count": 3,
+     "declined": 3
+    },
+    "unmodelled": [],
+    "verdict": {
+     "overspend_from_approvals": "found",
+     "wrongful_refusal": "none"
+    },
+    "wrongly_refused": {
+     "count": 0,
+     "largest": 0
+    }
+   }
+  },
+  "no_release": {
+   "orders": {
+    "approvals": {
+     "agree": 49,
+     "judged": 49,
+     "order_dependent": {
+      "count": 0,
+      "first": null,
+      "largest": 0
+     },
+     "unfit": {
+      "count": 0,
+      "largest": 0
+     }
+    },
+    "declines": {
+     "agree": 17,
+     "fitted": {
+      "count": 41,
+      "largest": 350
+     },
+     "judged": 58,
+     "order_dependent": {
+      "count": 0,
+      "first": null,
+      "largest": 0
+     }
+    },
+    "handler": {
+     "agree": 68,
+     "answers": 110,
+     "approved_unfit": 0,
+     "declined_fit": 42,
+     "order_dependent": 0
+    },
+    "level": "TESTED",
+    "unenumerated": 0,
+    "verdict": {
+     "order_dependent_approvals": 0,
+     "order_dependent_declines": 0,
+     "overspend_from_approvals": "none",
+     "wrongful_refusal": "found"
+    }
+   },
+   "report": {
+    "captures_after_expiry": [],
+    "declines_not_modelled": {
+     "by_reason": {
+      "spending_controls": 3
+     },
+     "count": 3
+    },
+    "first": {
+     "approval_unfit": null,
+     "no_hold": null,
+     "over_capture": {
+      "bucket": "card-per-authorization|ic_agent1_card1|auth:iauth_0054",
+      "event": "evt_00290",
+      "limit": "card-per-authorization",
+      "trail": [
+       {
+        "amount": 330,
+        "held_after": 330,
+        "held_before": 0,
+        "id": "iauth_0054:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 363,
+        "held_after": 0,
+        "held_before": 330,
+        "id": "evt_00290",
+        "kind": "capture",
+        "spent_after": 363,
+        "spent_before": 0
+       }
+      ]
+     },
+     "wrongful_refusal": {
+      "bucket": "cardholder-daily|ich_agent2|2026-11-30",
+      "event": "iauth_0026:rh:0",
+      "limit": "cardholder-daily",
+      "trail": [
+       {
+        "amount": 270,
+        "held_after": 270,
+        "held_before": 0,
+        "id": "iauth_0008:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 240,
+        "held_after": 510,
+        "held_before": 270,
+        "id": "iauth_0009:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 270,
+        "held_after": 780,
+        "held_before": 510,
+        "id": "iauth_0010:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 100,
+        "held_after": 880,
+        "held_before": 780,
+        "id": "iauth_0013:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 140,
+        "held_after": 1020,
+        "held_before": 880,
+        "id": "iauth_0014:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 70,
+        "held_after": 1090,
+        "held_before": 1020,
+        "id": "iauth_0016:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": null,
+        "held_after": 950,
+        "held_before": 1090,
+        "id": "evt_00055",
+        "kind": "reverse",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 110,
+        "held_after": 850,
+        "held_before": 950,
+        "id": "evt_00061",
+        "kind": "capture",
+        "spent_after": 110,
+        "spent_before": 0
+       },
+       {
+        "amount": 270,
+        "held_after": 580,
+        "held_before": 850,
+        "id": "evt_00064",
+        "kind": "capture",
+        "spent_after": 380,
+        "spent_before": 110
+       },
+       {
+        "amount": 320,
+        "held_after": 900,
+        "held_before": 580,
+        "id": "iauth_0019:rh:0",
+        "kind": "outcome",
+        "spent_after": 380,
+        "spent_before": 380
+       },
+       {
+        "amount": 280,
+        "held_after": 1180,
+        "held_before": 900,
+        "id": "iauth_0020:rh:0",
+        "kind": "outcome",
+        "spent_after": 380,
+        "spent_before": 380
+       },
+       {
+        "amount": 77,
+        "held_after": 1110,
+        "held_before": 1180,
+        "id": "evt_00073",
+        "kind": "capture",
+        "spent_after": 457,
+        "spent_before": 380
+       },
+       {
+        "amount": 270,
+        "held_after": 840,
+        "held_before": 1110,
+        "id": "evt_00077",
+        "kind": "capture",
+        "spent_after": 727,
+        "spent_before": 457
+       },
+       {
+        "amount": 180,
+        "held_after": 660,
+        "held_before": 840,
+        "id": "evt_00094",
+        "kind": "capture",
+        "spent_after": 907,
+        "spent_before": 727
+       },
+       {
+        "amount": 0,
+        "held_after": 600,
+        "held_before": 660,
+        "id": "evt_00096",
+        "kind": "capture",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": 290,
+        "held_after": 890,
+        "held_before": 600,
+        "id": "iauth_0025:rh:0",
+        "kind": "outcome",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": 160,
+        "held_after": 890,
+        "held_before": 890,
+        "id": "iauth_0026:rh:0",
+        "kind": "outcome",
+        "spent_after": 907,
+        "spent_before": 907
+       }
+      ]
+     }
+    },
+    "handler": {
+     "agree": 68,
+     "answers": 110,
+     "approved_unfit": 0,
+     "declined_fit": 42,
+     "max_delay_ms": 2699
+    },
+    "journal": {
+     "duplicates": 107,
+     "events": 428,
+     "first_t": 1796026940,
+     "last_hash": "7b51388e082d151fc698d2236e3a0d93e5fa394e985c5ce0552c97ef7bed1c3e",
+     "last_t": 1796060019,
+     "level": "TESTED",
+     "lines": 535,
+     "out_of_order": 159
+    },
+    "limits": [
+     {
+      "amount": 2000,
+      "categories": null,
+      "id": "cardholder-daily",
+      "interval": "daily",
+      "most_over": {
+       "bucket": null,
+       "event": null,
+       "from_approvals": 0,
+       "from_no_hold": 0,
+       "from_over_capture": 0,
+       "total": 0
+      },
+      "scope": "cardholder",
+      "wrongly_refused": {
+       "count": 41,
+       "largest": 350
+      }
+     },
+     {
+      "amount": 350,
+      "categories": null,
+      "id": "card-per-authorization",
+      "interval": "per_authorization",
+      "most_over": {
+       "bucket": "card-per-authorization|ic_agent1_card1|auth:iauth_0054",
+       "event": "evt_00290",
+       "from_approvals": 0,
+       "from_no_hold": 0,
+       "from_over_capture": 13,
+       "total": 13
+      },
+      "scope": "card",
+      "wrongly_refused": {
+       "count": 41,
+       "largest": 350
+      }
+     },
+     {
+      "amount": 20000,
+      "categories": null,
+      "id": "program-monthly",
+      "interval": "monthly",
+      "most_over": {
+       "bucket": null,
+       "event": null,
+       "from_approvals": 0,
+       "from_no_hold": 0,
+       "from_over_capture": 0,
+       "total": 0
+      },
+      "scope": "program",
+      "wrongly_refused": {
+       "count": 41,
+       "largest": 350
+      }
+     }
+    ],
+    "overdue": [],
+    "profile": {
+     "constants": {
+      "expiry_days": {
+       "status": "assumed",
+       "value": 7
+      },
+      "expiry_days.lodging": {
+       "status": "assumed",
+       "value": 31
+      },
+      "force_post": {
+       "status": "assumed",
+       "value": 100
+      },
+      "over_capture": {
+       "status": "assumed",
+       "value": 10
+      },
+      "refund_restores": {
+       "status": "assumed",
+       "value": false
+      }
+     },
+     "currency": "usd"
+    },
+    "refunds": {
+     "amount": 200,
+     "count": 4,
+     "restores": false
+    },
+    "sole_writer": {
+     "assumes": "the report is about the events this ledger saw",
+     "authorizations": []
+    },
+    "statements": [
+     "no Lean theorem names the ledger with more than one bucket (the multi-bucket proof is a later card)",
+     "one bucket is the budget key cell of X3",
+     "A handler that enforces on a real wire is not built"
+    ],
+    "timeouts": {
+     "approved": 0,
+     "count": 3,
+     "declined": 3
+    },
+    "unmodelled": [],
+    "verdict": {
+     "overspend_from_approvals": "none",
+     "wrongful_refusal": "found"
+    },
+    "wrongly_refused": {
+     "count": 41,
+     "largest": 350
+    }
+   }
+  },
+  "per_card": {
+   "orders": {
+    "approvals": {
+     "agree": 54,
+     "judged": 90,
+     "order_dependent": {
+      "count": 0,
+      "first": null,
+      "largest": 0
+     },
+     "unfit": {
+      "count": 36,
+      "largest": 350
+     }
+    },
+    "declines": {
+     "agree": 17,
+     "fitted": {
+      "count": 0,
+      "largest": 0
+     },
+     "judged": 17,
+     "order_dependent": {
+      "count": 0,
+      "first": null,
+      "largest": 0
+     }
+    },
+    "handler": {
+     "agree": 73,
+     "answers": 110,
+     "approved_unfit": 37,
+     "declined_fit": 0,
+     "order_dependent": 0
+    },
+    "level": "TESTED",
+    "unenumerated": 0,
+    "verdict": {
+     "order_dependent_approvals": 0,
+     "order_dependent_declines": 0,
+     "overspend_from_approvals": "found",
+     "wrongful_refusal": "none"
+    }
+   },
+   "report": {
+    "captures_after_expiry": [],
+    "declines_not_modelled": {
+     "by_reason": {
+      "spending_controls": 3
+     },
+     "count": 3
+    },
+    "first": {
+     "approval_unfit": {
+      "bucket": "cardholder-daily|ich_agent2|2026-11-30",
+      "event": "iauth_0031:rh:0",
+      "limit": "cardholder-daily",
+      "trail": [
+       {
+        "amount": 270,
+        "held_after": 270,
+        "held_before": 0,
+        "id": "iauth_0008:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 240,
+        "held_after": 510,
+        "held_before": 270,
+        "id": "iauth_0009:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 270,
+        "held_after": 780,
+        "held_before": 510,
+        "id": "iauth_0010:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 100,
+        "held_after": 880,
+        "held_before": 780,
+        "id": "iauth_0013:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 140,
+        "held_after": 1020,
+        "held_before": 880,
+        "id": "iauth_0014:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 70,
+        "held_after": 1090,
+        "held_before": 1020,
+        "id": "iauth_0016:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": null,
+        "held_after": 950,
+        "held_before": 1090,
+        "id": "evt_00055",
+        "kind": "reverse",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 110,
+        "held_after": 850,
+        "held_before": 950,
+        "id": "evt_00061",
+        "kind": "capture",
+        "spent_after": 110,
+        "spent_before": 0
+       },
+       {
+        "amount": 270,
+        "held_after": 580,
+        "held_before": 850,
+        "id": "evt_00064",
+        "kind": "capture",
+        "spent_after": 380,
+        "spent_before": 110
+       },
+       {
+        "amount": 320,
+        "held_after": 900,
+        "held_before": 580,
+        "id": "iauth_0019:rh:0",
+        "kind": "outcome",
+        "spent_after": 380,
+        "spent_before": 380
+       },
+       {
+        "amount": 280,
+        "held_after": 1180,
+        "held_before": 900,
+        "id": "iauth_0020:rh:0",
+        "kind": "outcome",
+        "spent_after": 380,
+        "spent_before": 380
+       },
+       {
+        "amount": 77,
+        "held_after": 1110,
+        "held_before": 1180,
+        "id": "evt_00073",
+        "kind": "capture",
+        "spent_after": 457,
+        "spent_before": 380
+       },
+       {
+        "amount": 270,
+        "held_after": 840,
+        "held_before": 1110,
+        "id": "evt_00077",
+        "kind": "capture",
+        "spent_after": 727,
+        "spent_before": 457
+       },
+       {
+        "amount": 180,
+        "held_after": 660,
+        "held_before": 840,
+        "id": "evt_00094",
+        "kind": "capture",
+        "spent_after": 907,
+        "spent_before": 727
+       },
+       {
+        "amount": 0,
+        "held_after": 600,
+        "held_before": 660,
+        "id": "evt_00096",
+        "kind": "capture",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": 290,
+        "held_after": 890,
+        "held_before": 600,
+        "id": "iauth_0025:rh:0",
+        "kind": "outcome",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": 160,
+        "held_after": 1050,
+        "held_before": 890,
+        "id": "iauth_0026:rh:0",
+        "kind": "outcome",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": null,
+        "held_after": 770,
+        "held_before": 1050,
+        "id": "evt_00108",
+        "kind": "reverse",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": 340,
+        "held_after": 1110,
+        "held_before": 770,
+        "id": "iauth_0031:rh:0",
+        "kind": "outcome",
+        "spent_after": 907,
+        "spent_before": 907
+       }
+      ]
+     },
+     "no_hold": {
+      "bucket": "cardholder-daily|ich_agent1|2026-11-30",
+      "event": "evt_00534",
+      "limit": "cardholder-daily",
+      "trail": [
+       {
+        "amount": 80,
+        "held_after": 80,
+        "held_before": 0,
+        "id": "iauth_0000:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 160,
+        "held_after": 240,
+        "held_before": 80,
+        "id": "iauth_0002:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 260,
+        "held_after": 500,
+        "held_before": 240,
+        "id": "iauth_0003:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 150,
+        "held_after": 650,
+        "held_before": 500,
+        "id": "iauth_0004:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 120,
+        "held_after": 530,
+        "held_before": 650,
+        "id": "evt_00017",
+        "kind": "capture",
+        "spent_after": 120,
+        "spent_before": 0
+       },
+       {
+        "amount": 0,
+        "held_after": 490,
+        "held_before": 530,
+        "id": "evt_00019",
+        "kind": "capture",
+        "spent_after": 120,
+        "spent_before": 120
+       },
+       {
+        "amount": 150,
+        "held_after": 340,
+        "held_before": 490,
+        "id": "evt_00020",
+        "kind": "capture",
+        "spent_after": 270,
+        "spent_before": 120
+       },
+       {
+        "amount": null,
+        "held_after": 80,
+        "held_before": 340,
+        "id": "evt_00029",
+        "kind": "reverse",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": null,
+        "held_after": 0,
+        "held_before": 80,
+        "id": "evt_00056",
+        "kind": "reverse",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": 180,
+        "held_after": 180,
+        "held_before": 0,
+        "id": "iauth_0038:rh:0",
+        "kind": "outcome",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": 150,
+        "held_after": 330,
+        "held_before": 180,
+        "id": "iauth_0039:rh:0",
+        "kind": "outcome",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": 210,
+        "held_after": 540,
+        "held_before": 330,
+        "id": "iauth_0040:rh:0",
+        "kind": "outcome",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": 80,
+        "held_after": 620,
+        "held_before": 540,
+        "id": "iauth_0041:rh:0",
+        "kind": "outcome",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": 75,
+        "held_after": 545,
+        "held_before": 620,
+        "id": "evt_00192",
+        "kind": "reverse",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": 75,
+        "held_after": 470,
+        "held_before": 545,
+        "id": "evt_00198",
+        "kind": "capture",
+        "spent_after": 345,
+        "spent_before": 270
+       },
+       {
+        "amount": null,
+        "held_after": 260,
+        "held_before": 470,
+        "id": "evt_00203",
+        "kind": "reverse",
+        "spent_after": 345,
+        "spent_before": 345
+       },
+       {
+        "amount": 100,
+        "held_after": 360,
+        "held_before": 260,
+        "id": "iauth_0042:rh:0",
+        "kind": "outcome",
+        "spent_after": 345,
+        "spent_before": 345
+       },
+       {
+        "amount": 120,
+        "held_after": 480,
+        "held_before": 360,
+        "id": "iauth_0043:rh:0",
+        "kind": "outcome",
+        "spent_after": 345,
+        "spent_before": 345
+       },
+       {
+        "amount": 50,
+        "held_after": 430,
+        "held_before": 480,
+        "id": "evt_00233",
+        "kind": "reverse",
+        "spent_after": 345,
+        "spent_before": 345
+       },
+       {
+        "amount": 50,
+        "held_after": 380,
+        "held_before": 430,
+        "id": "evt_00235",
+        "kind": "capture",
+        "spent_after": 395,
+        "spent_before": 345
+       },
+       {
+        "amount": 198,
+        "held_after": 200,
+        "held_before": 380,
+        "id": "evt_00241",
+        "kind": "capture",
+        "spent_after": 593,
+        "spent_before": 395
+       },
+       {
+        "amount": 330,
+        "held_after": 530,
+        "held_before": 200,
+        "id": "iauth_0054:rh:0",
+        "kind": "outcome",
+        "spent_after": 593,
+        "spent_before": 593
+       },
+       {
+        "amount": 80,
+        "held_after": 610,
+        "held_before": 530,
+        "id": "iauth_0055:rh:0",
+        "kind": "outcome",
+        "spent_after": 593,
+        "spent_before": 593
+       },
+       {
+        "amount": 290,
+        "held_after": 900,
+        "held_before": 610,
+        "id": "iauth_0056:rh:0",
+        "kind": "outcome",
+        "spent_after": 593,
+        "spent_before": 593
+       },
+       {
+        "amount": 120,
+        "held_after": 780,
+        "held_before": 900,
+        "id": "evt_00258",
+        "kind": "capture",
+        "spent_after": 713,
+        "spent_before": 593
+       },
+       {
+        "amount": null,
+        "held_after": 700,
+        "held_before": 780,
+        "id": "evt_00261",
+        "kind": "reverse",
+        "spent_after": 713,
+        "spent_before": 713
+       },
+       {
+        "amount": 290,
+        "held_after": 410,
+        "held_before": 700,
+        "id": "evt_00303",
+        "kind": "capture",
+        "spent_after": 1003,
+        "spent_before": 713
+       },
+       {
+        "amount": 80,
+        "held_after": 330,
+        "held_before": 410,
+        "id": "evt_00306",
+        "kind": "capture",
+        "spent_after": 1083,
+        "spent_before": 1003
+       },
+       {
+        "amount": 363,
+        "held_after": 0,
+        "held_before": 330,
+        "id": "evt_00320",
+        "kind": "capture",
+        "spent_after": 1446,
+        "spent_before": 1083
+       },
+       {
+        "amount": 330,
+        "held_after": 330,
+        "held_before": 0,
+        "id": "iauth_0075:rh:0",
+        "kind": "outcome",
+        "spent_after": 1446,
+        "spent_before": 1446
+       },
+       {
+        "amount": 130,
+        "held_after": 460,
+        "held_before": 330,
+        "id": "iauth_0076:rh:0",
+        "kind": "outcome",
+        "spent_after": 1446,
+        "spent_before": 1446
+       },
+       {
+        "amount": 290,
+        "held_after": 750,
+        "held_before": 460,
+        "id": "iauth_0080:rh:0",
+        "kind": "outcome",
+        "spent_after": 1446,
+        "spent_before": 1446
+       },
+       {
+        "amount": 100,
+        "held_after": 850,
+        "held_before": 750,
+        "id": "iauth_0081:rh:0",
+        "kind": "outcome",
+        "spent_after": 1446,
+        "spent_before": 1446
+       },
+       {
+        "amount": 100,
+        "held_after": 750,
+        "held_before": 850,
+        "id": "evt_00392",
+        "kind": "capture",
+        "spent_after": 1546,
+        "spent_before": 1446
+       },
+       {
+        "amount": 330,
+        "held_after": 420,
+        "held_before": 750,
+        "id": "evt_00406",
+        "kind": "capture",
+        "spent_after": 1876,
+        "spent_before": 1546
+       },
+       {
+        "amount": 290,
+        "held_after": 130,
+        "held_before": 420,
+        "id": "evt_00416",
+        "kind": "capture",
+        "spent_after": 2166,
+        "spent_before": 1876
+       },
+       {
+        "amount": 98,
+        "held_after": 32,
+        "held_before": 130,
+        "id": "evt_00422",
+        "kind": "capture",
+        "spent_after": 2264,
+        "spent_before": 2166
+       },
+       {
+        "amount": 0,
+        "held_after": 0,
+        "held_before": 32,
+        "id": "evt_00424",
+        "kind": "capture",
+        "spent_after": 2264,
+        "spent_before": 2264
+       },
+       {
+        "amount": 100,
+        "held_after": 100,
+        "held_before": 0,
+        "id": "iauth_0090:rh:0",
+        "kind": "outcome",
+        "spent_after": 2264,
+        "spent_before": 2264
+       },
+       {
+        "amount": 240,
+        "held_after": 340,
+        "held_before": 100,
+        "id": "iauth_0091:rh:0",
+        "kind": "outcome",
+        "spent_after": 2264,
+        "spent_before": 2264
+       },
+       {
+        "amount": 110,
+        "held_after": 450,
+        "held_before": 340,
+        "id": "iauth_0100:rh:0",
+        "kind": "outcome",
+        "spent_after": 2264,
+        "spent_before": 2264
+       },
+       {
+        "amount": 350,
+        "held_after": 800,
+        "held_before": 450,
+        "id": "iauth_0101:rh:0",
+        "kind": "outcome",
+        "spent_after": 2264,
+        "spent_before": 2264
+       },
+       {
+        "amount": 170,
+        "held_after": 970,
+        "held_before": 800,
+        "id": "iauth_0102:rh:0",
+        "kind": "outcome",
+        "spent_after": 2264,
+        "spent_before": 2264
+       },
+       {
+        "amount": 180,
+        "held_after": 1150,
+        "held_before": 970,
+        "id": "iauth_0103:rh:0",
+        "kind": "outcome",
+        "spent_after": 2264,
+        "spent_before": 2264
+       },
+       {
+        "amount": 100,
+        "held_after": 1050,
+        "held_before": 1150,
+        "id": "evt_00487",
+        "kind": "capture",
+        "spent_after": 2364,
+        "spent_before": 2264
+       },
+       {
+        "amount": 175,
+        "held_after": 875,
+        "held_before": 1050,
+        "id": "evt_00493",
+        "kind": "reverse",
+        "spent_after": 2364,
+        "spent_before": 2364
+       },
+       {
+        "amount": 175,
+        "held_after": 700,
+        "held_before": 875,
+        "id": "evt_00495",
+        "kind": "capture",
+        "spent_after": 2539,
+        "spent_before": 2364
+       },
+       {
+        "amount": 320,
+        "held_after": 1020,
+        "held_before": 700,
+        "id": "iauth_0108:rh:0",
+        "kind": "outcome",
+        "spent_after": 2539,
+        "spent_before": 2539
+       },
+       {
+        "amount": 90,
+        "held_after": 1110,
+        "held_before": 1020,
+        "id": "iauth_0109:rh:0",
+        "kind": "outcome",
+        "spent_after": 2539,
+        "spent_before": 2539
+       },
+       {
+        "amount": 160,
+        "held_after": 1270,
+        "held_before": 1110,
+        "id": "iauth_0110:rh:0",
+        "kind": "outcome",
+        "spent_after": 2539,
+        "spent_before": 2539
+       },
+       {
+        "amount": 240,
+        "held_after": 1030,
+        "held_before": 1270,
+        "id": "evt_00521",
+        "kind": "capture",
+        "spent_after": 2779,
+        "spent_before": 2539
+       },
+       {
+        "amount": null,
+        "held_after": 940,
+        "held_before": 1030,
+        "id": "evt_00527",
+        "kind": "reverse",
+        "spent_after": 2779,
+        "spent_before": 2779
+       },
+       {
+        "amount": 90,
+        "held_after": 940,
+        "held_before": 940,
+        "id": "evt_00534",
+        "kind": "capture",
+        "spent_after": 2869,
+        "spent_before": 2779
+       }
+      ]
+     },
+     "over_capture": {
+      "bucket": "cardholder-daily|ich_agent2|2026-11-30",
+      "event": "evt_00298",
+      "limit": "cardholder-daily",
+      "trail": [
+       {
+        "amount": 270,
+        "held_after": 270,
+        "held_before": 0,
+        "id": "iauth_0008:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 240,
+        "held_after": 510,
+        "held_before": 270,
+        "id": "iauth_0009:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 270,
+        "held_after": 780,
+        "held_before": 510,
+        "id": "iauth_0010:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 100,
+        "held_after": 880,
+        "held_before": 780,
+        "id": "iauth_0013:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 140,
+        "held_after": 1020,
+        "held_before": 880,
+        "id": "iauth_0014:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 70,
+        "held_after": 1090,
+        "held_before": 1020,
+        "id": "iauth_0016:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": null,
+        "held_after": 950,
+        "held_before": 1090,
+        "id": "evt_00055",
+        "kind": "reverse",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 110,
+        "held_after": 850,
+        "held_before": 950,
+        "id": "evt_00061",
+        "kind": "capture",
+        "spent_after": 110,
+        "spent_before": 0
+       },
+       {
+        "amount": 270,
+        "held_after": 580,
+        "held_before": 850,
+        "id": "evt_00064",
+        "kind": "capture",
+        "spent_after": 380,
+        "spent_before": 110
+       },
+       {
+        "amount": 320,
+        "held_after": 900,
+        "held_before": 580,
+        "id": "iauth_0019:rh:0",
+        "kind": "outcome",
+        "spent_after": 380,
+        "spent_before": 380
+       },
+       {
+        "amount": 280,
+        "held_after": 1180,
+        "held_before": 900,
+        "id": "iauth_0020:rh:0",
+        "kind": "outcome",
+        "spent_after": 380,
+        "spent_before": 380
+       },
+       {
+        "amount": 77,
+        "held_after": 1110,
+        "held_before": 1180,
+        "id": "evt_00073",
+        "kind": "capture",
+        "spent_after": 457,
+        "spent_before": 380
+       },
+       {
+        "amount": 270,
+        "held_after": 840,
+        "held_before": 1110,
+        "id": "evt_00077",
+        "kind": "capture",
+        "spent_after": 727,
+        "spent_before": 457
+       },
+       {
+        "amount": 180,
+        "held_after": 660,
+        "held_before": 840,
+        "id": "evt_00094",
+        "kind": "capture",
+        "spent_after": 907,
+        "spent_before": 727
+       },
+       {
+        "amount": 0,
+        "held_after": 600,
+        "held_before": 660,
+        "id": "evt_00096",
+        "kind": "capture",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": 290,
+        "held_after": 890,
+        "held_before": 600,
+        "id": "iauth_0025:rh:0",
+        "kind": "outcome",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": 160,
+        "held_after": 1050,
+        "held_before": 890,
+        "id": "iauth_0026:rh:0",
+        "kind": "outcome",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": null,
+        "held_after": 770,
+        "held_before": 1050,
+        "id": "evt_00108",
+        "kind": "reverse",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": 340,
+        "held_after": 1110,
+        "held_before": 770,
+        "id": "iauth_0031:rh:0",
+        "kind": "outcome",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": 160,
+        "held_after": 1270,
+        "held_before": 1110,
+        "id": "iauth_0032:rh:0",
+        "kind": "outcome",
+        "spent_after": 907,
+        "spent_before": 907
+       },
+       {
+        "amount": 120,
+        "held_after": 1150,
+        "held_before": 1270,
+        "id": "evt_00130",
+        "kind": "capture",
+        "spent_after": 1027,
+        "spent_before": 907
+       },
+       {
+        "amount": 0,
+        "held_after": 1110,
+        "held_before": 1150,
+        "id": "evt_00132",
+        "kind": "capture",
+        "spent_after": 1027,
+        "spent_before": 1027
+       },
+       {
+        "amount": 340,
+        "held_after": 770,
+        "held_before": 1110,
+        "id": "evt_00138",
+        "kind": "capture",
+        "spent_after": 1367,
+        "spent_before": 1027
+       },
+       {
+        "amount": 320,
+        "held_after": 450,
+        "held_before": 770,
+        "id": "evt_00144",
+        "kind": "capture",
+        "spent_after": 1687,
+        "spent_before": 1367
+       },
+       {
+        "amount": null,
+        "held_after": 290,
+        "held_before": 450,
+        "id": "evt_00157",
+        "kind": "reverse",
+        "spent_after": 1687,
+        "spent_before": 1687
+       },
+       {
+        "amount": 290,
+        "held_after": 0,
+        "held_before": 290,
+        "id": "evt_00186",
+        "kind": "capture",
+        "spent_after": 1977,
+        "spent_before": 1687
+       },
+       {
+        "amount": 170,
+        "held_after": 170,
+        "held_before": 0,
+        "id": "iauth_0057:rh:0",
+        "kind": "outcome",
+        "spent_after": 1977,
+        "spent_before": 1977
+       },
+       {
+        "amount": 270,
+        "held_after": 440,
+        "held_before": 170,
+        "id": "iauth_0058:rh:0",
+        "kind": "outcome",
+        "spent_after": 1977,
+        "spent_before": 1977
+       },
+       {
+        "amount": 270,
+        "held_after": 710,
+        "held_before": 440,
+        "id": "iauth_0059:rh:0",
+        "kind": "outcome",
+        "spent_after": 1977,
+        "spent_before": 1977
+       },
+       {
+        "amount": 310,
+        "held_after": 1020,
+        "held_before": 710,
+        "id": "iauth_0060:rh:0",
+        "kind": "outcome",
+        "spent_after": 1977,
+        "spent_before": 1977
+       },
+       {
+        "amount": null,
+        "held_after": 850,
+        "held_before": 1020,
+        "id": "evt_00275",
+        "kind": "reverse",
+        "spent_after": 1977,
+        "spent_before": 1977
+       },
+       {
+        "amount": 310,
+        "held_after": 540,
+        "held_before": 850,
+        "id": "evt_00276",
+        "kind": "capture",
+        "spent_after": 2287,
+        "spent_before": 1977
+       },
+       {
+        "amount": 135,
+        "held_after": 405,
+        "held_before": 540,
+        "id": "evt_00282",
+        "kind": "reverse",
+        "spent_after": 2287,
+        "spent_before": 2287
+       },
+       {
+        "amount": 135,
+        "held_after": 270,
+        "held_before": 405,
+        "id": "evt_00287",
+        "kind": "capture",
+        "spent_after": 2422,
+        "spent_before": 2287
+       },
+       {
+        "amount": 297,
+        "held_after": 0,
+        "held_before": 270,
+        "id": "evt_00298",
+        "kind": "capture",
+        "spent_after": 2719,
+        "spent_before": 2422
+       }
+      ]
+     },
+     "wrongful_refusal": null
+    },
+    "handler": {
+     "agree": 74,
+     "answers": 110,
+     "approved_unfit": 36,
+     "declined_fit": 0,
+     "max_delay_ms": 2699
+    },
+    "journal": {
+     "duplicates": 107,
+     "events": 508,
+     "first_t": 1796026940,
+     "last_hash": "ac4269a951140393283bcba4f83c36e53927282bdc5e5edc51c9a0879fbeb766",
+     "last_t": 1796063844,
+     "level": "TESTED",
+     "lines": 615,
+     "out_of_order": 170
+    },
+    "limits": [
+     {
+      "amount": 2000,
+      "categories": null,
+      "id": "cardholder-daily",
+      "interval": "daily",
+      "most_over": {
+       "bucket": "cardholder-daily|ich_agent1|2026-11-30",
+       "event": "evt_00554",
+       "from_approvals": 1719,
+       "from_no_hold": 90,
+       "from_over_capture": 17,
+       "total": 1826
+      },
+      "scope": "cardholder",
+      "wrongly_refused": {
+       "count": 0,
+       "largest": 0
+      }
+     },
+     {
+      "amount": 350,
+      "categories": null,
+      "id": "card-per-authorization",
+      "interval": "per_authorization",
+      "most_over": {
+       "bucket": "card-per-authorization|ic_agent1_card1|auth:iauth_0054",
+       "event": "evt_00320",
+       "from_approvals": 0,
+       "from_no_hold": 0,
+       "from_over_capture": 13,
+       "total": 13
+      },
+      "scope": "card",
+      "wrongly_refused": {
+       "count": 0,
+       "largest": 0
+      }
+     },
+     {
+      "amount": 20000,
+      "categories": null,
+      "id": "program-monthly",
+      "interval": "monthly",
+      "most_over": {
+       "bucket": null,
+       "event": null,
+       "from_approvals": 0,
+       "from_no_hold": 0,
+       "from_over_capture": 0,
+       "total": 0
+      },
+      "scope": "program",
+      "wrongly_refused": {
+       "count": 0,
+       "largest": 0
+      }
+     }
+    ],
+    "overdue": [],
+    "profile": {
+     "constants": {
+      "expiry_days": {
+       "status": "assumed",
+       "value": 7
+      },
+      "expiry_days.lodging": {
+       "status": "assumed",
+       "value": 31
+      },
+      "force_post": {
+       "status": "assumed",
+       "value": 100
+      },
+      "over_capture": {
+       "status": "assumed",
+       "value": 10
+      },
+      "refund_restores": {
+       "status": "assumed",
+       "value": false
+      }
+     },
+     "currency": "usd"
+    },
+    "refunds": {
+     "amount": 250,
+     "count": 5,
+     "restores": false
+    },
+    "sole_writer": {
+     "assumes": "the report is about the events this ledger saw",
+     "authorizations": []
+    },
+    "statements": [
+     "no Lean theorem names the ledger with more than one bucket (the multi-bucket proof is a later card)",
+     "one bucket is the budget key cell of X3",
+     "A handler that enforces on a real wire is not built"
+    ],
+    "timeouts": {
+     "approved": 0,
+     "count": 3,
+     "declined": 3
+    },
+    "unmodelled": [],
+    "verdict": {
+     "overspend_from_approvals": "found",
+     "wrongful_refusal": "none"
+    },
+    "wrongly_refused": {
+     "count": 0,
+     "largest": 0
+    }
+   }
+  },
+  "reference": {
+   "orders": {
+    "approvals": {
+     "agree": 64,
+     "judged": 64,
+     "order_dependent": {
+      "count": 0,
+      "first": null,
+      "largest": 0
+     },
+     "unfit": {
+      "count": 0,
+      "largest": 0
+     }
+    },
+    "declines": {
+     "agree": 43,
+     "fitted": {
+      "count": 0,
+      "largest": 0
+     },
+     "judged": 43,
+     "order_dependent": {
+      "count": 0,
+      "first": null,
+      "largest": 0
+     }
+    },
+    "handler": {
+     "agree": 110,
+     "answers": 110,
+     "approved_unfit": 0,
+     "declined_fit": 0,
+     "order_dependent": 0
+    },
+    "level": "TESTED",
+    "unenumerated": 0,
+    "verdict": {
+     "order_dependent_approvals": 0,
+     "order_dependent_declines": 0,
+     "overspend_from_approvals": "none",
+     "wrongful_refusal": "none"
+    }
+   },
+   "report": {
+    "captures_after_expiry": [],
+    "declines_not_modelled": {
+     "by_reason": {
+      "spending_controls": 3
+     },
+     "count": 3
+    },
+    "first": {
+     "approval_unfit": null,
+     "no_hold": {
+      "bucket": "cardholder-daily|ich_agent1|2026-11-30",
+      "event": "evt_00461",
+      "limit": "cardholder-daily",
+      "trail": [
+       {
+        "amount": 80,
+        "held_after": 80,
+        "held_before": 0,
+        "id": "iauth_0000:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 160,
+        "held_after": 240,
+        "held_before": 80,
+        "id": "iauth_0002:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 260,
+        "held_after": 500,
+        "held_before": 240,
+        "id": "iauth_0003:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 150,
+        "held_after": 650,
+        "held_before": 500,
+        "id": "iauth_0004:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 120,
+        "held_after": 530,
+        "held_before": 650,
+        "id": "evt_00017",
+        "kind": "capture",
+        "spent_after": 120,
+        "spent_before": 0
+       },
+       {
+        "amount": 0,
+        "held_after": 490,
+        "held_before": 530,
+        "id": "evt_00019",
+        "kind": "capture",
+        "spent_after": 120,
+        "spent_before": 120
+       },
+       {
+        "amount": 150,
+        "held_after": 340,
+        "held_before": 490,
+        "id": "evt_00020",
+        "kind": "capture",
+        "spent_after": 270,
+        "spent_before": 120
+       },
+       {
+        "amount": null,
+        "held_after": 80,
+        "held_before": 340,
+        "id": "evt_00029",
+        "kind": "reverse",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": null,
+        "held_after": 0,
+        "held_before": 80,
+        "id": "evt_00056",
+        "kind": "reverse",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": 180,
+        "held_after": 180,
+        "held_before": 0,
+        "id": "iauth_0038:rh:0",
+        "kind": "outcome",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": 150,
+        "held_after": 330,
+        "held_before": 180,
+        "id": "iauth_0039:rh:0",
+        "kind": "outcome",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": 210,
+        "held_after": 540,
+        "held_before": 330,
+        "id": "iauth_0040:rh:0",
+        "kind": "outcome",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": 80,
+        "held_after": 620,
+        "held_before": 540,
+        "id": "iauth_0041:rh:0",
+        "kind": "outcome",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": 75,
+        "held_after": 545,
+        "held_before": 620,
+        "id": "evt_00188",
+        "kind": "reverse",
+        "spent_after": 270,
+        "spent_before": 270
+       },
+       {
+        "amount": 75,
+        "held_after": 470,
+        "held_before": 545,
+        "id": "evt_00194",
+        "kind": "capture",
+        "spent_after": 345,
+        "spent_before": 270
+       },
+       {
+        "amount": null,
+        "held_after": 260,
+        "held_before": 470,
+        "id": "evt_00199",
+        "kind": "reverse",
+        "spent_after": 345,
+        "spent_before": 345
+       },
+       {
+        "amount": 100,
+        "held_after": 360,
+        "held_before": 260,
+        "id": "iauth_0042:rh:0",
+        "kind": "outcome",
+        "spent_after": 345,
+        "spent_before": 345
+       },
+       {
+        "amount": 120,
+        "held_after": 480,
+        "held_before": 360,
+        "id": "iauth_0043:rh:0",
+        "kind": "outcome",
+        "spent_after": 345,
+        "spent_before": 345
+       },
+       {
+        "amount": 50,
+        "held_after": 430,
+        "held_before": 480,
+        "id": "evt_00229",
+        "kind": "reverse",
+        "spent_after": 345,
+        "spent_before": 345
+       },
+       {
+        "amount": 50,
+        "held_after": 380,
+        "held_before": 430,
+        "id": "evt_00231",
+        "kind": "capture",
+        "spent_after": 395,
+        "spent_before": 345
+       },
+       {
+        "amount": 198,
+        "held_after": 200,
+        "held_before": 380,
+        "id": "evt_00237",
+        "kind": "capture",
+        "spent_after": 593,
+        "spent_before": 395
+       },
+       {
+        "amount": 330,
+        "held_after": 530,
+        "held_before": 200,
+        "id": "iauth_0054:rh:0",
+        "kind": "outcome",
+        "spent_after": 593,
+        "spent_before": 593
+       },
+       {
+        "amount": 80,
+        "held_after": 610,
+        "held_before": 530,
+        "id": "iauth_0055:rh:0",
+        "kind": "outcome",
+        "spent_after": 593,
+        "spent_before": 593
+       },
+       {
+        "amount": 290,
+        "held_after": 900,
+        "held_before": 610,
+        "id": "iauth_0056:rh:0",
+        "kind": "outcome",
+        "spent_after": 593,
+        "spent_before": 593
+       },
+       {
+        "amount": 120,
+        "held_after": 780,
+        "held_before": 900,
+        "id": "evt_00254",
+        "kind": "capture",
+        "spent_after": 713,
+        "spent_before": 593
+       },
+       {
+        "amount": null,
+        "held_after": 700,
+        "held_before": 780,
+        "id": "evt_00257",
+        "kind": "reverse",
+        "spent_after": 713,
+        "spent_before": 713
+       },
+       {
+        "amount": 290,
+        "held_after": 410,
+        "held_before": 700,
+        "id": "evt_00285",
+        "kind": "capture",
+        "spent_after": 1003,
+        "spent_before": 713
+       },
+       {
+        "amount": 80,
+        "held_after": 330,
+        "held_before": 410,
+        "id": "evt_00288",
+        "kind": "capture",
+        "spent_after": 1083,
+        "spent_before": 1003
+       },
+       {
+        "amount": 363,
+        "held_after": 0,
+        "held_before": 330,
+        "id": "evt_00302",
+        "kind": "capture",
+        "spent_after": 1446,
+        "spent_before": 1083
+       },
+       {
+        "amount": 330,
+        "held_after": 330,
+        "held_before": 0,
+        "id": "iauth_0075:rh:0",
+        "kind": "outcome",
+        "spent_after": 1446,
+        "spent_before": 1446
+       },
+       {
+        "amount": 130,
+        "held_after": 460,
+        "held_before": 330,
+        "id": "iauth_0076:rh:0",
+        "kind": "outcome",
+        "spent_after": 1446,
+        "spent_before": 1446
+       },
+       {
+        "amount": 330,
+        "held_after": 130,
+        "held_before": 460,
+        "id": "evt_00372",
+        "kind": "capture",
+        "spent_after": 1776,
+        "spent_before": 1446
+       },
+       {
+        "amount": 98,
+        "held_after": 32,
+        "held_before": 130,
+        "id": "evt_00385",
+        "kind": "capture",
+        "spent_after": 1874,
+        "spent_before": 1776
+       },
+       {
+        "amount": 0,
+        "held_after": 0,
+        "held_before": 32,
+        "id": "evt_00387",
+        "kind": "capture",
+        "spent_after": 1874,
+        "spent_before": 1874
+       },
+       {
+        "amount": 100,
+        "held_after": 100,
+        "held_before": 0,
+        "id": "iauth_0090:rh:0",
+        "kind": "outcome",
+        "spent_after": 1874,
+        "spent_before": 1874
+       },
+       {
+        "amount": 100,
+        "held_after": 0,
+        "held_before": 100,
+        "id": "evt_00432",
+        "kind": "capture",
+        "spent_after": 1974,
+        "spent_before": 1874
+       },
+       {
+        "amount": 90,
+        "held_after": 0,
+        "held_before": 0,
+        "id": "evt_00461",
+        "kind": "capture",
+        "spent_after": 2064,
+        "spent_before": 1974
+       }
+      ]
+     },
+     "over_capture": {
+      "bucket": "card-per-authorization|ic_agent1_card1|auth:iauth_0054",
+      "event": "evt_00302",
+      "limit": "card-per-authorization",
+      "trail": [
+       {
+        "amount": 330,
+        "held_after": 330,
+        "held_before": 0,
+        "id": "iauth_0054:rh:0",
+        "kind": "outcome",
+        "spent_after": 0,
+        "spent_before": 0
+       },
+       {
+        "amount": 363,
+        "held_after": 0,
+        "held_before": 330,
+        "id": "evt_00302",
+        "kind": "capture",
+        "spent_after": 363,
+        "spent_before": 0
+       }
+      ]
+     },
+     "wrongful_refusal": null
+    },
+    "handler": {
+     "agree": 104,
+     "answers": 110,
+     "approved_unfit": 0,
+     "declined_fit": 6,
+     "max_delay_ms": 2699
+    },
+    "journal": {
+     "duplicates": 107,
+     "events": 454,
+     "first_t": 1796026940,
+     "last_hash": "edbbd6503bca8663351a323b2ca71ab11551727571c55abd654d1dd0f751f38f",
+     "last_t": 1796063362,
+     "level": "TESTED",
+     "lines": 561,
+     "out_of_order": 161
+    },
+    "limits": [
+     {
+      "amount": 2000,
+      "categories": null,
+      "id": "cardholder-daily",
+      "interval": "daily",
+      "most_over": {
+       "bucket": "cardholder-daily|ich_agent1|2026-11-30",
+       "event": "evt_00461",
+       "from_approvals": 0,
+       "from_no_hold": 64,
+       "from_over_capture": 0,
+       "total": 64
+      },
+      "scope": "cardholder",
+      "wrongly_refused": {
+       "count": 0,
+       "largest": 0
+      }
+     },
+     {
+      "amount": 350,
+      "categories": null,
+      "id": "card-per-authorization",
+      "interval": "per_authorization",
+      "most_over": {
+       "bucket": "card-per-authorization|ic_agent1_card1|auth:iauth_0054",
+       "event": "evt_00302",
+       "from_approvals": 0,
+       "from_no_hold": 0,
+       "from_over_capture": 13,
+       "total": 13
+      },
+      "scope": "card",
+      "wrongly_refused": {
+       "count": 0,
+       "largest": 0
+      }
+     },
+     {
+      "amount": 20000,
+      "categories": null,
+      "id": "program-monthly",
+      "interval": "monthly",
+      "most_over": {
+       "bucket": null,
+       "event": null,
+       "from_approvals": 0,
+       "from_no_hold": 0,
+       "from_over_capture": 0,
+       "total": 0
+      },
+      "scope": "program",
+      "wrongly_refused": {
+       "count": 0,
+       "largest": 0
+      }
+     }
+    ],
+    "overdue": [],
+    "profile": {
+     "constants": {
+      "expiry_days": {
+       "status": "assumed",
+       "value": 7
+      },
+      "expiry_days.lodging": {
+       "status": "assumed",
+       "value": 31
+      },
+      "force_post": {
+       "status": "assumed",
+       "value": 100
+      },
+      "over_capture": {
+       "status": "assumed",
+       "value": 10
+      },
+      "refund_restores": {
+       "status": "assumed",
+       "value": false
+      }
+     },
+     "currency": "usd"
+    },
+    "refunds": {
+     "amount": 200,
+     "count": 4,
+     "restores": false
+    },
+    "sole_writer": {
+     "assumes": "the report is about the events this ledger saw",
+     "authorizations": []
+    },
+    "statements": [
+     "no Lean theorem names the ledger with more than one bucket (the multi-bucket proof is a later card)",
+     "one bucket is the budget key cell of X3",
+     "A handler that enforces on a real wire is not built"
+    ],
+    "timeouts": {
+     "approved": 0,
+     "count": 3,
+     "declined": 3
+    },
+    "unmodelled": [],
+    "verdict": {
+     "overspend_from_approvals": "none",
+     "wrongful_refusal": "none"
+    },
+    "wrongly_refused": {
+     "count": 0,
+     "largest": 0
+    }
+   }
+  }
+ },
+ "limits": [
+  {
+   "amount": 2000,
+   "id": "cardholder-daily",
+   "interval": "daily",
+   "scope": "cardholder"
+  },
+  {
+   "amount": 350,
+   "id": "card-per-authorization",
+   "interval": "per_authorization",
+   "scope": "card"
+  },
+  {
+   "amount": 20000,
+   "id": "program-monthly",
+   "interval": "monthly",
+   "scope": "program"
+  }
+ ],
+ "profile": {
+  "constants": {
+   "expiry_days": {
+    "status": "assumed",
+    "value": 7
+   },
+   "expiry_days.lodging": {
+    "categories": [
+     "7011"
+    ],
+    "status": "assumed",
+    "value": 31
+   },
+   "force_post": {
+    "status": "assumed",
+    "value": 100
+   },
+   "over_capture": {
+    "status": "assumed",
+    "value": 10
+   },
+   "refund_restores": {
+    "status": "assumed",
+    "value": false
+   }
+  },
+  "currency": "usd",
+  "ledger": "shadow-v1"
+ },
+ "seed": 11,
+ "simulator": "a simulated card program and a simulated processor in the shape of Stripe Issuing's webhooks, both the demo's own: no number here is about a vendor's system"
+}

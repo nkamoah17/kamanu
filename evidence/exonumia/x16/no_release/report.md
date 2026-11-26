@@ -1,0 +1,260 @@
+# The contracted path was decided (no part UNKNOWN); 2 of 8 families have a finding; the processor was simulated, and nothing here is a statement about a processor's system.
+
+handler demo.sprint.handlers:NoRelease; scope demo/sprint/scope.json; seed 1; trials 99 in each family with a race; 8 asks at once
+
+The three parts below are kept apart: a figure of one part is not printed in another.
+
+# Model
+
+- What the model answers for the scope's card profile, once per limit (kamanu scan --card on profiles/<id>.json, the limit's amount as the face). A check's level is the model's own.
+
+## limit cardholder-daily (daily, amount 2000)
+
+- cardholder-daily: face 2000, ceiling 2000, fineness 1.000; level ASSUMED
+
+- Sound: VACUOUS, level ASSUMED
+
+- Tight: holds, level ASSUMED
+
+- constant Atomic = false (assumed)
+
+- constant Lag = 1 (assumed)
+
+- constant OverCapture = 20 (assumed)
+
+- window: daily: one fixed calendar window, the UTC day (it resets at midnight UTC); the card model checks the bucket of one such window, and the ledger keeps one bucket per window; a sliding window is not what was checked
+
+- profile profiles/cardholder-daily.json; receipt receipts/cardholder-daily.json
+
+- Tight's trace: none (Tight does not fail)
+
+## limit card-per-authorization (per_authorization, amount 350)
+
+- card-per-authorization: face 350, ceiling 350, fineness 1.000; level ASSUMED
+
+- Sound: VACUOUS, level ASSUMED
+
+- Tight: holds, level ASSUMED
+
+- constant Atomic = false (assumed)
+
+- constant Lag = 1 (assumed)
+
+- constant OverCapture = 20 (assumed)
+
+- window: per_authorization: no calendar window; the bucket is the authorization itself (its hold and captures)
+
+- profile profiles/card-per-authorization.json; receipt receipts/card-per-authorization.json
+
+- Tight's trace: none (Tight does not fail)
+
+## limit cards-monthly (monthly, amount 20000)
+
+- cards-monthly: face 20000, ceiling 24000, fineness .833; level ASSUMED
+
+- Sound: FAILS, level REFUTED
+
+- Tight: VACUOUS, level ASSUMED
+
+- constant Atomic = false (assumed)
+
+- constant Lag = 1 (assumed)
+
+- constant OverCapture = 20 (assumed)
+
+- window: monthly: one fixed calendar window, the UTC calendar month; the card model checks the bucket of one such window, and the ledger keeps one bucket per window; a sliding window is not what was checked
+
+- profile profiles/cards-monthly.json; receipt receipts/cards-monthly.json
+
+- Tight's trace: none (Tight does not fail)
+
+# Measurement
+
+- Every count below is a count of this run's journals, level TESTED: the battery played against the handler on a simulated processor, read by python -m exonumia.ledger report --json --orders (seed 1, 8 asks at once in the parallel family; TESTED).
+
+## single asks below, at and above the limit
+
+- trials: 3 (TESTED)
+
+- approvals that did not fit: 0 (TESTED)
+
+- wrongful refusals: 0 (TESTED)
+
+- order-dependent decisions: 0 (TESTED; never a finding)
+
+- largest amount over a limit: 0 (TESTED)
+
+- finding: none, TESTED on this run
+
+- 3 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 63.2% of the time or more would be missed with probability at most 5%; a rarer one can still be there.
+
+- journal journals/single.jsonl; ledger report ledger/single.json
+
+## parallel asks
+
+- trials: 99 (TESTED)
+
+- approvals that did not fit: 0 (TESTED)
+
+- wrongful refusals: 0 (TESTED)
+
+- order-dependent decisions: 0 (TESTED; never a finding)
+
+- largest amount over a limit: 0 (TESTED)
+
+- finding: none, TESTED on this run
+
+- 99 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 3.0% of the time or more would be missed with probability at most 5%; a rarer one can still be there.
+
+- journal journals/parallel.jsonl; ledger report ledger/parallel.json
+
+## several cards under one cardholder
+
+- trials: 99 (TESTED)
+
+- approvals that did not fit: 0 (TESTED)
+
+- wrongful refusals: 0 (TESTED)
+
+- order-dependent decisions: 0 (TESTED; never a finding)
+
+- largest amount over a limit: 0 (TESTED)
+
+- finding: none, TESTED on this run
+
+- 99 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 3.0% of the time or more would be missed with probability at most 5%; a rarer one can still be there.
+
+- journal journals/cards.jsonl; ledger report ledger/cards.json
+
+## authorization then partial capture
+
+- trials: 3 (TESTED)
+
+- approvals that did not fit: 0 (TESTED)
+
+- wrongful refusals: 2 (TESTED)
+
+- order-dependent decisions: 0 (TESTED; never a finding)
+
+- largest amount over a limit: 0 (TESTED)
+
+- finding: yes, TESTED on this run
+
+- journal journals/partial_capture.jsonl; ledger report ledger/partial_capture.json
+
+the shortest trace of the finding (13 journal lines, TESTED):
+
+```
+{"event":{"amount":350,"auth":null,"card":"ic_partial_capture_0_1","cardholder":"ich_partial_capture_0","category":"5734","currency":"usd","final":true,"id":"partial_capture/0/x1","kind":"capture","t":1782867579},"prev":"0000000000000000000000000000000000000000000000000000000000000000","received":"accepted"}
+{"event":{"amount":350,"auth":null,"card":"ic_partial_capture_0_1","cardholder":"ich_partial_capture_0","category":"5734","currency":"usd","final":true,"id":"partial_capture/0/x2","kind":"capture","t":1782867578},"prev":"4a9f8e5060674a347515fd558a95c68934b8688573d05140bba823fd20189f3d","received":"accepted"}
+{"event":{"amount":350,"auth":null,"card":"ic_partial_capture_0_1","cardholder":"ich_partial_capture_0","category":"5734","currency":"usd","final":true,"id":"partial_capture/0/x3","kind":"capture","t":1782867577},"prev":"eb38a4216691878a2798a103cc400ac8a2d3c23689e23e15fc67f2b5b476c1ae","received":"accepted"}
+{"event":{"amount":350,"auth":null,"card":"ic_partial_capture_0_1","cardholder":"ich_partial_capture_0","category":"5734","currency":"usd","final":true,"id":"partial_capture/0/x4","kind":"capture","t":1782867576},"prev":"5d2c0c8cb552ee7be4a8e44cae12915f122de0b7bf1fb173eccb47181fce1f1f","received":"accepted"}
+{"event":{"amount":250,"auth":null,"card":"ic_partial_capture_0_1","cardholder":"ich_partial_capture_0","category":"5734","currency":"usd","final":true,"id":"partial_capture/0/x5","kind":"capture","t":1782867575},"prev":"e3832e0345b7b3144105d223cad5e64c0cf61b7c97a0c094c59321793afd587c","received":"accepted"}
+{"event":{"amount":263,"auth":"partial_capture/0/a1","card":"ic_partial_capture_0_1","cardholder":"ich_partial_capture_0","category":"5734","currency":"usd","id":"partial_capture/0/a1:request","kind":"request","t":1782867600},"prev":"3a5fbb5785d3af50949bf65429aa32d76a959c95e8a24b768e09bd7d1c1bf05a","received":"accepted"}
+{"event":{"answered_ms":1782867600001,"approved":true,"auth":"partial_capture/0/a1","id":"tee:partial_capture/0/a1:request","kind":"answer","t":1782867600},"prev":"1fb8f6b57b6853e9d980735f14b82a4941dc91356f8ce267fdfb13bda66bef7c","received":"accepted"}
+{"event":{"amount":263,"approved":true,"auth":"partial_capture/0/a1","card":"ic_partial_capture_0_1","cardholder":"ich_partial_capture_0","category":"5734","currency":"usd","id":"partial_capture/0/a1:outcome","kind":"outcome","reason":"webhook_approved","t":1782867600},"prev":"0de3e61809c4dc519cf6955903e7032fed244b7698bd42c17399532d5e9a12d9","received":"accepted"}
+{"event":{"amount":130,"auth":"partial_capture/0/a1","card":"ic_partial_capture_0_1","cardholder":"ich_partial_capture_0","category":"5734","currency":"usd","final":false,"id":"partial_capture/0/a1:capture@1782867605","kind":"capture","t":1782867605},"prev":"24729dc2d2de0a6ec6ac65d0868504ff6f39bafcdfbcd4b384d1dad94eca5e41","received":"accepted"}
+{"event":{"amount":null,"auth":"partial_capture/0/a1","currency":"usd","id":"partial_capture/0/a1:reverse@1782867606","kind":"reverse","t":1782867606},"prev":"adc8ce52f241c36ec4f94dbc966f0d9ad345f79a1509221fcff511f1ad73358e","received":"accepted"}
+{"event":{"amount":206,"auth":"partial_capture/0/a2","card":"ic_partial_capture_0_1","cardholder":"ich_partial_capture_0","category":"5734","currency":"usd","id":"partial_capture/0/a2:request","kind":"request","t":1782867620},"prev":"ec3e636f31b7db5cc4914deda294280b81a2a78ba75f175c1c9bbe9c99236d26","received":"accepted"}
+{"event":{"answered_ms":1782867620001,"approved":false,"auth":"partial_capture/0/a2","id":"tee:partial_capture/0/a2:request","kind":"answer","t":1782867620},"prev":"b2cd024f67ce73d1f65f6bef969b74b262fda5d5941834a03ebb270859e9720e","received":"accepted"}
+{"event":{"amount":206,"approved":false,"auth":"partial_capture/0/a2","card":"ic_partial_capture_0_1","cardholder":"ich_partial_capture_0","category":"5734","currency":"usd","id":"partial_capture/0/a2:outcome","kind":"outcome","reason":"webhook_declined","t":1782867620},"prev":"26bb95131f8db3f5b22ac40b6bf33e889d623684512f1d441b302ed5bf8e2d58","received":"accepted"}
+```
+
+- regression test regressions/test_partial_capture.py (it fails while the finding stands)
+
+## capture above the hold, then reversal
+
+- trials: 3 (TESTED)
+
+- approvals that did not fit: 0 (TESTED)
+
+- wrongful refusals: 2 (TESTED)
+
+- order-dependent decisions: 0 (TESTED; never a finding)
+
+- largest amount over a limit: 0 (TESTED)
+
+- finding: yes, TESTED on this run
+
+- journal journals/over_capture.jsonl; ledger report ledger/over_capture.json
+
+the shortest trace of the finding (16 journal lines, TESTED):
+
+```
+{"event":{"amount":350,"auth":null,"card":"ic_over_capture_0_1","cardholder":"ich_over_capture_0","category":"5734","currency":"usd","final":true,"id":"over_capture/0/x1","kind":"capture","t":1771549181},"prev":"0000000000000000000000000000000000000000000000000000000000000000","received":"accepted"}
+{"event":{"amount":350,"auth":null,"card":"ic_over_capture_0_1","cardholder":"ich_over_capture_0","category":"5734","currency":"usd","final":true,"id":"over_capture/0/x2","kind":"capture","t":1771549180},"prev":"d3961ec12b1b7fa80e63014c8571a55ba4e47076c0079d3f5d7ef5b5a6ff7a59","received":"accepted"}
+{"event":{"amount":350,"auth":null,"card":"ic_over_capture_0_1","cardholder":"ich_over_capture_0","category":"5734","currency":"usd","final":true,"id":"over_capture/0/x3","kind":"capture","t":1771549179},"prev":"5e3231658fdf7463e25d8471d208b40cbd527d659d08f50b656a25a69ee3f9c6","received":"accepted"}
+{"event":{"amount":350,"auth":null,"card":"ic_over_capture_0_1","cardholder":"ich_over_capture_0","category":"5734","currency":"usd","final":true,"id":"over_capture/0/x4","kind":"capture","t":1771549178},"prev":"872fbce5bc74c44e6554550cef7fcf0a6935598a1c4099e5eea1bf0b8b83c304","received":"accepted"}
+{"event":{"amount":250,"auth":null,"card":"ic_over_capture_0_1","cardholder":"ich_over_capture_0","category":"5734","currency":"usd","final":true,"id":"over_capture/0/x5","kind":"capture","t":1771549177},"prev":"5402c11e9cd62cc7e01e1c6a592c9b1d7d6662ab374848efd30aed4bac94af4f","received":"accepted"}
+{"event":{"amount":110,"auth":"over_capture/0/a1","card":"ic_over_capture_0_1","cardholder":"ich_over_capture_0","category":"5734","currency":"usd","id":"over_capture/0/a1:request","kind":"request","t":1771549202},"prev":"33212973961fc152ad9d62eff30a0ec5ee6a59802b44d2aafae05d4f5800b9fd","received":"accepted"}
+{"event":{"answered_ms":1771549202001,"approved":true,"auth":"over_capture/0/a1","id":"tee:over_capture/0/a1:request","kind":"answer","t":1771549202},"prev":"d8506425a274a546f30ead0e848d5c457fa6eebcd948e0cca29267a68ed3f0dc","received":"accepted"}
+{"event":{"amount":110,"approved":true,"auth":"over_capture/0/a1","card":"ic_over_capture_0_1","cardholder":"ich_over_capture_0","category":"5734","currency":"usd","id":"over_capture/0/a1:outcome","kind":"outcome","reason":"webhook_approved","t":1771549202},"prev":"bbf89f3e17ea7c046661bedfbe3f2995d23302f651280ccd7defb91496aac437","received":"accepted"}
+{"event":{"amount":116,"auth":"over_capture/0/a1","card":"ic_over_capture_0_1","cardholder":"ich_over_capture_0","category":"5734","currency":"usd","final":true,"id":"over_capture/0/a1:capture@1771549207","kind":"capture","t":1771549207},"prev":"e2574cbe4fc3dac9e91a0346f17d7fa00186f8fa2a4207e63acc953d40f92f85","received":"accepted"}
+{"event":{"amount":71,"auth":"over_capture/0/a2","card":"ic_over_capture_0_1","cardholder":"ich_over_capture_0","category":"5734","currency":"usd","id":"over_capture/0/a2:request","kind":"request","t":1771549208},"prev":"e87810b626615aadb7e7666b2422589d5dbc9b4e6bfdc21321580e262c7fa8bd","received":"accepted"}
+{"event":{"answered_ms":1771549208001,"approved":true,"auth":"over_capture/0/a2","id":"tee:over_capture/0/a2:request","kind":"answer","t":1771549208},"prev":"ff0bf29c0d2f39f0e70e154c8842bf618ab68c3c053b4a8e336190b336e2d62d","received":"accepted"}
+{"event":{"amount":71,"approved":true,"auth":"over_capture/0/a2","card":"ic_over_capture_0_1","cardholder":"ich_over_capture_0","category":"5734","currency":"usd","id":"over_capture/0/a2:outcome","kind":"outcome","reason":"webhook_approved","t":1771549208},"prev":"51d5d721020d4b845498b2d12e6f0741c71af22e780eff2b0588aa7927ac60c7","received":"accepted"}
+{"event":{"amount":null,"auth":"over_capture/0/a2","currency":"usd","id":"over_capture/0/a2:reverse@1771549210","kind":"reverse","t":1771549210},"prev":"e61272ef58c85876dc5eb6da40055923a2a48f140228e526b0843acec857a99a","received":"accepted"}
+{"event":{"amount":211,"auth":"over_capture/0/a3","card":"ic_over_capture_0_1","cardholder":"ich_over_capture_0","category":"5734","currency":"usd","id":"over_capture/0/a3:request","kind":"request","t":1771549222},"prev":"afc795cad2c2dafd954f24d42177cce73b2c5c1c9a8e4c9bacc2f483822e4eb9","received":"accepted"}
+{"event":{"answered_ms":1771549222001,"approved":false,"auth":"over_capture/0/a3","id":"tee:over_capture/0/a3:request","kind":"answer","t":1771549222},"prev":"5229e1e24342a5e936f43aef1114c7e99a3ee551a4ca90e5b699f7acd1ca04de","received":"accepted"}
+{"event":{"amount":211,"approved":false,"auth":"over_capture/0/a3","card":"ic_over_capture_0_1","cardholder":"ich_over_capture_0","category":"5734","currency":"usd","id":"over_capture/0/a3:outcome","kind":"outcome","reason":"webhook_declined","t":1771549222},"prev":"82482cf0d7d9b608d1228543c567c9156911e206544dfd0390f0db4afce5a5bf","received":"accepted"}
+```
+
+- regression test regressions/test_over_capture.py (it fails while the finding stands)
+
+## time-out with an ambiguous outcome, then retry
+
+- trials: 99 (TESTED)
+
+- approvals that did not fit: 0 (TESTED)
+
+- wrongful refusals: 0 (TESTED)
+
+- order-dependent decisions: 0 (TESTED; never a finding)
+
+- largest amount over a limit: 0 (TESTED)
+
+- finding: none, TESTED on this run
+
+- 99 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 3.0% of the time or more would be missed with probability at most 5%; a rarer one can still be there.
+
+- journal journals/timeout.jsonl; ledger report ledger/timeout.json
+
+## reset at the interval's boundary
+
+- trials: 3 (TESTED)
+
+- approvals that did not fit: 0 (TESTED)
+
+- wrongful refusals: 0 (TESTED)
+
+- order-dependent decisions: 0 (TESTED; never a finding)
+
+- largest amount over a limit: 0 (TESTED)
+
+- finding: none, TESTED on this run
+
+- 3 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 63.2% of the time or more would be missed with probability at most 5%; a rarer one can still be there.
+
+- journal journals/reset.jsonl; ledger report ledger/reset.json
+
+## an uncaptured hold that expires, and two limits on one purchase
+
+- trials: 3 (TESTED)
+
+- approvals that did not fit: 0 (TESTED)
+
+- wrongful refusals: 0 (TESTED)
+
+- order-dependent decisions: 0 (TESTED; never a finding)
+
+- largest amount over a limit: 0 (TESTED)
+
+- finding: none, TESTED on this run
+
+- 3 clean trials bound how often a race can occur and do not show that it cannot; a race that occurs 63.2% of the time or more would be missed with probability at most 5%; a rarer one can still be there.
+
+- journal journals/expiry.jsonl; ledger report ledger/expiry.json
+
+# Deployment
+
+- No live configuration was given (--live): nothing connects the tested configuration to a live one.

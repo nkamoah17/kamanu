@@ -1,0 +1,20 @@
+// unsupported: information provider: decided by code outside the policy text
+// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/guide/05-information-providers.md
+// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/examples/provider_digitcount_forbid/README.md
+
+@id("pay_base")
+permit (
+    principal,
+    action == Kamanu::Action::"Pay",
+    resource
+);
+
+@id("unsupported")
+forbid (
+    principal,
+    action == Kamanu::Action::"Pay",
+    resource
+)
+when {
+    Strings::DigitCount(context.input.memo).count >= 2
+};

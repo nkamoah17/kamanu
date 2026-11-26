@@ -1,0 +1,4 @@
+permit (principal, action == Drupe::Action::"Refund", resource)
+when temporal {
+  (count for (t: Timepoint). where (formerly within 24h (Drupe::Action::"Refund"::request{ input.amount: * } && tp(t)))) <= 2
+};

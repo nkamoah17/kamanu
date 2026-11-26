@@ -1,0 +1,11 @@
+{
+  "target":   {"adapter": "x402", "address": "https://x402.org/facilitator"},
+  "owner":    "the operator of https://x402.org/facilitator (x402's public testnet facilitator)",
+  "basis":    {"kind": "published-statement", "url": "https://github.com/coinbase/x402"},
+  "ceilings": {"requests": 20000, "money": 2500000000},
+  "expires":  "2026-12-31",
+  "x402":     {"networks": ["eip155:84532"],
+               "facilitators": ["https://x402.org/facilitator"],
+               "max_amount": 25000000},
+  "note":     "card X2a. The money ceiling counts the prices asked, not what moves: the over-ask test on the balance asks 99 times for the wallet's balance + 8, which the facilitator refuses and the chain cannot move. Sized for a buyer wallet holding up to 24.99 testnet USDC at --cap 5000; preflight refuses a scope that does not admit the run."
+}

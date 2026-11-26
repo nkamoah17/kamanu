@@ -1,0 +1,10 @@
+\* The card ledger (X4) with over-capture and force-post off is the ledger with holds (CardHolds)
+Cap = 100
+Amts = {40, 100}
+Holds = 2
+Partial = TRUE
+Reversal = TRUE
+Lag = 1
+Atomic = FALSE
+OverCapture = 0
+ForcePost = 0

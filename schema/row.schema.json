@@ -1,0 +1,757 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kamanu.dev/schema/row.schema.json",
+  "title": "A row of the engine table: one hunt on one engine version (kamanu hunt --row, card H4)",
+  "description": "Every tested cell carries the confirm session and the trace that shows its verdict; every cell carries the engine's version and the row's date. A cell without a trace, a version and a date does not validate. Extra keys are allowed anywhere. What the schema cannot say (a cell's version and date are the row's, a trace is its session's ops and shows its verdict) kamanu.hunt.row.check_row checks.",
+  "type": "object",
+  "required": [
+    "engine",
+    "date",
+    "policy",
+    "sessions",
+    "profile",
+    "cells"
+  ],
+  "properties": {
+    "engine": {
+      "type": "object",
+      "required": [
+        "name",
+        "version",
+        "obtained"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/text"
+        },
+        "version": {
+          "$ref": "#/$defs/text",
+          "description": "the engine's own version string"
+        },
+        "obtained": {
+          "type": "object",
+          "description": "how the engine was obtained",
+          "required": [
+            "kind",
+            "value"
+          ],
+          "properties": {
+            "kind": {
+              "enum": [
+                "image-digest",
+                "binary-sha256",
+                "git-rev",
+                "release-url"
+              ]
+            },
+            "value": {
+              "$ref": "#/$defs/text"
+            }
+          }
+        }
+      }
+    },
+    "date": {
+      "$ref": "#/$defs/date",
+      "description": "UTC, when the hunt ran"
+    },
+    "policy": {
+      "type": "object",
+      "required": [
+        "text",
+        "cap",
+        "window_s",
+        "unit"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cap": {
+          "type": "integer",
+          "description": "a call engine's cap is a number of calls"
+        },
+        "window_s": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "unit": {
+          "enum": [
+            "amount",
+            "call"
+          ]
+        }
+      }
+    },
+    "sessions": {
+      "type": "array",
+      "description": "every session the hunt opened on the engine, in order",
+      "items": {
+        "type": "object",
+        "required": [
+          "purpose",
+          "ops"
+        ],
+        "properties": {
+          "purpose": {
+            "enum": [
+              "probe",
+              "confirm"
+            ]
+          },
+          "ops": {
+            "$ref": "#/$defs/ops"
+          }
+        }
+      }
+    },
+    "profile": {
+      "type": "object",
+      "required": [
+        "reflexive",
+        "deny_marks",
+        "atomic",
+        "window_kind"
+      ],
+      "properties": {
+        "reflexive": {
+          "type": "object",
+          "required": [
+            "values",
+            "sessions"
+          ],
+          "properties": {
+            "values": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "boolean"
+              }
+            },
+            "sessions": {
+              "$ref": "#/$defs/indexes"
+            }
+          }
+        },
+        "deny_marks": {
+          "type": "object",
+          "required": [
+            "values",
+            "sessions"
+          ],
+          "properties": {
+            "values": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  [],
+                  [
+                    "request"
+                  ],
+                  [
+                    "error"
+                  ],
+                  [
+                    "error",
+                    "request"
+                  ]
+                ]
+              }
+            },
+            "sessions": {
+              "$ref": "#/$defs/indexes"
+            }
+          }
+        },
+        "atomic": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": [
+                "value",
+                "sessions"
+              ],
+              "properties": {
+                "value": {
+                  "const": "refuted"
+                },
+                "sessions": {
+                  "allOf": [
+                    {
+                      "$ref": "#/$defs/indexes"
+                    },
+                    {
+                      "minItems": 1
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "type": "object",
+              "required": [
+                "value",
+                "trials"
+              ],
+              "properties": {
+                "value": {
+                  "const": "not refuted"
+                },
+                "trials": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            }
+          ]
+        },
+        "window_kind": {
+          "type": "object",
+          "required": [
+            "value",
+            "sessions"
+          ],
+          "properties": {
+            "value": {
+              "enum": [
+                "sliding",
+                "fixed",
+                "unknown"
+              ]
+            },
+            "sessions": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/indexes"
+                },
+                {
+                  "minItems": 1
+                }
+              ]
+            }
+          }
+        },
+        "lag": {
+          "type": "object",
+          "required": [
+            "values",
+            "sessions"
+          ],
+          "properties": {
+            "values": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  0,
+                  1
+                ]
+              }
+            },
+            "sessions": {
+              "$ref": "#/$defs/indexes"
+            }
+          }
+        }
+      }
+    },
+    "cells": {
+      "type": "object",
+      "required": [
+        "over-ask",
+        "freeze",
+        "parallel",
+        "ambiguous"
+      ],
+      "properties": {
+        "over-ask": {
+          "$ref": "#/$defs/cell"
+        },
+        "freeze": {
+          "$ref": "#/$defs/cell"
+        },
+        "parallel": {
+          "$ref": "#/$defs/cell"
+        },
+        "ambiguous": {
+          "$ref": "#/$defs/cell"
+        }
+      }
+    },
+    "identification": {
+      "type": "object",
+      "required": [
+        "result",
+        "candidates",
+        "named",
+        "decided",
+        "replay",
+        "conformance",
+        "cost",
+        "not_run"
+      ],
+      "properties": {
+        "result": {
+          "enum": [
+            "profile",
+            "no profile fits",
+            "out of budget"
+          ]
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "reflexive",
+              "deny_marks",
+              "lag"
+            ],
+            "properties": {
+              "reflexive": {
+                "type": "boolean"
+              },
+              "deny_marks": {
+                "enum": [
+                  [],
+                  [
+                    "request"
+                  ],
+                  [
+                    "error"
+                  ],
+                  [
+                    "error",
+                    "request"
+                  ]
+                ]
+              },
+              "lag": {
+                "enum": [
+                  0,
+                  1
+                ]
+              }
+            }
+          }
+        },
+        "decided": {
+          "type": "object",
+          "required": [
+            "reflexive",
+            "lag",
+            "deny_marks"
+          ],
+          "properties": {
+            "reflexive": {
+              "$ref": "#/$defs/indexes"
+            },
+            "lag": {
+              "$ref": "#/$defs/indexes"
+            },
+            "deny_marks": {
+              "$ref": "#/$defs/indexes"
+            }
+          }
+        },
+        "atomic": {
+          "type": "object",
+          "required": [
+            "value"
+          ],
+          "properties": {
+            "value": {
+              "enum": [
+                "refuted",
+                "not refuted"
+              ]
+            }
+          }
+        },
+        "replay": {
+          "type": "object",
+          "required": [
+            "replayed",
+            "agrees",
+            "session",
+            "trace",
+            "dimension"
+          ],
+          "properties": {
+            "replayed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "dimension": {
+              "enum": [
+                null,
+                "threshold",
+                "double-count",
+                "mark-expiry",
+                "lag",
+                "unknown"
+              ]
+            }
+          }
+        },
+        "conformance": {
+          "type": "object",
+          "required": [
+            "depth",
+            "sessions",
+            "requests"
+          ],
+          "properties": {
+            "depth": {
+              "const": 4
+            },
+            "sessions": {
+              "$ref": "#/$defs/indexes"
+            },
+            "requests": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "cost": {
+          "type": "object",
+          "required": [
+            "requests",
+            "sessions"
+          ],
+          "properties": {
+            "requests": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "sessions": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "not_run": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "timing": {
+      "description": "R15c: the hunt read in ticks (hunt(..., tick=SECONDS)). Present when the hunt was given a tick.",
+      "type": "object",
+      "required": [
+        "tick_s",
+        "window_ticks",
+        "limit",
+        "trace",
+        "boundary",
+        "refusals"
+      ],
+      "properties": {
+        "tick_s": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "window_ticks": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "trace": {
+          "type": "object",
+          "description": "a de Bruijn sequence over {ask, wait} of order window_ticks + 1 in one fresh session; order, ticks, requests and money are stated before it starts",
+          "required": [
+            "order",
+            "ticks",
+            "requests",
+            "money",
+            "session",
+            "agrees",
+            "first_disagreement"
+          ],
+          "properties": {
+            "order": {
+              "type": "integer",
+              "minimum": 2
+            },
+            "ticks": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "requests": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "money": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "session": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "agrees": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "first_disagreement": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "word": {
+              "type": "string",
+              "pattern": "^[aw]*$"
+            }
+          }
+        },
+        "boundary": {
+          "type": "object",
+          "required": [
+            "value",
+            "probes"
+          ],
+          "properties": {
+            "value": {
+              "enum": [
+                "exact",
+                "short",
+                "long",
+                "unknown"
+              ]
+            },
+            "probes": {
+              "type": "array",
+              "maxItems": 3,
+              "items": {
+                "type": "object",
+                "required": [
+                  "after",
+                  "session",
+                  "verdict"
+                ],
+                "properties": {
+                  "after": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "session": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "verdict": {
+                    "enum": [
+                      "ALLOW",
+                      "DENY"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "refusals": {
+          "type": "object",
+          "required": [
+            "depth",
+            "time",
+            "count"
+          ],
+          "properties": {
+            "depth": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "time": {
+              "$ref": "#/$defs/indexes"
+            },
+            "count": {
+              "$ref": "#/$defs/indexes"
+            }
+          }
+        },
+        "soak": {
+          "type": "object",
+          "required": [
+            "run"
+          ],
+          "properties": {
+            "run": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "indexes": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "ops": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/op"
+      }
+    },
+    "op": {
+      "type": "object",
+      "required": [
+        "op"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "amount",
+            "verdict"
+          ],
+          "properties": {
+            "op": {
+              "const": "issue"
+            },
+            "amount": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "verdict": {
+              "enum": [
+                "ALLOW",
+                "DENY"
+              ]
+            }
+          }
+        },
+        {
+          "required": [
+            "call"
+          ],
+          "properties": {
+            "op": {
+              "enum": [
+                "settle",
+                "fail"
+              ]
+            },
+            "call": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "moved": {
+              "type": "boolean"
+            }
+          }
+        },
+        {
+          "required": [
+            "seconds"
+          ],
+          "properties": {
+            "op": {
+              "const": "wait"
+            },
+            "seconds": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        }
+      ]
+    },
+    "cell": {
+      "type": "object",
+      "required": [
+        "verdict",
+        "version",
+        "date"
+      ],
+      "properties": {
+        "verdict": {
+          "enum": [
+            "fails",
+            "passes",
+            "untested"
+          ]
+        },
+        "version": {
+          "$ref": "#/$defs/text"
+        },
+        "date": {
+          "$ref": "#/$defs/date"
+        }
+      },
+      "if": {
+        "properties": {
+          "verdict": {
+            "enum": [
+              "fails",
+              "passes"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "session",
+          "trace"
+        ],
+        "properties": {
+          "session": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "trace": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/ops"
+              },
+              {
+                "minItems": 1
+              }
+            ]
+          }
+        }
+      },
+      "else": {
+        "required": [
+          "reason"
+        ],
+        "properties": {
+          "reason": {
+            "$ref": "#/$defs/text"
+          }
+        }
+      }
+    }
+  }
+}

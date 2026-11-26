@@ -1,0 +1,4576 @@
+{
+ "probe": "single-writer: a key's writer issues its next call only after the last one settled (sequential), compared with the same calls overlapping",
+ "policy": "a reflexive request sum over the scope against cap; a denial records nothing",
+ "entries": [
+  {
+   "question": "own_writes",
+   "probe": "single-writer",
+   "profile": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "trials": [
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    }
+   ],
+   "answer": {
+    "question": "own_writes",
+    "status": "not refuted",
+    "value": true,
+    "trials": 24,
+    "statement": "own_writes: not refuted in 24 trials"
+   }
+  },
+  {
+   "question": "own_writes",
+   "probe": "single-writer",
+   "profile": {
+    "atomic": true,
+    "own_writes": false,
+    "other_lag": 0
+   },
+   "trials": [
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      },
+      {
+       "key": "k",
+       "amount": 30,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "key",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 70,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 40,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "k",
+       "amount": 50,
+       "verdict": "allow"
+      },
+      {
+       "key": "k",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    }
+   ],
+   "answer": {
+    "question": "own_writes",
+    "status": "determined",
+    "value": false,
+    "trials": 26,
+    "statement": "own_writes: determined false: a sequential call was allowed past the cap its own key's completed calls had reached (26 exercising calls)"
+   }
+  },
+  {
+   "question": "other_lag",
+   "probe": "single-writer",
+   "profile": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 0
+   },
+   "trials": [
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    }
+   ],
+   "answer": {
+    "question": "other_lag",
+    "status": "not refuted",
+    "value": 0,
+    "trials": 24,
+    "statement": "other_lag: not refuted in 24 trials"
+   }
+  },
+  {
+   "question": "other_lag",
+   "probe": "single-writer",
+   "profile": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 1
+   },
+   "trials": [
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    }
+   ],
+   "answer": {
+    "question": "other_lag",
+    "status": "determined",
+    "value": 1,
+    "trials": 24,
+    "statement": "other_lag: determined, at least 1: an allowed sequential call is explained only by 1 missing completed calls of other keys"
+   }
+  },
+  {
+   "question": "other_lag",
+   "probe": "single-writer",
+   "profile": {
+    "atomic": true,
+    "own_writes": true,
+    "other_lag": 2
+   },
+   "trials": [
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 60,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 60,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "allow"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 40,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 30,
+       "verdict": "allow"
+      },
+      {
+       "key": "c",
+       "amount": 50,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "sequential",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    },
+    {
+     "mode": "overlapping",
+     "scope": "global",
+     "cap": 100,
+     "calls": [
+      {
+       "key": "a",
+       "amount": 90,
+       "verdict": "allow"
+      },
+      {
+       "key": "b",
+       "amount": 20,
+       "verdict": "deny"
+      }
+     ]
+    }
+   ],
+   "answer": {
+    "question": "other_lag",
+    "status": "determined",
+    "value": 1,
+    "trials": 24,
+    "statement": "other_lag: determined, at least 1: an allowed sequential call is explained only by 1 missing completed calls of other keys"
+   }
+  }
+ ]
+}

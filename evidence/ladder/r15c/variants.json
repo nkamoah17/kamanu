@@ -1,0 +1,5929 @@
+{
+ "kit": {
+  "source": "progress/ladder/proving/kit/e22_window.py",
+  "kit_W": 4,
+  "kit_L": 2,
+  "window_ticks": 3,
+  "tick_s": 60,
+  "trace_order": 4,
+  "trace_ticks": 19,
+  "variants": [
+   {
+    "name": "fixed window",
+    "told": true,
+    "tick": 3,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     }
+    ],
+    "by": "hunt_row on the variant as a per-call engine (fixed-window, phase 0): session 64, result 'profile'",
+    "trace_on_kit_machine": false,
+    "hunt": {
+     "name": "fixed-window",
+     "told": true,
+     "tick": 3,
+     "trace": [
+      {
+       "op": "issue",
+       "amount": 1,
+       "verdict": "ALLOW"
+      },
+      {
+       "op": "wait",
+       "seconds": 60
+      },
+      {
+       "op": "issue",
+       "amount": 1,
+       "verdict": "ALLOW"
+      },
+      {
+       "op": "wait",
+       "seconds": 60
+      },
+      {
+       "op": "issue",
+       "amount": 1,
+       "verdict": "DENY"
+      },
+      {
+       "op": "wait",
+       "seconds": 60
+      },
+      {
+       "op": "issue",
+       "amount": 1,
+       "verdict": "ALLOW"
+      },
+      {
+       "op": "wait",
+       "seconds": 60
+      },
+      {
+       "op": "wait",
+       "seconds": 60
+      },
+      {
+       "op": "issue",
+       "amount": 1,
+       "verdict": "ALLOW"
+      },
+      {
+       "op": "wait",
+       "seconds": 60
+      },
+      {
+       "op": "issue",
+       "amount": 1,
+       "verdict": "ALLOW"
+      },
+      {
+       "op": "wait",
+       "seconds": 60
+      },
+      {
+       "op": "wait",
+       "seconds": 60
+      },
+      {
+       "op": "wait",
+       "seconds": 60
+      },
+      {
+       "op": "issue",
+       "amount": 1,
+       "verdict": "ALLOW"
+      },
+      {
+       "op": "wait",
+       "seconds": 60
+      },
+      {
+       "op": "wait",
+       "seconds": 60
+      },
+      {
+       "op": "issue",
+       "amount": 1,
+       "verdict": "ALLOW"
+      },
+      {
+       "op": "wait",
+       "seconds": 60
+      },
+      {
+       "op": "wait",
+       "seconds": 60
+      },
+      {
+       "op": "wait",
+       "seconds": 60
+      },
+      {
+       "op": "wait",
+       "seconds": 60
+      },
+      {
+       "op": "wait",
+       "seconds": 60
+      },
+      {
+       "op": "issue",
+       "amount": 1,
+       "verdict": "ALLOW"
+      },
+      {
+       "op": "wait",
+       "seconds": 60
+      },
+      {
+       "op": "issue",
+       "amount": 1,
+       "verdict": "ALLOW"
+      },
+      {
+       "op": "wait",
+       "seconds": 60
+      },
+      {
+       "op": "issue",
+       "amount": 1,
+       "verdict": "ALLOW"
+      },
+      {
+       "op": "wait",
+       "seconds": 60
+      }
+     ],
+     "session": 64,
+     "trace_is_the_conformance_trace": true,
+     "case": {
+      "W": 3,
+      "L": 2,
+      "tick_s": 60,
+      "param": 0
+     },
+     "result": "profile",
+     "named": {
+      "reflexive": true,
+      "deny_marks": [],
+      "lag": 0,
+      "window_kind": "fixed"
+     },
+     "boundary": "short",
+     "trace_agrees": true,
+     "requests": 293
+    }
+   },
+   {
+    "name": "window one tick short",
+    "told": true,
+    "tick": 3,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     }
+    ],
+    "by": "the kit's machine on the hunt's conformance trace"
+   },
+   {
+    "name": "window one tick long",
+    "told": true,
+    "tick": 9,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     }
+    ],
+    "by": "the kit's machine on the hunt's conformance trace"
+   },
+   {
+    "name": "limit off by one",
+    "told": true,
+    "tick": 2,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     }
+    ],
+    "by": "the kit's machine on the hunt's conformance trace"
+   },
+   {
+    "name": "refused requests counted",
+    "told": true,
+    "tick": 5,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     }
+    ],
+    "by": "the kit's machine on the hunt's conformance trace"
+   },
+   {
+    "name": "view one event stale",
+    "told": true,
+    "tick": 2,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     }
+    ],
+    "by": "the kit's machine on the hunt's conformance trace"
+   },
+   {
+    "name": "two-window weighted counter",
+    "told": true,
+    "tick": 6,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     }
+    ],
+    "by": "the kit's machine on the hunt's conformance trace"
+   },
+   {
+    "name": "token bucket",
+    "told": true,
+    "tick": 2,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 60
+     }
+    ],
+    "by": "the kit's machine on the hunt's conformance trace"
+   }
+  ]
+ },
+ "gate": {
+  "variants": [
+   {
+    "name": "limit-plus-one",
+    "told": true,
+    "tick": 3,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     }
+    ],
+    "session": 76,
+    "trace_is_the_conformance_trace": true,
+    "case": {
+     "W": 5,
+     "L": 3,
+     "tick_s": 600,
+     "param": null
+    },
+    "result": "profile",
+    "named": {
+     "reflexive": false,
+     "deny_marks": [],
+     "lag": 0,
+     "window_kind": "sliding"
+    },
+    "boundary": "unknown",
+    "trace_agrees": true,
+    "requests": 530
+   },
+   {
+    "name": "refusals-counted",
+    "told": true,
+    "tick": 7,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     }
+    ],
+    "session": 69,
+    "trace_is_the_conformance_trace": true,
+    "case": {
+     "W": 5,
+     "L": 3,
+     "tick_s": 600,
+     "param": null
+    },
+    "result": "profile",
+    "named": {
+     "reflexive": true,
+     "deny_marks": [
+      "error",
+      "request"
+     ],
+     "lag": 0,
+     "window_kind": "sliding"
+    },
+    "boundary": "exact",
+    "trace_agrees": true,
+    "requests": 432
+   },
+   {
+    "name": "stale-view",
+    "told": true,
+    "tick": 3,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     }
+    ],
+    "session": 76,
+    "trace_is_the_conformance_trace": true,
+    "case": {
+     "W": 5,
+     "L": 3,
+     "tick_s": 600,
+     "param": null
+    },
+    "result": "profile",
+    "named": {
+     "reflexive": true,
+     "deny_marks": [],
+     "lag": 1,
+     "window_kind": "sliding"
+    },
+    "boundary": "unknown",
+    "trace_agrees": true,
+    "requests": 480
+   },
+   {
+    "name": "window-short",
+    "told": true,
+    "tick": 4,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 900
+     }
+    ],
+    "session": 64,
+    "trace_is_the_conformance_trace": true,
+    "case": {
+     "W": 4,
+     "L": 2,
+     "tick_s": 900,
+     "param": null
+    },
+    "result": "no profile fits",
+    "named": {
+     "reflexive": true,
+     "deny_marks": [],
+     "lag": 0,
+     "window_kind": "sliding"
+    },
+    "boundary": "short",
+    "trace_agrees": false,
+    "requests": 302
+   },
+   {
+    "name": "window-long",
+    "told": true,
+    "tick": 11,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 300
+     }
+    ],
+    "session": 4,
+    "trace_is_the_conformance_trace": true,
+    "case": {
+     "W": 4,
+     "L": 3,
+     "tick_s": 300,
+     "param": null
+    },
+    "result": "no profile fits",
+    "named": {
+     "reflexive": true,
+     "deny_marks": [
+      "request"
+     ],
+     "lag": 0,
+     "window_kind": "sliding"
+    },
+    "boundary": "long",
+    "trace_agrees": false,
+    "requests": 96
+   },
+   {
+    "name": "strict",
+    "told": true,
+    "tick": 2,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     }
+    ],
+    "session": 3,
+    "trace_is_the_conformance_trace": true,
+    "case": {
+     "W": 5,
+     "L": 3,
+     "tick_s": 600,
+     "param": null
+    },
+    "result": "no profile fits",
+    "named": {
+     "reflexive": true,
+     "deny_marks": [],
+     "lag": 0,
+     "window_kind": "sliding"
+    },
+    "boundary": "exact",
+    "trace_agrees": false,
+    "requests": 105
+   },
+   {
+    "name": "weighted-counter",
+    "told": true,
+    "tick": 5,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     }
+    ],
+    "session": 52,
+    "trace_is_the_conformance_trace": true,
+    "case": {
+     "W": 5,
+     "L": 3,
+     "tick_s": 600,
+     "param": 1200
+    },
+    "result": "no profile fits",
+    "named": {
+     "reflexive": true,
+     "deny_marks": [],
+     "lag": 0,
+     "window_kind": "sliding"
+    },
+    "boundary": "short",
+    "trace_agrees": false,
+    "requests": 331
+   },
+   {
+    "name": "token-bucket",
+    "told": true,
+    "tick": 3,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 1800
+     }
+    ],
+    "session": 4,
+    "trace_is_the_conformance_trace": true,
+    "case": {
+     "W": 4,
+     "L": 3,
+     "tick_s": 1800,
+     "param": null
+    },
+    "result": "no profile fits",
+    "named": {
+     "reflexive": true,
+     "deny_marks": [],
+     "lag": 0,
+     "window_kind": "sliding"
+    },
+    "boundary": "unknown",
+    "trace_agrees": false,
+    "requests": 98
+   },
+   {
+    "name": "refusal-expiry-2",
+    "told": true,
+    "tick": 7,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     }
+    ],
+    "session": 53,
+    "trace_is_the_conformance_trace": true,
+    "case": {
+     "W": 5,
+     "L": 3,
+     "tick_s": 600,
+     "param": null
+    },
+    "result": "no profile fits",
+    "named": {
+     "reflexive": true,
+     "deny_marks": [
+      "request"
+     ],
+     "lag": 0,
+     "window_kind": "sliding"
+    },
+    "boundary": "exact",
+    "trace_agrees": false,
+    "requests": 335
+   },
+   {
+    "name": "refusal-expiry-4",
+    "told": true,
+    "tick": 8,
+    "trace": [
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "ALLOW"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     },
+     {
+      "op": "issue",
+      "amount": 1,
+      "verdict": "DENY"
+     },
+     {
+      "op": "wait",
+      "seconds": 600
+     }
+    ],
+    "session": 54,
+    "trace_is_the_conformance_trace": true,
+    "case": {
+     "W": 6,
+     "L": 5,
+     "tick_s": 600,
+     "param": null
+    },
+    "result": "no profile fits",
+    "named": {
+     "reflexive": true,
+     "deny_marks": [
+      "request"
+     ],
+     "lag": 0,
+     "window_kind": "sliding"
+    },
+    "boundary": "exact",
+    "trace_agrees": false,
+    "requests": 542
+   }
+  ]
+ }
+}

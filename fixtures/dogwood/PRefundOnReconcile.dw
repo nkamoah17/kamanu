@@ -1,0 +1,21 @@
+// kernel: PRefundOnReconcile
+// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/examples/cap_open_agent_prs_windowed/README.md (aggregate minus aggregate)
+// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/examples/login_attempt_custom_kind/README.md (author-defined event kinds)
+// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/guide/04-temporal-expressions.md#arithmetic-in-comparison-operands
+// refund is a history-only kind declared in events.dwschema.
+// Needs a dogwood build with --features experimental-arithmetic.
+
+@id("pay_cap")
+permit (
+    principal,
+    action == Kamanu::Action::"Pay",
+    resource
+)
+when temporal {
+    (sum a for (a: Long), (t: Timepoint). where (
+        formerly within 24h (Kamanu::Action::"Pay"::request{ input.amount: a } && tp(t))
+    ))
+    - (sum a for (a: Long), (t: Timepoint). where (
+        formerly within 24h (Kamanu::Action::"Pay"::refund{ input.amount: a } && tp(t))
+    )) <= 100
+};

@@ -1,0 +1,20 @@
+\* AgentCore's measured denial bookkeeping, one hostile oversized request, the honest $60 task.
+Templates <- HostileTemplates
+Permit <- HPermit
+Scope <- ScopeGlobal
+MaxReq = 3
+MaxFails = 1
+Reflexive = TRUE
+DenyRecord = "request"
+Atomic = TRUE
+Lag = 0
+Faults = {}
+HasReconcile = TRUE
+Cap = 100
+GoalTemplate <- GoalPay
+NeedsApproval = FALSE
+ApproverFair = TRUE
+AgentFair = TRUE
+HasTimeout = FALSE
+MaskDeadlock = FALSE
+AdvMax = 1

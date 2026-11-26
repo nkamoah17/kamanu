@@ -1,0 +1,195 @@
+[
+ {
+  "name": "three_parallel_blog",
+  "events": [
+   {
+    "kind": "request",
+    "amt": 40
+   },
+   {
+    "kind": "request",
+    "amt": 40
+   },
+   {
+    "kind": "request",
+    "amt": 40
+   },
+   {
+    "kind": "response",
+    "amt": 40
+   },
+   {
+    "kind": "response",
+    "amt": 40
+   },
+   {
+    "kind": "request",
+    "amt": 40
+   }
+  ]
+ },
+ {
+  "name": "sequential_settled",
+  "events": [
+   {
+    "kind": "request",
+    "amt": 60
+   },
+   {
+    "kind": "response",
+    "amt": 60
+   },
+   {
+    "kind": "request",
+    "amt": 60
+   },
+   {
+    "kind": "response",
+    "amt": 60
+   }
+  ]
+ },
+ {
+  "name": "first_payment_double_count",
+  "events": [
+   {
+    "kind": "request",
+    "amt": 60
+   }
+  ]
+ },
+ {
+  "name": "exactly_at_cap",
+  "events": [
+   {
+    "kind": "request",
+    "amt": 50
+   },
+   {
+    "kind": "response",
+    "amt": 50
+   },
+   {
+    "kind": "request",
+    "amt": 50
+   },
+   {
+    "kind": "response",
+    "amt": 50
+   },
+   {
+    "kind": "request",
+    "amt": 1
+   }
+  ]
+ },
+ {
+  "name": "denied_attempts_stay",
+  "events": [
+   {
+    "kind": "request",
+    "amt": 90
+   },
+   {
+    "kind": "request",
+    "amt": 90
+   },
+   {
+    "kind": "deny",
+    "amt": 90
+   },
+   {
+    "kind": "request",
+    "amt": 5
+   }
+  ]
+ },
+ {
+  "name": "clean_error_then_retry",
+  "events": [
+   {
+    "kind": "request",
+    "amt": 60
+   },
+   {
+    "kind": "error",
+    "amt": 60
+   },
+   {
+    "kind": "request",
+    "amt": 60
+   },
+   {
+    "kind": "response",
+    "amt": 60
+   }
+  ]
+ },
+ {
+  "name": "reconciled_refund",
+  "events": [
+   {
+    "kind": "request",
+    "amt": 60
+   },
+   {
+    "kind": "error",
+    "amt": 60
+   },
+   {
+    "kind": "refund",
+    "amt": 60
+   },
+   {
+    "kind": "request",
+    "amt": 60
+   }
+  ]
+ },
+ {
+  "name": "reconciled_confirm",
+  "events": [
+   {
+    "kind": "request",
+    "amt": 60
+   },
+   {
+    "kind": "error",
+    "amt": 60
+   },
+   {
+    "kind": "confirm",
+    "amt": 60
+   },
+   {
+    "kind": "request",
+    "amt": 60
+   }
+  ]
+ },
+ {
+  "name": "zero_amounts",
+  "events": [
+   {
+    "kind": "request",
+    "amt": 0
+   },
+   {
+    "kind": "request",
+    "amt": 0
+   },
+   {
+    "kind": "response",
+    "amt": 0
+   },
+   {
+    "kind": "request",
+    "amt": 100
+   },
+   {
+    "kind": "request",
+    "amt": 0
+   }
+  ]
+ }
+]

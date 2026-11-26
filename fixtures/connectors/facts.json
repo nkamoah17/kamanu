@@ -1,0 +1,366 @@
+{
+ "joern_version": "4.0.676",
+ "queries": {
+  "queries/identity_provenance.sc": "86a1873be3bfeed52a48b7b1f52cf4ef52562c3a3092ca099a1b87849e7176e1",
+  "queries/tenant_sinks.sc": "a0af8ec78bd773f038d2428518179dde9939ce5edfb8d0488639139b5d978686",
+  "queries_js/identity_provenance.sc": "c2e0249f8c3219f7230adc382cff2ea90e5b5319548141ee6542efba5b4fcfc1",
+  "queries_js/tenant_sinks.sc": "f763d581fa61bafc203554e178c9927917daf518653a0c4038c7bc26284a4345"
+ },
+ "library": {
+  "queries/lib/connector.sc": "7a0eb956f30109a3524d4c6397a7a7771f1ca3b2b471d8988cf01ddba5094bce"
+ },
+ "facts": {
+  "py_argument": [
+   {
+    "file": "store.py",
+    "line": 13,
+    "subject": "{\"tool\":\"list_invoices\",\"kind\":\"database\",\"identity\":\"argument\",\"source\":\"server.py:10\"}",
+    "construct": "sqlite3_literal_statement",
+    "assumptions": [
+     "The name sqlite3 is the standard library's module at run time, and the statement runs on the connection the file opened with it",
+     "The SDK fills the parameter annotated Context from the transport and never from the arguments of the call",
+     "Each call on the way to the access runs the one function the graph resolves it to",
+     "Each bound value is compared with the column that names the tenant or the record, and the statement reads no other tenant's rows"
+    ],
+    "query_id": "identity_provenance",
+    "joern_version": "4.0.676",
+    "graph_hash": "e79b73ebb2ec3599bd2c69c7346811484bfc0bbd8d00f434456b5d37eaec3e8b",
+    "query_sha256": "86a1873be3bfeed52a48b7b1f52cf4ef52562c3a3092ca099a1b87849e7176e1"
+   },
+   {
+    "file": "store.py",
+    "line": 23,
+    "subject": "{\"tool\":\"read_note\",\"kind\":\"file\",\"identity\":\"argument\",\"source\":\"server.py:16\"}",
+    "query_id": "identity_provenance",
+    "joern_version": "4.0.676",
+    "graph_hash": "e79b73ebb2ec3599bd2c69c7346811484bfc0bbd8d00f434456b5d37eaec3e8b",
+    "query_sha256": "86a1873be3bfeed52a48b7b1f52cf4ef52562c3a3092ca099a1b87849e7176e1"
+   },
+   {
+    "file": "store.py",
+    "line": 28,
+    "subject": "{\"tool\":\"show_profile\",\"kind\":\"request\",\"identity\":\"argument\",\"source\":\"server.py:21\"}",
+    "query_id": "identity_provenance",
+    "joern_version": "4.0.676",
+    "graph_hash": "e79b73ebb2ec3599bd2c69c7346811484bfc0bbd8d00f434456b5d37eaec3e8b",
+    "query_sha256": "86a1873be3bfeed52a48b7b1f52cf4ef52562c3a3092ca099a1b87849e7176e1"
+   },
+   {
+    "file": "store.py",
+    "line": 13,
+    "subject": "{\"tool\":\"list_invoices\",\"kind\":\"database\",\"identity\":\"argument\",\"path\":[\"server.py:10\",\"server.py:11\",\"store.py:13\"]}",
+    "construct": "sqlite3_literal_statement",
+    "assumptions": [
+     "The name sqlite3 is the standard library's module at run time, and the statement runs on the connection the file opened with it",
+     "The SDK fills the parameter annotated Context from the transport and never from the arguments of the call",
+     "Each call on the way to the access runs the one function the graph resolves it to",
+     "Each bound value is compared with the column that names the tenant or the record, and the statement reads no other tenant's rows"
+    ],
+    "query_id": "tenant_sinks",
+    "joern_version": "4.0.676",
+    "graph_hash": "e79b73ebb2ec3599bd2c69c7346811484bfc0bbd8d00f434456b5d37eaec3e8b",
+    "query_sha256": "a0af8ec78bd773f038d2428518179dde9939ce5edfb8d0488639139b5d978686"
+   },
+   {
+    "file": "store.py",
+    "line": 23,
+    "subject": "{\"tool\":\"read_note\",\"kind\":\"file\",\"identity\":\"argument\",\"path\":[\"server.py:16\",\"server.py:17\",\"store.py:22\",\"store.py:23\"]}",
+    "query_id": "tenant_sinks",
+    "joern_version": "4.0.676",
+    "graph_hash": "e79b73ebb2ec3599bd2c69c7346811484bfc0bbd8d00f434456b5d37eaec3e8b",
+    "query_sha256": "a0af8ec78bd773f038d2428518179dde9939ce5edfb8d0488639139b5d978686"
+   },
+   {
+    "file": "store.py",
+    "line": 28,
+    "subject": "{\"tool\":\"show_profile\",\"kind\":\"request\",\"identity\":\"argument\",\"path\":[\"server.py:21\",\"server.py:22\",\"store.py:28\"]}",
+    "query_id": "tenant_sinks",
+    "joern_version": "4.0.676",
+    "graph_hash": "e79b73ebb2ec3599bd2c69c7346811484bfc0bbd8d00f434456b5d37eaec3e8b",
+    "query_sha256": "a0af8ec78bd773f038d2428518179dde9939ce5edfb8d0488639139b5d978686"
+   }
+  ],
+  "py_session": [
+   {
+    "file": "store.py",
+    "line": 13,
+    "subject": "{\"tool\":\"list_invoices\",\"kind\":\"database\",\"identity\":\"session\",\"source\":\"server.py:11\"}",
+    "construct": "sqlite3_literal_statement",
+    "assumptions": [
+     "The name sqlite3 is the standard library's module at run time, and the statement runs on the connection the file opened with it",
+     "The SDK fills the parameter annotated Context from the transport and never from the arguments of the call",
+     "Each call on the way to the access runs the one function the graph resolves it to",
+     "Each bound value is compared with the column that names the tenant or the record, and the statement reads no other tenant's rows"
+    ],
+    "query_id": "identity_provenance",
+    "joern_version": "4.0.676",
+    "graph_hash": "bf9a7ba29a870921022dd3bb80b0526a46dc59ad96d1f1293e746db831bca03d",
+    "query_sha256": "86a1873be3bfeed52a48b7b1f52cf4ef52562c3a3092ca099a1b87849e7176e1"
+   },
+   {
+    "file": "store.py",
+    "line": 23,
+    "subject": "{\"tool\":\"read_note\",\"kind\":\"file\",\"identity\":\"session\",\"source\":\"server.py:18\"}",
+    "query_id": "identity_provenance",
+    "joern_version": "4.0.676",
+    "graph_hash": "bf9a7ba29a870921022dd3bb80b0526a46dc59ad96d1f1293e746db831bca03d",
+    "query_sha256": "86a1873be3bfeed52a48b7b1f52cf4ef52562c3a3092ca099a1b87849e7176e1"
+   },
+   {
+    "file": "store.py",
+    "line": 28,
+    "subject": "{\"tool\":\"show_profile\",\"kind\":\"request\",\"identity\":\"session\",\"source\":\"server.py:23\"}",
+    "query_id": "identity_provenance",
+    "joern_version": "4.0.676",
+    "graph_hash": "bf9a7ba29a870921022dd3bb80b0526a46dc59ad96d1f1293e746db831bca03d",
+    "query_sha256": "86a1873be3bfeed52a48b7b1f52cf4ef52562c3a3092ca099a1b87849e7176e1"
+   }
+  ],
+  "py_unscoped": [
+   {
+    "file": "store.py",
+    "line": 13,
+    "subject": "{\"tool\":\"list_invoices\",\"kind\":\"database\",\"identity\":\"none\",\"source\":null}",
+    "construct": "sqlite3_literal_statement",
+    "assumptions": [
+     "The name sqlite3 is the standard library's module at run time, and the statement runs on the connection the file opened with it",
+     "The SDK fills the parameter annotated Context from the transport and never from the arguments of the call",
+     "Each call on the way to the access runs the one function the graph resolves it to",
+     "Each bound value is compared with the column that names the tenant or the record, and the statement reads no other tenant's rows"
+    ],
+    "query_id": "identity_provenance",
+    "joern_version": "4.0.676",
+    "graph_hash": "f2d9c1a3042c7162956a28691a8a2c82b0c7c349a15fa7a5aef8979638916b4f",
+    "query_sha256": "86a1873be3bfeed52a48b7b1f52cf4ef52562c3a3092ca099a1b87849e7176e1"
+   },
+   {
+    "file": "store.py",
+    "line": 19,
+    "subject": "{\"tool\":\"read_note\",\"kind\":\"file\",\"identity\":\"none\",\"source\":null}",
+    "query_id": "identity_provenance",
+    "joern_version": "4.0.676",
+    "graph_hash": "f2d9c1a3042c7162956a28691a8a2c82b0c7c349a15fa7a5aef8979638916b4f",
+    "query_sha256": "86a1873be3bfeed52a48b7b1f52cf4ef52562c3a3092ca099a1b87849e7176e1"
+   },
+   {
+    "file": "store.py",
+    "line": 24,
+    "subject": "{\"tool\":\"show_profile\",\"kind\":\"request\",\"identity\":\"none\",\"source\":null}",
+    "query_id": "identity_provenance",
+    "joern_version": "4.0.676",
+    "graph_hash": "f2d9c1a3042c7162956a28691a8a2c82b0c7c349a15fa7a5aef8979638916b4f",
+    "query_sha256": "86a1873be3bfeed52a48b7b1f52cf4ef52562c3a3092ca099a1b87849e7176e1"
+   },
+   {
+    "file": "store.py",
+    "line": 13,
+    "subject": "{\"tool\":\"list_invoices\",\"kind\":\"database\",\"identity\":\"none\",\"path\":[\"server.py:10\",\"server.py:11\",\"store.py:13\"]}",
+    "construct": "sqlite3_literal_statement",
+    "assumptions": [
+     "The name sqlite3 is the standard library's module at run time, and the statement runs on the connection the file opened with it",
+     "The SDK fills the parameter annotated Context from the transport and never from the arguments of the call",
+     "Each call on the way to the access runs the one function the graph resolves it to",
+     "Each bound value is compared with the column that names the tenant or the record, and the statement reads no other tenant's rows"
+    ],
+    "query_id": "tenant_sinks",
+    "joern_version": "4.0.676",
+    "graph_hash": "f2d9c1a3042c7162956a28691a8a2c82b0c7c349a15fa7a5aef8979638916b4f",
+    "query_sha256": "a0af8ec78bd773f038d2428518179dde9939ce5edfb8d0488639139b5d978686"
+   },
+   {
+    "file": "store.py",
+    "line": 19,
+    "subject": "{\"tool\":\"read_note\",\"kind\":\"file\",\"identity\":\"none\",\"path\":[\"server.py:16\",\"server.py:17\",\"store.py:19\"]}",
+    "query_id": "tenant_sinks",
+    "joern_version": "4.0.676",
+    "graph_hash": "f2d9c1a3042c7162956a28691a8a2c82b0c7c349a15fa7a5aef8979638916b4f",
+    "query_sha256": "a0af8ec78bd773f038d2428518179dde9939ce5edfb8d0488639139b5d978686"
+   },
+   {
+    "file": "store.py",
+    "line": 24,
+    "subject": "{\"tool\":\"show_profile\",\"kind\":\"request\",\"identity\":\"none\",\"path\":[\"server.py:21\",\"server.py:22\",\"store.py:24\"]}",
+    "query_id": "tenant_sinks",
+    "joern_version": "4.0.676",
+    "graph_hash": "f2d9c1a3042c7162956a28691a8a2c82b0c7c349a15fa7a5aef8979638916b4f",
+    "query_sha256": "a0af8ec78bd773f038d2428518179dde9939ce5edfb8d0488639139b5d978686"
+   }
+  ],
+  "js_argument": [
+   {
+    "file": "store.js",
+    "line": 11,
+    "subject": "{\"tool\":\"list_invoices\",\"kind\":\"database\",\"identity\":\"argument\",\"source\":\"server.js:7\"}",
+    "construct": "node_sqlite_literal_statement",
+    "assumptions": [
+     "The name DatabaseSync is node:sqlite's class at run time, and the statement runs on the database the file opened with it",
+     "The SDK fills authInfo from the transport and never from the arguments of the call",
+     "Each call on the way to the access runs the one function the graph resolves it to",
+     "Each bound value is compared with the column that names the tenant or the record, and the statement reads no other tenant's rows"
+    ],
+    "query_id": "identity_provenance",
+    "joern_version": "4.0.676",
+    "graph_hash": "8a03f849580b3422970332a9a0655181b3cb39aa23f38cd20c022f06b0c14ed8",
+    "query_sha256": "c2e0249f8c3219f7230adc382cff2ea90e5b5319548141ee6542efba5b4fcfc1"
+   },
+   {
+    "file": "store.js",
+    "line": 21,
+    "subject": "{\"tool\":\"read_note\",\"kind\":\"file\",\"identity\":\"argument\",\"source\":\"server.js:12\"}",
+    "query_id": "identity_provenance",
+    "joern_version": "4.0.676",
+    "graph_hash": "8a03f849580b3422970332a9a0655181b3cb39aa23f38cd20c022f06b0c14ed8",
+    "query_sha256": "c2e0249f8c3219f7230adc382cff2ea90e5b5319548141ee6542efba5b4fcfc1"
+   },
+   {
+    "file": "store.js",
+    "line": 25,
+    "subject": "{\"tool\":\"show_profile\",\"kind\":\"request\",\"identity\":\"argument\",\"source\":\"server.js:16\"}",
+    "query_id": "identity_provenance",
+    "joern_version": "4.0.676",
+    "graph_hash": "8a03f849580b3422970332a9a0655181b3cb39aa23f38cd20c022f06b0c14ed8",
+    "query_sha256": "c2e0249f8c3219f7230adc382cff2ea90e5b5319548141ee6542efba5b4fcfc1"
+   },
+   {
+    "file": "store.js",
+    "line": 11,
+    "subject": "{\"tool\":\"list_invoices\",\"kind\":\"database\",\"identity\":\"argument\",\"path\":[\"server.js:7\",\"server.js:8\",\"store.js:11\"]}",
+    "construct": "node_sqlite_literal_statement",
+    "assumptions": [
+     "The name DatabaseSync is node:sqlite's class at run time, and the statement runs on the database the file opened with it",
+     "The SDK fills authInfo from the transport and never from the arguments of the call",
+     "Each call on the way to the access runs the one function the graph resolves it to",
+     "Each bound value is compared with the column that names the tenant or the record, and the statement reads no other tenant's rows"
+    ],
+    "query_id": "tenant_sinks",
+    "joern_version": "4.0.676",
+    "graph_hash": "8a03f849580b3422970332a9a0655181b3cb39aa23f38cd20c022f06b0c14ed8",
+    "query_sha256": "f763d581fa61bafc203554e178c9927917daf518653a0c4038c7bc26284a4345"
+   },
+   {
+    "file": "store.js",
+    "line": 21,
+    "subject": "{\"tool\":\"read_note\",\"kind\":\"file\",\"identity\":\"argument\",\"path\":[\"server.js:12\",\"server.js:13\",\"store.js:20\",\"store.js:21\"]}",
+    "query_id": "tenant_sinks",
+    "joern_version": "4.0.676",
+    "graph_hash": "8a03f849580b3422970332a9a0655181b3cb39aa23f38cd20c022f06b0c14ed8",
+    "query_sha256": "f763d581fa61bafc203554e178c9927917daf518653a0c4038c7bc26284a4345"
+   },
+   {
+    "file": "store.js",
+    "line": 25,
+    "subject": "{\"tool\":\"show_profile\",\"kind\":\"request\",\"identity\":\"argument\",\"path\":[\"server.js:16\",\"server.js:17\",\"store.js:25\"]}",
+    "query_id": "tenant_sinks",
+    "joern_version": "4.0.676",
+    "graph_hash": "8a03f849580b3422970332a9a0655181b3cb39aa23f38cd20c022f06b0c14ed8",
+    "query_sha256": "f763d581fa61bafc203554e178c9927917daf518653a0c4038c7bc26284a4345"
+   }
+  ],
+  "js_session": [
+   {
+    "file": "store.js",
+    "line": 11,
+    "subject": "{\"tool\":\"list_invoices\",\"kind\":\"database\",\"identity\":\"session\",\"source\":\"server.js:8\"}",
+    "construct": "node_sqlite_literal_statement",
+    "assumptions": [
+     "The name DatabaseSync is node:sqlite's class at run time, and the statement runs on the database the file opened with it",
+     "The SDK fills authInfo from the transport and never from the arguments of the call",
+     "Each call on the way to the access runs the one function the graph resolves it to",
+     "Each bound value is compared with the column that names the tenant or the record, and the statement reads no other tenant's rows"
+    ],
+    "query_id": "identity_provenance",
+    "joern_version": "4.0.676",
+    "graph_hash": "bc358c0958240243219360eca4d3f184ab1b3345a8a7121e43a15ba0c3803b26",
+    "query_sha256": "c2e0249f8c3219f7230adc382cff2ea90e5b5319548141ee6542efba5b4fcfc1"
+   },
+   {
+    "file": "store.js",
+    "line": 21,
+    "subject": "{\"tool\":\"read_note\",\"kind\":\"file\",\"identity\":\"session\",\"source\":\"server.js:14\"}",
+    "query_id": "identity_provenance",
+    "joern_version": "4.0.676",
+    "graph_hash": "bc358c0958240243219360eca4d3f184ab1b3345a8a7121e43a15ba0c3803b26",
+    "query_sha256": "c2e0249f8c3219f7230adc382cff2ea90e5b5319548141ee6542efba5b4fcfc1"
+   },
+   {
+    "file": "store.js",
+    "line": 25,
+    "subject": "{\"tool\":\"show_profile\",\"kind\":\"request\",\"identity\":\"session\",\"source\":\"server.js:18\"}",
+    "query_id": "identity_provenance",
+    "joern_version": "4.0.676",
+    "graph_hash": "bc358c0958240243219360eca4d3f184ab1b3345a8a7121e43a15ba0c3803b26",
+    "query_sha256": "c2e0249f8c3219f7230adc382cff2ea90e5b5319548141ee6542efba5b4fcfc1"
+   }
+  ],
+  "js_unscoped": [
+   {
+    "file": "store.js",
+    "line": 11,
+    "subject": "{\"tool\":\"list_invoices\",\"kind\":\"database\",\"identity\":\"none\",\"source\":null}",
+    "construct": "node_sqlite_literal_statement",
+    "assumptions": [
+     "The name DatabaseSync is node:sqlite's class at run time, and the statement runs on the database the file opened with it",
+     "The SDK fills authInfo from the transport and never from the arguments of the call",
+     "Each call on the way to the access runs the one function the graph resolves it to",
+     "Each bound value is compared with the column that names the tenant or the record, and the statement reads no other tenant's rows"
+    ],
+    "query_id": "identity_provenance",
+    "joern_version": "4.0.676",
+    "graph_hash": "ec8f10291b20467685a969a238e6e66802afc19a58a7fd9a321012db4caca8dc",
+    "query_sha256": "c2e0249f8c3219f7230adc382cff2ea90e5b5319548141ee6542efba5b4fcfc1"
+   },
+   {
+    "file": "store.js",
+    "line": 17,
+    "subject": "{\"tool\":\"read_note\",\"kind\":\"file\",\"identity\":\"none\",\"source\":null}",
+    "query_id": "identity_provenance",
+    "joern_version": "4.0.676",
+    "graph_hash": "ec8f10291b20467685a969a238e6e66802afc19a58a7fd9a321012db4caca8dc",
+    "query_sha256": "c2e0249f8c3219f7230adc382cff2ea90e5b5319548141ee6542efba5b4fcfc1"
+   },
+   {
+    "file": "store.js",
+    "line": 21,
+    "subject": "{\"tool\":\"show_profile\",\"kind\":\"request\",\"identity\":\"none\",\"source\":null}",
+    "query_id": "identity_provenance",
+    "joern_version": "4.0.676",
+    "graph_hash": "ec8f10291b20467685a969a238e6e66802afc19a58a7fd9a321012db4caca8dc",
+    "query_sha256": "c2e0249f8c3219f7230adc382cff2ea90e5b5319548141ee6542efba5b4fcfc1"
+   },
+   {
+    "file": "store.js",
+    "line": 11,
+    "subject": "{\"tool\":\"list_invoices\",\"kind\":\"database\",\"identity\":\"none\",\"path\":[\"server.js:7\",\"server.js:8\",\"store.js:11\"]}",
+    "construct": "node_sqlite_literal_statement",
+    "assumptions": [
+     "The name DatabaseSync is node:sqlite's class at run time, and the statement runs on the database the file opened with it",
+     "The SDK fills authInfo from the transport and never from the arguments of the call",
+     "Each call on the way to the access runs the one function the graph resolves it to",
+     "Each bound value is compared with the column that names the tenant or the record, and the statement reads no other tenant's rows"
+    ],
+    "query_id": "tenant_sinks",
+    "joern_version": "4.0.676",
+    "graph_hash": "ec8f10291b20467685a969a238e6e66802afc19a58a7fd9a321012db4caca8dc",
+    "query_sha256": "f763d581fa61bafc203554e178c9927917daf518653a0c4038c7bc26284a4345"
+   },
+   {
+    "file": "store.js",
+    "line": 17,
+    "subject": "{\"tool\":\"read_note\",\"kind\":\"file\",\"identity\":\"none\",\"path\":[\"server.js:12\",\"server.js:13\",\"store.js:17\"]}",
+    "query_id": "tenant_sinks",
+    "joern_version": "4.0.676",
+    "graph_hash": "ec8f10291b20467685a969a238e6e66802afc19a58a7fd9a321012db4caca8dc",
+    "query_sha256": "f763d581fa61bafc203554e178c9927917daf518653a0c4038c7bc26284a4345"
+   },
+   {
+    "file": "store.js",
+    "line": 21,
+    "subject": "{\"tool\":\"show_profile\",\"kind\":\"request\",\"identity\":\"none\",\"path\":[\"server.js:16\",\"server.js:17\",\"store.js:21\"]}",
+    "query_id": "tenant_sinks",
+    "joern_version": "4.0.676",
+    "graph_hash": "ec8f10291b20467685a969a238e6e66802afc19a58a7fd9a321012db4caca8dc",
+    "query_sha256": "f763d581fa61bafc203554e178c9927917daf518653a0c4038c7bc26284a4345"
+   }
+  ]
+ }
+}

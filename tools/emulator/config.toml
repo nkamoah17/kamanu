@@ -1,0 +1,4 @@
+# AWS Emulator settings file, mounted into the container and named by EMULATOR_CONFIG.
+# Telemetry is on by default upstream; KAMANU runs it off (flag, variable and this file).
+[telemetry]
+enabled = false

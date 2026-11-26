@@ -1,0 +1,223 @@
+{
+  "reductions": [
+    {
+      "name": "BudgetKeyOff",
+      "modules": [
+        "spec/ext/BudgetKey.tla"
+      ],
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 3179,
+        "up": 3179
+      }
+    },
+    {
+      "name": "CardOff",
+      "modules": [
+        "spec/ledgers/Card.tla"
+      ],
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 369,
+        "up": 369
+      }
+    },
+    {
+      "name": "CreditOff",
+      "modules": [
+        "spec/ledgers/Credit.tla"
+      ],
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 16147,
+        "up": 16147
+      }
+    },
+    {
+      "name": "DenySetOff",
+      "modules": [
+        "spec/ext/DenySet.tla"
+      ],
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 10513,
+        "up": 10513
+      }
+    },
+    {
+      "name": "FalseDenialOff",
+      "modules": [
+        "spec/ext/FalseDenial.tla"
+      ],
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 7687,
+        "up": 7687
+      }
+    },
+    {
+      "name": "HostileOff",
+      "modules": [
+        "spec/ext/Hostile.tla"
+      ],
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 13,
+        "up": 13
+      }
+    },
+    {
+      "name": "InvalidationOff",
+      "modules": [
+        "spec/ext/Invalidation.tla"
+      ],
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 7431,
+        "up": 7431
+      }
+    },
+    {
+      "name": "LabelsOff",
+      "modules": [
+        "spec/ext/Labels.tla"
+      ],
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 24833,
+        "up": 24833
+      }
+    },
+    {
+      "name": "LatchOff",
+      "modules": [
+        "spec/ledgers/Latch.tla"
+      ],
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 298052,
+        "up": 298052
+      }
+    },
+    {
+      "name": "PrerequisiteOff",
+      "modules": [
+        "spec/ledgers/Prerequisite.tla"
+      ],
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 106530,
+        "up": 106530
+      }
+    },
+    {
+      "name": "ProbeOff",
+      "modules": [
+        "spec/KamanuProbe.tla",
+        "spec/MCProbe.tla"
+      ],
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 399,
+        "up": 399
+      }
+    },
+    {
+      "name": "ProgressOff",
+      "modules": [
+        "spec/ext/Progress.tla"
+      ],
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 74,
+        "up": 26
+      }
+    },
+    {
+      "name": "ReconcileR3Off",
+      "modules": [
+        "spec/ext/ReconcileR3.tla"
+      ],
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 32062,
+        "up": 16874
+      }
+    },
+    {
+      "name": "ReconcileR3bOff",
+      "modules": [
+        "spec/ext/ReconcileR3b.tla"
+      ],
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 7431,
+        "up": 7431
+      }
+    },
+    {
+      "name": "UndeterminedSafetyOff",
+      "modules": [
+        "spec/ext/Undetermined.tla",
+        "spec/ext/UndeterminedSafety.tla"
+      ],
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 7431,
+        "up": 7431
+      }
+    },
+    {
+      "name": "UndeterminedTaskOff",
+      "modules": [
+        "spec/ext/Undetermined.tla",
+        "spec/ext/UndeterminedTask.tla"
+      ],
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 26,
+        "up": 26
+      }
+    },
+    {
+      "name": "WindowKernelOff",
+      "modules": [
+        "spec/ext/WindowKernel.tla"
+      ],
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 51657,
+        "up": 7431
+      }
+    },
+    {
+      "name": "WindowOff",
+      "modules": [
+        "spec/ext/Window.tla"
+      ],
+      "down": "holds",
+      "up": "holds",
+      "states": {
+        "down": 29619,
+        "up": 7431
+      }
+    }
+  ]
+}

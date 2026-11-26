@@ -1,0 +1,39 @@
+{
+ "census": "census-v1",
+ "as_of": "2026-11-26",
+ "types": [
+  {
+   "type": "461b93ce5a7decc9a1e0f12094f9a07e",
+   "subjects": 1
+  }
+ ],
+ "dies": [
+  {
+   "die": "07369000802f3a7cc81a667dcaa63f37",
+   "type": "461b93ce5a7decc9a1e0f12094f9a07e",
+   "check": "Tight",
+   "status": "FAILS",
+   "struck": 1
+  },
+  {
+   "die": "3b998a5c068f404db58f1aff338953f8",
+   "type": "461b93ce5a7decc9a1e0f12094f9a07e",
+   "check": "Sound",
+   "status": "holds",
+   "struck": 1
+  }
+ ],
+ "constants": [],
+ "signature": {
+  "alg": "Ed25519",
+  "key": "28981850d9a9d3aa8f5ffb5f6eaab2adc3d38384c2bdf73aa97f17eed59c3c97",
+  "digests": {
+   "census": "f2b5ff30c6da778979ba9dbf93e071da30aaa726d2c72e692d3353e15b8a39ec",
+   "as_of": "3499899299887758c821185c1130b43595cf63c729475469168ddbce5ec709a7",
+   "types": "7448ff169ef41b886a03f23a05f3c38b54e7699ac4bb9e2e80881beb9bbd0ee5",
+   "dies": "6edaf897901008542205ba98f7e53e22f9b2f778470bf4012acee7c3debf39e2",
+   "constants": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "sig": "44d0104c63a8e8a53ab9c5a84e083dbcaa3d9c82a3712cee480fa091aba6d121901488845f31401a39dd3ef7daa18c163d19e2812b05a0147d4ddc5af9bfb909"
+ }
+}

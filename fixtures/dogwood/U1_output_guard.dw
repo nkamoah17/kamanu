@@ -1,0 +1,20 @@
+// unsupported: output field: kernel events carry no tool output
+// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/guide/03-event-schema.md#the-default-event-schema-request--response--error (response events splice outputs)
+// source: https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy-temporal.html (key concepts: a condition on output.approved)
+
+@id("pay_base")
+permit (
+    principal,
+    action == Kamanu::Action::"Pay",
+    resource
+);
+
+@id("unsupported")
+forbid (
+    principal,
+    action == Kamanu::Action::"Pay",
+    resource
+)
+when temporal {
+    formerly within 24h Kamanu::Action::"Pay"::response{ output.approved: false }
+};

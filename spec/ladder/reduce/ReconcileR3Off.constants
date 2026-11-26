@@ -1,0 +1,16 @@
+\* the rotating schedule: Fixed = FALSE (Escalate is never enabled)
+Templates <- RT
+MaxReq = 3
+MaxFails = 1
+Reflexive = TRUE
+DenyRecord = "none"
+Atomic = TRUE
+Lag = 0
+Faults = {"clean", "ambiguous"}
+HasReconcile = TRUE
+Permit <- PRefundOnReconcile
+Scope <- ScopeGlobal
+Cap = 100
+Fixed = FALSE
+MaxUnknowns = 2
+AgentFair = TRUE

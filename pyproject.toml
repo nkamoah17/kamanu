@@ -1,0 +1,53 @@
+[project]
+name = "kamanu"
+version = "0.1.0"
+description = "Checks whether a spending limit on an AI agent holds, and says how sure it is: the most that can be spent, the most that can be wrongly refused, and the shortest trace behind each"
+license = "Apache-2.0"
+license-files = ["LICENSE", "RECORDS-LICENSE"]
+authors = [{ name = "Kenneth Amoah Nyame" }]
+keywords = ["ai-agents", "spending-limits", "authorization", "tla-plus", "lean4", "formal-verification", "mcp", "payments"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Office/Business :: Financial",
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["PyYAML>=6"]
+
+[project.urls]
+Homepage = "https://nkamoah17.github.io/kamanu/"
+Source = "https://github.com/nkamoah17/kamanu"
+Documentation = "https://github.com/nkamoah17/kamanu/tree/main/docs"
+Changelog = "https://github.com/nkamoah17/kamanu/blob/main/CHANGELOG.md"
+Issues = "https://github.com/nkamoah17/kamanu/issues"
+
+[project.scripts]
+kamanu = "kamanu.hunt.cli:main"
+kamanu-mcp = "kamanu.mcp_server:serve"
+kamanu-coach-mcp = "kamanu.coach_mcp:main"
+kamanu-lint-mcp = "kamanu.lint_mcp:main"
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["kamanu*", "spec*"]
+
+[tool.setuptools.package-data]
+"kamanu.examples" = ["dogwood/*.dw", "dogwood/*.cedarschema"]
+"kamanu.hunt" = ["profiles/*.json"]
+"kamanu.data" = ["ladder/*/*.json", "levels/*.json"]
+"kamanu.assay" = ["*.json"]
+"spec" = ["*.tla", "*.constants"]
+"spec.ext" = ["*.tla", "*.constants"]
+"spec.demos" = ["*.tla", "*.constants"]

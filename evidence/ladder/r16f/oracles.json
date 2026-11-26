@@ -1,0 +1,109 @@
+{
+ "examples": [
+  {
+   "example": "desk_governance",
+   "oracles": [
+    {
+     "id": "o1",
+     "source": "output",
+     "action": "Login",
+     "kind": "response",
+     "field": "output.result",
+     "line": 11
+    },
+    {
+     "id": "o2",
+     "source": "output",
+     "action": "ApproveSale",
+     "kind": "response",
+     "field": "output.approved",
+     "line": 17
+    },
+    {
+     "id": "o3",
+     "source": "provider",
+     "action": "SellShares",
+     "kind": "request",
+     "field": "Text::Scan(context.input.notes).flagged",
+     "line": 33,
+     "provider": "Text::Scan",
+     "args": [
+      "context.input.notes"
+     ],
+     "answer": "flagged"
+    }
+   ]
+  },
+  {
+   "example": "forbid_read_transfers_over_1000",
+   "oracles": [
+    {
+     "id": "o1",
+     "source": "output",
+     "action": "Transfer",
+     "kind": "response",
+     "field": "output.amount",
+     "line": 17
+    }
+   ]
+  },
+  {
+   "example": "read_after_login_success",
+   "oracles": [
+    {
+     "id": "o1",
+     "source": "output",
+     "action": "Login",
+     "kind": "response",
+     "field": "output.result",
+     "line": 13
+    }
+   ]
+  },
+  {
+   "example": "read_prev_login_success",
+   "oracles": [
+    {
+     "id": "o1",
+     "source": "output",
+     "action": "Login",
+     "kind": "response",
+     "field": "output.result",
+     "line": 12
+    }
+   ]
+  },
+  {
+   "example": "refund_budget_settled_plus_current",
+   "oracles": [
+    {
+     "id": "o1",
+     "source": "output",
+     "action": "Refund",
+     "kind": "response",
+     "field": "output.amount",
+     "line": 20
+    }
+   ]
+  },
+  {
+   "example": "sell_after_approval_valid_ticker",
+   "oracles": [
+    {
+     "id": "o1",
+     "source": "provider",
+     "action": "SellShares",
+     "kind": "request",
+     "field": "Strings::Matches(context.input.stock, \"^[A-Z]+$\").matched",
+     "line": 11,
+     "provider": "Strings::Matches",
+     "args": [
+      "context.input.stock",
+      "\"^[A-Z]+$\""
+     ],
+     "answer": "matched"
+    }
+   ]
+  }
+ ]
+}

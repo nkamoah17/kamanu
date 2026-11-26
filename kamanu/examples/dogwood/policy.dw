@@ -1,0 +1,17 @@
+// The spend cap from AWS's Dogwood launch post, as one permit rule: an agent may Pay while
+// the amounts it has requested in the last 24 hours, this request included, stay within 100.
+// source: https://aws.amazon.com/blogs/opensource/introducing-dogwood-runtime-verification-for-ai-agents/ (section "Summing: stay under a running total")
+// The post writes it as a base permit and a forbid on "> 100"; this is the same decision,
+// in the one-rule form `kamanu hunt` reads. Schema: schema.cedarschema beside this file.
+
+@id("pay_cap")
+permit (
+    principal,
+    action == Kamanu::Action::"Pay",
+    resource
+)
+when temporal {
+    (sum a for (a: Long), (t: Timepoint). where (
+        formerly within 24h (Kamanu::Action::"Pay"::request{ input.amount: a } && tp(t))
+    )) <= 100
+};

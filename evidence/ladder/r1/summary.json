@@ -1,0 +1,51 @@
+{
+ "cells": 390,
+ "plain_cells": 150,
+ "k6_cells": 240,
+ "tlc_runs": 3270,
+ "distinct_states": 1065478,
+ "verdicts": {
+  "RealSpendOK": {
+   "holds": 88,
+   "FAILS": 302
+  },
+  "SoundAdmit": {
+   "holds": 88,
+   "FAILS": 302
+  },
+  "ViewSound": {
+   "holds": 88,
+   "FAILS": 302
+  },
+  "NoFalseRefusal": {
+   "holds": 184,
+   "FAILS": 206
+  },
+  "Tight": {
+   "holds": 192,
+   "FAILS": 198
+  },
+  "ViewTight": {
+   "holds": 184,
+   "FAILS": 206
+  },
+  "RefinesLedger": {
+   "holds": 88,
+   "FAILS": 302
+  },
+  "NoFalseDenial": {
+   "holds": 85,
+   "FAILS": 65
+  }
+ },
+ "disagreements": 0,
+ "kit_differences": 0,
+ "equivalence_differences": 0,
+ "nfr_vs_k12_disagree": 0,
+ "vacuous": [],
+ "vacuous_note": "cells where no slot is ever refused by the policy, so NoFalseRefusal holds with nothing to judge (checked by the invariant NeverRefused)",
+ "apalache": {
+  "inductive": true,
+  "log": "apalache.log"
+ }
+}

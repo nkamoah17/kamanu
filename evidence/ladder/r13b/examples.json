@@ -1,0 +1,1058 @@
+{
+ "what": "every Dogwood example policy linted at lint's defaults (R13b)",
+ "source": "DOGWOOD_SRC/dogwood-docs/examples (ff15850)",
+ "engine": "reference",
+ "policies": [
+  {
+   "path": "dogwood-docs/examples/access_not_revoked_since_grant/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: latch (line 14)",
+   "construct": null,
+   "verdicts": [
+    {
+     "rung": "R0",
+     "property": "Sound",
+     "ledger": "Latch",
+     "status": "holds"
+    },
+    {
+     "rung": "R0",
+     "property": "Tight",
+     "ledger": "Latch",
+     "status": "holds"
+    },
+    {
+     "rung": "R1",
+     "property": "Sound",
+     "ledger": "Latch",
+     "status": "holds"
+    },
+    {
+     "rung": "R1",
+     "property": "Tight",
+     "ledger": "Latch",
+     "status": "holds"
+    },
+    {
+     "rung": "R2",
+     "property": "Sound",
+     "ledger": "Latch",
+     "status": "FAILS"
+    },
+    {
+     "rung": "R2",
+     "property": "Tight",
+     "ledger": "Latch",
+     "status": "FAILS"
+    }
+   ]
+  },
+  {
+   "path": "dogwood-docs/examples/alert_exactly_three_transfers/policy.dw",
+   "inside": true,
+   "reason": "1 register(s) of counts within the limit of 3: register (line 12, window 3600 s)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/alert_heartbeat_and_login_rate/policy.dw",
+   "inside": true,
+   "reason": "1 register(s) of counts within the limit of 3 and 1 memory bit(s): flag (line 11, window 3600 s), register (line 14, the decision's own timepoint)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/alert_login_and_big_transfer/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 12)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/alert_login_current_tp/policy.dw",
+   "inside": true,
+   "reason": "1 register(s) of counts within the limit of 3: register (line 14, the decision's own timepoint)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/alert_login_in_last_hour/policy.dw",
+   "inside": true,
+   "reason": "1 register(s) of counts within the limit of 3: register (line 14, window 3600 s)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/alert_pending_transfers/policy.dw",
+   "inside": true,
+   "reason": "1 register(s) of counts within the limit of 3: register (line 16, window 3600 s)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/alert_same_principal_login_transfer/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 13)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/alert_same_user_login_and_transfer/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 12)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/alert_some_login/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 12)",
+   "construct": null,
+   "verdicts": [
+    {
+     "rung": "R0",
+     "property": "Sound",
+     "ledger": "Prerequisite",
+     "status": "FAILS"
+    },
+    {
+     "rung": "R0",
+     "property": "Tight",
+     "ledger": "Prerequisite",
+     "status": "FAILS"
+    },
+    {
+     "rung": "R1",
+     "property": "Sound",
+     "ledger": "Prerequisite",
+     "status": "FAILS"
+    },
+    {
+     "rung": "R1",
+     "property": "Tight",
+     "ledger": "Prerequisite",
+     "status": "FAILS"
+    },
+    {
+     "rung": "R2",
+     "property": "Sound",
+     "ledger": "Prerequisite",
+     "status": "FAILS"
+    },
+    {
+     "rung": "R2",
+     "property": "Tight",
+     "ledger": "Prerequisite",
+     "status": "FAILS"
+    }
+   ]
+  },
+  {
+   "path": "dogwood-docs/examples/alert_total_transfer_over_200/policy.dw",
+   "inside": true,
+   "reason": "1 register(s) and 0 memory bit(s): register (line 12)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/allow_anything/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/approve_has_output_guard/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/call_cedar_macro_as_argument/macros.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/call_cedar_macro_as_argument/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/call_cedar_macro_is_small/macros.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/call_cedar_macro_is_small/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/call_cedar_macro_with_temporal_leaf/macros.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/call_cedar_macro_with_temporal_leaf/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 10)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/call_cedar_macros_composed/macros.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/call_cedar_macros_composed/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/call_temporal_aggregation_macro_count/macros.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/call_temporal_aggregation_macro_count/policy.dw",
+   "inside": true,
+   "reason": "1 register(s) of counts within the limit of 3: register (line 9, window 3600 s)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/call_temporal_condition_macro_once/macros.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/call_temporal_condition_macro_once/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 8)",
+   "construct": null,
+   "verdicts": [
+    {
+     "rung": "R0",
+     "property": "Sound",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R0",
+     "property": "Tight",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R1",
+     "property": "Sound",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R1",
+     "property": "Tight",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R2",
+     "property": "Sound",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R2",
+     "property": "Tight",
+     "ledger": "Prerequisite",
+     "status": "FAILS"
+    }
+   ]
+  },
+  {
+   "path": "dogwood-docs/examples/call_temporal_condition_macros_composed/macros.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/call_temporal_condition_macros_composed/policy.dw",
+   "inside": true,
+   "reason": "2 memory element(s), 2 bit(s) within a budget of 8: flag (line 7), flag (line 8)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/cap_open_agent_prs_windowed/policy.dw",
+   "inside": true,
+   "reason": "1 register(s) of counts within the limit of 3: register (line 26, window 86400 s)",
+   "construct": null,
+   "verdicts": [
+    {
+     "rung": "R0",
+     "property": "Sound",
+     "ledger": "Credit",
+     "status": "FAILS"
+    },
+    {
+     "rung": "R0",
+     "property": "Tight",
+     "ledger": "Credit",
+     "status": "holds"
+    },
+    {
+     "rung": "R1",
+     "property": "Sound",
+     "ledger": "Credit",
+     "status": "FAILS"
+    },
+    {
+     "rung": "R1",
+     "property": "Tight",
+     "ledger": "Credit",
+     "status": "holds"
+    },
+    {
+     "rung": "R2",
+     "property": "Sound",
+     "ledger": "Credit",
+     "status": "FAILS"
+    },
+    {
+     "rung": "R2",
+     "property": "Tight",
+     "ledger": "Credit",
+     "status": "holds"
+    }
+   ]
+  },
+  {
+   "path": "dogwood-docs/examples/cedar_eligible_not_blocked/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/cedar_is_small_threshold/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/cedar_macro_plus_temporal_leaf/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 16)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/cedar_semver_gt/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/cedar_starts_with_f_like/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/cedar_within_cap_if_else/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/cond_is_oauth_in_team/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/deny_overrides_sell_not_amzn/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/desk_governance/policy.dw",
+   "inside": true,
+   "reason": "1 register(s) of counts within the limit of 3 and 3 memory bit(s): latch (line 10, window 28800 s), flag (line 14, window 3600 s), register (line 23, window 3600 s), latch (line 46, window 3600 s)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/forbid_large_except_amzn/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/forbid_read_transfers_over_1000/policy.dw",
+   "inside": true,
+   "reason": "1 register(s) and 0 memory bit(s): register (line 14)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/get_amzn_stock_info/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/heartbeat_scope_alias/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 13)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/login_attempt_custom_kind/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 12)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/macro_library_once_is_small/macros.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/macro_library_once_is_small/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 13)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/max_window_raised/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 13)",
+   "construct": null,
+   "verdicts": [
+    {
+     "rung": "R0",
+     "property": "Sound",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R0",
+     "property": "Tight",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R1",
+     "property": "Sound",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R1",
+     "property": "Tight",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R2",
+     "property": "Sound",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R2",
+     "property": "Tight",
+     "ledger": "Prerequisite",
+     "status": "FAILS"
+    }
+   ]
+  },
+  {
+   "path": "dogwood-docs/examples/permit_read_anyone/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/principal_is_oauth/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/provider_allowed_or_short/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/provider_digitcount_forbid/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/provider_digitcount_operator_ge/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/provider_enum_severity_forbid/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/provider_enum_two_namespaces/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/provider_filter_set_index_decimal/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/provider_int_arithmetic_trusted/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/provider_matches_and_not_blocked/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/provider_principal_id_allowlist/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/provider_regex_analyze_fields/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/provider_regex_matches_uppercase/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/provider_risk_decimal_method/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/read_after_login/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 13)",
+   "construct": null,
+   "verdicts": [
+    {
+     "rung": "R0",
+     "property": "Sound",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R0",
+     "property": "Tight",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R1",
+     "property": "Sound",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R1",
+     "property": "Tight",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R2",
+     "property": "Sound",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R2",
+     "property": "Tight",
+     "ledger": "Prerequisite",
+     "status": "FAILS"
+    }
+   ]
+  },
+  {
+   "path": "dogwood-docs/examples/read_after_login_success/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 11)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/read_heartbeat_since_login_30s/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: latch (line 12)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/read_login_not_logout/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 12)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/read_prev_compute_open_session/policy.dw",
+   "inside": true,
+   "reason": "2 memory element(s), 2 bit(s) within a budget of 8: delay (line 12), latch (line 14)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/read_prev_login/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: delay (line 12)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/read_prev_login_success/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: delay (line 12)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/read_since_login/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: latch (line 13)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/refund_budget_settled_plus_current/policy.dw",
+   "inside": true,
+   "reason": "one threshold on one linear count: the response sum + the current amount <= 100 (line 20); the register reads the tool's answer, judged for every answer",
+   "construct": null,
+   "verdicts": [
+    {
+     "rung": "R0",
+     "property": "Sound",
+     "ledger": "scope",
+     "status": "FAILS"
+    },
+    {
+     "rung": "R0",
+     "property": "Tight",
+     "ledger": "scope",
+     "status": "holds"
+    },
+    {
+     "rung": "R1",
+     "property": "Sound",
+     "ledger": "scope",
+     "status": "FAILS"
+    },
+    {
+     "rung": "R1",
+     "property": "Tight",
+     "ledger": "scope",
+     "status": "holds"
+    },
+    {
+     "rung": "R2",
+     "property": "Sound",
+     "ledger": "scope",
+     "status": "FAILS"
+    },
+    {
+     "rung": "R2",
+     "property": "Tight",
+     "ledger": "scope",
+     "status": "holds"
+    }
+   ]
+  },
+  {
+   "path": "dogwood-docs/examples/sell_after_2024_datetime/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_after_approval_valid_ticker/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 8)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_comparison_chain/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_datetime_window/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_like_a_prefix/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_logical_grouping/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_nested_if_threshold/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_nonzero_proceeds_decimal/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_not_blocked_string/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_not_test_tickers_like/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_or_approve_action_in/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_shares_eq_scope/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_shares_temporal_subexpr/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 5)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_small_only/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_small_proceeds_decimal_method/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_threshold_by_stock/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_two_when_small_amzn/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_unless_huge/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_when_under_100/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_when_unless_mix/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/sell_zero_proceeds_if_has/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/simplest_permit/policy.dw",
+   "inside": false,
+   "reason": "states no limit: nothing to check: the policy has no history clause (no temporal condition), so no limit to hold",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/submit_after_approval_injection/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 18)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/temporal_count_formerly_login/policy.dw",
+   "inside": true,
+   "reason": "1 register(s) of counts within the limit of 3: register (line 17, window 3600 s)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/temporal_login_then_read/policy.dw",
+   "inside": true,
+   "reason": "2 memory element(s), 2 bit(s) within a budget of 8: flag (line 18), flag (line 19)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/temporal_once_read_recent/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 9)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/temporal_sum_formerly_transfer/policy.dw",
+   "inside": true,
+   "reason": "1 register(s) and 0 memory bit(s): register (line 16)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/touchless_invoice_within_tolerance/policy.dw",
+   "inside": false,
+   "reason": "outside the Dogwood fragment this adapter compiles exactly: a lossy construct, which the fast path does not read",
+   "construct": "exists ( po_amount : Long ) . ( formerly within 24h Procure ",
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/touchless_share_capped/policy.dw",
+   "inside": true,
+   "reason": "1 register(s) of counts within the limit of 3: register (line 20, window 86400 s)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/traders_is_in_group_scope/policy.dw",
+   "inside": false,
+   "reason": "nothing to check: no history clause (no temporal condition); the policy has constructs lint could not read, so it is not shown to state no limit",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/transfer_prev_nested_conj/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: delay (line 11)",
+   "construct": null,
+   "verdicts": []
+  },
+  {
+   "path": "dogwood-docs/examples/write_after_read/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 15)",
+   "construct": null,
+   "verdicts": [
+    {
+     "rung": "R0",
+     "property": "Sound",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R0",
+     "property": "Tight",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R1",
+     "property": "Sound",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R1",
+     "property": "Tight",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R2",
+     "property": "Sound",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R2",
+     "property": "Tight",
+     "ledger": "Prerequisite",
+     "status": "FAILS"
+    }
+   ]
+  },
+  {
+   "path": "dogwood-docs/examples/write_after_read_formerly/policy.dw",
+   "inside": true,
+   "reason": "1 memory element(s), 1 bit(s) within a budget of 8: flag (line 12)",
+   "construct": null,
+   "verdicts": [
+    {
+     "rung": "R0",
+     "property": "Sound",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R0",
+     "property": "Tight",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R1",
+     "property": "Sound",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R1",
+     "property": "Tight",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R2",
+     "property": "Sound",
+     "ledger": "Prerequisite",
+     "status": "holds"
+    },
+    {
+     "rung": "R2",
+     "property": "Tight",
+     "ledger": "Prerequisite",
+     "status": "FAILS"
+    }
+   ]
+  }
+ ],
+ "inside": 43,
+ "outside": 58,
+ "split": {
+  "holds": 35,
+  "FAILS": 19,
+  "VACUOUS": 0
+ },
+ "outside_constructs": {
+  "nothing to check": 57,
+  "exists ( po_amount : Long ) . ( formerly within 24h Procure ": 1
+ }
+}

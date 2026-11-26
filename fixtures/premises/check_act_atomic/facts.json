@@ -1,0 +1,31 @@
+{
+  "planted": [
+    {
+      "file": "spend.py",
+      "line": 28,
+      "subject": "write of counter, one atomic operation that answers with the count",
+      "query_id": "check_act_atomic",
+      "joern_version": "4.0.676",
+      "graph_hash": "889491be6e21e99bc3da650c55f94ac494ee5390f5dfde8fe9add7e28cf77f30",
+      "query_sha256": "0c84b62906cb4f23175b576ded3fee4285aa573dc7256f6009ad8fb88b6c2f2c"
+    }
+  ],
+  "established": [
+    {
+      "file": "spend.py",
+      "line": 15,
+      "subject": "write of counter, one atomic operation that answers with the count",
+      "construct": "redis_increment",
+      "assumptions": [
+        "Redis runs one command at a time",
+        "The name redis is the redis-py client at run time, and the server it reaches keeps every increment it has answered",
+        "Every process counts the same budget under the same key of that server",
+        "The check that admits a spend tests the answer of its own increment"
+      ],
+      "query_id": "check_act_atomic",
+      "joern_version": "4.0.676",
+      "graph_hash": "588284c54698ebb565197d660a92b00d7bd070041ac2cfa096c626d399a20f18",
+      "query_sha256": "0c84b62906cb4f23175b576ded3fee4285aa573dc7256f6009ad8fb88b6c2f2c"
+    }
+  ]
+}

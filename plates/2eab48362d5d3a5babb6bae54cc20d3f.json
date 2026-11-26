@@ -1,0 +1,132 @@
+{
+ "die": "2eab48362d5d3a5babb6bae54cc20d3f",
+ "expects": {
+  "checks": [
+   {
+    "die": "2eab48362d5d3a5babb6bae54cc20d3f",
+    "level": "REFUTED",
+    "name": "Sound",
+    "status": "FAILS",
+    "trace": [
+     {
+      "amount": 10000,
+      "doubt": 0,
+      "held": 0,
+      "hold": 1,
+      "outcome": "approve",
+      "spent": 0,
+      "step": "decide"
+     },
+     {
+      "amount": null,
+      "doubt": 0,
+      "held": 10000,
+      "hold": 1,
+      "outcome": null,
+      "spent": 0,
+      "step": "reserve"
+     },
+     {
+      "amount": 12000,
+      "doubt": 0,
+      "held": 0,
+      "hold": 1,
+      "outcome": null,
+      "spent": 12000,
+      "step": "capture"
+     }
+    ]
+   },
+   {
+    "die": "1d90528d3775bd8e604b38117a3969b2",
+    "level": "REFUTED",
+    "name": "Tight",
+    "status": "FAILS",
+    "trace": [
+     {
+      "amount": 5000,
+      "doubt": 0,
+      "held": 0,
+      "hold": 1,
+      "outcome": "approve",
+      "spent": 0,
+      "step": "decide"
+     },
+     {
+      "amount": null,
+      "doubt": 0,
+      "held": 5000,
+      "hold": 1,
+      "outcome": null,
+      "spent": 0,
+      "step": "reserve"
+     },
+     {
+      "amount": 5000,
+      "doubt": 0,
+      "held": 0,
+      "hold": 1,
+      "outcome": null,
+      "spent": 0,
+      "step": "reversal"
+     },
+     {
+      "amount": 10000,
+      "doubt": 0,
+      "held": 0,
+      "hold": 2,
+      "outcome": "refuse",
+      "spent": 0,
+      "step": "decide"
+     }
+    ]
+   }
+  ],
+  "figures": {
+   "ceiling": 24000,
+   "face": 10000,
+   "fineness": ".416"
+  },
+  "hypotheses": [
+   {
+    "name": "Atomic",
+    "rests_on": [
+     0,
+     1
+    ],
+    "status": "assumed",
+    "value": false
+   },
+   {
+    "name": "Lag",
+    "rests_on": [
+     0,
+     1
+    ],
+    "status": "assumed",
+    "value": 1
+   },
+   {
+    "name": "OverCapture",
+    "rests_on": [
+     2
+    ],
+    "status": "assumed",
+    "value": 20
+   }
+  ],
+  "level": "ASSUMED"
+ },
+ "inputs": [
+  {
+   "path": "evidence/exonumia/x4/issuing-documented.json",
+   "sha256": "1680f13cb391c1020d43e2600a4304a0d216e0285d334488ebac2ec4c94b5a21"
+  }
+ ],
+ "receipt": 0,
+ "replay": {
+  "kind": "card",
+  "profile": "{\n \"card\": \"card-v1\",\n \"name\": \"issuing-documented\",\n \"documented\": \"catalogue/checks/stripe-issuing-spending-controls.json\",\n \"limit\": {\n  \"face\": 10000,\n  \"unit\": \"USD cents (the card's smallest currency unit)\",\n  \"name\": \"a cardholder's spending_limits entry, interval daily\"\n },\n \"quotes\": [\n  {\n   \"text\": \"Spending aggregation is done on a best-effort basis.\",\n   \"url\": \"https://docs.stripe.com/issuing/controls/spending-controls\",\n   \"opened\": \"2026-11-23\",\n   \"checked\": true\n  },\n  {\n   \"text\": \"You might notice a delay of up to 30 seconds between spend occurrence and spend aggregation.\",\n   \"url\": \"https://docs.stripe.com/issuing/controls/spending-controls\",\n   \"opened\": \"2026-11-23\",\n   \"checked\": true\n  },\n  {\n   \"text\": \"Additional tips and fees can be posted at a later time, causing a spending limit to be exceeded.\",\n   \"url\": \"https://docs.stripe.com/issuing/controls/spending-controls\",\n   \"opened\": \"2026-11-23\",\n   \"checked\": true\n  },\n  {\n   \"text\": \"Spending limit rules limit the total amount of spending for categories over intervals of time.\",\n   \"url\": \"https://docs.stripe.com/issuing/controls/spending-controls\",\n   \"opened\": \"2026-11-23\",\n   \"checked\": true\n  }\n ],\n \"cell\": {\n  \"Atomic\": {\n   \"value\": false,\n   \"status\": \"ASSUMED\",\n   \"rests_on\": [\n    0,\n    1\n   ]\n  },\n  \"Lag\": {\n   \"value\": 1,\n   \"status\": \"ASSUMED\",\n   \"rests_on\": [\n    0,\n    1\n   ]\n  },\n  \"OverCapture\": {\n   \"value\": 20,\n   \"status\": \"ASSUMED\",\n   \"rests_on\": [\n    2\n   ]\n  }\n },\n \"bounds\": {\n  \"holds\": 2,\n  \"amounts\": [\n   5000,\n   10000\n  ],\n  \"partial\": true,\n  \"reversal\": true\n },\n \"reads_as\": [\n  \"Aggregation on a best-effort basis, up to 30 seconds behind the spend (quotes 0 and 1): Lag 1 and Atomic false, the record's values.\",\n  \"Tips and fees posted later, taking spend past the limit (quote 2): over-capture on. The documents give no figure; 20 percent of the hold is assumed.\",\n  \"The limit counts the total spending over its interval (quote 3): the face is the record's daily limit, 10000 minor units; the daily interval is a calendar period the card ledger does not tell apart from a sliding one.\",\n  \"Force-posts (a capture with no authorization) are not in the documents quoted, so the profile leaves them off; a profile that measures them adds ForcePost.\"\n ]\n}\n"
+ },
+ "type": "3a1a5208ef37ff0ec7ed902ae5799c6d"
+}
