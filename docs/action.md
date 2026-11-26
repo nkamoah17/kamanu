@@ -74,7 +74,7 @@ jobs:
           distribution: temurin
           java-version: '17'
       - id: kamanu
-        uses: nkamoah17/kamanu@main
+        uses: nkamoah17/kamanu@v0.1
         with:
           engine: .kamanu/payments-engine.json
           scan: 'true'

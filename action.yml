@@ -1,10 +1,5 @@
 name: kamanu check
-description: >
-  Runs `kamanu check` on the .dw policies a pull request changes, against the engine profile
-  you name, and uploads the findings to GitHub code scanning as SARIF. The job fails with
-  check's exit code when a changed policy can overspend its cap. With scan 'true' it also runs
-  `kamanu scan` on each changed policy into a cabinet carried from run to run, verifies the
-  chain and keeps it as the artifact kamanu-cabinet.
+description: Fails a pull request when a changed spending-limit policy can overspend its cap, and reports each finding in code scanning.
 branding:
   icon: shield
   color: green

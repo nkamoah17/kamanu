@@ -85,7 +85,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: nkamoah17/kamanu@v1
+      - uses: nkamoah17/kamanu@v0.1
         with:
           engine: profiles/dogwood-1.1.1.json
       - name: kamanu admit before deploy
