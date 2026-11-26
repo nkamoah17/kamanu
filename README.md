@@ -163,12 +163,11 @@ in prose: [docs/reference.md](https://github.com/nkamoah17/kamanu/blob/main/docs
   constant marked assumed, sent to you privately with a week to correct facts.
 - **Authorization Assurance Sprint.** One programme, one limit configuration, one authorization path,
   one sandbox, three working days: what your path let through that did not fit, what it refused that
-  did, the shortest trace and a regression test for each, and a signed receipt per limit. List price
-  9,500 USD; 4,500 USD for each of three founding programmes. Half at signing, half on delivery; a full
-  refund if the result on the contracted path is UNKNOWN. Never production credentials or live funds.
+  did, the shortest trace and a regression test for each, and a signed receipt per limit. Never
+  production credentials or live funds.
 
-Write to jerenyame@gmail.com with a link to the page that describes your limit, the processor or engine
-underneath it, and whether you have a sandbox.
+**Get in touch:** [jerenyame@gmail.com](mailto:jerenyame@gmail.com), with a link to the page that describes
+your limit, the processor or engine underneath it, and whether you have a sandbox.
 
 ## Use it responsibly
 
