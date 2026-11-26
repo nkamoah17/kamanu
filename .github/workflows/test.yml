@@ -43,6 +43,12 @@ jobs:
           tar -xzf apalache.tgz apalache/lib/apalache.jar
           mv apalache/lib/apalache.jar tools/vendor/apalache.jar
           echo "$A  tools/vendor/apalache.jar" | sha256sum -c -
+      - name: elan and the pinned Lean toolchain (the tests/test_lean*.py and drift tests run lake)
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o elan-init.sh
+          bash elan-init.sh -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          "$HOME/.elan/bin/elan" toolchain install "$(cat lean/lean-toolchain)"
       - name: install
         run: pip install -e . pytest
       - name: tests
