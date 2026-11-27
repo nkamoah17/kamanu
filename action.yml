@@ -1,5 +1,5 @@
 name: kamanu check
-description: Fails a pull request when a changed spending-limit policy can overspend its cap, and reports each finding in code scanning.
+description: Fails a pull request when a changed Dogwood (AgentCore Policy) spend cap can overspend; findings go to code scanning.
 branding:
   icon: shield
   color: green

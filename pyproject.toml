@@ -4,7 +4,8 @@ version = "0.1.1"
 description = "Checks whether a spending limit on an AI agent holds, and says how sure it is: the most that can be spent, the most that can be wrongly refused, and the shortest trace behind each"
 license = "Apache-2.0"
 license-files = ["LICENSE", "RECORDS-LICENSE"]
-authors = [{ name = "Kenneth Amoah Nyame" }]
+authors = [{ name = "KAMANU" }]
+maintainers = [{ name = "Kenneth Amoah Nyame" }]
 keywords = ["ai-agents", "spending-limits", "authorization", "tla-plus", "lean4", "formal-verification", "mcp", "payments"]
 classifiers = [
     "Development Status :: 4 - Beta",

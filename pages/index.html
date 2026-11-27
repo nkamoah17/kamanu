@@ -128,6 +128,24 @@
       <li>A fix, and the reason it holds. For the designs in our kernel, that reason is a machine-checked proof.</li>
       <li>A signed record that says how each part was established, and can be checked again later, without us.</li>
     </ul>
+  </section>
+
+  <section id="try" class="text">
+    <h2>Try it in a minute</h2>
+    <p>The record above, computed on your own machine. Python 3.11 or later; nothing is uploaded, and nothing here needs an account.</p>
+<pre>git clone https://github.com/nkamoah17/kamanu.git kamanu-src
+cd kamanu-src
+pip install .
+kamanu scan fixtures/dogwood/PReqBasis.dw \
+    --engine demo/assay/proved-cell.json --cap 100</pre>
+    <p>It prints the ceiling beside the limit, the stranded budget, the six-step trace, and on its last line how many of the engine's constants it had to assume. It exits 1, because one check fails. Run it on your own policy, or read a card issuer's <code>spending_limits</code> the way its documents write them:</p>
+<pre>kamanu lint examples/controls.yaml --frontend issuing --engine reference</pre>
+    <p>A daily limit is checked as a sliding 24-hour window, and the answer says what the calendar reading, a reset at midnight UTC, could change: up to twice the amount across one boundary.</p>
+    <p>The same check runs on every pull request with <a href="https://github.com/marketplace/actions/kamanu-check">the GitHub Action</a>: <code>uses: nkamoah17/kamanu@v0.1</code>.</p>
+  </section>
+
+  <section class="text">
+    <h2>How sure</h2>
     <p>Every claim carries one of seven levels, and a result is only as strong as its weakest link.</p>
   </section>
 
@@ -145,20 +163,6 @@
       </tbody>
     </table>
   </div>
-
-  <section id="try" class="text">
-    <h2>Try it in a minute</h2>
-    <p>The record above, computed on your own machine. Python 3.11 or later; nothing is uploaded, and nothing here needs an account.</p>
-<pre>git clone https://github.com/nkamoah17/kamanu.git kamanu-src
-cd kamanu-src
-pip install .
-kamanu scan fixtures/dogwood/PReqBasis.dw \
-    --engine demo/assay/proved-cell.json --cap 100</pre>
-    <p>It prints the ceiling beside the limit, the stranded budget, the six-step trace, and on its last line how many of the engine's constants it had to assume. It exits 1, because one check fails. Run it on your own policy, or read a card issuer's <code>spending_limits</code> the way its documents write them:</p>
-<pre>kamanu lint examples/controls.yaml --frontend issuing --engine reference</pre>
-    <p>A daily limit is checked as a sliding 24-hour window, and the answer says what the calendar reading, a reset at midnight UTC, could change: up to twice the amount across one boundary.</p>
-    <p>The same check runs on every pull request with <a href="https://github.com/marketplace/actions/kamanu-check">the GitHub Action</a>: <code>uses: nkamoah17/kamanu@v0.1</code>.</p>
-  </section>
 
   <section id="agent" class="text">
     <h2>Add it to your agent</h2>
@@ -194,7 +198,7 @@ claude mcp add kamanu -- uvx kamanu mcp serve</pre>
       <li><strong>Reset, expiry and overlapping limits.</strong> What happens at the edge of each window.</li>
     </ul>
     <p>The report keeps three parts apart. <em>Model:</em> what can happen under the stated assumptions. <em>Measurement:</em> what happened in the tested environment, with trial counts. <em>Deployment:</em> what connects the tested configuration to the live one.</p>
-    <p>Three payment rails were measured this way on test networks on 24 and 25 November 2026, and each limit held in every test. Each is named here when its owner has seen the result and agreed.</p>
+    <p>Three payment rails were measured this way on test networks on 24 and 25 November 2026: a client-side ceiling on each payment, an on-chain spending allowance and a cloud payment-session budget. Each limit held in every test. Each rail is named here when its owner has seen the result and agreed.</p>
   </section>
 
   <section id="verify" class="text">
@@ -220,12 +224,12 @@ node registry/kamanu-verify.cjs registry/h/b271f39d07877083.html \
         <tbody>
           <tr><td>Scan</td><td>Run <code>kamanu scan</code> on your own limits, free. The model's answer, a receipt in a directory on your disk, and the list of engine constants it had to assume. Nothing leaves your machine.</td></tr>
           <tr><td>Documented check</td><td>One page on your limit, built only from your public documents: the limit as they state it, what the model predicts, every constant marked ASSUMED. Free, and sent to you privately, with a week to correct facts.</td></tr>
-          <tr><td>Authorization Assurance Sprint</td><td>The battery above on one programme, one limit configuration, one authorization path and one sandbox, in three working days: what your path let through that did not fit, what it refused that did, the shortest trace and a regression test for each, and a signed receipt per limit that your bank partner or enterprise buyer can check without us. A one-hour readout. If it passes, the result is yours to publish.</td></tr>
+          <tr><td>Authorization Assurance Sprint</td><td>The battery above on one programme, one limit configuration, one authorization path and one sandbox, in three working days: what your path let through that did not fit, what it refused that did, the shortest trace and a regression test for each, and a signed receipt per limit that your bank partner or enterprise buyer can check without us. A one-hour readout. The result is publishable with your consent, pass or fail.</td></tr>
         </tbody>
       </table>
     </div>
     <div class="text">
-      <p>We never ask for production credentials or live funds. If the result on the path we agree comes back UNKNOWN, you pay nothing for it.</p>
+      <p>We never ask for production credentials or live funds. If the result on the path we agree comes back UNKNOWN, you pay nothing for it. How we work in your sandbox and handle your test keys: <a href="https://github.com/nkamoah17/kamanu/blob/main/docs/vendors.md">the vendor sheet</a>.</p>
       <p>Tell us about the limit you want checked: a link to the page that describes it, the processor or engine underneath it, and whether you have a sandbox.</p>
       <a class="ask" href="mailto:jerenyame@gmail.com?subject=KAMANU&amp;body=Page%20that%20describes%20the%20limit%3A%0AProcessor%20or%20engine%20underneath%3A%0ASandbox%20available%3A">Get in touch</a>
     </div>

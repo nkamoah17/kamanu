@@ -27,11 +27,17 @@ install each one.
 
 ## How KAMANU is built
 
-KAMANU is built one task card at a time. Each card's acceptance test (its gate) was written from the
-card's contract before the code, and checked against wrong implementations it must reject; a card is
-accepted only when its gate passes. [CHANGELOG.md](CHANGELOG.md) lists the accepted cards. The gates and
-the task plan are kept in the private development tree; this repository is exported from it, and a fix
-merged here is carried back.
+KAMANU is built one task card at a time, and every card is checked the same way. A card states its
+contract in prose. Its acceptance test (its gate) is written from that contract alone, before any code,
+by an author who never sees an implementation. Each gate ships with a do-nothing implementation and
+several plausible wrong ones (mutants), and it is locked only once it rejects every one of them by an
+assertion. The code is then written to pass the locked gate, which nobody may edit to make it pass; a
+gate that looks wrong is disputed in writing and changed only by the owner. Gates draw fresh random
+configurations on every run, so an answer cannot be typed in. The kernel's claims are also proved in
+Lean, and `verify.sh` rebuilds those proofs from clean. That is how [CHANGELOG.md](CHANGELOG.md) can list
+more than a hundred accepted cards in three weeks: each one is a contract with a gate that rejected its
+mutants before the code existed. The gates and the task plan are kept in the private development tree;
+this repository is exported from it, and a fix merged here is carried back.
 
 Three rules carry over to every change here:
 

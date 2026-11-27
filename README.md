@@ -61,7 +61,7 @@ The cap cannot be overspent. It can still refuse a payment that fits:
 We show this first because it is our own best design, and it still has a flaw. A report that only
 ever says "pass" is not worth reading.
 
-The scan left a receipt in a directory on your disk (the cabinet, `~/.kamanu/cabinet` unless
+The scan left a receipt in a local receipt log on your disk (the cabinet, `~/.kamanu/cabinet` unless
 `KAMANU_CABINET` names another) and uploaded nothing. `kamanu scan --verify` checks the chain of
 receipts; `kamanu scan --census` counts what this cabinet holds. See [docs/scan.md](https://github.com/nkamoah17/kamanu/blob/main/docs/scan.md).
 
@@ -77,22 +77,9 @@ node registry/kamanu-verify.cjs registry/h/b271f39d07877083.html "$(cat registry
 
 `--recompute` runs the record's embedded policy and engine profile again and compares every figure,
 level, trace and hash. To strike a record of your own, signed with your own key, see
-[docs/assay.md](https://github.com/nkamoah17/kamanu/blob/main/docs/assay.md). The words on a record (face value, fineness, struck) are in
-[docs/mint.md](https://github.com/nkamoah17/kamanu/blob/main/docs/mint.md).
-
-## How sure
-
-Every verdict carries a level, set by its weakest link. Full rules: [docs/levels.md](https://github.com/nkamoah17/kamanu/blob/main/docs/levels.md).
-
-| Level | What it says |
-| --- | --- |
-| `MODEL_PROVEN` | Every step from the kernel to the checked machine is proved in Lean |
-| `EXHAUSTIVE_FINITE_PASS` | Every reachable state was visited; one link is tested, not proved |
-| `BOUNDED_PASS` | It passed within stated bounds, and says nothing beyond them |
-| `TESTED` | A live run or a replay passed |
-| `ASSUMED` | It passed, and something it rests on is a default or a reading of documents |
-| `REFUTED` | A counterexample stands |
-| `UNKNOWN` | Not decided |
+[docs/assay.md](https://github.com/nkamoah17/kamanu/blob/main/docs/assay.md). A record's own words, in plain terms: face value is the limit, fineness
+is the limit divided by the most that can be spent (1.000 means it cannot be overspent), and struck is
+the day it was signed. All of them are in [docs/mint.md](https://github.com/nkamoah17/kamanu/blob/main/docs/mint.md).
 
 ## Verify the proofs yourself
 
@@ -113,8 +100,9 @@ on 23 November 2026), are in [docs/verify.md](https://github.com/nkamoah17/kaman
 | KAMANU's own reference engine (the proved cell) | 26 November 2026 | [registry/h/b271f39d07877083.json](https://github.com/nkamoah17/kamanu/blob/main/registry/h/b271f39d07877083.json), listed in [registry/index.html](https://github.com/nkamoah17/kamanu/blob/main/registry/index.html) |
 
 That record is of a model: its engine constants are stated, and it says so. Three payment rails were
-measured live on test networks on 24 and 25 November 2026, at 99 trials per test, and each limit held
-in every test. Ninety-nine clean trials bound how often a race can occur; they do not show it cannot: a
+measured live on test networks on 24 and 25 November 2026, at 99 trials per test: a client-side ceiling
+on each payment, an on-chain spending allowance and a cloud payment-session budget. Each limit held in
+every test. Ninety-nine clean trials bound how often a race can occur; they do not show it cannot: a
 race that occurs 3% of the time or more would be missed with probability at most 5%. Each rail is named
 here when its owner has seen the result and agreed. A third party's result appears here after its owner
 has seen it and agreed, or after 30 days. See the house rules.
@@ -136,6 +124,20 @@ has seen it and agreed, or after 30 days. See the house rules.
 <!-- mcp-name: io.github.nkamoah17/kamanu-lint -->
 <!-- mcp-name: io.github.nkamoah17/kamanu-coach -->
 <!-- mcp-name: io.github.nkamoah17/kamanu -->
+
+## How sure
+
+Every verdict carries a level, set by its weakest link. Full rules: [docs/levels.md](https://github.com/nkamoah17/kamanu/blob/main/docs/levels.md).
+
+| Level | What it says |
+| --- | --- |
+| `MODEL_PROVEN` | Every step from the kernel to the checked machine is proved in Lean |
+| `EXHAUSTIVE_FINITE_PASS` | Every reachable state was visited; one link is tested, not proved |
+| `BOUNDED_PASS` | It passed within stated bounds, and says nothing beyond them |
+| `TESTED` | A live run or a replay passed |
+| `ASSUMED` | It passed, and something it rests on is a default or a reading of documents |
+| `REFUTED` | A counterexample stands |
+| `UNKNOWN` | Not decided |
 
 ## Add it to your agent
 
@@ -199,7 +201,8 @@ in prose: [docs/reference.md](https://github.com/nkamoah17/kamanu/blob/main/docs
 - **Authorization Assurance Sprint.** One programme, one limit configuration, one authorization path,
   one sandbox, three working days: what your path let through that did not fit, what it refused that
   did, the shortest trace and a regression test for each, and a signed receipt per limit. Never
-  production credentials or live funds.
+  production credentials or live funds. The result is publishable with your consent, pass or fail.
+  How we work in your sandbox and handle your test keys: [docs/vendors.md](https://github.com/nkamoah17/kamanu/blob/main/docs/vendors.md).
 
 **Get in touch:** [jerenyame@gmail.com](mailto:jerenyame@gmail.com), with a link to the page that describes
 your limit, the processor or engine underneath it, and whether you have a sandbox.
