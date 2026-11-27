@@ -146,7 +146,6 @@ KAMANU was built one task card at a time, each accepted by a locked gate written
 - X3 2026-11-23: The budget-key theorem - real spend within the cap for every key of tenant, principal, purpose and window, any number of agents, checked by the kernel replay and three outside checkers
 - X4 2026-11-23: The card ledger - authorization, capture, reversal, over-capture and force-post as ledger steps, and the Stripe documented check as a model verdict
 - X1d 2026-11-24: The mint's face - the hallmark, registry and Catalogue speak in coin terms that each have one exact meaning, and the owner can release a held result on the record
-- X2a 2026-11-24: A measured rail - an x402 client and facilitator on Base Sepolia, 99 trials per test
 - X2d 2026-11-24: A measured rail - one wallet spending limit on a testnet, 99 trials per test
 - X5 2026-11-24: The isolation contract - typed identifiers, a Lean theorem that the tenant of every query comes from the session and never from an argument, and the T9 harness as one command
 - X7 2026-11-24: A drift guard - the Lean and Python register machines generated from one description, so a change to the semantics cannot reach one and miss the other
@@ -155,8 +154,6 @@ KAMANU was built one task card at a time, each accepted by a locked gate written
 - X11 2026-11-25: The reference ledger in shadow mode - beside a card program's real-time authorization handler it reserves on authorization, commits on capture, releases on reversal or expiry, and reports where the handler overspent or wrongly refused
 - X12 2026-11-25: The Issuing run made fast and cut-proof - hunt sessions on separate cards run side by side, every answered request is journaled, and a power or network cut costs one request, not the run
 - X14 2026-11-25: The Issuing rail on a pool of cards - Stripe's spending controls measured in test mode on cards that already exist, each trial on a card shown empty first, because the sandbox issues 25 cards a week
-- X8 2026-11-25: Limits that are not windows - a per-payment threshold and the most-restrictive composite, so the hunt can name x402's limit and a card's stacked limits instead of answering "no profile fits"
-- X8b 2026-11-25: The x402 row hunted again - x402's limit named as a per-payment threshold from a new live run, its four cells verdicts instead of "untested"
 - X15 2026-11-26: The cabinet - every scan leaves a chained receipt, and the next scan is told what the receipts before it add up to, with no verdict, figure or level ever changed by them
 - X16 2026-11-26: The Authorization Assurance Sprint as one command, dry-run on ourselves - the offer's battery played against a handler beside the shadow ledger, the three-part report (Model, Measurement, Deployment), a signed receipt per limit, and every receipt recomputed from a clean checkout
 - X18 2026-11-26: The launch freeze as one command - from a clean clone, README's quickstart and docs/scan.md's recipe run unedited in under a minute each, every claim resolves, the registry and Catalogue are rebuilt for the day, and the proof kit's three runs are saved with the date
