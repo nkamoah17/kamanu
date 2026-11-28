@@ -18,6 +18,7 @@ from pathlib import Path
 PURPOSE = "scan a limit, keep a chained receipt of it, and say what the receipts before it add up to"
 
 EPILOG = """\
+example:  kamanu scan --example [NAME] [--show] [--cabinet DIR] [--label NAME] [--out FILE]
 card:     kamanu scan --card PROFILE [--label NAME] [--third-party] [--notified DAY] [--key PRIVATE] [--out FILE]
 policy:   kamanu scan POLICY --engine ENGINE [--cap N] [--in-flight C] [--failures F] [--amounts A,B] [...]
 issuing:  kamanu scan CONTROLS.yaml --engine ENGINE --frontend issuing [...]     one receipt per limit lint decides
@@ -96,6 +97,11 @@ def parser(ap: argparse.ArgumentParser | None = None) -> argparse.ArgumentParser
     ap.add_argument("--as-of", metavar="DAY", help="with --export: the export day (default today, UTC; never later)")
     ap.add_argument("--import", dest="import_", metavar="PACK", help="take a census-v1 pack signed by --key PUBLIC")
     ap.add_argument("--census", action="store_true", help="print this cabinet's census: types, dies, measured constants")
+    ap.add_argument("--example", nargs="?", const="", metavar="NAME",
+                    help="scan an example bundled in the package (nothing cloned, no network); alone: list the "
+                         "examples (per-charge, budget)")
+    ap.add_argument("--show", action="store_true", help="with --example NAME: print the example's files instead of "
+                                                        "scanning")
     return ap
 
 
@@ -124,6 +130,15 @@ def _step(s) -> str:
     return out + "".join(f" | {k} {s[k]}" for k in ("held", "spent", "doubt") if k in s)
 
 
+def reference_hypotheses(b: dict) -> list:
+    """The reference engine's constants, each assumed of the processor, for a body of the reference engine that
+    records no hypothesis (X24); else []. Said and counted, never written into the body."""
+    from kamanu.frontends import issuing as IS
+    if (b.get("engine") or {}).get("name") != "reference" or b.get("hypotheses"):
+        return []
+    return [{"name": k, "value": v, "status": "assumed"} for k, v in IS.REFERENCE_CONSTANTS]
+
+
 def render(b: dict) -> str:
     """A body's answer, whole: every figure beside its level and hypotheses (rule E1)."""
     f, eng = b.get("figures") or {}, (b.get("engine") or {}).get("name")
@@ -131,13 +146,15 @@ def render(b: dict) -> str:
     L = [f"KAMANU scan ({b['kind']}" + (f", engine {eng}" if eng else "") + (f", label {lab}" if lab else "") + ")"]
     unit = b.get("unit")
     if "face" in f:
-        L.append(f"  face value       {_v(f['face'])}" + (f" ({unit})" if unit else ""))
+        L.append(f"  face value       {_v(f['face'])}" + (f" ({unit}; the limit)" if unit else " (the limit)"))
     if "ceiling" in f:
         L.append(f"  ceiling          {_v(f['ceiling'])} (the most that can really be spent)")
     if "fineness" in f:
-        L.append(f"  fineness         {_v(f['fineness'])} (face value over ceiling, three decimals, never rounded up)")
+        L.append(f"  fineness         {_v(f['fineness'])} (the limit divided by the most that can be spent, three decimals, never "
+                 f"rounded up; 1.000 means it cannot be overspent)")
     if "stranded" in f:
-        L.append(f"  stranded budget  {_v(f['stranded'])} (the most free headroom left when a request that fits is refused)")
+        L.append(f"  stranded budget  {_v(f['stranded'])} (the most budget a refusal can leave unspent: the free headroom "
+                 f"left when a request that fits is refused)")
     for k in sorted(set(f) - {"face", "ceiling", "fineness", "stranded"}):
         L.append(f"  {k.replace('_', ' '):<16} {_v(f[k])}")
     for c in b.get("checks") or []:
@@ -148,7 +165,10 @@ def render(b: dict) -> str:
     for h in b.get("hypotheses") or []:
         more = "".join(f", {h[k]} trials" if k == "trials" else f", {h[k]}" for k in ("trials", "date") if h.get(k) is not None)
         L.append(f"    {h.get('name')} = {_v(h.get('value'))}: {h.get('status')}{more}")
-    if not b.get("hypotheses"):
+    for h in reference_hypotheses(b):
+        L.append(f"    {h['name']} = {_v(h['value'])}: assumed of the processor (a constant of KAMANU's reference "
+                 f"engine, not measured of the processor)")
+    if not b.get("hypotheses") and not reference_hypotheses(b):
         L.append("    none recorded")
     for cv in b.get("caveats") or []:
         L.append(f"  caveat           {cv}")
@@ -164,13 +184,29 @@ def render(b: dict) -> str:
     return "\n".join(L) + "\n"
 
 
-def _issuing_lines(limits: list) -> list:
+def _issuing_lines(limits: list, about: dict | None = None) -> list:
     """One line per spending limit as lint decides it: which window was checked and what the other reading could
-    change (R16h: a calendar period is never read as sliding without saying so)."""
-    L = ["KAMANU scan (issuing): the configuration's spending limits, one receipt per limit lint decides"]
+    change (R16h: a calendar period is never read as sliding without saying so); a per_authorization limit's line
+    says what it bounds and what bounds the total of the charges it counts (X24); each Stripe restriction is named
+    as not modelled."""
+    from kamanu.frontends import issuing as IS
+    about = about or {}
+    L = []
+    eng = IS.engine_line(about.get("engine_arg") or about.get("engine"))
+    if eng:
+        L.append(eng)
+    src = f", a Stripe {about['object']} object" if about.get("object") else ""
+    cur = (f"; amounts in minor units of {about['currency']} (spending_limits_currency)" if about.get("currency")
+           else "")
+    L.append(f"KAMANU scan (issuing{src}): the configuration's spending limits, one receipt per limit lint "
+             f"decides{cur}")
+    L += IS.restriction_lines(about)
     for i, lim in enumerate(limits, 1):
         head = f"  limit {i} (line {lim.get('line')}): {lim.get('interval')} {lim.get('amount')}"
-        if lim.get("status") == "UNKNOWN":
+        if lim.get("status") == "UNKNOWN" and lim.get("interval") == "per_authorization":
+            L.append(f"{head}: UNKNOWN, undecided, no receipt ({lim.get('reason') or 'no reason given'}); "
+                     f"{IS.per_authorization_note(limits, i - 1)}")
+        elif lim.get("status") == "UNKNOWN":
             other = f"; {lim['other']}" if lim.get("other") else ""
             L.append(f"{head}: UNKNOWN, undecided, no receipt ({lim.get('reason') or 'no reason given'}{other})")
         elif lim.get("checked"):
@@ -197,7 +233,59 @@ def _day(text, flag: str):
 
 
 def main(argv=None) -> int:
+    """A scan's text output goes out in plain words (kamanu.cabinet.plain): each coin word's first appearance in a
+    stream carries its meaning. --help and --show are printed as they are."""
     argv = list(sys.argv[1:] if argv is None else argv)
+    if any(x in ("-h", "--help") for x in argv) or "--show" in argv:
+        return _main(argv)
+    from kamanu.cabinet.plain import Glossed
+    out, err = sys.stdout, sys.stderr
+    sys.stdout, sys.stderr = Glossed(out), Glossed(err)
+    try:
+        return _main(argv)
+    finally:
+        g_out, g_err = sys.stdout, sys.stderr
+        sys.stdout, sys.stderr = out, err
+        for g in (g_out, g_err):
+            if hasattr(g, "finish"):
+                g.finish()
+
+
+def _example(a, inputs: list):
+    """--example: None to go on and scan (a is filled in from the example), else the exit code."""
+    from kamanu.cabinet import examples as EX
+    if a.example == "":
+        print("examples bundled in the package (kamanu scan --example NAME scans one; add --show to print its files):")
+        for line in EX.listing():
+            print(f"  {line}")
+        return 0
+    if a.example not in EX.EXAMPLES:
+        _say(f"no example {a.example!r}; the examples are {', '.join(EX.names())} (kamanu scan --example lists them)")
+        return 3
+    given = [f for f, v in (("POLICY", inputs), ("--card", a.card), ("--engine", a.engine), ("--cap", a.cap),
+                            ("--frontend", a.frontend), ("--plates-out", a.plates_out), ("--census", a.census),
+                            ("--replay", a.replay), ("--verify", a.verify is not None), ("--ingest", a.ingest),
+                            ("--export", a.export), ("--import", a.import_)) if v]
+    if given:
+        _say(f"--example {a.example} brings its own input and engine; it does not take {', '.join(given)}")
+        return 3
+    try:
+        fs = EX.files(a.example)
+    except FileNotFoundError as e:
+        _say(str(e))
+        return 3
+    if a.show:
+        for f in fs:
+            print(f"# {a.example}: {f.name} ({f})")
+            text = f.read_bytes().decode("utf-8").replace("\r\n", "\n")
+            sys.stdout.write(text.rstrip("\n") + "\n")
+        return 0
+    a.policy, a.engine, a.cap, a.frontend = EX.scan_args(a.example)
+    print(f"example {a.example}: {EX.EXAMPLES[a.example].shows}, scanned from the files bundled in the package")
+    return None
+
+
+def _main(argv: list) -> int:
     try:
         a = parser().parse_args(argv)
     except SystemExit as e:
@@ -207,6 +295,14 @@ def main(argv=None) -> int:
     from kamanu.cabinet import readings as RD
     inputs = list(a.policy or [])
     a.policy = inputs[0] if len(inputs) == 1 else None
+    if a.show and a.example in (None, ""):
+        _say("--show goes with --example NAME")
+        return 3
+    if a.example is not None:
+        rc = _example(a, inputs)
+        if rc is not None:
+            return rc
+        inputs = [a.policy]
     try:
         if a.plates_out:
             from kamanu.cabinet import plates as PL
@@ -252,7 +348,7 @@ def main(argv=None) -> int:
 def _scan(cab, a, CH, RD) -> int:
     from kamanu.cabinet import census as CE
     who = dict(label=a.label, third_party=a.third_party, notified=a.notified, private=a.private)
-    limits = None
+    limits, about = None, {}
     if a.card:
         try:
             text = Path(a.card).read_bytes().decode("utf-8")
@@ -262,9 +358,15 @@ def _scan(cab, a, CH, RD) -> int:
     elif a.policy and a.engine:
         try:
             if a.frontend == "issuing":
-                bodies, limits = RD.issuing_bodies(a.policy, a.engine, a.cap, a.in_flight, a.failures, a.amounts, **who)
+                bodies, limits = RD.issuing_bodies(a.policy, a.engine, a.cap, a.in_flight, a.failures, a.amounts,
+                                                   about=about, **who)
             else:
                 bodies = [RD.policy_body(a.policy, a.engine, a.cap, a.in_flight, a.failures, a.amounts, **who)]
+        except RD.Declined as e:
+            print(f"KAMANU scan: UNKNOWN, the issuing front end declines {a.policy}: line {e.line}: {e.construct}: "
+                  f"{e.reason}")
+            print("Nothing was read, so nothing is checked: no receipt, and never a pass (exit 2).")
+            return 2
         except RD.Undecided as e:
             print(f"KAMANU scan: UNKNOWN, undecided: {e}")
             print("No receipt: a part lint leaves undecided leaves none.")
@@ -284,7 +386,7 @@ def _scan(cab, a, CH, RD) -> int:
         cab.receipts()                                # a chain that does not check is still said so (exit 3)
     CE.keep_plates(cab, done)
     if limits is not None:
-        print("\n".join(_issuing_lines(limits)))
+        print("\n".join(_issuing_lines(limits, about)))
     for b in bodies:
         sys.stdout.write(render(b))
     for rec in done:
@@ -306,6 +408,9 @@ def _scan(cab, a, CH, RD) -> int:
         print(f"{len(undecided)} limit(s) UNKNOWN (undecided): no receipt for them.")
     if any(c.get("status") == "FAILS" for b in bodies for c in b.get("checks") or []):
         return 1
+    if not bodies:
+        print("No receipt was deposited: nothing is checked, so this is never a pass (exit 2).")
+        return 2
     return 2 if undecided else 0
 
 

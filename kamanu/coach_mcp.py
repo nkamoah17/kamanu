@@ -3,7 +3,7 @@
     python -m kamanu.coach_mcp          stdio: one JSON-RPC message per line in, one out
 
 Same protocol as Product 1's server (kamanu.mcp_server: no initialize, no session, the
-version in params._meta on every request), and a separate server, so each product's tool
+version in params._meta on every request; a request with no version is classic MCP, answered by kamanu.mcp_server.answer), and a separate server, so each product's tool
 list stays its own. Every result is a fixed function of kamanu.coach on the arguments.
 
 Tools (each takes policy: Dogwood text, profile: a record as in profiles/, log: the
@@ -25,7 +25,7 @@ import sys
 
 from kamanu.coach import Coach, Unknown
 from kamanu.mcp_server import (INVALID_PARAMS, INVALID_REQUEST, META_KEY, METHOD_NOT_FOUND, PARSE_ERROR,
-                               UNSUPPORTED_VERSION, VERSION, RpcError)
+                               UNSUPPORTED_VERSION, VERSION, RpcError, answer)
 
 _ENTRY = {"type": "object", "required": ["t", "tool", "amount", "decision"],
           "properties": {"t": {"type": "integer"}, "tool": {"type": "string"}, "amount": {"type": "integer"},
@@ -121,7 +121,7 @@ METHODS = {
     "server/discover": lambda p: {
         "supportedVersions": [VERSION], "protocolVersion": VERSION,
         "capabilities": {"tools": {"listChanged": False}},
-        "serverInfo": {"name": "kamanu-coach", "title": "KAMANU spend-cap coach", "version": "0.1.1"},
+        "serverInfo": {"name": "kamanu-coach", "title": "KAMANU spend-cap coach", "version": "0.1.2"},
         "instructions": "Stateless: send the session log with every call. Ask advise before each paid "
                         "call; on engines that keep denied requests an over-ask costs budget."},
     "tools/list": lambda p: {"tools": json.loads(json.dumps(TOOLS)), "ttlMs": 3_600_000, "cacheScope": "public"},
@@ -129,7 +129,7 @@ METHODS = {
 }
 
 
-def handle(request):
+def versioned_handle(request):
     if not isinstance(request, dict):
         return {"jsonrpc": "2.0", "id": None, "error": {"code": INVALID_REQUEST, "message": "invalid request"}}
     rid = request.get("id")
@@ -149,6 +149,15 @@ def handle(request):
     except RpcError as e:
         response = {"jsonrpc": "2.0", "id": rid, "error": {"code": e.code, "message": e.message}}
     return None if "id" not in request else response
+
+
+SERVER_INFO = METHODS["server/discover"](None)["serverInfo"]
+
+
+def handle(request):
+    """A 2026-07-28 request as versioned_handle answers it; a classic one (no version) as
+    kamanu.mcp_server.answer does."""
+    return answer(request, versioned_handle, SERVER_INFO)
 
 
 def main():

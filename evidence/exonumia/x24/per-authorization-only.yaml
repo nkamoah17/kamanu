@@ -1,0 +1,4 @@
+# a per-authorization limit alone: nothing bounds the total
+spending_limits:
+  - amount: 2500
+    interval: per_authorization

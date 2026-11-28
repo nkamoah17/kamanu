@@ -27,10 +27,13 @@ Tools:
         {"exit", "record": the run's whole verdict record for (rung, check), or null}
     questions(config, check, candidates)        {"questions": I4's result}
 
-Protocol. No initialize handshake and no session: handle keeps no state between calls, so
-a result never depends on earlier requests. Every request carries
-params._meta["io.modelcontextprotocol/protocolVersion"] == "2026-07-28", else -32022.
-Unknown method -32601; unknown tool or arguments outside the inputSchema -32602. A run
+Protocol. Stateless, for clients on either protocol: handle keeps no state between calls,
+so a result never depends on earlier requests. A request whose
+params._meta["io.modelcontextprotocol/protocolVersion"] is set must name "2026-07-28", else
+-32022 (and initialize at 2026-07-28 is -32601: there is no handshake). A request with no
+version at all is classic MCP (answer()): initialize names the client's version when it is
+2025-11-25, 2025-06-18 or 2025-03-26, else 2025-11-25; ping {}; tools/list and tools/call as
+at 2026-07-28; initialize is never required first. Unknown method -32601; unknown tool or arguments outside the inputSchema -32602. A run
 that exits 3 (kamanu check could not judge the input) is a result with "isError": true and
 a text message, never a partial result.
 
@@ -84,12 +87,15 @@ _EXIT = {"type": "integer", "enum": [0, 1, 2],
          "description": "kamanu check's exit code: 0 all pass, 1 some check fails, 2 lossy policy"}
 _CHECK = {"type": "string", "enum": CHECKS}
 
+_TLC_NOTE = (" Runs TLC, so it needs Java; fetches the pinned TLA+ tools jar (SHA-256 checked) on first use "
+             "unless KAMANU_TLA_JAR names one.")
+
 TOOLS = [
     {"name": "verify_policy",
      "title": "Verify a Dogwood policy",
      "description": "Run `kamanu check` on a Dogwood policy under one engine (\"reference\" or a "
                     "profile record) and return its exit code, its verdict.json and its SARIF log. "
-                    "Every verdict comes with its ledger: bounds, rests on default, class.",
+                    "Every verdict comes with its ledger: bounds, rests on default, class." + _TLC_NOTE,
      "inputSchema": {"type": "object", "additionalProperties": False,
                      "required": ["policy", "engine"],
                      "properties": {"policy": _POLICY, "engine": _ENGINE, "cap": _CAP, "path": _PATH}},
@@ -103,7 +109,7 @@ TOOLS = [
      "title": "Compare two engines on one policy",
      "description": "Run `kamanu check` on the same policy text under two engines and list every "
                     "(rung, check) whose status differs, with both whole verdict records: the "
-                    "engine-profile mismatch finding. An empty list means the engines agree.",
+                    "engine-profile mismatch finding. An empty list means the engines agree." + _TLC_NOTE,
      "inputSchema": {"type": "object", "additionalProperties": False,
                      "required": ["policy", "engine_a", "engine_b"],
                      "properties": {"policy": _POLICY, "engine_a": _ENGINE, "engine_b": _ENGINE,
@@ -119,7 +125,7 @@ TOOLS = [
      "description": "Run `kamanu check` and return the whole verdict record for one rung (R0, R1, "
                     "R2) and check (safety, deadlock, liveness): result, counterexample trace, "
                     "bounds, rests on default, class and unmodelled outcomes. null when the run "
-                    "has no such record (a lossy policy).",
+                    "has no such record (a lossy policy)." + _TLC_NOTE,
      "inputSchema": {"type": "object", "additionalProperties": False,
                      "required": ["policy", "engine", "rung", "check"],
                      "properties": {"policy": _POLICY, "engine": _ENGINE,
@@ -257,7 +263,10 @@ def _run_once(policy: str, path: str, engine, cap: int) -> tuple:
 def run(policy: str, path: str, engine, cap: int) -> tuple:
     """The run: (exit, verdict, sarif). Raises RunFailed when kamanu check exits 3 (or
     otherwise gives no verdict). A run whose TLC died or hung is repeated once: the run is a
-    function of its input, so a repeat changes nothing but the luck of the machine."""
+    function of its input, so a repeat changes nothing but the luck of the machine. The jar is
+    found first (kamanu.tlajar: fetched once when the install has none), so a missing Java, a
+    refused or failed fetch, or a KAMANU_TLA_JAR naming no file is an isError result saying so."""
+    jar_ready()
     try:
         r = _run_once(policy, path, engine, cap)
     except subprocess.TimeoutExpired:
@@ -273,6 +282,16 @@ def run(policy: str, path: str, engine, cap: int) -> tuple:
         msg = err.strip()[-2000:] or f"kamanu check exited {code} without a verdict"
         raise RunFailed(f"kamanu check exited {code}: {msg}")
     return code, verdict, sarif
+
+
+def jar_ready() -> None:
+    """The TLC jar kamanu check will use, found (or fetched) here so that what stops it is said
+    in one line; RunFailed otherwise."""
+    from kamanu.cli import jar_path
+    try:
+        jar_path()
+    except RuntimeError as exc:
+        raise RunFailed(f"cannot run TLC: {exc}") from None
 
 
 # ---------------------------------------------------------------- tools
@@ -365,7 +384,7 @@ def _tools_call(params: dict) -> dict:
 def _discover() -> dict:
     return {"supportedVersions": [VERSION], "protocolVersion": VERSION,
             "capabilities": {"tools": {"listChanged": False}},
-            "serverInfo": {"name": "kamanu", "title": "KAMANU policy verifier", "version": "0.1.1"},
+            "serverInfo": {"name": "kamanu", "title": "KAMANU policy verifier", "version": "0.1.2"},
             "instructions": "Stateless: no initialize, no session. Send params._meta"
                             f"[\"{META_KEY}\"] = \"{VERSION}\" on every request."}
 
@@ -395,8 +414,8 @@ def _result(method, params):
     return METHODS[method](params)
 
 
-def handle(request):
-    """One JSON-RPC 2.0 request object -> its response object (None for a notification)."""
+def versioned_handle(request):
+    """One 2026-07-28 JSON-RPC 2.0 request object -> its response object (None for a notification)."""
     if not isinstance(request, dict):
         return {"jsonrpc": "2.0", "id": None, "error": {"code": INVALID_REQUEST, "message": "invalid request"}}
     notification = "id" not in request
@@ -414,6 +433,69 @@ def handle(request):
     else:
         response = {"jsonrpc": "2.0", "id": rid, "result": result}
     return None if notification else response
+
+
+# ---------------------------------------------------------------- classic MCP (2025-11-25 and earlier)
+CLASSIC_VERSIONS = ("2025-11-25", "2025-06-18", "2025-03-26")
+SERVER_INFO = {"name": "kamanu", "title": "KAMANU policy verifier", "version": "0.1.2"}
+
+
+def is_classic(request) -> bool:
+    """A request with no protocol version at all: no params, params without _meta, or a _meta
+    without the version key. One whose _meta names any version is a 2026-07-28 request (or -32022)."""
+    if not isinstance(request, dict):
+        return False
+    params = request.get("params")
+    if params is None:
+        return True
+    if not isinstance(params, dict):
+        return False
+    meta = params.get("_meta")
+    if "_meta" not in params:
+        return True
+    return isinstance(meta, dict) and META_KEY not in meta
+
+
+def answer(request, versioned, server_info: dict):
+    """The one request handler of each server: a versioned request goes to versioned (today's
+    answers); a classic one is answered here, statelessly. initialize, ping, tools/list and
+    tools/call are served (the last two as versioned serves them); every other method -32601;
+    a notification gets nothing. No answer depends on an earlier request."""
+    if not is_classic(request):
+        return versioned(request)
+    method = request.get("method")
+    if request.get("jsonrpc") != "2.0" or not isinstance(method, str):
+        return versioned(request)                       # -32600, as today
+    notification = "id" not in request
+    if notification:
+        return None
+    rid = request.get("id")
+    params = request.get("params") or {}
+    if method == "initialize":
+        asked = params.get("protocolVersion")
+        version = asked if asked in CLASSIC_VERSIONS else CLASSIC_VERSIONS[0]
+        return {"jsonrpc": "2.0", "id": rid,
+                "result": {"protocolVersion": version, "capabilities": {"tools": {"listChanged": False}},
+                           "serverInfo": copy.deepcopy(server_info)}}
+    if method == "ping":
+        return {"jsonrpc": "2.0", "id": rid, "result": {}}
+    if method not in ("tools/list", "tools/call"):
+        return {"jsonrpc": "2.0", "id": rid,
+                "error": {"code": METHOD_NOT_FOUND, "message": f"method not found: {method}"}}
+    p = copy.deepcopy(params)
+    p["_meta"] = {**(p.get("_meta") or {}), META_KEY: VERSION}
+    resp = versioned({"jsonrpc": "2.0", "id": rid, "method": method, "params": p})
+    res = resp.get("result") if isinstance(resp, dict) else None
+    if isinstance(res, dict):
+        keep = ("tools", "nextCursor") if method == "tools/list" else ("content", "structuredContent", "isError")
+        resp["result"] = {k: res[k] for k in keep if k in res}
+    return resp
+
+
+def handle(request):
+    """One JSON-RPC 2.0 request object -> its response object (None for a notification): a
+    2026-07-28 request as versioned_handle answers it, a classic one as answer() does."""
+    return answer(request, versioned_handle, SERVER_INFO)
 
 
 def main():
@@ -512,10 +594,10 @@ def _hunt_call(params: dict) -> dict:
             "content": [{"type": "text", "text": json.dumps(r, sort_keys=True)}], "isError": False}
 
 
-def handle_with_hunt(request):
-    """handle(), with hunt added to tools/list and tools/call: the kamanu-mcp command's server."""
+def versioned_handle_with_hunt(request):
+    """versioned_handle(), with hunt added to tools/list and tools/call."""
     if not isinstance(request, dict) or request.get("jsonrpc") != "2.0":
-        return handle(request)
+        return versioned_handle(request)
     method, params = request.get("method"), request.get("params")
     if method == "tools/list" or (method == "tools/call" and isinstance(params, dict)
                                   and params.get("name") == "hunt"):
@@ -532,7 +614,12 @@ def handle_with_hunt(request):
         else:
             response = {"jsonrpc": "2.0", "id": rid, "result": result}
         return None if notification else response
-    return handle(request)
+    return versioned_handle(request)
+
+
+def handle_with_hunt(request):
+    """handle(), with hunt added to tools/list and tools/call: the kamanu-mcp command's server."""
+    return answer(request, versioned_handle_with_hunt, SERVER_INFO)
 
 
 def serve():

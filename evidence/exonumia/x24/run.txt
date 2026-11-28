@@ -1,0 +1,257 @@
+# X24: the issuing scan, as run on 2026-11-27 from the root of a checkout at e718042 plus X24's change,
+# each on one fresh cabinet (KAMANU_CABINET unset, --cabinet CABINET). The figures are the run's.
+
+## evidence/exonumia/x24/stripe-card.json
+```
+{
+  "id": "ic_1MvSieLkdIwHu7ixn6uuO0Xu",
+  "object": "issuing.card",
+  "brand": "Visa",
+  "cancellation_reason": null,
+  "cardholder": {
+    "id": "ich_1MsKAB2eZvKYlo2C3eZ2BdvK",
+    "object": "issuing.cardholder",
+    "billing": {"address": {"city": "Anytown", "country": "US", "line1": "123 Main Street", "line2": null,
+                            "postal_code": "12345", "state": "CA"}},
+    "company": null,
+    "created": 1680415995,
+    "email": "jenny.rosen@example.com",
+    "individual": null,
+    "livemode": false,
+    "metadata": {},
+    "name": "Jenny Rosen",
+    "phone_number": "+18008675309",
+    "requirements": {"disabled_reason": null, "past_due": []},
+    "spending_controls": {"allowed_categories": [], "blocked_categories": [], "spending_limits": [],
+                          "spending_limits_currency": null},
+    "status": "active",
+    "type": "individual"
+  },
+  "created": 1680416000,
+  "currency": "usd",
+  "exp_month": 8,
+  "exp_year": 2028,
+  "last4": "4242",
+  "livemode": false,
+  "metadata": {},
+  "replaced_by": null,
+  "replacement_for": null,
+  "replacement_reason": null,
+  "shipping": null,
+  "spending_controls": {
+    "allowed_categories": null,
+    "blocked_categories": ["gambling"],
+    "allowed_merchant_countries": null,
+    "blocked_merchant_countries": null,
+    "spending_limits": [
+      {"amount": 50000, "categories": [], "interval": "daily"},
+      {"amount": 10000, "categories": [], "interval": "per_authorization"}
+    ],
+    "spending_limits_currency": "usd"
+  },
+  "status": "active",
+  "type": "virtual",
+  "wallets": {"apple_pay": {"eligible": false, "ineligible_reason": "missing_cardholder_contact"},
+              "google_pay": {"eligible": false, "ineligible_reason": "missing_cardholder_contact"},
+              "primary_account_identifier": null}
+}
+```
+$ kamanu scan evidence/exonumia/x24/stripe-card.json --frontend issuing --engine reference --cabinet CABINET
+engine: these verdicts are of KAMANU's reference engine (Reflexive true, DenyRecord none, Atomic true, Lag 0, Scope global, each assumed of the processor), not the buyer's processor; a measured run of the processor (a hunt or rail row, deposited with `kamanu scan --ingest`) replaces it
+KAMANU scan (issuing, a Stripe issuing.card object): the configuration's spending limits, one receipt per limit lint decides; amounts in minor units of usd (spending_limits_currency)
+  restriction blocked_categories (line 38): gambling: not modelled; it only removes authorizations, so a Sound verdict without it stands with it
+  limit 1 (line 42): daily 50000: FAILS, a calendar period checked as a sliding window; the other reading (fixed, at the calendar boundary): the fixed reading (a calendar period that resets at its boundary, midnight UTC) could change the verdict: a fixed window forgets the spend before its boundary, so up to twice the amount can be spent across one boundary, which the sliding window checked here does not allow
+  limit 2 (line 43): per_authorization 10000: UNKNOWN, undecided, no receipt (a bound on each authorization alone is not a count of past events); it bounds each charge at 10000; the total of the charges it counts is bounded by limit 1 (daily 50000)
+KAMANU scan (policy, engine reference)
+  face value       50000
+  Sound            holds, level MODEL_PROVEN
+  Tight            FAILS, level REFUTED
+  level            REFUTED (the weakest link)
+  bounds           {"checked": "sliding", "failures": 1, "in_flight": 2, "interval": "daily", "period": "calendar"}
+  hypotheses:
+    Reflexive = true: assumed of the processor (a constant of KAMANU's reference engine, not measured of the processor)
+    DenyRecord = none: assumed of the processor (a constant of KAMANU's reference engine, not measured of the processor)
+    Atomic = true: assumed of the processor (a constant of KAMANU's reference engine, not measured of the processor)
+    Lag = 0: assumed of the processor (a constant of KAMANU's reference engine, not measured of the processor)
+    Scope = global: assumed of the processor (a constant of KAMANU's reference engine, not measured of the processor)
+  caveat           the daily limit is a calendar period, checked here as a sliding window; the other reading (fixed, at the calendar boundary): the fixed reading (a calendar period that resets at its boundary, midnight UTC) could change the verdict: a fixed window forgets the spend before its boundary, so up to twice the amount can be spent across one boundary, which the sliding window checked here does not allow
+  shortest failing trace: none kept
+receipt 0 deposited (receipt-v1, unsigned), line hash f3b89c30dbb8cb9d777bbd45b6b0ddac7e2cbc0910ebbdec69ee3a3b7319b5da
+cabinet: a census of what was scanned here, in this cabinet, not of a market (0 receipts before this one, no receipt yet)
+  type 5cc73452604d1b7a6a575d11a9df6e53 subjects: 0 (distinct subjects whose latest receipt has this type)
+  Sound holds die 0f522f5cc57f46a65d61139c9f243606: new (no receipt here holds it)
+  Tight FAILS die afeef5a5b32cb64f7acc7f6154b0c9c3: new (no receipt here holds it)
+  drift: none (no receipt here of the same subject at the same bounds)
+  constants assumed: 5 of 5 hypotheses (the reference engine's constants, each assumed of the processor)
+1 limit(s) UNKNOWN (undecided): no receipt for them.
+(exit 1)
+
+## evidence/exonumia/x24/stripe-card-no-limit.json
+```
+{
+  "id": "ic_1MvSieLkdIwHu7ixn6uuO0Xu",
+  "object": "issuing.card",
+  "brand": "Visa",
+  "cancellation_reason": null,
+  "cardholder": {
+    "id": "ich_1MsKAB2eZvKYlo2C3eZ2BdvK",
+    "object": "issuing.cardholder",
+    "billing": {
+      "address": {
+        "city": "Anytown",
+        "country": "US",
+        "line1": "123 Main Street",
+        "line2": null,
+        "postal_code": "12345",
+        "state": "CA"
+      }
+    },
+    "company": null,
+    "created": 1680415995,
+    "email": "jenny.rosen@example.com",
+    "individual": null,
+    "livemode": false,
+    "metadata": {},
+    "name": "Jenny Rosen",
+    "phone_number": "+18008675309",
+    "requirements": {
+      "disabled_reason": null,
+      "past_due": []
+    },
+    "spending_controls": {
+      "allowed_categories": [],
+      "blocked_categories": [],
+      "spending_limits": [],
+      "spending_limits_currency": null
+    },
+    "status": "active",
+    "type": "individual"
+  },
+  "created": 1680416000,
+  "currency": "usd",
+  "exp_month": 8,
+  "exp_year": 2028,
+  "last4": "4242",
+  "livemode": false,
+  "metadata": {},
+  "replaced_by": null,
+  "replacement_for": null,
+  "replacement_reason": null,
+  "shipping": null,
+  "spending_controls": {
+    "allowed_categories": null,
+    "blocked_categories": null,
+    "allowed_merchant_countries": null,
+    "blocked_merchant_countries": null,
+    "spending_limits": [],
+    "spending_limits_currency": "usd"
+  },
+  "status": "active",
+  "type": "virtual",
+  "wallets": {
+    "apple_pay": {
+      "eligible": false,
+      "ineligible_reason": "missing_cardholder_contact"
+    },
+    "google_pay": {
+      "eligible": false,
+      "ineligible_reason": "missing_cardholder_contact"
+    },
+    "primary_account_identifier": null
+  }
+}
+```
+$ kamanu scan evidence/exonumia/x24/stripe-card-no-limit.json --frontend issuing --engine reference --cabinet CABINET
+KAMANU scan: UNKNOWN, the issuing front end declines evidence/exonumia/x24/stripe-card-no-limit.json: line 56: spending_limits: spending_controls.spending_limits is not a non-empty list: the issuing front end declines
+Nothing was read, so nothing is checked: no receipt, and never a pass (exit 2).
+(exit 2)
+
+## evidence/exonumia/x24/broken.yaml
+```
+garbage: [1,2
+```
+$ kamanu scan evidence/exonumia/x24/broken.yaml --frontend issuing --engine reference --cabinet CABINET
+KAMANU scan: UNKNOWN, the issuing front end declines evidence/exonumia/x24/broken.yaml: line 2: unreadable YAML: not YAML (while parsing a flow sequence): the issuing front end declines
+Nothing was read, so nothing is checked: no receipt, and never a pass (exit 2).
+(exit 2)
+
+## evidence/exonumia/x24/empty.yaml
+```
+{}
+```
+$ kamanu scan evidence/exonumia/x24/empty.yaml --frontend issuing --engine reference --cabinet CABINET
+KAMANU scan: UNKNOWN, the issuing front end declines evidence/exonumia/x24/empty.yaml: line 1: missing key 'spending_limits': 'spending_limits' is needed and not given: the file is neither the documented layout (spending_limits at the top level) nor a Stripe Issuing Card or Cardholder object ("object": issuing.card or issuing.cardholder, its limits at spending_controls.spending_limits): the issuing front end declines
+Nothing was read, so nothing is checked: no receipt, and never a pass (exit 2).
+(exit 2)
+
+## evidence/exonumia/x24/two-limit.yaml
+```
+# the card's two-limit file: a per-authorization limit and a daily one
+spending_limits:
+  - amount: 2500
+    interval: per_authorization
+  - amount: 50000
+    interval: daily
+```
+$ kamanu scan evidence/exonumia/x24/two-limit.yaml --frontend issuing --engine reference --cabinet CABINET
+engine: these verdicts are of KAMANU's reference engine (Reflexive true, DenyRecord none, Atomic true, Lag 0, Scope global, each assumed of the processor), not the buyer's processor; a measured run of the processor (a hunt or rail row, deposited with `kamanu scan --ingest`) replaces it
+KAMANU scan (issuing): the configuration's spending limits, one receipt per limit lint decides
+  limit 1 (line 3): per_authorization 2500: UNKNOWN, undecided, no receipt (a bound on each authorization alone is not a count of past events); it bounds each charge at 2500; the total of the charges it counts is bounded by limit 2 (daily 50000)
+  limit 2 (line 5): daily 50000: FAILS, a calendar period checked as a sliding window; the other reading (fixed, at the calendar boundary): the fixed reading (a calendar period that resets at its boundary, midnight UTC) could change the verdict: a fixed window forgets the spend before its boundary, so up to twice the amount can be spent across one boundary, which the sliding window checked here does not allow
+KAMANU scan (policy, engine reference)
+  face value       50000
+  Sound            holds, level MODEL_PROVEN
+  Tight            FAILS, level REFUTED
+  level            REFUTED (the weakest link)
+  bounds           {"checked": "sliding", "failures": 1, "in_flight": 2, "interval": "daily", "period": "calendar"}
+  hypotheses:
+    Reflexive = true: assumed of the processor (a constant of KAMANU's reference engine, not measured of the processor)
+    DenyRecord = none: assumed of the processor (a constant of KAMANU's reference engine, not measured of the processor)
+    Atomic = true: assumed of the processor (a constant of KAMANU's reference engine, not measured of the processor)
+    Lag = 0: assumed of the processor (a constant of KAMANU's reference engine, not measured of the processor)
+    Scope = global: assumed of the processor (a constant of KAMANU's reference engine, not measured of the processor)
+  caveat           the daily limit is a calendar period, checked here as a sliding window; the other reading (fixed, at the calendar boundary): the fixed reading (a calendar period that resets at its boundary, midnight UTC) could change the verdict: a fixed window forgets the spend before its boundary, so up to twice the amount can be spent across one boundary, which the sliding window checked here does not allow
+  shortest failing trace: none kept
+receipt 1 deposited (receipt-v1, unsigned), line hash 49bdd7173d9679bd9e5b75e80f5c30618a66ce4cef8acb4dd5e6d26abc4b47b3
+cabinet: a census of what was scanned here, in this cabinet, not of a market (1 receipts before this one, 2026-11-27)
+  type 5cc73452604d1b7a6a575d11a9df6e53 subjects: 1 (distinct subjects whose latest receipt has this type, 2026-11-27)
+  Sound holds die 0f522f5cc57f46a65d61139c9f243606: struck: 1 (receipts 2026-11-27, first receipt 0)
+  Tight FAILS die afeef5a5b32cb64f7acc7f6154b0c9c3: struck: 1 (receipts 2026-11-27, first receipt 0)
+  drift: none (no receipt here of the same subject at the same bounds)
+  constants assumed: 5 of 5 hypotheses (the reference engine's constants, each assumed of the processor)
+1 limit(s) UNKNOWN (undecided): no receipt for them.
+(exit 1)
+
+## evidence/exonumia/x24/per-authorization-only.yaml
+```
+# a per-authorization limit alone: nothing bounds the total
+spending_limits:
+  - amount: 2500
+    interval: per_authorization
+```
+$ kamanu scan evidence/exonumia/x24/per-authorization-only.yaml --frontend issuing --engine reference --cabinet CABINET
+engine: these verdicts are of KAMANU's reference engine (Reflexive true, DenyRecord none, Atomic true, Lag 0, Scope global, each assumed of the processor), not the buyer's processor; a measured run of the processor (a hunt or rail row, deposited with `kamanu scan --ingest`) replaces it
+KAMANU scan (issuing): the configuration's spending limits, one receipt per limit lint decides
+  limit 1 (line 3): per_authorization 2500: UNKNOWN, undecided, no receipt (a bound on each authorization alone is not a count of past events); it bounds each charge at 2500, and no limit in the file bounds the total of the charges it counts: four charges of 2500 each pass it, 4 x 2500 = 10000 in all, and nothing stops a fifth
+1 limit(s) UNKNOWN (undecided): no receipt for them.
+No receipt was deposited: nothing is checked, so this is never a pass (exit 2).
+(exit 2)
+
+$ kamanu lint evidence/exonumia/x24/stripe-card.json --frontend issuing --engine reference
+engine: these verdicts are of KAMANU's reference engine (Reflexive true, DenyRecord none, Atomic true, Lag 0, Scope global, each assumed of the processor), not the buyer's processor; a measured run of the processor (a hunt or rail row, deposited with `kamanu scan --ingest`) replaces it
+evidence/exonumia/x24/stripe-card.json: 2 spending limits (issuing front end, a Stripe issuing.card object, engine reference, amounts in minor units of usd)
+  restriction blocked_categories (line 38): gambling: not modelled; it only removes authorizations, so a Sound verdict without it stands with it
+  limit 1 (line 42): 50000 daily: FAILS, checked as a sliding window; the daily interval is a calendar period (a fixed window), and the fixed reading (a calendar period that resets at its boundary, midnight UTC) could change the verdict: a fixed window forgets the spend before its boundary, so up to twice the amount can be spent across one boundary, which the sliding window checked here does not allow
+    R0 Sound holds, level MODEL_PROVEN (of the sliding reading)
+    R0 Tight holds, level MODEL_PROVEN (of the sliding reading)
+    R1 Sound holds, level MODEL_PROVEN (of the sliding reading)
+    R1 Tight FAILS, level REFUTED (of the sliding reading)
+    R2 Sound holds, level MODEL_PROVEN (of the sliding reading)
+    R2 Tight FAILS, level REFUTED (of the sliding reading)
+  limit 2 (line 43): 10000 per_authorization: UNKNOWN: a bound on each authorization alone is not a count of past events
+(exit 1)
+
+$ kamanu scan --verify --cabinet CABINET
+chain checks: 2 receipts, each line canonical, in order, carrying the hash of the line before; 0 signed, 2 unsigned
+head seq 1 49bdd7173d9679bd9e5b75e80f5c30618a66ce4cef8acb4dd5e6d26abc4b47b3
+(exit 0)

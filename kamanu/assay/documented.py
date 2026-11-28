@@ -24,6 +24,17 @@ Catalogue built for D leaves every private check out in every form, unless the o
 (X1d): "released": {by, date, reason}, valid when all three are there, the date is not after D and "sent" is a day.
 A released check's page says so in one data-released line; --documented refuses a release that is not valid.
 
+What the documents leave undecided (X26). Every constant of a documented check is ASSUMED, so the page, its
+Catalogue row and the --documented printout never call the limit fine or debased. They lead with the headline:
+"Undecided from your documents: these questions decide it" when the prediction's fineness is below 1.000, else a
+line saying whether the limit holds even if every answer is the worst case. Then one question per constant, in
+words the vendor can answer, each marked deciding or not deciding: deciding when the constant is not at its most
+favourable value (FAVOURABLE, the proved cell's) and the prediction with that constant alone set to it (the other
+four as recorded) differs from the recorded cell's, decided or not or by its ceiling. Computed here by lint, never
+typed. Beside the questions, what the five constants cannot express (the reads_as lines that say so), which the
+prediction does not count. Then the figure: the prediction on the recorded cell, "if every answer is the worst
+case" when every constant rests on the pessimistic default, else "if every answer is as assumed here".
+
 Exit codes: --documented 0 the page written, 1 the record is not a documented check (a constant not ASSUMED, a
 field missing), 2 lint does not decide the cell (no prediction, no page), 3 an input that cannot be read or
 written. --catalogue 0 built, 1 a record under DIR is not a valid documented check (nothing written), 2 a build
@@ -45,8 +56,30 @@ CONSTANTS = ("Reflexive", "DenyRecord", "Atomic", "Lag", "Scope")
 DEFAULT = "pessimistic default"
 ASSUMED_WORDS = "ASSUMED: not measured on your engine"
 HOLD_DAYS = 7
+# The most favourable value of each constant: the proved cell's (demo/assay/proved-cell.json, R9's hypotheses).
+FAVOURABLE = {"Reflexive": True, "DenyRecord": "none", "Atomic": True, "Lag": 0, "Scope": "ScopeGlobal"}
+UNDECIDED_HEAD = "Undecided from your documents: these questions decide it."
+WORST = "If every answer is the worst case"
+ASSUMED_HERE = "If every answer is as assumed here"
+QUESTIONS = {
+    "Reflexive": "Reflexive: when a charge is checked against the limit, is that charge itself counted together with "
+                 "the charges before it?",
+    "DenyRecord": "DenyRecord: when a charge is declined, is it left out of the spend that later charges are "
+                  "counted against, with nothing of it recorded as spend?",
+    "Atomic": "Atomic: are the check of the limit and the charge it admits one step, so that two charges in flight "
+              "cannot both pass on the same headroom?",
+    "Lag": "Lag: is every admitted charge counted before the next charge is checked, or can the count miss the "
+           "latest charges for a while?",
+    "Scope": "Scope: is the limit one budget for every agent, session and call that spends on it, rather than each "
+             "session counted apart?",
+}
+NONE_DECIDING = ("No one answer alone moves the prediction: as the documents are read, the limit's own shape sets "
+                 "the figure below.")
+NOT_EXPRESSED = re.compile(r"(?i)\bcannot\b|\bcan't\b|\bcan\s+not\b|\bnot\s+express|\bno\s+constant\b|"
+                           r"\bnone\s+of\s+the\b|\bnot\s+one\s+of\b|\boutside\b|\bbeyond\b")
+CONSTANT_WORD = re.compile(r"(?i)\bconstants?\b")
 DAY = re.compile(r"^\d{4}-\d{2}-\d{2}$")
-COLUMNS = (("account", "Account"), ("product", "Product"), ("limit", "Limit"), ("face", "Face value"),
+COLUMNS = (("headline", "What your documents decide"), ("account", "Account"), ("product", "Product"), ("limit", "Limit"), ("face", "Face value"),
            ("ceiling", "Predicted ceiling"), ("fineness", "Fineness"), ("level", "Level"))
 E = lambda s: html.escape(str(s), quote=True)
 
@@ -195,11 +228,130 @@ def predict(rec: dict) -> dict:
         shutil.rmtree(tmp, ignore_errors=True)
 
 
+# ---------------------------------------------------------------- what the documents leave undecided (X26)
+def _outcome(pred) -> tuple:
+    return ("undecided",) if pred is None else ("decided", pred["ceiling"])
+
+
+def _same(a, b) -> bool:
+    return json.dumps(a) == json.dumps(b)
+
+
+def _value(v) -> str:
+    return json.dumps(v) if not isinstance(v, str) else v
+
+
+def not_expressed(rec: dict) -> list[str]:
+    """The reads_as lines that say the five constants cannot express something (a single-use card, a merchant
+    lock, one budget across many cards): the prediction does not count it."""
+    return [x for x in rec["reads_as"] if CONSTANT_WORD.search(x) and NOT_EXPRESSED.search(x)]
+
+
+def worst_case(rec: dict) -> bool:
+    """The recorded cell is the worst case when every constant rests on the pessimistic default."""
+    return all(rec["cell"][k]["rests_on"] == DEFAULT for k in CONSTANTS)
+
+
+def questions(rec: dict, pred: dict) -> list[dict]:
+    """One question per constant: {"constant", "ask", "deciding", "why"}. Deciding is computed: the constant is not
+    at its most favourable value and the prediction with it alone set to that value differs from PRED (decided or
+    not, or by its ceiling)."""
+    base = _outcome(pred)
+    out = []
+    for k in CONSTANTS:
+        v, fav = rec["cell"][k]["value"], FAVOURABLE[k]
+        if _same(v, fav):
+            out.append({"constant": k, "ask": QUESTIONS[k], "deciding": False,
+                        "why": f"Not deciding: your documents are read at its most favourable value already "
+                               f"({k} {_value(fav)})."})
+            continue
+        flip = json.loads(json.dumps(rec))
+        flip["cell"][k]["value"] = fav
+        try:
+            alt = predict(flip)
+        except Undecided:
+            alt = None
+        if _outcome(alt) == base:
+            out.append({"constant": k, "ask": QUESTIONS[k], "deciding": False,
+                        "why": f"Not deciding: with {k} alone at {_value(fav)} (read here as {_value(v)}), the "
+                               f"prediction stays the same."})
+        else:
+            then = ("the model would leave the cell undecided" if alt is None else
+                    f"the predicted ceiling would be {alt['ceiling']}, not {pred['ceiling']}")
+            out.append({"constant": k, "ask": QUESTIONS[k], "deciding": True,
+                        "why": f"Deciding: with {k} alone at {_value(fav)} (read here as {_value(v)}), {then}."})
+    return out
+
+
+def assess(rec: dict) -> dict:
+    """The prediction on the recorded cell and what decides it: predict(rec) with "questions", "not_counted" and
+    "worst". Raises Undecided when lint does not decide the recorded cell."""
+    pred = predict(rec)
+    return dict(pred, questions=questions(rec, pred), not_counted=not_expressed(rec), worst=worst_case(rec))
+
+
+def headline(a: dict) -> str:
+    if str(a["fineness"]) != "1.000":
+        return UNDECIDED_HEAD
+    if a["worst"]:
+        return ("The limit holds even if every answer is the worst case: every constant is read at its pessimistic "
+                "default, and the ceiling is the face value.")
+    return ("The limit holds as your documents are read here; it is not shown to hold even if every answer is the "
+            "worst case, since some constants rest on your documents' sentences.")
+
+
+def figure_phrase(a: dict) -> str:
+    return WORST if a["worst"] else ASSUMED_HERE
+
+
+def _figure_words(rec: dict, a: dict) -> str:
+    lim, pr = rec["limit"], rec["prediction"]
+    how = ("each constant at its pessimistic default" if a["worst"] else
+           "each constant as your documents are read here")
+    return (f"{figure_phrase(a)} ({how}): face value {lim['face']}, ceiling {a['ceiling']} with {pr['parallel']} "
+            f"calls in flight and {pr['failures']} failure(s), fineness {a['fineness']}, stranded budget "
+            f"{a['stranded']}; level ASSUMED")
+
+
+def _trace_words(failure) -> str:
+    if not isinstance(failure, dict):
+        return "trace: none, nothing fails"
+    steps = []
+    for i, st in enumerate(failure.get("trace") or [], 1):
+        if isinstance(st, dict):
+            w = f"{st.get('step')} {st.get('amount')}"
+            if st.get("outcome"):
+                w += f" ({st['outcome']})"
+        else:
+            w = str(st)
+        steps.append(f"{i}. {w}")
+    return (f"trace (the shortest that fails): {failure.get('rung')} {failure.get('property')}, "
+            f"{len(failure.get('trace') or [])} steps: {', '.join(steps)}")
+
+
+def printout(rec: dict, a: dict) -> list[str]:
+    """The --documented printout: the headline first, then the questions, what is not counted, the figure."""
+    L = [headline(a), ""]
+    for q in a["questions"]:
+        L.append(f"  {q['ask']} {q['why']}")
+    if not any(q["deciding"] for q in a["questions"]):
+        L.append(f"  {NONE_DECIDING}")
+    if a["not_counted"]:
+        L += ["", "  Not counted: the prediction does not count what the five constants cannot express:"]
+        L += [f"    - {x}" for x in a["not_counted"]]
+    L += ["", _figure_words(rec, a) + ".",
+          "  hypotheses: " + "; ".join(f"{k} = {_value(rec['cell'][k]['value'])}: ASSUMED" for k in CONSTANTS),
+          "  " + _trace_words(a.get("failure")),
+          f"  {ASSUMED_WORDS}"]
+    return L
+
+
 # ---------------------------------------------------------------- the page of one check
 STYLE = """body{font:15px/1.5 system-ui,sans-serif;max-width:60rem;margin:2rem auto;padding:0 1rem;color:#1d1d1f}
 table{border-collapse:collapse}td,th{border-bottom:1px solid #ddd;padding:.25rem .5rem;text-align:left;vertical-align:top}
 .assumed{font-weight:700;background:#fff4d6;padding:.4rem .6rem}blockquote{margin:.3rem 0 .3rem 1rem;color:#333}
-.verify{color:#a40000;font-weight:600}code{font-size:.9em}"""
+.verify{color:#a40000;font-weight:600}code{font-size:.9em}.headline{font-size:1.35rem;font-weight:700}
+.deciding{font-weight:700}.not-counted{border-left:4px solid #c77700;padding:.3rem .8rem}"""
 
 
 def _quote_html(i: int, q: dict) -> str:
@@ -209,7 +361,14 @@ def _quote_html(i: int, q: dict) -> str:
             f"<a href=\"{E(q['url'])}\">{E(q['url'])}</a>{opened}{mark}</li>")
 
 
-def documented_page(rec: dict, pred: dict) -> str:
+def _question_html(q: dict) -> str:
+    cls = "deciding" if q["deciding"] else "not-deciding"
+    return (f"<li data-question=\"{E(q['constant'])}\" data-deciding=\"{'yes' if q['deciding'] else 'no'}\">"
+            f"{E(q['ask'])} <span class=\"{cls}\">{E(q['why'])}</span></li>")
+
+
+def documented_page(rec: dict, a: dict) -> str:
+    """The --documented page (also the Catalogue row's page). A is assess(rec)."""
     from kamanu.assay import mint as M
     lim, pr = rec["limit"], rec["prediction"]
     rows = []
@@ -220,9 +379,8 @@ def documented_page(rec: dict, pred: dict) -> str:
         else:
             basis = "<td>" + "".join(f"<blockquote>{E(rec['quotes'][i]['text'])}</blockquote>" for i in c["rests_on"]) \
                 + "</td>"
-        value = json.dumps(c["value"]) if isinstance(c["value"], bool) else str(c["value"])
-        rows.append(f"<tr><th>{E(k)}</th><td><code>{E(value)}</code></td><td>ASSUMED</td>{basis}</tr>")
-    ceiling = pred["ceiling"]
+        rows.append(f"<tr><th>{E(k)}</th><td><code>{E(_value(c['value']))}</code></td><td>ASSUMED</td>{basis}</tr>")
+    ceiling = a["ceiling"]
     spend = ("no ceiling at all: spend is unbounded" if ceiling == "unbounded" else
              f"at most <span>{E(ceiling)}</span> can really be spent")
     L = ["<!DOCTYPE html>", "<html lang=\"en\">", "<head>", "<meta charset=\"utf-8\">",
@@ -230,33 +388,55 @@ def documented_page(rec: dict, pred: dict) -> str:
          "</head>", "<body>",
          f"<article data-documented=\"{E(rec['name'])}\" data-level=\"ASSUMED\">",
          f"<h1>{E(rec['account'])}: {E(rec['product'])}</h1>",
+         f"<p class=\"headline\" data-headline=\"\">{E(headline(a))}</p>",
          f"<p class=\"assumed\">{E(ASSUMED_WORDS)}</p>"]
     rel = early_release(rec)
     if rel:
         L.append(M.release_line(rec["sent"], f"{HOLD_DAYS} days", rel["by"], rel["date"], rel["reason"],
                                 rec.get("answered")))
-    L += [M.obverse_html(lim["face"], ceiling, pred["fineness"], pred["stranded"], "ASSUMED", tag="section"),
-          M.reverse_html([(k, "assumed", rec["cell"][k]["value"]) for k in CONSTANTS], pred.get("failure"),
-                         tag="section"),
-         "<p>A documented check: the limit as its vendor's public documents describe it, read as a cell of the "
-         "kernel, and what the model predicts of that cell. Level ASSUMED: every constant below is a reading of the "
-         "documents, and nothing here was run against the vendor's engine.</p>",
-         "<h2>The limit</h2>",
-         f"<p>Limit: <span>{E(lim['name'])}</span>. Face value: <span>{E(lim['face'])}</span> "
-         f"<span>{E(lim['unit'])}</span>.</p>",
-         "<h2>What the documents say</h2><ol class=\"quotes\">"]
+    L += ["<section class=\"questions\"><h2>The questions</h2>",
+          "<p>One question for each constant the documents were read as. A question is marked deciding when the "
+          "constant is not read at its most favourable value and, with that constant alone set to it, the model's "
+          "prediction changes; the tools compute it, nobody types it.</p>",
+          "<ol>"]
+    L += [_question_html(q) for q in a["questions"]]
+    L += ["</ol>"]
+    if not any(q["deciding"] for q in a["questions"]):
+        L.append(f"<p>{E(NONE_DECIDING)}</p>")
+    if a["not_counted"]:
+        L += ["<div class=\"not-counted\" data-not-counted=\"\">"
+              "<p><strong>Not counted.</strong> The prediction does not count what the five constants cannot "
+              "express:</p><ul>"]
+        L += [f"<li>{E(x)}</li>" for x in a["not_counted"]]
+        L += ["</ul></div>"]
+    L += ["</section>",
+          f"<section data-figure=\"\" data-case=\"{'worst' if a['worst'] else 'assumed'}\" "
+          f"data-ceiling=\"{E(ceiling)}\" data-fineness=\"{E(a['fineness'])}\">",
+          f"<h2>{E(figure_phrase(a))}</h2>",
+          f"<p>{E(_figure_words(rec, a))}.</p>",
+          M.obverse_html(lim["face"], ceiling, a["fineness"], a["stranded"], "ASSUMED", tag="div",
+                         grade=M.spend_text(ceiling)),
+          M.reverse_html([(k, "assumed", rec["cell"][k]["value"]) for k in CONSTANTS], a.get("failure"), tag="div"),
+          "</section>",
+          "<p>A documented check: the limit as its vendor's public documents describe it, read as a cell of the "
+          "kernel, and what the model predicts of that cell. Level ASSUMED: every constant below is a reading of the "
+          "documents, and nothing here was run against the vendor's engine.</p>",
+          "<h2>The limit</h2>",
+          f"<p>Limit: <span>{E(lim['name'])}</span>. Face value: <span>{E(lim['face'])}</span> "
+          f"<span>{E(lim['unit'])}</span>.</p>",
+          "<h2>What the documents say</h2><ol class=\"quotes\">"]
     L += [_quote_html(i, q) for i, q in enumerate(rec["quotes"])]
     L += ["</ol>", "<h2>The cell those sentences are read as</h2>",
           "<table><thead><tr><th>Constant</th><th>Value</th><th>Level</th><th>It rests on</th></tr></thead><tbody>"]
     L += rows
     L += ["</tbody></table>", "<h2>Read in kernel terms</h2><ul class=\"reads\">"]
-    L += [f"<li>{E(x)}</li>" for x in rec["reads_as"]]
+    L += [f"<li>{E(x)}</li>" for x in rec["reads_as"] if x not in a["not_counted"]]
     L += ["</ul>", "<h2>What the model predicts</h2>",
           f"<p data-prediction=\"\" data-parallel=\"{E(pr['parallel'])}\" data-failures=\"{E(pr['failures'])}\" "
-          f"data-face=\"{E(lim['face'])}\" data-ceiling=\"{E(ceiling)}\" data-fineness=\"{E(pred['fineness'])}\">"
+          f"data-face=\"{E(lim['face'])}\" data-ceiling=\"{E(ceiling)}\" data-fineness=\"{E(a['fineness'])}\">"
           f"With <span>{E(pr['parallel'])}</span> calls in flight and <span>{E(pr['failures'])}</span> failure(s), "
           f"against a face value of <span>{E(lim['face'])}</span>, the model predicts that {spend}: a range from "
-          f"<span>{E(lim['face'])}</span> to <span>{E(ceiling)}</span>, fineness <span>{E(pred['fineness'])}</span>."
+          f"<span>{E(lim['face'])}</span> to <span>{E(ceiling)}</span>, fineness <span>{E(a['fineness'])}</span>."
           f"</p>",
           "<p>The prediction is X1's assayed ceiling (<code>kamanu lint POLICY --engine CELL --cap FACE --in-flight "
           "PARALLEL --failures F --exposure</code>) of the policy below on the cell above; fineness is face over "
@@ -293,19 +473,18 @@ def documented_cmd(record: str, out: str | None) -> int:
               "day the vendor received it (sent); refused, no page written")
         return 1
     try:
-        pred = predict(rec)
+        a = assess(rec)
     except Undecided as e:
         print(f"kamanu assay --documented: no prediction, so no page: {e}")
         return 2
     dst = Path(out) if out else Path(f"{rec['name']}.html")
     try:
         dst.parent.mkdir(parents=True, exist_ok=True)
-        dst.write_bytes(documented_page(rec, pred).encode("utf-8"))
+        dst.write_bytes(documented_page(rec, a).encode("utf-8"))
     except OSError as e:
         print(f"kamanu assay --documented: cannot write {dst}: {e}", file=sys.stderr)
         return 3
-    print(f"{rec['name']}: face {rec['limit']['face']}, predicted ceiling {pred['ceiling']} with "
-          f"{rec['prediction']['parallel']} in flight, fineness {pred['fineness']}; ASSUMED")
+    print("\n".join(printout(rec, a)))
     print(f"wrote {dst}")
     return 0
 
@@ -328,6 +507,7 @@ def _row(rec: dict, pred: dict, href: str) -> str:
     ceil = pred["ceiling"]
     cval = "Infinity" if ceil == "unbounded" else str(ceil)
     return (f"<tr data-check=\"{E(rec['name'])}\">"
+            f"<td data-col=\"headline\"><span data-headline=\"\">{E(headline(pred))}</span></td>"
             f"<td data-col=\"account\"><a href=\"{E(href)}\">{E(rec['account'])}</a></td>"
             f"<td data-col=\"product\">{E(rec['product'])}</td>"
             f"<td data-col=\"limit\">{E(lim['name'])}</td>"
@@ -336,7 +516,8 @@ def _row(rec: dict, pred: dict, href: str) -> str:
             f"in flight</td>"
             f"<td data-col=\"fineness\">{E(pred['fineness'])}</td>"
             f"<td data-col=\"level\">ASSUMED</td>"
-            + M.obverse_html(lim["face"], ceil, pred["fineness"], pred["stranded"], "ASSUMED", tag="td")
+            + M.obverse_html(lim["face"], ceil, pred["fineness"], pred["stranded"], "ASSUMED", tag="td",
+                             grade=M.spend_text(ceil))
             + M.reverse_html([(k, "assumed", rec["cell"][k]["value"]) for k in CONSTANTS], pred.get("failure"),
                              tag="td")
             + "</tr>")
@@ -353,9 +534,10 @@ def index_page(rows: list[str], day: str) -> str:
             "<p>Each row is a documented check: a vendor's limit read from its public documents only, and the "
             "ceiling the model predicts for the cell those documents are read as. Every row is ASSUMED: not measured "
             "on your engine. A check is listed once its vendor has answered, seven days after it was sent to "
-            "them, or once the owner releases it on the record (its page then says so in one line). A limit is called "
-            "fine only at fineness 1.000; below 1.000 it is called debased, by the ceiling less the face value, "
-            "beside its trace and its level. Click a column heading to sort (fineness included).</p>\n"
+            "them, or once the owner releases it on the record (its page then says so in one line). Every constant of a "
+            "documented check is assumed, so a row does not grade the vendor's limit: below fineness 1.000 it leads "
+            "with \"Undecided from your documents\", and its page asks the questions that decide it, marks which "
+            "of them are deciding, and gives the figure on the cell as read. Click a column heading to sort (fineness included).</p>\n"
             f"{empty}<table id=\"catalogue\"><thead><tr>{head}</tr></thead>\n<tbody>\n{body}\n</tbody></table>\n"
             f"<script>{SORT_JS}</script>\n</body>\n</html>\n")
 
@@ -409,7 +591,7 @@ def catalogue_cmd(site: str, checks: str | None, as_of: str | None) -> int:
     files, rows = {}, []
     for rec in public:
         try:
-            pred = predict(rec)
+            pred = assess(rec)
         except Undecided as e:
             print(f"FAIL {rec['name']}: no prediction ({e}); nothing written")
             return 1

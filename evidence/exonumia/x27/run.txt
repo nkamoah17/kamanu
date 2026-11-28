@@ -1,0 +1,49 @@
+# X27: kamanu scan --example, as run on 2026-11-27 from a wheel, nothing cloned.
+# The wheel was built with pip wheel --no-deps from a clone of the tree, the clone deleted, then installed with
+# pip install --no-deps --no-index into a clean venv (python -m venv; PyYAML copied in). Each command ran in a new
+# empty directory, HOME a new empty directory, no KAMANU_ variable, so the cabinet is HOME/.kamanu/cabinet.
+# The figures are the run's. The README and the site quote this file.
+
+$ kamanu scan --example per-charge
+example per-charge: a Stripe Issuing card capped on each charge with nothing on the total (no receipt, exit 2), scanned from the files bundled in the package
+engine: these verdicts are of KAMANU's reference engine (Reflexive true, DenyRecord none, Atomic true, Lag 0, Scope global, each assumed of the processor), not the buyer's processor; a measured run of the processor (a hunt or rail row, deposited with `kamanu scan --ingest`) replaces it
+KAMANU scan (issuing, a Stripe issuing.card object): the configuration's spending limits, one receipt per limit lint decides; amounts in minor units of usd (spending_limits_currency)
+  limit 1 (line 23): per_authorization 5000: UNKNOWN, undecided, no receipt (a bound on each authorization alone is not a count of past events); it bounds each charge at 5000, and no limit in the file bounds the total of the charges it counts: four charges of 5000 each pass it, 4 x 5000 = 20000 in all, and nothing stops a fifth
+1 limit(s) UNKNOWN (undecided): no receipt for them.
+No receipt was deposited: nothing is checked, so this is never a pass (exit 2).
+(exit 2)
+
+$ kamanu scan --example budget
+example budget: the README's Dogwood spend cap of 100 on the proved cell (one receipt, exit 1: Tight fails), scanned from the files bundled in the package
+KAMANU scan (policy, engine proved-cell)
+  face value       100 (the limit)
+  ceiling          100 (the most that can really be spent)
+  fineness         1.000 (the limit divided by the most that can be spent, three decimals, never rounded up; 1.000 means it cannot be overspent)
+  stranded budget  100 (the most budget a refusal can leave unspent: the free headroom left when a request that fits is refused)
+  Sound            holds, level MODEL_PROVEN
+  Tight            FAILS, level REFUTED
+  level            REFUTED (the weakest link)
+  bounds           {"amounts": [60, 30], "failures": 1, "in_flight": 2}
+  hypotheses:
+    Reflexive = true: assumed
+    DenyRecord = none: assumed
+    Atomic = true: assumed
+    Lag = 0: assumed
+    Scope = ScopeGlobal: assumed
+    in_flight = 2: assumed
+    failures = 1: assumed
+  Tight's shortest failing trace, 6 steps:
+    1. issue amount 60 | held 0 | spent 0 | doubt 0
+    2. issue amount 60 | held 0 | spent 0 | doubt 0
+    3. decide amount 60 (permit) | held 60 | spent 0 | doubt 0
+    4. fail amount 60 (clean) | held 0 | spent 0 | doubt 60
+    5. reconcile amount 60 (refund) | held 0 | spent 0 | doubt 0
+    6. decide amount 60 (deny) | held 0 | spent 0 | doubt 0
+receipt 0 deposited (receipt-v1, unsigned), line hash 8010591bfeb299c7dd8bc33fcd96a3e0a04292d183d4ca9d005cfb538bb36b9f
+cabinet: a census of what was scanned here, in this cabinet, not of a market (0 receipts before this one, no receipt yet) (the cabinet is the local receipt log; a census is a count of the receipts kept here)
+  type 461b93ce5a7decc9a1e0f12094f9a07e subjects: 0 (distinct subjects whose latest receipt has this type)
+  Sound holds die 3b998a5c068f404db58f1aff338953f8: new (no receipt here holds it) (a die is a failure fingerprint)
+  Tight FAILS die 07369000802f3a7cc81a667dcaa63f37: new (no receipt here holds it)
+  drift: none (no receipt here of the same subject at the same bounds)
+  constants assumed: 7 of 7 hypotheses
+(exit 1)

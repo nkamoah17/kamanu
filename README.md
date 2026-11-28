@@ -19,17 +19,30 @@ same limit can hold on one system, overspend on a second and lock an honest agen
 
 ## See it in a minute
 
-Requires Python 3.11 or later. `pip` installs one dependency, PyYAML. Nothing here needs Java, Lean or
-a network connection after the clone.
+Requires Python 3.11 or later. `pip` installs one dependency, PyYAML. Nothing here needs Java, Lean,
+a clone or a network connection after the install.
 
 ```
-git clone https://github.com/nkamoah17/kamanu.git kamanu-src && cd kamanu-src
-pip install .
-kamanu scan fixtures/dogwood/PReqBasis.dw --engine demo/assay/proved-cell.json --cap 100 --label budget  # exits 1: Tight fails
+pip install kamanu
+kamanu scan --example per-charge   # exits 2: nothing bounds the total
 ```
 
-That checks a cap of 100 on the engine our proof covers, with two payments in flight and one call
-allowed to fail. Its output, shortened (it takes under a second):
+That reads a Stripe Issuing card capped at 5000 on each charge and nothing else. Its answer (`--show`
+prints the files it read):
+
+```
+  limit 1 (line 23): per_authorization 5000: UNKNOWN, undecided, no receipt (a bound on each authorization alone is not a count of past events); it bounds each charge at 5000, and no limit in the file bounds the total of the charges it counts: four charges of 5000 each pass it, 4 x 5000 = 20000 in all, and nothing stops a fifth
+No receipt was deposited: nothing is checked, so this is never a pass (exit 2).
+```
+
+Then a limit that does count history:
+
+```
+kamanu scan --example budget       # exits 1: Tight fails
+```
+
+That checks a Dogwood spend cap of 100 on the engine our proof covers, with two payments in flight and
+one call allowed to fail. Its output, shortened (it takes under a second):
 
 ```
   face value       100
@@ -68,9 +81,10 @@ receipts; `kamanu scan --census` counts what this cabinet holds. See [docs/scan.
 ### Check our signed record without us
 
 The same result, signed with the registry's key, is in [registry/](https://github.com/nkamoah17/kamanu/tree/main/registry/). Check it offline, with
-the wheel or with node alone:
+the wheel or with node alone, from a clone:
 
 ```
+git clone https://github.com/nkamoah17/kamanu.git kamanu-src && cd kamanu-src
 kamanu assay --verify registry/h/b271f39d07877083.json --key registry/registry.pub --recompute
 node registry/kamanu-verify.cjs registry/h/b271f39d07877083.html "$(cat registry/registry.pub)"
 ```

@@ -1,5 +1,22 @@
 # kamanu scan: every scan leaves a chained receipt
 
+Start with nothing cloned: `pip install kamanu`, then `kamanu scan --example per-charge`. That scans an example
+bundled in the package, a Stripe Issuing card whose only limit is on each charge: every charge is bounded, nothing
+bounds the total, and four charges at the limit all pass (it exits 2 and leaves no receipt, because a limit on each
+charge alone is not decided). `kamanu scan --example budget` scans the README's Dogwood spend cap of 100 on the
+proved cell and leaves one receipt. `kamanu scan --example` lists the examples; `kamanu scan --example NAME --show`
+prints an example's files instead of scanning them. The other flags of a scan (`--cabinet`, `--label`, `--out`) work
+with `--example`, and its answer, receipt and exit code are those of the scan of the same files given by path, with
+one first line naming the example. The output of both, run from a wheel in a clean venv, is in
+`evidence/exonumia/x27/`.
+
+The scan speaks plainly: the first time one of its own words appears in an output, its line says what it means.
+Face value is the limit; the ceiling is the most that can be spent; fineness is the limit divided by the most that
+can be spent (1.000 means it cannot be overspent); stranded budget is the most budget a refusal can leave unspent;
+a die is a failure fingerprint; the cabinet is the local receipt log; a census is a count of the receipts kept
+there; a plate is a saved scan that can be replayed; `struck: N` counts the receipts that hold a die (on a
+hallmark, struck is the day it was signed). The full glossary is docs/mint.md.
+
 `kamanu scan` runs the machine that already answers, prints its answer whole, appends one receipt to a chain in a
 directory on your disk (the cabinet), and then says what the receipts before it add up to. Nothing is uploaded.
 `kamanu lint` and `kamanu assay` are unchanged: lint still starts no process and writes nothing.
@@ -46,7 +63,7 @@ the figures; they are the run's, not this page's.
 | `drift: none`, `same` or `another` | the last receipt of the same subject at the same bounds, and whether it gave the same answer |
 | `since receipt S of the label L` | what changed since the last receipt of the same `--label`, or `nothing changed` |
 | `constant C: assumed here ...` | what a receipt of an engine of the same name holds measured (value, trials, day, receipt), beside the assumption |
-| `constants assumed: N` | how many of the scan's hypotheses are assumed |
+| `constants assumed: N of M` | how many of the scan's M hypotheses are assumed (on the reference engine, its five constants) |
 | `repair seen` | for a failing die, a label whose check went from FAILS to holds, and the type it moved to |
 
 THE RULE: what is kept never changes what is computed. The receipt's figures, checks, level and hypotheses for
@@ -57,6 +74,69 @@ A part lint leaves undecided (UNKNOWN, open) leaves no receipt, and the scan say
 
 Exit codes: 0 every check holds, 1 a check FAILS, 2 a part undecided and nothing fails, 3 an input or a chain that
 cannot be read (nothing is appended to a chain that does not check).
+
+## An issuer's spending controls: never a pass on nothing
+
+`kamanu scan CONTROLS --frontend issuing --engine ENGINE` reads the file as `kamanu lint CONTROLS --frontend
+issuing` reads it, and deposits one receipt per limit lint decides.
+
+1. **A declined file is never a pass.** When lint declines the file (not YAML, a key it does not read, no
+   `spending_limits`, an empty list), the scan prints `UNKNOWN` with lint's construct, line and reason, deposits no
+   receipt, appends nothing and exits 2. A file that cannot be read at all (it does not exist) exits 3. A scan
+   that reads limits but deposits no receipt (every limit UNKNOWN) also exits 2. Exit 0 only when at least one
+   receipt was deposited and nothing FAILS or is UNKNOWN.
+2. **Stripe's own object.** Besides the documented layout (`spending_limits` at the top level), the front end
+   reads a Stripe Issuing Card or Cardholder object, JSON or YAML, as Stripe's API returns it: a top-level
+   `"object"` of `issuing.card` or `issuing.cardholder`, the limits at `spending_controls.spending_limits`
+   (amount in the currency's minor units, interval and categories as Stripe writes them; an empty or null
+   categories list counts every authorization) and `spending_controls.spending_limits_currency` giving the
+   unit, which the scan names. The object's other top-level keys are Stripe's and are not read (a Card's nested
+   cardholder and its own controls among them). Inside `spending_controls`, `allowed_categories`,
+   `blocked_categories`, `allowed_merchant_countries` and `blocked_merchant_countries` are restrictions: they
+   only remove authorizations, so a Sound verdict without them stands with them. Each one given is named on its
+   own line as not modelled. Any other key in `spending_controls` declines the file at its line. A file with
+   neither the documented layout nor such an object declines, naming both.
+3. **What a per_authorization limit is.** It bounds each charge at its amount, and not the total. Its line
+   says so, and then either that no limit in the file bounds the total of the charges it counts, with the
+   figure for four charges at the amount (4 x amount) all passing it, or which limits do bound that total: a
+   daily, weekly, monthly, yearly or all_time limit that counts every authorization, or whose categories
+   include all of the per_authorization limit's own. Its status stays UNKNOWN and it gets no receipt.
+4. **Whose engine.** With `--engine reference`, scan and lint's text each print, before the first verdict, a
+   line saying the verdicts are of KAMANU's reference engine, not the buyer's processor, and that a measured run
+   of the processor (a hunt or rail row, deposited with `kamanu scan --ingest`) replaces it. Where the answer
+   lists hypotheses, the scan names the reference engine's constants with their values (Reflexive true,
+   DenyRecord none, Atomic true, Lag 0, Scope global), each assumed of the processor, and the told part counts
+   them as assumed (`constants assumed: 5 of 5`). These lines are said, not stored: a receipt's body, type and
+   chain are unchanged, so every committed plate and cabinet still replays.
+
+A Stripe Card object, cut down to the parts the front end reads (Stripe adds other keys; they are not read):
+
+```json
+{
+  "id": "ic_1MvSieLkdIwHu7ixn6uuO0Xu",
+  "object": "issuing.card",
+  "currency": "usd",
+  "status": "active",
+  "type": "virtual",
+  "spending_controls": {
+    "allowed_categories": null,
+    "blocked_categories": ["gambling"],
+    "allowed_merchant_countries": null,
+    "blocked_merchant_countries": null,
+    "spending_limits": [
+      {"amount": 50000, "categories": [], "interval": "daily"},
+      {"amount": 10000, "categories": [], "interval": "per_authorization"}
+    ],
+    "spending_limits_currency": "usd"
+  }
+}
+```
+
+On the reference engine its scan exits 1: the daily limit of 50000 gets a receipt (Sound holds, Tight FAILS, of
+the sliding reading); the per_authorization limit of 10000 is UNKNOWN, bounding each charge, its total bounded by
+the daily limit; `blocked_categories` is named as not modelled. `evidence/exonumia/x24/run.txt` is the record of
+the scans of the whole Card object, of one with no spending limit, of `garbage: [1,2`, of `{}`, of the two-limit
+file and of a per_authorization limit alone, as run.
 
 ## Receipts and the chain
 

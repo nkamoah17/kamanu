@@ -27,6 +27,22 @@ history) and all_time (a sum with no window: the card ledger's own cap, `kamanu 
 the lint form has, so they are UNKNOWN too, each with its reason.
 
 A key the layout does not know declines the file (kamanu.frontends.Decline), as every front end does.
+
+Stripe's own objects are read too (X24): an Issuing Card or Cardholder as Stripe's API returns it, JSON or YAML,
+its top-level "object" being "issuing.card" or "issuing.cardholder". Its limits are
+spending_controls.spending_limits (amount in the currency's minor units, interval and categories as Stripe writes
+them; an empty or null categories list counts every authorization), spending_controls.spending_limits_currency
+giving the unit ("currency" in the lint object). The object's other top-level keys are Stripe's and are not read
+(a Card's nested cardholder and its own controls among them). Inside spending_controls, allowed_categories,
+blocked_categories, allowed_merchant_countries and blocked_merchant_countries are restrictions: they only remove
+authorizations, so a Sound verdict without them stands with them; each one given is named in "restrictions" and
+said to be not modelled. Any other key in spending_controls declines the file. A file with neither the documented
+layout nor such an object declines, naming both.
+
+    restriction_lines(res) -> [str]          one "not modelled" line per restriction given
+    engine_line(engine) -> str | None        whose engine the verdicts are of, for the reference engine
+    bounders(limits, i) -> [index]           the windowed or all_time limits that bound limit i's total
+    per_authorization_note(limits, i) -> str what a per_authorization limit bounds, and what bounds its total
 """
 from __future__ import annotations
 
@@ -41,19 +57,83 @@ LAYOUT = {(): {"spending_limits": ("spending_limits",)},
           ("spending_limits",): {},
           ("spending_limits", "[]"): {"amount": None, "interval": None, "categories": None}}
 UNIT = {"name": "minor units", "per": 1}
+STRIPE_OBJECTS = ("issuing.card", "issuing.cardholder")
+RESTRICTIONS = ("allowed_categories", "blocked_categories", "allowed_merchant_countries", "blocked_merchant_countries")
+STRIPE_CONTROLS = {(): dict({k: None for k in RESTRICTIONS}, spending_limits=("spending_limits",),
+                            spending_limits_currency=None),
+                   ("spending_limits",): {},
+                   ("spending_limits", "[]"): {"amount": None, "interval": None, "categories": None}}
+NEITHER = ("neither the documented layout (spending_limits at the top level) nor a Stripe Issuing Card or "
+           "Cardholder object (\"object\": issuing.card or issuing.cardholder, its limits at "
+           "spending_controls.spending_limits)")
+REFERENCE_CONSTANTS = (("Reflexive", True), ("DenyRecord", "none"), ("Atomic", True), ("Lag", 0), ("Scope", "global"))
+ENGINE_LINE = ("engine: these verdicts are of KAMANU's reference engine ({consts}, each assumed of the processor), "
+               "not the buyer's processor; a measured run of the processor (a hunt or rail row, deposited with "
+               "`kamanu scan --ingest`) replaces it")
 
 FIXED_OTHER = ("the fixed reading (a calendar period that resets at its boundary, midnight UTC) could change the "
                "verdict: a fixed window forgets the spend before its boundary, so up to twice the amount can be "
                "spent across one boundary, which the sliding window checked here does not allow")
 
 
-def read(top: Node) -> list[dict]:
-    unknown_keys(top, LAYOUT)
+def _v(x) -> str:
+    if isinstance(x, bool):
+        return str(x).lower()
+    return "none" if x is None else str(x)
+
+
+def stripe(top: Node) -> dict | None:
+    """{"object", "controls": spending_controls' Node, "currency", "restrictions": [{"name", "values", "line"}]} for
+    a Stripe Card or Cardholder object, None for a file without a top-level "object" (the documented layout).
+    Declines an object of another type, and a key in spending_controls that is none of Stripe's this reads."""
+    o = top.get("object")
+    if o is None:
+        return None
+    if o.kind != "scalar" or o.value not in STRIPE_OBJECTS:
+        what = _v(o.value) if o.kind == "scalar" else f"a {o.kind}"
+        raise Decline(f"object {what}", top.line_of("object"),
+                      f"the file is {NEITHER}: a Stripe object of another type has no spending_limits to read")
+    sc = top.get("spending_controls")
+    if sc is None or sc.kind != "map":
+        raise Decline("missing key 'spending_controls'", top.line_of("object"),
+                      f"a Stripe {o.value} object without spending_controls has no spending_limits to read")
+    try:
+        unknown_keys(sc, STRIPE_CONTROLS)
+    except Decline as d:
+        raise Decline(d.construct, d.line, d.reason.replace("at the top level", "in spending_controls", 1)
+                      .replace("at spending_limits", "in spending_controls.spending_limits", 1)) from None
+    cur = sc.get("spending_limits_currency")
+    rs = []
+    for name in RESTRICTIONS:
+        v = sc.get(name)
+        if v is None or (v.kind == "scalar" and v.value is None):
+            continue
+        if v.kind != "seq" or not all(c.kind == "scalar" and isinstance(c.value, str) for c in v.items):
+            raise Decline(name, sc.line_of(name), f"{name} is not a list of names")
+        if v.items:
+            rs.append({"name": name, "values": [c.value for c in v.items], "line": sc.line_of(name)})
+    return {"object": o.value, "controls": sc, "restrictions": rs,
+            "currency": cur.value if cur is not None and cur.kind == "scalar" and isinstance(cur.value, str) else None}
+
+
+def read(top: Node, about: dict | None = None) -> list[dict]:
+    """The limits; ABOUT (a dict, when given) gets "object", "currency" and "restrictions" of a Stripe object."""
+    st = stripe(top)
+    if st is not None:
+        if about is not None:
+            about.update({k: v for k, v in st.items() if k != "controls"})
+        top = st["controls"]
+        where = "spending_controls.spending_limits"
+    else:
+        unknown_keys(top, LAYOUT)
+        where = "spending_limits"
     sl = top.get("spending_limits")
     if sl is None:
-        raise Decline("missing key 'spending_limits'", top.line, "'spending_limits' is needed and not given")
+        raise Decline("missing key 'spending_limits'", top.line,
+                      f"'{where}' is needed and not given: the file is {NEITHER}" if st is None
+                      else f"'{where}' is needed and not given")
     if sl.kind != "seq" or not sl.items:
-        raise Decline("spending_limits", top.line_of("spending_limits"), "spending_limits is not a non-empty list")
+        raise Decline("spending_limits", top.line_of("spending_limits"), f"{where} is not a non-empty list")
     out = []
     for item in sl.items:
         if item.kind != "map":
@@ -67,6 +147,8 @@ def read(top: Node) -> list[dict]:
         if iv.kind != "scalar" or iv.value not in INTERVALS:
             raise Decline("interval", item.line_of("interval"), f"interval is not one of {', '.join(INTERVALS)}")
         names = []
+        if cats is not None and cats.kind == "scalar" and cats.value is None:
+            cats = None                                   # Stripe's "categories": null: every category
         if cats is not None:
             if cats.kind != "seq" or not all(c.kind == "scalar" and isinstance(c.value, str) for c in cats.items):
                 raise Decline("categories", item.line_of("categories"), "categories is not a list of category names")
@@ -77,11 +159,52 @@ def read(top: Node) -> list[dict]:
     return out
 
 
-def _limits(text: str):
+def _limits(text: str, about: dict | None = None):
     try:
-        return read(parse(text))
+        return read(parse(text), about)
     except Decline as d:
         return d
+
+
+# ================================================================ what the lines say (X24)
+def engine_line(engine) -> str | None:
+    """The line said before the first verdict when the engine is KAMANU's reference engine, else None."""
+    if str(engine) != "reference":
+        return None
+    return ENGINE_LINE.format(consts=", ".join(f"{k} {_v(v)}" for k, v in REFERENCE_CONSTANTS))
+
+
+def restriction_lines(res: dict, indent: str = "  ") -> list[str]:
+    out = []
+    for r in res.get("restrictions") or []:
+        out.append(f"{indent}restriction {r['name']} (line {r['line']}): {', '.join(r['values'])}: not modelled; "
+                   f"it only removes authorizations, so a Sound verdict without it stands with it")
+    return out
+
+
+def _covers(L: dict, P: dict) -> bool:
+    lc, pc = set(L.get("categories") or []), set(P.get("categories") or [])
+    return not lc or (bool(pc) and pc <= lc)
+
+
+def bounders(limits: list, i: int) -> list[int]:
+    """The windowed or all_time limits whose categories include limit i's (or that count every authorization):
+    the limits that bound the total of the charges limit i counts."""
+    P = limits[i]
+    return [j for j, L in enumerate(limits) if j != i and L.get("interval") in CALENDAR + ("all_time",)
+            and _covers(L, P)]
+
+
+def per_authorization_note(limits: list, i: int) -> str:
+    P = limits[i]
+    a = P.get("amount")
+    head = f"it bounds each charge at {a}"
+    bs = bounders(limits, i)
+    if not bs:
+        return (f"{head}, and no limit in the file bounds the total of the charges it counts: four charges of {a} "
+                f"each pass it, 4 x {a} = {4 * a} in all, and nothing stops a fifth")
+    names = [f"limit {j + 1} ({limits[j].get('interval')} {limits[j].get('amount')})" for j in bs]
+    return f"{head}; the total of the charges it counts is bounded by {' and '.join(names)}"
 
 
 def _reading(lim: dict) -> dict:
@@ -152,10 +275,15 @@ def lint(text: str, engine: str, path=None, **opts) -> dict:
     base = {"policy": str(path) if path else None, "engine": eng["name"], "frontend": NAME, "unit": dict(UNIT),
             "verdicts": [], "findings": [], "suppressions": 0, "notes": [],
             "command": f"kamanu lint {where} --frontend {NAME} --engine {engine}"}
-    lims = _limits(text)
+    about = {}
+    lims = _limits(text, about)
+    base["engine_arg"] = str(engine)
     if isinstance(lims, Decline):
         return dict(base, inside=False, construct=lims.construct, line=lims.line,
                     reason=f"{lims.reason}: the {NAME} front end declines", limits=[])
+    if about:
+        base.update(object=about.get("object"), currency=about.get("currency"),
+                    restrictions=about.get("restrictions") or [])
     opts = {k: v for k, v in opts.items() if k not in ("macros", "schema", "events", "cap")}
     out, verdicts = [], []
     for lim in lims:
@@ -184,8 +312,15 @@ def text_lines(res: dict) -> list[str]:
     name = res.get("policy") or "controls"
     if res.get("construct"):
         return [f"{name}: outside: line {res.get('line')}: {res.get('construct')}: {res.get('reason')}"]
-    L = [f"{name}: {len(res['limits'])} spending limits ({NAME} front end, engine {res.get('engine')}, "
-         f"amounts in {res['unit']['name']})"]
+    L = []
+    eng = engine_line(res.get("engine_arg") or res.get("engine"))
+    if eng:
+        L.append(eng)
+    cur = f" of {res['currency']}" if res.get("currency") else ""
+    obj = f", a Stripe {res['object']} object" if res.get("object") else ""
+    L.append(f"{name}: {len(res['limits'])} spending limits ({NAME} front end{obj}, engine {res.get('engine')}, "
+             f"amounts in {res['unit']['name']}{cur})")
+    L += restriction_lines(res)
     for j, e in enumerate(res["limits"], 1):
         cats = f", categories {', '.join(e['categories'])}" if e["categories"] else ""
         head = f"  limit {j} (line {e['line']}): {e['amount']} {e['interval']}{cats}"

@@ -41,8 +41,8 @@ def test_tools_list_is_p1b_plus_hunt():
 
 
 def test_version_checked():
-    r = M.handle_with_hunt(req("tools/list", meta=False))
-    assert r["error"]["code"] == M.UNSUPPORTED_VERSION
+    r = M.handle_with_hunt(req("tools/list", meta=False))      # no version at all: classic MCP (X25)
+    assert [t["name"] for t in r["result"]["tools"]][-1] == "hunt"
     r = M.handle_with_hunt({"jsonrpc": "2.0", "id": 3, "method": "tools/call",
                             "params": {"name": "hunt", "arguments": {},
                                        "_meta": {"io.modelcontextprotocol/protocolVersion": "2025-01-01"}}})

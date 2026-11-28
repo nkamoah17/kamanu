@@ -426,13 +426,8 @@ def request_sum_cap(permit, cap: int) -> bool:
 
 # ---------------- TLC ----------------
 def jar_path() -> Path:
-    env = os.environ.get("KAMANU_TLA_JAR")
-    jar = Path(env) if env else ROOT / "tools" / "vendor" / "tla2tools.jar"
-    if not env and not jar.is_file():
-        jar = _main_checkout_jar() or jar
-    if not jar.is_file():
-        raise RuntimeError(f"TLC jar not found at {jar}: set KAMANU_TLA_JAR")
-    return jar
+    from kamanu import tlajar
+    return tlajar.path(ROOT, also=_main_checkout_jar)
 
 
 @functools.lru_cache(maxsize=1)

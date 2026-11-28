@@ -193,11 +193,8 @@ def direction_modules(red: dict, base: Path, direction: str) -> tuple[dict[str, 
 
 
 def jar_path() -> Path:
-    env = os.environ.get("KAMANU_TLA_JAR")
-    jar = Path(env) if env else ROOT / "tools" / "vendor" / "tla2tools.jar"
-    if not jar.is_file():
-        raise RuntimeError(f"TLC jar not found at {jar}: set KAMANU_TLA_JAR")
-    return jar
+    from kamanu import tlajar
+    return tlajar.path(ROOT)
 
 
 def _cfg(consts: dict[str, str]) -> str:

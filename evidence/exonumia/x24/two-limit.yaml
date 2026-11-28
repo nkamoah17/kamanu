@@ -1,0 +1,6 @@
+# the card's two-limit file: a per-authorization limit and a daily one
+spending_limits:
+  - amount: 2500
+    interval: per_authorization
+  - amount: 50000
+    interval: daily

@@ -154,7 +154,9 @@ def told(before: list, rec: dict) -> list:
             ch = _since(of[-1], rec)
             L.append(f"  since receipt {of[-1].get('seq')} ({of[-1].get('date')}) of the label {label}: "
                      + (f"changed {', '.join(ch)}" if ch else "nothing changed"))
-    assumed = [h for h in rec.get("hypotheses") or [] if isinstance(h, dict) and h.get("status") == "assumed"]
+    from kamanu.cabinet.cli import reference_hypotheses
+    hyps = list(rec.get("hypotheses") or []) or reference_hypotheses(rec)   # X24: the reference engine's constants
+    assumed = [h for h in hyps if isinstance(h, dict) and h.get("status") == "assumed"]
     for h in assumed:
         m = _measured(before, (rec.get("engine") or {}).get("name"), h.get("name"))
         if m:
@@ -163,7 +165,9 @@ def told(before: list, rec: dict) -> list:
             L.append(f"  constant {h.get('name')}: assumed here as {_v(h.get('value'))}; a receipt of an engine of the "
                      f"same name holds it measured as {_v(mh.get('value'))} ({trials}, observed {mr.get('observed')}, "
                      f"receipt {mr.get('seq')}). The assumption stands in this answer")
-    L.append(f"  constants assumed: {len(assumed)} of the {len(rec.get('hypotheses') or [])} hypotheses")
+    L.append(f"  constants assumed: {len(assumed)} of {len(hyps)} hypotheses"
+             + (" (the reference engine's constants, each assumed of the processor)" if hyps and not rec.get("hypotheses")
+                else ""))
     for c in rec.get("checks") or []:
         if c.get("status") != "FAILS":
             continue

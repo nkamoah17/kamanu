@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2
+
+- `kamanu scan --example per-charge` and `--example budget` run bundled examples from a plain `pip install kamanu`, and a scan's output says each record word in plain words the first time it appears.
+- The issuing scan never passes on nothing: a file it cannot decide, or one with no limit it can check, keeps no receipt and exits 2, and the output says whose engine the verdicts are of.
+- The MCP servers work from a plain install: the TLC tools fetch the pinned TLC jar once (SHA-256 checked) when none is found, and all three servers answer classic MCP clients that send no protocol version.
+
 ## 0.1.1
 
 - The package description (the README, which PyPI shows) has no prices; getting a check is a Get in touch link.
@@ -162,3 +168,7 @@ KAMANU was built one task card at a time, each accepted by a locked gate written
 - X21 2026-11-26: The offer as one source - the launch page, the one-page offer and the engagement letter (a draft for counsel) built from the owner's offer file, the example computed, the founding slots counted, no figure typed
 - X22 2026-11-26: The three MCP servers ready to list - `kamanu mcp lint|coach|serve` starts each from the one package, three server.json records for the official MCP Registry, and the owner's listing steps, each record tested by starting the server it names from a built wheel
 - X23 2026-11-26: The launch freeze gives its clone the pinned Apalache jar - the one proof test that re-runs Apalache runs in the freeze as it does in the checkout, and an apalache step says whether the jar was there
+- X24 2026-11-27: The issuing scan never passes on nothing and says whose engine it read - a file lint declines or reads no limit from exits non-zero, a Stripe Card or Cardholder object is read as Stripe writes it, a per-authorization limit says it bounds each charge and not the total, and the reference engine is named as KAMANU's, not the buyer's processor
+- X25 2026-11-27: The MCP servers work from a plain install and for clients on either protocol - the tools that run TLC fetch the pinned jar on first use, every server also answers a classic (2025-11-25) client's initialize, and each tool and registry line says what it reads and needs
+- X27 2026-11-27: kamanu scan --example runs from the wheel and speaks plainly - bundled examples (a cap on each charge with nothing on the total, and the proved cap of 100) scanned with nothing cloned, and every coin word in a scan's output glossed in plain words the first time it appears
+- X26 2026-11-28: A documented check says what the vendor's documents leave undecided - the headline is "Undecided from your documents", then the questions that decide it, then the ceiling if every answer is the worst case, and no page a vendor reads calls its limit debased

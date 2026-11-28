@@ -1,0 +1,10 @@
+{
+ "id": "proved-cell",
+ "constants": {
+  "Reflexive": {"value": true, "source": "R9's hypotheses (evidence/levels/links.json, links.R9.hypotheses.cell)", "confidence": "high"},
+  "DenyRecord": {"value": "none", "source": "R9's hypotheses (evidence/levels/links.json, links.R9.hypotheses.cell)", "confidence": "high"},
+  "Atomic": {"value": true, "source": "R9's hypotheses (evidence/levels/links.json, links.R9.hypotheses.cell)", "confidence": "high"},
+  "Lag": {"value": 0, "source": "R9's hypotheses (evidence/levels/links.json, links.R9.hypotheses.lag)", "confidence": "high"},
+  "Scope": {"value": "ScopeGlobal", "source": "R9's hypotheses (evidence/levels/links.json, links.R9.hypotheses.cell)", "confidence": "high"}
+ }
+}

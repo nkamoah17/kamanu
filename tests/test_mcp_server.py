@@ -50,8 +50,11 @@ def test_tools_list_is_fixed_and_ordered():
         assert t["description"] and isinstance(t["inputSchema"], dict) and isinstance(t["outputSchema"], dict)
 
 
-@pytest.mark.parametrize("meta", [None, {}, {"io.modelcontextprotocol/protocolVersion": "2025-06-18"},
-                                  {"io.modelcontextprotocol/protocolVersion": 20260728}])
+# A request with no version at all (no _meta, or _meta without the key) is classic MCP (X25,
+# tests/test_mcp_classic.py); one that names any other version is -32022.
+@pytest.mark.parametrize("meta", [{"io.modelcontextprotocol/protocolVersion": "2025-06-18"},
+                                  {"io.modelcontextprotocol/protocolVersion": 20260728},
+                                  {"io.modelcontextprotocol/protocolVersion": None}])
 @pytest.mark.parametrize("method", ["server/discover", "tools/list", "tools/call", "initialize"])
 def test_version_is_checked_on_every_method(method, meta):
     r = {"jsonrpc": "2.0", "id": 7, "method": method}

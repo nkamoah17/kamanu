@@ -152,11 +152,8 @@ def tlc_inputs(profile: dict, shape: str, prop: str) -> dict:
 
 # ---------------------------------------------------------------- TLC and the cache
 def jar_path() -> Path:
-    env = os.environ.get("KAMANU_TLA_JAR")
-    jar = Path(env) if env else ROOT / "tools" / "vendor" / "tla2tools.jar"
-    if not jar.is_file():
-        raise RuntimeError(f"TLC jar not found at {jar}: set KAMANU_TLA_JAR")
-    return jar
+    from kamanu import tlajar
+    return tlajar.path(ROOT)
 
 
 def fingerprint() -> str:

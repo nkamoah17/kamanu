@@ -133,12 +133,11 @@
   <section id="try" class="text">
     <h2>Try it in a minute</h2>
     <p>The record above, computed on your own machine. Python 3.11 or later; nothing is uploaded, and nothing here needs an account.</p>
-<pre>git clone https://github.com/nkamoah17/kamanu.git kamanu-src
-cd kamanu-src
-pip install .
-kamanu scan fixtures/dogwood/PReqBasis.dw \
-    --engine demo/assay/proved-cell.json --cap 100</pre>
-    <p>It prints the ceiling beside the limit, the stranded budget, the six-step trace, and on its last line how many of the engine's constants it had to assume. It exits 1, because one check fails. Run it on your own policy, or read a card issuer's <code>spending_limits</code> the way its documents write them:</p>
+<pre>pip install kamanu
+kamanu scan --example per-charge</pre>
+    <p>That reads a Stripe Issuing card capped at 5000 on each charge and nothing else, and says so: four charges of 5000 each pass it, 20000 in all, and nothing stops a fifth. It keeps no receipt and exits 2, because nothing was checked.</p>
+<pre>kamanu scan --example budget</pre>
+    <p>That is the record above: a spend cap of 100 on the engine our proof covers. It prints the ceiling beside the limit, the stranded budget, the six-step trace, and on its last line how many of the engine's constants it had to assume. It exits 1, because one check fails. Run it on your own policy, or read a card issuer's <code>spending_limits</code> the way its documents write them:</p>
 <pre>kamanu lint examples/controls.yaml --frontend issuing --engine reference</pre>
     <p>A daily limit is checked as a sliding 24-hour window, and the answer says what the calendar reading, a reset at midnight UTC, could change: up to twice the amount across one boundary.</p>
     <p>The same check runs on every pull request with <a href="https://github.com/marketplace/actions/kamanu-check">the GitHub Action</a>: <code>uses: nkamoah17/kamanu@v0.1</code>.</p>

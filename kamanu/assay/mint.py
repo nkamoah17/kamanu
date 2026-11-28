@@ -7,6 +7,7 @@ hallmark, the registry, the Catalogue, the house rules page and the glossary (do
     amount(face, ceiling) -> str        by how much a limit is debased: ceiling - face, "unbounded" when the ceiling is
     is_fine(fineness) -> bool           fineness 1.000, and only then
     obverse_html(...), reverse_html(...)  the two sides of a hallmark or documented check on a page, whole
+    spend_text(ceiling) -> str          a documented check's obverse grade: the ceiling in plain words, no coin word
     release_problems(...)               why a release on the record is refused ([] when it is valid)
     release_line(...)                   the one line a released record's page carries
 
@@ -104,11 +105,22 @@ def grade_text(face, ceiling, fineness, level) -> str:
 
 
 # ---------------------------------------------------------------- the two sides on a page
-def obverse_html(face, ceiling, fineness, stranded, level, tag: str = "div") -> str:
+def spend_text(ceiling) -> str:
+    """The ceiling in plain words, with no coin word: what a documented check's obverse says in place of a grade
+    (card X26: a documented check rests on ASSUMED constants only, so its page never calls the limit fine or debased)."""
+    if ceiling == "unbounded":
+        return "ceiling unbounded: nothing in the cell bounds what can be spent"
+    return f"ceiling {ceiling}: the most that can be spent"
+
+
+def obverse_html(face, ceiling, fineness, stranded, level, tag: str = "div", grade: str | None = None) -> str:
+    """GRADE replaces the coin-word grade (fine, or debased by its amount) when given: a documented check passes
+    spend_text(ceiling)."""
+    g = grade_text(face, ceiling, fineness, level) if grade is None else grade
     return (f'<{tag} data-side="obverse"><strong>Obverse</strong>: '
             f'face value <span>{E(face)}</span>; fineness <span>{E(fineness)}</span>; '
             f'stranded budget <span>{E(stranded)}</span>; level <span>{E(level)}</span>; '
-            f'<span>{E(grade_text(face, ceiling, fineness, level))}</span></{tag}>')
+            f'<span>{E(g)}</span></{tag}>')
 
 
 def _step(s) -> str:

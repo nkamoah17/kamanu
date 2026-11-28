@@ -1,0 +1,29 @@
+{
+  "id": "ic_example_per_charge_only",
+  "object": "issuing.card",
+  "brand": "Visa",
+  "cancellation_reason": null,
+  "created": 1700000000,
+  "currency": "usd",
+  "exp_month": 12,
+  "exp_year": 2030,
+  "last4": "4242",
+  "livemode": false,
+  "metadata": {"note": "an example card: one limit on each charge, nothing on the total"},
+  "replaced_by": null,
+  "replacement_for": null,
+  "replacement_reason": null,
+  "shipping": null,
+  "spending_controls": {
+    "allowed_categories": null,
+    "blocked_categories": null,
+    "allowed_merchant_countries": null,
+    "blocked_merchant_countries": null,
+    "spending_limits": [
+      {"amount": 5000, "categories": [], "interval": "per_authorization"}
+    ],
+    "spending_limits_currency": "usd"
+  },
+  "status": "active",
+  "type": "virtual"
+}

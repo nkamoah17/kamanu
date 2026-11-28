@@ -4,7 +4,7 @@
     python -m kamanu.lint_mcp  stdio: one JSON-RPC message per line in, one out
 
 H13's protocol (kamanu.mcp_server: MCP 2026-07-28, no initialize, no session, the version in
-params._meta on every request) and a server of its own, so kamanu-mcp's tool list (H13's gate pins it)
+params._meta on every request; a request with no version is classic MCP, answered by kamanu.mcp_server.answer) and a server of its own, so kamanu-mcp's tool list (H13's gate pins it)
 is not changed. One tool:
 
     lint(policy?, path?, engine, cap?, in_flight?, failures?, level?)
@@ -21,12 +21,12 @@ import json
 import sys
 
 from kamanu.mcp_server import (INVALID_PARAMS, INVALID_REQUEST, META_KEY, METHOD_NOT_FOUND, PARSE_ERROR,
-                               UNSUPPORTED_VERSION, VERSION, RpcError)
+                               UNSUPPORTED_VERSION, VERSION, RpcError, answer)
 
 TOOLS = [
     {"name": "lint", "title": "Lint a stateful policy on an engine",
-     "description": "kamanu lint on one Dogwood policy: the JSON object `kamanu lint PATH --engine ENGINE --json` "
-                    "prints. Every finding carries a one-sentence claim, its trace, a fix as an edit (file, start "
+     "description": "kamanu lint on one Dogwood policy (the lint form, not a card): the JSON object "
+                    "`kamanu lint PATH --engine ENGINE --json` prints. It runs no model checker and no Java. Every finding carries a one-sentence claim, its trace, a fix as an edit (file, start "
                     "and end line and column, old and new text) where lint knows one, and the command that "
                     "re-checks it. Apply the fixes, run the re-check, read the JSON again.",
      "inputSchema": {
@@ -97,7 +97,7 @@ METHODS = {
     "server/discover": lambda p: {
         "supportedVersions": [VERSION], "protocolVersion": VERSION,
         "capabilities": {"tools": {"listChanged": False}},
-        "serverInfo": {"name": "kamanu-lint", "title": "KAMANU lint for stateful policies", "version": "0.1.1"},
+        "serverInfo": {"name": "kamanu-lint", "title": "KAMANU lint for Dogwood policies", "version": "0.1.2"},
         "instructions": "Stateless: call lint with the policy's text (or path) and the engine; apply each finding's "
                         "fix and run its re-check command until nothing fails."},
     "tools/list": lambda p: {"tools": json.loads(json.dumps(TOOLS)), "ttlMs": 3_600_000, "cacheScope": "public"},
@@ -105,7 +105,7 @@ METHODS = {
 }
 
 
-def handle(request):
+def versioned_handle(request):
     if not isinstance(request, dict):
         return {"jsonrpc": "2.0", "id": None, "error": {"code": INVALID_REQUEST, "message": "invalid request"}}
     rid = request.get("id")
@@ -125,6 +125,15 @@ def handle(request):
     except RpcError as e:
         response = {"jsonrpc": "2.0", "id": rid, "error": {"code": e.code, "message": e.message}}
     return None if "id" not in request else response
+
+
+SERVER_INFO = METHODS["server/discover"](None)["serverInfo"]
+
+
+def handle(request):
+    """A 2026-07-28 request as versioned_handle answers it; a classic one (no version) as
+    kamanu.mcp_server.answer does."""
+    return answer(request, versioned_handle, SERVER_INFO)
 
 
 def main():

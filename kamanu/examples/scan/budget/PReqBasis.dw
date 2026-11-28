@@ -1,0 +1,22 @@
+// kernel: PReqBasis
+// source: https://aws.amazon.com/blogs/opensource/introducing-dogwood-runtime-verification-for-ai-agents/ (section "Summing: stay under a running total")
+// source: https://github.com/dogwood-policy/dogwood/blob/v1.1.1/dogwood-docs/guide/04-temporal-expressions.md#evaluation-semantics (windows are closed and reflexive)
+// The blog's rule with Pay for Transfer, 24h for 1h and 100 for 5000. The blog gives
+// the forbid; the base permit is what deny-by-default requires.
+
+@id("pay_base")
+permit (
+    principal,
+    action == Kamanu::Action::"Pay",
+    resource
+);
+
+@id("pay_cap")
+forbid (
+    principal,
+    action == Kamanu::Action::"Pay",
+    resource
+)
+when temporal {
+    sum_within(a, 24h, Kamanu::Action::"Pay"::request{ input.amount: a }) > 100
+};

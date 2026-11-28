@@ -50,6 +50,14 @@ class Unreadable(Exception):
     """An input that cannot be read."""
 
 
+class Declined(Undecided):
+    """A front end declined the file (lint's outside object, no limits): construct, line, reason (X24)."""
+
+    def __init__(self, construct: str, line: int, reason: str):
+        super().__init__(f"line {line}: {construct}: {reason}")
+        self.construct, self.line, self.reason = construct, line, reason
+
+
 def weakest(levels) -> str:
     lv = [x for x in levels if x in LEVELS]
     return max(lv, key=LEVELS.index) if lv else "UNKNOWN"
@@ -251,7 +259,8 @@ def policy_body(policy: str, engine_arg: str, cap=None, in_flight: int = 2, fail
 
 
 def issuing_bodies(policy: str, engine_arg: str, cap=None, in_flight: int = 2, failures: int = 1, amounts=None,
-                   label=None, third_party=False, notified=None, private=False, only_line=None) -> tuple:
+                   label=None, third_party=False, notified=None, private=False, only_line=None,
+                   about=None) -> tuple:
     """([body], [limit]) for an issuer's spending_limits: one body per limit lint decides, in the file's order, and
     every limit as lint gives it (R16h: which window was checked, what the other reading could change)."""
     try:
@@ -264,6 +273,13 @@ def issuing_bodies(policy: str, engine_arg: str, cap=None, in_flight: int = 2, f
     if obj is None or not isinstance(obj.get("limits"), list):
         why = (err.strip().splitlines() or ["lint gives no limits for this configuration"])[-1]
         raise (Unreadable if rc == 3 or obj is None else Undecided)(why)
+    if isinstance(about, dict):
+        about.update(obj)
+    if not obj["limits"]:
+        # X24: the front end declined the file (not YAML, an unknown key, no spending_limits, an empty list): nothing
+        # was read, so nothing is checked and this is never a pass. Lint's construct, line and reason are said.
+        raise Declined(obj.get("construct") or "no spending limit", obj.get("line") if isinstance(obj.get("line"), int)
+                       else 1, obj.get("reason") or "the issuing front end read no spending limit in this file")
     consts = {k: (v.get("value") if isinstance(v, dict) else v)
               for k, v in ((profile or {}).get("constants") or {}).items()} if isinstance(profile, dict) else {}
     bodies = []
